@@ -1,41 +1,36 @@
 ---
-title: Graphviz
+title: Interlisp
 aliases:
   # Fixes a broken Home Page link from Gallery pages.
   - /_pages/
 type: docs
 ---
 
-![Graphviz logo -- arrows pointing between circles on graph paper, with magnifying glass on top](/Resources/app.png)
+![Interlisp logo -- A semi-circle of screens with the words Interlisp-D in the lower righthand corner](/Resources/Interlisp-D.png)
 
-Please join the [Graphviz forum](https://forum.graphviz.org) to ask
-questions and discuss Graphviz.
+Please join the [Interlisp Medley Users Group](https://groups.google.com/g/interlisp) to ask
+questions and discuss Interlisp.
 
-## What is Graphviz?
+## What is Interlisp Medley?
 
-Graphviz is open source graph visualization software. Graph visualization is a way of representing structural information as diagrams of abstract graphs and networks. It has important applications in networking, bioinformatics, software engineering, database and web design, machine learning, and in visual interfaces for other technical domains.
+Medley Interlisp is the environment originally developed for the Xerox Lisp machines (called D-machines, names Dorado, Dolphin, Dandelion, Daybreak). The project was spun out to a company called Envos, which then turned into Venue.
 
-<img alt="Cluster" src="/Gallery/directed/cluster.png" style="display:block; height:289px; margin-left:auto; margin-right:auto; width:150px" />
+It was the first IDE with a window/mouse/menu GUI, launched as a product from Xerox in 1980. It was a base from which AI applications were built, as well as a research project in its own right.
 
-## Features
+For example, Interlisp [SEDIT](https://www.youtube.com/watch?v=2qsmF8HHskg) is the canonical ancestral structure editor. Masterscope and the "file package" included system-management tools that combined features of version control and build systems, with comprehensive cross referencing support.
 
-The Graphviz layout programs take descriptions of graphs in a simple text language, and make diagrams in useful formats, such as images and SVG for web pages; PDF or Postscript for inclusion in other documents; or display in an interactive graph browser. Graphviz has many useful features for concrete diagrams, such as options for colors, fonts, tabular node layouts, line styles, hyperlinks, and custom shapes.
-
-## Download
-
-The current release of Graphviz can be downloaded here: [Download](/download)
-The code base is stored [here](https://gitlab.com/graphviz/graphviz/) on
-GitLab.
+Medley was the last release of the Xerox Lisp environment, before the whole environment was renamed Medley. It was originally written in Interlisp (a dialect separate from the MACLISP/Common Lisp tradition, with its own ancestry), but later, Common Lisp also became part of the environment. Medley includes a WYSIWYG text editor (TEdit), email organizer (Lafite), performance tools (Spy) and many other libraries and user contributed code (from the 1980s).
 
 ## Documentation
 
-Documentation is available in the released package and from here: [Documentation](/documentation)
+Interlisp Medley documentation for is available in from here: [Documentation](/documentation).  
+Documentation on building and running the restored version of Interlisp Medley can be found here: ??
 
 ## Discussions
 
-You can post questions and comments in the [Graphviz forum](https://forum.graphviz.org).
+You can post questions and comments to the [Medley Interlisp Users Group](mailto:interlisp@googlegroups.com).
 
 ## Bug And Issue Tracking
 
-You can report or view Graphviz bugs and issues by visiting the Graphviz [Issues](https://gitlab.com/graphviz/graphviz/issues) page.
+You can report or view bugs and issues by visiting the Interlisp Medley [Issues](https://github.com/Interlisp/medley/issues) page.
 

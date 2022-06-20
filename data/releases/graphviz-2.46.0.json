@@ -1,9 +1,0 @@
-{
-  "version": "graphviz-2.46.0",
-  "sources": [
-    {
-      "format": "tar.gz",
-      "url": "https://gitlab.com/graphviz/graphviz/-/package_files/6163716/download"
-    }
-  ]
-}

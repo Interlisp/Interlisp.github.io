@@ -66,7 +66,6 @@ You may find it useful to try one of the following third-party sites.
 
 * Stable Windows install packages:
 
-  {{< windows >}}
 
   * [Prior to 2.46 series](https://www2.graphviz.org/Packages/stable/windows)
 * Development Windows install packages

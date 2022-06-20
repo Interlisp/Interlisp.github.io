@@ -35,7 +35,6 @@ to see these.
 
 #### Stable Releases
 
-{{< sources >}}
 
 #### Development Snapshots
 

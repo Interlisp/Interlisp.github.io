@@ -1,6 +1,6 @@
 
-baseURL = "https://graphviz.org/"
-title = "Graphviz"
+baseURL = "https://interlisp.org/"
+title = "Interlisp Medley Project"
 
 enableRobotsTXT = true
 
@@ -28,8 +28,9 @@ pygmentsUseClassic = false
 # See https://help.farbox.com/pygments.html
 pygmentsStyle = "tango"
 
+# To do remove?
 # For backwards compatibility with old Graphviz site URLs, retain case-sensitivity of URLs
-disablePathToLower = true
+# disablePathToLower = true
 
 # Configure how URLs look like per section.
 [permalinks]
@@ -57,8 +58,8 @@ anchor = "smart"
 
 [languages]
 [languages.en]
-title = "Graphviz"
-description = "Graph Visualization Software"
+title = "Interlisp Medley Project"
+description = "Dedicated to restoring and preserving the Interlisp experience"
 languageName ="English"
 # Weight used for sorting.
 weight = 1
@@ -80,7 +81,7 @@ weight = 1
 section = ["HTML", "print"]
 
 [params]
-copyright = "The Graphviz Authors"
+copyright = "Interlisp.org"
 # privacy_policy = "https://policies.google.com/privacy"
 
 # First one is picked as the Twitter card image if not set on page.
@@ -105,11 +106,10 @@ version = "0.0"
 url_latest_version = "https://example.com"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-# The links work despite our URL being GitLab not GitHub.
-github_repo = "https://gitlab.com/graphviz/graphviz.gitlab.io"
+# todo update repo url
+github_repo = "https://github.com/stumbo/stumbo.gitlab.io"
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-# The links work despite our URL being GitLab not GitHub.
-# github_project_repo = "https://github.com/graphviz/graphviz"
+# github_project_repo = "https://github.com/interlistp"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
@@ -140,7 +140,7 @@ breadcrumb_disable = false
 #  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
 sidebar_search_disable = false
 #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
-navbar_logo = false
+navbar_logo = true
 # Set to true to disable the About link in the site footer
 footer_about_disable = false
 
@@ -172,24 +172,24 @@ enable = false
 # End user relevant links. These will show up on left side of footer and in the community page if you have one.
 [[params.links.user]]
   name = "User mailing list"
-  url = "https://forum.graphviz.org/"
+  url = "mailto:Interlisp@googlegroups.com"
   icon = "fa fa-envelope"
   desc = "Discussion and help from your fellow users"
 [[params.links.user]]
   name ="Twitter"
-  url = "https://twitter.com/graphviz"
+  url = "https://twitter.com/interlisp"
   icon = "fab fa-twitter"
   desc = "Follow us on Twitter to get the latest news!"
-[[params.links.user]]
-  name = "Stack Overflow"
-  url = "https://stackoverflow.com/questions/tagged/graphviz"
-  icon = "fab fa-stack-overflow"
-  desc = "Practical questions and curated answers"
+# [[params.links.user]]
+#  name = "Stack Overflow"
+#  url = "https://stackoverflow.com/questions/tagged/graphviz"
+#  icon = "fab fa-stack-overflow"
+#  desc = "Practical questions and curated answers"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
-  name = "GitLab"
-  url = "https://gitlab.com/graphviz/graphviz"
-  icon = "fab fa-gitlab"
+  name = "GitHub"
+  url = "https://github.com/interlisp"
+  icon = "fab fa-github"
         desc = "Development takes place here!"
 # [[params.links.developer]]
 #   name = "Slack"
@@ -202,17 +202,19 @@ enable = false
 #   icon = "fa fa-envelope"
 #   desc = "Discuss development issues around the project"
 
-[[menu.main]]
-name = "Forum"
-weight = 49
-pre = "<i class='fab fa-discourse'></i>"
-url = "https://forum.graphviz.org/"
+#[[menu.main]]
+#name = "Forum"
+#weight = 49
+#pre = "<i class='fab fa-discourse'></i>"
+#url = "https://forum.graphviz.org/"
 
 [[menu.main]]
-name = "GitLab"
+name = "GitHub"
 weight = 50
-pre = "<i class='fab fa-gitlab'></i>"
-url = "https://gitlab.com/graphviz/graphviz"
+pre = "<i class='fab fa-github'></i>"
+url = "https://github.com/interlisp"
 
 [params.taxonomy]
 
+# Turn off transparency in nav bar
+params.ui.navbar_translucent_over_cover_disable = true
