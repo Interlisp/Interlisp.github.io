@@ -33,7 +33,8 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
       
       - run: npm ci --verbose
-      - run: npm install postcss-cli  
+      - run: npm install autoprefixer --save-dev  
+      - run: npm install postcss-cli --save-dev
 
       - name: Build
         run: hugo --minify
