@@ -23,8 +23,6 @@ jobs:
           hugo-version: 0.98.0
           extended: true
 
-      - run: env
-      - run: pwd    
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
@@ -33,8 +31,8 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
       
       - run: npm ci --verbose
-      - run: npm install autoprefixer --save-dev  
-      - run: npm install postcss-cli --save-dev
+      - run: npm install -g autoprefixer --save-dev  
+      - run: npm install -g postcss-cli --save-dev
 
       - name: Build
         run: hugo --minify --panicOnWarning
