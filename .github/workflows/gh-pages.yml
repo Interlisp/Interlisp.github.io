@@ -23,6 +23,8 @@ jobs:
           hugo-version: 'latest'
           extended: true
 
+      - run: env
+      - run: pwd    
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
