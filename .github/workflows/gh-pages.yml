@@ -28,7 +28,7 @@ jobs:
         with:
           node-version: 14
       
-      - run: npm ci --verbose
+      - run: npm install --verbose
       - run: npm install -g autoprefixer --save-dev  
       - run: npm install -g postcss-cli --save-dev
 
