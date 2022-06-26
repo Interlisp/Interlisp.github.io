@@ -33,7 +33,7 @@ jobs:
           cache-dependency-path: '**/package-lock.json'
       
       - run: npm ci --verbose
-      - rung: npm install postcss-cli  
+      - run: npm install postcss-cli  
 
       - name: Build
         run: hugo --minify
