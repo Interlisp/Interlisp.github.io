@@ -37,7 +37,7 @@ jobs:
       - run: npm install postcss-cli --save-dev
 
       - name: Build
-        run: hugo --minify
+        run: hugo --minify --panicOnWarning
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v3
