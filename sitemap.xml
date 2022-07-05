@@ -3,1407 +3,1407 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://interlisp.org/hugo/about/</loc>
+    <loc>/about/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/layouts/dot/</loc>
+    <loc>/docs/layouts/dot/</loc>
     <lastmod>2021-08-10T21:25:27+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/info/lang.html</loc>
+    <loc>/doc/info/lang.html</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/news/</loc>
+    <loc>/news/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/publications/zotero/</loc>
+    <loc>/publications/zotero/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/info/command.html</loc>
+    <loc>/doc/info/command.html</loc>
     <lastmod>2022-01-28T18:32:54+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/download/</loc>
+    <loc>/download/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/info/history.html</loc>
+    <loc>/doc/info/history.html</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/online/</loc>
+    <loc>/online/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/layouts/neato/</loc>
+    <loc>/docs/layouts/neato/</loc>
     <lastmod>2022-04-10T02:50:15+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/layouts/</loc>
+    <loc>/docs/layouts/</loc>
     <lastmod>2021-08-10T21:25:27+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/</loc>
+    <loc>/docs/outputs/</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/layouts/twopi/</loc>
+    <loc>/docs/layouts/twopi/</loc>
     <lastmod>2021-08-10T21:25:27+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/info/attrs.html</loc>
+    <loc>/doc/info/attrs.html</loc>
     <lastmod>2021-06-14T15:27:16+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/layouts/circo/</loc>
+    <loc>/docs/layouts/circo/</loc>
     <lastmod>2021-08-10T21:25:27+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/documentation/</loc>
-    <lastmod>2022-06-20T10:03:40-04:00</lastmod>
+    <loc>/documentation/</loc>
+    <lastmod>2022-07-05T07:25:34-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/</loc>
+    <loc>/docs/attr-types/</loc>
     <lastmod>2021-06-19T11:08:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/publications/table/</loc>
+    <loc>/publications/table/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/info/shapes.html</loc>
+    <loc>/doc/info/shapes.html</loc>
     <lastmod>2022-01-28T18:32:54+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/publications/</loc>
+    <loc>/publications/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/info/arrows.html</loc>
+    <loc>/doc/info/arrows.html</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/license/</loc>
+    <loc>/license/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/info/colors.html</loc>
+    <loc>/doc/info/colors.html</loc>
     <lastmod>2021-10-29T07:01:02+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/resources/</loc>
+    <loc>/resources/</loc>
     <lastmod>2022-02-18T14:58:02+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/credits/</loc>
+    <loc>/credits/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/faq/</loc>
+    <loc>/faq/</loc>
     <lastmod>2022-04-04T08:02:12-07:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/contact/</loc>
+    <loc>/contact/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/getinvolved/</loc>
+    <loc>/getinvolved/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/_pages/</loc>
+    <loc>/_pages/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/background/</loc>
+    <loc>/docs/attrs/background/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/adddouble/</loc>
+    <loc>/docs/attr-types/adddouble/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/addpoint/</loc>
+    <loc>/docs/attr-types/addpoint/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/area/</loc>
+    <loc>/docs/attrs/area/</loc>
     <lastmod>2022-04-10T02:39:25+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/arrowhead/</loc>
+    <loc>/docs/attrs/arrowhead/</loc>
     <lastmod>2021-07-02T13:26:43+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/arrowsize/</loc>
+    <loc>/docs/attrs/arrowsize/</loc>
     <lastmod>2021-07-02T13:30:53+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/arrowtail/</loc>
+    <loc>/docs/attrs/arrowtail/</loc>
     <lastmod>2021-07-02T13:26:43+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/arrowtype/</loc>
+    <loc>/docs/attr-types/arrowtype/</loc>
     <lastmod>2021-06-16T19:50:04+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/bb/</loc>
+    <loc>/docs/attrs/bb/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/bgcolor/</loc>
+    <loc>/docs/attrs/bgcolor/</loc>
     <lastmod>2021-07-02T13:18:40+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/bmp/</loc>
+    <loc>/docs/outputs/bmp/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/bool/</loc>
+    <loc>/docs/attr-types/bool/</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/build.html</loc>
+    <loc>/doc/build.html</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/center/</loc>
+    <loc>/docs/attrs/center/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/cgimage/</loc>
+    <loc>/docs/outputs/cgimage/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/char.html</loc>
+    <loc>/doc/char.html</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/charset/</loc>
+    <loc>/docs/attrs/charset/</loc>
     <lastmod>2021-07-02T13:30:44+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/class/</loc>
+    <loc>/docs/attrs/class/</loc>
     <lastmod>2021-07-02T13:18:54+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/clustermode/</loc>
+    <loc>/docs/attr-types/clustermode/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/clusterrank/</loc>
+    <loc>/docs/attrs/clusterrank/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/color/</loc>
+    <loc>/docs/attr-types/color/</loc>
     <lastmod>2021-06-14T11:40:57+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/color/</loc>
+    <loc>/docs/attrs/color/</loc>
     <lastmod>2022-02-16T17:06:26+02:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/colorlist/</loc>
+    <loc>/docs/attr-types/colorlist/</loc>
     <lastmod>2021-06-14T11:40:57+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/colorscheme/</loc>
+    <loc>/docs/attrs/colorscheme/</loc>
     <lastmod>2021-07-02T13:17:36+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/comment/</loc>
+    <loc>/docs/attrs/comment/</loc>
     <lastmod>2021-06-19T13:53:30+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/compound/</loc>
+    <loc>/docs/attrs/compound/</loc>
     <lastmod>2021-08-08T20:43:51+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/concentrate/</loc>
+    <loc>/docs/attrs/concentrate/</loc>
     <lastmod>2021-06-19T13:53:30+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/constraint/</loc>
+    <loc>/docs/attrs/constraint/</loc>
     <lastmod>2021-06-14T18:01:32+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/damping/</loc>
+    <loc>/docs/attrs/damping/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/decorate/</loc>
+    <loc>/docs/attrs/decorate/</loc>
     <lastmod>2021-06-19T13:53:30+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/defaultdist/</loc>
+    <loc>/docs/attrs/defaultdist/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/dim/</loc>
+    <loc>/docs/attrs/dim/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/dimen/</loc>
+    <loc>/docs/attrs/dimen/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/dir/</loc>
+    <loc>/docs/attrs/dir/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/diredgeconstraints/</loc>
+    <loc>/docs/attrs/diredgeconstraints/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/dirtype/</loc>
+    <loc>/docs/attr-types/dirtype/</loc>
     <lastmod>2021-06-19T13:53:30+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/distortion/</loc>
+    <loc>/docs/attrs/distortion/</loc>
     <lastmod>2021-06-19T13:53:30+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/canon/</loc>
+    <loc>/docs/outputs/canon/</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/double/</loc>
+    <loc>/docs/attr-types/double/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/doublelist/</loc>
+    <loc>/docs/attr-types/doublelist/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/dpi/</loc>
+    <loc>/docs/attrs/dpi/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/edgehref/</loc>
+    <loc>/docs/attrs/edgehref/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/edgetarget/</loc>
+    <loc>/docs/attrs/edgetarget/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/edgetooltip/</loc>
+    <loc>/docs/attrs/edgetooltip/</loc>
     <lastmod>2021-07-02T13:31:17+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/edgeurl/</loc>
+    <loc>/docs/attrs/edgeurl/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/eps/</loc>
+    <loc>/docs/outputs/eps/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/epsilon/</loc>
+    <loc>/docs/attrs/epsilon/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/escstring/</loc>
+    <loc>/docs/attr-types/escstring/</loc>
     <lastmod>2022-01-28T18:32:54+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/esep/</loc>
+    <loc>/docs/attrs/esep/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/exr/</loc>
+    <loc>/docs/outputs/exr/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/layouts/fdp/</loc>
+    <loc>/docs/layouts/fdp/</loc>
     <lastmod>2022-04-10T02:41:42+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/fig/</loc>
+    <loc>/docs/outputs/fig/</loc>
     <lastmod>2021-06-19T10:49:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/fillcolor/</loc>
+    <loc>/docs/attrs/fillcolor/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/fixedsize/</loc>
+    <loc>/docs/attrs/fixedsize/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/fontcolor/</loc>
+    <loc>/docs/attrs/fontcolor/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/fontname/</loc>
+    <loc>/docs/attrs/fontname/</loc>
     <lastmod>2021-10-25T13:57:05+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/fontnames/</loc>
+    <loc>/docs/attrs/fontnames/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/fontpath/</loc>
+    <loc>/docs/attrs/fontpath/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/fontsize/</loc>
+    <loc>/docs/attrs/fontsize/</loc>
     <lastmod>2021-08-09T19:02:03+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/forcelabels/</loc>
+    <loc>/docs/attrs/forcelabels/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/gd/</loc>
+    <loc>/docs/outputs/gd/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/gif/</loc>
+    <loc>/docs/outputs/gif/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/gradientangle/</loc>
+    <loc>/docs/attrs/gradientangle/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/misc/spline-o-matic/</loc>
+    <loc>/misc/spline-o-matic/</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/group/</loc>
+    <loc>/docs/attrs/group/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/gtk/</loc>
+    <loc>/docs/outputs/gtk/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/head_lp/</loc>
+    <loc>/docs/attrs/head_lp/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/headclip/</loc>
+    <loc>/docs/attrs/headclip/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/headhref/</loc>
+    <loc>/docs/attrs/headhref/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/headlabel/</loc>
+    <loc>/docs/attrs/headlabel/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/headport/</loc>
+    <loc>/docs/attrs/headport/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/headtarget/</loc>
+    <loc>/docs/attrs/headtarget/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/headtooltip/</loc>
+    <loc>/docs/attrs/headtooltip/</loc>
     <lastmod>2021-07-02T13:31:17+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/headurl/</loc>
+    <loc>/docs/attrs/headurl/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/height/</loc>
+    <loc>/docs/attrs/height/</loc>
     <lastmod>2021-07-02T13:17:17+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/href/</loc>
+    <loc>/docs/attrs/href/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/ico/</loc>
+    <loc>/docs/outputs/ico/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/id/</loc>
+    <loc>/docs/attrs/id/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/image/</loc>
+    <loc>/docs/attrs/image/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/cmap/</loc>
+    <loc>/docs/outputs/cmap/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/ismap/</loc>
+    <loc>/docs/outputs/ismap/</loc>
     <lastmod>2021-08-10T19:20:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/imap/</loc>
+    <loc>/docs/outputs/imap/</loc>
     <lastmod>2021-08-10T19:20:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/imap_np/</loc>
+    <loc>/docs/outputs/imap_np/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/imagepath/</loc>
+    <loc>/docs/attrs/imagepath/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/imagepos/</loc>
+    <loc>/docs/attrs/imagepos/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/imagescale/</loc>
+    <loc>/docs/attrs/imagescale/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/inputscale/</loc>
+    <loc>/docs/attrs/inputscale/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/int/</loc>
+    <loc>/docs/attr-types/int/</loc>
     <lastmod>2021-06-19T09:59:13+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/</loc>
+    <loc>/</loc>
+    <lastmod>2022-07-05T07:25:34-04:00</lastmod>
+  </url>
+  
+  <url>
+    <loc>/doc/todo.html</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/doc/todo.html</loc>
-    <lastmod>2022-06-20T10:03:40-04:00</lastmod>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/jpg/</loc>
+    <loc>/docs/outputs/jpg/</loc>
     <lastmod>2021-06-19T10:49:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/jp2/</loc>
+    <loc>/docs/outputs/jp2/</loc>
     <lastmod>2021-06-19T10:49:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/json/</loc>
+    <loc>/docs/outputs/json/</loc>
     <lastmod>2021-08-10T19:26:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/k/</loc>
+    <loc>/docs/attrs/k/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/label/</loc>
+    <loc>/docs/attrs/label/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/label_scheme/</loc>
+    <loc>/docs/attrs/label_scheme/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labelangle/</loc>
+    <loc>/docs/attrs/labelangle/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labeldistance/</loc>
+    <loc>/docs/attrs/labeldistance/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labelfloat/</loc>
+    <loc>/docs/attrs/labelfloat/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labelfontcolor/</loc>
+    <loc>/docs/attrs/labelfontcolor/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labelfontname/</loc>
+    <loc>/docs/attrs/labelfontname/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labelfontsize/</loc>
+    <loc>/docs/attrs/labelfontsize/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labelhref/</loc>
+    <loc>/docs/attrs/labelhref/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labeljust/</loc>
+    <loc>/docs/attrs/labeljust/</loc>
     <lastmod>2021-07-02T13:32:04+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labelloc/</loc>
+    <loc>/docs/attrs/labelloc/</loc>
     <lastmod>2021-07-02T13:32:14+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labeltarget/</loc>
+    <loc>/docs/attrs/labeltarget/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labeltooltip/</loc>
+    <loc>/docs/attrs/labeltooltip/</loc>
     <lastmod>2021-07-02T13:31:17+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/labelurl/</loc>
+    <loc>/docs/attrs/labelurl/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/landscape/</loc>
+    <loc>/docs/attrs/landscape/</loc>
     <lastmod>2021-07-02T13:30:30+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/layer/</loc>
+    <loc>/docs/attrs/layer/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/layerlist/</loc>
+    <loc>/docs/attr-types/layerlist/</loc>
     <lastmod>2022-01-28T18:32:54+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/layerlistsep/</loc>
+    <loc>/docs/attrs/layerlistsep/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/layerrange/</loc>
+    <loc>/docs/attr-types/layerrange/</loc>
     <lastmod>2022-01-28T18:32:54+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/layers/</loc>
+    <loc>/docs/attrs/layers/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/layerselect/</loc>
+    <loc>/docs/attrs/layerselect/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/layersep/</loc>
+    <loc>/docs/attrs/layersep/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/layout/</loc>
+    <loc>/docs/attrs/layout/</loc>
     <lastmod>2021-08-10T21:25:27+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/lblstring/</loc>
+    <loc>/docs/attr-types/lblstring/</loc>
     <lastmod>2021-06-14T11:30:51+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/len/</loc>
+    <loc>/docs/attrs/len/</loc>
     <lastmod>2021-07-02T13:30:19+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/levels/</loc>
+    <loc>/docs/attrs/levels/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/levelsgap/</loc>
+    <loc>/docs/attrs/levelsgap/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/lhead/</loc>
+    <loc>/docs/attrs/lhead/</loc>
     <lastmod>2021-08-08T20:43:51+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/lheight/</loc>
+    <loc>/docs/attrs/lheight/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/lp/</loc>
+    <loc>/docs/attrs/lp/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/ltail/</loc>
+    <loc>/docs/attrs/ltail/</loc>
     <lastmod>2021-08-08T20:43:51+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/lwidth/</loc>
+    <loc>/docs/attrs/lwidth/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/margin/</loc>
+    <loc>/docs/attrs/margin/</loc>
     <lastmod>2021-06-16T21:11:56+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/maxiter/</loc>
+    <loc>/docs/attrs/maxiter/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/mclimit/</loc>
+    <loc>/docs/attrs/mclimit/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/mindist/</loc>
+    <loc>/docs/attrs/mindist/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/minlen/</loc>
+    <loc>/docs/attrs/minlen/</loc>
     <lastmod>2021-07-02T13:30:19+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/misc/</loc>
+    <loc>/misc/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/mode/</loc>
+    <loc>/docs/attrs/mode/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/model/</loc>
+    <loc>/docs/attrs/model/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/mosek/</loc>
+    <loc>/docs/attrs/mosek/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/newrank/</loc>
+    <loc>/docs/attrs/newrank/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/nodesep/</loc>
+    <loc>/docs/attrs/nodesep/</loc>
     <lastmod>2021-08-08T20:52:33+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/nojustify/</loc>
+    <loc>/docs/attrs/nojustify/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/normalize/</loc>
+    <loc>/docs/attrs/normalize/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/notranslate/</loc>
+    <loc>/docs/attrs/notranslate/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/nslimit/</loc>
+    <loc>/docs/attrs/nslimit/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/nslimit1/</loc>
+    <loc>/docs/attrs/nslimit1/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/ordering/</loc>
+    <loc>/docs/attrs/ordering/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/orientation/</loc>
+    <loc>/docs/attrs/orientation/</loc>
     <lastmod>2021-07-02T13:29:44+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/layouts/osage/</loc>
+    <loc>/docs/layouts/osage/</loc>
     <lastmod>2021-08-10T21:25:27+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/outputmode/</loc>
+    <loc>/docs/attr-types/outputmode/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/outputorder/</loc>
+    <loc>/docs/attrs/outputorder/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/overlap/</loc>
+    <loc>/docs/attrs/overlap/</loc>
     <lastmod>2022-05-05T14:22:33+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/overlap_scaling/</loc>
+    <loc>/docs/attrs/overlap_scaling/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/overlap_shrink/</loc>
+    <loc>/docs/attrs/overlap_shrink/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/pack/</loc>
+    <loc>/docs/attrs/pack/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/packmode/</loc>
+    <loc>/docs/attrs/packmode/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/packmode/</loc>
+    <loc>/docs/attr-types/packmode/</loc>
     <lastmod>2021-06-14T11:40:57+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/pad/</loc>
+    <loc>/docs/attrs/pad/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/page/</loc>
+    <loc>/docs/attrs/page/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/pagedir/</loc>
+    <loc>/docs/attr-types/pagedir/</loc>
     <lastmod>2021-06-19T09:59:13+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/pagedir/</loc>
+    <loc>/docs/attrs/pagedir/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/layouts/patchwork/</loc>
+    <loc>/docs/layouts/patchwork/</loc>
     <lastmod>2021-08-10T21:25:27+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/pdf/</loc>
+    <loc>/docs/outputs/pdf/</loc>
     <lastmod>2021-08-10T19:26:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/pencolor/</loc>
+    <loc>/docs/attrs/pencolor/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/penwidth/</loc>
+    <loc>/docs/attrs/penwidth/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/peripheries/</loc>
+    <loc>/docs/attrs/peripheries/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/pic/</loc>
+    <loc>/docs/outputs/pic/</loc>
     <lastmod>2021-06-19T10:49:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/pct/</loc>
+    <loc>/docs/outputs/pct/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/pin/</loc>
+    <loc>/docs/attrs/pin/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/plain/</loc>
+    <loc>/docs/outputs/plain/</loc>
     <lastmod>2021-08-10T19:26:39+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/png/</loc>
+    <loc>/docs/outputs/png/</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/point/</loc>
+    <loc>/docs/attr-types/point/</loc>
     <lastmod>2021-06-14T11:40:57+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/pointlist/</loc>
+    <loc>/docs/attr-types/pointlist/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/portpos/</loc>
+    <loc>/docs/attr-types/portpos/</loc>
     <lastmod>2021-06-19T09:59:13+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/pos/</loc>
+    <loc>/docs/attrs/pos/</loc>
     <lastmod>2022-03-12T22:01:20+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/pov/</loc>
+    <loc>/docs/outputs/pov/</loc>
     <lastmod>2021-06-19T10:49:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/ps/</loc>
+    <loc>/docs/outputs/ps/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/ps2/</loc>
+    <loc>/docs/outputs/ps2/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/psd/</loc>
+    <loc>/docs/outputs/psd/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/quadtree/</loc>
+    <loc>/docs/attrs/quadtree/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/quadtype/</loc>
+    <loc>/docs/attr-types/quadtype/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/quantum/</loc>
+    <loc>/docs/attrs/quantum/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/rank/</loc>
+    <loc>/docs/attrs/rank/</loc>
     <lastmod>2022-02-08T18:45:33+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/rankdir/</loc>
+    <loc>/docs/attr-types/rankdir/</loc>
     <lastmod>2021-06-19T09:59:13+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/rankdir/</loc>
+    <loc>/docs/attrs/rankdir/</loc>
     <lastmod>2021-08-08T20:56:48+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/ranksep/</loc>
+    <loc>/docs/attrs/ranksep/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/ranktype/</loc>
+    <loc>/docs/attr-types/ranktype/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/ratio/</loc>
+    <loc>/docs/attrs/ratio/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/rect/</loc>
+    <loc>/docs/attr-types/rect/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/rects/</loc>
+    <loc>/docs/attrs/rects/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/regular/</loc>
+    <loc>/docs/attrs/regular/</loc>
     <lastmod>2021-08-08T21:05:13+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/remincross/</loc>
+    <loc>/docs/attrs/remincross/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/repulsiveforce/</loc>
+    <loc>/docs/attrs/repulsiveforce/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/resolution/</loc>
+    <loc>/docs/attrs/resolution/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/root/</loc>
+    <loc>/docs/attrs/root/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/rotate/</loc>
+    <loc>/docs/attrs/rotate/</loc>
     <lastmod>2021-07-02T13:29:57+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/rotation/</loc>
+    <loc>/docs/attrs/rotation/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/samehead/</loc>
+    <loc>/docs/attrs/samehead/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/sametail/</loc>
+    <loc>/docs/attrs/sametail/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/samplepoints/</loc>
+    <loc>/docs/attrs/samplepoints/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/scale/</loc>
+    <loc>/docs/attrs/scale/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/searchsize/</loc>
+    <loc>/docs/attrs/searchsize/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/sep/</loc>
+    <loc>/docs/attrs/sep/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/layouts/sfdp/</loc>
+    <loc>/docs/layouts/sfdp/</loc>
     <lastmod>2022-04-10T02:51:47+00:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/sgi/</loc>
+    <loc>/docs/outputs/sgi/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/shape/</loc>
+    <loc>/docs/attr-types/shape/</loc>
     <lastmod>2021-06-14T11:30:51+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/shape/</loc>
+    <loc>/docs/attrs/shape/</loc>
     <lastmod>2021-08-09T17:49:57+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/shapefile/</loc>
+    <loc>/docs/attrs/shapefile/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/showboxes/</loc>
+    <loc>/docs/attrs/showboxes/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/sides/</loc>
+    <loc>/docs/attrs/sides/</loc>
     <lastmod>2021-06-16T20:35:56+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/size/</loc>
+    <loc>/docs/attrs/size/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/skew/</loc>
+    <loc>/docs/attrs/skew/</loc>
     <lastmod>2021-06-19T13:53:30+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/smoothing/</loc>
+    <loc>/docs/attrs/smoothing/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/smoothtype/</loc>
+    <loc>/docs/attr-types/smoothtype/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/sortv/</loc>
+    <loc>/docs/attrs/sortv/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/download/source/</loc>
+    <loc>/download/source/</loc>
     <lastmod>2022-06-20T10:03:40-04:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/splines/</loc>
+    <loc>/docs/attrs/splines/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/splinetype/</loc>
+    <loc>/docs/attr-types/splinetype/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/misc/sql2dot/</loc>
+    <loc>/misc/sql2dot/</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/start/</loc>
+    <loc>/docs/attrs/start/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/starttype/</loc>
+    <loc>/docs/attr-types/starttype/</loc>
     <lastmod>2021-06-14T11:40:57+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/string/</loc>
+    <loc>/docs/attr-types/string/</loc>
     <lastmod>2021-06-13T17:14:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/style/</loc>
+    <loc>/docs/attr-types/style/</loc>
     <lastmod>2022-01-28T18:32:54+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/style/</loc>
+    <loc>/docs/attrs/style/</loc>
     <lastmod>2021-06-14T15:27:16+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/stylesheet/</loc>
+    <loc>/docs/attrs/stylesheet/</loc>
     <lastmod>2021-07-02T13:30:07+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/svg/</loc>
+    <loc>/docs/outputs/svg/</loc>
     <lastmod>2021-06-19T10:49:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/tail_lp/</loc>
+    <loc>/docs/attrs/tail_lp/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/tailclip/</loc>
+    <loc>/docs/attrs/tailclip/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/tailhref/</loc>
+    <loc>/docs/attrs/tailhref/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/taillabel/</loc>
+    <loc>/docs/attrs/taillabel/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/tailport/</loc>
+    <loc>/docs/attrs/tailport/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/tailtarget/</loc>
+    <loc>/docs/attrs/tailtarget/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/tailtooltip/</loc>
+    <loc>/docs/attrs/tailtooltip/</loc>
     <lastmod>2021-07-02T13:31:17+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/tailurl/</loc>
+    <loc>/docs/attrs/tailurl/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/target/</loc>
+    <loc>/docs/attrs/target/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/tga/</loc>
+    <loc>/docs/outputs/tga/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/tif/</loc>
+    <loc>/docs/outputs/tif/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/tk/</loc>
+    <loc>/docs/outputs/tk/</loc>
     <lastmod>2021-06-19T10:49:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/tooltip/</loc>
+    <loc>/docs/attrs/tooltip/</loc>
     <lastmod>2021-07-02T13:31:17+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/truecolor/</loc>
+    <loc>/docs/attrs/truecolor/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/url/</loc>
+    <loc>/docs/attrs/url/</loc>
     <lastmod>2021-07-02T13:31:50+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/vertices/</loc>
+    <loc>/docs/attrs/vertices/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/viewport/</loc>
+    <loc>/docs/attrs/viewport/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attr-types/viewport/</loc>
+    <loc>/docs/attr-types/viewport/</loc>
     <lastmod>2022-01-28T18:32:54+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/vml/</loc>
+    <loc>/docs/outputs/vml/</loc>
     <lastmod>2022-01-27T20:30:26+11:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/voro_margin/</loc>
+    <loc>/docs/attrs/voro_margin/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/vrml/</loc>
+    <loc>/docs/outputs/vrml/</loc>
     <lastmod>2021-08-10T19:20:12+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/wbmp/</loc>
+    <loc>/docs/outputs/wbmp/</loc>
     <lastmod>2021-06-13T15:21:52+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/webp/</loc>
+    <loc>/docs/outputs/webp/</loc>
     <lastmod>2021-06-19T10:49:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/weight/</loc>
+    <loc>/docs/attrs/weight/</loc>
     <lastmod>2021-07-02T13:16:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/width/</loc>
+    <loc>/docs/attrs/width/</loc>
     <lastmod>2021-07-02T13:10:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/outputs/xlib/</loc>
+    <loc>/docs/outputs/xlib/</loc>
     <lastmod>2021-06-19T10:49:37+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/xdotversion/</loc>
+    <loc>/docs/attrs/xdotversion/</loc>
     <lastmod>2021-06-26T10:53:45+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/xlabel/</loc>
+    <loc>/docs/attrs/xlabel/</loc>
     <lastmod>2021-07-02T13:09:51+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/xlp/</loc>
+    <loc>/docs/attrs/xlp/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/docs/attrs/z/</loc>
+    <loc>/docs/attrs/z/</loc>
     <lastmod>2021-06-14T11:20:00+10:00</lastmod>
   </url>
   
