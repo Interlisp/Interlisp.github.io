@@ -117,7 +117,7 @@ Larry Masinter Rob Kaplan Nick Briggs Frank Halasz Herb Jellinek Steve Kaisler W
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../offline-search-index.152ad96546f00a482a72c850952f04e9.json"
+  data-offline-search-index-json-src="../offline-search-index.1750f8a6ae7e023f715f3a83dea16771.json"
   data-offline-search-base-href="../"
   data-offline-search-max-results="10"
 >
@@ -130,7 +130,21 @@ Larry Masinter Rob Kaplan Nick Briggs Frank Halasz Herb Jellinek Steve Kaisler W
         <div class="row flex-xl-nowrap">
           <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
             
-<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <script>
+    $(function() {
+    $("#td-section-nav a").removeClass("active");
+    $("#td-section-nav #m-credits").addClass("active"); 
+    $("#td-section-nav #m-credits-li span").addClass("td-sidebar-nav-active-item"); 
+    $("#td-section-nav #m-credits").parents("li").addClass("active-path"); 
+    $("#td-section-nav li.active-path").addClass("show"); 
+    $("#td-section-nav li.active-path").children("input").prop('checked', true);
+    $("#td-section-nav #m-credits-li").siblings("li").addClass("show");  
+    $("#td-section-nav #m-credits-li").children("ul").children("li").addClass("show");  
+    $("#td-sidebar-menu").toggleClass("d-none"); 
+    });
+  </script>
+  
+<div id="td-sidebar-menu" class="td-sidebar__inner d-none">
   <form class="td-sidebar__search d-flex align-items-center">
     <input
   type="search"
@@ -139,7 +153,7 @@ Larry Masinter Rob Kaplan Nick Briggs Frank Halasz Herb Jellinek Steve Kaisler W
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../offline-search-index.152ad96546f00a482a72c850952f04e9.json"
+  data-offline-search-index-json-src="../offline-search-index.1750f8a6ae7e023f715f3a83dea16771.json"
   data-offline-search-base-href="../"
   data-offline-search-max-results="10"
 >
@@ -149,13 +163,18 @@ Larry Masinter Rob Kaplan Nick Briggs Frank Halasz Herb Jellinek Steve Kaisler W
   </form>
   <nav class="collapse td-sidebar-nav" id="td-section-nav">
     <ul class="td-sidebar-nav__section pr-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m--li">
   <a href="../" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class="">Interlisp</span></a>
   <ul class="ul-1">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-about-li">
   <a href="../about/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-about"><span class="">About</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-news-li">
-  <a href="../news/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-news"><span class="">News</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-news-li">
+  <a href="../news/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-news"><span class="">News</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-news2021medleyannualreport-li">
+  <a href="../news/2021medleyannualreport/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-news2021medleyannualreport"><span class="">2021 Medley Interlisp Annual Report</span></a>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-download-li">
   <a href="../download/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-download"><span class="">Download</span></a>
   <ul class="ul-2 foldable">
@@ -163,8 +182,13 @@ Larry Masinter Rob Kaplan Nick Briggs Frank Halasz Herb Jellinek Steve Kaisler W
   <a href="../download/source/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-downloadsource"><span class="">Source Code</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-online-li">
-  <a href="../online/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-online"><span class="">Interlisp Online</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-online-li">
+  <a href="../online/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-online"><span class="">Interlisp Online</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-onlineusingonline-li">
+  <a href="../online/usingonline/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-onlineusingonline"><span class="">Using Interlisp Online</span></a>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-documentation-li">
   <a href="../documentation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-documentation"><span class="">Documentation</span></a>
   <ul class="ul-2 foldable">
@@ -186,13 +210,18 @@ Larry Masinter Rob Kaplan Nick Briggs Frank Halasz Herb Jellinek Steve Kaisler W
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-license-li">
   <a href="../license/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-license"><span class="">License</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-credits-li">
-  <a href="../credits/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-credits"><span class="td-sidebar-nav-active-item">Credits</span></a>
+  <a href="../credits/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-credits"><span class="">Credits</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-faq-li">
   <a href="../faq/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-faq"><span class="">FAQ</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-contact-li">
   <a href="../contact/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-contact"><span class="">Contact</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-getinvolved-li">
-  <a href="../getinvolved/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-getinvolved"><span class="">Get Involved</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-getinvolved-li">
+  <a href="../getinvolved/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-getinvolved"><span class="">Get Involved</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-getinvolved2021meetings-li">
+  <a href="../getinvolved/2021meetings/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-getinvolved2021meetings"><span class="">2021 Meeting Agendas and Notes</span></a>
+</li>
+  </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docbuildhtml-li">
   <a href="../doc/build.html" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docbuildhtml"><span class="">Building the Interlisp system</span></a>
 </li>
@@ -201,6 +230,7 @@ Larry Masinter Rob Kaplan Nick Briggs Frank Halasz Herb Jellinek Steve Kaisler W
     </ul>
   </nav>
 </div>
+
 
           </aside>
           <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
