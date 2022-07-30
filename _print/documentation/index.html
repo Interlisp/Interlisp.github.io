@@ -65,7 +65,7 @@ Medley for the Sun Workstation Users Guide …">
 				
 				
 				
-				<a class="nav-link" href="../../download/" ><i class='fas fa-download'></i><span>Download</span></a>
+				<a class="nav-link" href="../../running/download/" ><i class='fas fa-download'></i><span>Download</span></a>
 			</li>
 			
 			<li class="nav-item mr-4 mb-2 mb-lg-0">
@@ -113,7 +113,7 @@ Medley for the Sun Workstation Users Guide …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="../../offline-search-index.e9ee5d1efecc17de6bb9ccf7eee46d8a.json"
+  data-offline-search-index-json-src="../../offline-search-index.827564f27ef4532a445ccc3e2cfaa63b.json"
   data-offline-search-base-href="../../"
   data-offline-search-max-results="10"
 >
@@ -170,6 +170,57 @@ This is the multi-page printable view of this section.
 <li>2: <a href="#pg-1eadc02d5343b119b016c6ca275c90eb">The Basics of Interlisp</a></li>
 
 
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-49d9ac6cb251e087a8e00aa10becbf2e">Medley</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>3.1: <a href="#pg-e64c80e2e87d6423e98320b3bb5a3428">Modern Medley Release Notes</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3.2: <a href="#pg-7063afa69d2219df978785279e778c5b">Orientation to Medley</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3.3: <a href="#pg-f4f35c336165fed609289f522612512b">The {DSK} file system</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3.4: <a href="#pg-a8c8fca3cd65c0da526189d1a58b1241">Tips</a></li>
+
+
+    
+  
+
+    </ul>
     
   
 
@@ -457,6 +508,237 @@ with extensive documentation.</p>
 </div>
 
 
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-49d9ac6cb251e087a8e00aa10becbf2e">3 - Medley</h1>
+    
+	
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="">
+    
+	<h1 id="pg-e64c80e2e87d6423e98320b3bb5a3428">3.1 - Modern Medley Release Notes</h1>
+    
+	<p>This is a placeholder for gathering information about what&rsquo;s changed between Medley 2.0 (the last &ldquo;official&rdquo; release) and current Medley.
+Can we get to the point where release notes are built from commit messages?</p>
+<ul>
+<li>
+<p>caps lock default</p>
+</li>
+<li>
+<p>Explicit encoding :format, unicode support</p>
+</li>
+<li>
+<p>default hex in printcode</p>
+</li>
+<li>
+<p>Filebrowser</p>
+</li>
+<li>
+<p>filing.enumeration.depth for DSK</p>
+</li>
+<li>
+<p>&hellip;</p>
+</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-7063afa69d2219df978785279e778c5b">3.2 - Orientation to Medley</h1>
+    
+	<p>Once the system has been started, you will see some windows with title bars. Navigation within the system is a little unusual.
+To control a window, right-click on the window&rsquo;s title bar. To bring up a system menu, right-click anywhere outside a window.</p>
+<p>Windows titled &ldquo;Exec&rdquo; work as read-eval-print loops with the addition of extensive &ldquo;commands&rdquo;. There are four different
+contexts, determined by the default &ldquo;package&rdquo; and &ldquo;readtable&rdquo;. The &ldquo;package&rdquo; of a window determines which (Common Lisp)
+package is the default while the &ldquo;readtable&rdquo; controls whether typing is treated as case sensitive or not.</p>
+<p>The title bar will also tell you whether you are running LISP (for Common Lisp), XCL (for Xerox Common Lisp), INTERLISP (for current Interlisp), or
+OLD-INTERLISP-T (for an older version of Interlisp).</p>
+<p>When the system first comes up you will notice a window labeled &ldquo;Exec (XCL)&rdquo;. This works as a Common Lisp read-eval-print loop.</p>
+<p>(Hint: When the system has completed its initialization process, a fresh prompt will appear.)</p>
+<h2 id="different-lisp-environments">Different Lisp Environments</h2>
+<p>The system comes with four versions of &ldquo;Exec&rdquo;:</p>
+<ul>
+<li><code>Interlisp</code>:  Package: <em>Interlisp</em>, Readtable: a hybrid, case sensitive environment. Most Interlisp functions are all caps, so use of the SHIFT LOCK is recommended.</li>
+<li><code>Old Interlisp</code>: The same <em>Interlisp</em> package, but an older readtable (where &ldquo;:&rdquo; isn&rsquo;t a package delimiter)</li>
+<li><code>Common Lisp</code>: Package: <em>USER</em> (need to check)</li>
+<li><code>XCL</code>: (eXtended Common Lisp) Common Lisp with a number of extensions.</li>
+</ul>
+<p>Even though each of the possible Exec&rsquo;s gives a default environment, all of the various Lisp functions and variables are interchangeably available from any of the Exec windows via package specifications.  For example, an Interlisp function names <code>ABC</code> may be run from Common Lisp via <code>(IL:ABC ...)</code>. Likewise, a Common Lisp function <code>DEF</code> may be executed from Interlisp via <code>(CL:DEF ...)</code>.</p>
+<h2 id="images-and-files">Images And Files</h2>
+<p>The Medley system includes a virtual machine (VM) that runs the Lisp programs.
+Medley can run Lisp code interpreted or compiled into the byte-code for the
+Medley VM.  This is a bit similar to the Java Virtual Machine or the .NET CLR
+or Smalltalk.</p>
+<p>In traditional systems, a developer edits source code files and then
+compiles those files into something the machine can execute &mdash; be it
+a machine executable file or byte-code for a VM.  Medley does not work
+that way.  Medley is an image-based system similar to Smalltalk or Squeak.</p>
+<p>When Medley is started up, you are in the development and runtime
+environment.  All of your development is done here and all of your
+programs are run here.  You are essentially editing runnable programs
+in memory.  When you exit the system, Medley creates a backup of this
+memory onto what is called a SYSOUT (or <code>lisp.virtualmem</code>).  When the system is started
+up again, this image is read into memory and the system picks up right
+where it left off.  This is what is called an image-based development
+environment.</p>
+<p>In Medley, programs are developed, edited, debugged, and run all from
+within Medley.  The state of this development is saved in your image file.
+There is also a way to save your system to more traditional
+disk files.  This is called the ``File Package&rsquo;'.</p>
+<p>Medley utilizes the following file types:</p>
+<ul>
+<li><code>lisp.virtualmem</code>: This is located in your home directory and is an image of the last time Medley was run.  If you start Medley without specifying an image to run, this image is used.</li>
+<li><code>XXXX.SYSOUT</code>: This is an image that was explicitly saved by the developer.  This may be loaded by specifying its name when starting Medley.</li>
+<li><code>XXXX</code> (no file name extension): Source files created with the ``File Package&rsquo;'.</li>
+<li><code>XXXX.LCOM</code>: Compiled versions of the XXXX files</li>
+<li><code>XXXX.DFASL</code>: Another compiled form of XXXX files</li>
+<li><code>XXXX.TEDIT</code>: Text (like a word processor) in a Medley-specific format</li>
+</ul>
+<h2 id="project-directory">Project Directory</h2>
+<p>Medley has something called its &ldquo;connected directory&rdquo;.  This is just
+another way to say &ldquo;working directory&rdquo;.  All file reads and writes
+occur (if no path is specified) in the connected directory.  When Medley
+first starts up, its connected directory is your home directory.  This
+can be changed by executing one of the following commands:</p>
+<pre tabindex="0"><code>cd MyProject
+</code></pre><p>or</p>
+<pre tabindex="0"><code>(CNDIR &#34;MyProject&#34;)
+</code></pre><p>You will see the connected directory displayed at the top of the Medley
+window.  Once the connected directory has been changed, all future
+image saves or file loads or saves will occur in this directory.  Additionally,
+this directory will be saved in the image so when you re-load the image, you
+will already be in the desired directory.</p>
+<p>One thing to note, however, is that the default image
+<code>lisp.virtualmem</code> will still be saved in your home directory.  This
+assures that if you start Medley up without specifying an image, you
+will return to the last environment you were in.</p>
+<h2 id="saving-and-running-images">Saving And Running Images</h2>
+<p>You can also manually save an image to a specific file at any point by
+typing the following from an Interlisp prompt:</p>
+<pre tabindex="0"><code>(SYSOUT &#34;my-file&#34;)
+</code></pre><p>This will save your running image to a file named <code>my-file.SYSOUT</code> that can be loaded again by passing that file name to the
+<code>run-medley</code> command.</p>
+<h3 id="creating-and-editing-functions">Creating And Editing Functions</h3>
+<p>Objects (function, variables, etc.) can be credited and edited
+as follows:</p>
+<pre tabindex="0"><code>ED(myfunc)
+</code></pre><p>First, if it is a new object, the system will ask what type of object
+it is.  After that, the user will be presented with a GUI structure editor
+where the object may be defined or edited.</p>
+<p>When the window is closed, via right-clicking on the title bar,
+the object will be saved.</p>
+<h3 id="saving--loading-source-code-tofrom-disk-files">Saving &amp; Loading Source Code To/From Disk Files</h3>
+<p>When you edit or define a function, a variable, etc., Medley keeps
+track of the fact that they have been created or edited.  These
+functions and variables are grouped and ultimately get associated with
+a file on your disk.  In places, Interlisp refers to these disk files
+as &ldquo;symbolic files&rdquo;.</p>
+<ul>
+<li><code>FILELST</code> - list of user files the system is aware of</li>
+<li><code>SYSFILES</code> - list of system files loaded</li>
+<li><code>(FILES?)</code> - prompts user for which file to associate newly defined functions, variables, etc.</li>
+<li><code>(MAKEFILE &quot;myfile&quot;)</code> - writes out all of the functions, variables, etc. that have been associated with file &ldquo;myfile&rdquo;</li>
+<li><code>(LOAD &quot;myfile&quot;)</code> - loads a previously saved file</li>
+<li><code>(LOAD &quot;myfile.LCOM&quot;)</code>  - load a previously compiled file</li>
+<li><code>(CLEANUP)</code> - interactively save and compile all changed files</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f4f35c336165fed609289f522612512b">3.3 - The {DSK} file system</h1>
+    
+	<p>Interlisp-D was built in an environment where people didn&rsquo;t keep files on their local disks. Files were kept on a File Server.
+Interlisp-D was built on Tenex, a PDP-10 operating system built for Lisp.</p>
+<p>Maiko implements a case INsensitive, versioned file system on top of normal Unix/Posix file system using the code in DSK.c.</p>
+<p>You may see references to file systems at PARC, at XAIS, at Envos and at Venue. There was a NFS implementation, XNS Filing system, and LEAF.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a8c8fca3cd65c0da526189d1a58b1241">3.4 - Tips</h1>
+    
+	<h2 id="get-an-interlisp-exec-repl">Get an Interlisp Exec (REPL)</h2>
+<p>Click and hold the right mouse button on the background, hover over EXEC, move to the right, go to &ldquo;Interlisp&rdquo;, release the right mouse button.</p>
+<h2 id="increase-the-font-size">Increase the font size</h2>
+<p>In an Interlisp Exec, type one of the following:</p>
+<pre tabindex="0"><code>(FONTSET &#39;BIGGER)
+(FONTSET &#39;HUGE)
+</code></pre><p><strong>New</strong> windows and future lines in the Exec will now be in a larger font.</p>
+<h2 id="edit-a-function-definition">Edit a function definition</h2>
+<p>To edit the definition of a function FOO, type into an Interlisp Exec:</p>
+<pre tabindex="0"><code>(DF FOO)
+</code></pre><p>This will let you draw out a new SEdit window, which you can use to edit the code.</p>
+<p>Middle-click in the titlebar to get additional options.</p>
+
+</div>
+
+
+
+    
+	
+  
 
     
 	
