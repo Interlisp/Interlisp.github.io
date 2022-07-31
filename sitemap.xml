@@ -3,208 +3,167 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>/about/</loc>
-    <lastmod>2022-07-28T07:30:59-04:00</lastmod>
+    <loc>/hugo/about/</loc>
   </url>
   
   <url>
-    <loc>/news/</loc>
-    <lastmod>2022-07-28T00:06:09-04:00</lastmod>
+    <loc>/hugo/news/</loc>
   </url>
   
   <url>
-    <loc>/publications/zotero/</loc>
-    <lastmod>2022-06-20T10:03:40-04:00</lastmod>
+    <loc>/hugo/publications/zotero/</loc>
   </url>
   
   <url>
-    <loc>/news/2021medleyannualreport/</loc>
-    <lastmod>2022-07-28T00:06:09-04:00</lastmod>
+    <loc>/hugo/news/2021medleyannualreport/</loc>
   </url>
   
   <url>
-    <loc>/about/getinvolved/2021meetings/</loc>
-    <lastmod>2022-07-30T00:25:09-04:00</lastmod>
+    <loc>/hugo/about/getinvolved/2021meetings/</loc>
   </url>
   
   <url>
-    <loc>/doc/info/history.html</loc>
-    <lastmod>2022-06-20T10:03:40-04:00</lastmod>
+    <loc>/hugo/doc/info/history.html</loc>
   </url>
   
   <url>
-    <loc>/running/online/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/running/online/</loc>
   </url>
   
   <url>
-    <loc>/docs/medley/modern-medley-release-notes/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/docs/medley/modern-medley-release-notes/</loc>
   </url>
   
   <url>
-    <loc>/about/ongoingprojects/</loc>
-    <lastmod>2022-07-28T07:30:59-04:00</lastmod>
+    <loc>/hugo/about/ongoingprojects/</loc>
   </url>
   
   <url>
-    <loc>/doc/info/Using.html</loc>
-    <lastmod>2022-07-10T00:24:27-04:00</lastmod>
+    <loc>/hugo/doc/info/Using.html</loc>
   </url>
   
   <url>
-    <loc>/running/build/building/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/running/build/building/</loc>
   </url>
   
   <url>
-    <loc>/running/download/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/running/download/</loc>
   </url>
   
   <url>
-    <loc>/running/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/running/</loc>
   </url>
   
   <url>
-    <loc>/documentation/</loc>
-    <lastmod>2022-07-10T00:24:27-04:00</lastmod>
+    <loc>/hugo/documentation/</loc>
   </url>
   
   <url>
-    <loc>/publications/table/</loc>
-    <lastmod>2022-06-20T10:03:40-04:00</lastmod>
+    <loc>/hugo/publications/table/</loc>
   </url>
   
   <url>
-    <loc>/docs/medley/orientation/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/docs/medley/orientation/</loc>
   </url>
   
   <url>
-    <loc>/publications/</loc>
-    <lastmod>2022-06-20T10:03:40-04:00</lastmod>
+    <loc>/hugo/publications/</loc>
   </url>
   
   <url>
-    <loc>/license/</loc>
-    <lastmod>2022-06-20T10:03:40-04:00</lastmod>
+    <loc>/hugo/license/</loc>
   </url>
   
   <url>
-    <loc>/credits/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/credits/</loc>
   </url>
   
   <url>
-    <loc>/running/build/releases/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/running/build/releases/</loc>
   </url>
   
   <url>
-    <loc>/running/online/usingonline/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/running/online/usingonline/</loc>
   </url>
   
   <url>
-    <loc>/faq/</loc>
-    <lastmod>2022-07-27T00:00:05-04:00</lastmod>
+    <loc>/hugo/faq/</loc>
   </url>
   
   <url>
-    <loc>/doc/build.html</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/doc/build.html</loc>
   </url>
   
   <url>
-    <loc>/contact/</loc>
-    <lastmod>2022-06-20T10:03:40-04:00</lastmod>
+    <loc>/hugo/contact/</loc>
   </url>
   
   <url>
-    <loc>/credits/in-memorium/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/credits/in-memorium/</loc>
   </url>
   
   <url>
-    <loc>/docs/medley/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/docs/medley/</loc>
   </url>
   
   <url>
-    <loc>/about/medleygoals/</loc>
-    <lastmod>2022-07-28T07:30:59-04:00</lastmod>
+    <loc>/hugo/about/medleygoals/</loc>
   </url>
   
   <url>
-    <loc>/about/getinvolved/</loc>
-    <lastmod>2022-07-30T00:25:09-04:00</lastmod>
+    <loc>/hugo/about/getinvolved/</loc>
   </url>
   
   <url>
-    <loc>/about/partners/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/about/partners/</loc>
   </url>
   
   <url>
-    <loc>/docs/medley/the-medley-interlisp-dsk-file-system/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/docs/medley/the-medley-interlisp-dsk-file-system/</loc>
   </url>
   
   <url>
-    <loc>/about/partners/educopia/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/about/partners/educopia/</loc>
   </url>
   
   <url>
-    <loc>/docs/medley/tips/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/docs/medley/tips/</loc>
   </url>
   
   <url>
-    <loc>/about/twitter/</loc>
-    <lastmod>2022-07-28T07:30:59-04:00</lastmod>
+    <loc>/hugo/about/twitter/</loc>
   </url>
   
   <url>
-    <loc>/about/partners/interlisporg-inc/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/about/partners/interlisporg-inc/</loc>
   </url>
   
   <url>
-    <loc>/running/running-on-win/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/running/running-on-win/</loc>
   </url>
   
   <url>
-    <loc>/running/running-with-docker/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/running/running-with-docker/</loc>
   </url>
   
   <url>
-    <loc>/_pages/</loc>
-    <lastmod>2021-06-13T15:21:52+10:00</lastmod>
+    <loc>/hugo/_pages/</loc>
   </url>
   
   <url>
-    <loc>/</loc>
-    <lastmod>2022-07-27T00:00:05-04:00</lastmod>
+    <loc>/hugo/</loc>
   </url>
   
   <url>
-    <loc>/doc/todo.html</loc>
-    <lastmod>2022-06-20T10:03:40-04:00</lastmod>
+    <loc>/hugo/doc/todo.html</loc>
   </url>
   
   <url>
-    <loc>/misc/</loc>
-    <lastmod>2021-06-13T15:21:52+10:00</lastmod>
+    <loc>/hugo/misc/</loc>
   </url>
   
   <url>
-    <loc>/running/download/source/</loc>
-    <lastmod>2022-07-30T00:17:07-04:00</lastmod>
+    <loc>/hugo/running/download/source/</loc>
   </url>
   
 </urlset>
