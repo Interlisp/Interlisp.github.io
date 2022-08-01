@@ -111,10 +111,6 @@
   </url>
   
   <url>
-    <loc>/hugo/faq/</loc>
-  </url>
-  
-  <url>
     <loc>/hugo/running/running-on-win/</loc>
   </url>
   
@@ -148,6 +144,10 @@
   
   <url>
     <loc>/hugo/running/download/</loc>
+  </url>
+  
+  <url>
+    <loc>/hugo/faq/</loc>
   </url>
   
   <url>
