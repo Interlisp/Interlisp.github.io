@@ -58,16 +58,6 @@ Interlisp …">
 				
 				
 				
-				<a class="nav-link" href="/hugo/running/download/" ><i class='fas fa-download'></i><span>Download</span></a>
-			</li>
-			
-			<li class="nav-item mr-4 mb-2 mb-lg-0">
-				
-				
-				
-				
-				
-				
 				<a class="nav-link" href="/hugo/publications/" ><i class='fas fa-download'></i><span>Publications</span></a>
 			</li>
 			
@@ -91,6 +81,18 @@ Interlisp …">
 				<a class="nav-link" href="https://github.com/interlisp" target="_blank" ><i class='fab fa-github'></i><span>GitHub</span></a>
 			</li>
 			
+			<li class="nav-item mr-4 mb-2 mb-lg-0">
+				
+				
+				
+				
+				
+				
+				
+				
+				<a class="nav-link" href="/hugo/running/download/" ><i class='fas fa-download'></i><span>Download</span></a>
+			</li>
+			
 			
 			
 		</ul>
@@ -102,7 +104,7 @@ Interlisp …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/hugo/offline-search-index.50cebf81d4af1eff6710ea6e13720a31.json"
+  data-offline-search-index-json-src="/hugo/offline-search-index.12d45665373a60d4456e78c9799012f1.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -175,7 +177,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>2: <a href="#pg-334b3d57e8abcaf6fa97b52caac8fc53">Download</a></li>
+<li>2: <a href="#pg-e7ed621e3e6b2a27943943b5feb881e5">Building the Interlisp system</a></li>
 
 
     
@@ -190,7 +192,15 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>2.1: <a href="#pg-930e19de0a68e31dd20b302c6f1d97dd">Source Code</a></li>
+<li>2.1: <a href="#pg-a0d2415debbdc3cac9c9ebc8b65200e4">Building Medley Interlisp</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2.2: <a href="#pg-a0e6fa0b705b48e6fb72ac6d5ba92dc4">Releases</a></li>
 
 
     
@@ -202,7 +212,23 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>3: <a href="#pg-e7ed621e3e6b2a27943943b5feb881e5">Building the Interlisp system</a></li>
+<li>3: <a href="#pg-a3ecb7e1d30d46f5644e5097527908cb">Running on Windows</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-6096845dc5edf904cab8347cf40beb42">Running with Docker</a></li>
+
+
+    
+  
+    
+    
+	
+<li>5: <a href="#pg-334b3d57e8abcaf6fa97b52caac8fc53">Download</a></li>
 
 
     
@@ -217,37 +243,13 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>3.1: <a href="#pg-a0d2415debbdc3cac9c9ebc8b65200e4">Building Medley Interlisp</a></li>
-
-
-    
-  
-    
-    
-	
-<li>3.2: <a href="#pg-a0e6fa0b705b48e6fb72ac6d5ba92dc4">Releases</a></li>
+<li>5.1: <a href="#pg-930e19de0a68e31dd20b302c6f1d97dd">Source Code</a></li>
 
 
     
   
 
     </ul>
-    
-  
-    
-    
-	
-<li>4: <a href="#pg-a3ecb7e1d30d46f5644e5097527908cb">Running on Windows</a></li>
-
-
-    
-  
-    
-    
-	
-<li>5: <a href="#pg-6096845dc5edf904cab8347cf40beb42">Running with Docker</a></li>
-
-
     
   
 
@@ -371,7 +373,181 @@ You may either login as a Guest or create an account. If you plan to save and la
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-334b3d57e8abcaf6fa97b52caac8fc53">2 - Download</h1>
+	<h1 id="pg-e7ed621e3e6b2a27943943b5feb881e5">2 - Building the Interlisp system</h1>
+    
+	<p>Medley Interlisp is open-source and may be obtained from GitHub. It is portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
+<p>The core is written in portable C. The system currently depends on an X11 system for its display.
+Obtaining The System</p>
+<p>The system comes in two parts. The first is a C-based virtual machine <a href="https://github.com/interlisp/maiko">Maiko</a>.</p>
+<p>The remainder of the system is OS / architecture-independent and can be found in the <a href="https://github.com/interlisp/medley">Medley repository</a>.</p>
+<p>You can now download Medley Interlisp from a release without building anything; see the Medley <a href="https://github.com/interlisp/medley/#readme">README</a></p>
+<p>See The Maiko <a href="https://github.com/Interlisp/maiko/#readme">README</a> for build instructions for Maiko, for systems for which there is no pre-built release.</p>
+<p>(See <a href="https://github.com/Interlisp/medley/#readme">Medley repo README</a> for instructions on getting Medley.
+Make sure you have an X-server running to manage the Medley Interlisp display, and the DISPLAY environment variable set to point to your X-server.</p>
+<p>Running Medley can be done by typing:</p>
+<pre tabindex="0"><code>$ cd medley
+$ ./run-medley
+</code></pre><p>Or, if you wish to start Medley up with a particular image file (SYSOUT):</p>
+<pre tabindex="0"><code>$ cd medley
+$ ./run-medley &lt;SYSOUT-file-name&gt;
+</code></pre><p>The first time the system is run it loads the system image that comes
+with the system.  When you exit the system (or &ldquo;do a <code>SaveVM</code>&rdquo; menu option)
+the state of your machine is saved
+in a file named <code>~/lisp.virtualmem</code>.  Subsequent system startups
+load the <code>~/lisp.virtualmem</code> image by default.</p>
+<h3 id="exiting-the-system">Exiting The System</h3>
+<p>The system may be exited from an Interlisp prompt by typing:</p>
+<pre tabindex="0"><code>(LOGOUT)
+</code></pre><p>Or from a Common Lisp prompt with:</p>
+<pre tabindex="0"><code>(IL:LOGOUT)
+</code></pre><p>When you logout of the system, Medley automatically creates a binary
+dump of your system located in your home directory named
+``lisp.virtualmem&rsquo;&rsquo;. The next time you run the system, if you don&rsquo;t
+specify a specific image to run, Medley restores that image so that
+you can continue right where you left off.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a0d2415debbdc3cac9c9ebc8b65200e4">2.1 - Building Medley Interlisp</h1>
+    
+	<p>Medley Interlisp is open-source and may be obtained from GitHub.  It is
+portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
+<p>The core is written in portable C. The system currently depends on an
+X11 system for its display.</p>
+<h2 id="obtaining-the-system">Obtaining The System</h2>
+<p>The system comes in two parts.  The first is a C-based
+virtual machine <a href="https://github.com/interlisp/maiko">maiko</a>.</p>
+<p>The remainder of the system is OS / architecture-independent and can be found in
+the <a href="https://github.com/interlisp/medley">medley</a> repository.</p>
+<p>You can now download Medley Interlisp from a <a href="https://github.com/interlisp/medley/releases">release</a>
+without building anything; see <a href="/interlisp/medley/#readme">medley README</a></p>
+<p>See <a href="/Interlisp/maiko/#readme">The Maiko README</a> for build instructions
+for Maiko, for systems for which there is no pre-built release.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a0e6fa0b705b48e6fb72ac6d5ba92dc4">2.2 - Releases</h1>
+    
+	<p><a href="https://github.com/interlisp/medley/releases">Medley repo releases</a> contains the current Medley release. New releases are generated regularly as functionality is restored and extended.</p>
+<p>An alternative is to point your browser to <a href="https://online.interlisp.org/">Online Interlisp</a> and try our cloud hosted version of Medley Interlisp.</p>
+
+</div>
+
+
+
+    
+	
+  
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a3ecb7e1d30d46f5644e5097527908cb">3 - Running on Windows</h1>
+    
+	<p><em>DRAFT &ndash; This page is currently being revised.</em></p>
+<h2 id="requirements">Requirements</h2>
+<ul>
+<li>Windows 10 <em>or</em> Windows 11</li>
+<li>Windows Subsystem for Linux Enabled.  <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Installing WSL</a>.</li>
+<li>An installed Linux distribution.  The following distros have been tested:
+<ul>
+<li><a href="https://www.microsoft.com/store/apps/9NV1GV1PXZ6P">Pengwin Linux Distro</a></li>
+<li><a href="https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6">Ubuntu Linux Distro</a></li>
+</ul>
+</li>
+<li>Windows 10 Additional Requirements
+<ul>
+<li>An X Server installed and running in Windows.  The following X Servers have been tested:
+<ul>
+<li><a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a></li>
+<li>GWSL from Microsoft store</li>
+<li>install Xvnc and <a href="https://www.tightvnc.com/download.php">TightVNC Version 2.8.63 or higher</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<h3 id="installing-medley-via-an-install-script">Installing Medley via an Install script</h3>
+<p><em>tbd</em></p>
+<h3 id="manual-installation-of-medley">Manual Installation of Medley</h3>
+<p>The <a href="https://github.com/Interlisp/medley#readme">medley repo README</a> has a guide for downloading or building your own maiko (for your OS / architecture) and for obtaining Medley</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-6096845dc5edf904cab8347cf40beb42">4 - Running with Docker</h1>
+    
+	<p>]
+As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment,  we&rsquo;ve set  up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.</p>
+<p>If this is your first time working with Docker, you&rsquo;ll want to <a href="https://docs.docker.com/get-docker/">install it</a> before continuing.</p>
+<p>You&rsquo;ll also need a modern VNC client; <a href="https://www.tightvnc.com/">TightVNC</a> works well. Rumor has it that Macs and Linux use VNC normally for screen sharing.</p>
+<pre tabindex="0"><code>docker run -p 5900:5900 -e DISPLAY=$DISPLAY --rm --name interlisp interlisp/medley
+</code></pre>
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-334b3d57e8abcaf6fa97b52caac8fc53">5 - Download</h1>
     
 	<p><strong>NEED TO UPDATE</strong></p>
 <h2 id="source-code">Source Code</h2>
@@ -509,7 +685,7 @@ maintained by Laurent Blume / John Ellson. Currently available packages are:</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-930e19de0a68e31dd20b302c6f1d97dd">2.1 - Source Code</h1>
+	<h1 id="pg-930e19de0a68e31dd20b302c6f1d97dd">5.1 - Source Code</h1>
     
 	<p><strong>NEED TO UPDATE</strong></p>
 <h2 id="source-packages">Source Packages</h2>
@@ -626,180 +802,6 @@ build dependencies is to download the graphviz-xxx.src.rpm, run:  <code>rpmbuild
     
 	
   
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-e7ed621e3e6b2a27943943b5feb881e5">3 - Building the Interlisp system</h1>
-    
-	<p>Medley Interlisp is open-source and may be obtained from GitHub. It is portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
-<p>The core is written in portable C. The system currently depends on an X11 system for its display.
-Obtaining The System</p>
-<p>The system comes in two parts. The first is a C-based virtual machine <a href="https://github.com/interlisp/maiko">Maiko</a>.</p>
-<p>The remainder of the system is OS / architecture-independent and can be found in the <a href="https://github.com/interlisp/medley">Medley repository</a>.</p>
-<p>You can now download Medley Interlisp from a release without building anything; see the Medley <a href="https://github.com/interlisp/medley/#readme">README</a></p>
-<p>See The Maiko <a href="https://github.com/Interlisp/maiko/#readme">README</a> for build instructions for Maiko, for systems for which there is no pre-built release.</p>
-<p>(See <a href="https://github.com/Interlisp/medley/#readme">Medley repo README</a> for instructions on getting Medley.
-Make sure you have an X-server running to manage the Medley Interlisp display, and the DISPLAY environment variable set to point to your X-server.</p>
-<p>Running Medley can be done by typing:</p>
-<pre tabindex="0"><code>$ cd medley
-$ ./run-medley
-</code></pre><p>Or, if you wish to start Medley up with a particular image file (SYSOUT):</p>
-<pre tabindex="0"><code>$ cd medley
-$ ./run-medley &lt;SYSOUT-file-name&gt;
-</code></pre><p>The first time the system is run it loads the system image that comes
-with the system.  When you exit the system (or &ldquo;do a <code>SaveVM</code>&rdquo; menu option)
-the state of your machine is saved
-in a file named <code>~/lisp.virtualmem</code>.  Subsequent system startups
-load the <code>~/lisp.virtualmem</code> image by default.</p>
-<h3 id="exiting-the-system">Exiting The System</h3>
-<p>The system may be exited from an Interlisp prompt by typing:</p>
-<pre tabindex="0"><code>(LOGOUT)
-</code></pre><p>Or from a Common Lisp prompt with:</p>
-<pre tabindex="0"><code>(IL:LOGOUT)
-</code></pre><p>When you logout of the system, Medley automatically creates a binary
-dump of your system located in your home directory named
-``lisp.virtualmem&rsquo;&rsquo;. The next time you run the system, if you don&rsquo;t
-specify a specific image to run, Medley restores that image so that
-you can continue right where you left off.</p>
-
-</div>
-
-
-
-    
-      
-  
-  
-  
-  
-
-  
-  
-
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-a0d2415debbdc3cac9c9ebc8b65200e4">3.1 - Building Medley Interlisp</h1>
-    
-	<p>Medley Interlisp is open-source and may be obtained from GitHub.  It is
-portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
-<p>The core is written in portable C. The system currently depends on an
-X11 system for its display.</p>
-<h2 id="obtaining-the-system">Obtaining The System</h2>
-<p>The system comes in two parts.  The first is a C-based
-virtual machine <a href="https://github.com/interlisp/maiko">maiko</a>.</p>
-<p>The remainder of the system is OS / architecture-independent and can be found in
-the <a href="https://github.com/interlisp/medley">medley</a> repository.</p>
-<p>You can now download Medley Interlisp from a <a href="https://github.com/interlisp/medley/releases">release</a>
-without building anything; see <a href="/interlisp/medley/#readme">medley README</a></p>
-<p>See <a href="/Interlisp/maiko/#readme">The Maiko README</a> for build instructions
-for Maiko, for systems for which there is no pre-built release.</p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-a0e6fa0b705b48e6fb72ac6d5ba92dc4">3.2 - Releases</h1>
-    
-	<p><a href="https://github.com/interlisp/medley/releases">Medley repo releases</a> contains the current Medley release. New releases are generated regularly as functionality is restored and extended.</p>
-<p>An alternative is to point your browser to <a href="https://online.interlisp.org/">Online Interlisp</a> and try our cloud hosted version of Medley Interlisp.</p>
-
-</div>
-
-
-
-    
-	
-  
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-a3ecb7e1d30d46f5644e5097527908cb">4 - Running on Windows</h1>
-    
-	<p><em>DRAFT &ndash; This page is currently being revised.</em></p>
-<h2 id="requirements">Requirements</h2>
-<ul>
-<li>Windows 10 <em>or</em> Windows 11</li>
-<li>Windows Subsystem for Linux Enabled.  <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Installing WSL</a>.</li>
-<li>An installed Linux distribution.  The following distros have been tested:
-<ul>
-<li><a href="https://www.microsoft.com/store/apps/9NV1GV1PXZ6P">Pengwin Linux Distro</a></li>
-<li><a href="https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6">Ubuntu Linux Distro</a></li>
-</ul>
-</li>
-<li>Windows 10 Additional Requirements
-<ul>
-<li>An X Server installed and running in Windows.  The following X Servers have been tested:
-<ul>
-<li><a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a></li>
-<li>GWSL from Microsoft store</li>
-<li>install Xvnc and <a href="https://www.tightvnc.com/download.php">TightVNC Version 2.8.63 or higher</a></li>
-</ul>
-</li>
-</ul>
-</li>
-</ul>
-<h3 id="installing-medley-via-an-install-script">Installing Medley via an Install script</h3>
-<p><em>tbd</em></p>
-<h3 id="manual-installation-of-medley">Manual Installation of Medley</h3>
-<p>The <a href="https://github.com/Interlisp/medley#readme">medley repo README</a> has a guide for downloading or building your own maiko (for your OS / architecture) and for obtaining Medley</p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-6096845dc5edf904cab8347cf40beb42">5 - Running with Docker</h1>
-    
-	<p>]
-As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment,  we&rsquo;ve set  up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.</p>
-<p>If this is your first time working with Docker, you&rsquo;ll want to <a href="https://docs.docker.com/get-docker/">install it</a> before continuing.</p>
-<p>You&rsquo;ll also need a modern VNC client; <a href="https://www.tightvnc.com/">TightVNC</a> works well. Rumor has it that Macs and Linux use VNC normally for screen sharing.</p>
-<pre tabindex="0"><code>docker run -p 5900:5900 -e DISPLAY=$DISPLAY --rm --name interlisp interlisp/medley
-</code></pre>
-</div>
-
-
 
     
 	
