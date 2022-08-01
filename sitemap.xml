@@ -51,27 +51,11 @@
   </url>
   
   <url>
-    <loc>/hugo/documentation/</loc>
-  </url>
-  
-  <url>
     <loc>/hugo/publications/table/</loc>
   </url>
   
   <url>
     <loc>/hugo/docs/medley/orientation/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo/publications/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo/license/</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo/credits/</loc>
   </url>
   
   <url>
@@ -83,15 +67,7 @@
   </url>
   
   <url>
-    <loc>/hugo/faq/</loc>
-  </url>
-  
-  <url>
     <loc>/hugo/doc/build.html</loc>
-  </url>
-  
-  <url>
-    <loc>/hugo/contact/</loc>
   </url>
   
   <url>
@@ -135,11 +111,35 @@
   </url>
   
   <url>
+    <loc>/hugo/faq/</loc>
+  </url>
+  
+  <url>
     <loc>/hugo/running/running-on-win/</loc>
   </url>
   
   <url>
+    <loc>/hugo/documentation/</loc>
+  </url>
+  
+  <url>
+    <loc>/hugo/publications/</loc>
+  </url>
+  
+  <url>
     <loc>/hugo/running/running-with-docker/</loc>
+  </url>
+  
+  <url>
+    <loc>/hugo/credits/</loc>
+  </url>
+  
+  <url>
+    <loc>/hugo/license/</loc>
+  </url>
+  
+  <url>
+    <loc>/hugo/contact/</loc>
   </url>
   
   <url>
