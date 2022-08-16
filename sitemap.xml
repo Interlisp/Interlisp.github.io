@@ -7,10 +7,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/news/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/hugo/publications/zotero/</loc>
   </url>
   
@@ -47,10 +43,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/hugo/running/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/hugo/publications/table/</loc>
   </url>
   
@@ -83,6 +75,10 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/hugo/news/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/hugo/about/getinvolved/</loc>
   </url>
   
@@ -108,6 +104,10 @@
   
   <url>
     <loc>https://interlisp.org/hugo/about/partners/interlisporg-inc/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/hugo/running/</loc>
   </url>
   
   <url>
