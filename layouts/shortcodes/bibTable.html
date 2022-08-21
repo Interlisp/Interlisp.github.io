@@ -1,0 +1,26 @@
+
+<table>
+    <thead>
+        <tr>
+          <th>Author</th>
+          <th>Title</th>
+          <th>Notes</th>
+        </tr>
+      </thead>
+      <tbody>
+{{ $bibliographies := getJSON "data/bibliography.json" }}
+        {{ range $bibliographies }}
+          <tr>
+            <td>
+              {{ range .author }}
+                {{ .family }}, {{ .given }} <br>
+              {{ end }}
+
+            </td>
+            <td><a href="{{ .URL }}">{{ .title }}</a></td>
+            <td>{{ .note }}</td>
+          </tr>
+        {{ end }}
+      </tbody>
+  
+</table>

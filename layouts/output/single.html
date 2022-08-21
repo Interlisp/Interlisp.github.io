@@ -1,0 +1,13 @@
+{{ define "main" }}
+
+Usage:
+
+<pre>
+{{ range .Page.Params.params }}
+$ dot <b>-T{{ . }}</b> <i>input.dot</i>
+{{- end }}
+</pre>
+
+{{ .Render "content" }}
+
+{{ end }}

@@ -1,0 +1,43 @@
+{{ $gv_src := trim .gv_src "\n "}}
+<div class="card mb-4">
+  {{ with .header }}
+    <div class="card-header">
+      {{ if eq $.context.Page.File.Ext "md" }}
+        {{ . | markdownify }}
+      {{ else }}
+        {{ . | htmlUnescape | safeHTML }}
+      {{ end }}
+    </div>
+  {{ end }}
+  <div class="card-body">
+    {{ with .title }}
+      <h5 class="card-title">
+        {{ if eq $.context.Page.File.Ext "md" }}
+          {{ . | markdownify }}
+        {{ else }}
+          {{ . | htmlUnescape | safeHTML }}
+        {{ end }}
+      </h5>
+    {{ end }}
+    {{ with .subtitle }}
+      <h6 class="card-title mb-2 text-muted">
+        {{ if eq $.context.Page.File.Ext "md" }}
+          {{ . | markdownify }}
+        {{ else }}
+          {{ . | htmlUnescape | safeHTML }}
+        {{ end }}
+      </h6>
+    {{ end }}
+    {{- highlight $gv_src "dot" "" -}}
+  </div>
+  <div class="card-footer">
+    <a href="http://magjac.com/graphviz-visual-editor/?dot={{ $gv_src }}" target="_blank"><i class="fa fa-external-link-alt"></i> Edit in Playground</a>
+    {{ with .footer }}
+      {{ if eq $.context.Page.File.Ext "md" }}
+        {{ . | markdownify }}
+      {{ else }}
+        {{ . | htmlUnescape | safeHTML }}
+      {{ end }}
+    {{ end }}
+  </div>
+</div>

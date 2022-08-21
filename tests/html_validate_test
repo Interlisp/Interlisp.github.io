@@ -1,0 +1,22 @@
+#!/bin/sh
+# There is a long list of grandfathered allowed warnings in here.
+# The goal is to whittle these down over time while preventing new regressions.
+html5validator \
+  --skip-non-html \
+  --ignore \
+  "An “img” element must have an “alt” attribute, except under certain conditions. For details, consult guidance on providing text alternatives for images."\
+	"The “align” attribute on the “tr” element is obsolete. Use CSS instead." \
+	"A document must not include more than one visible “main” element." \
+	"Duplicate ID “notes”." \
+	"Duplicate ID “roadmap”." \
+	"Duplicate ID “solaris”." \
+	"Element “style” not allowed as child of element “dd” in this context. (Suppressing further errors from this subtree.)" \
+	"Element “style” not allowed as child of element “div” in this context. (Suppressing further errors from this subtree.)" \
+	"Element “style” not allowed as child of element “p” in this context. (Suppressing further errors from this subtree.)" \
+	"Element “ul” not allowed as child of element “ul” in this context. (Suppressing further errors from this subtree.)" \
+	"No “p” element in scope but a “p” end tag seen." \
+	"The “aria-controls” attribute must point to an element in the same document." \
+	"The “itemprop” attribute was specified, but the element is not a property of any item." \
+	"The “main” element must not appear as a descendant of the “main” element." \
+  --root public/ \
+  --blacklist _print # https://gitlab.com/graphviz/graphviz.gitlab.io/-/issues/98
