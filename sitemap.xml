@@ -3,167 +3,167 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://interlisp.org/about/</loc>
+    <loc>https://interlisp.org/hugo/about/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/publications/zotero/</loc>
+    <loc>https://interlisp.org/hugo/publications/zotero/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/news/2021medleyannualreport/</loc>
+    <loc>https://interlisp.org/hugo/news/2021medleyannualreport/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/getinvolved/2021meetings/</loc>
+    <loc>https://interlisp.org/hugo/about/getinvolved/2021meetings/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/doc/info/history.html</loc>
+    <loc>https://interlisp.org/hugo/doc/info/history.html</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/online/</loc>
+    <loc>https://interlisp.org/hugo/running/online/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/modern-medley-release-notes/</loc>
+    <loc>https://interlisp.org/hugo/docs/medley/modern-medley-release-notes/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/ongoingprojects/</loc>
+    <loc>https://interlisp.org/hugo/about/ongoingprojects/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/doc/info/Using.html</loc>
+    <loc>https://interlisp.org/hugo/doc/info/Using.html</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/build/building/</loc>
+    <loc>https://interlisp.org/hugo/running/build/building/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/publications/table/</loc>
+    <loc>https://interlisp.org/hugo/publications/table/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/orientation/</loc>
+    <loc>https://interlisp.org/hugo/docs/medley/orientation/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/build/releases/</loc>
+    <loc>https://interlisp.org/hugo/running/build/releases/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/online/usingonline/</loc>
+    <loc>https://interlisp.org/hugo/running/online/usingonline/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/doc/build.html</loc>
+    <loc>https://interlisp.org/hugo/doc/build.html</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/credits/in-memorium/</loc>
+    <loc>https://interlisp.org/hugo/credits/in-memorium/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/</loc>
+    <loc>https://interlisp.org/hugo/docs/medley/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/medleygoals/</loc>
+    <loc>https://interlisp.org/hugo/about/medleygoals/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/news/</loc>
+    <loc>https://interlisp.org/hugo/news/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/getinvolved/</loc>
+    <loc>https://interlisp.org/hugo/about/getinvolved/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/partners/</loc>
+    <loc>https://interlisp.org/hugo/about/partners/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/the-medley-interlisp-dsk-file-system/</loc>
+    <loc>https://interlisp.org/hugo/docs/medley/the-medley-interlisp-dsk-file-system/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/partners/educopia/</loc>
+    <loc>https://interlisp.org/hugo/about/partners/educopia/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/tips/</loc>
+    <loc>https://interlisp.org/hugo/docs/medley/tips/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/twitter/</loc>
+    <loc>https://interlisp.org/hugo/about/twitter/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/partners/interlisporg-inc/</loc>
+    <loc>https://interlisp.org/hugo/about/partners/interlisporg-inc/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/</loc>
+    <loc>https://interlisp.org/hugo/running/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/running-on-win/</loc>
+    <loc>https://interlisp.org/hugo/running/running-on-win/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/documentation/</loc>
+    <loc>https://interlisp.org/hugo/documentation/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/publications/</loc>
+    <loc>https://interlisp.org/hugo/publications/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/running-with-docker/</loc>
+    <loc>https://interlisp.org/hugo/running/running-with-docker/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/credits/</loc>
+    <loc>https://interlisp.org/hugo/credits/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/license/</loc>
+    <loc>https://interlisp.org/hugo/license/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/contact/</loc>
+    <loc>https://interlisp.org/hugo/contact/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/_pages/</loc>
+    <loc>https://interlisp.org/hugo/_pages/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/download/</loc>
+    <loc>https://interlisp.org/hugo/running/download/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/faq/</loc>
+    <loc>https://interlisp.org/hugo/faq/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/</loc>
+    <loc>https://interlisp.org/hugo/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/doc/todo.html</loc>
+    <loc>https://interlisp.org/hugo/doc/todo.html</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/misc/</loc>
+    <loc>https://interlisp.org/hugo/misc/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/download/source/</loc>
+    <loc>https://interlisp.org/hugo/running/download/source/</loc>
   </url>
   
 </urlset>
