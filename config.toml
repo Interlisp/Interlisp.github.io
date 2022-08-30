@@ -1,5 +1,5 @@
-baseURL = "https://interlisp.org/hugo"
-#baseURL = "/hugo"
+baseURL = "https://interlisp.org"
+#baseURL = "https://interlisp.org/hugo"
 title = "Medley Interlisp Project"
 
 #relativeURLs = true
