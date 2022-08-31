@@ -3,7 +3,6 @@ title: Using Interlisp Online
 weight: 8
 type: docs
 ---
-# Using Interlisp Online
 
 ### A Brief Introduction
 
@@ -31,6 +30,10 @@ The Interlisp Desktop at startup contains 4 windows of interest:
 ### Writing Interlisp programs <a href="#writing-interlisp-programs" id="writing-interlisp-programs"></a>
 
 In the Exec window, type the following:
+
+```lisp
+(PLUS 1 1)
+```
 
 When you complete typing the ending `)` the Interlisp interpreter will perform the calculation and return the result.
 

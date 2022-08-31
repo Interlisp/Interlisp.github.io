@@ -1,5 +1,5 @@
 ---
-title: In Memorium
+title: In Memoriam
 weight: 10
 type: docs
 ---
