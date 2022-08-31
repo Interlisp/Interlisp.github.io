@@ -91,7 +91,7 @@ Interlisp …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.5abf8103847d502be54027c55de4918e.json"
+  data-offline-search-index-json-src="/offline-search-index.2d5f34ca2aa70102b8d359f39ed90ef8.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -313,8 +313,7 @@ This is the multi-page printable view of this section.
     
 	<h1 id="pg-9d6f0d88971e6e2011d87dcf5ac118b1">1.1 - Using Interlisp Online</h1>
     
-	<h1 id="using-interlisp-online">Using Interlisp Online</h1>
-<h3 id="a-brief-introduction">A Brief Introduction</h3>
+	<h3 id="a-brief-introduction">A Brief Introduction</h3>
 <h3 id="running-interlisp-online-a-hrefrunning-interlisp-online-idrunning-interlisp-onlinea">Running Interlisp Online <a href="#running-interlisp-online" id="running-interlisp-online"></a></h3>
 <ul>
 <li>Go to <a href="https://online.interlisp.org/main">Interlisp Online</a><br>
@@ -336,7 +335,8 @@ You may either login as a Guest or create an account. If you plan to save and la
 </ul>
 <h3 id="writing-interlisp-programs-a-hrefwriting-interlisp-programs-idwriting-interlisp-programsa">Writing Interlisp programs <a href="#writing-interlisp-programs" id="writing-interlisp-programs"></a></h3>
 <p>In the Exec window, type the following:</p>
-<p>When you complete typing the ending <code>)</code> the Interlisp interpreter will perform the calculation and return the result.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PLUS</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>When you complete typing the ending <code>)</code> the Interlisp interpreter will perform the calculation and return the result.</p>
 <p>One thing you probably noticed, the command <code>PLUS</code> is capitalized. It’s not that the developers of Interlisp were always shouting at each other. Rather, when Interlisp was developed computer programming was in its infancy and standards for naming commands were still evolving.</p>
 <h3 id="save-your-program-as-a-file-a-hrefsave-your-program-as-a-file-idsave-your-program-as-a-filea">Save your program as a file <a href="#save-your-program-as-a-file" id="save-your-program-as-a-file"></a></h3>
 <h3 id="opening-a-saved-program-a-hrefopening-a-saved-program-idopening-a-saved-programa">Opening a saved program <a href="#opening-a-saved-program" id="opening-a-saved-program"></a></h3>
@@ -363,8 +363,8 @@ You may either login as a Guest or create an account. If you plan to save and la
 	<h1 id="pg-e7ed621e3e6b2a27943943b5feb881e5">2 - Building the Interlisp system</h1>
     
 	<p>Medley Interlisp is open-source and may be obtained from GitHub. It is portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
-<p>The core is written in portable C. The system currently depends on an X11 system for its display.
-Obtaining The System</p>
+<p>The core is written in portable C. The system currently depends on an X11 system for its display.</p>
+<h3 id="obtaining-the-system">Obtaining The System</h3>
 <p>The system comes in two parts. The first is a C-based virtual machine <a href="https://github.com/interlisp/maiko">Maiko</a>.</p>
 <p>The remainder of the system is OS / architecture-independent and can be found in the <a href="https://github.com/interlisp/medley">Medley repository</a>.</p>
 <p>You can now download Medley Interlisp from a release without building anything; see the Medley <a href="https://github.com/interlisp/medley/#readme">README</a></p>
@@ -514,8 +514,7 @@ for Maiko, for systems for which there is no pre-built release.</p>
     
 	<h1 id="pg-6096845dc5edf904cab8347cf40beb42">4 - Running with Docker</h1>
     
-	<p>]
-As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment,  we&rsquo;ve set  up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.</p>
+	<p>As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment,  we&rsquo;ve set  up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.</p>
 <p>If this is your first time working with Docker, you&rsquo;ll want to <a href="https://docs.docker.com/get-docker/">install it</a> before continuing.</p>
 <p>You&rsquo;ll also need a modern VNC client; <a href="https://www.tightvnc.com/">TightVNC</a> works well. Rumor has it that Macs and Linux use VNC normally for screen sharing.</p>
 <pre tabindex="0"><code>docker run -p 5900:5900 -e DISPLAY=$DISPLAY --rm --name interlisp interlisp/medley
