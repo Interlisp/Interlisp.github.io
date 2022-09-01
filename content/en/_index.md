@@ -8,7 +8,7 @@ type: docs
 
 ![Interlisp logo -- A semi-circle of screens with the words Interlisp-D in the lower righthand corner](Resources/Interlisp-D.png)
 
-Please join the [Medley Interlisp Users Group](https://groups.google.com/g/interlisp) to ask
+Please join the [Medley Interlisp Users Group](https://groups.google.com/g/interlisp) mailing list to ask
 questions and discuss Interlisp.
 
 ## What is Medley Interlisp?
@@ -27,7 +27,7 @@ Interlisp.  The presentation synopsis states it this way:
 
 ## Documentation
 
-Medley Interlisp documentation for is available from here: [Documentation](documentation).  
+Medley Interlisp documentation is available from here: [Documentation](documentation).  
 Documentation on building and running the restored version of Medley Interlisp can be found here: ??
 
 ## Discussions
