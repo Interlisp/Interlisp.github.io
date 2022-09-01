@@ -8,8 +8,10 @@ There are several different ways of running Medley Interlisp. Which you choose d
 
 * Interlisp Online
 * In a Docker container
-* Download and install a release
-* Build from sources
+* Download and install from a release
+* Building the sources
+ * Maiko
+ * Building loadups
 
 ## Interlisp Online
 
