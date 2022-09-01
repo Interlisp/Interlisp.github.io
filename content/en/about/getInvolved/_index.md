@@ -3,115 +3,36 @@ title: Get Involved
 weight: 11
 type: docs
 ---
+# GitHub
 
-The Medley Interlisp Restoration team meets weekly via Zoom: 
+The [Interlisp](https://github.com/Interlisp) organization on GitHub contains re;ositories for the main [Medley](https://github.com/Interlisp/medley) Lisp code, build scripts and GitHub automation, the C-coded virtual machine, called [maiko](https://github.com/Interlisp/maiko) documentation (including [this web site](https://github.com/Interlisp/Interlisp.github.io). 
 
-[Meeting Link](https://us06web.zoom.us/j/82623266074?pwd=M0FhV0p2QnIzcG4ycG14TWx6R0YxQT09)  
-Monday, 1:00 pm ET / 10:00 am PT  
-Zoom ID: **826 2326 6074**
+Bugs, feature requests, and questions are best posted as [GitHub issues in the Medley repository](https://github.com/Interlisp/medley/issues).
 
-# Meeting Agendas and Notes
+* (tbd joining the Interlisp organization)
 
-please add any agenda issues and other items you would like to discuss. [Meeting recordings](https://drive.google.com/drive/folders/1tn7gSwCukJbdUYQfpL7NSQrdM67dwJt8?usp=sharing) contact @masinter for access.
+# Meetings
 
-#### Agenda 2 May 2022
+We have a weekly meeting on Mondays on Zoom. Meetings are to report accomplishments, status,  plans, and problems, and discuss directions. Meetings are recorded, but recordings are not public, just us. If you'd like to join in, [let us know](mailto:inco@lispcore.com).
 
-* Round-table (let's try starting with this)
-* [Open Source for Historical and Cultural communities](https://www.lyrasis.org/programs/Documents/ITAV\_Interactive\_Guidebook.pdf) -- walkthrough this and other [Educopia community resources](../../Educopia-Community-Resources/)
+_Monday, 1:00 pm ET / 10:00 am PT  
 
-#### Agenda 11 April 2022
+## Meeting Agendas and Notes
 
-* notices to other organizations (S Kaisler)
-* Web site organization (W.Marci? B.Stumbo)
-* round table
+* These will be posted here, but we haven't completed transition from using [the medley wiki](https://github.com/Interlisp/medley/wiki/).
+* It seems likely will use Google docs for distributing meeting agendas and taking notes. For now meeting recordings are on Google Drive, but it's possible that we'll switch to "private" YouTube for holding meeting recordings.
 
-#### Agenda 28 March 2022
+# EMail and access groups
 
-Review announcements and reactions. Time for broader announcements finally.
+There are two Google groups in use: [Interlisp](mailto:interlisp@googlegroups.com) and [LispCore](mailto:lispcore@googlegroups.com) with respective archives. The archives are public. The LispCore group has access to meeting recordings, agenda, gets more mail (at least lately).
 
-#### Agenda 21 March 2022
+* tbd: Interlisp.org as a Google work group; "interlisp.org" email addresses and aliases.
 
-Larry's out this week, but there was sentiment to meet anyway, so click the Edit button and edit this page to add your agenda items.
+* tbd: Interlisp.org as a (non-profit 501c3 corporation, availability of discounts, hiring student interns). 
 
-#### Agenda 14 March 2022
+# Libera.Chat #Interlisp IRC Channel
 
-Let's go through [Documentation](../../Documentation/) as well as [open 'Documentation' issues](../../Interlisp/medley/issues) and prioritize.
+Not very active but a place for informal chat. 
 
-#### Agenda 7 March 2022
+# Twitter handle interlisp8
 
-* Issue review for release announcement Let's quickly go through open [issues labeled 'online'](../../Interlisp/medley/issues) for a status update
-* SPN/Educopia consulting
-* GITFNS
-* Lispusers cleanup ...
-
-#### Agenda 28 Feb 2022
-
-* Issue [#707](../../Interlisp/medley/issues/707/) online (what changes are needed before we announce?)
-  * Issue [#680](../../Interlisp/medley/issues/680/) Branding (Medley vs. Interlisp vs. Medley Interlisp)
-* [PR #706 rmk22](../../Interlisp/medley/pull/706/) GitFns new version and call for review
-* LispUsers cleanup (Issue [#7](../../Interlisp/medley/issues/7/))
-* SPN announcement https://www.softwarepreservationnetwork.org/interlisp/
-* using keysyms vs. key numbers
-
-#### Agenda 21 Feb 2022
-
-* News (round table):
-  * online (open issues)
-  * GITFNS handling file moves
-  * SPN and spreading the news
-  * Branding and sponsors
-* [Pick an issue](../../Interlisp/medley/issues/4/): using "pick-issue" we will pick an issue and work on it together. If we can close the issue in 20 minutes, fine, but otherwise we will just write up what we learned. (later I'll extend pick-issue to pick Lispusers packages too).
-
-#### Agenda 14 Feb 2022
-
-Happy Valentine's day
-
-* New GitHub actions -- how does it work?
-* LispUsers review
-* idea: 15 minute demos of Medley features (for later scripting and re-recording)
-
-#### Agenda 7 Feb 2022
-
-* [Documentation](../../Documentation/) (link from [Interlisp.org](https://interlisp.org)).
-* Moving obsolete / broken / unfixible files out of medley repo Using [Lispusers Survey](https://docs.google.com/spreadsheets/d/1pn4UcS-9CgMLi\_qeGZlOGGEusAKsNDKxz1XhLwQCgKw/edit#gid=0)
-
-#### Agenda 31 Jan 2022
-
-* New user online experience (again) --
-* Web site review
-* round-table status and plans
-
-#### Agenda 24 Jan 2022
-
-* PR #646 [rmk15](../../Interlisp/medley/pull/646/) changes and features
-* [actions, online, docker](../../Interlisp/medley/issues/628/): recent changes
-
-#### Agenda 17 Jan 2022
-
-* [Monthly report for January](../../Project-News/)
-* Announcement to Computer History groups (Steve) see [draft](https://docs.google.com/document/d/1v9EvgNKsPTGEQf\_GwQIWReuiizgCmf4Z/edit)
-* Round-table status and plans
-
-#### Agenda 10 Jan 2022
-
-Three topics; half hour each.
-
-1. Joining SPN (as a member, a sponsor, or some other relation). See [SPN membership proposal](https://www.softwarepreservationnetwork.org/wp-content/uploads/2020/06/V5-May-28-SPN-Membership-Proposal-2021.pdf) and [here for context](../../Possible-organizational-partners/); with [Jessica Farrell](mailto:jess.farrell@educopia.org) and [Eric Kaltman](mailto:eric.kaltman@csuci.edu).
-2. Interlisp Online (hopefully Frank)
-3. New User Getting Started (Bill and Steve)
-
-#### Agenda 3 Jan 2022
-
-Happy New Year
-
-* Online status
-  * new user setup (promptwindow, helptime, dwimwait, break window size & auto bt
-  * payment set to use AWS $1k annual credit
-* SDL Status
-* Joining SPN (Visitors 10 Jan 2021)
-* People/skills to hire?
-  * Videographer (plan, script, record, produce demos)
-  * Historian (bibliographer, Interlisp history)
-  * Lawyer (software preservation, Open source)
-
-### [Meeting Agendas and Notes 2021](../../Meeting-Agendas-and-Notes-2021/)
