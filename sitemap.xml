@@ -19,10 +19,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/doc/info/history.html</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/running/online/</loc>
   </url>
   
@@ -148,6 +144,10 @@
   
   <url>
     <loc>https://interlisp.org/faq/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/doc/info/history.html</loc>
   </url>
   
   <url>
