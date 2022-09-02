@@ -1,7 +1,7 @@
 ---
 title: History
 url: /doc/info/history.html
-weight: 2
+weight: 2F
 ---
 
 **NOTE**: Lately, the effort has focused on developing a Zotero annotated bibliography; the idea is to focus the timeline on material and source code published at the time. Any narrative around that would then constitute secondary sources. That will allow future researchers to construct their own narratives.
@@ -104,7 +104,7 @@ Bob Sproull came up with the idea for what would turn out to be the first client
 In 1979, PARC began the design of the Dorado, a high performance personal workstation. The availability of the Dorado also made possible building a Lisp with a native display capability, which led to the Interlisp-D project.
 1980s
 Teitelman & Masinter, IEEE Computer, “The Interlisp Programming Environment” April 1981. 
-https://github.com/Interlisp/history/tree/master/1980s/interlisp-10/1983-sumex-lisp 
+https://github.com/Interlisp/history/tree/master/1980s/1983-sumex-lisp
 
 ### 1982
 
