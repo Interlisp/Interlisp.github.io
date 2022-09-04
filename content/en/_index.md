@@ -6,7 +6,8 @@ aliases:
 type: docs
 ---
 
-![Interlisp logo -- A semi-circle of screens with the words Interlisp-D in the lower righthand corner](Resources/Interlisp-D.png)
+![Interlisp logo -- 3/4 circle of overlapping windows with the words Interlisp-D in the lower righthand corner](Resources/Interlisp-D.png)
+
 
 Please join the [Medley Interlisp Users Group](https://groups.google.com/g/interlisp) mailing list to ask
 questions and discuss Interlisp.
