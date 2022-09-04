@@ -9,6 +9,22 @@ aliases:
 weight: 1
 type: docs
 ---
+## More Background
+
+
+Medley Interlisp is the environment originally developed for the Xerox Lisp machines (called D-machines, names Dorado, Dolphin, Dandelion, Daybreak). The project was spun out to a company called Envos, which then turned into Venue.
+
+The early development was parallel to the development of SmallTalk, with ideas shared both ways. It wa launched as a product from Xerox in 1980. It was a base from which AI applications were built, as well as a research project in its own right.
+
+For example, Interlisp evolved the notions of structure editing from an interactive "teletype" structure editor, through a "Display" editor to [SEDIT](https://www.youtube.com/watch?v=2qsmF8HHskg). Masterscope and the "file package" included system-management tools that combined features of version control and build systems, with comprehensive cross referencing support.
+
+Medley was the last release of the Xerox Lisp environment, before the whole environment was renamed Medley. It originally supported Interlisp (a dialect separate from the MACLISP/Common Lisp tradition, with its own ancestry), but later, Common Lisp also became part of the environment. Medley includes a WYSIWYG text editor (TEdit), email organizer (Lafite), performance tools (Spy) and many other libraries and user contributed code (from the 1980s).
+
+[What have we lost?](https://www.youtube.com/watch?v=7RNbIEJvjUA&t=841s)  A presentation from the 2020 Remote Chaos Experience conference highlights some of the interesting aspects of
+Interlisp.  The presentation synopsis states it this way:
+> We have ended up in a world where UNIX and Windows have taken over, and most people have never experienced anything else. Over the years, though, many other system designs have come and gone, and some of those systems have had neat ideas that were nevertheless not enough to achieve commercial success. We will take you on a tour of a variety of those systems, talking about what makes them special.
+
+
          
 The 1970s and 80s saw major advances in computing and Human-Computer interaction.  Interlisp was one of the many experimental systems developed during these heady times.  It represents and early example of a system with a GUI (Graphical User Interface), and IDE (Integrated Development Environment) and within the Xerox PARC environment, it was an early example of a network enabled machine supporting email, file sharing .  In essence it was a forerunner of today's computing systems.
 
