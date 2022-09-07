@@ -1,40 +1,39 @@
 ---
-title: Interlisp
 aliases:
   # Fixes a broken Home Page link from Gallery pages.
   - /_pages/
 type: docs
 ---
 
-![Interlisp logo -- A semi-circle of screens with the words Interlisp-D in the lower righthand corner](Resources/Interlisp-D.png)
-
-Please join the [Medley Interlisp Users Group](https://groups.google.com/g/interlisp) mailing list to ask
-questions and discuss Interlisp.
+![Interlisp logo -- 3/4 circle of overlapping windows with the words Interlisp-D in the lower righthand corner](Resources/Interlisp-D.png)
 
 ## What is Medley Interlisp?
 
-Medley Interlisp is the environment originally developed for the Xerox Lisp machines (called D-machines, names Dorado, Dolphin, Dandelion, Daybreak). The project was spun out to a company called Envos, which then turned into Venue.
+Interlisp was a software development environment developed at Xerox PARC in the 1970s and 1980s to support research in Artificial Intelligence, computational linguistics, graphical user interfaces, hypertext, and other research areas. The 1992 ACM Software System Award was awarded to the Interlisp system for pioneering work in programming environments.
 
-It was the first IDE with a window/mouse/menu GUI, launched as a product from Xerox in 1980. It was a base from which AI applications were built, as well as a research project in its own right.
+Interlisp as a system evolved from an interactive terminal style programming tool, to Interlisp-D as the GUI and entire operating system for the Xerox Lisp machines (called D-machines, named Dorado, Dolphin, Dandelion, Daybreak) with a common byte-coded virtual machine. The virtual machine was then ported to C for Sun Unix and many other Unix systems, and the system extended to support the Common Lisp standard intermixed.
 
-For example, Interlisp [SEDIT](https://www.youtube.com/watch?v=2qsmF8HHskg) is the canonical ancestral structure editor. Masterscope and the "file package" included system-management tools that combined features of version control and build systems, with comprehensive cross referencing support.
+Development of the system moved from Xerox PARC, to a Xerox AI Systems division, to a spin-out company called Envos, to a smaller company called Venue. The system was called Interlisp, Interlisp-D, and various named releases (Koto, Lyric, Medley) until the name "Medley" was used for the whole thing.
 
-Medley was the last release of the Xerox Lisp environment, before the whole environment was renamed Medley. It was originally written in Interlisp (a dialect separate from the MACLISP/Common Lisp tradition, with its own ancestry), but later, Common Lisp also became part of the environment. Medley includes a WYSIWYG text editor (TEdit), email organizer (Lafite), performance tools (Spy) and many other libraries and user contributed code (from the 1980s).
+## What are we trying to accomplish?
 
-[What have we lost?](https://www.youtube.com/watch?v=7RNbIEJvjUA&t=841s)  A presentation from the 2020 Remote Chaos Experience conference highlights some of the interesting aspects of
-Interlisp.  The presentation synopsis states it this way:
-> We have ended up in a world where UNIX and Windows have taken over, and most people have never experienced anything else. Over the years, though, many other system designs have come and gone, and some of those systems have had neat ideas that were nevertheless not enough to achieve commercial success. We will take you on a tour of a variety of those systems, talking about what makes them special.
+Software development in Interlisp-D was a different experience than is common.
+We hope to be able to not just demonstrate how it worked, but to revive the experimental development tools enough to support someone using it "in anger". To make the software usable, we need to overcome a number of compatibility problems with current C and operating systems, keyboard and display interfaces.
 
-## Documentation
+Interlisp users included researchers developing tools, demonstrations, and applications and we want to help revive, These include Rooms, Notecards, and LOOPS. 
 
-Medley Interlisp documentation is available from here: [Documentation](documentation).  
-Documentation on building and running the restored version of Medley Interlisp can be found here: ??
+## What have we done so far?
 
-## Discussions
+As with any software that evolved over a long time, there's been quite a bit of cleanup and retrofitting. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or at https://online.interlisp.org in the cloud. See our [2021 Annual Report](https://interlisp.org/2021AnnualReport.pdf) and [Project News](/news/). We've been working on integration of the Interlisp style development with `git` and `GitHub`, docker and other 'modern' components.
 
-You can post questions and comments to the [Medley Interlisp Users Group](mailto:interlisp@googlegroups.com).
+## Who is involved?
 
-## Bug And Issue Tracking
+The project includes some of the original developers and users as well as newcomers interested in software history and preservation. We work with [Partners](partners).
 
-You can report or view bugs and issues by visiting the Medley Interlisp [Issues](https://github.com/Interlisp/medley/issues) page.
+You can help! (See [Getting Involved](about/getInvolved/) for ways to get involved.
 
+## Testimonials
+
+-[What have we lost?](https://www.youtube.com/watch?v=7RNbIEJvjUA&t=841s)  A presentation from the 2020 Remote Chaos Experience conference highlights some of the interesting aspects of
+-Interlisp.  The presentation synopsis states it this way:
+-> We have ended up in a world where UNIX and Windows have taken over, and most people have never experienced anything else. Over the years, though, many other system designs have come and gone, and some of those systems have had neat ideas that were nevertheless not enough to achieve commercial success. We will take you on a tour of a variety of those systems, talking about what makes them special.
