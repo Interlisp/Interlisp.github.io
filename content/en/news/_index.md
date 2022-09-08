@@ -20,7 +20,7 @@ The **2021 Medley Interlisp [Annual Report](https://docs.google.com/document/d/1
 ## 1/2022 
 Merry Christmas and Happy New Year
 
-* Steve's [Medley Interlisp: The Interactive Environment](https://interlisp.org/docs/20211225-interlisp-book-2.pdf) reformated for easier online reading.
+* Steve's [Medley Interlisp: The Interactive Environment](https://interlisp.org/documentation/20211225-interlisp-book-2.pdf) reformated for easier online reading.
 * Joining the Software Preservation Network.
 * Interlisp.online progress, changes expected
 * New User documentation
@@ -39,6 +39,6 @@ Merry Christmas and Happy New Year
 * recent reviews [on twitter](https://twitter.com/ftrain/status/1470968024756895744) were complimentary of our efforts
 
 ## 11/2021
-[Medley Interlisp: Tools and Utilities](https://interlisp.org/docs/2021-interlisp-book-3.pdf) (Interlisp book 3) now available for preview; comments and corrections welcome.
+[Medley Interlisp: Tools and Utilities](https://interlisp.org/documentation/2021-interlisp-book-3.pdf) (Interlisp book 3) now available for preview; comments and corrections welcome.
 
-[2021 Annual Report](https://docs.google.com/document/d/1cGBDNMO5yt6ymi7YiCcf6uNn6RBe5PVS7mW4kFnlzNY) November 15, 2021 (also [in PDF](https://interlisp.org/docs/2021-Medley-Interlisp-Annual-Report.pdf)).
+[2021 Annual Report](2021MedleyAnnualReport), November 15, 2021.

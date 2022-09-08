@@ -8,7 +8,7 @@ November 15, 2021
 
 Join [Interlisp group](https://groups.google.com/g/interlisp) or follow @[interlisp on GitHub](https://github.com/Interlisp)
 
-### Introduction <a href="#_acrpdso1zmkx" id="_acrpdso1zmkx"></a>
+### Introduction
 
 To “revive” something is to make it live again. Making Medley Interlisp live again means putting the system in order so that others without a previous deep background in Interlisp can use and appreciate it (if only as a virtual antique).
 
@@ -20,13 +20,13 @@ In this document, work in the project is broken down into three main categories:
 * Documentation for the software
 * Building an organization and developing a community
 
-### Software <a href="#_pr5hq96jj7sg" id="_pr5hq96jj7sg"></a>
+### Software Archeology
 
 “Software Archeology” is a process like putting together a functional bowl from pottery shards. We have not completed the task, but we have a stable base.
 
 The software is old: it had been developed between the ’70s and the 90s, with many revisions, by many different people, working with little internal documentation. There were many “excursions” to support systems or options that are no longer available. Over the last 25 years, software standards evolved for C, Common Lisp, character codes, and operating systems.
 
-#### Maiko <a href="#_6yu7hjk4iqz" id="_6yu7hjk4iqz"></a>
+#### Maiko
 
 Maiko is the implementation, in C, of the Medley Interlisp virtual machine. It can be found at [https://github.com/interlisp/maiko](https://github.com/interlisp/maiko).
 
@@ -40,7 +40,7 @@ Because of the cleanup work, the code is much more portable than ever before. Sy
 
 This covers Raspberry Pi (linux.arm7) and Windows 10 (with [WSL2 ](https://docs.microsoft.com/en-us/windows/wsl/install)or Docker). and Windows 11 (includes WSL2). Performance is outstanding. A $40 Raspberry Pi completes Lisp tasks 250-1000 times faster than the Dorado (the $90k high-end Xerox 1132 Lisp machine).
 
-#### Medley <a href="#_sqdygcbcdbgw" id="_sqdygcbcdbgw"></a>
+#### Medley
 
 The rest of the system is implemented in Lisp: Interlisp and Common Lisp interpreters, compilers, debugging tools, editors, window system, graphics, device drivers. In the last year:
 
@@ -52,7 +52,7 @@ The rest of the system is implemented in Lisp: Interlisp and Common Lisp interpr
 * **Modernization:** Window manipulation by title bar dragging and corner selection, mouse wheel scrolling, clipboard--these seem to be necessary enhancements for modern users.
 * **Release process & automation**: GitHub Actions are now used to automate the build process for Medley releases and also a [Docker](https://www.docker.com/) container, deployed to [Docker Hub](https://hub.docker.com/) as Interlisp/Medley. This gives a way to run Medley in the cloud (on Amazon Web Services, Azure, Google Cloud) or on the Windows Desktop with remote access in a browser.
 
-#### Interlisp Applications <a href="#_ggh2sgffhr6t" id="_ggh2sgffhr6t"></a>
+#### Interlisp Applications
 
 One of the reasons for restoring Medley Interlisp is to support the revival of applications written for it.
 
@@ -63,27 +63,27 @@ One of the reasons for restoring Medley Interlisp is to support the revival of a
 * **LFG:** the Grammar Writer’s Workbench,
 * **LispUsers:** User-contributed software (before “open source” was a thing). We’ve [checked out over half of the LispUsers files](https://docs.google.com/spreadsheets/d/1pn4UcS-9CgMLi\_qeGZlOGGEusAKsNDKxz1XhLwQCgKw/edit?usp=sharing).
 
-### Documentation <a href="#_ufh34bx5j0eg" id="_ufh34bx5j0eg"></a>
+### Documentation
 
-#### Books <a href="#_5tyqara8iuk4" id="_5tyqara8iuk4"></a>
+#### Books 
 
-* _****_[_**Interlisp: The Language and Its Usage**_](../../documentation/interlisp-books.md), by Steve Kaisler, originally published by John Wiley & Sons, scanned and converted to a compact PDF. This book describes the core features of the Interlisp language.
-* ****[**Medley Interlisp: The Interactive Programming Environmen**t](../../documentation/interlisp-books.md), by Steve Kaisler, describes the Interlisp-D Interactive Programming Environment as implemented on Xerox D-machines and now running on several modern platforms.
+* _****_[_**Interlisp: The Language and Its Usage**_](../../documentation/1986-interlisp-language-book-1.pdf), by Steve Kaisler, originally published by John Wiley & Sons, scanned and converted to a compact PDF. This book describes the core features of the Interlisp language.
+* ****[**Medley Interlisp: The Interactive Programming Environment**](../../documentation/20221225-interlisp-book-2.pdf), by Steve Kaisler, describes the Interlisp-D Interactive Programming Environment as implemented on Xerox D-machines and now running on several modern platforms.
 * _**Medley Interlisp: Tools and Utilities**_, by Steve Kaisler (undergoing editing) describes the editors and tools to be used for program development. It is expected to be completed and uploaded to Interlisp.org in early December 2021.
 
-#### Software Documentation <a href="#_g1sgav1cynz3" id="_g1sgav1cynz3"></a>
+#### Software Documentation
 
-We’ve converted TEdit source documents to PDF (see [medley-pdfs](https://drive.google.com/drive/folders/1dYPlooXlQSBva9fiDB\_XxHH0bDz8F5CU)). We have the IRM (Interlisp Reference Manual) with links to online help (DInfo), User Guides, Release Notes, Primer. We still need to convert and publish documentation for some Interlisp applications and to organize and update to make it easier for newcomers.
+We’ve converted TEdit source documents to PDF (see [medley-pdfs](https://drive.google.com/drive/folders/10ZBQty5gEwdBnZHtEbXfe5f1dHGziGZG?usp=sharing)). We have the IRM (Interlisp Reference Manual) with links to online help (DInfo), User Guides, Release Notes, Primer. We still need to convert and publish documentation for some Interlisp applications and to organize and update to make it easier for newcomers.
 
-#### Bibliography <a href="#_hfncsnm8mk1" id="_hfncsnm8mk1"></a>
+#### Bibliography
 
 Zotero is an Internet bibliographic service. We have set up an [Interlisp Zotero](https://www.zotero.org/groups/2914042/interlisp/library) of Lisp-related material, many items with the source material as PDFs. Our goal is to have a comprehensive source of information about Interlisp-related technical papers, technical reports, and manuals for various versions and implementations of Interlisp (and, for comparison) contemporaneous “Lisp Machine” competitors.
 
-#### Working older versions <a href="#_fu913t9v0vjf" id="_fu913t9v0vjf"></a>
+#### Working older versions
 
 In addition to modern Medley, we have begun to organize other emulations of older versions, and a “history” repository, including files from Interlisp-10, the “DarkStar” emulator of the Xerox 1108 / 8010 hardware, and sysouts for many different releases of Interlisp-D. We’re working on making an earlier version of Medley (running on an emulated DosBox); currently available with instructions in the Interlisp/DOS repository.
 
-### Outreach <a href="#_rg7bcqs399s2" id="_rg7bcqs399s2"></a>
+### Outreach
 
 To attract users and supporters, we need to make the project known.
 
@@ -104,7 +104,7 @@ To attract users and supporters, we need to make the project known.
 * Computer History Museum (CHM) -- we’re hoping to provide access to Interlisp via an analogous setup for [the CHM’s Smalltalk Zoo](https://computerhistory.org/blog/introducing-the-smalltalk-zoo-48-years-of-smalltalk-history-at-chm/).
 * [Software Preservation Network (SPN)](https://www.softwarepreservationnetwork.org/) through their [Emulation-as-a-Service Infrastructure](https://www.softwarepreservationnetwork.org/emulation-as-a-service-infrastructure/) is a possible way of getting Medley access available to researchers.
 
-### Who are we? <a href="#_kly6krobw8zi" id="_kly6krobw8zi"></a>
+### Who are we?
 
 In this document, we use “we” to mean our contributors:
 
@@ -116,15 +116,15 @@ In this document, we use “we” to mean our contributors:
 * as contributors to an Open Source project
   * 384 issues, 133 closed, 151 open [Issues](https://github.com/Interlisp/medley/issues). 54 [discussions](https://github.com/Interlisp/medley/discussions)
   * 191 Medley [pull requests](https://github.com/Interlisp/medley/pulls), 387 Maiko [pull requests](https://github.com/Interlisp/maiko/pulls)
-* as a (non-profit) corporation: [InterlispOrg Inc](../partners/interlisporg-inc.md).
+* as a (non-profit) corporation: [InterlispOrg Inc](../../about/partners/interlisporg-inc.md).
 
 We depend on volunteers to help. If you’d like to help but aren’t sure how to, ask.
 
-### Future activities <a href="#_2zjkrtts4tg7" id="_2zjkrtts4tg7"></a>
+### Future activities
 
 There were some tasks/projects listed here; they have been moved to GitHub [issues](https://github.com/Interlisp/medley/issues/566#issue-1053084010).
 
-### Acknowledgments <a href="#_nixrj1smqrtw" id="_nixrj1smqrtw"></a>
+### Acknowledgments
 
 We’ve gotten a lot done, but there’s quite a bit more to do. Thank you to Abe, Alexander, Arun, Bill, Blake, Frank, Herb, John C, Larry, Michele, Nick, Paul, Peter, Ron, Wayne, Zoe.
 
