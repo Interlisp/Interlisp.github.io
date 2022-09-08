@@ -67,8 +67,8 @@ One of the reasons for restoring Medley Interlisp is to support the revival of a
 
 #### Books 
 
-* _****_[_**Interlisp: The Language and Its Usage**_](../../documentation/interlisp-books.md), by Steve Kaisler, originally published by John Wiley & Sons, scanned and converted to a compact PDF. This book describes the core features of the Interlisp language.
-* ****[**Medley Interlisp: The Interactive Programming Environmen**t](../../documentation/interlisp-books.md), by Steve Kaisler, describes the Interlisp-D Interactive Programming Environment as implemented on Xerox D-machines and now running on several modern platforms.
+* _****_[_**Interlisp: The Language and Its Usage**_](../../documentation/1986-interlisp-language-book-1.pdf), by Steve Kaisler, originally published by John Wiley & Sons, scanned and converted to a compact PDF. This book describes the core features of the Interlisp language.
+* ****[**Medley Interlisp: The Interactive Programming Environment**](../../documentation/20221225-interlisp-book-2.pdf), by Steve Kaisler, describes the Interlisp-D Interactive Programming Environment as implemented on Xerox D-machines and now running on several modern platforms.
 * _**Medley Interlisp: Tools and Utilities**_, by Steve Kaisler (undergoing editing) describes the editors and tools to be used for program development. It is expected to be completed and uploaded to Interlisp.org in early December 2021.
 
 #### Software Documentation
