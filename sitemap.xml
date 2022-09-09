@@ -87,6 +87,10 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/about/partners/educopia/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/about/partners/spn/</loc>
   </url>
   
@@ -131,6 +135,10 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/_pages/</loc>
   </url>
   
@@ -144,10 +152,6 @@
   
   <url>
     <loc>https://interlisp.org/doc/info/history.html</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/</loc>
   </url>
   
   <url>
