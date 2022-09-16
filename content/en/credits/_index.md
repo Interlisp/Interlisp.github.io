@@ -8,7 +8,7 @@ type: docs
 Interlisp has benefited by the contributions of many people over the years.
 
 
-The Medley Interlisp Restoration Project has benefited from the contribution of many people, including:
+The Medley Interlisp Project has benefited from the contribution of many people, including:
 
 * Larry Masinter
 * Rob Kaplan
@@ -25,3 +25,10 @@ The Medley Interlisp Restoration Project has benefited from the contribution of 
 * Blake McBride
 * Abe Jellinek
 * Bill Stumbo
+
+with recent additions from
+* Matt Heffron
+* D Van Buer
+* Eric Kaltman
+* Morgan McMurray
+

@@ -3,6 +3,7 @@ title: Ongoing Projects
 weight: 2
 type: docs
 ---
+(needs update 9/15/22 lmm; this was from 11/2021)
 
 These should represent all tasks that people have volunteered for, and link them to issues or discussions and overall project goals.
 

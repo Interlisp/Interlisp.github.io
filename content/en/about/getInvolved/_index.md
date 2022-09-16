@@ -13,27 +13,34 @@ Participants in the project can join the [GitHub Interlisp organization](https:/
 
 ## Meetings
 
-We have a weekly meeting on Mondays on Zoom. Meetings are to report accomplishments, status,  plans, and problems, and discuss directions. Meetings are recorded, but recordings are not public, If you'd like to join in, [let us know](mailto:info@interlisp.org).
+We have a weekly meeting on Mondays on Zoom. Meetings are to report accomplishments, status, plans, and problems, and discuss directions. Meetings are recorded, but recordings are not public, If you'd like to join in, [let us know](mailto:info@interlisp.org).
 
 _Monday, 1:00 pm ET / 10:00 am PT_ 
 
 ### Meeting Agendas and Notes
 
-* In progress  -- we were collecting agendas on [the medley wiki](https://github.com/Interlisp/medley/wiki/). We're trying Google docs linked from the calendar invite for distributing meeting agendas and taking notes. For now meeting recordings are on Google Drive, but it's likely that we'll switch to "private" YouTube for holding meeting recordings.
+* Recent meeting agendas and notes are [here](https://docs.google.com/document/d/1NxCzo6xr7W7VmyeXNeAjeEMx98n-yn27YsHvDFjfQvQ/). Older agendas are available.
+Meeting recordings are kept (currently using Zoom "record to the cloud" and then download to google drive, but saving as youtube private is a possibility.
 
 ## EMail and access groups
 
-There are two Google groups in use: [Interlisp](mailto:interlisp@googlegroups.com), archives [here](https://groups.google.com/u/1/g/interlisp), and [LispCore](mailto:lispcore@googlegroups.com), archives [here](https://groups.google.com/u/1/g/lispcore). The archives are public. The LispCore group has access to meeting recordings, and usually gets more email (at least lately).
+There are two Google groups in use: 
 
-* The email alias [info@interlisp.org](mailto:info@interlisp.org) is monitored for those using Lisp.
+* [Interlisp](mailto:interlisp@googlegroups.com), archives [here](https://groups.google.com/u/1/g/interlisp), and 
+* [LispCore](mailto:lispcore@googlegroups.com), archives [here](https://groups.google.com/u/1/g/lispcore). 
+
+The archives are public. The LispCore group has access to meeting recordings, and usually gets more email (at least lately). Posts from non-members are moderated.
+
+### Other ways to discuss Interlisp or find out more
 
 * Interlisp.org is a Google workspace; "interlisp.org" email addresses and aliases are available.
 
-* [InterlispOrg Inc](../partners/interlisporg-inc/) is a non-profit 501c3 corporation. We accept donations. 
+* [InterlispOrg Inc](../partners/interlisporg-inc/) is a non-profit 501c3 corporation. We accept donations! Show your support!
 
-## Libera.Chat #Interlisp IRC Channel
+* [Libera.Chat](https://libera.chat) has a #Interlisp IRC Channel. A place for informal chat. Connect by pointing your IRC client to irc.libera.chat:6697 (TLS) and `/join #interlisp`. Say hello. There are also channels for #lisp (any dialect) and #common-lisp.
 
-A place for informal chat. Connect by pointing your IRC client to irc.libera.chat:6697 (TLS) and `join #interlisp`. Say hello.
+* Twitter handle: [interlisp8](https://twitter.com/interlisp8). 
 
-## Twitter handle interlisp8
+* *Direct email:* In addition to the [email groups](#email-and-access-groups) you can contact by emailing us at [info@interlisp.org](mailto:info@interlisp.org).
+
 

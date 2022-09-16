@@ -24,7 +24,7 @@ Interlisp users included researchers developing tools, demonstrations, and appli
 
 ## What have we done so far?
 
-As with any software that evolved over a long time, there's been quite a bit of cleanup and retrofitting. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or at https://online.interlisp.org in the cloud. See our [2021 Annual Report](https://interlisp.org/2021AnnualReport.pdf) and [Project News](/news/). We've been working on integration of the Interlisp style development with `git` and `GitHub`, docker and other 'modern' components.
+As with any software that evolved over a long time, there's been quite a bit of cleanup and retrofitting. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or at https://online.interlisp.org in the cloud. See our [2021 Annual Report](news/2021AnnualReport), [Project News](/news/), and [recent release notes](https://github.com/Interlisp/medley/releases) . We've been working on integration of the Interlisp style development with `git` and `GitHub`, Docker and other 'modern' components.
 
 ## Who is involved?
 

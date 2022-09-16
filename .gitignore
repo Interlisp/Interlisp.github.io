@@ -1,6 +1,14 @@
+# older versions
+
+*~
+
+# emacs detritus
+*\#
+\.\#*
+
+
 .jekyll-cache/
 *.swp
-*~
 _site
 .sass-cache
 .jekyll-metadata

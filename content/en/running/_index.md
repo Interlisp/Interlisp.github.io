@@ -4,22 +4,26 @@ weight: 30
 type: docs
 ---
 
-There are several different ways of running Medley Interlisp. Which you choose depends a bit on your platform (Mac, Windows, Linux, other).
+*DRAFT -- This page is currently being revised.*
+
+
+There are different ways of running Medley Interlisp, depending on your platform (Mac, Windows, Linux, other) and related factors.
 
 * Interlisp Online
 * In a Docker container
 * Download and install from a release
-* Building the sources
- * Maiko
- * Building loadups
+* (re)build the Virtual Machine emulator (maiko) from sources
+* (Re) build your own Lisp image
 
 ## Interlisp Online
 
-For the minimum amount of setup, the online version is a good starting place. [Interlisp Online](https://online.interlisp.org) provides access to a version of Medley running in the cloud. All that is needed to get started is a (updated) browser and a mouse. You can log in as a guest or -- if you want to save files or sessions -- create an account.
+For the minimum amount of setup, the online version is a good starting place. [Interlisp Online](https://online.interlisp.org) provides access to a version of Medley running in the cloud. All that is needed to get started is a (recent) browser and a mouse. You can log in as a guest or -- if you want to save files or sessions -- create an account.
 
-Sessions are preserved for an indefinite time (we haven't worked out for how long -- after 30 days of inactivity?). But it should be good for experimenting and introducing yourself to the environment. Anything you create in the online environment should be treated as transient. If you're interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The [Interlisp/online](https://github.com/Interlisp/online#readme) repository may have more details.
+Sessions are preserved between sessions, but will be removed after 30 days of inactivity). Online should be good for experimenting and introducing yourself to the environment. The online site also provides a way of copying files to and from your account's files.
 
-## Running with Docker
+HOWEVER: anything you create in the online environment should be treated as transient. If you're interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The [Interlisp/online](https://github.com/Interlisp/online#readme) repository may have more details.
+
+## Running with Docker Desktop
 
 If you are already familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or X server). The VNC Viewer allows Windows to interact with the Medley instance running in Docker. It supports the windowing system and communicates your input.
 
@@ -31,8 +35,11 @@ Medley in Docker has a copy of the Medley system within the Docker container. Wh
 
 For users of Linux, BSD, MacOS and recent Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility.
 
-## Running in WSL2 (Windows)
+Medley (maiko) currently requires having an X-server installed -- which one to use depends on your platform.
 
-For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft's WSL environment. In addition, if you aren't running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are [Cygwin/X](https://x.cygwin.com) and [XMing](http://www.straightrunning.com/XmingNotes/) (the 6.9 release is old but usable).
+We use GitHub Actions workflow automation to build Maiko for different platforms; if your platform isn't in the mix you may need to [download maiko sources and make and install those binaries](https://github.com/Interlisp/maiko/#readme).
 
-The instructions for installing Maiko and Medley can be found at [Running on Win](running-on-win).
+## Developing Medley Interlisp itself
+
+This process isn't well documented yet.
+The scripts "scripts/loadup*" in the github/interlisp/medley/ repository are used.

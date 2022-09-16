@@ -4,10 +4,12 @@ weight: 50
 type: docs
 ---
 
-*DRAFT -- This page is currently being revised.*
+
+## Running in WSL2 (Windows)
+
+For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft's WSL environment. In addition, if you aren't running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are [Cygwin/X](https://x.cygwin.com) and [XMing](http://www.straightrunning.com/XmingNotes/) (the 6.9 release is old but usable).
 
 ## Requirements
-
  - Windows 10 *or* Windows 11
  - Windows Subsystem for Linux Enabled.  [Installing WSL](https://docs.microsoft.com/en-us/windows/wsl/install).
  - An installed Linux distribution.  The following distros have been tested:
