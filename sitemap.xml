@@ -111,7 +111,15 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/running/running-on-mac/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/running/running-on-win/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/developing/</loc>
   </url>
   
   <url>
@@ -128,10 +136,6 @@
   
   <url>
     <loc>https://interlisp.org/credits/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/contact/</loc>
   </url>
   
   <url>

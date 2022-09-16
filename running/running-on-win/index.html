@@ -3,34 +3,27 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.102.3" />
+<meta name="generator" content="Hugo 0.103.0" />
 <meta name="robots" content="index, follow">
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
 
 <title>Running on Windows | Medley Interlisp Project</title>
-<meta name="description" content="DRAFT &ndash; This page is currently being revised.
-Requirements
-
-Windows 10 or Windows 11
-Windows Subsystem for Linux Enabled.  Installing WSL.
-An …">
+<meta name="description" content="Running in WSL2 (Windows)
+For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying …">
 <meta property="og:title" content="Running on Windows" />
-<meta property="og:description" content="DRAFT &ndash; This page is currently being revised.
-Requirements Windows 10 or Windows 11 Windows Subsystem for Linux Enabled. Installing WSL. An installed Linux distribution. The following distros have been tested: Pengwin Linux Distro Ubuntu Linux Distro Windows 10 Additional Requirements An X Server installed and running in Windows. The following X Servers have been tested: VcXsrv GWSL from Microsoft store install Xvnc and TightVNC Version 2.8.63 or higher Installing Medley via an Install script tbd" />
+<meta property="og:description" content="Running in WSL2 (Windows) For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are Cygwin/X and XMing (the 6." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://interlisp.org/running/running-on-win/" /><meta property="article:section" content="running" />
 
 <meta property="og:site_name" content="Medley Interlisp Project" />
 
 <meta itemprop="name" content="Running on Windows">
-<meta itemprop="description" content="DRAFT &ndash; This page is currently being revised.
-Requirements Windows 10 or Windows 11 Windows Subsystem for Linux Enabled. Installing WSL. An installed Linux distribution. The following distros have been tested: Pengwin Linux Distro Ubuntu Linux Distro Windows 10 Additional Requirements An X Server installed and running in Windows. The following X Servers have been tested: VcXsrv GWSL from Microsoft store install Xvnc and TightVNC Version 2.8.63 or higher Installing Medley via an Install script tbd">
+<meta itemprop="description" content="Running in WSL2 (Windows) For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are Cygwin/X and XMing (the 6.">
 
-<meta itemprop="wordCount" content="103">
+<meta itemprop="wordCount" content="177">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running on Windows"/>
-<meta name="twitter:description" content="DRAFT &ndash; This page is currently being revised.
-Requirements Windows 10 or Windows 11 Windows Subsystem for Linux Enabled. Installing WSL. An installed Linux distribution. The following distros have been tested: Pengwin Linux Distro Ubuntu Linux Distro Windows 10 Additional Requirements An X Server installed and running in Windows. The following X Servers have been tested: VcXsrv GWSL from Microsoft store install Xvnc and TightVNC Version 2.8.63 or higher Installing Medley via an Install script tbd"/>
+<meta name="twitter:description" content="Running in WSL2 (Windows) For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are Cygwin/X and XMing (the 6."/>
 
 
 
@@ -101,7 +94,7 @@ Requirements Windows 10 or Windows 11 Windows Subsystem for Linux Enabled. Insta
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.26b3746749e46978e2f6e63f5a577d0a.json"
+  data-offline-search-index-json-src="/offline-search-index.b62887c9ccc91c576c74ac9b50b29e6c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -123,7 +116,7 @@ Requirements Windows 10 or Windows 11 Windows Subsystem for Linux Enabled. Insta
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.26b3746749e46978e2f6e63f5a577d0a.json"
+  data-offline-search-index-json-src="/offline-search-index.b62887c9ccc91c576c74ac9b50b29e6c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -191,12 +184,16 @@ Requirements Windows 10 or Windows 11 Windows Subsystem for Linux Enabled. Insta
   <a href="/running/build/releases/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningbuildreleases"><span class="">Releases</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-on-mac-li">
+  <a href="/running/running-on-mac/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-on-mac"><span class="">Running on MacOS</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-on-win-li">
   <a href="/running/running-on-win/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-runningrunning-on-win"><span class="td-sidebar-nav-active-item">Running on Windows</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-with-docker-li">
   <a href="/running/running-with-docker/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-with-docker"><span class="">Running with Docker</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-developing-li">
+  <a href="/developing/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-developing"><span class="">Developing Medley Interlisp</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-documentation-li">
   <a href="/documentation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-documentation"><span class="">Documentation</span></a>
   <ul class="ul-2 foldable">
@@ -235,8 +232,6 @@ Requirements Windows 10 or Windows 11 Windows Subsystem for Linux Enabled. Insta
   <a href="/credits/in-memoriam/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-creditsin-memoriam"><span class="">In Memoriam</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-contact-li">
-  <a href="/contact/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-contact"><span class="">Contact</span></a>
 </li>
   </ul>
 </li>
@@ -261,6 +256,7 @@ Requirements Windows 10 or Windows 11 Windows Subsystem for Linux Enabled. Insta
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
+    <li><a href="#running-in-wsl2-windows">Running in WSL2 (Windows)</a></li>
     <li><a href="#requirements">Requirements</a>
       <ul>
         <li><a href="#installing-medley-via-an-install-script">Installing Medley via an Install script</a></li>
@@ -329,7 +325,8 @@ Requirements Windows 10 or Windows 11 Windows Subsystem for Linux Enabled. Insta
 
 		
 	</header>    
-	<p><em>DRAFT &ndash; This page is currently being revised.</em></p>
+	<h2 id="running-in-wsl2-windows">Running in WSL2 (Windows)</h2>
+<p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are <a href="https://x.cygwin.com">Cygwin/X</a> and <a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>Windows 10 <em>or</em> Windows 11</li>

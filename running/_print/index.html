@@ -3,15 +3,14 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.102.3" />
+<meta name="generator" content="Hugo 0.103.0" />
 <link rel="canonical" type="text/html" href="https://interlisp.org/running/">
 <meta name="robots" content="noindex, nofollow">
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
 
 <title>Running Medley Interlisp | Medley Interlisp Project</title>
-<meta name="description" content="There are several different ways of running Medley Interlisp. Which you choose depends a bit on your platform (Mac, Windows, Linux, other).
-
-Interlisp …">
+<meta name="description" content="DRAFT &ndash; This page is currently being revised.
+There are different ways of running Medley Interlisp, depending on your platform (Mac, Windows, …">
 <meta property="og:title" content="Running Medley Interlisp" />
 <meta property="og:description" content="Dedicated to restoring and preserving the Interlisp experience" />
 <meta property="og:type" content="website" />
@@ -91,7 +90,7 @@ Interlisp …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.26b3746749e46978e2f6e63f5a577d0a.json"
+  data-offline-search-index-json-src="/offline-search-index.b62887c9ccc91c576c74ac9b50b29e6c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -199,7 +198,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>3: <a href="#pg-a3ecb7e1d30d46f5644e5097527908cb">Running on Windows</a></li>
+<li>3: <a href="#pg-ae870f5856d130cc7fc4e7a8a82d782f">Running on MacOS</a></li>
 
 
     
@@ -207,7 +206,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>4: <a href="#pg-6096845dc5edf904cab8347cf40beb42">Running with Docker</a></li>
+<li>4: <a href="#pg-a3ecb7e1d30d46f5644e5097527908cb">Running on Windows</a></li>
 
 
     
@@ -215,7 +214,15 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>5: <a href="#pg-334b3d57e8abcaf6fa97b52caac8fc53">Download</a></li>
+<li>5: <a href="#pg-6096845dc5edf904cab8347cf40beb42">Running with Docker</a></li>
+
+
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-334b3d57e8abcaf6fa97b52caac8fc53">Download</a></li>
 
 
     
@@ -230,7 +237,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>5.1: <a href="#pg-930e19de0a68e31dd20b302c6f1d97dd">Source Code</a></li>
+<li>6.1: <a href="#pg-930e19de0a68e31dd20b302c6f1d97dd">Source Code</a></li>
 
 
     
@@ -244,27 +251,30 @@ This is the multi-page printable view of this section.
 
 
 <div class="content">
-      <p>There are several different ways of running Medley Interlisp. Which you choose depends a bit on your platform (Mac, Windows, Linux, other).</p>
+      <p><em>DRAFT &ndash; This page is currently being revised.</em></p>
+<p>There are different ways of running Medley Interlisp, depending on your platform (Mac, Windows, Linux, other) and related factors.</p>
 <ul>
 <li>Interlisp Online</li>
 <li>In a Docker container</li>
 <li>Download and install from a release</li>
-<li>Building the sources</li>
-<li>Maiko</li>
-<li>Building loadups</li>
+<li>(re)build the Virtual Machine emulator (maiko) from sources</li>
+<li>(Re) build your own Lisp image</li>
 </ul>
 <h2 id="interlisp-online">Interlisp Online</h2>
-<p>For the minimum amount of setup, the online version is a good starting place. <a href="https://online.interlisp.org">Interlisp Online</a> provides access to a version of Medley running in the cloud. All that is needed to get started is a (updated) browser and a mouse. You can log in as a guest or &ndash; if you want to save files or sessions &ndash; create an account.</p>
-<p>Sessions are preserved for an indefinite time (we haven&rsquo;t worked out for how long &ndash; after 30 days of inactivity?). But it should be good for experimenting and introducing yourself to the environment. Anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The <a href="https://github.com/Interlisp/online#readme">Interlisp/online</a> repository may have more details.</p>
-<h2 id="running-with-docker">Running with Docker</h2>
+<p>For the minimum amount of setup, the online version is a good starting place. <a href="https://online.interlisp.org">Interlisp Online</a> provides access to a version of Medley running in the cloud. All that is needed to get started is a (recent) browser and a mouse. You can log in as a guest or &ndash; if you want to save files or sessions &ndash; create an account.</p>
+<p>Sessions are preserved between sessions, but will be removed after 30 days of inactivity). Online should be good for experimenting and introducing yourself to the environment. The online site also provides a way of copying files to and from your account&rsquo;s files.</p>
+<p>HOWEVER: anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The <a href="https://github.com/Interlisp/online#readme">Interlisp/online</a> repository may have more details.</p>
+<h2 id="running-with-docker-desktop">Running with Docker Desktop</h2>
 <p>If you are already familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or X server). The VNC Viewer allows Windows to interact with the Medley instance running in Docker. It supports the windowing system and communicates your input.</p>
 <p>The instructions for this configuration are located at <a href="running-with-docker">Running with Docker</a>.</p>
 <p>Medley in Docker has a copy of the Medley system within the Docker container. Whenever you install a new version of the Medley Docker container you get a fresh system, all previous work is replaced by a vanilla image. This provides way of experimenting. Docker lets you mount directories on your local file system.</p>
 <h2 id="running-installed">Running Installed</h2>
 <p>For users of Linux, BSD, MacOS and recent Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility.</p>
-<h2 id="running-in-wsl2-windows">Running in WSL2 (Windows)</h2>
-<p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are <a href="https://x.cygwin.com">Cygwin/X</a> and <a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</p>
-<p>The instructions for installing Maiko and Medley can be found at <a href="running-on-win">Running on Win</a>.</p>
+<p>Medley (maiko) currently requires having an X-server installed &ndash; which one to use depends on your platform.</p>
+<p>We use GitHub Actions workflow automation to build Maiko for different platforms; if your platform isn&rsquo;t in the mix you may need to <a href="https://github.com/Interlisp/maiko/#readme">download maiko sources and make and install those binaries</a>.</p>
+<h2 id="developing-medley-interlisp-itself">Developing Medley Interlisp itself</h2>
+<p>This process isn&rsquo;t well documented yet.
+The scripts &ldquo;scripts/loadup*&rdquo; in the github/interlisp/medley/ repository are used.</p>
 
 </div>
 </div>
@@ -288,7 +298,7 @@ This is the multi-page printable view of this section.
     
 	<h1 id="pg-700d0c6f34d7215f9f4a191bdf17a817">1 - Interlisp Online</h1>
     
-	<p><a href="https://online.interlisp.org/user/login">Interlisp Online</a> provides access to a version of Medley running in the cloud. All that is needed to get started is to create an account - simply an email address and password. Once an account has been created you can log in and start a Medley Interlisp session.</p>
+	<p><a href="https://online.interlisp.org/user/login">Interlisp Online</a> provides access to a version of Medley running in the cloud. You can login as a guest, but if you want to save state from one session to the next, you should create an acccount. All that is needed is an email address and password. Once an account has been created you can log in and start a Medley Interlisp session.</p>
 <p>Sessions are preserved for an indefinite time (we haven&rsquo;t worked out for how long &ndash; after 30 days of inactivity?). But it should be good for experimenting and introducing yourself to the environment. Anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The Interlisp/online repository may have more details.</p>
 
 </div>
@@ -470,9 +480,44 @@ for Maiko, for systems for which there is no pre-built release.</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-a3ecb7e1d30d46f5644e5097527908cb">3 - Running on Windows</h1>
+	<h1 id="pg-ae870f5856d130cc7fc4e7a8a82d782f">3 - Running on MacOS</h1>
     
 	<p><em>DRAFT &ndash; This page is currently being revised.</em></p>
+<h2 id="online">online</h2>
+<p>requires a recent version of Safari or Chrome or Firefox.</p>
+<h2 id="docker-desktop">docker desktop</h2>
+<p>Running with Docker Desktop might be an option, but we don&rsquo;t build Docker arm64 images.</p>
+<h2 id="install-from-release">Install from release</h2>
+<p>x86 only for now</p>
+<h2 id="install-medley-from-release-build-maiko">install medley from release, build maiko</h2>
+<p>Need XCode</p>
+<ul>
+<li>Requirements</li>
+</ul>
+<ul>
+<li>Intel or M1/M2 Macintosh (or even older)</li>
+<li>XQuartz Macintosh X server for your OS/mac vintage)</li>
+</ul>
+<p>XQuartz settings</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a3ecb7e1d30d46f5644e5097527908cb">4 - Running on Windows</h1>
+    
+	<h2 id="running-in-wsl2-windows">Running in WSL2 (Windows)</h2>
+<p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are <a href="https://x.cygwin.com">Cygwin/X</a> and <a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>Windows 10 <em>or</em> Windows 11</li>
@@ -514,7 +559,7 @@ for Maiko, for systems for which there is no pre-built release.</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-6096845dc5edf904cab8347cf40beb42">4 - Running with Docker</h1>
+	<h1 id="pg-6096845dc5edf904cab8347cf40beb42">5 - Running with Docker</h1>
     
 	<p>As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment,  we&rsquo;ve set  up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.</p>
 <p>If this is your first time working with Docker, you&rsquo;ll want to <a href="https://docs.docker.com/get-docker/">install it</a> before continuing.</p>
@@ -535,7 +580,7 @@ for Maiko, for systems for which there is no pre-built release.</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-334b3d57e8abcaf6fa97b52caac8fc53">5 - Download</h1>
+	<h1 id="pg-334b3d57e8abcaf6fa97b52caac8fc53">6 - Download</h1>
     
 	<p><strong>NEED TO UPDATE</strong></p>
 <h2 id="source-code">Source Code</h2>
@@ -673,7 +718,7 @@ maintained by Laurent Blume / John Ellson. Currently available packages are:</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-930e19de0a68e31dd20b302c6f1d97dd">5.1 - Source Code</h1>
+	<h1 id="pg-930e19de0a68e31dd20b302c6f1d97dd">6.1 - Source Code</h1>
     
 	<p><strong>NEED TO UPDATE</strong></p>
 <h2 id="source-packages">Source Packages</h2>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.102.3" />
+<meta name="generator" content="Hugo 0.103.0" />
 <meta name="robots" content="index, follow">
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
 
@@ -21,7 +21,7 @@ Blake McBride Imagine finding an old car from the 1960s. It&rsquo;s been sitting
 <meta itemprop="description" content="This document attempts to capture what people have said about their interests in the project. We may all have different ends in mind, but we share many common goals. We were working on sharing before “open source” was a thing. See also the corresponding &ldquo;guest-book.md&rdquo; guest book and the &ldquo;twitter.md&rdquo; quotes.
 Blake McBride Imagine finding an old car from the 1960s. It&rsquo;s been sitting in storage for decades, doesn&rsquo;t run, and looks like hell.">
 
-<meta itemprop="wordCount" content="3782">
+<meta itemprop="wordCount" content="4189">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Medley Goals"/>
 <meta name="twitter:description" content="This document attempts to capture what people have said about their interests in the project. We may all have different ends in mind, but we share many common goals. We were working on sharing before “open source” was a thing. See also the corresponding &ldquo;guest-book.md&rdquo; guest book and the &ldquo;twitter.md&rdquo; quotes.
@@ -96,7 +96,7 @@ Blake McBride Imagine finding an old car from the 1960s. It&rsquo;s been sitting
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.26b3746749e46978e2f6e63f5a577d0a.json"
+  data-offline-search-index-json-src="/offline-search-index.b62887c9ccc91c576c74ac9b50b29e6c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -118,7 +118,7 @@ Blake McBride Imagine finding an old car from the 1960s. It&rsquo;s been sitting
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.26b3746749e46978e2f6e63f5a577d0a.json"
+  data-offline-search-index-json-src="/offline-search-index.b62887c9ccc91c576c74ac9b50b29e6c.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -186,12 +186,16 @@ Blake McBride Imagine finding an old car from the 1960s. It&rsquo;s been sitting
   <a href="/running/build/releases/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningbuildreleases"><span class="">Releases</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-on-mac-li">
+  <a href="/running/running-on-mac/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-on-mac"><span class="">Running on MacOS</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-on-win-li">
   <a href="/running/running-on-win/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-on-win"><span class="">Running on Windows</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-with-docker-li">
   <a href="/running/running-with-docker/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-with-docker"><span class="">Running with Docker</span></a>
 </li>
   </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-developing-li">
+  <a href="/developing/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-developing"><span class="">Developing Medley Interlisp</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-documentation-li">
   <a href="/documentation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-documentation"><span class="">Documentation</span></a>
   <ul class="ul-2 foldable">
@@ -230,8 +234,6 @@ Blake McBride Imagine finding an old car from the 1960s. It&rsquo;s been sitting
   <a href="/credits/in-memoriam/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-creditsin-memoriam"><span class="">In Memoriam</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-contact-li">
-  <a href="/contact/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-contact"><span class="">Contact</span></a>
 </li>
   </ul>
 </li>
@@ -271,6 +273,7 @@ Blake McBride Imagine finding an old car from the 1960s. It&rsquo;s been sitting
         <li><a href="#william-maddox">William Maddox</a></li>
         <li><a href="#stephen-kaisler">Stephen Kaisler</a></li>
         <li><a href="#guenther-goerz">Guenther Goerz</a></li>
+        <li><a href="#j-moore">J Moore</a></li>
       </ul>
     </li>
   </ul>
@@ -426,7 +429,12 @@ Blake McBride Imagine finding an old car from the 1960s. It&rsquo;s been sitting
 <p>I got familiar with Interlisp when I was working on an implementation of a parser for my PhD thesis work in the late 1970 and 1980s. It started with a little cooperation with Martin Kay (and also Ron Kaplan) from PARC at a computational linguistics summer school in Pisa. Although I had a tenured researcher position at my university, I did not have any means to acquire one of Xerox&rsquo; LISP workstations, which were sold in Germany by Siemens for something like 90000 Euros (today&rsquo;s equivalent) - so I used Interlisp on a Siemens mainframe to which I had access. The Interlisp version was a descendant from the IBM implementation - both machines had basically the same hardware architecture but different operating systems (which was not a problem for the rather self-contained Interlisp environment). After spending some time with IBM&rsquo;s LILIOG project at IBM in Stuttgart and getting my first professorship at the University of Hamburg, I came back to Erlangen in 1991. So, in the 1990s I used the Fuji Xerox emulation of Medley on Sun workstations and later on Linux machines. Additionally, we also acquired a license for the DOS version of Medley 2.0 from envos/Venue. What I used for some time was the LFG implementation in Medley - which I got from Ron Kaplan in Linux - in Suse Linux, running on my Mac(s) with the Parallels Virtual machine, mainly for teaching purposes. But I was also interested in various features of the programming environment&hellip; Recently, just for fun, I tried to get Medley up and running under DOSbox on Mac OS X. I was also wondering whether there is a DOS emulator for the ipad - and there is one, iDOS, which works pretty well! So, despite the small screen, Medley 2.0 runs amazingly well on the ipad too.</p>
 <p>I must add that we (our chair at FAU Computer Science) first acquired a Medley 2.0 license for the Sun workstations through Xerox France first and the DOS license later. We used it for our first steps in the Behaim Globe project (also trying out NoteCards and implementing our first ontology with CLOS) and the actual portal <a href="http://wisski.cs.fau.de/behaim">http://wisski.cs.fau.de/behaim</a> has still some of the code deep inside and furthermore for NLP, in particular, the LFG grammar development environment. Since I was a simple user, my expertise is pretty small; I was never involved in anything close to system development. Later on, I switched to Scheme for teaching and research for reasons of clarity and simplicity and also for theoretical reasons - I never liked Common LISP very much. But of course, there was never such a comfortable programming environment for Scheme.</p>
 <p>After my retirement in 2012, I focussed on the development of our VRE Wisski in cooperation with two museums (<a href="http://wiss-ki.eu">http://wiss-ki.eu</a>), which turned out to be quite successful - in the meantime, there are several hundred applications. Furthermore, I helped to get Digital Humanities at our university up and running - they are starting a new department quite now - and I was involved in some DH projects at the Max Planck Institute for the History of Science in Berlin and more recently at the Bibliotheca Hertziana (Max Planck Institute for Art History) in Rome in the field of &ldquo;cosmography&rdquo; (which was the correct term in the Renaissance), i.e. modelling and annotating historical texts and maps (<a href="https://wisski.biblhertz.it">https://wisski.biblhertz.it</a>).</p>
-<p>A while ago I tried - just for curiosity -, whether the old DOS version of Medley 2.0 would also run in the DOSBox under Mac OS X. It worked really well, and so I became even more curious whether there would be something like DOSbox for iOS - and yes, there is iDOS, basically designed to run old computer games. Now Medley 2 runs on my ipad&hellip; Actually, I don&rsquo;t have any further plans, and I didn&rsquo;t realize what happened after Medley 2.0. So, from your presentation at lispNYC I learned that there seems to be something like a new version 3.0. Sounds tempting&hellip; So, I would be glad if we could keep our contact active.</p>
+<p>A while ago I tried - just for curiosity - whether the old DOS version of Medley 2.0 would also run in the DOSBox under Mac OS X. It worked really well, and so I became even more curious whether there would be something like DOSbox for iOS - and yes, there is iDOS, basically designed to run old computer games. Now Medley 2 runs on my ipad&hellip; Actually, I don&rsquo;t have any further plans, and I didn&rsquo;t realize what happened after Medley 2.0. So, from your presentation at lispNYC I learned that there seems to be something like a new version 3.0. Sounds tempting&hellip; So, I would be glad if we could keep our contact active.</p>
+<h3 id="j-moore">J Moore</h3>
+<p>I checked out interlisp.org.  That&rsquo;s an interesting project.  I am glad you&rsquo;re doing it.  Too often the first implementations of good ideas are overshadowed by evolutionary improvements.  (In that spirit, a few years ago I reimplemented the first Boyer-Moore theorem prover &ndash; the one we built in Edinburgh in POP-2.  But I implemented it in ACL2, i.e., applicative Common Lisp.  But it proves the same theorems the same way as we did in 1972-3.)</p>
+<p>As for the VM, I don&rsquo;t have much context to add beyond what I wrote in the Acknowledgements of CSL-76-5, which I&rsquo;m sure you&rsquo;ve read if you&rsquo;re interested in that question.  I got my PhD from Edinburgh in November, 1973, and arrived at PARC in January, 1974.  Danny Bobrow had taken a sabbatical from PARC (BBN?) in &lsquo;73 and spent it in Edinburgh, where he convinced me to join PARC.  The Acknowledgements says Warren Teitelman asked me to write the VM document in January, 1975.  But I actually suspect it was earlier than that, perhaps as early as January, 1974 (i.e., I got the year wrong!).  The reason is that the Acknowledgement says we spent 2 years writing it, but CSL-76-5 came out in September, 1976, so I suspect Warren approached me in the
+a few months after I joined PARC.  For the record, I don&rsquo;t remember doing anything at PARC besides (a) re-coding the Edinburgh theorem prover in Interlisp as a warm up exercise and to continue my research on theorem proving, (b) helping Simonyi with the representation of text in Bravo by implementing the underlying data structures in Interlisp and responding to Charles&rsquo; requests for new features, (c) writing the VM, (d) inventing the fast string searching algorithm with Boyer and fighting the lawyers at Xerox to publish it (ultimately by threatening to remove my name from the publication and let Boyer author it), and (e) fighting with Ben Wegbreit and Jerry Elkind over the ``right&rsquo;&rsquo; way to approach verification and ultimately leaving.  So I suspect that my VM work was my first and main official task at PARC.</p>
+<p>Other than that, I think the Acknowledgements say it all, accurately.  The line there that says I think my friends in the formal verification community will be displeased was not speculation.  Tony Hoare wrote me a letter upon seeing the document in which he complimented me on the precision and urged me to get back to formal methods.  Oh well.</p>
 
 	
 	
