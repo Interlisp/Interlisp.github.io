@@ -5,9 +5,11 @@ type: docs
 ---
 ## GitHub
 
-The [Interlisp](https://github.com/Interlisp) organization on GitHub contains re;ositories for the main [Medley](https://github.com/Interlisp/medley) Lisp code, build scripts and GitHub automation, the C-coded virtual machine, called [maiko](https://github.com/Interlisp/maiko), and documentation (including [this web site](https://github.com/Interlisp/Interlisp.github.io). 
-
-Bugs, feature requests, and questions are best posted as [GitHub issues in the Medley repository](https://github.com/Interlisp/medley/issues). Do check to see if your issue or question is answered there.
+The [Interlisp](https://github.com/Interlisp) organization on GitHub contains repositories for
+* [Medley](https://github.com/Interlisp/medley): Lisp code, build scripts and GitHub automation
+* [maiko](https://github.com/Interlisp/maiko): The C-coded virtual machine
+* documentation (including [this web site](https://github.com/Interlisp/Interlisp.github.io))
+plus other related project components. Bugs, feature requests, and questions are best posted as [GitHub issues in the Medley repository](https://github.com/Interlisp/medley/issues). Do check to see if your issue or question is answered there.
 
 Participants in the project can join the [GitHub Interlisp organization](https://github.com/orgs/Interlisp/people).
 

@@ -6,4 +6,4 @@ aliases:
 toc_hide: true
 type: docs
 ---
-The Interlisp todo list has moved to the [Interlisp issue tracker](https://github.com/interlisp/medley/-/issues).
+The Interlisp todo list has moved to the [Interlisp issue tracker](https://github.com/interlisp/medley/issues).

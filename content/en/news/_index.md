@@ -4,9 +4,12 @@ weight: 10
 type: docs
 ---
 
-The **2021 Medley Interlisp [Annual Report](https://docs.google.com/document/d/1cGBDNMO5yt6ymi7YiCcf6uNn6RBe5PVS7mW4kFnlzNY)** provides a detailed report on 2021 accomplishments.
+The **2021 Medley Interlisp [Annual Report](2021MedleyAnnualReport)** provides a detailed report on 2021 accomplishments.
 
 # Recent Updates
+## 9/2022
+* Newcomers welcome! 
+
 ## 6/2022
  - Documentation update. We're updating the project documentation. Feel free to make suggestions for improvement
  - Significant development of integration with GitHub (via the GITFNS module) for doing a Lisp-based PR review workflow.
