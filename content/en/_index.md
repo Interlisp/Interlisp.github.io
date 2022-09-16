@@ -1,3 +1,6 @@
+---
+aliases:
+  - /_pages/
 type: docs
 ---
 
