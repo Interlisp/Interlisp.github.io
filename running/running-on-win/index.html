@@ -8,22 +8,27 @@
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
 
 <title>Running on Windows | Medley Interlisp Project</title>
-<meta name="description" content="Running in WSL2 (Windows)
-For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying …">
+<meta name="description" content="Running on Windows
+
+Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use
+Docker Desktop is a …">
 <meta property="og:title" content="Running on Windows" />
-<meta property="og:description" content="Running in WSL2 (Windows) For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are Cygwin/X and XMing (the 6." />
+<meta property="og:description" content="Running on Windows Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use Docker Desktop is a great possibility, too. Running on Windows with WSL2 (Windows Subsystem for Linux) We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.
+However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://interlisp.org/running/running-on-win/" /><meta property="article:section" content="running" />
 
 <meta property="og:site_name" content="Medley Interlisp Project" />
 
 <meta itemprop="name" content="Running on Windows">
-<meta itemprop="description" content="Running in WSL2 (Windows) For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are Cygwin/X and XMing (the 6.">
+<meta itemprop="description" content="Running on Windows Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use Docker Desktop is a great possibility, too. Running on Windows with WSL2 (Windows Subsystem for Linux) We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.
+However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go.">
 
-<meta itemprop="wordCount" content="177">
+<meta itemprop="wordCount" content="251">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running on Windows"/>
-<meta name="twitter:description" content="Running in WSL2 (Windows) For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are Cygwin/X and XMing (the 6."/>
+<meta name="twitter:description" content="Running on Windows Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use Docker Desktop is a great possibility, too. Running on Windows with WSL2 (Windows Subsystem for Linux) We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.
+However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go."/>
 
 
 
@@ -94,7 +99,7 @@ For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requ
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.029d8a47cdab3bec888ce58a56a8f071.json"
+  data-offline-search-index-json-src="/offline-search-index.c6f2f1c394f0defc9009fcf856c6758b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -116,7 +121,7 @@ For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requ
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.029d8a47cdab3bec888ce58a56a8f071.json"
+  data-offline-search-index-json-src="/offline-search-index.c6f2f1c394f0defc9009fcf856c6758b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -141,6 +146,8 @@ For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requ
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-aboutgetinvolved2021meetings-li">
   <a href="/about/getinvolved/2021meetings/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutgetinvolved2021meetings"><span class="">2021 Meeting Agendas and Notes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-aboutgetinvolved2022meetings-li">
+  <a href="/about/getinvolved/2022meetings/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutgetinvolved2022meetings"><span class=""></span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-aboutpartners-li">
@@ -256,7 +263,8 @@ For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requ
 
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
-    <li><a href="#running-in-wsl2-windows">Running in WSL2 (Windows)</a></li>
+    <li><a href="#running-on-windows">Running on Windows</a></li>
+    <li><a href="#running-on-windows-with-wsl2-windows-subsystem-for-linux">Running on Windows with WSL2 (Windows Subsystem for Linux)</a></li>
     <li><a href="#requirements">Requirements</a>
       <ul>
         <li><a href="#installing-medley-via-an-install-script">Installing Medley via an Install script</a></li>
@@ -325,7 +333,16 @@ For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requ
 
 		
 	</header>    
-	<h2 id="running-in-wsl2-windows">Running in WSL2 (Windows)</h2>
+	<h2 id="running-on-windows">Running on Windows</h2>
+<ul>
+<li>Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use</li>
+<li>Docker Desktop is a great possibility, too.</li>
+</ul>
+<h2 id="running-on-windows-with-wsl2-windows-subsystem-for-linux">Running on Windows with WSL2 (Windows Subsystem for Linux)</h2>
+<p>We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.</p>
+<p>However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go.</p>
+<p>If you have Windows 11 Pro, WSL</p>
+<p><a href="https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock">https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock</a></p>
 <p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are <a href="https://x.cygwin.com">Cygwin/X</a> and <a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</p>
 <h2 id="requirements">Requirements</h2>
 <ul>

@@ -90,7 +90,7 @@ There are different ways of running Medley Interlisp, depending on your platform
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.029d8a47cdab3bec888ce58a56a8f071.json"
+  data-offline-search-index-json-src="/offline-search-index.c6f2f1c394f0defc9009fcf856c6758b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -257,24 +257,26 @@ This is the multi-page printable view of this section.
 <li>Interlisp Online</li>
 <li>In a Docker container</li>
 <li>Download and install from a release</li>
-<li>(re)build the Virtual Machine emulator (maiko) from sources</li>
+<li>(re)build the virtual machine emulator (Maiko) from sources</li>
 <li>(Re) build your own Lisp image</li>
 </ul>
 <h2 id="interlisp-online">Interlisp Online</h2>
 <p>For the minimum amount of setup, the online version is a good starting place. <a href="https://online.interlisp.org">Interlisp Online</a> provides access to a version of Medley running in the cloud. All that is needed to get started is a (recent) browser and a mouse. You can log in as a guest or &ndash; if you want to save files or sessions &ndash; create an account.</p>
 <p>Sessions are preserved between sessions, but will be removed after 30 days of inactivity). Online should be good for experimenting and introducing yourself to the environment. The online site also provides a way of copying files to and from your account&rsquo;s files.</p>
 <p>HOWEVER: anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The <a href="https://github.com/Interlisp/online#readme">Interlisp/online</a> repository may have more details.</p>
-<h2 id="running-with-docker-desktop">Running with Docker Desktop</h2>
-<p>If you are already familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or X server). The VNC Viewer allows Windows to interact with the Medley instance running in Docker. It supports the windowing system and communicates your input.</p>
+<ol start="2">
+<li>Running with Docker Desktop</li>
+</ol>
+<p>If you are already familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or a windows X server). The VNC Viewer allows you to interact with the Medley instance running in Docker (Interlisp Online uses a browser-based VNC viewer.)</p>
 <p>The instructions for this configuration are located at <a href="running-with-docker">Running with Docker</a>.</p>
-<p>Medley in Docker has a copy of the Medley system within the Docker container. Whenever you install a new version of the Medley Docker container you get a fresh system, all previous work is replaced by a vanilla image. This provides way of experimenting. Docker lets you mount directories on your local file system.</p>
+<p>Medley in Docker has a copy of the Medley system within the Docker container. Whenever you install a new version of the Medley Docker container you get a fresh system (any previous changes would be lost.) Docker lets you mount directories on your local file system.</p>
 <h2 id="running-installed">Running Installed</h2>
-<p>For users of Linux, BSD, MacOS and recent Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility.</p>
+<p>For users of Linux, BSD, MacOS and Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility.</p>
 <p>Medley (maiko) currently requires having an X-server installed &ndash; which one to use depends on your platform.</p>
 <p>We use GitHub Actions workflow automation to build Maiko for different platforms; if your platform isn&rsquo;t in the mix you may need to <a href="https://github.com/Interlisp/maiko/#readme">download maiko sources and make and install those binaries</a>.</p>
 <h2 id="developing-medley-interlisp-itself">Developing Medley Interlisp itself</h2>
 <p>This process isn&rsquo;t well documented yet.
-The scripts &ldquo;scripts/loadup*&rdquo; in the github/interlisp/medley/ repository are used.</p>
+The scripts &ldquo;scripts/loadup*&rdquo; in the github/interlisp/medley/ repository are used. See README.md files in the GitHub repo.</p>
 
 </div>
 </div>
@@ -486,11 +488,12 @@ for Maiko, for systems for which there is no pre-built release.</p>
 <h2 id="online">online</h2>
 <p>requires a recent version of Safari or Chrome or Firefox.</p>
 <h2 id="docker-desktop">docker desktop</h2>
-<p>Running with Docker Desktop might be an option, but we don&rsquo;t build Docker arm64 images.</p>
+<p>Running with Docker Desktop is an option, but installing locally is better.</p>
 <h2 id="install-from-release">Install from release</h2>
-<p>x86 only for now</p>
+<p>We don&rsquo;t have it build automation yet, but usually a release will include a build for darwin.aarch64.</p>
 <h2 id="install-medley-from-release-build-maiko">install medley from release, build maiko</h2>
-<p>Need XCode</p>
+<p>Need XCode
+Need XQuartz installed before you build maiko (includes XClient libraries).</p>
 <ul>
 <li>Requirements</li>
 </ul>
@@ -498,7 +501,8 @@ for Maiko, for systems for which there is no pre-built release.</p>
 <li>Intel or M1/M2 Macintosh (or even older)</li>
 <li>XQuartz Macintosh X server for your OS/mac vintage)</li>
 </ul>
-<p>XQuartz settings</p>
+<h2 id="xquartz-settings">XQuartz settings</h2>
+<p>emulate 3-button mouse</p>
 
 </div>
 
@@ -516,7 +520,16 @@ for Maiko, for systems for which there is no pre-built release.</p>
     
 	<h1 id="pg-a3ecb7e1d30d46f5644e5097527908cb">4 - Running on Windows</h1>
     
-	<h2 id="running-in-wsl2-windows">Running in WSL2 (Windows)</h2>
+	<h2 id="running-on-windows">Running on Windows</h2>
+<ul>
+<li>Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use</li>
+<li>Docker Desktop is a great possibility, too.</li>
+</ul>
+<h2 id="running-on-windows-with-wsl2-windows-subsystem-for-linux">Running on Windows with WSL2 (Windows Subsystem for Linux)</h2>
+<p>We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.</p>
+<p>However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go.</p>
+<p>If you have Windows 11 Pro, WSL</p>
+<p><a href="https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock">https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock</a></p>
 <p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are <a href="https://x.cygwin.com">Cygwin/X</a> and <a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</p>
 <h2 id="requirements">Requirements</h2>
 <ul>

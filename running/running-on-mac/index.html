@@ -16,10 +16,9 @@ Running with …">
 <meta property="og:title" content="Running on MacOS" />
 <meta property="og:description" content="DRAFT &ndash; This page is currently being revised.
 online requires a recent version of Safari or Chrome or Firefox.
-docker desktop Running with Docker Desktop might be an option, but we don&rsquo;t build Docker arm64 images.
-Install from release x86 only for now
-install medley from release, build maiko Need XCode
-Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server for your OS/mac vintage) XQuartz settings" />
+docker desktop Running with Docker Desktop is an option, but installing locally is better.
+Install from release We don&rsquo;t have it build automation yet, but usually a release will include a build for darwin.aarch64.
+install medley from release, build maiko Need XCode Need XQuartz installed before you build maiko (includes XClient libraries)." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://interlisp.org/running/running-on-mac/" /><meta property="article:section" content="running" />
 
@@ -28,20 +27,18 @@ Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server
 <meta itemprop="name" content="Running on MacOS">
 <meta itemprop="description" content="DRAFT &ndash; This page is currently being revised.
 online requires a recent version of Safari or Chrome or Firefox.
-docker desktop Running with Docker Desktop might be an option, but we don&rsquo;t build Docker arm64 images.
-Install from release x86 only for now
-install medley from release, build maiko Need XCode
-Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server for your OS/mac vintage) XQuartz settings">
+docker desktop Running with Docker Desktop is an option, but installing locally is better.
+Install from release We don&rsquo;t have it build automation yet, but usually a release will include a build for darwin.aarch64.
+install medley from release, build maiko Need XCode Need XQuartz installed before you build maiko (includes XClient libraries).">
 
-<meta itemprop="wordCount" content="69">
+<meta itemprop="wordCount" content="92">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running on MacOS"/>
 <meta name="twitter:description" content="DRAFT &ndash; This page is currently being revised.
 online requires a recent version of Safari or Chrome or Firefox.
-docker desktop Running with Docker Desktop might be an option, but we don&rsquo;t build Docker arm64 images.
-Install from release x86 only for now
-install medley from release, build maiko Need XCode
-Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server for your OS/mac vintage) XQuartz settings"/>
+docker desktop Running with Docker Desktop is an option, but installing locally is better.
+Install from release We don&rsquo;t have it build automation yet, but usually a release will include a build for darwin.aarch64.
+install medley from release, build maiko Need XCode Need XQuartz installed before you build maiko (includes XClient libraries)."/>
 
 
 
@@ -112,7 +109,7 @@ Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.029d8a47cdab3bec888ce58a56a8f071.json"
+  data-offline-search-index-json-src="/offline-search-index.c6f2f1c394f0defc9009fcf856c6758b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -134,7 +131,7 @@ Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.029d8a47cdab3bec888ce58a56a8f071.json"
+  data-offline-search-index-json-src="/offline-search-index.c6f2f1c394f0defc9009fcf856c6758b.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -159,6 +156,8 @@ Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-aboutgetinvolved2021meetings-li">
   <a href="/about/getinvolved/2021meetings/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutgetinvolved2021meetings"><span class="">2021 Meeting Agendas and Notes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-aboutgetinvolved2022meetings-li">
+  <a href="/about/getinvolved/2022meetings/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutgetinvolved2022meetings"><span class=""></span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-aboutpartners-li">
@@ -278,6 +277,7 @@ Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server
     <li><a href="#docker-desktop">docker desktop</a></li>
     <li><a href="#install-from-release">Install from release</a></li>
     <li><a href="#install-medley-from-release-build-maiko">install medley from release, build maiko</a></li>
+    <li><a href="#xquartz-settings">XQuartz settings</a></li>
   </ul>
 </nav></div>
 
@@ -344,11 +344,12 @@ Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server
 <h2 id="online">online</h2>
 <p>requires a recent version of Safari or Chrome or Firefox.</p>
 <h2 id="docker-desktop">docker desktop</h2>
-<p>Running with Docker Desktop might be an option, but we don&rsquo;t build Docker arm64 images.</p>
+<p>Running with Docker Desktop is an option, but installing locally is better.</p>
 <h2 id="install-from-release">Install from release</h2>
-<p>x86 only for now</p>
+<p>We don&rsquo;t have it build automation yet, but usually a release will include a build for darwin.aarch64.</p>
 <h2 id="install-medley-from-release-build-maiko">install medley from release, build maiko</h2>
-<p>Need XCode</p>
+<p>Need XCode
+Need XQuartz installed before you build maiko (includes XClient libraries).</p>
 <ul>
 <li>Requirements</li>
 </ul>
@@ -356,7 +357,8 @@ Requirements Intel or M1/M2 Macintosh (or even older) XQuartz Macintosh X server
 <li>Intel or M1/M2 Macintosh (or even older)</li>
 <li>XQuartz Macintosh X server for your OS/mac vintage)</li>
 </ul>
-<p>XQuartz settings</p>
+<h2 id="xquartz-settings">XQuartz settings</h2>
+<p>emulate 3-button mouse</p>
 
 	
 	
