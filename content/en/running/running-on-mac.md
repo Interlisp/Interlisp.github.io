@@ -12,15 +12,17 @@ type: docs
 
 ## docker desktop
 
-Running with Docker Desktop might be an option, but we don't build Docker arm64 images.
+Running with Docker Desktop is an option, but installing locally is better.
 
 ## Install from release
 
-x86 only for now
+
+We don't have it build automation yet, but usually a release will include a build for darwin.aarch64.
 
 ## install medley from release, build maiko
 
 Need XCode
+Need XQuartz installed before you build maiko (includes XClient libraries).
 
 * Requirements
 
@@ -28,5 +30,6 @@ Need XCode
 - XQuartz Macintosh X server for your OS/mac vintage)
 
 
-XQuartz settings
+## XQuartz settings
 
+emulate 3-button mouse

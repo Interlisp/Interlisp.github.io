@@ -9,6 +9,7 @@ The [Interlisp](https://github.com/Interlisp) organization on GitHub contains re
 * [Medley](https://github.com/Interlisp/medley): Lisp code, build scripts and GitHub automation
 * [maiko](https://github.com/Interlisp/maiko): The C-coded virtual machine
 * documentation (including [this web site](https://github.com/Interlisp/Interlisp.github.io))
+
 plus other related project components. Bugs, feature requests, and questions are best posted as [GitHub issues in the Medley repository](https://github.com/Interlisp/medley/issues). Do check to see if your issue or question is answered there.
 
 Participants in the project can join the [GitHub Interlisp organization](https://github.com/orgs/Interlisp/people).
@@ -21,8 +22,8 @@ _Monday, 1:00 pm ET / 10:00 am PT_
 
 ### Meeting Agendas and Notes
 
-* Recent meeting agendas and notes are [here](https://docs.google.com/document/d/1NxCzo6xr7W7VmyeXNeAjeEMx98n-yn27YsHvDFjfQvQ/). Older agendas are available.
-Meeting recordings are kept (currently using Zoom "record to the cloud" and then download to google drive, but saving as youtube private is a possibility.
+* Recent meeting agendas and notes are [here](https://docs.google.com/document/d/1NxCzo6xr7W7VmyeXNeAjeEMx98n-yn27YsHvDFjfQvQ/). Older agendas are [here](2022Meetings) and [here](2021Meetings).
+Meeting recordings are made using Zoom "record to the cloud" and then download to google drive; but saving to a youtube private channel is a possibility.
 
 ## EMail and access groups
 

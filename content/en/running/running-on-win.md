@@ -3,9 +3,21 @@ title: Running on Windows
 weight: 50
 type: docs
 ---
+## Running on Windows
+
+* Interlisp Online works fine with Edge and Chrome; we've tested others but don't regularly use
+* Docker Desktop is a great possibility, too.
 
 
-## Running in WSL2 (Windows)
+## Running on Windows with WSL2 (Windows Subsystem for Linux)
+
+We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.
+
+However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go.
+
+If you have Windows 11 Pro, WSL
+
+https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock
 
 For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft's WSL environment. In addition, if you aren't running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are [Cygwin/X](https://x.cygwin.com) and [XMing](http://www.straightrunning.com/XmingNotes/) (the 6.9 release is old but usable).
 

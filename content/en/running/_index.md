@@ -12,7 +12,7 @@ There are different ways of running Medley Interlisp, depending on your platform
 * Interlisp Online
 * In a Docker container
 * Download and install from a release
-* (re)build the Virtual Machine emulator (maiko) from sources
+* (re)build the virtual machine emulator (Maiko) from sources
 * (Re) build your own Lisp image
 
 ## Interlisp Online
@@ -23,17 +23,17 @@ Sessions are preserved between sessions, but will be removed after 30 days of in
 
 HOWEVER: anything you create in the online environment should be treated as transient. If you're interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The [Interlisp/online](https://github.com/Interlisp/online#readme) repository may have more details.
 
-## Running with Docker Desktop
+2. Running with Docker Desktop
 
-If you are already familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or X server). The VNC Viewer allows Windows to interact with the Medley instance running in Docker. It supports the windowing system and communicates your input.
+If you are already familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or a windows X server). The VNC Viewer allows you to interact with the Medley instance running in Docker (Interlisp Online uses a browser-based VNC viewer.)
 
 The instructions for this configuration are located at [Running with Docker](running-with-docker).
 
-Medley in Docker has a copy of the Medley system within the Docker container. Whenever you install a new version of the Medley Docker container you get a fresh system, all previous work is replaced by a vanilla image. This provides way of experimenting. Docker lets you mount directories on your local file system.
+Medley in Docker has a copy of the Medley system within the Docker container. Whenever you install a new version of the Medley Docker container you get a fresh system (any previous changes would be lost.) Docker lets you mount directories on your local file system.
 
 ## Running Installed
 
-For users of Linux, BSD, MacOS and recent Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility.
+For users of Linux, BSD, MacOS and Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility.
 
 Medley (maiko) currently requires having an X-server installed -- which one to use depends on your platform.
 
@@ -42,4 +42,5 @@ We use GitHub Actions workflow automation to build Maiko for different platforms
 ## Developing Medley Interlisp itself
 
 This process isn't well documented yet.
-The scripts "scripts/loadup*" in the github/interlisp/medley/ repository are used.
+The scripts "scripts/loadup*" in the github/interlisp/medley/ repository are used. See README.md files in the GitHub repo.
+
