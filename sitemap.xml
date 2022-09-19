@@ -151,10 +151,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/download/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/faq/</loc>
   </url>
   
@@ -168,10 +164,6 @@
   
   <url>
     <loc>https://interlisp.org/misc/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/running/download/source/</loc>
   </url>
   
 </urlset>
