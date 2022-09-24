@@ -8,16 +8,16 @@ type: docs
 
 ## What is Medley Interlisp?
 
-Interlisp was a software development environment developed at Xerox PARC in the 1970s and 1980s to support research in Artificial Intelligence, computational linguistics, graphical user interfaces, hypertext, and other research areas. At the time, software was developed in Fortran, Cobol, Algol, and interactivity with software development was uncommon and slow. Interlisp created a number of unique breakthroughs and features which are commonly used in programming today.  The 1992 ACM Software System Award was awarded to the Interlisp system for pioneering work in programming environments.
+Interlisp is a software development environment, originating from Xerox PARC in the 1970s and 1980s. supporting software research in AI, computational linguistics, graphical user interfaces, hypertext, and other research areas. Software development in Interlisp-D is a different experience than is common, even today. The features of structure editing, source code management, code analysis and cross-referencing combined to support rapid incremental development. The 1992 ACM Software System Award was awarded to the Interlisp system for pioneering work in programming environments.
 
-Interlisp as a system evolved from an interactive terminal style programming tool to Interlisp-D as the GUI and entire operating system for the Xerox Lisp machines (called D-machines, named Dorado, Dolphin, Dandelion, Daybreak) with a common byte-coded virtual machine. The virtual machine was then ported to C for Sun Unix and many other Unix systems, and the system was extended to support the Common Lisp standard as well.
+Interlisp evolved from an interactive terminal style programming tool to Interlisp-D -- GUI and ethe entire operating system for the Xerox Lisp machines (called D-machines, named Dorado, Dolphin, Dandelion, Daybreak) with a common byte-code virtual machine. The virtual machine was then ported to C for Sun Unix and many other Unix systems, and the system was extended to support the Common Lisp standard as well.
 
-Development of the system moved from Xerox PARC, to a Xerox AI Systems division, to a spin-out company called Envos, to a smaller company called Venue. The system was called Interlisp, Interlisp-D, and various named releases (Koto, Lyric, Medley) until the name "Medley" was used for the whole thing. [More background](about).
+Development of the system moved from Xerox PARC to a Xerox AI Systems division, to a spin-out company called Envos, to a smaller company called Venue. The system was called Interlisp, Interlisp-D, and various named releases (Koto, Lyric, Medley) until the name "Medley" was used for the whole thing. [More background](about).
 
 ## What are we trying to accomplish?
 
-Software development in Interlisp-D was a different experience than is common.
-We aim to not just demonstrate how it worked, but to revive the experimental development tools to support not just a demo or test drive, but actual use as a development and learning tool. To make the software usable, we need to overcome a number of compatibility problems with current systems and interfaces.
+
+We aim to revive Medley Interlisp to support not just a demo or test drive but actual use as a development and learning tool. To make the software usable, we need to overcome a number of compatibility problems with current systems and interfaces.
 
 We also want to restore and present earlier versions of Interlisp, for the student of computer history. See [Interlisp and Software Preservation Network](https://www.softwarepreservationnetwork.org/Interlisp/) for more.
 
