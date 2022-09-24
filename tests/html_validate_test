@@ -19,4 +19,5 @@ html5validator \
 	"The “itemprop” attribute was specified, but the element is not a property of any item." \
 	"The “main” element must not appear as a descendant of the “main” element." \
   --root public/ \
-  --blacklist _print # https://gitlab.com/graphviz/graphviz.gitlab.io/-/issues/98
+  --blacklist _print
+
