@@ -18,7 +18,7 @@ A note about performance:  Modern systems are thousands of times faster than the
 
 For a minimum amount of setup, the online version is a good starting place. [Interlisp Online](https://online.interlisp.org) provides access to a version of Medley running in the cloud. All that is needed to get started is a (recent) browser and a mouse. You can log in as a guest or -- if you want to save files or sessions -- create an account.
 
-Sessions and files are preserved between sessions, but will be removed after 30 days of inactivity. While your connected to your session, you can access your files using sftp. Online should be good for experimenting and introducing yourself to the environment.
+Sessions and files are preserved between sessions, but will be removed after 30 days of inactivity. While you are connected to your session, you can access your files using sftp. Online should be good for experimenting and introducing yourself to the environment.
 
 Pros: Sandbox environment -- it's all done with Docker and VMs so just modify anything you want. 
 Cons: Requires a good Internet connection to run. No access to files in your file system (also a pro). Anything you create in the online environment should be treated as transient. 
@@ -42,7 +42,7 @@ For users of Linux, BSD, MacOS and Windows (with WSL2), installing and running a
 
 Maiko currently requires having an X-server installed; which one to use depends on your platform.
 
-We use GitHub Actions workflow automation to build Maiko for different platforms; if your platform isn't in the mix you may need to [download maiko sources and make and install those binaries](https://github.com/Interlisp/maiko/#readme). We've run or know of many different platforms.
+We use GitHub Actions workflow automation to build Maiko for different platforms; if your platform isn't in the mix you may need to [download maiko sources and make and install those binaries](https://github.com/Interlisp/maiko/#readme).
 
 ## Developing Medley Interlisp itself
 
