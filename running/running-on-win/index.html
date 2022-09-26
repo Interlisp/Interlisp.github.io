@@ -10,25 +10,31 @@
 <title>Running on Windows | Medley Interlisp Project</title>
 <meta name="description" content="Running on Windows
 
-Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use
-Docker Desktop is a …">
+
+Interlisp Online seems to works fine with recent Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use them. …">
 <meta property="og:title" content="Running on Windows" />
-<meta property="og:description" content="Running on Windows Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use Docker Desktop is a great possibility, too. Running on Windows with WSL2 (Windows Subsystem for Linux) We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.
-However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go." />
+<meta property="og:description" content="Running on Windows Interlisp Online seems to works fine with recent Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use them. WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use.
+Docker Desktop is a great possibility, too, if your system can run it.
+Otherwise, to run installed, you either need
+WSLg (available with Windows 11) OR WsL2 A running X-server installed on your machine WsL stands for &ldquo;Windows Subsystem for Linux&rdquo;." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://interlisp.org/running/running-on-win/" /><meta property="article:section" content="running" />
 
 <meta property="og:site_name" content="Medley Interlisp Project" />
 
 <meta itemprop="name" content="Running on Windows">
-<meta itemprop="description" content="Running on Windows Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use Docker Desktop is a great possibility, too. Running on Windows with WSL2 (Windows Subsystem for Linux) We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.
-However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go.">
+<meta itemprop="description" content="Running on Windows Interlisp Online seems to works fine with recent Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use them. WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use.
+Docker Desktop is a great possibility, too, if your system can run it.
+Otherwise, to run installed, you either need
+WSLg (available with Windows 11) OR WsL2 A running X-server installed on your machine WsL stands for &ldquo;Windows Subsystem for Linux&rdquo;.">
 
-<meta itemprop="wordCount" content="251">
+<meta itemprop="wordCount" content="413">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running on Windows"/>
-<meta name="twitter:description" content="Running on Windows Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use Docker Desktop is a great possibility, too. Running on Windows with WSL2 (Windows Subsystem for Linux) We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.
-However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go."/>
+<meta name="twitter:description" content="Running on Windows Interlisp Online seems to works fine with recent Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use them. WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use.
+Docker Desktop is a great possibility, too, if your system can run it.
+Otherwise, to run installed, you either need
+WSLg (available with Windows 11) OR WsL2 A running X-server installed on your machine WsL stands for &ldquo;Windows Subsystem for Linux&rdquo;."/>
 
 
 
@@ -99,7 +105,7 @@ However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go."/>
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.57355dc8bec4c742f1ce6e7161ba8a2f.json"
+  data-offline-search-index-json-src="/offline-search-index.14922409bdf34f17c7145ea63de28380.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -121,7 +127,7 @@ However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go."/>
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.57355dc8bec4c742f1ce6e7161ba8a2f.json"
+  data-offline-search-index-json-src="/offline-search-index.14922409bdf34f17c7145ea63de28380.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -264,7 +270,11 @@ However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go."/>
 <div class="td-toc"><nav id="TableOfContents">
   <ul>
     <li><a href="#running-on-windows">Running on Windows</a></li>
-    <li><a href="#running-on-windows-with-wsl2-windows-subsystem-for-linux">Running on Windows with WSL2 (Windows Subsystem for Linux)</a></li>
+    <li><a href="#running-on-windows-with-wsl2">Running on Windows with WSL2</a>
+      <ul>
+        <li><a href="#x-server-selection">X Server selection</a></li>
+      </ul>
+    </li>
     <li><a href="#requirements">Requirements</a>
       <ul>
         <li><a href="#installing-medley-via-an-install-script">Installing Medley via an Install script</a></li>
@@ -335,15 +345,43 @@ However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go."/>
 	</header>    
 	<h2 id="running-on-windows">Running on Windows</h2>
 <ul>
-<li>Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use</li>
-<li>Docker Desktop is a great possibility, too.</li>
+<li>
+<p>Interlisp Online seems to works fine with recent Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use them.
+WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use.</p>
+</li>
+<li>
+<p>Docker Desktop is a great possibility, too, if your system can run it.</p>
+</li>
+<li>
+<p>Otherwise, to run installed, you either need</p>
+<ul>
+<li>WSLg (available with Windows 11) OR</li>
+<li>WsL2 A running X-server installed on your machine</li>
 </ul>
-<h2 id="running-on-windows-with-wsl2-windows-subsystem-for-linux">Running on Windows with WSL2 (Windows Subsystem for Linux)</h2>
-<p>We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.</p>
-<p>However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go.</p>
-<p>If you have Windows 11 Pro, WSL</p>
-<p><a href="https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock">https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock</a></p>
-<p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are <a href="https://x.cygwin.com">Cygwin/X</a> and <a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</p>
+</li>
+</ul>
+<p>WsL stands for &ldquo;Windows Subsystem for Linux&rdquo;. It&rsquo;s like docker but a little more integrated (You can get at your linux files from windows and your windows files from linux).</p>
+<h2 id="running-on-windows-with-wsl2">Running on Windows with WSL2</h2>
+<p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires at least a little familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment.</p>
+<h3 id="x-server-selection">X Server selection</h3>
+<p>The X11 protocol was invented quite a while ago (inspired by Warren Teitelman and Bob Sproull&rsquo;s Alto Display protocol as part of early Interlisp window system work.)</p>
+<p>With X11, the notion of &ldquo;client&rdquo; and &ldquo;server&rdquo; are reversed. The software you run to manage the display and windows is the &ldquo;server&rdquo;, and the thing far away which is running with access to files and doing the work is the &ldquo;client&rdquo;.</p>
+<p>When you run WSL it&rsquo;s like you have two (or more) computers in one box, where one is running windows and the other(s) are running Linux. The linux side(s) have their own Internet Protocol address.</p>
+<p>The thing that hooks them together is the &ldquo;DISPLAY&rdquo; variable in the linux side has the address of the &ldquo;client&rdquo;.</p>
+<p>There have apparently been some (mainly unsuccessful) attempts to simplify this for windows 11 users.</p>
+<p>If you&rsquo;re running Windows 10, you will also need to install an X11 server within your Windows environment. There are different servers with varying capabilities and problems.</p>
+<ul>
+<li><a href="https://x.cygwin.com">Cygwin/X</a></li>
+<li><a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</li>
+<li>X410 (in the Microsoft Store, $40) &ndash; useful uses windows sockets.
+<a href="https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock">https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock</a>
+<ul>
+<li><a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a></li>
+</ul>
+</li>
+<li>GWSL from Microsoft store</li>
+<li>install Xvnc and <a href="https://www.tightvnc.com/download.php">TightVNC Version 2.8.63 or higher</a></li>
+</ul>
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>Windows 10 <em>or</em> Windows 11</li>
@@ -352,17 +390,6 @@ However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go."/>
 <ul>
 <li><a href="https://www.microsoft.com/store/apps/9NV1GV1PXZ6P">Pengwin Linux Distro</a></li>
 <li><a href="https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6">Ubuntu Linux Distro</a></li>
-</ul>
-</li>
-<li>Windows 10 Additional Requirements
-<ul>
-<li>An X Server installed and running in Windows.  The following X Servers have been tested:
-<ul>
-<li><a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a></li>
-<li>GWSL from Microsoft store</li>
-<li>install Xvnc and <a href="https://www.tightvnc.com/download.php">TightVNC Version 2.8.63 or higher</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>

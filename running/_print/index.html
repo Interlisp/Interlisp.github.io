@@ -9,8 +9,9 @@
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
 
 <title>Running Medley Interlisp | Medley Interlisp Project</title>
-<meta name="description" content="DRAFT &ndash; This page is currently being revised.
-There are different ways of running Medley Interlisp, depending on your platform (Mac, Windows, …">
+<meta name="description" content="There are different ways of running Medley Interlisp on a wide variety of systems.  This section lays out the basics to help you choose:
+
+Interlisp …">
 <meta property="og:title" content="Running Medley Interlisp" />
 <meta property="og:description" content="Dedicated to restoring and preserving the Interlisp experience" />
 <meta property="og:type" content="website" />
@@ -90,7 +91,7 @@ There are different ways of running Medley Interlisp, depending on your platform
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.57355dc8bec4c742f1ce6e7161ba8a2f.json"
+  data-offline-search-index-json-src="/offline-search-index.14922409bdf34f17c7145ea63de28380.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -224,32 +225,35 @@ This is the multi-page printable view of this section.
 
 
 <div class="content">
-      <p><em>DRAFT &ndash; This page is currently being revised.</em></p>
-<p>There are different ways of running Medley Interlisp, depending on your platform (Mac, Windows, Linux, other) and related factors.</p>
+      <p>There are different ways of running Medley Interlisp on a wide variety of systems.  This section lays out the basics to help you choose:</p>
 <ul>
 <li>Interlisp Online</li>
 <li>In a Docker container</li>
 <li>Download and install from a release</li>
-<li>(re)build the virtual machine emulator (Maiko) from sources</li>
+<li>(re)build the virtual machine emulator (Maiko) from sources, run in a release.</li>
 <li>(Re) build your own Lisp image</li>
 </ul>
+<p>A note about performance:  Modern systems are thousands of times faster than the D-machines of 1980s. The system was designed for limited memory machines, so 32 MB is quite roomy. The Medley VM is now quite portable to many different OS and CPU configurations.</p>
 <h2 id="interlisp-online">Interlisp Online</h2>
-<p>For the minimum amount of setup, the online version is a good starting place. <a href="https://online.interlisp.org">Interlisp Online</a> provides access to a version of Medley running in the cloud. All that is needed to get started is a (recent) browser and a mouse. You can log in as a guest or &ndash; if you want to save files or sessions &ndash; create an account.</p>
-<p>Sessions are preserved between sessions, but will be removed after 30 days of inactivity). Online should be good for experimenting and introducing yourself to the environment. The online site also provides a way of copying files to and from your account&rsquo;s files.</p>
-<p>HOWEVER: anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The <a href="https://github.com/Interlisp/online#readme">Interlisp/online</a> repository may have more details.</p>
+<p>For a minimum amount of setup, the online version is a good starting place. <a href="https://online.interlisp.org">Interlisp Online</a> provides access to a version of Medley running in the cloud. All that is needed to get started is a (recent) browser and a mouse. You can log in as a guest or &ndash; if you want to save files or sessions &ndash; create an account.</p>
+<p>Sessions and files are preserved between sessions, but will be removed after 30 days of inactivity. While you are connected to your session, you can access your files using sftp. Online should be good for experimenting and introducing yourself to the environment.</p>
+<p>Pros: Sandbox environment &ndash; it&rsquo;s all done with Docker and VMs so just modify anything you want.
+Cons: Requires a good Internet connection to run. No access to files in your file system (also a pro). Anything you create in the online environment should be treated as transient.</p>
+<p>See <a href="online">Running Online</a> for more.</p>
 <ol start="2">
 <li>Running with Docker Desktop</li>
 </ol>
-<p>If you are already familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or a windows X server). The VNC Viewer allows you to interact with the Medley instance running in Docker (Interlisp Online uses a browser-based VNC viewer.)</p>
+<p>This is a little like running online except you&rsquo;re connecting to your own Medley service. If you are familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or a windows X server). The VNC Viewer allows you to interact with the Medley instance running in Docker (Interlisp Online uses a browser-based VNC viewer.)</p>
+<p>Medley in Docker has a copy of the Medley system within the Docker container. Whenever you install a new version of the Medley Docker container you get a fresh system.</p>
+<p>Pro: You can mount parts or all of your local file system, for easy file sharing, but at the same time you can restrict system access. Your files are on your own system, no live Internet capability needed.
+Con: We&rsquo;re only building X86_64 docker containers regularly.</p>
 <p>The instructions for this configuration are located at <a href="running-with-docker">Running with Docker</a>.</p>
-<p>Medley in Docker has a copy of the Medley system within the Docker container. Whenever you install a new version of the Medley Docker container you get a fresh system (any previous changes would be lost.) Docker lets you mount directories on your local file system.</p>
 <h2 id="running-installed">Running Installed</h2>
-<p>For users of Linux, BSD, MacOS and Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility.</p>
-<p>Medley (maiko) currently requires having an X-server installed &ndash; which one to use depends on your platform.</p>
+<p>For users of Linux, BSD, MacOS and Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility. You need to know a bit more about how Medley Interlisp works. The system comes in two parts: a C program (code name maiko, binaries lde, ldex) that emulates the virtual Lisp machine, and the rest of the system written in Lisp.</p>
+<p>Maiko currently requires having an X-server installed; which one to use depends on your platform.</p>
 <p>We use GitHub Actions workflow automation to build Maiko for different platforms; if your platform isn&rsquo;t in the mix you may need to <a href="https://github.com/Interlisp/maiko/#readme">download maiko sources and make and install those binaries</a>.</p>
 <h2 id="developing-medley-interlisp-itself">Developing Medley Interlisp itself</h2>
-<p>This process isn&rsquo;t well documented yet.
-The scripts &ldquo;scripts/loadup*&rdquo; in the github/interlisp/medley/ repository are used. See README.md files in the GitHub repo.</p>
+<p>The scripts &ldquo;scripts/loadup*&rdquo; in the github/interlisp/medley/ repository are used. See README.md files in the GitHub repo.</p>
 
 </div>
 </div>
@@ -274,7 +278,16 @@ The scripts &ldquo;scripts/loadup*&rdquo; in the github/interlisp/medley/ reposi
 	<h1 id="pg-700d0c6f34d7215f9f4a191bdf17a817">1 - Interlisp Online</h1>
     
 	<p><a href="https://online.interlisp.org/user/login">Interlisp Online</a> provides access to a version of Medley running in the cloud. You can login as a guest, but if you want to save state from one session to the next, you should create an acccount. All that is needed is an email address and password. Once an account has been created you can log in and start a Medley Interlisp session.</p>
-<p>Sessions are preserved for an indefinite time (we haven&rsquo;t worked out for how long &ndash; after 30 days of inactivity?). But it should be good for experimenting and introducing yourself to the environment. Anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The Interlisp/online repository may have more details.</p>
+<p>Sessions are preserved (we hope) but may be deleted after 30 days of inactivity. Running online should be good for experimenting and introducing yourself to the environment. Anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The Interlisp/online repository may have more details.</p>
+<h3 id="things-to-note-when-running-online">Things to note when running online:</h3>
+<ul>
+<li>Browser compatibility</li>
+<li>Watch out for control-character conflicts (control-W always gets me)</li>
+<li>Security not guaranteed</li>
+<li>Need a solid net connection to our AWS server (currently in Ohio)</li>
+<li>Back to time-sharing</li>
+<li>Maximum load 256/16 24 simultaneous sessions</li>
+</ul>
 
 </div>
 
@@ -495,15 +508,43 @@ Need XQuartz installed before you build maiko (includes XClient libraries).</p>
     
 	<h2 id="running-on-windows">Running on Windows</h2>
 <ul>
-<li>Interlisp Online works fine with Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use</li>
-<li>Docker Desktop is a great possibility, too.</li>
+<li>
+<p>Interlisp Online seems to works fine with recent Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use them.
+WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use.</p>
+</li>
+<li>
+<p>Docker Desktop is a great possibility, too, if your system can run it.</p>
+</li>
+<li>
+<p>Otherwise, to run installed, you either need</p>
+<ul>
+<li>WSLg (available with Windows 11) OR</li>
+<li>WsL2 A running X-server installed on your machine</li>
 </ul>
-<h2 id="running-on-windows-with-wsl2-windows-subsystem-for-linux">Running on Windows with WSL2 (Windows Subsystem for Linux)</h2>
-<p>We hope there will be a way of running Medley Interlisp with direct support of WIndows, but not so far.</p>
-<p>However, if you have Windows 10 or Windows 11 pro, WSL2 is the way to go.</p>
-<p>If you have Windows 11 Pro, WSL</p>
-<p><a href="https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock">https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock</a></p>
-<p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires some familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment. In addition, if you aren&rsquo;t running Windows 11, you may need to install an X11 server within your Windows environment: two free servers that are known to work are <a href="https://x.cygwin.com">Cygwin/X</a> and <a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</p>
+</li>
+</ul>
+<p>WsL stands for &ldquo;Windows Subsystem for Linux&rdquo;. It&rsquo;s like docker but a little more integrated (You can get at your linux files from windows and your windows files from linux).</p>
+<h2 id="running-on-windows-with-wsl2">Running on Windows with WSL2</h2>
+<p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires at least a little familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment.</p>
+<h3 id="x-server-selection">X Server selection</h3>
+<p>The X11 protocol was invented quite a while ago (inspired by Warren Teitelman and Bob Sproull&rsquo;s Alto Display protocol as part of early Interlisp window system work.)</p>
+<p>With X11, the notion of &ldquo;client&rdquo; and &ldquo;server&rdquo; are reversed. The software you run to manage the display and windows is the &ldquo;server&rdquo;, and the thing far away which is running with access to files and doing the work is the &ldquo;client&rdquo;.</p>
+<p>When you run WSL it&rsquo;s like you have two (or more) computers in one box, where one is running windows and the other(s) are running Linux. The linux side(s) have their own Internet Protocol address.</p>
+<p>The thing that hooks them together is the &ldquo;DISPLAY&rdquo; variable in the linux side has the address of the &ldquo;client&rdquo;.</p>
+<p>There have apparently been some (mainly unsuccessful) attempts to simplify this for windows 11 users.</p>
+<p>If you&rsquo;re running Windows 10, you will also need to install an X11 server within your Windows environment. There are different servers with varying capabilities and problems.</p>
+<ul>
+<li><a href="https://x.cygwin.com">Cygwin/X</a></li>
+<li><a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</li>
+<li>X410 (in the Microsoft Store, $40) &ndash; useful uses windows sockets.
+<a href="https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock">https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock</a>
+<ul>
+<li><a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a></li>
+</ul>
+</li>
+<li>GWSL from Microsoft store</li>
+<li>install Xvnc and <a href="https://www.tightvnc.com/download.php">TightVNC Version 2.8.63 or higher</a></li>
+</ul>
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>Windows 10 <em>or</em> Windows 11</li>
@@ -512,17 +553,6 @@ Need XQuartz installed before you build maiko (includes XClient libraries).</p>
 <ul>
 <li><a href="https://www.microsoft.com/store/apps/9NV1GV1PXZ6P">Pengwin Linux Distro</a></li>
 <li><a href="https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6">Ubuntu Linux Distro</a></li>
-</ul>
-</li>
-<li>Windows 10 Additional Requirements
-<ul>
-<li>An X Server installed and running in Windows.  The following X Servers have been tested:
-<ul>
-<li><a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a></li>
-<li>GWSL from Microsoft store</li>
-<li>install Xvnc and <a href="https://www.tightvnc.com/download.php">TightVNC Version 2.8.63 or higher</a></li>
-</ul>
-</li>
 </ul>
 </li>
 </ul>
