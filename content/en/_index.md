@@ -23,7 +23,7 @@ We also want to restore and present earlier versions of Interlisp, for the stude
 
 ## What have we done so far?
 
-There has been a lot of cleanup and adaptation to make it usable again in the modern world. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or at https://online.interlisp.org in the cloud, using a web browser. See our [2021 Annual Report](news/2021MedleyAnnualReport), [Project News](/news/), and [recent release notes](https://github.com/Interlisp/medley/releases) . We've also been working on integration of the Interlisp style development with `git` and `GitHub`, Docker and other modern components.
+There has been a lot of cleanup and adaptation to make it usable again in the modern world. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or at https://online.interlisp.org in the cloud, using a web browser. See our [2021 Annual Report](news/2021MedleyAnnualReport), [Project News](/news/), and [recent release notes](https://github.com/Interlisp/medley/releases) . We've also been working on integration of the Interlisp style development with git and GitHub, Docker and other modern components.
 
 ## Who is involved?
 
@@ -32,4 +32,4 @@ We are some of the original developers and users of the system 30 years ago, joi
 ## Testimonials
 
 [What have we lost?](https://www.youtube.com/watch?v=7RNbIEJvjUA&t=841s)  A presentation from the 2020 Remote Chaos Experience conference highlights some of the interesting aspects of Interlisp.  The presentation synopsis states it this way:
--> We have ended up in a world where UNIX and Windows have taken over, and most people have never experienced anything else. Over the years, though, many other system designs have come and gone, and some of those systems have had neat ideas that were nevertheless not enough to achieve commercial success. We will take you on a tour of a variety of those systems, talking about what makes them special.
+> We have ended up in a world where UNIX and Windows have taken over, and most people have never experienced anything else. Over the years, though, many other system designs have come and gone, and some of those systems have had neat ideas that were nevertheless not enough to achieve commercial success. We will take you on a tour of a variety of those systems, talking about what makes them special.
