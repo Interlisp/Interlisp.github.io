@@ -28,7 +28,7 @@ Docker Desktop is a great possibility, too, if your system can run it.
 Otherwise, to run installed, you either need
 WSLg (available with Windows 11) OR WsL2 A running X-server installed on your machine WsL stands for &ldquo;Windows Subsystem for Linux&rdquo;.">
 
-<meta itemprop="wordCount" content="413">
+<meta itemprop="wordCount" content="473">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running on Windows"/>
 <meta name="twitter:description" content="Running on Windows Interlisp Online seems to works fine with recent Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use them. WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use.
@@ -105,7 +105,7 @@ WSLg (available with Windows 11) OR WsL2 A running X-server installed on your ma
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.14922409bdf34f17c7145ea63de28380.json"
+  data-offline-search-index-json-src="/offline-search-index.b558a22815bea1aaebf54815909e42e7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -127,7 +127,7 @@ WSLg (available with Windows 11) OR WsL2 A running X-server installed on your ma
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.14922409bdf34f17c7145ea63de28380.json"
+  data-offline-search-index-json-src="/offline-search-index.b558a22815bea1aaebf54815909e42e7.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -273,6 +273,7 @@ WSLg (available with Windows 11) OR WsL2 A running X-server installed on your ma
     <li><a href="#running-on-windows-with-wsl2">Running on Windows with WSL2</a>
       <ul>
         <li><a href="#x-server-selection">X Server selection</a></li>
+        <li><a href="#x-server-and-windows-and-monitor-sleep">X Server and Windows and Monitor sleep</a></li>
       </ul>
     </li>
     <li><a href="#requirements">Requirements</a>
@@ -382,6 +383,8 @@ WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conf
 <li>GWSL from Microsoft store</li>
 <li>install Xvnc and <a href="https://www.tightvnc.com/download.php">TightVNC Version 2.8.63 or higher</a></li>
 </ul>
+<h3 id="x-server-and-windows-and-monitor-sleep">X Server and Windows and Monitor sleep</h3>
+<p>If your windows system or monitor don&rsquo;t sleep by the schedule, there is a <a href="https://github.com/microsoft/wslg/issues/380">WSLg problem</a> that they didn&rsquo;t want your Windows machine to fall asleep when watching a Linux-side video. If this turns out to be a problem, set your IDLE.PROFILE to TIMEOUT (to run a &ldquo;screen saver&rdquo;) and then LOGOUT later.</p>
 <h2 id="requirements">Requirements</h2>
 <ul>
 <li>Windows 10 <em>or</em> Windows 11</li>
