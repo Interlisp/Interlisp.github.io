@@ -41,6 +41,9 @@ If you're running Windows 10, you will also need to install an X11 server within
 * GWSL from Microsoft store
 * install Xvnc and [TightVNC Version 2.8.63 or higher](https://www.tightvnc.com/download.php)
 
+### X Server and Windows and Monitor sleep
+
+If your windows system or monitor don't sleep by the schedule, there is a [WSLg problem](https://github.com/microsoft/wslg/issues/380) that they didn't want your Windows machine to fall asleep when watching a Linux-side video. If this turns out to be a problem, set your IDLE.PROFILE to TIMEOUT (to run a "screen saver") and then LOGOUT later.
 
 ## Requirements
  - Windows 10 *or* Windows 11
