@@ -211,7 +211,6 @@ no = 'Sorry to hear that. Please <a href="https://github.com/USERNAME/REPOSITORY
 enable = false
 
 [params.taxonomy]
-
 # Turn off transparency in nav bar
 params.ui.navbar_translucent_over_cover_disable = true
 
