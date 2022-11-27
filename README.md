@@ -90,7 +90,7 @@ for the first time, we need to download the `Docsy` theme and it's dependencies.
 Getting them an installing them is simple.  From the `themes` directory in the `Interlisp.github.io` project run the following command"
 
 ```bash
-git submodules update --init --recursive
+git submodule update --init --recursive
 ```
 
 This will download the `Docsy` theme and the libraries it depends on.  Once this has completed, switch back to the root directory of `Interlisp.github.io` and run `Hugo` using the following
