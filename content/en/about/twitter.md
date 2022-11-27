@@ -11,8 +11,6 @@ description: (needs updating)
 > A new favorite project: People from 1970s PARC + PARC-adjacent folks are carefully restoring/gently modernizing the Medley Interlisp system, a Lisp OS that ran on the Xerox D-machines, so that it can run on a modern VM on any OS.  
 — Paul Ford (@ftrain) December 15, 2021
 
-{{< tweet user="RainerJoswig" id="1505472765951987712" >}}
-
 > [#lisp](https://twitter.com/hashtag/lisp?src=hashtag\_click) pretty cool to run [#Interlisp](https://twitter.com/hashtag/Interlisp?src=hashtag\_click) Medley in a browser. Supports also Common Lisp. Thanks to [@masinter](https://twitter.com/masinter)and team! Check out the original image-based software development, dating back to BBN Lisp of the 60s, renamed Interlisp later!
 
 {{< tweet user="simon_brooke" id="1471238434719154189" >}}
@@ -40,7 +38,6 @@ description: (needs updating)
 > Back in the 1980s when we used actual modern computers, [@DefnPodcast](https://twitter.com/DefnPodcast?ref\_src=twsrc%5Etfw), the way Interlisp handled multiple concurrent breaks in multiple threads was to pop up multiple break inspector windows on the screen, which you could deal with in whatever order.[https://t.co/AxTGFc7W8Q](https://t.co/AxTGFc7W8Q)
 >
 > — Simon fae Standingstone ::🏴󠁧󠁢󠁳󠁣󠁴󠁿🇪🇺🌍:: (@simon\_brooke) [January 25, 2022](https://twitter.com/simon\_brooke/status/1485987084036890625?ref\_src=twsrc%5Etfw)
-
 
 {{< tweet user="fogus" id="1487167719493488641" >}}
 
