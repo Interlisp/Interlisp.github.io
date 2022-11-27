@@ -5,7 +5,7 @@ type: docs
 ---
 ## More background
 
-The early development of Interlisp-D during the early development of SmallTalk, with ideas shared both ways. Interlisp-D was launched as a product from Xerox in 1980. It was a base from which AI applications were built, as well as a research project in its own right.
+The early development of Interlisp-D during the early development of Smalltalk, with ideas shared both ways. Interlisp-D was launched as a product from Xerox in 1980. It was a base from which AI applications were built, as well as a research project in its own right.
 
 For example, Interlisp evolved the notions of structure editing from an interactive "teletype" structure editor, a Display editor (DEdit) to [SEDIT](https://www.youtube.com/watch?v=2qsmF8HHskg). Masterscope and the file manager included system-management tools that combined features of version control and build systems, with comprehensive cross referencing support.
 
@@ -42,4 +42,3 @@ The [1992 ACM Software System Award](https://awards.acm.org/award_winners?year=1
 ## [More on organization](partners) and [how you can help](getInvolved)
 
 ## [More testimonials](twitter.md)
-
