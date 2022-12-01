@@ -11,6 +11,8 @@ description: (needs updating)
 > A new favorite project: People from 1970s PARC + PARC-adjacent folks are carefully restoring/gently modernizing the Medley Interlisp system, a Lisp OS that ran on the Xerox D-machines, so that it can run on a modern VM on any OS.  
 — Paul Ford (@ftrain) December 15, 2021
 
+{{< tweet user="RainerJoswig" id="1505472765951987712" >}}
+
 > [#lisp](https://twitter.com/hashtag/lisp?src=hashtag\_click) pretty cool to run [#Interlisp](https://twitter.com/hashtag/Interlisp?src=hashtag\_click) Medley in a browser. Supports also Common Lisp. Thanks to [@masinter](https://twitter.com/masinter)and team! Check out the original image-based software development, dating back to BBN Lisp of the 60s, renamed Interlisp later!
 
 {{< tweet user="simon_brooke" id="1471238434719154189" >}}
