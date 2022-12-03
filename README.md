@@ -1,6 +1,6 @@
 # Interlisp.org Home Page
 
-The documentation repository for https://interlisp.org, the restoration
+The documentation repository for <https://interlisp.org>, the restoration
 project for the Interlisp ecosystem.
 
 The collection of pages provides information on the restoration effort, Medley,
@@ -47,10 +47,29 @@ type: docs
 - Weight:  Specifies the positioning of the page.  Lower number pages are higher in the page order.  `Hugo` allows for mulitple pages to be assigned the same weight.  
 - Type: Identifies the type of the page.  Currently all pages are of type `docs`
 
-The content to display on the page follows the preamble.  Content is written using [Markdown](https://www.markdownguide.org/tools/hugo/).
+The content to display on the page follows the preamble.  Content is written using [Markdown](https://www.markdownguide.org/tools/hugo/).  
 
 Once authored the updated page can be submitted as a pull request and upon approval will be integrated
 into the `main` branch and deployed to the website.
+
+#### Adding or Updating the Twitter page
+
+The *Twitter* page uses images of Tweets of interest.  While `Hugo` has implemented a shortcode that will load the actual tweet, it
+fails when the tweet no longer exists.  We believe there is value in keeping a record of conversations about Medley Interlisp and
+to protect against losing portions of it, we have developed the practice of capturing an image of the tweet, using that on our page
+and linking to the actual tweet.  
+
+Tweets that are no longer accessible will have their links removed but the content will be preserved.  
+
+The structure for new entries on the *Twtter* page, the `_index.md` file in the `twitter` directory is
+
+```markdown
+{{< imgproc PaulFord_20211214 Resize "550x803">}} <a href="https://twitter.com/ftrain/status/1470968024756895744?ref_src=twsrc">Link to tweet</a> {{< /imgproc >}}
+```
+
+We use the `imgproc` shortcode to render the image and size it.  The label for the image is a bit of html to link to the original tweet.  Lastly, the images
+are titled with the author and the date of the tweet.  Ideally this will allow for easy identification of `jpeg` files.  The files are stored in the same
+directory as the `_index.md` file, so everything needed for the page is packaged together.
 
 ### Running Hugo and Docsy Locally
 
@@ -60,6 +79,7 @@ To do this `Hugo` needs to be installed. Instructions for installing `Hugo` on a
 found at:  [Installing Hugo](https://gohugo.io/getting-started/installing).  Interlisp uses the extended version of Hugo.
 
 For Ubuntu the following command works:
+
 ```bash
 curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
  | grep  browser_download_url \
@@ -74,11 +94,13 @@ curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
 The command can be adjusted for different architectures.
 
 You can verify that `Hugo` is installed and working by running the following command:
+
 ```bash
 hugo version
 ```
 
 The response will be something along the lines of:
+
 ```bash
 hugo v0.101.0-466fa43c16709b4483689930a4f9ac8add5c9f66+extended linux/amd64 BuildDate=2022-06-16T07:09:16Z VendorInfo=gohugoio
 ```
@@ -101,6 +123,7 @@ hugo server
 ```
 
 `Hugo` will start.  You should see output along the lines of:
+
 ```bash
 Start building sites …
 hugo v0.101.0-466fa43c16709b4483689930a4f9ac8add5c9f66+extended linux/amd64 BuildDate=2022-06-16T07:09:16Z VendorInfo=gohugoio
