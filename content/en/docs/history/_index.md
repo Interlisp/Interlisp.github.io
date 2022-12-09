@@ -4,32 +4,34 @@ url: /doc/info/history.html
 weight: 2F
 ---
 
-**NOTE**: Lately, the effort has focused on developing a Zotero annotated bibliography; the idea is to focus the timeline on material and source code published at the time. Any narrative around that would then constitute secondary sources. That will allow future researchers to construct their own narratives.
+**NOTE**: Recent efforts have focused on developing a Zotero annotated bibliography; the idea is to focus the timeline on material and source code published at the time. Any narrative around that would then constitute secondary sources. That will allow future researchers to construct their own narratives.
 
 # Interlisp Timeline
 
-
-This draft started with Teitelman’s History of Interlisp, Still need to merge in links from Software Preservation History, https://Interlisp.org/#history, info-1100, and other sources. “facts” should be backed up by links to their sources.
-
- See Interlisp History. which should also be merged in.
+This draft started with Teitelman’s History of Interlisp, Still need to merge in links from [Software Preservation History](https://www.softwarepreservation.org/projects/LISP/interlisp_family), [info-1100](Broken Link), and other sources. “facts” should be backed up by links to their sources.
 
 See/comment on Demo Plans for Medley Interlisp for ideas for demos.
 
 ## 1960s
 
-Through the 1960s, the languages of programming were primarily Fortran and assembly. Lisp enabled expressing recursion simply. Lisp also provided the ability to modify a program as it was running, since Lisp programs were themselves data—the same as other list structures used to represent program data. This made Lisp an ideal language for writing programs that themselves constructed programs or proved things about programs. As an area of Artificial Intelligence, programs writing programs was something of great interest to those working on applying AI to programming.
+Through the 1960s, the languages of programming were primarily Fortran and assembly. Lisp enabled expressing recursion simply. Lisp also provided the ability to modify a program as it was running, since Lisp programs were themselves data—the same as other list structures used to represent program data. This made Lisp an ideal language for writing programs that themselves constructed programs or proved things about programs. As an area of Artificial Intelligence, programs writing programs was something of great interest to those working on applying AI to programming.  
+
 Lisp was at that time just a language. Programming in Lisp consisted of submitting a job, usually as a deck of punched cards to run in batch mode on a mainframe. You could then pick up your output a few hours later, if lucky, otherwise the next day, and hope that it did not consist of a lengthy sequence of left parentheses or NILs, as would be the case if the program had certain kinds of bugs.
-1964
-L. Peter Deutsch (high school student) developed PDP-1 Lisp at MIT. 
-[L. Peter Deutsch, quoted in lisp_doc.txt accompanying Bob Supnik's Software Kit]
-L. Peter Deutsch and Edmund C. Berkeley. The LISP Implementation for the PDP-1 Computer. March 1964, pages 326-375 in Berkeley and Bobrow. PDF: Describes Basic PDP-1 LISP in detail, including full PDP-1 assembly language source code.
+1964  
+
+L. Peter Deutsch (high school student) developed PDP-1 Lisp at MIT.  
+
+- [L. Peter Deutsch, quoted in [lisp_doc.txt](Broken Link) accompanying Bob Supnik's Software Kit]
+- L. Peter Deutsch and Edmund C. Berkeley. The LISP Implementation for the PDP-1 Computer. March 1964, pages 326-375 in Berkeley and Bobrow. [PDF](https://www.softwarepreservation.org/projects/LISP/book/III_LispBook_Apr66.pdf#page=336): Describes Basic PDP-1 LISP in detail, including full PDP-1 assembly language source code.
 
 The introduction of time-sharing in the mid-60s changed the paradigm of software development. Instead of the developer doing their debugging offline, users could now interact directly with their program online. Time-sharing was originally developed as a way of making more efficient and economic use of a very expensive computer, but it also had the surprising side-effect of drastically reducing the amount of time it took to get a program working. Users experiencing this phenomenon reported that it was because they did not have to lose and then reestablish context so frequently, but could get very deep into their programs and the problems they presented, and stay there. The situation is analogous to trying to resolve an issue between two people via a conversation rather than sending letters back and forth. Regardless of how short the cycle of iteration is, e.g., if email is used instead of letters, if the process involves discovery and a lot of back-and-forth, it is much easier to do via a conversation. You could establish a context and stay focused until the problem was solved.
 
 ### 1965
 
-Teitelman’s experience with his Ph.D. work led him to the notion of building a system where the computer took an active role in helping make changes to a program. At the time, this was a very novel idea.
-The term “programming environment” was meant to suggest not only the usual specifics of both a programming system and language but also more elusive and subjective considerations such as ease of use and level of interaction, “forgiveness” of errors, human engineering, and system “initiative.” The programmer’s environment influences and to a large extent determines, what sort of problems they can (and will want to) tackle, how far they can go, and how fast. If the environment is “cooperative” and “helpful”, then the programmer can be more ambitious and productive. If not, they will spend most of their time and energy “fighting” the system, which at times seems bent on frustrating one’s best efforts.
+Teitelman’s experience with his Ph.D. work led him to the notion of building a system where the computer took an active role in helping make changes to a program. At the time, this was a very novel idea.  
+
+The term “programming environment” was meant to suggest not only the usual specifics of both a programming system and language but also more elusive and subjective considerations such as ease of use and level of interaction, “forgiveness” of errors, human engineering, and system “initiative.” The programmer’s environment influences and to a large extent determines, what sort of problems they can (and will want to) tackle, how far they can go, and how fast. If the environment is “cooperative” and “helpful”, then the programmer can be more ambitious and productive. If not, they will spend most of their time and energy “fighting” the system, which at times seems bent on frustrating one’s best efforts.  
+
 In 1965, there were very few tools for developing Lisp programs, and those that were available were very primitive. 
 
 ### 1966
