@@ -1,0 +1,5 @@
+The ROOMSTECHDESC.pdf document in tis directory was sourced from Interlisp.org Google Drive repository file
+medley-pdfs/rooms-pdfs/xd0e-RELEASE-rooms-2.0-users-src-ROOMSTECHDESC.PDF.
+
+FGH 2022-12-13
+
