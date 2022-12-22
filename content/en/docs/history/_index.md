@@ -8,12 +8,9 @@ weight: 2F
 
 # Interlisp Timeline
 
-This draft started with Teitelman’s [History of Interlisp](), Still need to merge in links from [Software Preservation History](https://www.softwarepreservation.org/projects/LISP/interlisp_family), [info-1100](https://docs.google.com/document/d/e/2PACX-1vRARH1vFZf-mnIgZKovzqLCh-kj6AXyDi8c_9zTeyjPiJ9z4ncnDSYUVfFjh5BBlsKe6NL4YBaAykU_/pub?), [info-11---2](https://drive.google.com/file/d/1hwHFBiEOXXV33VyP5-4EzTjqqqmEUTLc/view?usp=share_link) and other sources. “facts” should be backed up by links to their sources.
+This draft started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf), Still need to merge in links from [Software Preservation History](https://www.softwarepreservation.org/projects/LISP/interlisp_family), [info-1100](https://docs.google.com/document/d/e/2PACX-1vRARH1vFZf-mnIgZKovzqLCh-kj6AXyDi8c_9zTeyjPiJ9z4ncnDSYUVfFjh5BBlsKe6NL4YBaAykU_/pub?), and other sources. “facts” should be backed up by links to their sources.
 
 See/comment on [Demo Plans for Medley Interlisp](Broken Link) for ideas for demos.
-
-
-{{< gdocs src="https://docs.google.com/document/d/e/2PACX-1vRARH1vFZf-mnIgZKovzqLCh-kj6AXyDi8c_9zTeyjPiJ9z4ncnDSYUVfFjh5BBlsKe6NL4YBaAykU_/pub?embedded=true" >}}
 
 ## 1960s
 
@@ -24,7 +21,7 @@ Lisp was at that time just a language. Programming in Lisp consisted of submitti
 
 L. Peter Deutsch (high school student) developed PDP-1 Lisp at MIT.  
 
-- L. Peter Deutsch, quoted in [lisp_doc.txt](Broken Link) accompanying Bob Supnik's Software Kit
+- L. Peter Deutsch, quoted in [lisp_doc.txt](/documentation/lisp_doc.txt) accompanying Bob Supnik's Software Kit
 - L. Peter Deutsch and Edmund C. Berkeley. The LISP Implementation for the PDP-1 Computer. March 1964, pages 326-375 in Berkeley and Bobrow. [PDF](https://www.softwarepreservation.org/projects/LISP/book/III_LispBook_Apr66.pdf#page=336): Describes Basic PDP-1 LISP in detail, including full PDP-1 assembly language source code.
 
 The introduction of time-sharing in the mid-60s changed the paradigm of software development. Instead of the developer doing their debugging offline, users could now interact directly with their program online. Time-sharing was originally developed as a way of making more efficient and economic use of a very expensive computer, but it also had the surprising side-effect of drastically reducing the amount of time it took to get a program working. Users experiencing this phenomenon reported that it was because they did not have to lose and then reestablish context so frequently, but could get very deep into their programs and the problems they presented, and stay there. The situation is analogous to trying to resolve an issue between two people via a conversation rather than sending letters back and forth. Regardless of how short the cycle of iteration is, e.g., if email is used instead of letters, if the process involves discovery and a lot of back-and-forth, it is much easier to do via a conversation. You could establish a context and stay focused until the problem was solved.
@@ -142,7 +139,7 @@ In 1979, PARC began the design of the Dorado, a high performance personal workst
 
 - AAAI launch of 1108 (Dandelion) and 1132 (Dorado)
 
-{{< imgproc AAI82 Resize "550x734" >}} <a href="https://photos.google.com/share/AF1QipORUrk2uwraYYJVOZ2R8mH51U4n5uv30V1KJk5zvu5Pd5XtEXuXp8jg1BfwdHBHkw/photo/AF1QipOcDlZehvHDA0D5zBPuhji-qLMhSNFdf1iCX13n?key=OGxZSU5LbXZPaTdmbnU3QmZiOTRlYnR6SDdMNUJ3">More Images</a>  {{< /imgproc >}}
+{{< image-gallery gallery_dir="/photos/AAAI82" >}}
 
 ### 1983
 
