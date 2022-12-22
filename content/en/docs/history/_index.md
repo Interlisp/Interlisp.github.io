@@ -10,8 +10,6 @@ weight: 2F
 
 This draft started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf), Still need to merge in links from [Software Preservation History](https://www.softwarepreservation.org/projects/LISP/interlisp_family), [info-1100](https://docs.google.com/document/d/e/2PACX-1vRARH1vFZf-mnIgZKovzqLCh-kj6AXyDi8c_9zTeyjPiJ9z4ncnDSYUVfFjh5BBlsKe6NL4YBaAykU_/pub?), and other sources. “facts” should be backed up by links to their sources.
 
-See/comment on [Demo Plans for Medley Interlisp](Broken Link) for ideas for demos.
-
 ## 1960s
 
 Through the 1960s, the languages of programming were primarily Fortran and assembly. Lisp enabled expressing recursion simply. Lisp also provided the ability to modify a program as it was running, since Lisp programs were themselves data—the same as other list structures used to represent program data. This made Lisp an ideal language for writing programs that themselves constructed programs or proved things about programs. As an area of Artificial Intelligence, programs writing programs was something of great interest to those working on applying AI to programming.  
