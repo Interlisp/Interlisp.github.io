@@ -3,7 +3,7 @@ title: Educopia
 weight: 20
 type: docs
 ---
-[Educopia](https://educopia.org) is a non-profit organization hosting the [Software Preservation Network](SPN) and other software preservation groups.
+[Educopia](https://educopia.org) is a non-profit organization hosting the [Software Preservation Network](../spn) and other software preservation groups.
 
 The also offer additional resources on organizational principles.
 

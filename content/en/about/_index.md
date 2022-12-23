@@ -35,10 +35,10 @@ The [1992 ACM Software System Award](https://awards.acm.org/award_winners?year=1
 
 > ... for their pioneering work in programming environments that integrated source-language debuggers, fully compatible integrated interpreter/compiler, automatic change management,  structure-based editing, logging facilities, interactive graphics, and analysis/profiling tools in the Interlisp system.
 
-## [More on goals](medleyGoals.md)
+## [More on goals](medleygoals)
 
-## [More on ongoing projects](ongoingProjects)
+## [More on ongoing projects](ongoingprojects)
 
-## [More on organization](partners) and [how you can help](getInvolved)
+## [More on organization](partners) and [how you can help](getinvolved)
 
-## [More testimonials](twitter.md)
+## [More testimonials](twitter)
