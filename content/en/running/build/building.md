@@ -19,7 +19,7 @@ The remainder of the system is OS / architecture-independent and can be found in
 the [medley](https://github.com/interlisp/medley) repository.
 
 You can now download Medley Interlisp from a [release](https://github.com/interlisp/medley/releases)
-without building anything; see [medley README](/interlisp/medley/#readme)
+without building anything; see [medley README](https://github.com/Interlisp/medley#readme)
 
-See [The Maiko README](/Interlisp/maiko/#readme) for build instructions
+See [The Maiko README](https://github.com/Interlisp/maiko#readme) for build instructions
 for Maiko, for systems for which there is no pre-built release.

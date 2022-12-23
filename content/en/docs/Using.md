@@ -119,9 +119,9 @@ with extensive documentation.
 In searchable PDF and (imperfect) HTML:
 
 
-* (1991) [Sun User Guide](/documentation/SunUserGuide.pdf) ([HTML](https://interlisp.org/SunUserGuide.html))
-* (1992) [Medley for the Novice](/documentation/Medley-Primer.pdf) ([HTML](https://interlisp.org/Primer.html))
-* (1993) [Interlisp Reference Manual](/documentation/IRM.pdf)  ([HTML](https://Interlisp.org/IRM.html)) 
+* (1991) [Sun User Guide](/documentation/SunUserGuide.pdf)
+* (1992) [Medley for the Novice](/documentation/Medley-Primer.pdf)
+* (1993) [Interlisp Reference Manual](/documentation/IRM.pdf)
 
 Medley Interlisp also includes an online reference:
 
