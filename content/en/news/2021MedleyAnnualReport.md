@@ -59,17 +59,17 @@ One of the reasons for restoring Medley Interlisp is to support the revival of a
 * **Notecards:** Notecards is a hypertext system developed well before the web or Apple’s Hypercard. [http://notecards.online](http://notecards.online/) was built with the Medley/Docker release, running Medley “in the cloud,” with web browser access. We are adopting this to work for other Medley Interlisp systems, and for others to build.
 * **Rooms:** Rooms is a Lisp desktop manager for less cluttered window access with interesting innovations. In the Medley repository. Loads but untested.
 * **CLOS:** The Common Lisp Object System adds a style of Common Lisp class structures added after Medley’s Common Lisp implementation to the ANSI standard. Also loads but untested.
-* **LOOPS:** An object-oriented Lisp addition (to Interlisp) prior to CLOS. Of interest because of AI applications built using it, including “Truckin’” -- a demonstration of “knowledge programming \[see [paper](http://citeseerx.ist.psu.edu/viewdoc/download?doi=10.1.1.94.8901\&rep=rep1\&type=pdf)]. The source code for the Truckin’ application exists and will be used to test LOOPS once it fully loads and is compilable.
+* **LOOPS:** An object-oriented Lisp addition (to Interlisp) prior to CLOS. Of interest because of AI applications built using it, including “Truckin’” -- a demonstration of “knowledge programming \[see [paper](https://citeseerx.ist.psu.edu/pdf/a6a2d8fd64a1ccf082797620ef1694c0212a01d0)]. The source code for the Truckin’ application exists and will be used to test LOOPS once it fully loads and is compilable.
 * **LFG:** the Grammar Writer’s Workbench,
 * **LispUsers:** User-contributed software (before “open source” was a thing). We’ve [checked out over half of the LispUsers files](https://docs.google.com/spreadsheets/d/1pn4UcS-9CgMLi\_qeGZlOGGEusAKsNDKxz1XhLwQCgKw/edit?usp=sharing).
 
 ### Documentation
 
-#### Books 
+#### Books
 
-* _****_[_**Interlisp: The Language and Its Usage**_](../../documentation/1986-interlisp-language-book-1.pdf), by Steve Kaisler, originally published by John Wiley & Sons, scanned and converted to a compact PDF. This book describes the core features of the Interlisp language.
-* ****[**Medley Interlisp: The Interactive Programming Environment**](../../documentation/20221225-interlisp-book-2.pdf), by Steve Kaisler, describes the Interlisp-D Interactive Programming Environment as implemented on Xerox D-machines and now running on several modern platforms.
-* _**Medley Interlisp: Tools and Utilities**_, by Steve Kaisler (undergoing editing) describes the editors and tools to be used for program development. It is expected to be completed and uploaded to Interlisp.org in early December 2021.
+* [_**Interlisp: The Language and Its Usage**_](../../documentation/1986-interlisp-language-book-1.pdf), by Steve Kaisler, originally published by John Wiley & Sons, scanned and converted to a compact PDF. This book describes the core features of the Interlisp language.
+* [_**Medley Interlisp: The Interactive Programming Environment**_](../../documentation/20211225-interlisp-book-2.pdf), by Steve Kaisler, describes the Interlisp-D Interactive Programming Environment as implemented on Xerox D-machines and now running on several modern platforms.
+* [_**Medley Interlisp: Tools and Utilities**_](../../documentation/2021-interlisp-book-3.pdf), by Steve Kaisler (undergoing editing) describes the editors and tools to be used for program development. It is expected to be completed and uploaded to Interlisp.org in early December 2021.
 
 #### Software Documentation
 
@@ -111,12 +111,12 @@ In this document, we use “we” to mean our contributors:
 * as members of the [lispcore@googlegroups.com](mailto:lispcore@googlegroups.com) mailing list/group ([Medley Interlisp core - Google Groups](https://groups.google.com/g/lispcore))
 * as participants in a weekly zoom call
   * Meetings recorded but not public
-  * Agendas: [Meeting Agendas and Notes](../meeting-agendas-and-notes/)
+  * Agendas: [Meeting Agendas and Notes](../../about/getinvolved#meetings)
 * as members of the GitHub [Interlisp organization](https://github.com/orgs/Interlisp/people)
 * as contributors to an Open Source project
   * 384 issues, 133 closed, 151 open [Issues](https://github.com/Interlisp/medley/issues). 54 [discussions](https://github.com/Interlisp/medley/discussions)
   * 191 Medley [pull requests](https://github.com/Interlisp/medley/pulls), 387 Maiko [pull requests](https://github.com/Interlisp/maiko/pulls)
-* as a (non-profit) corporation: [InterlispOrg Inc](../../about/partners/interlisporg-inc.md).
+* as a (non-profit) corporation: [InterlispOrg Inc](../../about/partners/interlisporg-inc).
 
 We depend on volunteers to help. If you’d like to help but aren’t sure how to, ask.
 

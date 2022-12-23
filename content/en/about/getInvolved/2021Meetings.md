@@ -125,7 +125,7 @@ Labor Day (US Holiday); attendance uncertain. Let's do a "round table" of brief 
 
 ### Agenda 23 August 2021
 
-* Review of [Ongoing Projects](../ongoing-projects/)
+* Review of [Ongoing Projects](../../ongoingprojects/)
 
 before we dive into other topics, including:
 
@@ -167,7 +167,7 @@ before we dive into other topics, including:
 
 • 30 minutes topics important for filing for 501c3 articles of incorporation
 
-1. brainstorming a list of possible organizational goals. I imagine this as a “brainstorming” session where we collect ideas. It’s important to have a broad purpose statement to allow flexibility but specific enough to attract volunteers and donations. Consolidation, evaluation, and pruning will come later. The ideas should be expressed in terms suitable for filing for non-profit status. See [Medley Interlisp Goals](https://docs.google.com/document/d/1q15mKHJt1fiFToamUacDWvw2UnUDJIaWLuuaeEUQS8k/edit#heading=h.8pdelledleut) and [Ongoing Projects](../ongoing-projects/) for inspiration.
+1. brainstorming a list of possible organizational goals. I imagine this as a “brainstorming” session where we collect ideas. It’s important to have a broad purpose statement to allow flexibility but specific enough to attract volunteers and donations. Consolidation, evaluation, and pruning will come later. The ideas should be expressed in terms suitable for filing for non-profit status. See [Medley Interlisp Goals](https://docs.google.com/document/d/1q15mKHJt1fiFToamUacDWvw2UnUDJIaWLuuaeEUQS8k/edit#heading=h.8pdelledleut) and [Ongoing Projects](../../ongoingprojects) for inspiration.
 2. Av list of ideas for the organization name.
 
 I will record the session but it would be wonderful if someone could take notes (setting up a google document we all could connect to)
@@ -176,15 +176,15 @@ I will record the session but it would be wonderful if someone could take notes 
 
 ### Agenda 12 July 2021
 
-I'd like to talk about overall project goals in relationship to [Ongoing Projects](../ongoing-projects/)
+I'd like to talk about overall project goals in relationship to [Ongoing Projects](../../ongoingprojects)
 
 ### Agenda 5 July 2021
 
-[Ongoing Projects](../ongoing-projects/) in reverse order
+[Ongoing Projects](../../ongoingprojects) in reverse order
 
 ### Agenda 28 Jun 2021
 
-I'd like some feedback on [Project Organization](../going-projects/). My hope is to use this organization to drive the agenda.
+I'd like some feedback on [Project Organization](../../ongoingprojects). My hope is to use this organization to drive the agenda.
 
 ### Agenda 21 Jun 2021
 
