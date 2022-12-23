@@ -4,30 +4,39 @@
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 <meta name="generator" content="Hugo 0.108.0">
-<meta name="robots" content="index, follow">
+<link rel="canonical" type="text/html" href="https://interlisp.org/running/online/usingonline/">
+<meta name="robots" content="noindex, nofollow">
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
 
-<title>Running with Docker | Medley Interlisp Project</title>
-<meta name="description" content="As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment,  we&rsquo;ve set …">
-<meta property="og:title" content="Running with Docker" />
-<meta property="og:description" content="As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment, we&rsquo;ve set up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.
-If this is your first time working with Docker, you&rsquo;ll want to install it before continuing.
-You&rsquo;ll also need a modern VNC client; TightVNC works well. Rumor has it that Macs and Linux use VNC normally for screen sharing." />
-<meta property="og:type" content="article" />
-<meta property="og:url" content="https://interlisp.org/running/running-with-docker/" /><meta property="article:section" content="running" />
+<title>Using Interlisp Online | Medley Interlisp Project</title>
+<meta name="description" content="A Brief Introduction
+Running Interlisp Online
 
-<meta property="og:site_name" content="Medley Interlisp Project" />
-<meta itemprop="name" content="Running with Docker">
-<meta itemprop="description" content="As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment, we&rsquo;ve set up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.
-If this is your first time working with Docker, you&rsquo;ll want to install it before continuing.
-You&rsquo;ll also need a modern VNC client; TightVNC works well. Rumor has it that Macs and Linux use VNC normally for screen sharing.">
+Go to Interlisp Online
 
-<meta itemprop="wordCount" content="93">
-<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="Running with Docker"/>
-<meta name="twitter:description" content="As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment, we&rsquo;ve set up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.
-If this is your first time working with Docker, you&rsquo;ll want to install it before continuing.
-You&rsquo;ll also need a modern VNC client; TightVNC works well. Rumor has it that Macs and Linux use VNC normally for screen sharing."/>
+
+
+
+
+
+
+
+	
+	
+	
+		 Interlisp Online Login 
+	
+	
+
+You may either login as a Guest or …">
+<meta property="og:title" content="Using Interlisp Online" />
+<meta property="og:description" content="Dedicated to restoring and preserving the Interlisp experience" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://interlisp.org/running/online/usingonline/" /><meta property="og:site_name" content="Medley Interlisp Project" />
+<meta itemprop="name" content="Using Interlisp Online">
+<meta itemprop="description" content="Dedicated to restoring and preserving the Interlisp experience"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Using Interlisp Online"/>
+<meta name="twitter:description" content="Dedicated to restoring and preserving the Interlisp experience"/>
 
 
 
@@ -43,10 +52,10 @@ You&rsquo;ll also need a modern VNC client; TightVNC works well. Rumor has it th
   src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
   integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
   crossorigin="anonymous"></script>
-<link rel="canonical" href="https://interlisp.org/running/running-with-docker/">
+<link rel="canonical" href="https://interlisp.org/running/online/usingonline/">
 
   </head>
-  <body class="td-page">
+  <body class="td-section">
     <header>
       
 <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
@@ -109,227 +118,115 @@ You&rsquo;ll also need a modern VNC client; TightVNC works well. Rumor has it th
     <div class="container-fluid td-outer">
       <div class="td-main">
         <div class="row flex-xl-nowrap">
-          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
-            
-<div id="td-sidebar-menu" class="td-sidebar__inner">
-  <form class="td-sidebar__search d-flex align-items-center">
-    <input
-  type="search"
-  class="form-control td-search-input"
-  placeholder="&#xf002; Search this site…"
-  aria-label="Search this site…"
-  autocomplete="off"
-  
-  data-offline-search-index-json-src="/offline-search-index.c90b678432dd6a32612e12c9ebcd09ae.json"
-  data-offline-search-base-href="/"
-  data-offline-search-max-results="10"
->
-
-    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
-    </button>
-  </form>
-  <nav class="collapse td-sidebar-nav" id="td-section-nav">
-    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
-      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m--li">
-  <a href="/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-"><span class=""></span></a>
-  <ul class="ul-1">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-about-li">
-  <a href="/about/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-about"><span class="">About</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aboutongoingprojects-li">
-  <a href="/about/ongoingprojects/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutongoingprojects"><span class="">Ongoing Projects</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-aboutmedleygoals-li">
-  <a href="/about/medleygoals/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutmedleygoals"><span class="">Medley Goals</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-aboutgetinvolved-li">
-  <a href="/about/getinvolved/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-aboutgetinvolved"><span class="">Get Involved</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-aboutgetinvolved2021meetings-li">
-  <a href="/about/getinvolved/2021meetings/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutgetinvolved2021meetings"><span class="">2021 Meeting Agendas and Notes</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-aboutgetinvolved2022meetings-li">
-  <a href="/about/getinvolved/2022meetings/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutgetinvolved2022meetings"><span class=""></span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-aboutpartners-li">
-  <a href="/about/partners/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-aboutpartners"><span class="">Organizational Partners</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-aboutpartnerseducopia-li">
-  <a href="/about/partners/educopia/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutpartnerseducopia"><span class="">Educopia</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-aboutpartnersspn-li">
-  <a href="/about/partners/spn/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutpartnersspn"><span class="">Software Preservation Network</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-aboutpartnersinterlisporg-inc-li">
-  <a href="/about/partners/interlisporg-inc/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-aboutpartnersinterlisporg-inc"><span class="">InterlispOrg</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-abouttwitter-li">
-  <a href="/about/twitter/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-abouttwitter"><span class="">Twitter Reviews</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-news-li">
-  <a href="/news/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-news"><span class="">News</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-news2022medleyannualreport-li">
-  <a href="/news/2022medleyannualreport/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-news2022medleyannualreport"><span class="">2022 Medley Interlisp Annual Report</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-news2021medleyannualreport-li">
-  <a href="/news/2021medleyannualreport/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-news2021medleyannualreport"><span class="">2021 Medley Interlisp Annual Report</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-running-li">
-  <a href="/running/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-running"><span class="">Running Medley Interlisp</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-runningonline-li">
-  <a href="/running/online/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-runningonline"><span class="">Interlisp Online</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-runningonlineusingonline-li">
-  <a href="/running/online/usingonline/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-runningonlineusingonline"><span class="">Using Interlisp Online</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docbuildhtml-li">
-  <a href="/doc/build.html" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docbuildhtml"><span class="">Building the Interlisp system</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-runningbuildbuilding-li">
-  <a href="/running/build/building/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningbuildbuilding"><span class="">Building Medley Interlisp</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-runningbuildreleases-li">
-  <a href="/running/build/releases/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningbuildreleases"><span class="">Releases</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-on-mac-li">
-  <a href="/running/running-on-mac/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-on-mac"><span class="">Running on MacOS</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-on-win-li">
-  <a href="/running/running-on-win/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-on-win"><span class="">Running on Windows</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-with-docker-li">
-  <a href="/running/running-with-docker/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-runningrunning-with-docker"><span class="td-sidebar-nav-active-item">Running with Docker</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-developing-li">
-  <a href="/developing/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-developing"><span class="">Developing Medley Interlisp</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-documentation-li">
-  <a href="/documentation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-documentation"><span class="">Documentation</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docinfousinghtml-li">
-  <a href="/doc/info/Using.html" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docinfousinghtml"><span class="">The Basics of Interlisp</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docsmedley-li">
-  <a href="/docs/medley/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docsmedley"><span class="">Medley</span></a>
-  <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsmedleymodern-medley-release-notes-li">
-  <a href="/docs/medley/modern-medley-release-notes/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsmedleymodern-medley-release-notes"><span class="">Modern Medley Release Notes</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsmedleyorientation-li">
-  <a href="/docs/medley/orientation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsmedleyorientation"><span class="">Orientation to Medley</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsmedleythe-medley-interlisp-dsk-file-system-li">
-  <a href="/docs/medley/the-medley-interlisp-dsk-file-system/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsmedleythe-medley-interlisp-dsk-file-system"><span class="">The {DSK} file system</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-docsmedleytips-li">
-  <a href="/docs/medley/tips/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docsmedleytips"><span class="">Tips</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docinfohistoryhtml-li">
-  <a href="/doc/info/history.html" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docinfohistoryhtml"><span class="">History</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-publications-li">
-  <a href="/publications/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-publications"><span class="">Publications</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-publicationszotero-li">
-  <a href="/publications/zotero/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-publicationszotero"><span class="">Zotero Bibliography</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-publicationstable-li">
-  <a href="/publications/table/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-publicationstable"><span class="">Bibliography</span></a>
-</li>
-  </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-credits-li">
-  <a href="/credits/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-credits"><span class="">Credits</span></a>
-  <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-creditsin-memoriam-li">
-  <a href="/credits/in-memoriam/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-creditsin-memoriam"><span class="">In Memoriam</span></a>
-</li>
-  </ul>
-</li>
-  </ul>
-</li>
-    </ul>
-  </nav>
-</div>
-
-          </aside>
-          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
-            
-<div class="td-page-meta ml-2 pb-1 pt-2 mb-0">
-<a href="https://github.com/interlisp/Interlisp.github.io/tree/main/content/en/running/running-with-docker.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa fa-file-alt fa-fw"></i> View page source</a>
-  <a href="https://github.com/interlisp/Interlisp.github.io/edit/main/content/en/running/running-with-docker.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Edit this page</a>
-  <a href="https://github.com/interlisp/Interlisp.github.io/new/main/content/en/running/running-with-docker.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank" rel="noopener"><i class="fa fa-edit fa-fw"></i> Create child page</a>
-  <a href="https://github.com/interlisp/Interlisp.github.io/issues/new?title=Running%20with%20Docker" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fas fa-tasks fa-fw"></i> Create documentation issue</a>
-  <a id="print" href="https://interlisp.org/running/_print/"><i class="fa fa-print fa-fw"></i> Print entire section</a>
-
-</div>
-
-            
-
-
-
-
-            
-
-	
-		
-			
-
-
-
-  
-  
-
-		
-			
-
-
-
-  
-  
-
-		
-	
-
-          </aside>
           <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
             
-  
 
-            <nav aria-label="breadcrumb" class="td-breadcrumbs">
-  <ol class="breadcrumb">
-  <li class="breadcrumb-item"><a href="https://interlisp.org/running/">Running Medley Interlisp</a>
-    </li>
-  <li class="breadcrumb-item active">
-      <span>Running with Docker</span>
-    </li>
-  </ol>
-</nav>
-            
+
+
+
 <div class="td-content">
-	<h1>Running with Docker</h1>
-	
-	<header class="article-meta">
-		
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/running/online/usingonline/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Using Interlisp Online</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
 
   
-    
-      
+
+    </ul>
 
 
-    
-      
+<div class="content">
+      <h3 id="a-brief-introduction">A Brief Introduction</h3>
+<h3 id="running-interlisp-online">Running Interlisp Online</h3>
+<ul>
+<li>Go to <a href="https://online.interlisp.org/main">Interlisp Online</a><br>
 
 
-    
-  
 
-		
-	</header>    
-	<p>As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment,  we&rsquo;ve set  up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.</p>
-<p>If this is your first time working with Docker, you&rsquo;ll want to <a href="https://docs.docker.com/get-docker/">install it</a> before continuing.</p>
-<p>You&rsquo;ll also need a modern VNC client; <a href="https://www.tightvnc.com/">TightVNC</a> works well. Rumor has it that Macs and Linux use VNC normally for screen sharing.</p>
-<pre tabindex="0"><code>docker run -p 5900:5900 -e DISPLAY=$DISPLAY --rm --name interlisp interlisp/medley
-</code></pre>
+
+
+
+
+<div class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+	<img class="card-img-top" src="/running/online/usingonline/Login_Screen_hu8bbfbf0b3d8a8d71eb8b873addaf0a78_39939_400x450_resize_catmullrom_3.png" width="400" height="450">
 	
-	
+	<div class="card-body px-0 pt-2 pb-0">
+		<p class="card-text"> Interlisp Online Login </p>
+	</div>
 	
 </div>
+You may either login as a Guest or create an account. If you plan to save and later retrieve files, <a href="https://online.interlisp.org/user/register">register</a> and create an account. Guest logins are not guaranteed to perserve sessions and stored files.</li>
+</ul>
+<p>However, if you just want to get a taste of Interlisp without the extra effort of creating an account, the guest login will suit your needs.</p>
+<ul>
+<li>Select the Exec you want to run. For this exercise, select <code>Interlisp</code></li>
+<li>Leave the <code>Fill browser window</code> option set.</li>
+</ul>
+<p>Select <code>Run Medley</code>. Your browser will open a window that represents the Interlisp Desktop and looks much like this:</p>
+
+
+
+
+
+
+
+<div class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 810px">
+	<img class="card-img-top" src="/running/online/usingonline/Online_Initial_Medley_hua215a7e750e886f3fe734170b9f52bef_29739_800x450_resize_catmullrom_3.png" width="800" height="450">
+	
+	<div class="card-body px-0 pt-2 pb-0">
+		<p class="card-text"> Medley Interlisp</p>
+	</div>
+	
+</div>
+<p>The Interlisp Desktop at startup contains 4 windows of interest:</p>
+<ul>
+<li>Prompt Window: The black window at the top of the screen. It is used to display system or application prompts</li>
+<li>Exec (INTERLISP) window: The main window where you run functions and develop programs.</li>
+<li>Medley logo window: A window containing the Interlisp Medley logo as a bit map.</li>
+<li>Status Bar window</li>
+</ul>
+<h3 id="writing-interlisp-programs">Writing Interlisp programs</h3>
+<p>In the Exec window, type the following:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PLUS</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>When you complete typing the ending <code>)</code> the Interlisp interpreter will perform the calculation and return the result.</p>
+<p>One thing you probably noticed, the command <code>PLUS</code> is capitalized. It’s not that the developers of Interlisp were always shouting at each other. Rather, when Interlisp was developed computer programming was in its infancy and standards for naming commands were still evolving.</p>
+<h3 id="save-your-program-as-a-file">Save your program as a file</h3>
+<h3 id="opening-a-saved-program">Opening a saved program</h3>
+<h3 id="what-next">What next?</h3>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
 
 
           </main>

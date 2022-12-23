@@ -88,7 +88,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.7c5ecd791efdc5eaee5bfe5dce314c41.json"
+  data-offline-search-index-json-src="/offline-search-index.c90b678432dd6a32612e12c9ebcd09ae.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -134,9 +134,20 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>1: <a href="#pg-9d6f0d88971e6e2011d87dcf5ac118b1">Using Interlisp Online</a></li>
+<li>1: <a href="#pg-fb89d24a35e0936c235326328c969520">Using Interlisp Online</a></li>
 
 
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+
+    </ul>
     
   
 
@@ -146,7 +157,7 @@ This is the multi-page printable view of this section.
 <div class="content">
       <p><a href="https://online.interlisp.org/user/login">Interlisp Online</a> provides access to a version of Medley running in the cloud. You can login as a guest, but if you want to save state from one session to the next, you should create an acccount. All that is needed is an email address and password. Once an account has been created you can log in and start a Medley Interlisp session.</p>
 <p>Sessions are preserved (we hope) but may be deleted after 30 days of inactivity. Running online should be good for experimenting and introducing yourself to the environment. Anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The Interlisp/online repository may have more details.</p>
-<h3 id="things-to-note-when-running-online">Things to note when running online:</h3>
+<h3 id="things-to-note-when-running-online">Things to note when running online</h3>
 <ul>
 <li>Browser compatibility</li>
 <li>Watch out for control-character conflicts (control-W always gets me)</li>
@@ -176,21 +187,50 @@ This is the multi-page printable view of this section.
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-9d6f0d88971e6e2011d87dcf5ac118b1">1 - Using Interlisp Online</h1>
+	<h1 id="pg-fb89d24a35e0936c235326328c969520">1 - Using Interlisp Online</h1>
     
 	<h3 id="a-brief-introduction">A Brief Introduction</h3>
-<h3 id="running-interlisp-online-a-hrefrunning-interlisp-online-idrunning-interlisp-onlinea">Running Interlisp Online <a href="#running-interlisp-online" id="running-interlisp-online"></a></h3>
+<h3 id="running-interlisp-online">Running Interlisp Online</h3>
 <ul>
 <li>Go to <a href="https://online.interlisp.org/main">Interlisp Online</a><br>
-You may either login as a Guest or create an account. If you plan to save and later retrieve files, you should <a href="https://online.interlisp.org/uer/register">Register</a> and create an account. Guest logins are not guaranteed to perserve sessions and stored files.</li>
+
+
+
+
+
+
+
+<div class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 410px">
+	<img class="card-img-top" src="/running/online/usingonline/Login_Screen_hu8bbfbf0b3d8a8d71eb8b873addaf0a78_39939_400x450_resize_catmullrom_3.png" width="400" height="450">
+	
+	<div class="card-body px-0 pt-2 pb-0">
+		<p class="card-text"> Interlisp Online Login </p>
+	</div>
+	
+</div>
+You may either login as a Guest or create an account. If you plan to save and later retrieve files, <a href="https://online.interlisp.org/user/register">register</a> and create an account. Guest logins are not guaranteed to perserve sessions and stored files.</li>
 </ul>
 <p>However, if you just want to get a taste of Interlisp without the extra effort of creating an account, the guest login will suit your needs.</p>
 <ul>
 <li>Select the Exec you want to run. For this exercise, select <code>Interlisp</code></li>
 <li>Leave the <code>Fill browser window</code> option set.</li>
 </ul>
-<p>Select <code>Run Medley</code>. Your browser will open a window that represents the Interlisp Desktop and looks much like this: </p>
-<p><img src="../../.gitbook/assets/Interlisp_Screen" alt="image">.</p>
+<p>Select <code>Run Medley</code>. Your browser will open a window that represents the Interlisp Desktop and looks much like this:</p>
+
+
+
+
+
+
+
+<div class="card rounded p-2 td-post-card mb-4 mt-4" style="max-width: 810px">
+	<img class="card-img-top" src="/running/online/usingonline/Online_Initial_Medley_hua215a7e750e886f3fe734170b9f52bef_29739_800x450_resize_catmullrom_3.png" width="800" height="450">
+	
+	<div class="card-body px-0 pt-2 pb-0">
+		<p class="card-text"> Medley Interlisp</p>
+	</div>
+	
+</div>
 <p>The Interlisp Desktop at startup contains 4 windows of interest:</p>
 <ul>
 <li>Prompt Window: The black window at the top of the screen. It is used to display system or application prompts</li>
@@ -198,18 +238,30 @@ You may either login as a Guest or create an account. If you plan to save and la
 <li>Medley logo window: A window containing the Interlisp Medley logo as a bit map.</li>
 <li>Status Bar window</li>
 </ul>
-<h3 id="writing-interlisp-programs-a-hrefwriting-interlisp-programs-idwriting-interlisp-programsa">Writing Interlisp programs <a href="#writing-interlisp-programs" id="writing-interlisp-programs"></a></h3>
+<h3 id="writing-interlisp-programs">Writing Interlisp programs</h3>
 <p>In the Exec window, type the following:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PLUS</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">)</span>
 </span></span></code></pre></div><p>When you complete typing the ending <code>)</code> the Interlisp interpreter will perform the calculation and return the result.</p>
 <p>One thing you probably noticed, the command <code>PLUS</code> is capitalized. It’s not that the developers of Interlisp were always shouting at each other. Rather, when Interlisp was developed computer programming was in its infancy and standards for naming commands were still evolving.</p>
-<h3 id="save-your-program-as-a-file-a-hrefsave-your-program-as-a-file-idsave-your-program-as-a-filea">Save your program as a file <a href="#save-your-program-as-a-file" id="save-your-program-as-a-file"></a></h3>
-<h3 id="opening-a-saved-program-a-hrefopening-a-saved-program-idopening-a-saved-programa">Opening a saved program <a href="#opening-a-saved-program" id="opening-a-saved-program"></a></h3>
-<h3 id="what-next-a-hrefwhat-next-idwhat-nexta">What next? <a href="#what-next" id="what-next"></a></h3>
+<h3 id="save-your-program-as-a-file">Save your program as a file</h3>
+<h3 id="opening-a-saved-program">Opening a saved program</h3>
+<h3 id="what-next">What next?</h3>
 
 </div>
 
 
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
 
     
 	
