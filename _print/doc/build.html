@@ -88,7 +88,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.c90b678432dd6a32612e12c9ebcd09ae.json"
+  data-offline-search-index-json-src="/offline-search-index.7f2b111f7e7e416424e16a208c723335.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -162,22 +162,22 @@ This is the multi-page printable view of this section.
 <p>(See <a href="https://github.com/Interlisp/medley/#readme">Medley repo README</a> for instructions on getting Medley.
 Make sure you have an X-server running to manage the Medley Interlisp display, and the DISPLAY environment variable set to point to your X-server.</p>
 <p>Running Medley can be done by typing:</p>
-<pre tabindex="0"><code>$ cd medley
-$ ./run-medley
-</code></pre><p>Or, if you wish to start Medley up with a particular image file (SYSOUT):</p>
-<pre tabindex="0"><code>$ cd medley
-$ ./run-medley &lt;SYSOUT-file-name&gt;
-</code></pre><p>The first time the system is run it loads the system image that comes
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> medley
+</span></span><span style="display:flex;"><span>$ ./run-medley
+</span></span></code></pre></div><p>Or, if you wish to start Medley up with a particular image file (SYSOUT):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> medley
+</span></span><span style="display:flex;"><span>$ ./run-medley &lt;SYSOUT-file-name&gt;
+</span></span></code></pre></div><p>The first time the system is run it loads the system image that comes
 with the system.  When you exit the system (or &ldquo;do a <code>SaveVM</code>&rdquo; menu option)
 the state of your machine is saved
 in a file named <code>~/lisp.virtualmem</code>.  Subsequent system startups
 load the <code>~/lisp.virtualmem</code> image by default.</p>
 <h3 id="exiting-the-system">Exiting The System</h3>
 <p>The system may be exited from an Interlisp prompt by typing:</p>
-<pre tabindex="0"><code>(LOGOUT)
-</code></pre><p>Or from a Common Lisp prompt with:</p>
-<pre tabindex="0"><code>(IL:LOGOUT)
-</code></pre><p>When you logout of the system, Medley automatically creates a binary
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOGOUT</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>Or from a Common Lisp prompt with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">IL:LOGOUT</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>When you logout of the system, Medley automatically creates a binary
 dump of your system located in your home directory named
 ``lisp.virtualmem&rsquo;&rsquo;. The next time you run the system, if you don&rsquo;t
 specify a specific image to run, Medley restores that image so that
@@ -215,8 +215,8 @@ virtual machine <a href="https://github.com/interlisp/maiko">maiko</a>.</p>
 <p>The remainder of the system is OS / architecture-independent and can be found in
 the <a href="https://github.com/interlisp/medley">medley</a> repository.</p>
 <p>You can now download Medley Interlisp from a <a href="https://github.com/interlisp/medley/releases">release</a>
-without building anything; see <a href="/interlisp/medley/#readme">medley README</a></p>
-<p>See <a href="/Interlisp/maiko/#readme">The Maiko README</a> for build instructions
+without building anything; see <a href="https://github.com/Interlisp/medley#readme">medley README</a></p>
+<p>See <a href="https://github.com/Interlisp/maiko#readme">The Maiko README</a> for build instructions
 for Maiko, for systems for which there is no pre-built release.</p>
 
 </div>
