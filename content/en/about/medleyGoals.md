@@ -32,7 +32,7 @@ _4. Do not make enhancements that lie outside the spec._
 
 _5. Focus on making it look and run as it originally did._
 
-### John Cowan 
+### John Cowan
 
 _When I went to summer camp in the 1970s, the director owned a 1932 Packard that we sometimes got to take rides in. But we could only do that on the camp property because the car was completely unsafe under any other conditions (for one thing, the starter didn't work: you had to push the car). By now, riding in it at all would probably be either illegal or contrary to the camp's insurance policies._
 
@@ -48,7 +48,7 @@ _At the very least, someone should run the ANSI test suite and see at which poin
 
 _Note that I am not an Interlisp insider and have no axe to grind, except that Larry has said the purpose of this effort is to create a new group of Medley users/maintainers), and I think what will matter to them most is the programming tools. If they can develop on Medley and either deploy on Medley or on SBCL, that will be a big incentive._
 
-### Michele Denber 
+### Michele Denber
 
 _Well, I guess I might as well toss in my $0.02. I am not an Interlisp insider, just a user. I came to Lisp at Xerox back in the early 80's. Coming from a Fortran/PL/I/APL/BCPL background, Interlisp-D was a revelation to me. The power of this environment was so amazing I couldn't imagine ever going back to anything else._
 
@@ -114,11 +114,11 @@ _3. The one component of Interlisp that seems compatible with git file-based dev
 
 _But for the Lisp source files, it seems that informal mechanisms used in the 1980s to coordinate within a small group of developers are still the best way._
 
-### Nick Briggs 
+### Nick Briggs
 
 _I’m mostly interested in getting the underlying emulator code working reliably. Unfortunately, there is little-to-no documentation available for the (C language) code itself, or description of the technical design and implementation details behind it. This makes it critically important to me to have the code history preserved, in its entirety, so that when I find something that appears to be a problem I can look at all the revisions that have been made to determine if there was an error introduced recently, or exposed by, for example, operating system or compiler changes, or is an endian dependency that was never resolved (for which we need to have both the original big-endian and newer little-endian versions). Since there is very tight integration with the lowest levels of the Lisp sources, I’m also interested in ensuring that we keep the history of the Lisp code available too -- preferably in a way that permits easy comparisons of previous versions, and such that we can track the source in a running sysout back to the Lisp source files that we are keeping._
 
-### Arun Welch 
+### Arun Welch
 
 _I started working part-time for XAIS when I complained to John that the TCP/IP code was broken and he responded with “yeah, but all the AR’s reporting problems are coming from you and all the patches to fix those AR’s come from you so why don’t I pay you to support it since I don’t have any resources available to do that anyway”..._
 
@@ -142,7 +142,7 @@ _I would like to resurrect and extend the Common Lisp development part of Medley
 
 _I saw the recording of your demo at the NYC Lisp group…. I figured I'd download it and give it a whirl over the weekend. I'm interested in seeing what a residential Smalltalk-80-like Lisp system feels like. I've used Allegro CL and various file-oriented Lisp and Scheme implementations over the years, but Interlisp-D was a bit different. I also have a "thing" for self-contained systems that can run on bare metal. I think Wirth's FPGA Oberon is really, really cool, but it's really a bit of an educational toy, and the language is a dead-end. A real Lisp system would be so much neater. My interest, if I got involved with any development, would be getting a bare-metal port of maiko running. Recently, a fellow combined a bare-metal support library with an ST80 virtual machine in C (both pre-existing open-source) and got an ST80 image running on bare-metal Raspberry Pi -- no Linux in sight. In reality, though, a stripped-down embedded Linux would do the same thing, more or less. I really think to experience a Lisp machine, however, it needs to boot directly into Lisp. Running any sort of emulator "in a box" on a modern desktop, with a web browser, Facebook, and all those other distractions is just cheating. ;)_
 
-### Stephen Kaisler 
+### Stephen Kaisler
 
 Back in the 1980s, I had written a book on Interlisp: The Language and Its Usage, which was published by John Wiley & Sons. The book has been out of print for years.
 
@@ -167,7 +167,7 @@ As I got more into editing the second volume, I realized it was going to be very
 
 Once I start working on LOOPS, it may become a fourth volume. Others may arise as we get further into the project, but that is a ways off.
 
-### Guenther Goerz 
+### Guenther Goerz
 
 I got familiar with Interlisp when I was working on an implementation of a parser for my PhD thesis work in the late 1970 and 1980s. It started with a little cooperation with Martin Kay (and also Ron Kaplan) from PARC at a computational linguistics summer school in Pisa. Although I had a tenured researcher position at my university, I did not have any means to acquire one of Xerox' LISP workstations, which were sold in Germany by Siemens for something like 90000 Euros (today's equivalent) - so I used Interlisp on a Siemens mainframe to which I had access. The Interlisp version was a descendant from the IBM implementation - both machines had basically the same hardware architecture but different operating systems (which was not a problem for the rather self-contained Interlisp environment). After spending some time with IBM's LILIOG project at IBM in Stuttgart and getting my first professorship at the University of Hamburg, I came back to Erlangen in 1991. So, in the 1990s I used the Fuji Xerox emulation of Medley on Sun workstations and later on Linux machines. Additionally, we also acquired a license for the DOS version of Medley 2.0 from envos/Venue. What I used for some time was the LFG implementation in Medley - which I got from Ron Kaplan in Linux - in Suse Linux, running on my Mac(s) with the Parallels Virtual machine, mainly for teaching purposes. But I was also interested in various features of the programming environment... Recently, just for fun, I tried to get Medley up and running under DOSbox on Mac OS X. I was also wondering whether there is a DOS emulator for the ipad - and there is one, iDOS, which works pretty well! So, despite the small screen, Medley 2.0 runs amazingly well on the ipad too.
 
@@ -185,4 +185,3 @@ As for the VM, I don't have much context to add beyond what I wrote in the Ackno
 a few months after I joined PARC.  For the record, I don't remember doing anything at PARC besides (a) re-coding the Edinburgh theorem prover in Interlisp as a warm up exercise and to continue my research on theorem proving, (b) helping Simonyi with the representation of text in Bravo by implementing the underlying data structures in Interlisp and responding to Charles' requests for new features, (c) writing the VM, (d) inventing the fast string searching algorithm with Boyer and fighting the lawyers at Xerox to publish it (ultimately by threatening to remove my name from the publication and let Boyer author it), and (e) fighting with Ben Wegbreit and Jerry Elkind over the ``right'' way to approach verification and ultimately leaving.  So I suspect that my VM work was my first and main official task at PARC.
 
 Other than that, I think the Acknowledgements say it all, accurately.  The line there that says I think my friends in the formal verification community will be displeased was not speculation.  Tony Hoare wrote me a letter upon seeing the document in which he complimented me on the precision and urged me to get back to formal methods.  Oh well.
-

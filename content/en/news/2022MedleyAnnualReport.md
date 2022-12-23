@@ -2,7 +2,6 @@
 title: 2022 Medley Interlisp Annual Report
 weight: 1
 type: docs
-
 ---
 
 ### Introduction
@@ -32,4 +31,4 @@ Advances over the last year include:
 
 We meet weekly to discuss open issues and other agenda items. Meetings are recorded.  We'd like to talk to others who might be interested in collaboration or using our components for other emulation projects.
 
-[info@interlisp.org](mailto:info@interlisp.org)
+Contact us at: [info@interlisp.org](mailto:info@interlisp.org)
