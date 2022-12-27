@@ -1,5 +1,5 @@
 
-<table>
+<table style="max-width: 100%">
     <thead>
         <tr>
           <th>Author</th>
@@ -8,18 +8,31 @@
         </tr>
       </thead>
       <tbody>
-{{ $bibliographies := getJSON "data/bibliography.json" }}
-        {{ range $bibliographies }}
+        {{ $years_items := getJSON "data/bibliography.json" }}
+        {{ range $year, $items := $years_items }}
           <tr>
-            <td>
-              {{ range .author }}
-                {{ .family }}, {{ .given }} <br>
-              {{ end }}
-
-            </td>
-            <td><a href="{{ .URL }}">{{ .title }}</a></td>
-            <td>{{ .note }}</td>
+            <th colspan="3">
+              {{ $year }}
+            </th>
           </tr>
+          {{ range $items }}
+            <tr>
+              <td>
+                {{ range .author }}
+                  {{ if .literal }}
+                    {{ .literal }}
+                  {{ else if and .family .given }}
+                    {{ .family }}, {{ .given }}
+                  {{ else }}
+                    {{ .family }}{{ .given }}
+                  {{ end }}<br>
+                {{ end }}
+
+              </td>
+              <td>{{ if .URL }}<a href="{{ .URL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</td>
+              <td>{{ .note }}</td>
+            </tr>
+          {{ end }}
         {{ end }}
       </tbody>
   
