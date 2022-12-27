@@ -5,8 +5,34 @@ type: docs
 ---
 ## Running on Windows
 
+Medley currently does not run natively on Windows.  We provide two methods of running
+Medley with Windows.  Both methods require familarity with installing and configuring
+advanced Windows options.  If you are uncomfortable with running Linux on Windows
+using WSL2 or installing and using Docker and running Docker Containers, you
+may want to use the Online web-based version.
+
+## Running Medley in the Linx Subsystem
+
+This section will explain how to setup Medley within Linux on a Windows system
+using WSL2.
+
+### Prerequistes
+
+- WSL2 installed.  [Install Linux on Windows with WSL](https://learn.microsoft.com/en-us/windows/wsl/install) by Microsoft provides directions on how to install or upgrade your WSL2 installation.
+- An installed Linux distribution.  There are many different available Linux distributions, Ubuntu is a widely used distribution.  [Install Ubuntu on WSL2 and get started with graphical applications](https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview) provides a good set of instructions for installing a distribution and valiating that the graphics display works properly for Windows.
+
+Once you have a working Linux distribution installed and working you're ready to install
+the Medley environment.
+
+It however, can easily be run using WSL2
+and Linux.
+
+
+
+
+
 * Interlisp Online seems to works fine with recent Edge and Chrome; we've tested others but don't regularly use them.
-WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use. 
+WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use.
 
 * Docker Desktop is a great possibility, too, if your system can run it.
 * Otherwise, to run installed, you either need
