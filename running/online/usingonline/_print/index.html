@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.109.0">
+<meta name="generator" content="Hugo 0.110.0">
 <link rel="canonical" type="text/html" href="https://interlisp.org/running/online/usingonline/">
 <meta name="robots" content="noindex, nofollow">
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
@@ -107,7 +107,7 @@ You may either login as a Guest or …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.29971d84766d5d4549fe48a2fd8a8055.json"
+  data-offline-search-index-json-src="/offline-search-index.70dcbcc147c61601eb705aa2f77a2a27.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -209,6 +209,14 @@ You may either login as a Guest or create an account. If you plan to save and la
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">PLUS</span> <span style="color:#0000cf;font-weight:bold">1</span> <span style="color:#0000cf;font-weight:bold">1</span><span style="color:#000;font-weight:bold">)</span>
 </span></span></code></pre></div><p>When you complete typing the ending <code>)</code> the Interlisp interpreter will perform the calculation and return the result.</p>
 <p>One thing you probably noticed, the command <code>PLUS</code> is capitalized. It’s not that the developers of Interlisp were always shouting at each other. Rather, when Interlisp was developed computer programming was in its infancy and standards for naming commands were still evolving.</p>
+<h3 id="managing-memory-images-and-sessions">Managing memory images and sessions</h3>
+<p>In Interlisp, there are two types of files relevant to managing memory images and updating them across sessions: <code>lisp.virtualmem</code> and <code>.sysout</code>.</p>
+<p>The <code>lisp.virtualmem</code> file is a capture of the &ldquo;current&rdquo; state of the system (i.e., it is a copy of the virtual memory at a point in time). <code>lisp.virtualmem</code> is written whenever you execute <code>(IL:LOGOUT)</code> and also whenever executing <code>(IL:SAVEVM)</code>. You can restart Medley using a <code>lisp.virtualmem</code> and it will pick up essentially where it left off before the <code>LOGOUT</code> or <code>SAVEVM</code> (with the exception that the user can set <code>BEFORE</code>/<code>AFTER</code> and <code>LOGOUT</code>/<code>SAVEVM</code> code that runs before you get control of the restarted <code>lisp.virtualmem</code>).</p>
+<p>A <code>.sysout</code> is a virtual memory image produced by <code>MAKESYS</code> (for writing an image for distribution) and <code>SYSOUT</code> (for saving a named checkpoint, e.g. to revert to a previous state if needed), which differ in the way they process the startup options. You can (and most frequently do) start Medley from a sysout file. When Medley starts from a sysout, it automatically runs initialization scripts — a site initialization script followed by a per-user initialization script (if available). A sysout is what you might call &ldquo;a clean image&rdquo;.</p>
+<p>As for Interlisp Online: except as noted below, every time you <code>Run Medley</code> you are starting up from a sysout file (i.e., from a clean image). The exception is if you check the <code>Resume previous session</code> box. In that case, you will be starting up from the <code>lisp.virtualmem</code> stored for you online (if any) and that was created by the <code>(IL:LOGOUT)</code> at the end of your previous session.</p>
+<p>As a registered Interlisp Online user you get the choice of resuming your previous image or starting from a clean image — with the default being starting from a clean image.</p>
+<p>For guest logins, there is no <code>Resume previous session</code> because <code>lisp.virtualmem</code> is never preserved for guests.</p>
+<p>For registered users, any files that you create (e.g., with <code>IL:MAKEFILE</code>) will also be preserved across sessions online. But these files will never be automatically loaded into the system when you re-start with a clean image — you need to <code>LOAD</code> them explicitly (or add a <code>LOAD</code> to your personal <code>INIT</code> file stored online at <code>{DSK}/home/medley/il/INIT</code>).</p>
 <h3 id="save-your-program-as-a-file">Save your program as a file</h3>
 <h3 id="opening-a-saved-program">Opening a saved program</h3>
 <h3 id="what-next">What next?</h3>
@@ -277,7 +285,7 @@ You may either login as a Guest or create an account. If you plan to save and la
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2022 Interlisp.org All Rights Reserved</small>
+        <small class="text-white">&copy; 2023 Interlisp.org All Rights Reserved</small>
         
 	
 		<p class="mt-2"><a href="/about/">About</a></p>
