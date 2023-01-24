@@ -47,7 +47,7 @@ been compiled), variables in Interlisp are dynamically scoped.  This
 means that variables are visible within the dynamic environment they
 are in.  For example, let's say we create two functions `FUN1`
 and `FUN2`.  If `FUN1` introduced a local variable and then
-called `FUN2`, then `FUN2} would have access to the variable
+called `FUN2`, then `FUN2` would have access to the variable
 since it is in the dynamic environment of being called by `FUN1`.
 In other words, the variable was in existence when `FUN2` was
 called.  However, the Interlisp compiler "hides" variables unless
@@ -70,7 +70,7 @@ and a function named `ABC` that are unrelated.
 Interlisp shares the notion of `LAMBDA` expressions with Common Lisp,
 as a way of defining functions. Interlisp `LAMBDA` specifies a list
 of parameters; Common Lisp parameter lists can be decorated with
-`:OPTIONAL`, `:REST` and `:KEYWORD` parameters. Interlisp also
+`&OPTIONAL`, `&REST` and `&KEYWORD` parameters. Interlisp also
 adds the notion of an `NLAMBDA` function that doesn't evaluate
 its arguments --  arguments to 
 `NLAMBDA` function are passed directly into a function without 
