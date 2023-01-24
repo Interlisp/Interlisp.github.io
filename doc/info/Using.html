@@ -97,7 +97,7 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.70dcbcc147c61601eb705aa2f77a2a27.json"
+  data-offline-search-index-json-src="/offline-search-index.a9b2d352bbf5ca001463498796b73ce5.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -119,7 +119,7 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.70dcbcc147c61601eb705aa2f77a2a27.json"
+  data-offline-search-index-json-src="/offline-search-index.a9b2d352bbf5ca001463498796b73ce5.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -364,7 +364,9 @@ been compiled), variables in Interlisp are dynamically scoped.  This
 means that variables are visible within the dynamic environment they
 are in.  For example, let&rsquo;s say we create two functions <code>FUN1</code>
 and <code>FUN2</code>.  If <code>FUN1</code> introduced a local variable and then
-called <code>FUN2</code>, then <code>FUN2} would have access to the variable since it is in the dynamic environment of being called by </code>FUN1<code>. In other words, the variable was in existence when </code>FUN2` was
+called <code>FUN2</code>, then <code>FUN2</code> would have access to the variable
+since it is in the dynamic environment of being called by <code>FUN1</code>.
+In other words, the variable was in existence when <code>FUN2</code> was
 called.  However, the Interlisp compiler &ldquo;hides&rdquo; variables unless
 they are &ldquo;declared special&rdquo;, so that they are essentially lexically scoped,
 as in Common Lisp.</p>
@@ -380,7 +382,7 @@ and a function named <code>ABC</code> that are unrelated.</p>
 <p>Interlisp shares the notion of <code>LAMBDA</code> expressions with Common Lisp,
 as a way of defining functions. Interlisp <code>LAMBDA</code> specifies a list
 of parameters; Common Lisp parameter lists can be decorated with
-<code>:OPTIONAL</code>, <code>:REST</code> and <code>:KEYWORD</code> parameters. Interlisp also
+<code>&amp;OPTIONAL</code>, <code>&amp;REST</code> and <code>&amp;KEYWORD</code> parameters. Interlisp also
 adds the notion of an <code>NLAMBDA</code> function that doesn&rsquo;t evaluate
 its arguments &ndash;  arguments to
 <code>NLAMBDA</code> function are passed directly into a function without
