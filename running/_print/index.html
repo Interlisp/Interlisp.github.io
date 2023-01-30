@@ -90,7 +90,7 @@ Interlisp …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.cf7f4ff50d5fb8d315c760ecf5c1d46c.json"
+  data-offline-search-index-json-src="/offline-search-index.7d8011d91c813105cc173ef79f102cfd.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -174,36 +174,9 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>2: <a href="#pg-e7ed621e3e6b2a27943943b5feb881e5">Building the Interlisp system</a></li>
+<li>2: <a href="#pg-d8de266a4f633290e434d257ff04750a">Running on Linux (incl. WSL)</a></li>
 
 
-    
-    <ul>
-        
-  
-  
-  
-  
-
-  
-    
-    
-	
-<li>2.1: <a href="#pg-a0d2415debbdc3cac9c9ebc8b65200e4">Building Medley Interlisp</a></li>
-
-
-    
-  
-    
-    
-	
-<li>2.2: <a href="#pg-a0e6fa0b705b48e6fb72ac6d5ba92dc4">Releases</a></li>
-
-
-    
-  
-
-    </ul>
     
   
     
@@ -228,6 +201,41 @@ This is the multi-page printable view of this section.
 <li>5: <a href="#pg-6096845dc5edf904cab8347cf40beb42">Running with Docker</a></li>
 
 
+    
+  
+    
+    
+	
+<li>6: <a href="#pg-e7ed621e3e6b2a27943943b5feb881e5">Building the Interlisp system</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>6.1: <a href="#pg-a0d2415debbdc3cac9c9ebc8b65200e4">Building Medley Interlisp</a></li>
+
+
+    
+  
+    
+    
+	
+<li>6.2: <a href="#pg-a0e6fa0b705b48e6fb72ac6d5ba92dc4">Releases</a></li>
+
+
+    
+  
+
+    </ul>
     
   
 
@@ -419,103 +427,146 @@ You may either login as a Guest or create an account. If you plan to save and la
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-e7ed621e3e6b2a27943943b5feb881e5">2 - Building the Interlisp system</h1>
+	<h1 id="pg-d8de266a4f633290e434d257ff04750a">2 - Running on Linux (incl. WSL)</h1>
     
-	<p>Medley Interlisp is open-source and may be obtained from GitHub. It is portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
-<p>The core is written in portable C. The system currently depends on an X11 system for its display.</p>
-<h3 id="obtaining-the-system">Obtaining The System</h3>
-<p>The system comes in two parts. The first is a C-based virtual machine <a href="https://github.com/interlisp/maiko">Maiko</a>.</p>
-<p>The remainder of the system is OS / architecture-independent and can be found in the <a href="https://github.com/interlisp/medley">Medley repository</a>.</p>
-<p>You can now download Medley Interlisp from a release without building anything; see the Medley <a href="https://github.com/interlisp/medley/#readme">README</a></p>
-<p>See The Maiko <a href="https://github.com/Interlisp/maiko/#readme">README</a> for build instructions for Maiko, for systems for which there is no pre-built release.</p>
-<p>(See <a href="https://github.com/Interlisp/medley/#readme">Medley repo README</a> for instructions on getting Medley.
-Make sure you have an X-server running to manage the Medley Interlisp display, and the DISPLAY environment variable set to point to your X-server.</p>
-<p>Running Medley can be done by typing:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> medley
-</span></span><span style="display:flex;"><span>$ ./run-medley
-</span></span></code></pre></div><p>Or, if you wish to start Medley up with a particular image file (SYSOUT):</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> medley
-</span></span><span style="display:flex;"><span>$ ./run-medley &lt;SYSOUT-file-name&gt;
-</span></span></code></pre></div><p>The first time the system is run it loads the system image that comes
-with the system.  When you exit the system (or &ldquo;do a <code>SaveVM</code>&rdquo; menu option)
-the state of your machine is saved
-in a file named <code>~/lisp.virtualmem</code>.  Subsequent system startups
-load the <code>~/lisp.virtualmem</code> image by default.</p>
-<h3 id="exiting-the-system">Exiting The System</h3>
-<p>The system may be exited from an Interlisp prompt by typing:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOGOUT</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><p>Or from a Common Lisp prompt with:</p>
-<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">IL:LOGOUT</span><span style="color:#000;font-weight:bold">)</span>
-</span></span></code></pre></div><p>When you logout of the system, Medley automatically creates a binary
-dump of your system located in your home directory named
-``lisp.virtualmem&rsquo;&rsquo;. The next time you run the system, if you don&rsquo;t
-specify a specific image to run, Medley restores that image so that
-you can continue right where you left off.</p>
+	<p>Medley can run on any Linux system that includes X Windows, including Windows
+System For Linux (WSL2 only) on Windows 11 and Windows 10 Build 19044+.</p>
+<p>It is also recommended that the Linux system have a web browser installed.
+For WSL installations, the browser(s) on the Windows side will suffice.
+A browser is not strictly necessary to run Medley, but several features of the system
+(e.g., displaying some user documentation) will not work without an external browser
+installed.</p>
+<p>Medley can be installed on your system in one of two configurations: <em>standard</em> and
+<em>local</em>.  Standard installation will install Medley into system directories and install
+any prerequisite packages.  Local installation will install Medley into any user directory
+but any prerequisite packages must be installed manually.</p>
+<h2 id="standard-installation-debian-based-systems-only">Standard Installation (Debian-based systems only)</h2>
+<p>Standard installations are currently supported only for Debian-based systems (i.e.,
+systems that support dpkg), including Debian-based distros on WSL.</p>
+<p>In a standard installation, Medley is installed in system directories
+(specifically, /usr/local/interlisp) and support like man pages and (a link to) the
+medley executable are also installed in standard system locations (e.g., /usr/local/man
+and /usr/local/bin).</p>
+<p>Standard installations are ideal for users who want to explore Medley (including its
+system code) or to develop applications built on top of Medley.  Standard installations
+are not good for users who want to modify the Medley system code, since that code is
+installed in protected locations.</p>
+<p>Standard installation uses <code>apt</code> to install a .deb package downloaded from
+<a href="https://online.interlisp.org/downloads/medley_downloads.html">the Medley downloads site</a>.
+The .deb package will install Medley as well as any other packages needed for Medley to
+run.</p>
+<p>There are separate .deb packages for &ldquo;standard&rdquo; Linux and for WSL (as well as for the
+three machine architectures - X86_64, ARM64, ARMv7).  The WSL packages differ only in
+that they include an additional functionality to have Medley display in a VNC Window
+instead of a standard X Window.  This is useful on high resolution displays since
+the VNC window will scale according to the Windows Settings-&gt;Display-&gt;Scale setting,
+while the X Window on WSL will not so scale. The WSL packages also install the wslu
+package, which is used by Medley to connect to external browsers as described above.
+Aside from these two features, a non-WSL .deb package will install and run on WSL.</p>
+<p>To install a standard package and run Medley:</p>
+<ol>
+<li>
+<p>Download</p>
+<p>Using a browser download from
+<a href="https://online.interlisp.org/downloads/medley_downloads.html">the Medley downloads site</a>
+the .deb package for your platform (i.e., &ldquo;standard&rdquo; Linux or WSL) and your machine
+architecture (X86_64, ARM64, or ARMv7) to &lt;deb_filepath&gt;.</p>
+</li>
+<li>
+<p>Install</p>
+<p>In a terminal:</p>
+<pre tabindex="0"><code>ubuntu@oio:~$ sudo apt update
+ubuntu@oio:~$ sudo apt install -y &lt;deb_filepath&gt;
+</code></pre></li>
+<li>
+<p>Run</p>
+<p>In a terminal:</p>
+<pre tabindex="0"><code>ubuntu@oio:~$ medley
+</code></pre><p>There are many options to the <code>medley</code> command.  For a brief overview, run <code>medley --help</code>.
+For a more complete description, run <code>man medley</code> or <code>medley --man</code> or click
+<a href="https://online.interlisp.org/downloads/man_medley.html">here</a>.</p>
+<p>For first-time users: <code>medley --apps</code> or for WSL <code>medley --apps --vnc</code> is a good starting
+point.  This will give you a fully populated Medley system, including the applications built
+on Medley such as Notecards and Rooms.</p>
+<p>Note: By default, <code>medley</code> will create a directory in <em>$HOME/il</em>.  This will be used by the Medley
+system as its <em>LOGINDIR</em>.  Medley will start up with <em>LOGINDIR</em> as its current connected directory.
+It will load the personal init file (if any) from <em>LOGINDIR</em>/INIT or <em>LOGINDIR</em>/INIT.LCOM.  Finally,
+Medley will use <em>LOGINDIR</em>/vmem/ to store its virtual memory file(s).  The location of <em>LOGINDIR</em>
+can be changed using the <code>--logindir</code> option to <code>medley</code>.</p>
+</li>
+</ol>
+<h2 id="local-installation">Local Installation</h2>
+<p>In a local installation, the Medley system is installed into any user directory from a .tar file.
+Multiple &ldquo;Medleys&rdquo; can be installed in different directories on one machine without interference
+(except see description of Medley <em>LOGINDIR</em> below).  Local installation makes it easy (from a file
+management p.o.v.) to modify the Medley system code.</p>
+<p>Local installation doesn&rsquo;t involve a package manager, so you are responsible for installing any
+prerequisite packages onto your system before you installing Medley.</p>
+<p>Also note that with local installations, <code>man medley</code> will not work.  However, as indicated below,
+<code>./medley --man</code> will show the medley man page.</p>
+<p>To install and run Medley locally:</p>
+<ol>
+<li>
+<p>Install prerequite packages</p>
+<ul>
+<li>
+<p>For non-WSL installations, use your distro&rsquo;s package manager to install <code>xdg-utils</code>.</p>
+</li>
+<li>
+<p>For WSL all installations, use your distro&rsquo;s package manager to install <code>wslu</code>.</p>
+<p>Note that some distros do not include <code>wslu</code> in their standard repos. See
+<a href="https://wslutiliti.es/wslu/install.html">https://wslutiliti.es/wslu/install.html</a>
+for installation instructions if this is the case.</p>
+<p>Also note that <code>wslu v4.0</code> does not work with Medley, so you will need to install
+either a version &lt; v.40 or &gt;= v4.1.</p>
+</li>
+<li>
+<p>For WSL installations where the VNC feature will be used, install the <code>tigervnc-standalone-server</code> and <code>tigervnc-xorg-extension</code> packages.</p>
+<p>When using the VNC feature Medley will display in a VNC Window instead of a standard X Window.
+This is useful on high resolution displays since the VNC window will scale according to the
+Windows Settings-&gt;Display-&gt;Scale setting, while the X Window on WSL will not so scale.</p>
+<p>Note that Medley will install and run even if none of these prerequite packages are installed.
+However, some features (e.g., viewing documentation in an external browser) will be inoperable.</p>
+</li>
+</ul>
+</li>
+<li>
+<p>Download</p>
+<p>Using a browser download from
+<a href="https://online.interlisp.org/downloads/medley_downloads.html">the Medley downloads site</a>
+the tar (.tgz) file for your platform (i.e., &ldquo;standard&rdquo; Linux or WSL) and your machine
+architecture (X86_64, ARM64, or ARMv7) to &lt;tar_filepath&gt;.</p>
+</li>
+<li>
+<p>Install Medley</p>
+<p>In a terminal:</p>
+<pre tabindex="0"><code>ubuntu@oio:~$ mkdir &lt;medley_directory&gt;
+ubuntu@oio:~$ tar -C &lt;medley_directory&gt; -xzf &lt;tar_filepath&gt;
+</code></pre></li>
+<li>
+<p>Run Medley</p>
+<p>In a terminal:</p>
+<pre tabindex="0"><code>ubuntu@oio:~$ cd &lt;medley_directory&gt;
+ubuntu@oio:~$ ./medley
+</code></pre><p>There are many options to the <code>medley</code> command.  For a brief overview, run <code>./medley --help</code>.
+For a more complete description, run <code>./medley --man</code> or click
+<a href="https://online.interlisp.org/downloads/man_medley.html">here</a>.</p>
+<p>For first-time users: <code>./medley --apps</code> or for WSL (and you have installed the VNC prerequisites)
+<code>./medley --apps --vnc</code> is a good starting point.  This will give you a fully populated Medley system,
+including the applications built on Medley such as Notecards and Rooms.</p>
+<p>Note: By default, <code>medley</code> will create a directory in <em>$HOME/il</em>.  This will be used by the Medley
+system as its <em>LOGINDIR</em>.  Medley will start up <em>LOGINDIR</em> as its current connected directory.
+It will load any personal init file from <em>LOGINDIR</em>/INIT or <em>LOGINDIR</em>/INIT.LCOM.  Finally,
+Medley will use <em>LOGINDIR</em>/vmem/ to store its virtual memory file(s).  The location of <em>LOGINDIR</em>
+can be changed using the <code>--logindir</code> option to <code>medley</code>.  In particular, if you have multiple
+installations of Medley that you would like to keep completely seperate, then you can use the
+<code>--logindir -</code> option, which will set <em>LOGINDIR</em> to &lt;medley_directory&gt;/logindir.</p>
+</li>
+</ol>
 
 </div>
 
 
-
-    
-      
-  
-  
-  
-  
-
-  
-  
-
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-a0d2415debbdc3cac9c9ebc8b65200e4">2.1 - Building Medley Interlisp</h1>
-    
-	<p>Medley Interlisp is open-source and may be obtained from GitHub.  It is
-portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
-<p>The core is written in portable C. The system currently depends on an
-X11 system for its display.</p>
-<h2 id="obtaining-the-system">Obtaining The System</h2>
-<p>The system comes in two parts.  The first is a C-based
-virtual machine <a href="https://github.com/interlisp/maiko">maiko</a>.</p>
-<p>The remainder of the system is OS / architecture-independent and can be found in
-the <a href="https://github.com/interlisp/medley">medley</a> repository.</p>
-<p>You can now download Medley Interlisp from a <a href="https://github.com/interlisp/medley/releases">release</a>
-without building anything; see <a href="https://github.com/Interlisp/medley#readme">medley README</a></p>
-<p>See <a href="https://github.com/Interlisp/maiko#readme">The Maiko README</a> for build instructions
-for Maiko, for systems for which there is no pre-built release.</p>
-
-</div>
-
-
-
-    
-	
-  
-    
-    
-	
-    
-
-<div class="td-content" style="page-break-before: always">
-    
-	<h1 id="pg-a0e6fa0b705b48e6fb72ac6d5ba92dc4">2.2 - Releases</h1>
-    
-	<p><a href="https://github.com/interlisp/medley/releases">Medley repo releases</a> contains the current Medley release. New releases are generated regularly as functionality is restored and extended.</p>
-<p>An alternative is to point your browser to <a href="https://online.interlisp.org/">Online Interlisp</a> and try our cloud hosted version of Medley Interlisp.</p>
-
-</div>
-
-
-
-    
-	
-  
 
     
 	
@@ -646,6 +697,114 @@ WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conf
 </div>
 
 
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-e7ed621e3e6b2a27943943b5feb881e5">6 - Building the Interlisp system</h1>
+    
+	<p>Medley Interlisp is open-source and may be obtained from GitHub. It is portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
+<p>The core is written in portable C. The system currently depends on an X11 system for its display.</p>
+<h3 id="obtaining-the-system">Obtaining The System</h3>
+<p>The system comes in two parts. The first is a C-based virtual machine <a href="https://github.com/interlisp/maiko">Maiko</a>.</p>
+<p>The remainder of the system is OS / architecture-independent and can be found in the <a href="https://github.com/interlisp/medley">Medley repository</a>.</p>
+<p>You can now download Medley Interlisp from a release without building anything; see the Medley <a href="https://github.com/interlisp/medley/#readme">README</a></p>
+<p>See The Maiko <a href="https://github.com/Interlisp/maiko/#readme">README</a> for build instructions for Maiko, for systems for which there is no pre-built release.</p>
+<p>(See <a href="https://github.com/Interlisp/medley/#readme">Medley repo README</a> for instructions on getting Medley.
+Make sure you have an X-server running to manage the Medley Interlisp display, and the DISPLAY environment variable set to point to your X-server.</p>
+<p>Running Medley can be done by typing:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> medley
+</span></span><span style="display:flex;"><span>$ ./run-medley
+</span></span></code></pre></div><p>Or, if you wish to start Medley up with a particular image file (SYSOUT):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> medley
+</span></span><span style="display:flex;"><span>$ ./run-medley &lt;SYSOUT-file-name&gt;
+</span></span></code></pre></div><p>The first time the system is run it loads the system image that comes
+with the system.  When you exit the system (or &ldquo;do a <code>SaveVM</code>&rdquo; menu option)
+the state of your machine is saved
+in a file named <code>~/lisp.virtualmem</code>.  Subsequent system startups
+load the <code>~/lisp.virtualmem</code> image by default.</p>
+<h3 id="exiting-the-system">Exiting The System</h3>
+<p>The system may be exited from an Interlisp prompt by typing:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOGOUT</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>Or from a Common Lisp prompt with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">IL:LOGOUT</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>When you logout of the system, Medley automatically creates a binary
+dump of your system located in your home directory named
+``lisp.virtualmem&rsquo;&rsquo;. The next time you run the system, if you don&rsquo;t
+specify a specific image to run, Medley restores that image so that
+you can continue right where you left off.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a0d2415debbdc3cac9c9ebc8b65200e4">6.1 - Building Medley Interlisp</h1>
+    
+	<p>Medley Interlisp is open-source and may be obtained from GitHub.  It is
+portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
+<p>The core is written in portable C. The system currently depends on an
+X11 system for its display.</p>
+<h2 id="obtaining-the-system">Obtaining The System</h2>
+<p>The system comes in two parts.  The first is a C-based
+virtual machine <a href="https://github.com/interlisp/maiko">maiko</a>.</p>
+<p>The remainder of the system is OS / architecture-independent and can be found in
+the <a href="https://github.com/interlisp/medley">medley</a> repository.</p>
+<p>You can now download Medley Interlisp from a <a href="https://github.com/interlisp/medley/releases">release</a>
+without building anything; see <a href="https://github.com/Interlisp/medley#readme">medley README</a></p>
+<p>See <a href="https://github.com/Interlisp/maiko#readme">The Maiko README</a> for build instructions
+for Maiko, for systems for which there is no pre-built release.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a0e6fa0b705b48e6fb72ac6d5ba92dc4">6.2 - Releases</h1>
+    
+	<p><a href="https://github.com/interlisp/medley/releases">Medley repo releases</a> contains the current Medley release. New releases are generated regularly as functionality is restored and extended.</p>
+<p>An alternative is to point your browser to <a href="https://online.interlisp.org/">Online Interlisp</a> and try our cloud hosted version of Medley Interlisp.</p>
+
+</div>
+
+
+
+    
+	
+  
 
     
 	

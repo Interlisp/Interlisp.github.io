@@ -19,10 +19,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/online/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/docs/medley/modern-medley-release-notes/</loc>
   </url>
   
@@ -59,11 +55,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/doc/build.html</loc>
+    <loc>https://interlisp.org/credits/in-memoriam/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/credits/in-memoriam/</loc>
+    <loc>https://interlisp.org/running/online/</loc>
   </url>
   
   <url>
@@ -95,6 +91,10 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/running/running-on-linux/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/about/partners/spn/</loc>
   </url>
   
@@ -123,6 +123,14 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/running/running-with-docker/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/doc/build.html</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/developing/</loc>
   </url>
   
@@ -132,10 +140,6 @@
   
   <url>
     <loc>https://interlisp.org/publications/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/running/running-with-docker/</loc>
   </url>
   
   <url>
