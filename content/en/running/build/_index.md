@@ -1,6 +1,6 @@
 ---
 title: Building the Interlisp system
-weight: 10
+weight: 60
 url: /doc/build.html
 aliases:
 - /_pages/doc/build.html

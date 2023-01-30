@@ -1,6 +1,6 @@
 ---
 title: Running on MacOS
-weight: 50
+weight: 30
 type: docs
 ---
 

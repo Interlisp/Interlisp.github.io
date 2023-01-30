@@ -1,6 +1,6 @@
 ---
 title: Running on Windows
-weight: 50
+weight: 40
 type: docs
 ---
 ## Running on Windows

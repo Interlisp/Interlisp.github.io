@@ -1,6 +1,6 @@
 ---
 title: Running with Docker
-weight: 75
+weight: 50
 type: docs
 ---
 
