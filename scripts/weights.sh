@@ -15,7 +15,7 @@
 if [ -z "$1" ]; then dir="."; else dir="$1"; fi
 find "${dir}" -mindepth 2 -maxdepth 2 -name _index.md  -exec grep -i -H weight {} \; >/tmp/weights-$$
 find "${dir}" -mindepth 1 -maxdepth 1 -type f  \
-       ! -name _index.md ! -name "weights.sh" ! -name "*.swp" \
+       ! -name _index.md -name "*.md" \
        -exec grep -i -H weight {} \; \
        >>/tmp/weights-$$
 sed -i \
