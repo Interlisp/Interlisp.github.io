@@ -140,8 +140,8 @@ To install and run Medley locally:
 	In a terminal:
 
 	```
-	ubuntu@oio:~$ mkdir <medley_directory>
-	ubuntu@oio:~$ tar -C <medley_directory> -xzf <tar_filepath>
+	ubuntu@oio:~$ mkdir <interlisp_directory>
+	ubuntu@oio:~$ tar -C <interlisp_directory> -xzf <tar_filepath>
 	```
   
 4. Run Medley
@@ -149,7 +149,7 @@ To install and run Medley locally:
 	In a terminal:
 
 	```
-	ubuntu@oio:~$ cd <medley_directory>
+	ubuntu@oio:~$ cd <interlisp_directory>/medley
 	ubuntu@oio:~$ ./medley
 	```
 
