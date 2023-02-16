@@ -16,7 +16,7 @@ installed.
 Medley can be installed on your system in one of two configurations: *standard* and
 *local*.  Standard installation will install Medley into system directories and install
 any prerequisite packages.  Local installation will install Medley into any user directory
-but any prerequisite packages must be installed manually.   
+but any prerequisite packages must be installed manually.
 
 
 ## Standard Installation \(Debian-based systems only\)
@@ -48,16 +48,18 @@ while the X Window on WSL will not so scale. The WSL packages also install the w
 package, which is used by Medley to connect to external browsers as described above.
 Aside from these two features, a non-WSL .deb package will install and run on WSL.
 
-To install a standard package and run Medley:
+#### To install a standard package and run Medley:
 
 1.  Download
 
 	Using a browser download from
 	[the Medley downloads site](https://online.interlisp.org/downloads/medley_downloads.html)
 	the .deb package for your platform (i.e., "standard" Linux or WSL) and your machine
-	architecture (X86_64, ARM64, or ARMv7) to \<deb_filepath\>.
+	architecture (X86_64, ARM64, or ARMv7) to `<deb_filepath>`.
 
-2.  Install 
+    Note that on WSL, `<deb_filepath>` will depend on whether the browser was started in Windows or in WSL.  If downloading to the standard Downloads folder, using a WSL-based browser `<deb_filepath>` will be in `~/Downloads`.  If using a Windows-based browser, `<deb_filepath>` will be in `/mnt/c/Users/<username>/Downloads`.
+
+2.  Install
 
 	In a terminal:
 
@@ -76,17 +78,19 @@ To install a standard package and run Medley:
 
 	There are many options to the `medley` command.  For a brief overview, run `medley --help`.
 	For a more complete description, run `man medley` or `medley --man` or click
-        [here](https://online.interlisp.org/downloads/man_medley.html).  
+        [here](https://online.interlisp.org/downloads/man_medley.html).
 
 	For first-time users: `medley --apps` or for WSL `medley --apps --vnc` is a good starting
 	point.  This will give you a fully populated Medley system, including the applications built
 	on Medley such as Notecards and Rooms.
-	  
-	Note: By default, `medley` will create a directory in *$HOME/il*.  This will be used by the Medley
+
+#### Notes:
+
+* By default, `medley` will create a directory in *$HOME/il*.  This will be used by the Medley
 	system as its *LOGINDIR*.  Medley will start up with *LOGINDIR* as its current connected directory.
 	It will load the personal init file (if any) from *LOGINDIR*/INIT or *LOGINDIR*/INIT.LCOM.  Finally,
 	Medley will use *LOGINDIR*/vmem/ to store its virtual memory file(s).  The location of *LOGINDIR*
-	can be changed using the `--logindir` option to `medley`.   
+	can be changed using the `--logindir` option to `medley`.
 
 
 
@@ -95,22 +99,22 @@ To install a standard package and run Medley:
 In a local installation, the Medley system is installed into any user directory from a .tar file.
 Multiple "Medleys" can be installed in different directories on one machine without interference
 (except see description of Medley *LOGINDIR* below).  Local installation makes it easy (from a file
-management p.o.v.) to modify the Medley system code. 
+management p.o.v.) to modify the Medley system code.
 
 Local installation doesn't involve a package manager, so you are responsible for installing any
 prerequisite packages onto your system before you installing Medley.
 
 Also note that with local installations, `man medley` will not work.  However, as indicated below,
-`./medley --man` will show the medley man page.  
+`./medley --man` will show the medley man page.
 
-To install and run Medley locally:
+#### To install and run Medley locally:
 
 1.  Install prerequite packages
 
     * For non-WSL installations, use your distro's package manager to install `xdg-utils`.
 
     * For WSL all installations, use your distro's package manager to install `wslu`.
-      
+
          Note that some distros do not include `wslu` in their standard repos. See
          [https://wslutiliti.es/wslu/install.html](https://wslutiliti.es/wslu/install.html)
          for installation instructions if this is the case.
@@ -133,17 +137,20 @@ To install and run Medley locally:
 	Using a browser download from
 	[the Medley downloads site](https://online.interlisp.org/downloads/medley_downloads.html)
 	the tar (.tgz) file for your platform (i.e., "standard" Linux or WSL) and your machine
-	architecture (X86_64, ARM64, or ARMv7) to \<tar_filepath\>.
+	architecture (X86_64, ARM64, or ARMv7) to `<tar_filepath>`.
 
-3. Install Medley   
-   
+    Note that on WSL, `<tar_filepath>` will depend on whether the browser was started in Windows or in WSL.  If downloading to the standard Downloads folder, using a WSL-based browser `<tar_filepath>` will be in `~/Downloads`.  If using a Windows-based browser, `<tar_filepath>` will be in `/mnt/c/Users/<username>/Downloads`.
+
+
+3. Install Medley
+
 	In a terminal:
 
 	```
 	ubuntu@oio:~$ mkdir <interlisp_directory>
 	ubuntu@oio:~$ tar -C <interlisp_directory> -xzf <tar_filepath>
 	```
-  
+
 4. Run Medley
 
 	In a terminal:
@@ -160,8 +167,10 @@ To install and run Medley locally:
 	For first-time users: `./medley --apps` or for WSL (and you have installed the VNC prerequisites)
 	`./medley --apps --vnc` is a good starting point.  This will give you a fully populated Medley system,
 	including the applications built on Medley such as Notecards and Rooms.
-	  
-	Note: By default, `medley` will create a directory in *$HOME/il*.  This will be used by the Medley
+
+#### Notes:
+
+* By default, `medley` will create a directory in *$HOME/il*.  This will be used by the Medley
 	system as its *LOGINDIR*.  Medley will start up *LOGINDIR* as its current connected directory.
 	It will load any personal init file from *LOGINDIR*/INIT or *LOGINDIR*/INIT.LCOM.  Finally,
 	Medley will use *LOGINDIR*/vmem/ to store its virtual memory file(s).  The location of *LOGINDIR*
