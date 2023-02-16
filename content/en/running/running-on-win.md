@@ -1,15 +1,14 @@
 ---
-title: Running on Windows
+title: Running on Windows 10/11
 weight: 40
 type: docs
 ---
-## Running on Windows 10/11
 
-Medley does not (yet) run as a native Windows application.  However, you can run Medley on Windows 10/11 in one of two ways: via **Windows System for Linux (WSL)** or via the **Docker Desktop for Windows** and the Medley docker image.  Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop.  Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common Medley "app" to run Medley.
+Medley does not (yet) run as a native Windows application.  However, you can run Medley on Windows 10/11 in one of two ways: via **Windows System for Linux (WSL)** or via the **Docker Desktop for Windows** and the Medley docker image.  Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop.  Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common `medley` script to run Medley.
 
 On Windows, Medley requires a 64-bit machine.
 
-## Running on Windows with WSL
+### **Running on Windows with WSL**
 
 Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see [here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)) or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).
 
@@ -29,7 +28,7 @@ When running under WSL2, Medley can display in one of two ways: in an X-Window (
 
   *  If Medley for Docker (see below) is also installed on the system, you can also start Medley by typing `medley --wsl <distro> <flags and options>` in a Command or Powershell window.  This is equivalent to the `wsl medley <flags and options>` command described above.
 
-## Running on Windows with Docker Desktop
+### **Running on Windows with Docker Desktop**
 
 When running with Docker, Medley runs in a Docker container using the Interlisp/medley image found on Docker Hub.  A VNC Viewer window is used to display the Medley desktop.  All of this is started up using the single `medley` command.
 
@@ -39,9 +38,9 @@ When running with Docker, Medley runs in a Docker container using the Interlisp/
 
 2.  *Install Medley*:&nbsp;&nbsp;To install Medley, download and run the the `medley-install_<version>.exe` that can be found [here](https://online.interlisp.org/downloads/medley_downloads.html) under the Windows 10/11 heading. 
 
-     This will install Medley on your system, by default in the `%USERPROFILE%/AppData/Local/Medley/Scripts` folder.  This folder will be added to your %PATH%.  An `uninstall` will also be added so that you can uninstall Medley via the 
+     This will install Medley on your system, by default in the `%USERPROFILE%/AppData/Local/Medley/Scripts` folder.  This folder will be added to your %PATH%.  An uninstall will also be added so that you can remove Medley via the standard Add/Remove Programs control panel.
 
-    Note that to download `medley-install_<version>.exe`, you may have to bypass any security concerns your browser has about downloading an .exe file.  In addition, you will have to bypass the Windows Defender protection against executoing an unsigned .exe.  To do so, click `More info` followed by `Run Anyway` when the Windows Defender window pops up.
+    Note that to download `medley-install_<version>.exe`, you may have to bypass any security concerns your browser has about downloading an .exe file.  In addition, you will have to bypass the Windows Defender protection against executing an unsigned .exe.  To do so, click `More info` followed by `Run Anyway` when the Windows Defender window pops up.
 
 3.  *Run Medley:*&nbsp;&nbsp;Once it is installed, you can run Medley by typing `medley <flags and options>` into either a Command or a Powershell window.
 

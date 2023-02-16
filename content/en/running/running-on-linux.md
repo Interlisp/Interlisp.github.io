@@ -5,7 +5,7 @@ type: docs
 ---
 
 Medley can run on any Linux system that includes X Windows, including Windows
-System For Linux (WSL2 only) on Windows 11 and Windows 10 Build 19044+.
+System For Linux on Windows 11 and Windows 10 Build 19044+.
 
 It is also recommended that the Linux system have a web browser installed.
 For WSL installations, the browser(s) on the Windows side will suffice.
@@ -18,8 +18,15 @@ Medley can be installed on your system in one of two configurations: *standard* 
 any prerequisite packages.  Local installation will install Medley into any user directory
 but any prerequisite packages must be installed manually.
 
+On WSL, Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines 
+that do not support virtualization (see 
+[here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements))
+or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited
+to the VNC mode (see below).
+See [here](https://interlisp.org/running/running-on-win/) for more information on running Medley on WSL.
 
-## Standard Installation \(Debian-based systems only\)
+
+### **Standard Installation \(Debian-based systems only\)**
 
 Standard installations are currently supported only for Debian-based systems (i.e.,
 systems that support dpkg), including Debian-based distros on WSL.
@@ -94,7 +101,7 @@ Aside from these two features, a non-WSL .deb package will install and run on WS
 
 
 
-## Local Installation
+### **Local Installation**
 
 In a local installation, the Medley system is installed into any user directory from a .tar file.
 Multiple "Medleys" can be installed in different directories on one machine without interference
