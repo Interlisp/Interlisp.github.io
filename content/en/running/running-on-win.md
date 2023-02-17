@@ -20,9 +20,11 @@ When running under WSL2, Medley can display in one of two ways: in an X-Window (
 
 2.  *Install medley within WSL:*&nbsp;&nbsp;Once WSL is installed, open a terminal to WSL (e.g., by typing "wsl" in a command or powershell window) and follow the instructions for installing and running Medley on Linux that can be found [here](https://interlisp.org/running/running-on-linux/).
 
-3.  *Run Medley:*&nbsp;&nbsp;Once Medley has been installed on WSL, you can run medley from either a WSL terminal (as described in the Running Medley on Linux instructions ([here](https://interlisp.org/running/running-on-linux/)) or by typing `wsl medley <flags and options>` in a Command or Powershell window.
+3.  *Run Medley:*&nbsp;&nbsp;Once Medley has been installed on WSL, you can run medley from either a WSL terminal as described in the Running Medley on Linux instructions ([here](https://interlisp.org/running/running-on-linux/)) or by typing `wsl medley <flags and options>` in a Command or Powershell window.
 
     Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
+
+   	For first-time users: `wsl medley --vnc --apps --interlisp --noscroll` or, equivalently, `wsl medley -v -a -e -n` is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
 
 #### Notes:
 
@@ -45,6 +47,9 @@ When running with Docker, Medley runs in a Docker container using the Interlisp/
 3.  *Run Medley:*&nbsp;&nbsp;Once it is installed, you can run Medley by typing `medley <flags and options>` into either a Command or a Powershell window.
 
     Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
+
+   	For first-time users: `medley --apps --interlisp --noscroll` or, equivalently, `medley -a -e -n` is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
+
 
 #### Notes:
 
