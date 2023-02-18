@@ -1,61 +1,72 @@
 ---
-title: Running on Windows
+title: Running on Windows 10/11
 weight: 40
 type: docs
 ---
-## Running on Windows
 
-* Interlisp Online seems to works fine with recent Edge and Chrome; we've tested others but don't regularly use them.
-WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use. 
+Medley does not (yet) run as a native Windows application.  However, you can run Medley on Windows 10/11 in one of two ways: via **Windows System for Linux (WSL)** or via the **Docker Desktop for Windows** and the Medley docker image.  Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop.  Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common `medley` script to run Medley.
 
-* Docker Desktop is a great possibility, too, if your system can run it.
-* Otherwise, to run installed, you either need
-    * WSLg (available with Windows 11) OR
-    * WsL2 A running X-server installed on your machine
+On Windows, Medley requires a 64-bit machine.
 
-WsL stands for "Windows Subsystem for Linux". It's like docker but a little more integrated (You can get at your linux files from windows and your windows files from linux).    
+### **Running on Windows with WSL**
 
-## Running on Windows with WSL2
+Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see [here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)) or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).
 
-For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires at least a little familiarity with Linux and running Linux within Microsoft's WSL environment.
+When running under WSL2, Medley can display in one of two ways: in an X-Window (using the X_Windows server built-in to WSL2) or in a VNC-viewer Window.  Although the X-windows approach is simpler (i.e., behind the scenes) it does not scale well on high-DPI displays.  In VNC mode, the Medley window will scale according to the Windows Display Scale settings. The X vs Vnc mode is set on using the `--vnc` flag on the `medley` command line.  When running on WSL1, Vnc mode is always used.
 
-### X Server selection
+#### To install an run Medley with WSL:
 
-The X11 protocol was invented quite a while ago (inspired by Warren Teitelman and Bob Sproull's Alto Display protocol as part of early Interlisp window system work.)
+1.  *Install WSL:*&nbsp;&nbsp;See [here](https://learn.microsoft.com/en-us/windows/wsl/install) for instructions on installing WSL.
 
-With X11, the notion of "client" and "server" are reversed. The software you run to manage the display and windows is the "server", and the thing far away which is running with access to files and doing the work is the "client".
+2.  *Install medley within WSL:*&nbsp;&nbsp;Once WSL is installed, open a terminal to WSL (e.g., by typing "wsl" in a command or powershell window) and follow the instructions for installing and running Medley on Linux that can be found [here](https://interlisp.org/running/running-on-linux/).
 
-When you run WSL it's like you have two (or more) computers in one box, where one is running windows and the other(s) are running Linux. The linux side(s) have their own Internet Protocol address. 
+3.  *Run Medley:*&nbsp;&nbsp;Once Medley has been installed on WSL, you can run medley from either a WSL terminal as described in the Running Medley on Linux instructions ([here](https://interlisp.org/running/running-on-linux/)) or by typing `wsl medley <flags and options>` in a Command or Powershell window.
 
-The thing that hooks them together is the "DISPLAY" variable in the linux side has the address of the "client".
+    Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
 
-There have apparently been some (mainly unsuccessful) attempts to simplify this for windows 11 users.
+   	For first-time users: `wsl medley --vnc --apps --interlisp --noscroll` or, equivalently, `wsl medley -v -a -e -n` is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
 
-If you're running Windows 10, you will also need to install an X11 server within your Windows environment. There are different servers with varying capabilities and problems.
+#### Notes:
 
-* [Cygwin/X](https://x.cygwin.com)
-* [XMing](http://www.straightrunning.com/XmingNotes/) (the 6.9 release is old but usable).
-* X410 (in the Microsoft Store, $40) -- useful uses windows sockets.
-   https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock
-     - [VcXsrv](https://sourceforge.net/projects/vcxsrv/)
-* GWSL from Microsoft store
-* install Xvnc and [TightVNC Version 2.8.63 or higher](https://www.tightvnc.com/download.php)
+  *  If Medley for Docker (see below) is also installed on the system, you can also start Medley by typing `medley --wsl <distro> <flags and options>` in a Command or Powershell window.  This is equivalent to the `wsl medley <flags and options>` command described above.
 
-### X Server and Windows and Monitor sleep
+### **Running on Windows with Docker Desktop**
 
-If your windows system or monitor don't sleep by the schedule, there is a [WSLg problem](https://github.com/microsoft/wslg/issues/380) that they didn't want your Windows machine to fall asleep when watching a Linux-side video. If this turns out to be a problem, set your IDLE.PROFILE to TIMEOUT (to run a "screen saver") and then LOGOUT later.
+When running with Docker, Medley runs in a Docker container using the Interlisp/medley image found on Docker Hub.  A VNC Viewer window is used to display the Medley desktop.  All of this is started up using the single `medley` command.
 
-## Requirements
- - Windows 10 *or* Windows 11
- - Windows Subsystem for Linux Enabled.  [Installing WSL](https://docs.microsoft.com/en-us/windows/wsl/install).
- - An installed Linux distribution.  The following distros have been tested:
-   - [Pengwin Linux Distro](https://www.microsoft.com/store/apps/9NV1GV1PXZ6P)
-   - [Ubuntu Linux Distro](https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6)
+#### To install an run Medley with Docker Desktop:
 
-### Installing Medley via an Install script
+1.  *Install Docker Desktop:*&nbsp;&nbsp;Install Docker Desktop for Windows as described [here](https://docs.docker.com/desktop/install/windows-install/).
 
-*tbd*
+2.  *Install Medley*:&nbsp;&nbsp;To install Medley, download and run the the `medley-install_<version>.exe` that can be found [here](https://online.interlisp.org/downloads/medley_downloads.html) under the Windows 10/11 heading. 
 
-### Manual Installation of Medley
+     This will install Medley on your system, by default in the `%USERPROFILE%/AppData/Local/Medley/Scripts` folder.  This folder will be added to your %PATH%.  An uninstall will also be added so that you can remove Medley via the standard Add/Remove Programs control panel.
 
-The [medley repo README](https://github.com/Interlisp/medley#readme) has a guide for downloading or building your own maiko (for your OS / architecture) and for obtaining Medley
+    Note that to download `medley-install_<version>.exe`, you may have to bypass any security concerns your browser has about downloading an .exe file.  In addition, you will have to bypass the Windows Defender protection against executing an unsigned .exe.  To do so, click `More info` followed by `Run Anyway` when the Windows Defender window pops up.
+
+3.  *Run Medley:*&nbsp;&nbsp;Once it is installed, you can run Medley by typing `medley <flags and options>` into either a Command or a Powershell window.
+
+    Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
+
+   	For first-time users: `medley --apps --interlisp --noscroll` or, equivalently, `medley -a -e -n` is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
+
+
+#### Notes:
+
+*  Docker needs to be installed and *running* in order to run Medley.  However, the Docker Dashboard window does not be open.  You can check the state and start/stop Docker by right clicking on the Docker icon <img alt="Docker icon" height=15 width=15 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAAB+CAMAAABlLrHNAAAAY1BMVEUAAAD///+wsLDQ0NC/v7/r6+uioqLx8fEkJCQaGhrh4eFGRkZVVVW8vLwYGBj8/PxbW1tycnKqqqra2toRERHKyso3Nzd+fn5hYWGXl5doaGhMTEw8PDxBQUGNjY2GhoYwMDDd4iByAAAE4UlEQVR4nO2c69aqIBCGIQ8UHdSoTK30/q9ya7b7lIOMhUJr+f6chfZEMMwMEMJmtYo5PSKj70dG34bJHfGiRj/ANO924e1p4V14u1p4F96uFt6Ft6uF97d4i9/ixX7CKTP7ftO8OOJk+PXGeScWiDcKOJHGSnirtKnhDgbxhod1X3ENTOINZ22GasYb4/nzN7ITJr2H8V4wnhzJ36C8B0f878Ir0cr7KV6G0CP4HV4S1y2r88/wZm3bUuv83OAlp1fjVAfsBm/6bn0nP8BL13/Nk+EedoI37ba/Os8brXsPHF3nXXFPDLk10/HOB7xRwj1x+5I3ugoQDGNPMBZ1U/GraVetoOIfGcihQPEvDTk9f7E9ZzxSZdNBnYWvWKm/owP50EPgRQ9lYwd4xSGE1spVg+cNPE7NkxFvfP5elLc2np5ImzJZ05c4b9ZqBeQNitOmp0NeW0veeKkp6I23pnXThDc2XcXWh7711JlRwUnCq1zlON6z+HAE9mdIlb8dBeP97yNFP9MMCNWM43i9wxe8yvVC5N3+faQv40WqbMNV3rApZVBWi/ZKGK7ybst4e6maAkZ1KfLsTCJXeKXjV3x3vgrc4KUy/yDTOiQu8JINkLdep5kDvFgscat1dIBXEj8odXOAV4zP1HKhf4MLGHfDHODFJZg3dWG+NbUzoKhRXmX+Nhjv1MqBuKXgf6ngDJukTHwflfXKtW4aC1Yim1Fpv5dgS8ZdXC9w4Pd1fsbrnNFv43W+6TNelzZlsqadDxUTWpnqJNeFfIhl4iCS6ZlzWOWNAnYuZemQTHv85j2vLCjM0ryAxjrvjA7hKAM/Y083hv/z/gJu8k7nkDy8d0pxp0aE+GKbc9ruu8UTBB/xFnTYPRjuyTaRWps42zOhLmWbSqYtIURZ33FQyuJZwwvP9ubSbajC7SBvOYCLUWUbT9Dghgcak03Pot0QLkbQ2H42DW94oFT/hlm1G95ARmOqFXNoyJk1vGIuaFWnYVzn4rNQxwsrv86lu243FDGnFgxd92IUwJLTebTRn9+RbGbbk7Z76/wNXm2bXBrf2/JK9v1sydfi1rzUNuVbw5HDf15nQvYT5AQlku7nW5H60EOf15WCiX6ytbxj9jsmFGCytbyBeAbAgnIQ7rM+6UIIfAKNhpaXP69mQ5qwt8dLbMPy+xkaXvseTX0eSspre0CsmQ6zz0sru7yDJ1IlvJY9BGhh6/FaXTJG3TB67WdZrPLcRl2IevHam3HVuPs6L17JvUsncd/7m5bKJmvYrSGRF99s4G7G4v7x2kjjDrAYUsprIa+vRvdud38efirFkG7wVVjGO3deFEOuuw3xzuvTcnBIpuKdtRIxIsRR8s7nhC8fzDQJ76ijjF/ow7Eg8gpXeabQJvziyjd33ohMv72Vf+LGVLyTA1+giTCQF5NJh0T6kdMd4sXRdJPu+tVQUPBOFrwXgOvQH/Fiar4gcYg/drl6XhyZXjkSM7Tq85PkAT3XqFcBusn/HW8dXxqad/n+89VsDG/dx6udeNx6lKp8ZRJWw9tcLCzhh/fFnj1+77/G8TZi4XU88yV/eKb/KgjIW/cy9bMRHq7KQ59OAgvkbRV4YXotKvV5y6qI84dv9u9VBI07Dx4Ryjx/H2ZlmibPv3NN0iQts+Pe9xhVHiI0qH+feF7zFV+3XAAAAABJRU5ErkJggg=="> in the System Tray.
+
+*  The first time it runs, `medley` will automatically pull the latest Interlisp/medley docker image from Docker Hub.  It will use this docker image for all subsequent runs unless the '--update' flag is raised.  When --update is raised, `medley` will once again pull the latest Interlisp/medley docker image.
+
+*  When running with Docker, the Medley file system is for the most part "within" the Docker container.  This means that it is deleted whenever Medley stops and is recreated whenever Medley restarts.  The exception is the directory `/home/medley/il` (in the Medley file system) which is automatically mapped by `medley` to a directory in the host Windows file system, by default to `%USERPROFILE%/AppData/Local/Medley/il` folder.  You can change this mapping to a different windows folder using the `--logindir` option to `medley`.
+
+
+
+
+
+
+
+
+
+
+
+
