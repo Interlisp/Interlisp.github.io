@@ -90,7 +90,7 @@ Interlisp …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.4ca9bbb8fcd8f2d17a794e14de055172.json"
+  data-offline-search-index-json-src="/offline-search-index.642251a2a1887de964eb38abb3e9b1b1.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -190,7 +190,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>4: <a href="#pg-a3ecb7e1d30d46f5644e5097527908cb">Running on Windows</a></li>
+<li>4: <a href="#pg-a3ecb7e1d30d46f5644e5097527908cb">Running on Windows 10/11</a></li>
 
 
     
@@ -430,7 +430,7 @@ You may either login as a Guest or create an account. If you plan to save and la
 	<h1 id="pg-d8de266a4f633290e434d257ff04750a">2 - Running on Linux (incl. WSL)</h1>
     
 	<p>Medley can run on any Linux system that includes X Windows, including Windows
-System For Linux (WSL2 only) on Windows 11 and Windows 10 Build 19044+.</p>
+System For Linux on Windows 11 and Windows 10 Build 19044+.</p>
 <p>It is also recommended that the Linux system have a web browser installed.
 For WSL installations, the browser(s) on the Windows side will suffice.
 A browser is not strictly necessary to run Medley, but several features of the system
@@ -440,7 +440,13 @@ installed.</p>
 <em>local</em>.  Standard installation will install Medley into system directories and install
 any prerequisite packages.  Local installation will install Medley into any user directory
 but any prerequisite packages must be installed manually.</p>
-<h2 id="standard-installation-debian-based-systems-only">Standard Installation (Debian-based systems only)</h2>
+<p>On WSL, Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines
+that do not support virtualization (see
+<a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>)
+or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited
+to the VNC mode (see below).
+See <a href="https://interlisp.org/running/running-on-win/">here</a> for more information on running Medley on WSL.</p>
+<h3 id="standard-installation-debian-based-systems-only"><strong>Standard Installation (Debian-based systems only)</strong></h3>
 <p>Standard installations are currently supported only for Debian-based systems (i.e.,
 systems that support dpkg), including Debian-based distros on WSL.</p>
 <p>In a standard installation, Medley is installed in system directories
@@ -463,14 +469,15 @@ the VNC window will scale according to the Windows Settings-&gt;Display-&gt;Scal
 while the X Window on WSL will not so scale. The WSL packages also install the wslu
 package, which is used by Medley to connect to external browsers as described above.
 Aside from these two features, a non-WSL .deb package will install and run on WSL.</p>
-<p>To install a standard package and run Medley:</p>
+<h4 id="to-install-a-standard-package-and-run-medley">To install a standard package and run Medley:</h4>
 <ol>
 <li>
 <p>Download</p>
 <p>Using a browser download from
 <a href="https://online.interlisp.org/downloads/medley_downloads.html">the Medley downloads site</a>
 the .deb package for your platform (i.e., &ldquo;standard&rdquo; Linux or WSL) and your machine
-architecture (X86_64, ARM64, or ARMv7) to &lt;deb_filepath&gt;.</p>
+architecture (X86_64, ARM64, or ARMv7) to <code>&lt;deb_filepath&gt;</code>.</p>
+<p>Note that on WSL, <code>&lt;deb_filepath&gt;</code> will depend on whether the browser was started in Windows or in WSL.  If downloading to the standard Downloads folder, using a WSL-based browser <code>&lt;deb_filepath&gt;</code> will be in <code>~/Downloads</code>.  If using a Windows-based browser, <code>&lt;deb_filepath&gt;</code> will be in <code>/mnt/c/Users/&lt;username&gt;/Downloads</code>.</p>
 </li>
 <li>
 <p>Install</p>
@@ -488,14 +495,17 @@ For a more complete description, run <code>man medley</code> or <code>medley --m
 <p>For first-time users: <code>medley --apps</code> or for WSL <code>medley --apps --vnc</code> is a good starting
 point.  This will give you a fully populated Medley system, including the applications built
 on Medley such as Notecards and Rooms.</p>
-<p>Note: By default, <code>medley</code> will create a directory in <em>$HOME/il</em>.  This will be used by the Medley
+</li>
+</ol>
+<h4 id="notes">Notes:</h4>
+<ul>
+<li>By default, <code>medley</code> will create a directory in <em>$HOME/il</em>.  This will be used by the Medley
 system as its <em>LOGINDIR</em>.  Medley will start up with <em>LOGINDIR</em> as its current connected directory.
 It will load the personal init file (if any) from <em>LOGINDIR</em>/INIT or <em>LOGINDIR</em>/INIT.LCOM.  Finally,
 Medley will use <em>LOGINDIR</em>/vmem/ to store its virtual memory file(s).  The location of <em>LOGINDIR</em>
-can be changed using the <code>--logindir</code> option to <code>medley</code>.</p>
-</li>
-</ol>
-<h2 id="local-installation">Local Installation</h2>
+can be changed using the <code>--logindir</code> option to <code>medley</code>.</li>
+</ul>
+<h3 id="local-installation"><strong>Local Installation</strong></h3>
 <p>In a local installation, the Medley system is installed into any user directory from a .tar file.
 Multiple &ldquo;Medleys&rdquo; can be installed in different directories on one machine without interference
 (except see description of Medley <em>LOGINDIR</em> below).  Local installation makes it easy (from a file
@@ -504,7 +514,7 @@ management p.o.v.) to modify the Medley system code.</p>
 prerequisite packages onto your system before you installing Medley.</p>
 <p>Also note that with local installations, <code>man medley</code> will not work.  However, as indicated below,
 <code>./medley --man</code> will show the medley man page.</p>
-<p>To install and run Medley locally:</p>
+<h4 id="to-install-and-run-medley-locally">To install and run Medley locally:</h4>
 <ol>
 <li>
 <p>Install prerequite packages</p>
@@ -535,7 +545,8 @@ However, some features (e.g., viewing documentation in an external browser) will
 <p>Using a browser download from
 <a href="https://online.interlisp.org/downloads/medley_downloads.html">the Medley downloads site</a>
 the tar (.tgz) file for your platform (i.e., &ldquo;standard&rdquo; Linux or WSL) and your machine
-architecture (X86_64, ARM64, or ARMv7) to &lt;tar_filepath&gt;.</p>
+architecture (X86_64, ARM64, or ARMv7) to <code>&lt;tar_filepath&gt;</code>.</p>
+<p>Note that on WSL, <code>&lt;tar_filepath&gt;</code> will depend on whether the browser was started in Windows or in WSL.  If downloading to the standard Downloads folder, using a WSL-based browser <code>&lt;tar_filepath&gt;</code> will be in <code>~/Downloads</code>.  If using a Windows-based browser, <code>&lt;tar_filepath&gt;</code> will be in <code>/mnt/c/Users/&lt;username&gt;/Downloads</code>.</p>
 </li>
 <li>
 <p>Install Medley</p>
@@ -554,15 +565,18 @@ For a more complete description, run <code>./medley --man</code> or click
 <p>For first-time users: <code>./medley --apps</code> or for WSL (and you have installed the VNC prerequisites)
 <code>./medley --apps --vnc</code> is a good starting point.  This will give you a fully populated Medley system,
 including the applications built on Medley such as Notecards and Rooms.</p>
-<p>Note: By default, <code>medley</code> will create a directory in <em>$HOME/il</em>.  This will be used by the Medley
+</li>
+</ol>
+<h4 id="notes-1">Notes:</h4>
+<ul>
+<li>By default, <code>medley</code> will create a directory in <em>$HOME/il</em>.  This will be used by the Medley
 system as its <em>LOGINDIR</em>.  Medley will start up <em>LOGINDIR</em> as its current connected directory.
 It will load any personal init file from <em>LOGINDIR</em>/INIT or <em>LOGINDIR</em>/INIT.LCOM.  Finally,
 Medley will use <em>LOGINDIR</em>/vmem/ to store its virtual memory file(s).  The location of <em>LOGINDIR</em>
 can be changed using the <code>--logindir</code> option to <code>medley</code>.  In particular, if you have multiple
 installations of Medley that you would like to keep completely seperate, then you can use the
-<code>--logindir -</code> option, which will set <em>LOGINDIR</em> to &lt;medley_directory&gt;/logindir.</p>
-</li>
-</ol>
+<code>--logindir -</code> option, which will set <em>LOGINDIR</em> to &lt;medley_directory&gt;/logindir.</li>
+</ul>
 
 </div>
 
@@ -614,64 +628,61 @@ Need XQuartz installed before you build maiko (includes XClient libraries).</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-a3ecb7e1d30d46f5644e5097527908cb">4 - Running on Windows</h1>
+	<h1 id="pg-a3ecb7e1d30d46f5644e5097527908cb">4 - Running on Windows 10/11</h1>
     
-	<h2 id="running-on-windows">Running on Windows</h2>
+	<p>Medley does not (yet) run as a native Windows application.  However, you can run Medley on Windows 10/11 in one of two ways: via <strong>Windows System for Linux (WSL)</strong> or via the <strong>Docker Desktop for Windows</strong> and the Medley docker image.  Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop.  Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common <code>medley</code> script to run Medley.</p>
+<p>On Windows, Medley requires a 64-bit machine.</p>
+<h3 id="running-on-windows-with-wsl"><strong>Running on Windows with WSL</strong></h3>
+<p>Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>) or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).</p>
+<p>When running under WSL2, Medley can display in one of two ways: in an X-Window (using the X_Windows server built-in to WSL2) or in a VNC-viewer Window.  Although the X-windows approach is simpler (i.e., behind the scenes) it does not scale well on high-DPI displays.  In VNC mode, the Medley window will scale according to the Windows Display Scale settings. The X vs Vnc mode is set on using the <code>--vnc</code> flag on the <code>medley</code> command line.  When running on WSL1, Vnc mode is always used.</p>
+<h4 id="to-install-an-run-medley-with-wsl">To install an run Medley with WSL:</h4>
+<ol>
+<li>
+<p><em>Install WSL:</em>  See <a href="https://learn.microsoft.com/en-us/windows/wsl/install">here</a> for instructions on installing WSL.</p>
+</li>
+<li>
+<p><em>Install medley within WSL:</em>  Once WSL is installed, open a terminal to WSL (e.g., by typing &ldquo;wsl&rdquo; in a command or powershell window) and follow the instructions for installing and running Medley on Linux that can be found <a href="https://interlisp.org/running/running-on-linux/">here</a>.</p>
+</li>
+<li>
+<p><em>Run Medley:</em>  Once Medley has been installed on WSL, you can run medley from either a WSL terminal as described in the Running Medley on Linux instructions (<a href="https://interlisp.org/running/running-on-linux/">here</a>) or by typing <code>wsl medley &lt;flags and options&gt;</code> in a Command or Powershell window.</p>
+<p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
+<p>For first-time users: <code>wsl medley --vnc --apps --interlisp --noscroll</code> or, equivalently, <code>wsl medley -v -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
+</li>
+</ol>
+<h4 id="notes">Notes:</h4>
+<ul>
+<li>If Medley for Docker (see below) is also installed on the system, you can also start Medley by typing <code>medley --wsl &lt;distro&gt; &lt;flags and options&gt;</code> in a Command or Powershell window.  This is equivalent to the <code>wsl medley &lt;flags and options&gt;</code> command described above.</li>
+</ul>
+<h3 id="running-on-windows-with-docker-desktop"><strong>Running on Windows with Docker Desktop</strong></h3>
+<p>When running with Docker, Medley runs in a Docker container using the Interlisp/medley image found on Docker Hub.  A VNC Viewer window is used to display the Medley desktop.  All of this is started up using the single <code>medley</code> command.</p>
+<h4 id="to-install-an-run-medley-with-docker-desktop">To install an run Medley with Docker Desktop:</h4>
+<ol>
+<li>
+<p><em>Install Docker Desktop:</em>  Install Docker Desktop for Windows as described <a href="https://docs.docker.com/desktop/install/windows-install/">here</a>.</p>
+</li>
+<li>
+<p><em>Install Medley</em>:  To install Medley, download and run the the <code>medley-install_&lt;version&gt;.exe</code> that can be found <a href="https://online.interlisp.org/downloads/medley_downloads.html">here</a> under the Windows 10/11 heading.</p>
+<p>This will install Medley on your system, by default in the <code>%USERPROFILE%/AppData/Local/Medley/Scripts</code> folder.  This folder will be added to your %PATH%.  An uninstall will also be added so that you can remove Medley via the standard Add/Remove Programs control panel.</p>
+<p>Note that to download <code>medley-install_&lt;version&gt;.exe</code>, you may have to bypass any security concerns your browser has about downloading an .exe file.  In addition, you will have to bypass the Windows Defender protection against executing an unsigned .exe.  To do so, click <code>More info</code> followed by <code>Run Anyway</code> when the Windows Defender window pops up.</p>
+</li>
+<li>
+<p><em>Run Medley:</em>  Once it is installed, you can run Medley by typing <code>medley &lt;flags and options&gt;</code> into either a Command or a Powershell window.</p>
+<p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
+<p>For first-time users: <code>medley --apps --interlisp --noscroll</code> or, equivalently, <code>medley -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
+</li>
+</ol>
+<h4 id="notes-1">Notes:</h4>
 <ul>
 <li>
-<p>Interlisp Online seems to works fine with recent Edge and Chrome; we&rsquo;ve tested others but don&rsquo;t regularly use them.
-WARNING: Window/Chrome and Edge use keystrokes (control-W for example) that conflict with Medley use.</p>
+<p>Docker needs to be installed and <em>running</em> in order to run Medley.  However, the Docker Dashboard window does not be open.  You can check the state and start/stop Docker by right clicking on the Docker icon <img alt="Docker icon" height=15 width=15 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAAB+CAMAAABlLrHNAAAAY1BMVEUAAAD///+wsLDQ0NC/v7/r6+uioqLx8fEkJCQaGhrh4eFGRkZVVVW8vLwYGBj8/PxbW1tycnKqqqra2toRERHKyso3Nzd+fn5hYWGXl5doaGhMTEw8PDxBQUGNjY2GhoYwMDDd4iByAAAE4UlEQVR4nO2c69aqIBCGIQ8UHdSoTK30/q9ya7b7lIOMhUJr+f6chfZEMMwMEMJmtYo5PSKj70dG34bJHfGiRj/ANO924e1p4V14u1p4F96uFt6Ft6uF97d4i9/ixX7CKTP7ftO8OOJk+PXGeScWiDcKOJHGSnirtKnhDgbxhod1X3ENTOINZ22GasYb4/nzN7ITJr2H8V4wnhzJ36C8B0f878Ir0cr7KV6G0CP4HV4S1y2r88/wZm3bUuv83OAlp1fjVAfsBm/6bn0nP8BL13/Nk+EedoI37ba/Os8brXsPHF3nXXFPDLk10/HOB7xRwj1x+5I3ugoQDGNPMBZ1U/GraVetoOIfGcihQPEvDTk9f7E9ZzxSZdNBnYWvWKm/owP50EPgRQ9lYwd4xSGE1spVg+cNPE7NkxFvfP5elLc2np5ImzJZ05c4b9ZqBeQNitOmp0NeW0veeKkp6I23pnXThDc2XcXWh7711JlRwUnCq1zlON6z+HAE9mdIlb8dBeP97yNFP9MMCNWM43i9wxe8yvVC5N3+faQv40WqbMNV3rApZVBWi/ZKGK7ybst4e6maAkZ1KfLsTCJXeKXjV3x3vgrc4KUy/yDTOiQu8JINkLdep5kDvFgscat1dIBXEj8odXOAV4zP1HKhf4MLGHfDHODFJZg3dWG+NbUzoKhRXmX+Nhjv1MqBuKXgf6ngDJukTHwflfXKtW4aC1Yim1Fpv5dgS8ZdXC9w4Pd1fsbrnNFv43W+6TNelzZlsqadDxUTWpnqJNeFfIhl4iCS6ZlzWOWNAnYuZemQTHv85j2vLCjM0ryAxjrvjA7hKAM/Y083hv/z/gJu8k7nkDy8d0pxp0aE+GKbc9ruu8UTBB/xFnTYPRjuyTaRWps42zOhLmWbSqYtIURZ33FQyuJZwwvP9ubSbajC7SBvOYCLUWUbT9Dghgcak03Pot0QLkbQ2H42DW94oFT/hlm1G95ARmOqFXNoyJk1vGIuaFWnYVzn4rNQxwsrv86lu243FDGnFgxd92IUwJLTebTRn9+RbGbbk7Z76/wNXm2bXBrf2/JK9v1sydfi1rzUNuVbw5HDf15nQvYT5AQlku7nW5H60EOf15WCiX6ytbxj9jsmFGCytbyBeAbAgnIQ7rM+6UIIfAKNhpaXP69mQ5qwt8dLbMPy+xkaXvseTX0eSspre0CsmQ6zz0sru7yDJ1IlvJY9BGhh6/FaXTJG3TB67WdZrPLcRl2IevHam3HVuPs6L17JvUsncd/7m5bKJmvYrSGRF99s4G7G4v7x2kjjDrAYUsprIa+vRvdud38efirFkG7wVVjGO3deFEOuuw3xzuvTcnBIpuKdtRIxIsRR8s7nhC8fzDQJ76ijjF/ow7Eg8gpXeabQJvziyjd33ohMv72Vf+LGVLyTA1+giTCQF5NJh0T6kdMd4sXRdJPu+tVQUPBOFrwXgOvQH/Fiar4gcYg/drl6XhyZXjkSM7Tq85PkAT3XqFcBusn/HW8dXxqad/n+89VsDG/dx6udeNx6lKp8ZRJWw9tcLCzhh/fFnj1+77/G8TZi4XU88yV/eKb/KgjIW/cy9bMRHq7KQ59OAgvkbRV4YXotKvV5y6qI84dv9u9VBI07Dx4Ryjx/H2ZlmibPv3NN0iQts+Pe9xhVHiI0qH+feF7zFV+3XAAAAABJRU5ErkJggg=="> in the System Tray.</p>
 </li>
 <li>
-<p>Docker Desktop is a great possibility, too, if your system can run it.</p>
+<p>The first time it runs, <code>medley</code> will automatically pull the latest Interlisp/medley docker image from Docker Hub.  It will use this docker image for all subsequent runs unless the &lsquo;&ndash;update&rsquo; flag is raised.  When &ndash;update is raised, <code>medley</code> will once again pull the latest Interlisp/medley docker image.</p>
 </li>
 <li>
-<p>Otherwise, to run installed, you either need</p>
-<ul>
-<li>WSLg (available with Windows 11) OR</li>
-<li>WsL2 A running X-server installed on your machine</li>
-</ul>
+<p>When running with Docker, the Medley file system is for the most part &ldquo;within&rdquo; the Docker container.  This means that it is deleted whenever Medley stops and is recreated whenever Medley restarts.  The exception is the directory <code>/home/medley/il</code> (in the Medley file system) which is automatically mapped by <code>medley</code> to a directory in the host Windows file system, by default to <code>%USERPROFILE%/AppData/Local/Medley/il</code> folder.  You can change this mapping to a different windows folder using the <code>--logindir</code> option to <code>medley</code>.</p>
 </li>
 </ul>
-<p>WsL stands for &ldquo;Windows Subsystem for Linux&rdquo;. It&rsquo;s like docker but a little more integrated (You can get at your linux files from windows and your windows files from linux).</p>
-<h2 id="running-on-windows-with-wsl2">Running on Windows with WSL2</h2>
-<p>For users of Windows 10 or 11 (pro), running in WSL2 is a good choice. This requires installing both Maiko, the underlying engine, and Medley. This option requires at least a little familiarity with Linux and running Linux within Microsoft&rsquo;s WSL environment.</p>
-<h3 id="x-server-selection">X Server selection</h3>
-<p>The X11 protocol was invented quite a while ago (inspired by Warren Teitelman and Bob Sproull&rsquo;s Alto Display protocol as part of early Interlisp window system work.)</p>
-<p>With X11, the notion of &ldquo;client&rdquo; and &ldquo;server&rdquo; are reversed. The software you run to manage the display and windows is the &ldquo;server&rdquo;, and the thing far away which is running with access to files and doing the work is the &ldquo;client&rdquo;.</p>
-<p>When you run WSL it&rsquo;s like you have two (or more) computers in one box, where one is running windows and the other(s) are running Linux. The linux side(s) have their own Internet Protocol address.</p>
-<p>The thing that hooks them together is the &ldquo;DISPLAY&rdquo; variable in the linux side has the address of the &ldquo;client&rdquo;.</p>
-<p>There have apparently been some (mainly unsuccessful) attempts to simplify this for windows 11 users.</p>
-<p>If you&rsquo;re running Windows 10, you will also need to install an X11 server within your Windows environment. There are different servers with varying capabilities and problems.</p>
-<ul>
-<li><a href="https://x.cygwin.com">Cygwin/X</a></li>
-<li><a href="http://www.straightrunning.com/XmingNotes/">XMing</a> (the 6.9 release is old but usable).</li>
-<li>X410 (in the Microsoft Store, $40) &ndash; useful uses windows sockets.
-<a href="https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock">https://x410.dev/cookbook/wsl/using-x410-with-wsl2#vsock</a>
-<ul>
-<li><a href="https://sourceforge.net/projects/vcxsrv/">VcXsrv</a></li>
-</ul>
-</li>
-<li>GWSL from Microsoft store</li>
-<li>install Xvnc and <a href="https://www.tightvnc.com/download.php">TightVNC Version 2.8.63 or higher</a></li>
-</ul>
-<h3 id="x-server-and-windows-and-monitor-sleep">X Server and Windows and Monitor sleep</h3>
-<p>If your windows system or monitor don&rsquo;t sleep by the schedule, there is a <a href="https://github.com/microsoft/wslg/issues/380">WSLg problem</a> that they didn&rsquo;t want your Windows machine to fall asleep when watching a Linux-side video. If this turns out to be a problem, set your IDLE.PROFILE to TIMEOUT (to run a &ldquo;screen saver&rdquo;) and then LOGOUT later.</p>
-<h2 id="requirements">Requirements</h2>
-<ul>
-<li>Windows 10 <em>or</em> Windows 11</li>
-<li>Windows Subsystem for Linux Enabled.  <a href="https://docs.microsoft.com/en-us/windows/wsl/install">Installing WSL</a>.</li>
-<li>An installed Linux distribution.  The following distros have been tested:
-<ul>
-<li><a href="https://www.microsoft.com/store/apps/9NV1GV1PXZ6P">Pengwin Linux Distro</a></li>
-<li><a href="https://www.microsoft.com/en-us/p/ubuntu/9nblggh4msv6">Ubuntu Linux Distro</a></li>
-</ul>
-</li>
-</ul>
-<h3 id="installing-medley-via-an-install-script">Installing Medley via an Install script</h3>
-<p><em>tbd</em></p>
-<h3 id="manual-installation-of-medley">Manual Installation of Medley</h3>
-<p>The <a href="https://github.com/Interlisp/medley#readme">medley repo README</a> has a guide for downloading or building your own maiko (for your OS / architecture) and for obtaining Medley</p>
 
 </div>
 
