@@ -4,10 +4,14 @@ weight: 10
 type: docs
 ---
 
-#### Warren Teitelman
+#### [Warren Teitelman](https://en.wikipedia.org/wiki/Warren_Teitelman)
 
-#### Danny Bobrow
+[Obituary](http://warrenteitelman.com)
 
-#### John Sybalsky 
+#### [Danny Bobrow](https://en.wikipedia.org/wiki/Daniel_G._Bobrow)
 
-#### Steve Purcell
+[Obituary](https://www.paloaltoonline.com/obituaries/memorials/daniel-danny-g-bobrow-phd?o=4957)
+
+#### [John Sybalsky](http://www.sybalsky.net)
+
+#### [Steve Purcell](https://www.paloaltoonline.com/obituaries/memorials/steve-purcell?o=5822)
