@@ -83,8 +83,9 @@ optional (if not provided they default to NIL) and ignores extra arguments
 
 ## Macros
 
-Interlisp supports macros but unlike Common Lisp, Interlisp symbols
-may simultaneously have a function definition and a macro definition.
+Interlisp supports macros (including macros defined with CL:DEFMACRO).
+In addition, Interlisp supports a kind of "compiler-macro" by
+setting a MACRO property; a symbol may simultaneously have a function definition and a MACRO property.
 If a symbol has both a function definition and a macro definition, the
 function definition is used by the interpreter and the macro
 is used by the compiler.  This allows for extra error checking during 
@@ -93,7 +94,7 @@ development and fast operation during production use.
 Interlisp also has a backquote facility similar to Common Lisp's \`
 and \, read macros.
 
-Unlike Common Lisp, Interlisp does not have a special function for
+Interlisp does not have a special function for
 defining macros.  Macros are defined by placing their definition on
 the property list of the symbol.
 
@@ -109,6 +110,11 @@ CLtl2.
 In Medley Common Lisp and Interlisp are fully
 integrated.  From within Common Lisp, Interlisp functions may be
 accessed through the Common Lisp package nicknamed ``IL''.
+
+# Keystrokes and Mouse menus and gestures
+
+Interlisp and Medley were developed long before there were "User Interface Guidelines" for what keystrokes and mouse gestures and menus.
+See [Keystrokes, Mouse Menus and Gestures](Keystrokes).
 
 # Continuing On
 
