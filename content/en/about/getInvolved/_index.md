@@ -18,7 +18,7 @@ Participants in the project can join the [GitHub Interlisp organization](https:/
 
 We have a weekly meeting on Mondays on Zoom. Meetings are to report accomplishments, status, plans, and problems, and discuss directions. Meetings are recorded, but recordings are not public, If you'd like to join in, [let us know](mailto:info@interlisp.org).
 
-_Monday, 1:00 pm ET / 10:00 am PT_
+_Monday, 1:30 pm ET / 10:30 am PT_
 
 ### Meeting Agendas and Notes
 
