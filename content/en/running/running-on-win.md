@@ -4,7 +4,9 @@ weight: 40
 type: docs
 ---
 
-Medley does not (yet) run as a native Windows application.  However, you can run Medley on Windows 10/11 in one of two ways: via **Windows System for Linux (WSL)** or via the **Docker Desktop for Windows** and the Medley docker image.  Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop.  Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common `medley` script to run Medley.
+Medley does not yet run as a native Windows application.  Besides [online](online), and [running with Docker Desktop](running-with-docker), you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
+
+This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.
 
 On Windows, Medley requires a 64-bit machine.
 
