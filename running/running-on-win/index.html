@@ -8,20 +8,29 @@
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
 
 <title>Running on Windows 10/11 | Medley Interlisp Project</title>
-<meta name="description" content="Medley does not (yet) run as a native Windows application.  However, you can run Medley on Windows 10/11 in one of two ways: via Windows System for …">
+<meta name="description" content="Medley does not yet run as a native Windows application.  Besides online, and running with Docker Desktop, you can run Medley on Windows 10/11 using …">
 <meta property="og:title" content="Running on Windows 10/11" />
-<meta property="og:description" content="Medley does not (yet) run as a native Windows application. However, you can run Medley on Windows 10/11 in one of two ways: via Windows System for Linux (WSL) or via the Docker Desktop for Windows and the Medley docker image. Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop. Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common medley script to run Medley." />
+<meta property="og:description" content="Medley does not yet run as a native Windows application. Besides online, and running with Docker Desktop, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
+This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.
+On Windows, Medley requires a 64-bit machine.
+Running on Windows with WSL Medley will run on either WSL1 or WSL2." />
 <meta property="og:type" content="article" />
 <meta property="og:url" content="https://interlisp.org/running/running-on-win/" /><meta property="article:section" content="running" />
 
 <meta property="og:site_name" content="Medley Interlisp Project" />
 <meta itemprop="name" content="Running on Windows 10/11">
-<meta itemprop="description" content="Medley does not (yet) run as a native Windows application. However, you can run Medley on Windows 10/11 in one of two ways: via Windows System for Linux (WSL) or via the Docker Desktop for Windows and the Medley docker image. Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop. Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common medley script to run Medley.">
+<meta itemprop="description" content="Medley does not yet run as a native Windows application. Besides online, and running with Docker Desktop, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
+This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.
+On Windows, Medley requires a 64-bit machine.
+Running on Windows with WSL Medley will run on either WSL1 or WSL2.">
 
-<meta itemprop="wordCount" content="859">
+<meta itemprop="wordCount" content="817">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
 <meta name="twitter:title" content="Running on Windows 10/11"/>
-<meta name="twitter:description" content="Medley does not (yet) run as a native Windows application. However, you can run Medley on Windows 10/11 in one of two ways: via Windows System for Linux (WSL) or via the Docker Desktop for Windows and the Medley docker image. Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop. Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common medley script to run Medley."/>
+<meta name="twitter:description" content="Medley does not yet run as a native Windows application. Besides online, and running with Docker Desktop, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
+This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.
+On Windows, Medley requires a 64-bit machine.
+Running on Windows with WSL Medley will run on either WSL1 or WSL2."/>
 
 
 
@@ -92,7 +101,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.dfe5231b7330b04fc53e8862b86de127.json"
+  data-offline-search-index-json-src="/offline-search-index.878ece8fee3941f422d18d7e2d4f0156.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -114,7 +123,7 @@
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.dfe5231b7330b04fc53e8862b86de127.json"
+  data-offline-search-index-json-src="/offline-search-index.878ece8fee3941f422d18d7e2d4f0156.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -184,7 +193,7 @@
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-on-win-li">
   <a href="/running/running-on-win/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-runningrunning-on-win"><span class="td-sidebar-nav-active-item">Running on Windows 10/11</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-with-docker-li">
-  <a href="/running/running-with-docker/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-with-docker"><span class="">Running with Docker</span></a>
+  <a href="/running/running-with-docker/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-with-docker"><span class="">Running with Docker Desktop</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docbuildhtml-li">
   <a href="/doc/build.html" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docbuildhtml"><span class="">Building the Interlisp system</span></a>
   <ul class="ul-3 foldable">
@@ -328,7 +337,8 @@
 
 		
 	</header>    
-	<p>Medley does not (yet) run as a native Windows application.  However, you can run Medley on Windows 10/11 in one of two ways: via <strong>Windows System for Linux (WSL)</strong> or via the <strong>Docker Desktop for Windows</strong> and the Medley docker image.  Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop.  Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common <code>medley</code> script to run Medley.</p>
+	<p>Medley does not yet run as a native Windows application.  Besides <a href="online">online</a>, and <a href="running-with-docker">running with Docker Desktop</a>, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).</p>
+<p>This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.</p>
 <p>On Windows, Medley requires a 64-bit machine.</p>
 <h3 id="running-on-windows-with-wsl"><strong>Running on Windows with WSL</strong></h3>
 <p>Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>) or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).</p>

@@ -90,7 +90,7 @@ Interlisp …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.dfe5231b7330b04fc53e8862b86de127.json"
+  data-offline-search-index-json-src="/offline-search-index.878ece8fee3941f422d18d7e2d4f0156.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -198,7 +198,7 @@ This is the multi-page printable view of this section.
     
     
 	
-<li>5: <a href="#pg-6096845dc5edf904cab8347cf40beb42">Running with Docker</a></li>
+<li>5: <a href="#pg-6096845dc5edf904cab8347cf40beb42">Running with Docker Desktop</a></li>
 
 
     
@@ -245,33 +245,30 @@ This is the multi-page printable view of this section.
 <div class="content">
       <p>There are different ways of running Medley Interlisp on a wide variety of systems.  This section lays out the basics to help you choose:</p>
 <ul>
-<li>Interlisp Online</li>
-<li>In a Docker container</li>
-<li>Download and install from a release</li>
-<li>(re)build the virtual machine emulator (Maiko) from sources, run in a release.</li>
-<li>(Re) build your own Lisp image</li>
+<li><a href="online">Interlisp Online</a>
+<ul>
+<li>for most systems; see caveats</li>
 </ul>
-<p>A note about performance:  Modern systems are thousands of times faster than the D-machines of 1980s. The system was designed for limited memory machines, so 32 MB is quite roomy. The Medley VM is now quite portable to many different OS and CPU configurations.</p>
-<h2 id="interlisp-online">Interlisp Online</h2>
-<p>For a minimum amount of setup, the online version is a good starting place. <a href="https://online.interlisp.org">Interlisp Online</a> provides access to a version of Medley running in the cloud. All that is needed to get started is a (recent) browser and a mouse. You can log in as a guest or &ndash; if you want to save files or sessions &ndash; create an account.</p>
-<p>Sessions and files are preserved between sessions, but will be removed after 30 days of inactivity. While you are connected to your session, you can access your files using sftp. Online should be good for experimenting and introducing yourself to the environment.</p>
-<p>Pros: Sandbox environment &ndash; it&rsquo;s all done with Docker and VMs so just modify anything you want.
-Cons: Requires a good Internet connection to run. No access to files in your file system (also a pro). Anything you create in the online environment should be treated as transient.</p>
-<p>See <a href="online">Running Online</a> for more.</p>
-<ol start="2">
-<li>Running with Docker Desktop</li>
-</ol>
-<p>This is a little like running online except you&rsquo;re connecting to your own Medley service. If you are familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or a windows X server). The VNC Viewer allows you to interact with the Medley instance running in Docker (Interlisp Online uses a browser-based VNC viewer.)</p>
-<p>Medley in Docker has a copy of the Medley system within the Docker container. Whenever you install a new version of the Medley Docker container you get a fresh system.</p>
-<p>Pro: You can mount parts or all of your local file system, for easy file sharing, but at the same time you can restrict system access. Your files are on your own system, no live Internet capability needed.
-Con: We&rsquo;re only building X86_64 docker containers regularly.</p>
-<p>The instructions for this configuration are located at <a href="running-with-docker">Running with Docker</a>.</p>
-<h2 id="running-installed">Running Installed</h2>
-<p>For users of Linux, BSD, MacOS and Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility. You need to know a bit more about how Medley Interlisp works. The system comes in two parts: a C program (code name maiko, binaries lde, ldex) that emulates the virtual Lisp machine, and the rest of the system written in Lisp.</p>
-<p>Maiko currently requires having an X-server installed; which one to use depends on your platform.</p>
-<p>We use GitHub Actions workflow automation to build Maiko for different platforms; if your platform isn&rsquo;t in the mix you may need to <a href="https://github.com/Interlisp/maiko/#readme">download maiko sources and make and install those binaries</a>.</p>
-<h2 id="developing-medley-interlisp-itself">Developing Medley Interlisp itself</h2>
-<p>The scripts &ldquo;scripts/loadup*&rdquo; in the github/interlisp/medley/ repository are used. See README.md files in the GitHub repo.</p>
+</li>
+<li><a href="running-with-docker">In a Docker container</a>
+<ul>
+<li>currently windows x86_64 only</li>
+</ul>
+</li>
+<li>Download and install from a release
+<ul>
+<li><a href="running-on-mac">Running on Mac</a></li>
+<li><a href="runnning-on-win">Running on Windows</a>
+<ul>
+<li>For Windows 10 or 11 with WSL1 or WSL2</li>
+</ul>
+</li>
+<li><a href="running-on-linux">Running on Linux</a></li>
+</ul>
+</li>
+</ul>
+<p>For other OS or machine architectures, You can (re)build the virtual machine emulator (Maiko) from sources, and then run in a release or even build your own images (sysouts).</p>
+<p>See README.md files in the GitHub repo.</p>
 
 </div>
 </div>
@@ -296,15 +293,19 @@ Con: We&rsquo;re only building X86_64 docker containers regularly.</p>
 	<h1 id="pg-700d0c6f34d7215f9f4a191bdf17a817">1 - Interlisp Online</h1>
     
 	<p><a href="https://online.interlisp.org/user/login">Interlisp Online</a> provides access to a version of Medley running in the cloud. You can login as a guest, but if you want to save state from one session to the next, you should create an acccount. All that is needed is an email address and password. Once an account has been created you can log in and start a Medley Interlisp session.</p>
-<p>Sessions are preserved (we hope) but may be deleted after 30 days of inactivity. Running online should be good for experimenting and introducing yourself to the environment. Anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The Interlisp/online repository may have more details.</p>
+<p>Sessions are preserved for users that login but</p>
+<ul>
+<li>are not saved for &ldquo;guests&rdquo;</li>
+<li>may be deleted after 30 days of inactivity</li>
+</ul>
+<p>Running online should be good for experimenting and introducing yourself to the environment. Anything you create in the online environment should be treated as transient. If you&rsquo;re interested in developing and experimenting with Lisp programs then you will want to investigate other options. But, for a first foray, this is a good starting place. The Interlisp/online repository may have more details.</p>
 <h3 id="things-to-note-when-running-online">Things to note when running online</h3>
 <ul>
 <li>Browser compatibility</li>
 <li>Watch out for control-character conflicts (control-W always gets me)</li>
 <li>Security not guaranteed</li>
 <li>Need a solid net connection to our AWS server (currently in Ohio)</li>
-<li>Back to time-sharing</li>
-<li>Maximum load 256/16 24 simultaneous sessions</li>
+<li>Back to time-sharing: Maximum load ~24 simultaneous sessions</li>
 </ul>
 
 </div>
@@ -630,7 +631,8 @@ Need XQuartz installed before you build maiko (includes XClient libraries).</p>
     
 	<h1 id="pg-a3ecb7e1d30d46f5644e5097527908cb">4 - Running on Windows 10/11</h1>
     
-	<p>Medley does not (yet) run as a native Windows application.  However, you can run Medley on Windows 10/11 in one of two ways: via <strong>Windows System for Linux (WSL)</strong> or via the <strong>Docker Desktop for Windows</strong> and the Medley docker image.  Using either of these methods requires the installation (if not already installed) of one additional component to your Windows system - WSL or Docker Desktop.  Once this prerequisite component is installed, there is for each case a single step install for Medley as well as a common <code>medley</code> script to run Medley.</p>
+	<p>Medley does not yet run as a native Windows application.  Besides <a href="online">online</a>, and <a href="running-with-docker">running with Docker Desktop</a>, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).</p>
+<p>This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.</p>
 <p>On Windows, Medley requires a 64-bit machine.</p>
 <h3 id="running-on-windows-with-wsl"><strong>Running on Windows with WSL</strong></h3>
 <p>Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>) or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).</p>
@@ -698,13 +700,40 @@ Need XQuartz installed before you build maiko (includes XClient libraries).</p>
 
 <div class="td-content" style="page-break-before: always">
     
-	<h1 id="pg-6096845dc5edf904cab8347cf40beb42">5 - Running with Docker</h1>
+	<h1 id="pg-6096845dc5edf904cab8347cf40beb42">5 - Running with Docker Desktop</h1>
     
-	<p>As an experiment, we&rsquo;ve set up a way to use Medley Interlisp via a pre-built Docker configuration. As part of the experiment,  we&rsquo;ve set  up a docker container that contains Xvnc (a kind of protocol gateway) so you would just need a VNC client.</p>
-<p>If this is your first time working with Docker, you&rsquo;ll want to <a href="https://docs.docker.com/get-docker/">install it</a> before continuing.</p>
-<p>You&rsquo;ll also need a modern VNC client; <a href="https://www.tightvnc.com/">TightVNC</a> works well. Rumor has it that Macs and Linux use VNC normally for screen sharing.</p>
-<pre tabindex="0"><code>docker run -p 5900:5900 -e DISPLAY=$DISPLAY --rm --name interlisp interlisp/medley
-</code></pre>
+	<h3 id="running-on-windows-with-docker-desktop"><strong>Running on Windows with Docker Desktop</strong></h3>
+<p>When running with Docker, Medley runs in a Docker container using the Interlisp/medley image found on Docker Hub.  A VNC Viewer window is used to display the Medley desktop.  All of this is started up using the single <code>medley</code> command.</p>
+<p>These instructions are for Windows 10 or 11 (x86_64) only.</p>
+<h4 id="to-install-and-run-medley-with-docker-desktop">To install and run Medley with Docker Desktop:</h4>
+<ol>
+<li>
+<p><em>Install Docker Desktop:</em>  Install Docker Desktop for Windows as described <a href="https://docs.docker.com/desktop/install/windows-install/">here</a>.</p>
+</li>
+<li>
+<p><em>Install Medley</em>:  To install Medley, download and run the the <code>medley-install_&lt;version&gt;.exe</code> that can be found <a href="https://online.interlisp.org/downloads/medley_downloads.html">here</a> under the Windows 10/11 heading.</p>
+<p>This will install Medley on your system, by default in the <code>%USERPROFILE%/AppData/Local/Medley/Scripts</code> folder.  This folder will be added to your %PATH%.  An uninstall will also be added so that you can remove Medley via the standard Add/Remove Programs control panel.</p>
+<p>Note that to download <code>medley-install_&lt;version&gt;.exe</code>, you may have to bypass any security concerns your browser has about downloading an .exe file.  In addition, you will have to bypass the Windows Defender protection against executing an unsigned .exe.  To do so, click <code>More info</code> followed by <code>Run Anyway</code> when the Windows Defender window pops up.</p>
+</li>
+<li>
+<p><em>Run Medley:</em>  Once it is installed, you can run Medley by typing <code>medley &lt;flags and options&gt;</code> into either a Command or a Powershell window.</p>
+<p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
+<p>For first-time users: <code>medley --apps --interlisp --noscroll</code> or, equivalently, <code>medley -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including some applications built on Medley such as Notecards and Rooms.</p>
+</li>
+</ol>
+<h4 id="notes">Notes:</h4>
+<ul>
+<li>
+<p>Docker needs to be installed and <em>running</em> in order to run Medley.  However, the Docker Dashboard window does not be open.  You can check the state and start/stop Docker by right clicking on the Docker icon <img alt="Docker icon" height=15 width=15 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAAB+CAMAAABlLrHNAAAAY1BMVEUAAAD///+wsLDQ0NC/v7/r6+uioqLx8fEkJCQaGhrh4eFGRkZVVVW8vLwYGBj8/PxbW1tycnKqqqra2toRERHKyso3Nzd+fn5hYWGXl5doaGhMTEw8PDxBQUGNjY2GhoYwMDDd4iByAAAE4UlEQVR4nO2c69aqIBCGIQ8UHdSoTK30/q9ya7b7lIOMhUJr+f6chfZEMMwMEMJmtYo5PSKj70dG34bJHfGiRj/ANO924e1p4V14u1p4F96uFt6Ft6uF97d4i9/ixX7CKTP7ftO8OOJk+PXGeScWiDcKOJHGSnirtKnhDgbxhod1X3ENTOINZ22GasYb4/nzN7ITJr2H8V4wnhzJ36C8B0f878Ir0cr7KV6G0CP4HV4S1y2r88/wZm3bUuv83OAlp1fjVAfsBm/6bn0nP8BL13/Nk+EedoI37ba/Os8brXsPHF3nXXFPDLk10/HOB7xRwj1x+5I3ugoQDGNPMBZ1U/GraVetoOIfGcihQPEvDTk9f7E9ZzxSZdNBnYWvWKm/owP50EPgRQ9lYwd4xSGE1spVg+cNPE7NkxFvfP5elLc2np5ImzJZ05c4b9ZqBeQNitOmp0NeW0veeKkp6I23pnXThDc2XcXWh7711JlRwUnCq1zlON6z+HAE9mdIlb8dBeP97yNFP9MMCNWM43i9wxe8yvVC5N3+faQv40WqbMNV3rApZVBWi/ZKGK7ybst4e6maAkZ1KfLsTCJXeKXjV3x3vgrc4KUy/yDTOiQu8JINkLdep5kDvFgscat1dIBXEj8odXOAV4zP1HKhf4MLGHfDHODFJZg3dWG+NbUzoKhRXmX+Nhjv1MqBuKXgf6ngDJukTHwflfXKtW4aC1Yim1Fpv5dgS8ZdXC9w4Pd1fsbrnNFv43W+6TNelzZlsqadDxUTWpnqJNeFfIhl4iCS6ZlzWOWNAnYuZemQTHv85j2vLCjM0ryAxjrvjA7hKAM/Y083hv/z/gJu8k7nkDy8d0pxp0aE+GKbc9ruu8UTBB/xFnTYPRjuyTaRWps42zOhLmWbSqYtIURZ33FQyuJZwwvP9ubSbajC7SBvOYCLUWUbT9Dghgcak03Pot0QLkbQ2H42DW94oFT/hlm1G95ARmOqFXNoyJk1vGIuaFWnYVzn4rNQxwsrv86lu243FDGnFgxd92IUwJLTebTRn9+RbGbbk7Z76/wNXm2bXBrf2/JK9v1sydfi1rzUNuVbw5HDf15nQvYT5AQlku7nW5H60EOf15WCiX6ytbxj9jsmFGCytbyBeAbAgnIQ7rM+6UIIfAKNhpaXP69mQ5qwt8dLbMPy+xkaXvseTX0eSspre0CsmQ6zz0sru7yDJ1IlvJY9BGhh6/FaXTJG3TB67WdZrPLcRl2IevHam3HVuPs6L17JvUsncd/7m5bKJmvYrSGRF99s4G7G4v7x2kjjDrAYUsprIa+vRvdud38efirFkG7wVVjGO3deFEOuuw3xzuvTcnBIpuKdtRIxIsRR8s7nhC8fzDQJ76ijjF/ow7Eg8gpXeabQJvziyjd33ohMv72Vf+LGVLyTA1+giTCQF5NJh0T6kdMd4sXRdJPu+tVQUPBOFrwXgOvQH/Fiar4gcYg/drl6XhyZXjkSM7Tq85PkAT3XqFcBusn/HW8dXxqad/n+89VsDG/dx6udeNx6lKp8ZRJWw9tcLCzhh/fFnj1+77/G8TZi4XU88yV/eKb/KgjIW/cy9bMRHq7KQ59OAgvkbRV4YXotKvV5y6qI84dv9u9VBI07Dx4Ryjx/H2ZlmibPv3NN0iQts+Pe9xhVHiI0qH+feF7zFV+3XAAAAABJRU5ErkJggg=="> in the System Tray.</p>
+</li>
+<li>
+<p>The first time it runs, <code>medley</code> will automatically pull the latest Interlisp/medley docker image from Docker Hub.  It will use this docker image for all subsequent runs unless the &lsquo;&ndash;update&rsquo; flag is raised.  When &ndash;update is raised, <code>medley</code> will once again pull the latest Interlisp/medley docker image.</p>
+</li>
+<li>
+<p>When running with Docker, the Medley file system is for the most part &ldquo;within&rdquo; the Docker container.  This means that it is deleted whenever Medley stops and is recreated whenever Medley restarts.  The exception is the directory <code>/home/medley/il</code> (in the Medley file system) which is automatically mapped by <code>medley</code> to a directory in the host Windows file system, by default to <code>%USERPROFILE%/AppData/Local/Medley/il</code> folder.  You can change this mapping to a different windows folder using the <code>--logindir</code> option to <code>medley</code>.</p>
+</li>
+</ul>
+
 </div>
 
 

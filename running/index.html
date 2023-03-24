@@ -90,7 +90,7 @@ Interlisp …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.dfe5231b7330b04fc53e8862b86de127.json"
+  data-offline-search-index-json-src="/offline-search-index.878ece8fee3941f422d18d7e2d4f0156.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -112,7 +112,7 @@ Interlisp …">
   aria-label="Search this site…"
   autocomplete="off"
   
-  data-offline-search-index-json-src="/offline-search-index.dfe5231b7330b04fc53e8862b86de127.json"
+  data-offline-search-index-json-src="/offline-search-index.878ece8fee3941f422d18d7e2d4f0156.json"
   data-offline-search-base-href="/"
   data-offline-search-max-results="10"
 >
@@ -182,7 +182,7 @@ Interlisp …">
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-on-win-li">
   <a href="/running/running-on-win/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-on-win"><span class="">Running on Windows 10/11</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-runningrunning-with-docker-li">
-  <a href="/running/running-with-docker/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-with-docker"><span class="">Running with Docker</span></a>
+  <a href="/running/running-with-docker/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-runningrunning-with-docker"><span class="">Running with Docker Desktop</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docbuildhtml-li">
   <a href="/doc/build.html" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docbuildhtml"><span class="">Building the Interlisp system</span></a>
   <ul class="ul-3 foldable">
@@ -256,14 +256,6 @@ Interlisp …">
             
 
 
-<div class="td-toc"><nav id="TableOfContents">
-  <ul>
-    <li><a href="#interlisp-online">Interlisp Online</a></li>
-    <li><a href="#running-installed">Running Installed</a></li>
-    <li><a href="#developing-medley-interlisp-itself">Developing Medley Interlisp itself</a></li>
-  </ul>
-</nav></div>
-
 
 
             
@@ -323,33 +315,30 @@ Interlisp …">
 	</header>
 	<p>There are different ways of running Medley Interlisp on a wide variety of systems.  This section lays out the basics to help you choose:</p>
 <ul>
-<li>Interlisp Online</li>
-<li>In a Docker container</li>
-<li>Download and install from a release</li>
-<li>(re)build the virtual machine emulator (Maiko) from sources, run in a release.</li>
-<li>(Re) build your own Lisp image</li>
+<li><a href="online">Interlisp Online</a>
+<ul>
+<li>for most systems; see caveats</li>
 </ul>
-<p>A note about performance:  Modern systems are thousands of times faster than the D-machines of 1980s. The system was designed for limited memory machines, so 32 MB is quite roomy. The Medley VM is now quite portable to many different OS and CPU configurations.</p>
-<h2 id="interlisp-online">Interlisp Online</h2>
-<p>For a minimum amount of setup, the online version is a good starting place. <a href="https://online.interlisp.org">Interlisp Online</a> provides access to a version of Medley running in the cloud. All that is needed to get started is a (recent) browser and a mouse. You can log in as a guest or &ndash; if you want to save files or sessions &ndash; create an account.</p>
-<p>Sessions and files are preserved between sessions, but will be removed after 30 days of inactivity. While you are connected to your session, you can access your files using sftp. Online should be good for experimenting and introducing yourself to the environment.</p>
-<p>Pros: Sandbox environment &ndash; it&rsquo;s all done with Docker and VMs so just modify anything you want.
-Cons: Requires a good Internet connection to run. No access to files in your file system (also a pro). Anything you create in the online environment should be treated as transient.</p>
-<p>See <a href="online">Running Online</a> for more.</p>
-<ol start="2">
-<li>Running with Docker Desktop</li>
-</ol>
-<p>This is a little like running online except you&rsquo;re connecting to your own Medley service. If you are familiar with running Docker Desktop, this option may appeal. In addition to a running Docker Desktop, you will need either a VNC viewer (or a windows X server). The VNC Viewer allows you to interact with the Medley instance running in Docker (Interlisp Online uses a browser-based VNC viewer.)</p>
-<p>Medley in Docker has a copy of the Medley system within the Docker container. Whenever you install a new version of the Medley Docker container you get a fresh system.</p>
-<p>Pro: You can mount parts or all of your local file system, for easy file sharing, but at the same time you can restrict system access. Your files are on your own system, no live Internet capability needed.
-Con: We&rsquo;re only building X86_64 docker containers regularly.</p>
-<p>The instructions for this configuration are located at <a href="running-with-docker">Running with Docker</a>.</p>
-<h2 id="running-installed">Running Installed</h2>
-<p>For users of Linux, BSD, MacOS and Windows (with WSL2), installing and running a local copy is a little more complicated but has the most flexibility. You need to know a bit more about how Medley Interlisp works. The system comes in two parts: a C program (code name maiko, binaries lde, ldex) that emulates the virtual Lisp machine, and the rest of the system written in Lisp.</p>
-<p>Maiko currently requires having an X-server installed; which one to use depends on your platform.</p>
-<p>We use GitHub Actions workflow automation to build Maiko for different platforms; if your platform isn&rsquo;t in the mix you may need to <a href="https://github.com/Interlisp/maiko/#readme">download maiko sources and make and install those binaries</a>.</p>
-<h2 id="developing-medley-interlisp-itself">Developing Medley Interlisp itself</h2>
-<p>The scripts &ldquo;scripts/loadup*&rdquo; in the github/interlisp/medley/ repository are used. See README.md files in the GitHub repo.</p>
+</li>
+<li><a href="running-with-docker">In a Docker container</a>
+<ul>
+<li>currently windows x86_64 only</li>
+</ul>
+</li>
+<li>Download and install from a release
+<ul>
+<li><a href="running-on-mac">Running on Mac</a></li>
+<li><a href="runnning-on-win">Running on Windows</a>
+<ul>
+<li>For Windows 10 or 11 with WSL1 or WSL2</li>
+</ul>
+</li>
+<li><a href="running-on-linux">Running on Linux</a></li>
+</ul>
+</li>
+</ul>
+<p>For other OS or machine architectures, You can (re)build the virtual machine emulator (Maiko) from sources, and then run in a release or even build your own images (sysouts).</p>
+<p>See README.md files in the GitHub repo.</p>
 
         <div class="section-index">
     
@@ -397,7 +386,7 @@ Con: We&rsquo;re only building X86_64 docker containers regularly.</p>
             
             <div class="entry">
                 <h5>
-                    <a href="/running/running-with-docker/">Running with Docker</a>
+                    <a href="/running/running-with-docker/">Running with Docker Desktop</a>
                 </h5>
                 <p></p>
             </div>
