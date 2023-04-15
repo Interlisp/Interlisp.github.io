@@ -13,12 +13,6 @@ jobs:
       group:  ${{ github.workflow }}-${{ github.ref }}
     steps:
       - uses: actions/checkout@v3
-        with:
-          submodules: recursive  # Fetch Hugo themes (true OR recursive)
-          fetch-depth: 0    # Fetch all history for .GitInfo and .Lastmod
-
-      - run: git submodule update --init --recursive
-      - run: git submodule status
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
@@ -29,7 +23,7 @@ jobs:
       - name: Setup Node
         uses: actions/setup-node@v3
         with:
-          node-version: 16
+          node-version: 18
       
       - run: npm install -g autoprefixer --save-dev  
       - run: npm install -g postcss-cli --save-dev
