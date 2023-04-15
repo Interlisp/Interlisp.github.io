@@ -102,47 +102,40 @@ hugo version
 The response will be something along the lines of:
 
 ```bash
-hugo v0.101.0-466fa43c16709b4483689930a4f9ac8add5c9f66+extended linux/amd64 BuildDate=2022-06-16T07:09:16Z VendorInfo=gohugoio
+hugo v0.111.3-5d4eb5154e1fed125ca8e9b5a0315c4180dab192+extended linux/amd64 BuildDate=2023-03-12T11:40:50Z VendorInfo=gohugoio
 ```
 
 Be sure your version is at least `v0.101.0`. Older versions of `hugo` may fail to load correctly.
 
-With `Hugo` successfully installed, change directories to the location where you cloned the `Interlisp.github.io`.  Prior to running Hugo
-for the first time, we need to download the `Docsy` theme and it's dependencies.  These elements are stored as [submodules](https://git-scm.com/book/en/v2/Git-Tools-Submodules) in git.
-Getting them an installing them is simple.  From the `themes` directory in the `Interlisp.github.io` project run the following command"
-
-```bash
-git submodule update --init --recursive
-```
-
-This will download the `Docsy` theme and the libraries it depends on.  Once this has completed, switch back to the root directory of `Interlisp.github.io` and run `Hugo` using the following
+With `Hugo` successfully installed, change directories to the location where you cloned the `Interlisp.github.io`. Then run `Hugo` using the following
 command:
 
 ```bash
 hugo server
 ```
 
-`Hugo` will start.  You should see output along the lines of:
+`Hugo` will start and automatically download the Docsy theme and it's dependencies as hugo modules.  You should see output along the lines of:
 
 ```bash
+hugo: downloading modules …
+hugo: collected modules in 17781 ms
 Start building sites …
-hugo v0.101.0-466fa43c16709b4483689930a4f9ac8add5c9f66+extended linux/amd64 BuildDate=2022-06-16T07:09:16Z VendorInfo=gohugoio
-WARN 2022/10/25 00:10:02 "/home/wstumbo/development/Interlisp.github.io/content/en/publications/_index.md:1:1": duplicate menu entry with identifier "Publications" in menu "main"
+hugo v0.111.3-5d4eb5154e1fed125ca8e9b5a0315c4180dab192+extended linux/amd64 BuildDate=2023-03-12T11:40:50Z VendorInfo=gohugoio
 
                    | EN
 -------------------+-----
-  Pages            | 56
+  Pages            | 61
   Paginator pages  |  0
-  Non-page files   |  2
-  Static files     | 52
-  Processed images |  1
+  Non-page files   | 13
+  Static files     | 68
+  Processed images | 46
   Aliases          |  4
   Sitemaps         |  1
   Cleaned          |  0
 
 Built in 1349 ms
 Watching for changes in /home/wstumbo/development/Interlisp.github.io/{archetypes,assets,content,data,layouts,package.json,static,themes}
-Watching for config changes in /home/wstumbo/development/Interlisp.github.io/config.toml, /home/wstumbo/development/Interlisp.github.io/themes/docsy/config.toml
+Watching for config changes in /home/wstumbo/development/Interlisp.github.io/config.toml, /home/wstumbo/development/Interlisp.github.io/go.mod
 Environment: "development"
 Serving pages from memory
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
@@ -150,7 +143,7 @@ Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
-`Hugo` is now running.  You can go to [http://localhost:1313](http://localhost:1313) to reveiw the locally running version of the website.  
+`Hugo` is now running.  You can go to [http://localhost:1313](http://localhost:1313) to review the locally running version of the website.  
 For most changes you should be able to review the text and layout to validate the effects are as expected.
 
 Once you have validated your changes, create a pull request to merge your changes into the `main` branch.
