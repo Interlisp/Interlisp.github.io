@@ -182,7 +182,7 @@ Also note that with local installations, `man medley` will not work.  However, a
 	It will load any personal init file from *LOGINDIR*/INIT or *LOGINDIR*/INIT.LCOM.  Finally,
 	Medley will use *LOGINDIR*/vmem/ to store its virtual memory file(s).  The location of *LOGINDIR*
 	can be changed using the `--logindir` option to `medley`.  In particular, if you have multiple
-	installations of Medley that you would like to keep completely seperate, then you can use the 
+	installations of Medley that you would like to keep completely separate, then you can use the 
 	`--logindir -` option, which will set *LOGINDIR* to \<medley_directory\>/logindir.
 
 
