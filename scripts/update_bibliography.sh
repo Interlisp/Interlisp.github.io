@@ -32,24 +32,23 @@ add_items_from_collection $root_collection
 echo "Got $(jq '. | length' <<< "$items") items"
 
 # Piece-wise processing for debugging:
-# xitems=$(jq 'sort_by(.data.date)' <<< "$items")
-# echo "$xitems" > sorted.json
-# xitems=$(jq 'map(.csljson)' <<< "$xitems")
-# echo "$xitems" > mapped.json
-# xitems=$(jq 'group_by(.issued."date-parts"[0][0])' <<< "$xitems")
-# echo "$xitems" > grouped.json
-# xitems=$(jq 'map({ (.[0].issued."date-parts"[0][0] // "Undated" | tostring): . })' <<< "$xitems")
-# echo "$xitems" > mapped2.json
-# xitems=$(jq -s 'add' <<< "$xitems")
-# echo "$xitems" > added.json
+items=$(jq 'sort_by(.data.date)' <<< "$items")
+# echo "$items" > sorted.json
+items=$(jq 'map(.csljson)' <<< "$items")
+# echo "$items" > mapped.json
+items=$(jq 'group_by(.issued."date-parts"[0][0])' <<< "$items")
+# echo "$items" > grouped.json
+items=$(jq 'map({ (.[0].issued."date-parts"[0][0] // "Undated" | tostring): . })' <<< "$items")
+# echo "$items" > mapped2.json
+items=$(jq 'map(to_entries)' <<< "$items")
+# echo "$items" > entries.json
+items=$(jq 'flatten(1)' <<< "$items")
+# echo "$items" > flattened.json
+items=$(jq 'group_by(.key)' <<< "$items")
+# echo "$items" > groupedByKey.json
+items=$(jq 'map(if length == 1 then .[0] else ( { key: (.[0].key), value: (map(.value ) | flatten(1)) } ) end) | from_entries' <<< "$items")
+# echo "$items" > xx.json
 
-items=$(jq '
-    sort_by(.data.date)
-    | map(.csljson)
-    | group_by(.issued."date-parts"[0][0])
-    | map({ (.[0].issued."date-parts"[0][0] // "Undated" | tostring): . })' <<< "$items")
-# The 'add' dropped entries unless jq invoked in "--slurp' mode
-items=$(jq -s 'add' <<< "$items")
 
 echo "Outputting CSL JSON"
 echo "$items" > "$(dirname "$0")/../data/bibliography.json"
