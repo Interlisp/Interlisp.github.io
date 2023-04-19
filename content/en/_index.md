@@ -4,7 +4,7 @@ aliases:
 type: docs
 ---
 
-![Interlisp logo -- 3/4 circle of overlapping windows with the words Interlisp-D in the lower righthand corner](Resources/Interlisp-D.png)
+<img alt="Interlisp logo -- 3/4 circle of overlapping windows with the word Medley in the center and below that the words Interlisp and Common Lisp" src="Resources/logo_red_no_border_568x385.png" width="284" height="193">
 
 ## What is Medley Interlisp?
 
