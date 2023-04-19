@@ -88,7 +88,7 @@ curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
  | cut -d '"' -f 4 \
  | wget -i -
 
- sudo dpkg -i hugo-extended*linux-amd64.deb
+ sudo dpkg -i hugo_extended*linux-amd64.deb
 ```
 
 The command can be adjusted for different architectures.
