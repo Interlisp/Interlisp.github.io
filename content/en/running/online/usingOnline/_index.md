@@ -10,7 +10,7 @@ type: docs
 
 * Go to [Interlisp Online](https://online.interlisp.org/main)\
 {{< imgproc Login_Screen Resize "400x450">}} Interlisp Online Login {{< /imgproc >}}
-  You may either login as a Guest or create an account. If you plan to save and later retrieve files, [register](https://online.interlisp.org/user/register) and create an account. Guest logins are not guaranteed to perserve sessions and stored files.
+  You may either login as a Guest or create an account. If you plan to save and later retrieve files, [register](https://online.interlisp.org/user/register) and create an account. Guest logins are not guaranteed to preserve sessions and stored files.
 
 However, if you just want to get a taste of Interlisp without the extra effort of creating an account, the guest login will suit your needs.
 

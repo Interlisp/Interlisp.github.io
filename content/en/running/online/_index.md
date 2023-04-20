@@ -4,7 +4,7 @@ weight: 10
 type: docs
 ---
 
-[Interlisp Online](https://online.interlisp.org/user/login) provides access to a version of Medley running in the cloud. You can login as a guest, but if you want to save state from one session to the next, you should create an acccount. All that is needed is an email address and password. Once an account has been created you can log in and start a Medley Interlisp session.
+[Interlisp Online](https://online.interlisp.org/user/login) provides access to a version of Medley running in the cloud. You can login as a guest, but if you want to save state from one session to the next, you should create an account. All that is needed is an email address and password. Once an account has been created you can log in and start a Medley Interlisp session.
 
 Sessions are preserved for users that login but 
 * are not saved for "guests"

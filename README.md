@@ -44,7 +44,7 @@ type: docs
 ```
 
 - Title: The displayed title for the page.
-- Weight:  Specifies the positioning of the page.  Lower number pages are higher in the page order.  `Hugo` allows for mulitple pages to be assigned the same weight.  
+- Weight:  Specifies the positioning of the page.  Lower number pages are higher in the page order.  `Hugo` allows for multiple pages to be assigned the same weight.  
 - Type: Identifies the type of the page.  Currently all pages are of type `docs`
 
 The content to display on the page follows the preamble.  Content is written using [Markdown](https://www.markdownguide.org/tools/hugo/).  
@@ -61,7 +61,7 @@ and linking to the actual tweet.
 
 Tweets that are no longer accessible will have their links removed but the content will be preserved.  
 
-The structure for new entries on the *Twtter* page, the `_index.md` file in the `twitter` directory is
+The structure for new entries on the *Twitter* page, the `_index.md` file in the `twitter` directory is
 
 ```markdown
 {{< imgproc PaulFord_20211214 Resize "550x803">}} <a href="https://twitter.com/ftrain/status/1470968024756895744?ref_src=twsrc">Link to tweet</a> {{< /imgproc >}}
