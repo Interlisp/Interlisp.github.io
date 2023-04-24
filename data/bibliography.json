@@ -6392,11 +6392,6 @@
       "title": "1987-Themes-Variations-Stefik-Loops-.pdf"
     },
     {
-      "id": "9296070/Z3QZB88Q",
-      "type": "article",
-      "title": "1986-access-oriented.pdf"
-    },
-    {
       "id": "9296070/HI5WIUJQ",
       "type": "article",
       "title": "ED285570.pdf",
@@ -6422,21 +6417,6 @@
             2023,
             4,
             10
-          ]
-        ]
-      }
-    },
-    {
-      "id": "9296070/KFW6YRLW",
-      "type": "article",
-      "title": "CSL-77-3_A_Display_Oriented_Programmers_Assistant.pdf",
-      "URL": "http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-77-3_A_Display_Oriented_Programmers_Assistant.pdf",
-      "accessed": {
-        "date-parts": [
-          [
-            2022,
-            6,
-            15
           ]
         ]
       }
@@ -6470,6 +6450,11 @@
           ]
         ]
       }
+    },
+    {
+      "id": "9296070/3VK4IB8T",
+      "type": "article",
+      "title": "1986-access-oriented.pdf"
     },
     {
       "id": "9296070/RJPVRIGF",
@@ -6545,6 +6530,11 @@
           ]
         ]
       }
+    },
+    {
+      "id": "9296070/FFAKSC38",
+      "type": "report",
+      "title": "A Display Oriented Programmers Assistant"
     },
     {
       "id": "9296070/CER4PF8K",
