@@ -6,7 +6,9 @@ type: docs
 
 <img alt="Interlisp logo -- 3/4 circle of overlapping windows with the word Medley in the center and below that the words Interlisp and Common Lisp" src="Resources/logo_red_no_border_568x385.png" width="284" height="193">
 
-## Video introduction
+## Video of presentation
+
+March 18, 2023 we presented an overview of the project to the BALISP group (Bay Area Lisp). 
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N1MobfEaoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

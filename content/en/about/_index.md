@@ -5,9 +5,9 @@ type: docs
 ---
 ## More background
 
-The early development of Interlisp-D during the early development of Smalltalk, with ideas shared both ways. Interlisp-D was launched as a product from Xerox in 1980. It was a base from which AI applications were built, as well as a research project in its own right.
+Interlisp-D was launched as a product from Xerox in 1980. It was a base from which AI applications were built, as well as a research project in its own right.
 
-For example, Interlisp evolved the notions of structure editing from an interactive "teletype" structure editor, a Display editor (DEdit) to [SEDIT](https://www.youtube.com/watch?v=2qsmF8HHskg). Masterscope and the file manager included system-management tools that combined features of version control and build systems, with comprehensive cross referencing support.
+Interlisp evolved the notions of structure editing from an interactive "teletype" structure editor, a Display editor (DEdit) to [SEDIT](https://www.youtube.com/watch?v=2qsmF8HHskg). Masterscope and the file manager included system-management tools that combined features of version control and build systems, with comprehensive cross referencing support.
 
 The 1970s and 80s saw major advances in computing and Human-Computer interaction.  Interlisp was one of the many experimental systems developed during these heady times.  It represents and early example of a system with a GUI (Graphical User Interface), and IDE (Integrated Development Environment) and within the Xerox PARC environment, it was an early example of a network enabled machine supporting email, file sharing, printing and more.  In essence it was a forerunner of today's computing systems.
 
@@ -19,7 +19,7 @@ Medley Interlisp represents the last Xerox Interlisp release.  Medley continued 
 
 ## Restoration
 
-Our aim is to restore **Medley Interlisp** to usability on modern systems, sufficient to allow someone to develop some code and experience what it was like. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle. 
+Our aim is to restore *Medley Interlisp* to usability on modern systems, sufficient to allow someone to develop some code and experience what it was like. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle. 
 
 We hope to provide a platform for demonstration of early experiments of hypertext (Notecards), Desktop management (Rooms), Object-oriented programming (LOOPS), as well as Interlisp itself.
 

@@ -3,11 +3,13 @@ title: Ongoing Projects
 weight: 2
 type: docs
 ---
-(needs update 9/15/22 lmm; this was from 11/2021)
 
-These should represent all tasks that people have volunteered for, and link them to issues or discussions and overall project goals.
+We're using the "projects" feature of GitHub to manage our work. There are (currently) [20 projects](https://github.com/orgs/Interlisp/projects).
 
-If there are things missing, please add them (and submit issues as needed).
+In addition, there are [GitHub discussions](https://github.com/Interlisp/medley/discussions) for exploring and discussing possible directions.
+
+
+## An older list of ongoing projects (from 2021):
 
 * [maiko](https://github.com/Interlisp/medley/labels/maiko) issues
   * Stack overflow mv return bug [issue #19](https://github.com/Interlisp/medley/issues/19) 

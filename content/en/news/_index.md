@@ -3,6 +3,8 @@ title: News
 weight: 10
 type: docs
 ---
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N1MobfEaoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 
 The **2022 Medley Interlisp [Annual Report](2022medleyannualreport)** provides a detailed report on 2022 accomplishments.
 
@@ -49,7 +51,6 @@ Merry Christmas and Happy New Year
  * For the immersive "Lisp Machine" experience, run "fullscreen".
  * HiRes display? Most browsers will let you scale the pixels.
 * [InterlispOrg Inc](https://github.com/Interlisp/medley/wiki/InterlispOrg-Inc) has been approved as a 501c3 with the IRS. The simplest way to donate is using the GitHub Sponsor button.
-* recent reviews [on twitter](https://twitter.com/ftrain/status/1470968024756895744) were complimentary of our efforts
 
 ## 11/2021
 
