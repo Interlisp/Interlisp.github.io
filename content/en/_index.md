@@ -6,6 +6,10 @@ type: docs
 
 <img alt="Interlisp logo -- 3/4 circle of overlapping windows with the word Medley in the center and below that the words Interlisp and Common Lisp" src="Resources/logo_red_no_border_568x385.png" width="284" height="193">
 
+## Video intraduction
+
+<iframe width="560" height="315" src="https://www.youtube.com/embed/N1MobfEaoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## What is Medley Interlisp?
 
 Interlisp is a software development environment, originating from Xerox PARC in the 1970s and 1980s. supporting software research in AI, computational linguistics, graphical user interfaces, hypertext, and other research areas. Software development in Interlisp-D is a different experience than is common, even today. The features of structure editing, source code management, code analysis and cross-referencing combined to support rapid incremental development. The 1992 ACM Software System Award was awarded to the Interlisp system for pioneering work in programming environments.
