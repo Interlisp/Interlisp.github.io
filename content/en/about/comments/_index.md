@@ -3,8 +3,8 @@
 title: What people are saying
 weight: 20
 type: docs
-description: Comments on Interlisp and the project
-----
+description: Comments on Interlisp and this project
+---
 
 ## on Reddit
 
