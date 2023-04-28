@@ -1,16 +1,23 @@
 
 ---
-title: What People Are Saying
+title: What people are saying
 weight: 20
 type: docs
-description: Comments about the Medley Interlisp project
+description: Comments on Interlisp and the project
 ---
 ## Via email 
 
-The Interlisp and LispCore groups on Google Groups have open discussions; some have added their stories here](medleyGoals).
+The Interlisp and LispCore groups on Google Groups have open discussions; some positions on the project are [here](medleyGoals).
 
+## Facebook
 
-## On Twitter
+* [Don Hopkins](https://www.facebook.com/groups/XeroxStarWorkstationAlums/permalink/10150886386425217/) 
+
+## Blogs
+
+* [My encounter with Medley Interlisp](https://journal.paoloamoroso.com/my-encounter-with-medley-interlisp) by Paolo Amoroso
+
+## Tweets
 {{< imgproc 8bitNews_20230127 Resize "550x743">}} <a href="https://twitter.com/8bitnews1/status/1618957059046645762">Link to tweet</a> {{< /imgproc >}}
 
 {{< imgproc Fogus_20220128 Resize "550x625">}} <a href="https://twitter.com/fogus/status/1487167719493488641?ref\_src=twsrc%5Etfw">Link to tweet</a> {{< /imgproc >}}

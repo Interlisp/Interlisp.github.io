@@ -1,5 +1,5 @@
 ---
-title: Individual Perspectives on the Medley Interlisp Project
+title: Perspectives on the project
 weight: 10
 type: docs
 ---
