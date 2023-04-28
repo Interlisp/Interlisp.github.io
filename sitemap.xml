@@ -59,10 +59,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/comments/medleygoals/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/running/online/</loc>
   </url>
   
@@ -72,6 +68,10 @@
   
   <url>
     <loc>https://interlisp.org/news/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/about/comments/medleygoals/</loc>
   </url>
   
   <url>
