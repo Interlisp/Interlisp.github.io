@@ -4,10 +4,22 @@ title: What people are saying
 weight: 20
 type: docs
 description: Comments on Interlisp and the project
----
+
+## on Reddit
+
+intergalacticlama wrote:
+
+I really enjoyed watching this. Thanks for the post, hopefully you guys will do more video demos.
+
+If you wouldn't mind, allow me to encourage the team to keep on creating and posting these videos. They are extremely enjoyable and very informative. You might want to consider a series of short videos that demonstrate the system in depth because it would act as mechanism for lowering the barrier to entry in a tremendous number of ways.
+
+In addition, they serve as inspiration to the design of the system and the vision and tenacity of the team.
+
+As well, I would like to forward my thanks for bringing back a project that would have been relegated to an archeological footnote. Preservation and hopefully even possible extension of some of these environments will inspire us to dream outside of the status quo.
+
 ## Via email 
 
-The Interlisp and LispCore groups on Google Groups have open discussions; some positions on the project are [here](medleyGoals).
+The Interlisp and LispCore Google Groups have open discussions; some positions on the project are [here](medleyGoals).
 
 ## Facebook
 
