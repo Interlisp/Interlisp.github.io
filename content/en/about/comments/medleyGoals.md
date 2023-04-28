@@ -1,13 +1,11 @@
 ---
-title: Medley Goals
+title: Individual Perspectives on the Medley Interlisp Project
 weight: 10
 type: docs
 ---
 
-This document attempts to capture what people have said about their interests in the project. We may all have different ends in mind, but we share many common goals. We were working on sharing before “open source” was a thing. See also the corresponding "guest-book.md" guest book and the "twitter.md" quotes.
 
 ### Blake McBride
-
 _Imagine finding an old car from the 1960s. It's been sitting in storage for decades, doesn't run, and looks like hell. You remember driving the car when you were young and how much fun you had with it. It had a number of features you enjoyed back then that don't exist anymore. You want to re-live the experience and be able to share it with future generations so that they can experience the same thing and learn from the lessons it taught._
 
 _You decide to fix the car up. Make it run well again. Make it look good again. It'll be close to what it once was - a thing of beauty of that time._
@@ -129,10 +127,6 @@ _I’m interested in getting some of the applications that were built on Interli
 1. _ROOMS_
 2. _NoteCards_
 3. _PCL/CLOS_
-
-### Abe Jellinek
-
-_Larry Masinter writes: Abe is a senior CS / History / Arabic triple-major at UC Berkeley, with whom I worked before, on an Open Data and PDF project. He’s been helping with getting Medley running in a Docker container as a possible “safe” deployment for Windows without WSL2 and Interlisp as a Service in the cloud._
 
 ### Bob Bane
 

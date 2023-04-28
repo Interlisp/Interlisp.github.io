@@ -52,16 +52,18 @@ The content to display on the page follows the preamble.  Content is written usi
 Once authored the updated page can be submitted as a pull request and upon approval will be integrated
 into the `main` branch and deployed to the website.
 
-#### Adding or Updating the Twitter page
+#### Adding or Updating the comments page
 
-The *Twitter* page uses images of Tweets of interest.  While `Hugo` has implemented a shortcode that will load the actual tweet, it
+We've moved from 'Twitter' to a more general 'What people are saying' with quotes from social media.
+
+For Twitter, the *comments* page uses images of Tweets of interest.  While `Hugo` has implemented a shortcode that will load the actual tweet, it
 fails when the tweet no longer exists.  We believe there is value in keeping a record of conversations about Medley Interlisp and
 to protect against losing portions of it, we have developed the practice of capturing an image of the tweet, using that on our page
 and linking to the actual tweet.  
 
 Tweets that are no longer accessible will have their links removed but the content will be preserved.  
 
-The structure for new entries on the *Twitter* page, the `_index.md` file in the `twitter` directory is
+The structure for new twitter entries on the *comments* page, the `_index.md` file in the `comments` directory is
 
 ```markdown
 {{< imgproc PaulFord_20211214 Resize "550x803">}} <a href="https://twitter.com/ftrain/status/1470968024756895744?ref_src=twsrc">Link to tweet</a> {{< /imgproc >}}
