@@ -4,6 +4,7 @@ title: What people are saying
 weight: 20
 type: docs
 description: Comments on Interlisp and the project
+----
 
 ## on Reddit
 
