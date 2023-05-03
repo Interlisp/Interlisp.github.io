@@ -71,10 +71,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/comments/medleygoals/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/about/getinvolved/</loc>
   </url>
   
@@ -116,6 +112,10 @@
   
   <url>
     <loc>https://interlisp.org/running/running-on-mac/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/about/comments/stories/</loc>
   </url>
   
   <url>
