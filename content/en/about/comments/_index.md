@@ -5,30 +5,14 @@ weight: 20
 type: docs
 description: Comments on Interlisp and this project
 ---
-
-## on Reddit
-
-intergalacticlama wrote:
-
-I really enjoyed watching this. Thanks for the post, hopefully you guys will do more video demos.
-
-If you wouldn't mind, allow me to encourage the team to keep on creating and posting these videos. They are extremely enjoyable and very informative. You might want to consider a series of short videos that demonstrate the system in depth because it would act as mechanism for lowering the barrier to entry in a tremendous number of ways.
-
-In addition, they serve as inspiration to the design of the system and the vision and tenacity of the team.
-
-As well, I would like to forward my thanks for bringing back a project that would have been relegated to an archeological footnote. Preservation and hopefully even possible extension of some of these environments will inspire us to dream outside of the status quo.
-
 ## Via email 
 
-The Interlisp and LispCore Google Groups have open discussions; some positions on the project are [here](medleyGoals).
-
-## Facebook
-
-* [Don Hopkins](https://www.facebook.com/groups/XeroxStarWorkstationAlums/permalink/10150886386425217/) 
+The Interlisp and LispCore Google Groups have open discussions; some positions on the project are [here](stories). 
 
 ## Blogs
 
 * [My encounter with Medley Interlisp](https://journal.paoloamoroso.com/my-encounter-with-medley-interlisp) by Paolo Amoroso
+_Imagine someone let you into an alien spaceship they landed in your backyard, sat you at the controls, and encouraged you to fly the ship. This is the opportunity Medley Interlisp offers...._
 
 ## Tweets
 {{< imgproc 8bitNews_20230127 Resize "550x743">}} <a href="https://twitter.com/8bitnews1/status/1618957059046645762">Link to tweet</a> {{< /imgproc >}}

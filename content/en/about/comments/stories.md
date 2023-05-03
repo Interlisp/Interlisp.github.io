@@ -1,9 +1,8 @@
 ---
-title: Perspectives on the project
-weight: 10
+title: Individual Stories
+weight: 40
 type: docs
 ---
-
 
 ### Blake McBride
 _Imagine finding an old car from the 1960s. It's been sitting in storage for decades, doesn't run, and looks like hell. You remember driving the car when you were young and how much fun you had with it. It had a number of features you enjoyed back then that don't exist anymore. You want to re-live the experience and be able to share it with future generations so that they can experience the same thing and learn from the lessons it taught._
