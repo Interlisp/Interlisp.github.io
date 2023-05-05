@@ -411,6 +411,49 @@
   ],
   "1968": [
     {
+      "id": "9296070/KZ7FU59I",
+      "type": "paper-conference",
+      "title": "A clipping divider",
+      "container-title": "Proceedings of the December 9-11, 1968, fall joint computer conference, part I on - AFIPS '68 (Fall, part I)",
+      "publisher": "ACM Press",
+      "publisher-place": "San Francisco, California",
+      "page": "765-775",
+      "volume": "I",
+      "event": "December 9-11, 1968, fall joint computer conference, part I",
+      "event-place": "San Francisco, California",
+      "abstract": "When compared with a drawing on paper, the pictures presented by today's computer display equipment are sadly lacking in resolution. Most modern display equipment uses 10 bit digital to analog converters, providing for display in a 1024 by 1024 square raster. The actual resolution available is usually somewhat less since adjacent spots or lines will overlap. Even large-screen displays have limited resolution, for although they give a bigger picture, they also draw wider lines so that the amount of material which can appear at one time is still limited. Users of larger paper drawings have become accustomed to having a great deal of material presented at once. The computer display scope alone cannot serve the many tasks which require relatively large drawings with fine details.",
+      "URL": "http://portal.acm.org/citation.cfm?doid=1476589.1476687",
+      "DOI": "10.1145/1476589.1476687",
+      "ISBN": "978-1-4503-7899-4",
+      "language": "en",
+      "author": [
+        {
+          "family": "Sproull",
+          "given": "Robert F."
+        },
+        {
+          "family": "Sutherland",
+          "given": "Ivan E."
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1968
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            29
+          ]
+        ]
+      }
+    },
+    {
       "id": "9296070/DNCVYGJC",
       "type": "article-journal",
       "title": "A note on the efficiency of a LISP computation in a paged machine",
@@ -1664,6 +1707,43 @@
             2021,
             6,
             3
+          ]
+        ]
+      }
+    },
+    {
+      "id": "9296070/KR9MIHRU",
+      "type": "report",
+      "title": "Raster Graphics for Interactive Programming Environments",
+      "publisher": "Xerox Palo Alto Research Center",
+      "publisher-place": "6th Annual Conference on Computer Graphics and Interacive Techniques",
+      "page": "36",
+      "genre": "N/A",
+      "event-place": "6th Annual Conference on Computer Graphics and Interacive Techniques",
+      "abstract": "Raster-scan display terminals can significantly imrpove the quality of interaction with conventional computer systems. the design of a graphics package to provide a \"window\" into the extensive programming environment of Interlisp is presented. Two aspects of the package are described: first, the functional view of display output and interactive input facilities as seen by the programmer, and second, the methods used to link the display terminal to the main computer via a packet-switched computer network. Recommendations are presented for designing operating systems and programming languages so as to simplifly attaching display terminals. An appendix contains detailed documentation of the graphics package.",
+      "URL": "http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-79-6_Raster_Graphics_for_Interactive_Programming_Environments.pdf",
+      "number": "N/A",
+      "language": "English",
+      "author": [
+        {
+          "family": "Sproull",
+          "given": "Robert F."
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1979",
+            6
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2022,
+            6,
+            14
           ]
         ]
       }
@@ -4672,6 +4752,10 @@
       "id": "9296070/F4U78E9V",
       "type": "article-journal",
       "title": "Investigations into history tools for user support",
+      "container-title": "University of Toronto",
+      "page": "187",
+      "abstract": "History tools allow users to access past interactions kept in a history and to\nincorporate them into the context of their current operations. Such tools appear in\nvarious forms in many of today’s computing systems, but despite their prevalence,they have received little attention as user support tools. This dissertation investigates, through a series of studies, history–based, user support tools. The studies focus on three primary factors influencing the utility of history–based, user support tools: design of history tools, support of a behavioural phenomenon in user interactions, and mental and physical effort associated with using history tools. Design of history tools strongly influences a user’s perception of their utility. In surveying a wide collection of history tools, we identify seven independent uses of the information with no single history tool supporting all seven uses. Based on\ncognitive and behavioural considerations associated with the seven history uses,\nwe propose several kinds of history information and history functions that need to be supported in new designs of history tools integrating all seven uses of history. An exploratory study of the UNIX environment reveals that user interactions\nexhibit a behavioural phenomenon, nominally referred to as locality. This is the phenomenon where users repeatedly reference a small group of commands during extended intervals of their session. We apply two concepts from computer memory research (i.e., working sets and locality) to examine this behavioural artifact and to propose a strategy for predicting repetitive opportunities and candidates. Our studies reveal that users exhibit locality in only 31% of their sessions whereas users repeat individual commands in 75% of their sessions. We also found that history tool use occurs primarily in locality periods. Thus, history tools which localize their prediction opportunities to locality periods can predict effectively the reuse candidates.\nFinally, the effort, mental and physical, associated with using a history tool\nto expedite repetitive commands can influence a user’s decision to use history\ntools. We analyze the human information–processing operations involved in the task of specifying a recurrent command for a given approach and design (assuming that the command is fully generated and resides in the user’s working memory and that users exhibit expert, error–free task performance behaviour). We find that in most of the proposed history designs, users expend less physical effort at the expense of more mental effort. The increased mental effort can be alleviated by providing history tools which require simpler mental operations (e.g., working memory retrievals and perceptual processing). Also, we find that the typing approach requires less mental effort at the expense of more physical effort. Finally, despite the overhead associated with switching to the use of history tools, users (with a typing speed of 55 wpm or less) do expend less overall effort to specify recurrent commands (which have been generated and appear in working\nmemory) using history tools compared to typing from scratch. The results of the three sets of studies provide insights into current history tools and point favourably towards the use of history tools for user support, especially history tools that support the reuse of previous commands, but additional research into history tool designs and usability factors is needed. Our studies demonstrate the importance of considering various psychological and behavioural factors and the importance of different grains of analysis.",
+      "language": "English",
       "author": [
         {
           "family": "Lee",
@@ -6027,6 +6111,7 @@
       "type": "post-weblog",
       "title": "Introducing Darkstar: A Xerox Star Emulator",
       "container-title": "Adafruit Industries - Makers, hackers, artists, designers and engineers!",
+      "genre": "Blog",
       "abstract": "Via libingcomputers.org: Josh Dersch writes about research into the Xerox 8010 Information System (codenamed “Dandelion” during development) and commonly referred to as the Star. The Star was envisioned as center point of the office of the future, combining high-resolution graphics with the now-familiar mouse, Ethernet networking for sharing and collaborating, and Xerox’s Laser Printer technology for faithful “WYSIWYG” document reproduction. A revolutionary system when most everyone else was using text based systems.",
       "URL": "https://blog.adafruit.com/2019/01/23/introducing-darkstar-a-xerox-star-emulator-vintagecomputing-xerox-emulation/",
       "shortTitle": "Introducing Darkstar",
@@ -6171,6 +6256,12 @@
       "URL": "https://computerhistory.org/blog/introducing-the-smalltalk-zoo-48-years-of-smalltalk-history-at-chm/",
       "note": "Section: Software History Center",
       "language": "en",
+      "author": [
+        {
+          "family": "Hansen",
+          "given": "Hsu"
+        }
+      ],
       "issued": {
         "date-parts": [
           [
@@ -6194,8 +6285,10 @@
       "id": "9296070/XK2RYFWN",
       "type": "book",
       "title": "livingcomputermuseum/Darkstar",
+      "version": "Darkstar 1.1",
       "abstract": "A Xerox Star 8010 Emulator. Contribute to livingcomputermuseum/Darkstar development by creating an account on GitHub.",
       "URL": "https://github.com/livingcomputermuseum/Darkstar",
+      "ISBN": "N/A",
       "note": "original-date: 2019-01-15T20:40:02Z",
       "author": [
         {
@@ -6392,11 +6485,6 @@
       "title": "1987-Themes-Variations-Stefik-Loops-.pdf"
     },
     {
-      "id": "9296070/Z3QZB88Q",
-      "type": "article",
-      "title": "1986-access-oriented.pdf"
-    },
-    {
       "id": "9296070/HI5WIUJQ",
       "type": "article",
       "title": "ED285570.pdf",
@@ -6427,36 +6515,6 @@
       }
     },
     {
-      "id": "9296070/KFW6YRLW",
-      "type": "article",
-      "title": "CSL-77-3_A_Display_Oriented_Programmers_Assistant.pdf",
-      "URL": "http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-77-3_A_Display_Oriented_Programmers_Assistant.pdf",
-      "accessed": {
-        "date-parts": [
-          [
-            2022,
-            6,
-            15
-          ]
-        ]
-      }
-    },
-    {
-      "id": "9296070/RNYPDS4F",
-      "type": "article",
-      "title": "CSL-79-6_Raster_Graphics_for_Interactive_Programming_Environments.pdf",
-      "URL": "http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-79-6_Raster_Graphics_for_Interactive_Programming_Environments.pdf",
-      "accessed": {
-        "date-parts": [
-          [
-            2022,
-            6,
-            15
-          ]
-        ]
-      }
-    },
-    {
       "id": "9296070/GSH9NUT6",
       "type": "article",
       "title": "ahc_20150101_jan_2015.pdf",
@@ -6470,6 +6528,11 @@
           ]
         ]
       }
+    },
+    {
+      "id": "9296070/3VK4IB8T",
+      "type": "article",
+      "title": "1986-access-oriented.pdf"
     },
     {
       "id": "9296070/RJPVRIGF",
@@ -6547,10 +6610,63 @@
       }
     },
     {
+      "id": "9296070/FFAKSC38",
+      "type": "report",
+      "title": "A Display Oriented Programmers Assistant",
+      "abstract": "This paper continues and extends previous work by the author in developing systems which provide the user with various forms of explicit and implicit assistance, and in general co-operate with the user in the development of his programs. The system described in this paper makes extensive use of a bit map display and pointing device (a mouse) to significantly enrich the user's interactions with the system, and to provide capabilities not possible with terminals that essentially emulate hard copy devices. For example, any text that is displayed on the screen can be pointed at and treated as input, exactly as though it were typed, i.e. the user can say use this expression or that value, and then simply point. The user views his programming environment through a collection of display windows, each of which corresponds to a different task or context. The user can manipulate the windows, or the contents of a particular window, by a combination of keyboard inputs or pointing operations. The technique of using different windows for different tasks makes it easy for the user to manage several simultaneous tasks and contexts, e.g. defining programs, testing programs, editing, asking the system for assistance, sending and receiving messages, etc. and to switch back and forth between these tasks at his convenience.",
+      "URL": "http://bitsavers.trailing-edge.com/pdf/xerox/parc/techReports/CSL-77-3_A_Display_Oriented_Programmers_Assistant.pdf",
+      "language": "English",
+      "author": [
+        {
+          "family": "Teitelman",
+          "given": "Warren"
+        }
+      ]
+    },
+    {
+      "id": "9296070/WFP2799R",
+      "type": "webpage",
+      "title": "Interlisp was the so-called \"west coast\" Lisp that emphasized an interactive pro... | Hacker News",
+      "URL": "https://news.ycombinator.com/item?id=5966399",
+      "accessed": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            29
+          ]
+        ]
+      }
+    },
+    {
+      "id": "9296070/E4CCUZ35",
+      "type": "webpage",
+      "title": "Industry Briefs",
+      "container-title": "The Scientist Magazine®",
+      "abstract": "Tables Turn For Xerox Spin-Off Although Envos Corp., an artificial intelligence spin-off of the Xerox Corp., folded back into Xerox last spring after nine months in operation, the parent company is “absolutely” committed to developing similar ventures in the future, according to Xerox spokesman Peter Hawes. “We have been trying to identify [Xerox] technologies,” says Hawes, “and choose which. ..might lend themselves to alternative exploitation.” Envos, which",
+      "URL": "https://www.the-scientist.com/briefs/industry-briefs-61883",
+      "language": "en",
+      "accessed": {
+        "date-parts": [
+          [
+            2023,
+            4,
+            29
+          ]
+        ]
+      }
+    },
+    {
       "id": "9296070/CER4PF8K",
       "type": "webpage",
       "title": "NOTES ON XEROX LISP MACH DEMO",
       "URL": "https://ml.cddddr.org/lisp@parc/msg00137.html",
+      "author": [
+        {
+          "family": "Rindfleisch",
+          "given": ""
+        }
+      ],
       "accessed": {
         "date-parts": [
           [
