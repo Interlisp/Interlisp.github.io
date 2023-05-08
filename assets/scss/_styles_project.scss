@@ -1,4 +1,19 @@
-  .navbar-brand {
+// Disable display of Create Child Page, Edit Page and Create Document Issue links
+// in right pane.
+
+//.td-page-meta--child { 
+//  display: none !important; 
+//  }
+
+.td-page-meta--edit { 
+  display: none !important; 
+}
+
+.td-page-meta--issue { 
+  display: none !important; 
+}
+
+.navbar-brand {
         text-transform: none;
         text-align: center;
 
@@ -13,11 +28,8 @@
             height: 40px;
 						width: 100px;
         }
-    };
+  };
 
-    // Disable display of Create Child Page, Edit Page and Create Document Issue links
-    // in right pane.
-  .td-page-meta--child { display: none !important; }
-  .td-page-meta--edit { display: none !important; }
- //  .td-page-meta--issue { display: none !important; }
+
+
   
