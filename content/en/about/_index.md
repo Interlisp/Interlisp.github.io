@@ -3,7 +3,10 @@ title: About
 weight: 1
 type: docs
 ---
-## More background
+## About Medley
+What are the main features that make it interesting to revive?
+How might we apply the lessons from Interlisp to current systems?
+
 
 Interlisp-D was launched as a product from Xerox in 1980. It was a base from which AI applications were built, as well as a research project in its own right.
 
