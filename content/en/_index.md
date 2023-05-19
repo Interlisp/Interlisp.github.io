@@ -9,25 +9,25 @@ type: docs
 
 Interlisp was a pioneering software development environment from the 1970s at Xerox PARC targeted primarily at the AI software development community. A group of its developers and users have gotten together to revive Interlisp -- as a language, environment, spirit -- in the Medley Interlisp Project.
 
-# [Project Overview](project)
+# [What is the Medley Interlisp Project?](project)
 What we are doing and why.
 
-# [About the software](about)
+# [What does Interlisp have to do with current systems?](about)
 What are the main features that make it interesting to revive?
 How might we apply the lessons from Interlisp to current systems?
 
-# [Using Medley today](using)
+# [How do I try using Interlisp?](using)
 How you can try it out and what barriers you'll encounter.
 Pointers to documentation, running online, installing, reporting bugs.
 	
-# [About the Project](project)
+# [What are your goals? How do I participate?](project)
 What we're doing, how we work, what our goals are, how you can participate, how you can contribute. Pointers to github. Open Source.
 
-# [Applications](apps)
+# [How do I use existing applications built in Interlisp?](apps)
 Other applications built in Interlisp that we're now able to revive as well.
 
-# [Donate](donate)
+# [How do I donate to the project?](donate)
 How and why to donate money... think of us as a virtual museum exhibit.
 
-# [History](history)
+# [What materials do you have to help with research?](history)
 The History of Interlisp, available material for research, an extensive bibliography.

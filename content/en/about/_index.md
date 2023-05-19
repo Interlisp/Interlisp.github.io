@@ -12,7 +12,7 @@ Interlisp-D was launched as a product from Xerox in 1980. It was a base from whi
 
 Interlisp evolved the notions of structure editing from an interactive "teletype" structure editor, a Display editor (DEdit) to [SEDIT](https://www.youtube.com/watch?v=2qsmF8HHskg). Masterscope and the file manager included system-management tools that combined features of version control and build systems, with comprehensive cross referencing support.
 
-The 1970s and 80s saw major advances in computing and Human-Computer interaction.  Interlisp was one of the many experimental systems developed during these heady times.  It represents and early example of a system with a GUI (Graphical User Interface), and IDE (Integrated Development Environment) and within the Xerox PARC environment, it was an early example of a network enabled machine supporting email, file sharing, printing and more.  In essence it was a forerunner of today's computing systems.
+The 1970s and 80s saw major advances in computing and Human-Computer interaction.  Interlisp was one of the many experimental systems developed during these heady times.  It represents an early example of a system with a GUI (Graphical User Interface), and IDE (Integrated Development Environment) and within the Xerox PARC environment, it was an early example of a network enabled machine supporting email, file sharing, printing and more.  In essence it was a forerunner of today's computing systems.
 
 ## Medley
 

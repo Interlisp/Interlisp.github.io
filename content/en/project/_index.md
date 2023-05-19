@@ -1,5 +1,11 @@
 
-## Project overview
+# What is the Medley Interlisp Project?
+
+The Medley Interlisp Project was created to revive Medley Interlisp. 
+
+# [What does Interlisp have to do with current systems?](about)
+What are the main features that make it interesting to revive?
+How might we apply the lessons from Interlisp to current systems?
 
 
 ## What are we trying to accomplish?
@@ -12,6 +18,11 @@ We also want to restore and present earlier versions of Interlisp, for the stude
 ## What have we done so far?
 
 There has been a lot of cleanup and adaptation to make it usable again in the modern world. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or at https://online.interlisp.org in the cloud, using a web browser. See our [2021 Annual Report](news/2021medleyannualreport), [Project News](/news/), and [recent release notes](https://github.com/Interlisp/medley/releases) . We've also been working on integration of the Interlisp style development with git and GitHub, Docker and other modern components.
+
+# [How do I try using Interlisp?](using)
+How you can try it out and what barriers you'll encounter.
+Pointers to documentation, running online, installing, reporting bugs.
+
 
 ## Who is involved?
 

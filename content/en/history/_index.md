@@ -4,7 +4,10 @@ url: /doc/info/history.html
 weight: 2F
 ---
 
-**NOTE**: Recent efforts have focused on developing a Zotero annotated bibliography; the idea is to focus the timeline on material and source code published at the time. Any narrative around that would then constitute secondary sources. That will allow future researchers to construct their own narratives.
+# [What is the Medley Interlisp Project?](project)
+What we are doing and why.
+
+# [Bibliography](Publications)
 
 # Interlisp Timeline
 
