@@ -4,20 +4,33 @@ weight: 8
 type: docs
 ---
 
-### A Brief Introduction
+Running Interlisp online is good for experimenting and introducing yourself to the environment. However, anything you create in the online environment should be treated as transient. If you're interested in developing and experimenting with Lisp programs, you will want to investigate other options. But, for a first foray, this is a good starting place. 
 
-### Running Interlisp Online
+### Things to note when running online
 
-* Go to [Interlisp Online](https://online.interlisp.org/main)\
+* Browser compatibility
+* Watch out for control-character conflicts (control-W always gets me)
+* Security is not guaranteed
+* You need a solid net connection to our AWS server (currently in Ohio)
+* Back to time-sharing: Maximum load ~24 simultaneous sessions
+
+# Accessing Interlisp Online
+
+1. Go to [Interlisp Online](https://online.interlisp.org/main)\
 {{< imgproc Login_Screen Resize "400x450">}} Interlisp Online Login {{< /imgproc >}}
-  You may either login as a Guest or create an account. If you plan to save and later retrieve files, [register](https://online.interlisp.org/user/register) and create an account. Guest logins are not guaranteed to preserve sessions and stored files.
+2. Login to Medley Interlisp Online:
+   * You can login as a guest by clicking <img src="Graphics/Guest Login button.png" alt="Guest Login button"> on the login screen. However, guest sessions are not saved.
+   or
+   * We suggest you create your own account by clicking <img src="Graphics/New User Register here button.png" alt="New User Register here button"> on the login screen. Having an account enables you to save your sessions. To create an account, you just need an email address and password. Click Register here on the login screen to create your own account.
+   or
+   * If you are already registered (created an account), log in and start a Medley Interlisp session. Sessions are preserved for users that login with their own account. However, user account sessions may be deleted after 30 days of inactivity. 
 
-However, if you just want to get a taste of Interlisp without the extra effort of creating an account, the guest login will suit your needs.
+3. Select the Exec you want to run. For this exercise, select `Interlisp`
 
-* Select the Exec you want to run. For this exercise, select `Interlisp`
-* Leave the `Fill browser window` option set.
+4. Leave the `Fill browser window` option set.
 
-Select `Run Medley`. Your browser will open a window that represents the Interlisp Desktop and looks much like this:
+5. Select `Run Medley`. 
+Your browser will open a window that represents the Interlisp Desktop and looks much like this:
 
 {{< imgproc Online_Initial_Medley Resize "800x450">}} Medley Interlisp{{< /imgproc >}}
 
@@ -28,7 +41,7 @@ The Interlisp Desktop at startup contains 4 windows of interest:
 * Medley logo window: A window containing the Interlisp Medley logo as a bit map.
 * Status Bar window
 
-### Writing Interlisp programs
+### Writing a sample Interlisp programs
 
 In the Exec window, type the following:
 
@@ -40,8 +53,13 @@ When you complete typing the ending `)` the Interlisp interpreter will perform t
 
 One thing you probably noticed, the command `PLUS` is capitalized. It’s not that the developers of Interlisp were always shouting at each other. Rather, when Interlisp was developed computer programming was in its infancy and standards for naming commands were still evolving.
 
-### Managing memory images and sessions
+<a href="online/usingOnline">
+  <img src="Graphics/Guide to help you begin programming in Interlisp.jpg"
+  alt="Guide to help you begin programming in Interlisp" > </a>
+<p></p>
 
+### Managing memory images and sessions
+ (What is a memory image? How is it different from an image or memory?)
 In Interlisp, there are two types of files relevant to managing memory images and updating them across sessions: `lisp.virtualmem` and `.sysout`.
 
 The `lisp.virtualmem` file is a capture of the "current" state of the system (i.e., it is a copy of the virtual memory at a point in time). `lisp.virtualmem` is written whenever you execute `(IL:LOGOUT)` and also whenever executing `(IL:SAVEVM)`. You can restart Medley using a `lisp.virtualmem` and it will pick up essentially where it left off before the `LOGOUT` or `SAVEVM` (with the exception that the user can set `BEFORE`/`AFTER` and `LOGOUT`/`SAVEVM` code that runs before you get control of the restarted `lisp.virtualmem`).
@@ -56,8 +74,7 @@ For guest logins, there is no `Resume previous session` because `lisp.virtualmem
 
 For registered users, any files that you create (e.g., with `IL:MAKEFILE`) will also be preserved across sessions online. But these files will never be automatically loaded into the system when you re-start with a clean image — you need to `LOAD` them explicitly (or add a `LOAD` to your personal `INIT` file stored online at `{DSK}/home/medley/il/INIT`).
 
-### Save your program as a file
 
-### Opening a saved program
 
-### What next?
+
+

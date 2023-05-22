@@ -20,9 +20,11 @@ These instructions are for Windows 10 or 11 (x86_64) only.
 
      This will install Medley on your system, by default in the `%USERPROFILE%/AppData/Local/Medley/Scripts` folder.  This folder will be added to your %PATH%.  An uninstall will also be added so that you can remove Medley via the standard Add/Remove Programs control panel.
 
-    Note that to download `medley-install_<version>.exe`, you may have to bypass any security concerns your browser has about downloading an .exe file.  In addition, you will have to bypass the Windows Defender protection against executing an unsigned .exe.  To do so, click `More info` followed by `Run Anyway` when the Windows Defender window pops up.
+    Notes: 
+    * To download `medley-install_<version>.exe`, you may have to bypass any security concerns your browser has about downloading an .exe file.
+    * You will have to bypass the Windows Defender protection against executing an unsigned .exe.  To do so, click `More info` followed by `Run Anyway` when the Windows Defender window pops up.
 
-3.  *Run Medley:*&nbsp;&nbsp;Once it is installed, you can run Medley by typing `medley <flags and options>` into either a Command or a Powershell window.
+3.  *Run Medley:*&nbsp;&nbsp;Run Medley by typing `medley <flags and options>` into either a Command or a Powershell window.
 
     Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
 
@@ -35,5 +37,5 @@ These instructions are for Windows 10 or 11 (x86_64) only.
 
 *  The first time it runs, `medley` will automatically pull the latest Interlisp/medley docker image from Docker Hub.  It will use this docker image for all subsequent runs unless the '--update' flag is raised.  When --update is raised, `medley` will once again pull the latest Interlisp/medley docker image.
 
-*  When running with Docker, the Medley file system is for the most part "within" the Docker container.  This means that it is deleted whenever Medley stops and is recreated whenever Medley restarts.  The exception is the directory `/home/medley/il` (in the Medley file system) which is automatically mapped by `medley` to a directory in the host Windows file system, by default to `%USERPROFILE%/AppData/Local/Medley/il` folder.  You can change this mapping to a different windows folder using the `--logindir` option to `medley`.
+*  When running with Docker, the Medley file system is "within" the Docker container.  This means it is deleted whenever Medley stops and is recreated whenever Medley restarts.  The exception is the directory `/home/medley/il` (in the Medley file system) which is automatically mapped by `medley` to a directory in the host Windows file system, by default to `%USERPROFILE%/AppData/Local/Medley/il` folder.  You can change this mapping to a different windows folder using the `--logindir` option to `medley`.
 

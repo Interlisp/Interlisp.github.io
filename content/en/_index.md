@@ -9,25 +9,44 @@ type: docs
 
 Interlisp was a pioneering software development environment from the 1970s at Xerox PARC targeted primarily at the AI software development community. A group of its developers and users have gotten together to revive Interlisp -- as a language, environment, spirit -- in the Medley Interlisp Project.
 
-# [What is the Medley Interlisp Project?](project)
-What we are doing and why.
+Because Interlisp has been around a long time, with multiple iterations, you might find the multitude of names for the Interlisp language and related companies confusing. To assist, we have created a <a href=project/vocabulary> list of common vocabulary you will find on this website.</a>
 
-# [What does Interlisp have to do with current systems?](about)
-What are the main features that make it interesting to revive?
-How might we apply the lessons from Interlisp to current systems?
+<a href=project>
+  <img src="Graphics/Why is Medley Interlisp worth all this effort.jpg"
+  alt="Why is Medley Interlisp worth all this effort?" > </a>
+<p></p>
 
-# [How do I try using Interlisp?](using)
+<a href=using\running>
+  <img src="Graphics/How do I access and use Medley Interlisp.jpg"
+  alt="How do I access and use Medley Interlisp?" > </a>
+<p></p>
 How you can try it out and what barriers you'll encounter.
 Pointers to documentation, running online, installing, reporting bugs.
 	
-# [What are your goals? How do I participate?](project)
+# [How do I get involved?](Other/getInvolved/)
+<a href=Other/getInvolved>
+  <img src="Graphics/How do I get involved.jpg"
+  alt="How do I get involved?" > </a>
+<p></p>
 What we're doing, how we work, what our goals are, how you can participate, how you can contribute. Pointers to github. Open Source.
 
-# [How do I use existing applications built in Interlisp?](apps)
+# [What applications were built in Interlisp?](apps)
 Other applications built in Interlisp that we're now able to revive as well.
+<a href=apps>
+  <img src="Graphics/What applications were built in Interlisp.jpg"
+  alt="What applications were built in Interlisp?" > </a>
+<p></p>
 
-# [How do I donate to the project?](donate)
+# [How do I donate to the project? What will my donation help you accomplish?](donate)
 How and why to donate money... think of us as a virtual museum exhibit.
+<a href=donate>
+  <img src="Graphics/How do I donate to the project- What will my donation help you accomplish.jpg"
+  alt="How do I donate to the project? What will my donation help you accomplish?" > </a>
+<p></p>
 
-# [What materials do you have to help with research?](history)
+# [What materials do you have about the history of software including Interlisp?](history)
 The History of Interlisp, available material for research, an extensive bibliography.
+<a href=history>
+  <img src="Graphics/What materials do you have about the history of software including Interlisp.jpg"
+  alt="What materials do you have about the history of software including Interlisp?" > </a>
+<p></p>

@@ -3,6 +3,7 @@ title: Running on Windows 10/11
 weight: 40
 type: docs
 ---
+How is this different from the topic running on Docker Desktop?
 
 Medley does not yet run as a native Windows application.  Besides [online](online), and [running with Docker Desktop](running-with-docker), you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
 
