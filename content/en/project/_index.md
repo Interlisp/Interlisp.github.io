@@ -1,4 +1,8 @@
-
+---
+title: Project
+weight: 2
+type: dpcs
+---
 # What is the Medley Interlisp Project?
 
 The Medley Interlisp Project was created to revive Medley Interlisp. 
