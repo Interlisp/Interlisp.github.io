@@ -2,6 +2,7 @@
 title: Documentation
 url: /documentation/
 weight: 60
+type: docs
 no_list: true
 ---
 

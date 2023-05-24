@@ -5,6 +5,7 @@ type: docs
 <img alt="Interlisp logo -- 3/4 circle of overlapping windows with the word Medley in the center and below that the words Interlisp and Common Lisp" src="Resources/logo_red_no_border_568x385.png" width="284" height="193">
 
 ## Welcome to Interlisp.org
+
 ### Explore the Medley Interlisp Project
 
 Interlisp was a pioneering software development environment from the 1970s at Xerox PARC targeted primarily at the AI software development community. A group of its developers and users have gotten together to revive Interlisp -- as a language, environment, spirit -- in the Medley Interlisp Project.
