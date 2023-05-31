@@ -3,6 +3,8 @@ title: In Memoriam
 weight: 10
 type: docs
 ---
+The following individuals were a part of the Interlisp Medley project during their lives. We appreciate them and the contributions they made to Interlisp.
+
 
 #### [Warren Teitelman](https://en.wikipedia.org/wiki/Warren_Teitelman)
 
