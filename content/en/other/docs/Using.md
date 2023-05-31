@@ -4,7 +4,7 @@ url: /doc/info/Using.html
 weight: 2
 ---
 
-Some very basics -- enough to get you to find the Medley User's Guide of ~30 years ago.
+A few basics -- enough to get you started from the Medley User's Guide of ~30 years ago.
 
 # Interlisp
 
