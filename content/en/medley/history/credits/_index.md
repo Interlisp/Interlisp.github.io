@@ -5,10 +5,8 @@ type: docs
 ---
          
          
-Interlisp has benefited by the contributions of many people over the years.
 
-
-The Medley Interlisp Project has benefited from the contribution of many people, including:
+The Medley Interlisp Project has benefited from the contributions of many people, including:
 
 * Larry Masinter
 * Rob Kaplan
@@ -31,3 +29,5 @@ with recent additions from
 * D Van Buer
 * Eric Kaltman
 * Morgan McMurray
+
+For information about past contributors who are no longer with us, go to <a href ="in-memoriam" alt="In Memoriam"> In Memoriam </a>.
