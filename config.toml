@@ -1,5 +1,7 @@
-baseURL = "https://interlisp.org"
-title = "Medley Interlisp Project"
+# Set to local adddress
+baseURL = "https://stumbo.github.io"
+
+title = "Test of Medley Interlisp Project"
 
 #relativeURLs = true
 
@@ -247,6 +249,7 @@ params.ui.navbar_translucent_over_cover_disable = true
 #  url = "https://stackoverflow.com/questions/tagged/graphviz"
 #  icon = "fab fa-stack-overflow"
 #  desc = "Practical questions and curated answers"
+#
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
   name = "GitHub"
