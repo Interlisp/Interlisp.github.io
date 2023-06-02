@@ -1,7 +1,8 @@
 ---
 title: History
 url: /doc/info/history.html
-weight: 2F
+weight: 500
+type: docs
 ---
 
 # [What is the Medley Interlisp Project?](project)

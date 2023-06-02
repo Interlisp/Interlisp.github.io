@@ -1,6 +1,6 @@
 ---
 title: About
-weight: 1
+weight: 1000
 type: docs
 ---
 # InterlispOrg Inc.

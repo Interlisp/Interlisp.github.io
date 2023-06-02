@@ -1,7 +1,7 @@
 ---
 title: Project
 weight: 2
-type: dpcs
+type: docs
 ---
 # What is the Medley Interlisp Project?
 

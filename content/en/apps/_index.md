@@ -1,3 +1,0 @@
-Other applications in Interlisp now available to try
-* Notecards
-...
