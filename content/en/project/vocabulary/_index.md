@@ -65,7 +65,7 @@ Medley 1.0, Medley 2.01, Medley 3.5 numbered releases of Interlisp-D
 Maiko
 : An implementation of the functions of the microcode D-machine, but written in C for the
       Sun Microsystems (RISC-like) SPARC processor workstation, initially developed by
-       Fuji Xerox
+       Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.
 
 Common Lisp
 : The subject of a 10-year standards process to converge multiple dialects of the
