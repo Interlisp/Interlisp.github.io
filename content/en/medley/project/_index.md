@@ -3,15 +3,15 @@ title: Project
 weight: 2
 type: docs
 ---
-# What is the Medley Interlisp Project?
+## What is the Medley Interlisp Project?
 
-The Medley Interlisp Project was created to revive Medley Interlisp. 
+The Medley Interlisp Project was created to revive Medley Interlisp.
 
-Because Interlisp has been around a long time, with multiple iterations, you might find the multitude of names for the Interlisp language and related companies confusing. To assist, we have created a <a href=project/vocabulary> list of common vocabulary you will find on this website.</a>
+Because Interlisp has been around a long time, with multiple iterations, you might find the multitude of names for the Interlisp language and related companies confusing. To assist, we have created a list of [common vocabulary](vocabulary) you will find on this website.
 
 ## What are the origins of Interlisp? Why do we care?
 
-The 1970s and 80s saw major advances in computing and Human-Computer interaction.  Interlisp was one of the many experimental systems developed during these heady times.  It represents an early example of a system with a GUI (Graphical User Interface), and IDE (Integrated Development Environment). 
+The 1970s and 80s saw major advances in computing and Human-Computer interaction.  Interlisp was one of the many experimental systems developed during these heady times.  It represents an early example of a system with a GUI (Graphical User Interface), and IDE (Integrated Development Environment).
 
 Within the Xerox PARC environment, it was an early example of a network enabled machine supporting email, file sharing, printing and more.  In essence it was a forerunner of today's computing systems.
 
@@ -33,24 +33,25 @@ We also want to restore and present earlier versions of Interlisp, for the stude
 
 ## What have we done so far?
 
-We have done a lot of cleanup and adaptation to make Interlisp Medley usable again in the modern world. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or in the cloud, using a web browser. 
+We have done a lot of cleanup and adaptation to make Interlisp Medley usable again in the modern world. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or in the cloud, using a web browser.
 
 We've also been working on integration of the Interlisp style development with git and GitHub, Docker and other modern components.
 
-<a href=using>
-  <img src="Graphics/How do I access and use Medley Interlisp.jpg"
-  alt="How do I access and use Medley Interlisp?" > </a>
-<p></p>
-
+<div class="mx-auto">
+ <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "medley/using" >}}">
+  How do I access and use Medley?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
+ </a>
+</div>
 
 ## Who is involved?
 
-We are some of the original developers and users of the system 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](about/partners). And with you! 
+We are some of the original developers and users of the system 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](../other/partners). And with you!
 
-<a href=Other/getInvolved>
-  <img src="Graphics/How do I get involved.jpg"
-  alt="How do I get involved?" > </a>
-<p></p>
+<div class="mx-auto">
+ <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "medley/other/getInvolved" >}}">
+  How do I get involved?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
+ </a>
+</div>
 
 ## Check out this presentation for more information
 
