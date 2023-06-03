@@ -9,7 +9,7 @@ To control a window, right-click on the window's title bar. To bring up a system
 
 Windows titled "Exec" work as read-eval-print loops with the addition of extensive "commands". There are four different
 contexts, determined by the default "package" and "readtable". The "package" of a window determines which (Common Lisp)
-package is the default while the "readtable" controls whether typing is treated as case sensitive or not. 
+package is the default while the "readtable" controls whether typing is treated as case sensitive or not.
 
 The title bar will also tell you whether you are running LISP (for Common Lisp), XCL (for Xerox Common Lisp), INTERLISP (for current Interlisp), or
 OLD-INTERLISP-T (for an older version of Interlisp).
@@ -21,6 +21,7 @@ When the system first comes up you will notice a window labeled "Exec (XCL)". Th
 ## Different Lisp Environments
 
 The system comes with four versions of "Exec":
+
 * `Interlisp`:  Package: *Interlisp*, Readtable: a hybrid, case sensitive environment. Most Interlisp functions are all caps, so use of the SHIFT LOCK is recommended.
 * `Old Interlisp`: The same *Interlisp* package, but an older readtable (where ":" isn't a package delimiter)
 * `Common Lisp`: Package: *USER* (need to check)
@@ -74,10 +75,13 @@ can be changed by executing one of the following commands:
 ```
 cd MyProject
 ```
+
 or
+
 ```
 (CNDIR "MyProject")
 ```
+
 You will see the connected directory displayed at the top of the Medley
 window.  Once the connected directory has been changed, all future
 image saves or file loads or saves will occur in this directory.  Additionally,
@@ -97,6 +101,7 @@ typing the following from an Interlisp prompt:
 ```
 (SYSOUT "my-file")
 ```
+
 This will save your running image to a file named `my-file.SYSOUT` that can be loaded again by passing that file name to the
 `run-medley` command.
 
@@ -108,6 +113,7 @@ as follows:
 ```
 ED(myfunc)
 ```
+
 First, if it is a new object, the system will ask what type of object
 it is.  After that, the user will be presented with a GUI structure editor
 where the object may be defined or edited.

@@ -1,12 +1,13 @@
 ---
 title: The Basics of Interlisp
 url: /doc/info/Using.html
+type: docs
 weight: 2
 ---
 
 A few basics -- enough to get you started from the Medley User's Guide of ~30 years ago.
 
-# Interlisp
+## Interlisp
 
 Interlisp is a dialect of Lisp and as such, it is based on the familiar
 syntax of left-parenthesis, function name, arguments, and
@@ -18,7 +19,7 @@ and Common Lisp, it will attempt to detail the more fundamental
 differences between the two.  The reference manual may be used for a
 detailed description of the Interlisp functions.
 
-## Upper- and Lower Case
+### Upper- and Lower Case
 
 Interlisp uses mixed case.  That is, upper-case letters and lower-case
 letters are treated as different.  This means you can have a variable
@@ -35,7 +36,7 @@ typing errors this system will auto-convert something you type in
 lowercase into uppercase.  Thus it may appear that the case doesn't
 matter - but it does.
 
-## Variables
+### Variables
 
 Except for Special Variables, variables in Common Lisp are lexically
 scoped.  This means that local variables are only visible within the
@@ -57,7 +58,7 @@ as in Common Lisp.
 Common Lisp also supports dynamic variables as well.  They are called
 the Special Variables.
 
-## LISP-2
+### LISP-2
 
 Like Common Lisp but unlike Scheme, Interlisp is a LISP-2 language.
 This means, in part, that the namespace for variables is separate from
@@ -65,7 +66,7 @@ the namespace for functions.  For example, in Interlisp and
 Common Lisp, you can simultaneously have a variable named `ABC`
 and a function named `ABC` that are unrelated.
 
-## LAMBDA & NLAMBDA & CL:LAMBDA
+### LAMBDA & NLAMBDA & CL:LAMBDA
 
 Interlisp shares the notion of `LAMBDA` expressions with Common Lisp,
 as a way of defining functions. Interlisp `LAMBDA` specifies a list
@@ -81,7 +82,7 @@ Common Lisp.  However, Interlisp treats all arguments as
 optional (if not provided they default to NIL) and ignores extra arguments
 (no warning or error is raised).
 
-## Macros
+### Macros
 
 Interlisp supports macros but unlike Common Lisp, Interlisp symbols
 may simultaneously have a function definition and a macro definition.
@@ -97,7 +98,7 @@ Unlike Common Lisp, Interlisp does not have a special function for
 defining macros.  Macros are defined by placing their definition on
 the property list of the symbol.
 
-# Medley Common Lisp
+## Medley Common Lisp
 
 The term "Common Lisp" covers a range of development stages, first
 defined by the book "Common Lisp, the Language" editions 1 (aka CLtL1)
@@ -110,14 +111,13 @@ In Medley Common Lisp and Interlisp are fully
 integrated.  From within Common Lisp, Interlisp functions may be
 accessed through the Common Lisp package nicknamed ``IL''.
 
-# Continuing On
+## Continuing On
 
 This introduction was designed to provide the most general of
 information -- just enough to get you started.  Medley comes
 with extensive documentation. 
 
 In searchable PDF and (imperfect) HTML:
-
 
 * (1991) [Sun User Guide](/documentation/SunUserGuide.pdf)
 * (1992) [Medley for the Novice](/documentation/Medley-Primer.pdf)
