@@ -3,15 +3,16 @@ title: Get Involved
 weight: 11
 type: docs
 ---
+
 You have several ways to get involved in the Medley Interlisp Project:
+
 * Look at, comment on, and contribute to our project in Github.
-* Participate in weekly meetings. 
+* Participate in weekly meetings.
 * Read meeting agendas and notes.
 * Join in the discussions through a variety of interfaces.
 * [Send us a tax-deductible donation.](donate)
 
 Refer to the sections below for details.
-
 
 ## Contribute to our project in GitHub
 
@@ -20,6 +21,7 @@ Join the [GitHub Interlisp organization](https://github.com/orgs/Interlisp/peopl
 Take a look at our lists of bugs, feature requests, and questions posted as [GitHub issues in the Medley repository](https://github.com/Interlisp/medley/issues). Do check to see if your issue or question is answered there.
 
 The [Interlisp](https://github.com/Interlisp) organization on GitHub contains repositories for
+
 * [Medley](https://github.com/Interlisp/medley): Lisp code, build scripts and GitHub automation
 * [maiko](https://github.com/Interlisp/maiko): The C-coded virtual machine
 * documentation (including [this web site](https://github.com/Interlisp/Interlisp.github.io))
@@ -28,18 +30,19 @@ The [Interlisp](https://github.com/Interlisp) organization on GitHub contains re
 
 ## Join our weekly meetings
 
-We have weekly meetings on Zoom:
-_Monday, 1:30 pm ET / 10:30 am PT_
- Meetings are to report accomplishments, status, plans, and problems, and discuss directions. Meetings are recorded, but recordings are not public. 
+We have weekly meetings on Zoom:  
+_Monday, 1:30 pm ET / 10:30 am PT_  
+ Meetings are to report accomplishments, status, plans, and problems, and discuss directions. Meetings are recorded, but recordings are not public.  
 
 If you would like to join our weekly meetins, [let us know](mailto:info@interlisp.org).
 
 ### Read meeting agendas and notes
 
 Click the folllowingn links to access meeting agendas and notes:
-* [Recent meeting agendas and notes](https://docs.google.com/document/d/1NxCzo6xr7W7VmyeXNeAjeEMx98n-yn27YsHvDFjfQvQ/). 
- * [2022 meeting agendas](2022meetings) 
- * [2021 meeting agendas](2021meetings).
+
+* [Recent meeting agendas and notes](https://docs.google.com/document/d/15Oc1k_nKjBG8p25RtsRdsjF7Xv25S258LiG35Vm3jAE/edit?usp=sharing).
+* [2022 meeting agendas](2022meetings)
+* [2021 meeting agendas](2021meetings).
 
 Note:  Meeting recordings are currently made using Zoom "record to the cloud" and then downloaded to google drive; but saving to a youtube private channel is a possibility.
 

@@ -1,15 +1,16 @@
-# 2022 Meeting Agendas and Notes
+---
+title: 2022 Meeting Agendas and Notes
+type: docs
+---
 
-
-
-Every Monday 10:00am PT Zoom ID: 408 332 4290
+~~Every Monday 10:00 am PT Zoom ID: 408 332 4290~~
 
 [Meeting recordings](https://drive.google.com/drive/folders/1tn7gSwCukJbdUYQfpL7NSQrdM67dwJt8?usp=sharing) contact @masinter for access.
 
 #### Agenda 2 May 2022
 
 * Round-table (let's try starting with this)
-* [Open Source for Historical and Cultural communities](https://www.lyrasis.org/programs/Documents/ITAV\_Interactive\_Guidebook.pdf) -- walkthrough this and other [Educopia community resources](../../Educopia-Community-Resources/)
+* [Open Source for Historical and Cultural communities](https://www.lyrasis.org/programs/Documents/ITAV\_Interactive\_Guidebook.pdf) -- walkthrough this and other [Educopia community resources](/medley/other/partners/educopia)
 
 #### Agenda 11 April 2022
 

@@ -5,7 +5,9 @@ type: docs
 ---
 
 ### [Software Preservation Network](https://www.softwarepreservationnetwork.org/about/)
+
 We joined SPN in 2021.
+
 * Membership of (mainly academic and  non-profit) organizations
 * We might partner with one or more of their members
 * Membership is $4k/year
@@ -14,8 +16,8 @@ We joined SPN in 2021.
 ### Universities: CSUCI
 
 California State University Channel Islands
-* Professor Eric Kaltman 
 
+* Professor Eric Kaltman
 
 ### [LFG (Lexical Functional Grammar) group](https://ling.sprachwiss.uni-konstanz.de/pages/home/lfg/ilfga/constitution.html)
 

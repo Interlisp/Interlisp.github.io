@@ -38,7 +38,7 @@ Because of the cleanup work, the code is much more portable than ever before. Sy
 * Operating systems: macOS, Linux, FreeBSD, Solaris 11.4
 * CPU architectures: i386, x86\_64, arm7, aarch64, SPARC-32 and -64
 
-This covers Raspberry Pi (linux.arm7) and Windows 10 (with [WSL2 ](https://docs.microsoft.com/en-us/windows/wsl/install)or Docker). and Windows 11 (includes WSL2). Performance is outstanding. A $40 Raspberry Pi completes Lisp tasks 250-1000 times faster than the Dorado (the $90k high-end Xerox 1132 Lisp machine).
+This covers Raspberry Pi (linux.arm7) and Windows 10 (with [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install) or Docker). and Windows 11 (includes WSL2). Performance is outstanding. A $40 Raspberry Pi completes Lisp tasks 250-1000 times faster than the Dorado (the $90k high-end Xerox 1132 Lisp machine).
 
 #### Medley
 
@@ -47,7 +47,7 @@ The rest of the system is implemented in Lisp: Interlisp and Common Lisp interpr
 * **Organization:** We have been cleaning out and organizing, comparing dates on files, and deciding which to keep; building maintenance scripts and Lisp utilities.
 * **EOL and character conversion:** the code for handling end-of-line and character codes was generalized, on the way to full Unicode support. (See Medley Issue [#2](https://github.com/Interlisp/medley/issues/2))
 * **Git integration:** Interlisp’s file manager was designed for versioned files with version numbers. GitHub has a different graph model of history. We built “restore-versions” to restore numbered versions from git logs, but the problems are deeper. If the Interlisp style of programming is going to be supported, we have to solve these problems. (see Medley issues [#265](https://github.com/Interlisp/medley/issues/265), [#226](https://github.com/Interlisp/medley/issues/226))
-* **Loadups:** We recreated[ the method of building a system from scratch](https://github.com/Interlisp/medley/tree/master/scripts), which used to be an hours-long manual process.
+* **Loadups:** We recreated [the method of building a system from scratch](https://github.com/Interlisp/medley/tree/master/scripts), which used to be an hours-long manual process.
 * **Debugging:** We found and fixed a variety of bugs: a few Y2K problems, some instances of “bit rot” and smashed files, incomplete implementations, and code patched at “wrong level”.
 * **Modernization:** Window manipulation by title bar dragging and corner selection, mouse wheel scrolling, clipboard--these seem to be necessary enhancements for modern users.
 * **Release process & automation**: GitHub Actions are now used to automate the build process for Medley releases and also a [Docker](https://www.docker.com/) container, deployed to [Docker Hub](https://hub.docker.com/) as Interlisp/Medley. This gives a way to run Medley in the cloud (on Amazon Web Services, Azure, Google Cloud) or on the Windows Desktop with remote access in a browser.
@@ -67,9 +67,9 @@ One of the reasons for restoring Medley Interlisp is to support the revival of a
 
 #### Books
 
-* [_**Interlisp: The Language and Its Usage**_](../../documentation/1986-interlisp-language-book-1.pdf), by Steve Kaisler, originally published by John Wiley & Sons, scanned and converted to a compact PDF. This book describes the core features of the Interlisp language.
-* [_**Medley Interlisp: The Interactive Programming Environment**_](../../documentation/20211225-interlisp-book-2.pdf), by Steve Kaisler, describes the Interlisp-D Interactive Programming Environment as implemented on Xerox D-machines and now running on several modern platforms.
-* [_**Medley Interlisp: Tools and Utilities**_](../../documentation/2021-interlisp-book-3.pdf), by Steve Kaisler (undergoing editing) describes the editors and tools to be used for program development. It is expected to be completed and uploaded to Interlisp.org in early December 2021.
+* [_**Interlisp: The Language and Its Usage**_](/documentation/1986-interlisp-language-book-1.pdf), by Steve Kaisler, originally published by John Wiley & Sons, scanned and converted to a compact PDF. This book describes the core features of the Interlisp language.
+* [_**Medley Interlisp: The Interactive Programming Environment**_](/documentation/20211225-interlisp-book-2.pdf), by Steve Kaisler, describes the Interlisp-D Interactive Programming Environment as implemented on Xerox D-machines and now running on several modern platforms.
+* [_**Medley Interlisp: Tools and Utilities**_](/documentation/2021-interlisp-book-3.pdf), by Steve Kaisler (undergoing editing) describes the editors and tools to be used for program development. It is expected to be completed and uploaded to Interlisp.org in early December 2021.
 
 #### Software Documentation
 
@@ -111,12 +111,12 @@ In this document, we use “we” to mean our contributors:
 * as members of the [lispcore@googlegroups.com](mailto:lispcore@googlegroups.com) mailing list/group ([Medley Interlisp core - Google Groups](https://groups.google.com/g/lispcore))
 * as participants in a weekly zoom call
   * Meetings recorded but not public
-  * Agendas: [Meeting Agendas and Notes](../../about/getinvolved#meetings)
+  * Agendas: [Meeting Agendas and Notes](/medley/other/getinvolved#meetings)
 * as members of the GitHub [Interlisp organization](https://github.com/orgs/Interlisp/people)
 * as contributors to an Open Source project
   * 384 issues, 133 closed, 151 open [Issues](https://github.com/Interlisp/medley/issues). 54 [discussions](https://github.com/Interlisp/medley/discussions)
   * 191 Medley [pull requests](https://github.com/Interlisp/medley/pulls), 387 Maiko [pull requests](https://github.com/Interlisp/maiko/pulls)
-* as a (non-profit) corporation: [InterlispOrg Inc](../../about/partners/interlisporg-inc).
+* as a (non-profit) corporation: [InterlispOrg Inc](/medley/other/partners/interlisporg-inc).
 
 We depend on volunteers to help. If you’d like to help but aren’t sure how to, ask.
 

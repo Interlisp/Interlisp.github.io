@@ -13,6 +13,7 @@ The board of directors met and, among other things, approved bylaws.
 It is not a membership organization.
 
 There are three directors on the [Board of Directors](mailto:board@interlisp.org):
+
 * Larry Masinter (President)
 * Ron Kaplan (Treasurer)
 * Herb Jellinek (Secretary)
@@ -21,6 +22,3 @@ The charitable purpose of the organization is Scientific and, in particular, Com
 The principal activity is to "develop demonstrations of software ideas based on Interlisp".
 
 The reason for going through this rigamarole is to allow charitable donations, to sustain our Interlisp Online service, to hold copyright and licenses. There are also unanticipated benefits of discounts and service credits available to non-profits.
-
-
-

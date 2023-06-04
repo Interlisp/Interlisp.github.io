@@ -5,7 +5,6 @@ type: docs
 ---
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N1MobfEaoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-
 The **2022 Medley Interlisp [Annual Report](2022medleyannualreport)** provides a detailed report on 2022 accomplishments.
 
 ## Recent Updates
@@ -45,11 +44,11 @@ Merry Christmas and Happy New Year
 ## 12/2021
 
 * [Interlisp Online](https://online.interlisp.org): Run Medley Interlisp in the cloud with just a browser. No download or install. Lower the barrier to entry. Of course, it's better to install a release on your own machine, but for the casual visitor, this is better.
- * Still under development but try it out, report problems (use issue tag 'online').
- * There seem to be problems with Safari on older macs--try Firefox or Chrome.
- * a mouse and keyboard are still necessary on tablets.
- * For the immersive "Lisp Machine" experience, run "fullscreen".
- * HiRes display? Most browsers will let you scale the pixels.
+  * Still under development but try it out, report problems (use issue tag 'online').
+  * There seem to be problems with Safari on older macs--try Firefox or Chrome.
+  * a mouse and keyboard are still necessary on tablets.
+  * For the immersive "Lisp Machine" experience, run "fullscreen".
+  * HiRes display? Most browsers will let you scale the pixels.
 * [InterlispOrg Inc](https://github.com/Interlisp/medley/wiki/InterlispOrg-Inc) has been approved as a 501c3 with the IRS. The simplest way to donate is using the GitHub Sponsor button.
 
 ## 11/2021
