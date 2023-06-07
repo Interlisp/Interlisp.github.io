@@ -11,14 +11,14 @@ For WSL installations, the browser(s) on the Windows side will suffice.
 A browser is not strictly necessary to run Medley, but several features of the system (e.g., displaying some user documentation) will not work without an external browser installed.
 
 Medley can be installed on your system in one of two configurations: *standard* and *local*.  
+
 * Standard installation will install Medley into system directories and install any prerequisite packages.  
 * Local installation will install Medley into any user directory but any prerequisite packages must be installed manually.
 
 On WSL, Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see 
 [here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements))
 or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).
-See [here](https://interlisp.org/running/running-on-win/) for more information on running Medley on WSL.
-
+See [here](/medley/using/running/running-on-win) for more information on running Medley on WSL.
 
 ## **Standard Installation \(Debian-based systems only\)**
 
@@ -45,7 +45,6 @@ Aside from these two features, a non-WSL .deb package will install and run on WS
 
 ## Accessing Medley
 
-
 1.  Use a browser to download from the .deb package for your platform (i.e., "standard" Linux or WSL) and your machine 	architecture (X86_64, ARM64, or ARMv7) to `<deb_filepath>` from [the Medley downloads site](https://online.interlisp.org/downloads/medley_downloads.html)
 	
 
@@ -55,14 +54,14 @@ Aside from these two features, a non-WSL .deb package will install and run on WS
 
 2.  Enter the following in a terminal to install the download:
 
-	```
+	```bash
 	ubuntu@oio:~$ sudo apt update
 	ubuntu@oio:~$ sudo apt install -y <deb_filepath>
 	```
 
 3.  Enter the following in a terminal to run medley:
 	
-	```
+	```bash
 	ubuntu@oio:~$ medley
 	```
 
@@ -80,8 +79,6 @@ Aside from these two features, a non-WSL .deb package will install and run on WS
 	It will load the personal init file (if any) from *LOGINDIR*/INIT or *LOGINDIR*/INIT.LCOM.  Finally,
 	Medley will use *LOGINDIR*/vmem/ to store its virtual memory file(s).  The location of *LOGINDIR*
 	can be changed using the `--logindir` option to `medley`.
-
-
 
 ### **Local Installation**
 
@@ -166,16 +163,3 @@ Also note that with local installations, `man medley` will not work.  However, a
 	can be changed using the `--logindir` option to `medley`.  In particular, if you have multiple
 	installations of Medley that you would like to keep completely separate, then you can use the 
 	`--logindir -` option, which will set *LOGINDIR* to \<medley_directory\>/logindir.
-
-
-
-
-
-
-
-
-
-
-
-
-   

@@ -34,5 +34,5 @@ The [Publications](/medley/history/publications) page will help you explore this
 ## Credits
 
 The effort to create Interlisp and restored Medley Interlisp has taken the talents
-of many people.  The [Credits](credits) page is our attempt to recognize them for
+of many people.  The [Credits](/medley/history/credits) page is our attempt to recognize them for
 their contributions.
