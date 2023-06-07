@@ -68,7 +68,7 @@ We recommend the Linux system have a web browser installed. For WSL installation
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.9b7c0e1baef9b53589df7dd449855bd1.json"
+    data-offline-search-index-json-src="/offline-search-index.1ecf998c4575ad5fbf916d64bf0cf377.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
@@ -93,7 +93,7 @@ We recommend the Linux system have a web browser installed. For WSL installation
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.9b7c0e1baef9b53589df7dd449855bd1.json"
+    data-offline-search-index-json-src="/offline-search-index.1ecf998c4575ad5fbf916d64bf0cf377.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
@@ -310,7 +310,7 @@ A browser is not strictly necessary to run Medley, but several features of the s
 <p>On WSL, Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see
 <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>)
 or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).
-See <a href="https://interlisp.org/running/running-on-win/">here</a> for more information on running Medley on WSL.</p>
+See <a href="/medley/using/running/running-on-win">here</a> for more information on running Medley on WSL.</p>
 <h2 id="standard-installation-debian-based-systems-only"><strong>Standard Installation (Debian-based systems only)</strong></h2>
 <p>Standard installations are currently supported only for Debian-based systems (i.e., systems that support dpkg), including Debian-based distros on WSL.</p>
 <p>In a standard installation, Medley is installed in system directories
@@ -340,13 +340,13 @@ Aside from these two features, a non-WSL .deb package will install and run on WS
 </li>
 <li>
 <p>Enter the following in a terminal to install the download:</p>
-<pre tabindex="0"><code>ubuntu@oio:~$ sudo apt update
-ubuntu@oio:~$ sudo apt install -y &lt;deb_filepath&gt;
-</code></pre></li>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ubuntu@oio:~$ sudo apt update
+</span></span><span style="display:flex;"><span>ubuntu@oio:~$ sudo apt install -y &lt;deb_filepath&gt;
+</span></span></code></pre></div></li>
 <li>
 <p>Enter the following in a terminal to run medley:</p>
-<pre tabindex="0"><code>ubuntu@oio:~$ medley
-</code></pre><p>There are many options to the <code>medley</code> command.  For a brief overview, run <code>medley --help</code>.
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>ubuntu@oio:~$ medley
+</span></span></code></pre></div><p>There are many options to the <code>medley</code> command.  For a brief overview, run <code>medley --help</code>.
 For a more complete description, run <code>man medley</code> or <code>medley --man</code> or click
 <a href="https://online.interlisp.org/downloads/man_medley.html">here</a>.</p>
 <p>For first-time users: <code>medley --apps</code> or for WSL <code>medley --apps --vnc</code> is a good starting
