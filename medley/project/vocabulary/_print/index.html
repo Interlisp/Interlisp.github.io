@@ -1,0 +1,296 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.113.0">
+<link rel="canonical" type="text/html" href="https://interlisp.org/medley/project/vocabulary/">
+<meta name="robots" content="noindex, nofollow">
+<link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
+
+<title>Vocabulary | Medley Interlisp Project</title>
+<meta name="description" content="Dedicated to restoring and preserving the Interlisp experience">
+<meta property="og:title" content="Vocabulary" />
+<meta property="og:description" content="Dedicated to restoring and preserving the Interlisp experience" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://interlisp.org/medley/project/vocabulary/" />
+<meta itemprop="name" content="Vocabulary">
+<meta itemprop="description" content="Dedicated to restoring and preserving the Interlisp experience"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Vocabulary"/>
+<meta name="twitter:description" content="Dedicated to restoring and preserving the Interlisp experience"/>
+
+
+
+
+<link rel="preload" href="/scss/main.min.5f7be202e27d1d986f6d9b9666f9a532caad89fd93e20831c5503c75bcbd6a05.css" as="style">
+<link href="/scss/main.min.5f7be202e27d1d986f6d9b9666f9a532caad89fd93e20831c5503c75bcbd6a05.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+<script defer
+  src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
+  integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
+  crossorigin="anonymous"></script>
+<link rel="canonical" href="https://interlisp.org/medley/project/vocabulary/">
+
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="/"><span class="navbar-brand__logo navbar-logo"><svg preserveAspectRatio="xMinYMin meet" width="454pt" height="308pt" viewBox="0 0 2270 1539.9999" id="svg150293" sodipodi:docname="logo.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs150297"><rect x="1185.6038" y="942.88177" width="144.69968" height="130.69649" id="rect9306"/></defs><sodipodi:namedview id="namedview150295" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" inkscape:pageshadow="2" inkscape:pageopacity="0" inkscape:pagecheckerboard="true" showgrid="false" fit-margin-top="100" fit-margin-left="100" fit-margin-right="100" fit-margin-bottom="100" inkscape:zoom=".42847365" inkscape:cx="1508.8442" inkscape:cy="1037.4034" inkscape:window-width="3440" inkscape:window-height="1351" inkscape:window-x="-9" inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="svg150293" inkscape:document-units="pt" units="pt" scale-x="5"/><symbol id="window-icon" viewBox="0 0 372 300" transform="translate(48.537998,49.633999)"><rect x="10" y="10" width="352" height="280" style="fill:#fff;stroke:#000;stroke-width:20" id="rect150254"/><line x1="10" y1="30" x2="362" y2="30" style="fill:#fff;stroke:#000;stroke-width:20" id="line150256"/></symbol><text transform="scale(0.75)" id="text9304" style="font-size:40px;line-height:1.25;font-family:times new roman;-inkscape-font-specification:'Times New Roman, ';white-space:pre;shape-inside:url(#rect9306)"/><rect style="fill:#a50000;stroke:none;stroke-width:7.2;stroke-miterlimit:4;stroke-dasharray:none" id="rect17946" width="7.0015974" height="21.004791" x="575.88141" y="1044.9884"/><g id="g2424" transform="translate(41.362532,-59.633999)"><use xlink:href="#window-icon" x="1219.615" y="360" width="372" height="300" id="use2301"/><use xlink:href="#window-icon" x="1e3" y="162.34599" width="372" height="300" id="use2303"/><use xlink:href="#window-icon" x="700" y="90" width="372" height="300" id="use2305"/><use xlink:href="#window-icon" x="400" y="162.34599" width="372" height="300" id="use2307"/><use xlink:href="#window-icon" x="180.38499" y="360" width="372" height="300" id="use2309"/><use xlink:href="#window-icon" x="100" y="630" width="372" height="300" id="use2311"/><use xlink:href="#window-icon" x="180.38499" y="900" width="372" height="300" id="use2313"/><use xlink:href="#window-icon" x="400" y="1097.6541" width="372" height="300" id="use2315"/><use xlink:href="#window-icon" x="700" y="1170" width="372" height="300" id="use2317"/></g><text style="font-weight:700;font-size:360px;line-height:1.25;font-family:times new roman;-inkscape-font-specification:'Times New Roman, Bold';stroke:#fff;stroke-width:.75;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" x="699.01428" y="990.47559" id="text15676"><tspan sodipodi:role="line" id="tspan15674" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:480px;font-family:times new roman mt extra bold;-inkscape-font-specification:'Times New Roman MT Extra Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#fff;fill-opacity:1;stroke:#fff;stroke-width:.75;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" x="699.01428" y="990.47559">Medley</tspan></text></svg></span><span class="navbar-brand__name">Medley Interlisp Project</span></a>
+  <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="/publications/"><i class='fas fa-download'></i><span>Publications</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="/documentation/"><i class='fas fa-book'></i><span>Documentation</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="https://github.com/interlisp" target="_blank"><i class='fab fa-github'></i><span>GitHub</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="navbar-nav d-none d-lg-block">
+    <div class="td-search td-search--offline">
+  <div class="td-search__icon"></div>
+  <input
+    type="search"
+    class="td-search__input form-control"
+    placeholder="Search this site…"
+    aria-label="Search this site…"
+    autocomplete="off"
+    
+    data-offline-search-index-json-src="/offline-search-index.9b7c0e1baef9b53589df7dd449855bd1.json"
+    data-offline-search-base-href="/"
+    data-offline-search-max-results="10"
+  >
+</div>
+
+  </div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="/medley/project/vocabulary/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">Vocabulary</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>The names “Medley” “Medley Interlisp” “Interlisp” “Interlisp.org” “Common Lisp” in ways that are confusing. We’re talking about a lot of different things. And these are mostly not terms that we’ve made up, they’re cemented in by the titles that have appeared in different publications.</p>
+<h2 id="vocabulary-and-relationships">Vocabulary and relationships</h2>
+<dl>
+<dt>Interlisp.org</dt>
+<dd>a “domain name”, used for some web sites and email addresses</dd>
+</dl>
+<ul>
+<li><a href="https://interlisp.org">https://interlisp.org</a>  – the address of the main web site</li>
+<li><a href="https://online.interlisp.org">https://online.interlisp.org</a> – the address of a service that lets you run Medley</li>
+<li><a href="mailto:info@interlisp.org">info@interlisp.org</a>             - an email address of a group that can respond to questions</li>
+</ul>
+<dl>
+<dt>InterlispOrg</dt>
+<dd>A California-registered non-profit organization  (DBA Interlisp.org) Established
+August 2021. 501c3  EIN 87xxxx  California registered charity NNNNN.
+President Larry Masinter, Treasurer Ron Kaplan, Secretary Herb Jellinek.</dd>
+<dt>Interlisp</dt>
+<dd>A GitHub “organization” with ~20 repositories, see <a href="https://github.com/Interlisp">https://github.com/Interlisp</a></dd>
+<dd>Both a language and, in some cases, the implementation of that language. Usually used with some other wording or refinement</dd>
+<dt>Interlisp: The Language and its usage</dt>
+<dd>A book by Steve Kaisler which describes Interlisp of the 1970s &amp; 80s</dd>
+<dt>Interlisp-10</dt>
+<dd>The first implementation of “Interlisp” for the DEC PDP-10 / Tenex</dd>
+<dt>Interlisp-VAX, Interlisp-360</dt>
+<dd>Other implementations of Interlisp for other machines (sharing source code)</dd>
+<dt>DLISP</dt>
+<dd>By Warren Teitelman: a first attempt at building a “Display” (GUI) with
+Interlisp running on Maxc (A PDP-10 clone a Xerox Alto as a
+graphics terminal connected to it via Ethernet).</dd>
+<dt>Alto Lisp</dt>
+<dd>An (unsuccessful) attempt to build a Lisp-based OS for running Interlisp on an Alto</dd>
+<dt>Dorado Lisp</dt>
+<dd>The reimplementation of AltoLisp microcode for the Dorado – a research prototype</dd>
+<dt>Interlisp-D</dt>
+<dd>What Dorado Lisp became.  The D stood for both “Display” and “D-machine”.  An implementation of</dd>
+</dl>
+<ul>
+<li>Interlisp the language</li>
+<li>The Interlisp programming tools</li>
+<li>A Graphical User interface to Interlisp programming development</li>
+<li>A large number of tools, utilities, games, screen-savers</li>
+<li>A Lisp-based operating system for D-machines which, when coupled with microcode
+implementation of a Virtual Machine, allowed the D-machines to operate as a
+personal workstation. Each D-machine had its own microcode with different
+configurations and micro-instructions.</li>
+</ul>
+<dl>
+<dt>Carol, Fugue, Harmony, Intermezzo, Koto, Lyric, Medley</dt>
+<dd>Named releases of Interlisp-D.  All are obsolete except Medley.</dd>
+<dt>Medley 1.0, Medley 2.01, Medley 3.5 numbered releases of Interlisp-D</dt>
+<dd>At some point the name Interlisp-D was retired and Medley used to name the software.</dd>
+<dt>Maiko</dt>
+<dd>An implementation of the functions of the microcode D-machine, but written in C for the
+Sun Microsystems (RISC-like) SPARC processor workstation, initially developed by
+Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.</dd>
+<dt>Common Lisp</dt>
+<dd>The subject of a 10-year standards process to converge multiple dialects of the</dd>
+</dl>
+<ul>
+<li>Lisp language.</li>
+<li>Strong influences from many Lisp dialects, including Interlisp.</li>
+</ul>
+<dl>
+<dt>Common Lisp the Language</dt>
+<dd>Book by Guy Steele with two editions:</dd>
+</dl>
+<ul>
+<li>CLtL1 – edition 1, 465 pages</li>
+<li>CLtL2  – second edition, 1029 pages</li>
+</ul>
+<dl>
+<dt>Common Lisp dpANS</dt>
+<dd>The ANSI Standard for Common Lisp</dd>
+</dl>
+<p>Starting with the Lyric release of Interlisp-D and then the Medley release, the implementation of Medley included implementations of Common Lisp (CLtL 1) as well as the Interlisp dialect in a single development environment; this was made possible by using the (Common Lisp) “package” feature to allow both dialects to be intermixed.</p>
+<h3 id="organizations">Organizations</h3>
+<dl>
+<dt>BBN</dt>
+<dd>Boston consultancy which (late 60s) implemented BBN Lisp and the Tenex operating system.</dd>
+<dt>Xerox PARC or just PARC</dt>
+<dd>Palo Alto Research Center, which continued in collaboration with BBN on (renamed) Interlisp. PARC developed the Alto and Dorado.  Now part of SRI International.</dd>
+<dt>SRI International</dt>
+<dd>non-profit scientific R &amp; D institute</dd>
+<dt>Xerox Electro-Optical Systems (XEOS)</dt>
+<dd>Xerox division supporting classified customers</dd>
+<dt>Xerox Artificial Intelligence Systems (XAIS)</dt>
+<dd>The division working to commercialize Xerox Workstations running Interlisp-D.</dd>
+<dt>Rank Xerox</dt>
+<dd>Xerox affiliate in charge of delivering Interlisp-D workstations in Europe</dd>
+<dt>Fuji Xerox</dt>
+<dd>Xerox affiliate – joint project of Rank Xerox and Fuji Photo Film company.</dd>
+<dt>Envos</dt>
+<dd>Company founded in 198x to take on the Lisp business from Xerox. Closed within 10 months and folded back to Xerox.</dd>
+<dt>Venue</dt>
+<dd>Smaller company, started by John Sybalsky; it had the license to create and distribute derivative works of Maiko and Medley   Venue ceased operations… … some history …. Software recovered from late 90s…. Fuji Xerox worked with John into the 90s with ports and addons and other software….</dd>
+<dt>Medley Interlisp Project</dt>
+<dd>began late 2010’s with Nick Briggs getting Maiko to run on MacOS.
+In earnest in 2020 with start of weekly Zoom meetings, getting it to run on Linux in a VM and getting the Interlisp and LispCore google groups and ….</dd>
+</dl>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing list" aria-label="User mailing list">
+    <a class="text-white" target="_blank" rel="noopener" href="mailto:Interlisp@googlegroups.com" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" rel="noopener" href="https://twitter.com/interlisp8" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="GitHub" aria-label="GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/interlisp" aria-label="GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2023 Interlisp.org All Rights Reserved</small>
+        
+	
+		<p class="mt-2"><a href="/medley/about/">About</a></p>
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+  <script src="/js/main.min.2aff983e9d0d8ecff9ed53e14b657216e2d8d2aff059bf4a5651283020995f1b.js" integrity="sha256-Kv&#43;YPp0Njs/57VPhS2VyFuLY0q/wWb9KVlEoMCCZXxs=" crossorigin="anonymous"></script>
+<script src='/js/tabpane-persist.js'></script>
+
+  </body>
+</html>

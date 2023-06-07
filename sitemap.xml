@@ -3,27 +3,23 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://interlisp.org/news/2022medleyannualreport/</loc>
+    <loc>https://interlisp.org/medley/history/medley_history/2022medleyannualreport/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/</loc>
+    <loc>https://interlisp.org/medley/history/publications/zotero/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/publications/zotero/</loc>
+    <loc>https://interlisp.org/medley/other/docs/medley/modern-medley-release-notes/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/getinvolved/2021meetings/</loc>
+    <loc>https://interlisp.org/medley/other/ongoingprojects/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/modern-medley-release-notes/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/about/ongoingprojects/</loc>
+    <loc>https://interlisp.org/medley/project/</loc>
   </url>
   
   <url>
@@ -31,99 +27,103 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/build/building/</loc>
+    <loc>https://interlisp.org/medley/using/build/building/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/publications/table/</loc>
+    <loc>https://interlisp.org/medley/history/publications/table/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/orientation/</loc>
+    <loc>https://interlisp.org/medley/other/docs/medley/orientation/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/build/releases/</loc>
+    <loc>https://interlisp.org/medley/using/build/releases/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/online/usingonline/</loc>
+    <loc>https://interlisp.org/medley/using/running/online/usingonline/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/news/2021medleyannualreport/</loc>
+    <loc>https://interlisp.org/medley/history/medley_history/2021medleyannualreport/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/credits/in-memoriam/</loc>
+    <loc>https://interlisp.org/medley/history/credits/in-memoriam/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/online/</loc>
+    <loc>https://interlisp.org/medley/using/running/online/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/</loc>
+    <loc>https://interlisp.org/medley/project/news/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/news/</loc>
+    <loc>https://interlisp.org/medley/other/docs/medley/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/getinvolved/</loc>
+    <loc>https://interlisp.org/medley/project/getinvolved/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/partners/</loc>
+    <loc>https://interlisp.org/medley/project/partners/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/the-medley-interlisp-dsk-file-system/</loc>
+    <loc>https://interlisp.org/medley/other/docs/medley/the-medley-interlisp-dsk-file-system/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/partners/educopia/</loc>
+    <loc>https://interlisp.org/medley/project/partners/educopia/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/running-on-linux/</loc>
+    <loc>https://interlisp.org/medley/using/running/running-on-linux/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/partners/spn/</loc>
+    <loc>https://interlisp.org/medley/project/partners/spn/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/docs/medley/tips/</loc>
+    <loc>https://interlisp.org/medley/other/docs/medley/tips/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/comments/</loc>
+    <loc>https://interlisp.org/medley/other/comments/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/partners/interlisporg-inc/</loc>
+    <loc>https://interlisp.org/medley/project/partners/interlisporg-inc/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/</loc>
+    <loc>https://interlisp.org/medley/using/running/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/running-on-mac/</loc>
+    <loc>https://interlisp.org/medley/using/running/running-on-mac/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/comments/stories/</loc>
+    <loc>https://interlisp.org/medley/other/comments/stories/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/running-on-win/</loc>
+    <loc>https://interlisp.org/medley/using/running/running-on-win/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/running/running-with-docker/</loc>
+    <loc>https://interlisp.org/medley/history/timeline/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/medley/using/</loc>
   </url>
   
   <url>
@@ -131,35 +131,27 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/developing/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/documentation/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/publications/</loc>
+    <loc>https://interlisp.org/medley/history/medley_history/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/credits/</loc>
+    <loc>https://interlisp.org/medley/history/publications/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/</loc>
+    <loc>https://interlisp.org/medley/history/credits/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/_pages/</loc>
+    <loc>https://interlisp.org/medley/project/vocabulary/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/about/getinvolved/2022meetings/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/faq/</loc>
+    <loc>https://interlisp.org/medley/apps/</loc>
   </url>
   
   <url>
@@ -167,11 +159,19 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/doc/todo.html</loc>
+    <loc>https://interlisp.org/medley/about/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/misc/</loc>
+    <loc>https://interlisp.org/medley/other/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/medley/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/</loc>
   </url>
   
 </urlset>
