@@ -29,7 +29,7 @@ an effort to capture every reference we can find and organize them into a
 useful bibliography that can be used for research into the history of the
 languages development and impacts on modern computing.
 
-The [Publications](publications) page will help you explore this resource.
+The [Publications](/medley/history/publications) page will help you explore this resource.
 
 ## Credits
 
