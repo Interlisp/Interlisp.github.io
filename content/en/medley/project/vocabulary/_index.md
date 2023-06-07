@@ -16,8 +16,8 @@ Interlisp.org
 - <info@interlisp.org>             - an email address of a group that can respond to questions
 
 InterlispOrg
-: A California-registered non-profit organization  (DBA Interlisp.org) Established
-        August 2021. 501c3  EIN 87xxxx  California registered charity NNNNN.
+: A [California-registered](https://rct.doj.ca.gov/Verification/Web/Details.aspx?result=c7aa8cb2-16ec-458a-be56-41f963365258) non-profit organization  (DBA Interlisp.org) Established
+        August 2021. 501c3  EIN 87-2528093  California registered charity CT0278267.
         President Larry Masinter, Treasurer Ron Kaplan, Secretary Herb Jellinek.
 
 Interlisp
