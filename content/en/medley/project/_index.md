@@ -45,10 +45,10 @@ We've also been working on integration of the Interlisp style development with g
 
 ## Who is involved?
 
-We are some of the original developers and users of the system 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](../other/partners). And with you!
+We are some of the original developers and users of the system 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](partners). And with you!
 
 <div class="mx-auto">
- <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "medley/other/getInvolved" >}}">
+ <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "getinvolved" >}}">
   How do I get involved?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
  </a>
 </div>
