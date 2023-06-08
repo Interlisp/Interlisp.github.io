@@ -34,9 +34,7 @@ Interlisp-VAX, Interlisp-360
 : Other implementations of Interlisp for other machines (sharing source code)
 
 DLISP
-: By Warren Teitelman: a first attempt at building a “Display” (GUI) with
-           Interlisp running on Maxc (A PDP-10 clone a Xerox Alto as a
-           graphics terminal connected to it via Ethernet).
+: By Warren Teitelman: a first attempt at building a “Display” (GUI) with Interlisp running on Maxc (A PDP-10 clone) a Xerox Alto as a graphics terminal connected to it via Ethernet.
 
 Alto Lisp
 :  An (unsuccessful) attempt to build a Lisp-based OS for running Interlisp on an Alto
@@ -68,7 +66,7 @@ Maiko
        Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.
 
 Common Lisp
-: The subject of a 10-year standards process to converge multiple dialects of the 
+: The subject of a 10-year standards process to converge multiple dialects of the
 Lisp language. Strong influences from many Lisp dialects, including Interlisp.
 
 Common Lisp the Language
@@ -106,7 +104,7 @@ Fuji Xerox
 : Xerox affiliate – joint project of Rank Xerox and Fuji Photo Film company.
 
 Envos
-: Company founded in 198x to take on the Lisp business from Xerox. Closed within 10 months and folded back to Xerox. 
+: Company founded in 198x to take on the Lisp business from Xerox. Closed within 10 months and folded back to Xerox.
 
 Venue
 : Smaller company, started by John Sybalsky; it had the license to create and distribute derivative works of Maiko and Medley   Venue ceased operations… … some history …. Software recovered from late 90s…. Fuji Xerox worked with John into the 90s with ports and addons and other software….
