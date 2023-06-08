@@ -68,10 +68,8 @@ Maiko
        Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.
 
 Common Lisp
-: The subject of a 10-year standards process to converge multiple dialects of the
-
-- Lisp language.
-- Strong influences from many Lisp dialects, including Interlisp.
+: The subject of a 10-year standards process to converge multiple dialects of the 
+Lisp language. Strong influences from many Lisp dialects, including Interlisp.
 
 Common Lisp the Language
 : Book by Guy Steele with two editions:
