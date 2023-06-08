@@ -1,6 +1,5 @@
 ---
 title: History
-url: /doc/info/history.html
 weight: 500
 type: docs
 ---
@@ -15,12 +14,12 @@ Development of the system moved from Xerox PARC to a Xerox AI Systems division, 
 
 ### Detailed History
 
-A more extensive history of Interlisp can be found in the [Interlisp Timeline](/doc/info/history.html).
+A more extensive history of Interlisp can be found in the [Interlisp Timeline](/medley/history/timeline).
 
 ## History of the Medley Interlisp Project
 
 The Medley Interlisp restoration project has created documents that are now historical in nature.
- While not needed today, we are preserving them [here](medley_history) to help paint the full picture of Medley Interlisp.
+ While not needed today, we are preserving them [here](/medley/history/medley_history) to help paint the full picture of Medley Interlisp.
 
 ## Bibliography
 
