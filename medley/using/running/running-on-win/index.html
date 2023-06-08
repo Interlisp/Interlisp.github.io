@@ -80,7 +80,7 @@ Running on Windows with WSL Medley will run on either WSL1 or WSL2."/>
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.ceec73a2ae483a1f3981fbe8bff2ce61.json"
+    data-offline-search-index-json-src="/offline-search-index.f1678cde79b3c9d27d592c2ae2670fdb.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
@@ -105,7 +105,7 @@ Running on Windows with WSL Medley will run on either WSL1 or WSL2."/>
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.ceec73a2ae483a1f3981fbe8bff2ce61.json"
+    data-offline-search-index-json-src="/offline-search-index.f1678cde79b3c9d27d592c2ae2670fdb.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
@@ -147,13 +147,8 @@ Running on Windows with WSL Medley will run on either WSL1 or WSL2."/>
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-medleyusingrunning-li">
   <a href="/medley/using/running/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyusingrunning"><span class="">Running Medley Interlisp</span></a>
   <ul class="ul-3 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-medleyusingrunningonline-li">
-  <a href="/medley/using/running/online/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyusingrunningonline"><span class="">Interlisp Online</span></a>
-  <ul class="ul-4 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child collapse" id="m-medleyusingrunningonlineusingonline-li">
-  <a href="/medley/using/running/online/usingonline/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyusingrunningonlineusingonline"><span class="">Using Interlisp Online</span></a>
-</li>
-  </ul>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-medleyusingrunningonline-li">
+  <a href="/medley/using/running/online/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyusingrunningonline"><span class="">Using Interlisp Online</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-medleyusingrunningrunning-on-linux-li">
   <a href="/medley/using/running/running-on-linux/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-medleyusingrunningrunning-on-linux"><span class="">Running on Linux (incl. WSL)</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-medleyusingrunningrunning-on-mac-li">
@@ -175,8 +170,8 @@ Running on Windows with WSL Medley will run on either WSL1 or WSL2."/>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-medleyapps-li">
   <a href="/medley/apps/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyapps"><span class="">Other Applications</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docinfohistoryhtml-li">
-  <a href="/doc/info/history.html" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-docinfohistoryhtml"><span class="">History</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-medleyhistory-li">
+  <a href="/medley/history/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyhistory"><span class="">History</span></a>
   <ul class="ul-2 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-medleyhistorytimeline-li">
   <a href="/medley/history/timeline/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyhistorytimeline"><span class="">Interlisp Timeline</span></a>
@@ -316,43 +311,43 @@ Running on Windows with WSL Medley will run on either WSL1 or WSL2."/>
 <h3 id="running-on-windows-with-wsl"><strong>Running on Windows with WSL</strong></h3>
 <p>Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>) or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).</p>
 <p>When running under WSL2, Medley can display in one of two ways: in an X-Window (using the X_Windows server built-in to WSL2) or in a VNC-viewer Window.  Although the X-windows approach is simpler (i.e., behind the scenes) it does not scale well on high-DPI displays.  In VNC mode, the Medley window will scale according to the Windows Display Scale settings. The X vs Vnc mode is set on using the <code>--vnc</code> flag on the <code>medley</code> command line.  When running on WSL1, Vnc mode is always used.</p>
-<h4 id="to-install-an-run-medley-with-wsl">To install an run Medley with WSL:</h4>
+<h4 id="to-install-an-run-medley-with-wsl">To install an run Medley with WSL</h4>
 <ol>
 <li>
-<p><em>Install WSL:</em>  See <a href="https://learn.microsoft.com/en-us/windows/wsl/install">here</a> for instructions on installing WSL.</p>
+<p><em>Install WSL:</em> See <a href="https://learn.microsoft.com/en-us/windows/wsl/install">here</a> for instructions on installing WSL.</p>
 </li>
 <li>
-<p><em>Install medley within WSL:</em>  Once WSL is installed, open a terminal to WSL (e.g., by typing &ldquo;wsl&rdquo; in a command or powershell window) and follow the instructions for installing and running Medley on Linux that can be found <a href="https://interlisp.org/running/running-on-linux/">here</a>.</p>
+<p><em>Install medley within WSL:</em> Once WSL is installed, open a terminal to WSL (e.g., by typing &ldquo;wsl&rdquo; in a command or powershell window) and follow the instructions for installing and running Medley on Linux that can be found <a href="/medley/using/running/running-on-linux">here</a>.</p>
 </li>
 <li>
-<p><em>Run Medley:</em>  Once Medley has been installed on WSL, you can run medley from either a WSL terminal as described in the Running Medley on Linux instructions (<a href="https://interlisp.org/running/running-on-linux/">here</a>) or by typing <code>wsl medley &lt;flags and options&gt;</code> in a Command or Powershell window.</p>
+<p><em>Run Medley:</em> Once Medley has been installed on WSL, you can run medley from either a WSL terminal as described in the Running Medley on Linux instructions (<a href="/medley/using/running/running-on-linux">here</a>) or by typing <code>wsl medley &lt;flags and options&gt;</code> in a Command or Powershell window.</p>
 <p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
 <p>For first-time users: <code>wsl medley --vnc --apps --interlisp --noscroll</code> or, equivalently, <code>wsl medley -v -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
 </li>
 </ol>
-<h4 id="notes">Notes:</h4>
+<h4 id="notes">Notes</h4>
 <ul>
 <li>If Medley for Docker (see below) is also installed on the system, you can also start Medley by typing <code>medley --wsl &lt;distro&gt; &lt;flags and options&gt;</code> in a Command or Powershell window.  This is equivalent to the <code>wsl medley &lt;flags and options&gt;</code> command described above.</li>
 </ul>
 <h3 id="running-on-windows-with-docker-desktop"><strong>Running on Windows with Docker Desktop</strong></h3>
 <p>When running with Docker, Medley runs in a Docker container using the Interlisp/medley image found on Docker Hub.  A VNC Viewer window is used to display the Medley desktop.  All of this is started up using the single <code>medley</code> command.</p>
-<h4 id="to-install-an-run-medley-with-docker-desktop">To install an run Medley with Docker Desktop:</h4>
+<h4 id="to-install-an-run-medley-with-docker-desktop">To install an run Medley with Docker Desktop</h4>
 <ol>
 <li>
-<p><em>Install Docker Desktop:</em>  Install Docker Desktop for Windows as described <a href="https://docs.docker.com/desktop/install/windows-install/">here</a>.</p>
+<p><em>Install Docker Desktop:</em> Install Docker Desktop for Windows as described <a href="https://docs.docker.com/desktop/install/windows-install/">here</a>.</p>
 </li>
 <li>
-<p><em>Install Medley</em>:  To install Medley, download and run the the <code>medley-install_&lt;version&gt;.exe</code> that can be found <a href="https://online.interlisp.org/downloads/medley_downloads.html">here</a> under the Windows 10/11 heading.</p>
+<p><em>Install Medley</em>: To install Medley, download and run the the <code>medley-install_&lt;version&gt;.exe</code> that can be found <a href="https://online.interlisp.org/downloads/medley_downloads.html">here</a> under the Windows 10/11 heading.</p>
 <p>This will install Medley on your system, by default in the <code>%USERPROFILE%/AppData/Local/Medley/Scripts</code> folder.  This folder will be added to your %PATH%.  An uninstall will also be added so that you can remove Medley via the standard Add/Remove Programs control panel.</p>
 <p>Note that to download <code>medley-install_&lt;version&gt;.exe</code>, you may have to bypass any security concerns your browser has about downloading an .exe file.  In addition, you will have to bypass the Windows Defender protection against executing an unsigned .exe.  To do so, click <code>More info</code> followed by <code>Run Anyway</code> when the Windows Defender window pops up.</p>
 </li>
 <li>
-<p><em>Run Medley:</em>  Once it is installed, you can run Medley by typing <code>medley &lt;flags and options&gt;</code> into either a Command or a Powershell window.</p>
+<p><em>Run Medley:</em> Once it is installed, you can run Medley by typing <code>medley &lt;flags and options&gt;</code> into either a Command or a Powershell window.</p>
 <p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
 <p>For first-time users: <code>medley --apps --interlisp --noscroll</code> or, equivalently, <code>medley -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
 </li>
 </ol>
-<h4 id="notes-1">Notes:</h4>
+<h4 id="notes-1">Notes</h4>
 <ul>
 <li>
 <p>Docker needs to be installed and <em>running</em> in order to run Medley.  However, the Docker Dashboard window does not be open.  You can check the state and start/stop Docker by right clicking on the Docker icon <img alt="Docker icon" height=15 width=15 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAAB+CAMAAABlLrHNAAAAY1BMVEUAAAD///+wsLDQ0NC/v7/r6+uioqLx8fEkJCQaGhrh4eFGRkZVVVW8vLwYGBj8/PxbW1tycnKqqqra2toRERHKyso3Nzd+fn5hYWGXl5doaGhMTEw8PDxBQUGNjY2GhoYwMDDd4iByAAAE4UlEQVR4nO2c69aqIBCGIQ8UHdSoTK30/q9ya7b7lIOMhUJr+f6chfZEMMwMEMJmtYo5PSKj70dG34bJHfGiRj/ANO924e1p4V14u1p4F96uFt6Ft6uF97d4i9/ixX7CKTP7ftO8OOJk+PXGeScWiDcKOJHGSnirtKnhDgbxhod1X3ENTOINZ22GasYb4/nzN7ITJr2H8V4wnhzJ36C8B0f878Ir0cr7KV6G0CP4HV4S1y2r88/wZm3bUuv83OAlp1fjVAfsBm/6bn0nP8BL13/Nk+EedoI37ba/Os8brXsPHF3nXXFPDLk10/HOB7xRwj1x+5I3ugoQDGNPMBZ1U/GraVetoOIfGcihQPEvDTk9f7E9ZzxSZdNBnYWvWKm/owP50EPgRQ9lYwd4xSGE1spVg+cNPE7NkxFvfP5elLc2np5ImzJZ05c4b9ZqBeQNitOmp0NeW0veeKkp6I23pnXThDc2XcXWh7711JlRwUnCq1zlON6z+HAE9mdIlb8dBeP97yNFP9MMCNWM43i9wxe8yvVC5N3+faQv40WqbMNV3rApZVBWi/ZKGK7ybst4e6maAkZ1KfLsTCJXeKXjV3x3vgrc4KUy/yDTOiQu8JINkLdep5kDvFgscat1dIBXEj8odXOAV4zP1HKhf4MLGHfDHODFJZg3dWG+NbUzoKhRXmX+Nhjv1MqBuKXgf6ngDJukTHwflfXKtW4aC1Yim1Fpv5dgS8ZdXC9w4Pd1fsbrnNFv43W+6TNelzZlsqadDxUTWpnqJNeFfIhl4iCS6ZlzWOWNAnYuZemQTHv85j2vLCjM0ryAxjrvjA7hKAM/Y083hv/z/gJu8k7nkDy8d0pxp0aE+GKbc9ruu8UTBB/xFnTYPRjuyTaRWps42zOhLmWbSqYtIURZ33FQyuJZwwvP9ubSbajC7SBvOYCLUWUbT9Dghgcak03Pot0QLkbQ2H42DW94oFT/hlm1G95ARmOqFXNoyJk1vGIuaFWnYVzn4rNQxwsrv86lu243FDGnFgxd92IUwJLTebTRn9+RbGbbk7Z76/wNXm2bXBrf2/JK9v1sydfi1rzUNuVbw5HDf15nQvYT5AQlku7nW5H60EOf15WCiX6ytbxj9jsmFGCytbyBeAbAgnIQ7rM+6UIIfAKNhpaXP69mQ5qwt8dLbMPy+xkaXvseTX0eSspre0CsmQ6zz0sru7yDJ1IlvJY9BGhh6/FaXTJG3TB67WdZrPLcRl2IevHam3HVuPs6L17JvUsncd/7m5bKJmvYrSGRF99s4G7G4v7x2kjjDrAYUsprIa+vRvdud38efirFkG7wVVjGO3deFEOuuw3xzuvTcnBIpuKdtRIxIsRR8s7nhC8fzDQJ76ijjF/ow7Eg8gpXeabQJvziyjd33ohMv72Vf+LGVLyTA1+giTCQF5NJh0T6kdMd4sXRdJPu+tVQUPBOFrwXgOvQH/Fiar4gcYg/drl6XhyZXjkSM7Tq85PkAT3XqFcBusn/HW8dXxqad/n+89VsDG/dx6udeNx6lKp8ZRJWw9tcLCzhh/fFnj1+77/G8TZi4XU88yV/eKb/KgjIW/cy9bMRHq7KQ59OAgvkbRV4YXotKvV5y6qI84dv9u9VBI07Dx4Ryjx/H2ZlmibPv3NN0iQts+Pe9xhVHiI0qH+feF7zFV+3XAAAAABJRU5ErkJggg=="> in the System Tray.</p>

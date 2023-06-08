@@ -43,10 +43,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/medley/using/running/online/usingonline/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/medley/history/medley_history/2021medleyannualreport/</loc>
   </url>
   
@@ -55,11 +51,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/medley/using/running/online/</loc>
+    <loc>https://interlisp.org/medley/project/news/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/medley/project/news/</loc>
+    <loc>https://interlisp.org/medley/using/running/online/</loc>
   </url>
   
   <url>
@@ -155,7 +151,7 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/doc/info/history.html</loc>
+    <loc>https://interlisp.org/medley/history/</loc>
   </url>
   
   <url>
