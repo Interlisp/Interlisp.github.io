@@ -30,4 +30,4 @@ with recent additions from
 * Eric Kaltman
 * Morgan McMurray
 
-For information about past contributors who are no longer with us, go to [In Memoriam](in-memoriam).
+For information about past contributors who are no longer with us, go to [In Memoriam](/medley/history/in-memoriam).
