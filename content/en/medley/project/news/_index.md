@@ -7,13 +7,13 @@ type: docs
 
 <p>
 
-The **2022 Medley Interlisp [Annual Report](/medley/history/medley_history/2022medleyannualreport)** provides a detailed report on 2022 accomplishments.
+The **2022 Medley Interlisp [Annual Report](/medley/project/status/2022medleyannualreport)** provides a detailed report on 2022 accomplishments.
 
 ## Recent Updates
 
 ## 12/2022
 
-* [2022 Annual Report](/medley/history/medley_history/2022medleyannualreport)
+* [2022 Annual Report](/medley/project/status/2022medleyannualreport)
 
 ## 9/2022
 
@@ -56,4 +56,4 @@ Merry Christmas and Happy New Year
 ## 11/2021
 
 * [Medley Interlisp: Tools and Utilities](https://interlisp.org/documentation/2021-interlisp-book-3.pdf) (Interlisp book 3) now available for preview; comments and corrections welcome.
-* [2021 Annual Report](/medley/history/medley_history/2021medleyannualreport), November 15, 2021.
+* [2021 Annual Report](/medley/project/status/2021medleyannualreport), November 15, 2021.
