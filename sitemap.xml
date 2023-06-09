@@ -3,7 +3,7 @@
   xmlns:xhtml="http://www.w3.org/1999/xhtml">
   
   <url>
-    <loc>https://interlisp.org/medley/history/medley_history/2022medleyannualreport/</loc>
+    <loc>https://interlisp.org/medley/project/status/2022medleyannualreport/</loc>
   </url>
   
   <url>
@@ -43,7 +43,7 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/medley/history/medley_history/2021medleyannualreport/</loc>
+    <loc>https://interlisp.org/medley/project/status/2021medleyannualreport/</loc>
   </url>
   
   <url>
@@ -119,6 +119,10 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/medley/project/status/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/medley/using/</loc>
   </url>
   
@@ -128,10 +132,6 @@
   
   <url>
     <loc>https://interlisp.org/documentation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/medley/history/medley_history/</loc>
   </url>
   
   <url>
