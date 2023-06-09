@@ -19,7 +19,7 @@ A more extensive history of Interlisp can be found in the [Interlisp Timeline](/
 ## History of the Medley Interlisp Project
 
 The Medley Interlisp restoration project has created documents that are now historical in nature.
- While not needed today, we are preserving them [here](/medley/history/medley_history) to help paint the full picture of Medley Interlisp.
+ While not needed today, we are preserving them [here](/medley/project/status) to help paint the full picture of Medley Interlisp.
 
 ## Bibliography
 
