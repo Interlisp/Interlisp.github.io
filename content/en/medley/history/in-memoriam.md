@@ -1,6 +1,6 @@
 ---
 title: In Memoriam
-weight: 10
+weight: 100
 type: docs
 ---
 The following individuals were a part of the Interlisp Medley project during their lives. We appreciate them and the contributions they made to Interlisp.
