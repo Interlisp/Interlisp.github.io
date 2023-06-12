@@ -47,10 +47,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/medley/history/credits/in-memoriam/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/medley/project/news/</loc>
   </url>
   
@@ -139,11 +135,15 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/medley/history/credits/</loc>
+    <loc>https://interlisp.org/medley/about/credits/</loc>
   </url>
   
   <url>
     <loc>https://interlisp.org/medley/project/vocabulary/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/medley/history/in-memoriam/</loc>
   </url>
   
   <url>
