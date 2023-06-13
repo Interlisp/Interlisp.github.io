@@ -7,10 +7,11 @@ enableRobotsTXT = true
 
 assetDir = "static"
 
-[privacy.googleAnalytics]
-   disable = false
-   respectDoNotTrack = true
-   useSessionStorage = false
+# Disabled not working correctly
+#[privacy.googleAnalytics]
+#   disable = false
+#   respectDoNotTrack = true
+#   useSessionStorage = false
 
 # ****************************************************************************
 #
