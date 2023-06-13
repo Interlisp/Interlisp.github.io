@@ -7,13 +7,6 @@ enableRobotsTXT = true
 
 assetDir = "static"
 
-[privacy]
-  [privacy.googleAnalytics]
-   anonymizeIP = false
-   disable = false
-   respectDoNotTrack = true
-   useSessionStorage = false
-
 # ****************************************************************************
 #
 # Docsy
