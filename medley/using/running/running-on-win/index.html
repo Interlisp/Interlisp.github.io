@@ -7,25 +7,37 @@
 <meta name="robots" content="index, follow">
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
 
-<title>The Basics of Interlisp | Medley Interlisp Project</title>
-<meta name="description" content="A few basics &amp;ndash; enough to get you started from the Medley User&amp;rsquo;s Guide of ~30 years ago.
-Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis. Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp. While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two.">
-<meta property="og:title" content="The Basics of Interlisp" />
-<meta property="og:description" content="A few basics &ndash; enough to get you started from the Medley User&rsquo;s Guide of ~30 years ago.
-Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis. Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp. While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two." />
+<title>Running on Windows 10/11 | Medley Interlisp Project</title>
+<meta name="description" content="How is this different from the topic running on Docker Desktop?
+Medley does not yet run as a native Windows application. Besides online, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
+This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.
+On Windows, Medley requires a 64-bit machine.
+Running on Windows with WSL Medley will run on either WSL1 or WSL2.">
+<meta property="og:title" content="Running on Windows 10/11" />
+<meta property="og:description" content="How is this different from the topic running on Docker Desktop?
+Medley does not yet run as a native Windows application. Besides online, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
+This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.
+On Windows, Medley requires a 64-bit machine.
+Running on Windows with WSL Medley will run on either WSL1 or WSL2." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://interlisp.org/doc/info/Using.html" /><meta property="article:section" content="medley" />
+<meta property="og:url" content="https://interlisp.org/medley/using/running/running-on-win/" /><meta property="article:section" content="medley" />
 
 
-<meta itemprop="name" content="The Basics of Interlisp">
-<meta itemprop="description" content="A few basics &ndash; enough to get you started from the Medley User&rsquo;s Guide of ~30 years ago.
-Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis. Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp. While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two.">
+<meta itemprop="name" content="Running on Windows 10/11">
+<meta itemprop="description" content="How is this different from the topic running on Docker Desktop?
+Medley does not yet run as a native Windows application. Besides online, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
+This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.
+On Windows, Medley requires a 64-bit machine.
+Running on Windows with WSL Medley will run on either WSL1 or WSL2.">
 
-<meta itemprop="wordCount" content="833">
+<meta itemprop="wordCount" content="823">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Basics of Interlisp"/>
-<meta name="twitter:description" content="A few basics &ndash; enough to get you started from the Medley User&rsquo;s Guide of ~30 years ago.
-Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis. Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp. While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two."/>
+<meta name="twitter:title" content="Running on Windows 10/11"/>
+<meta name="twitter:description" content="How is this different from the topic running on Docker Desktop?
+Medley does not yet run as a native Windows application. Besides online, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
+This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.
+On Windows, Medley requires a 64-bit machine.
+Running on Windows with WSL Medley will run on either WSL1 or WSL2."/>
 
 
 
@@ -41,7 +53,7 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
   src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
   integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
   crossorigin="anonymous"></script>
-<link rel="canonical" href="https://interlisp.org/doc/info/Using.html">
+<link rel="canonical" href="https://interlisp.org/medley/using/running/running-on-win/">
 
   </head>
   <body class="td-page">
@@ -138,10 +150,10 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
   <a href="/medley/project/vocabulary/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyprojectvocabulary"><span class="">Vocabulary</span></a>
 </li>
   </ul>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-medleyusing-li">
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-medleyusing-li">
   <a href="/medley/using/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyusing"><span class="">Using Medley</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-medleyusingrunning-li">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-medleyusingrunning-li">
   <a href="/medley/using/running/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-medleyusingrunning"><span class="">Running Medley Interlisp</span></a>
   <ul class="ul-3 foldable">
     <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-medleyusingrunningonline-li">
@@ -150,8 +162,8 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
   <a href="/medley/using/running/running-on-linux/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-medleyusingrunningrunning-on-linux"><span class="">Running on Linux (incl. WSL)</span></a>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-medleyusingrunningrunning-on-mac-li">
   <a href="/medley/using/running/running-on-mac/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-medleyusingrunningrunning-on-mac"><span class="">Running on MacOS</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-medleyusingrunningrunning-on-win-li">
-  <a href="/medley/using/running/running-on-win/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-medleyusingrunningrunning-on-win"><span class="">Running on Windows 10/11</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-medleyusingrunningrunning-on-win-li">
+  <a href="/medley/using/running/running-on-win/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-medleyusingrunningrunning-on-win"><span class="td-sidebar-nav-active-item">Running on Windows 10/11</span></a>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-docbuildhtml-li">
@@ -212,30 +224,25 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
 
 <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
 	
-	<a href="https://github.com/interlisp/Interlisp.github.io/tree/main/content/en/medley/other/docs/Using.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
-	<a href="https://github.com/interlisp/Interlisp.github.io/edit/main/content/en/medley/other/docs/Using.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
-	<a href="https://github.com/interlisp/Interlisp.github.io/new/main/content/en/medley/other/docs/Using.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank"	rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
-	<a href="https://github.com/interlisp/medley/issues/new?template=documentation.md&amp;projects=Interlisp/medley/5%25!%28EXTRA%20template.URL=The%20Basics%20of%20Interlisp%29" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+	<a href="https://github.com/interlisp/Interlisp.github.io/tree/main/content/en/medley/using/running/running-on-win.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+	<a href="https://github.com/interlisp/Interlisp.github.io/edit/main/content/en/medley/using/running/running-on-win.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+	<a href="https://github.com/interlisp/Interlisp.github.io/new/main/content/en/medley/using/running/running-on-win.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank"	rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+	<a href="https://github.com/interlisp/medley/issues/new?template=documentation.md&amp;projects=Interlisp/medley/5%25!%28EXTRA%20template.URL=Running%20on%20Windows%2010/11%29" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
 	
 
-	<a id="print" href="https://interlisp.org/_print/documentation/"><i	class="fa-solid fa-print fa-fw"></i> Print entire section</a>
+	<a id="print" href="https://interlisp.org/medley/using/running/_print/"><i	class="fa-solid fa-print fa-fw"></i> Print entire section</a>
 	
 </div>
 
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#interlisp">Interlisp</a>
+    <li>
       <ul>
-        <li><a href="#upper--and-lower-case">Upper- and Lower Case</a></li>
-        <li><a href="#variables">Variables</a></li>
-        <li><a href="#lisp-2">LISP-2</a></li>
-        <li><a href="#lambda--nlambda--cllambda">LAMBDA &amp; NLAMBDA &amp; CL:LAMBDA</a></li>
-        <li><a href="#macros">Macros</a></li>
+        <li><a href="#running-on-windows-with-wsl"><strong>Running on Windows with WSL</strong></a></li>
+        <li><a href="#running-on-windows-with-docker-desktop"><strong>Running on Windows with Docker Desktop</strong></a></li>
       </ul>
     </li>
-    <li><a href="#medley-common-lisp">Medley Common Lisp</a></li>
-    <li><a href="#continuing-on">Continuing On</a></li>
   </ul>
 </nav>
       </div>
@@ -273,19 +280,19 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
     <a href="https://interlisp.org/medley/">Medley</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://interlisp.org/medley/other/">Other Information</a>
+    <a href="https://interlisp.org/medley/using/">Using Medley</a>
   </li>
   <li class="breadcrumb-item">
-    <a href="https://interlisp.org/documentation/">Documentation</a>
+    <a href="https://interlisp.org/medley/using/running/">Running Medley Interlisp</a>
   </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://interlisp.org/doc/info/Using.html" aria-disabled="true" class="btn-link disabled">The Basics of Interlisp</a>
+    <a href="https://interlisp.org/medley/using/running/running-on-win/" aria-disabled="true" class="btn-link disabled">Running on Windows 10/11</a>
   </li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>The Basics of Interlisp</h1>
+	<h1>Running on Windows 10/11</h1>
 	
 	<header class="article-meta">
 		
@@ -304,107 +311,61 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
 
 		
 	</header>    
-	<p>A few basics &ndash; enough to get you started from the Medley User&rsquo;s Guide of ~30 years ago.</p>
-<h2 id="interlisp">Interlisp</h2>
-<p>Interlisp is a dialect of Lisp and as such, it is based on the familiar
-syntax of left-parenthesis, function name, arguments, and
-right-parenthesis.  Besides many of the functions having different
-names and arguments compared to Common Lisp, Interlisp has many other,
-more fundamental, differences from Common Lisp.  While this section
-will not go into any of the functional differences between Interlisp
-and Common Lisp, it will attempt to detail the more fundamental
-differences between the two.  The reference manual may be used for a
-detailed description of the Interlisp functions.</p>
-<h3 id="upper--and-lower-case">Upper- and Lower Case</h3>
-<p>Interlisp uses mixed case.  That is, upper-case letters and lower-case
-letters are treated as different.  This means you can have a variable
-name <code>my-var</code> and a variable named <code>MY-VAR</code> that are unique and
-unrelated to each other. This is true for Common Lisp too, but
-the READ function in Common Lisp translates.</p>
-<p>Most Interlisp primitives are upper case.</p>
-<p>As a side note, the Medley system includes a package called DWIM (Do
-What I Mean).  This system reads in what you type and attempts to
-automatically correct input errors.  At times, in an effort to correct
-typing errors this system will auto-convert something you type in
-lowercase into uppercase.  Thus it may appear that the case doesn&rsquo;t
-matter - but it does.</p>
-<h3 id="variables">Variables</h3>
-<p>Except for Special Variables, variables in Common Lisp are lexically
-scoped.  This means that local variables are only visible within the
-scope they are defined.  This means, among other things, that
-variables defined in one function are not visible to other functions.</p>
-<p>In functions that are running interpretively (as opposed to having
-been compiled), variables in Interlisp are dynamically scoped.  This
-means that variables are visible within the dynamic environment they
-are in.  For example, let&rsquo;s say we create two functions <code>FUN1</code>
-and <code>FUN2</code>.  If <code>FUN1</code> introduced a local variable and then
-called <code>FUN2</code>, then <code>FUN2</code> would have access to the variable
-since it is in the dynamic environment of being called by <code>FUN1</code>.
-In other words, the variable was in existence when <code>FUN2</code> was
-called.  However, the Interlisp compiler &ldquo;hides&rdquo; variables unless
-they are &ldquo;declared special&rdquo;, so that they are essentially lexically scoped,
-as in Common Lisp.</p>
-<p>Common Lisp also supports dynamic variables as well.  They are called
-the Special Variables.</p>
-<h3 id="lisp-2">LISP-2</h3>
-<p>Like Common Lisp but unlike Scheme, Interlisp is a LISP-2 language.
-This means, in part, that the namespace for variables is separate from
-the namespace for functions.  For example, in Interlisp and
-Common Lisp, you can simultaneously have a variable named <code>ABC</code>
-and a function named <code>ABC</code> that are unrelated.</p>
-<h3 id="lambda--nlambda--cllambda">LAMBDA &amp; NLAMBDA &amp; CL:LAMBDA</h3>
-<p>Interlisp shares the notion of <code>LAMBDA</code> expressions with Common Lisp,
-as a way of defining functions. Interlisp <code>LAMBDA</code> specifies a list
-of parameters; Common Lisp parameter lists can be decorated with
-<code>&amp;OPTIONAL</code>, <code>&amp;REST</code> and <code>&amp;KEYWORD</code> parameters. Interlisp also
-adds the notion of an <code>NLAMBDA</code> function that doesn&rsquo;t evaluate
-its arguments &ndash;  arguments to
-<code>NLAMBDA</code> function are passed directly into a function without
-being evaluated.</p>
-<p>Interlisp supports spread and no-spread lambda arguments similar to
-Common Lisp.  However, Interlisp treats all arguments as
-optional (if not provided they default to NIL) and ignores extra arguments
-(no warning or error is raised).</p>
-<h3 id="macros">Macros</h3>
-<p>Interlisp supports macros but unlike Common Lisp, Interlisp symbols
-may simultaneously have a function definition and a macro definition.
-If a symbol has both a function definition and a macro definition, the
-function definition is used by the interpreter and the macro
-is used by the compiler.  This allows for extra error checking during
-development and fast operation during production use.</p>
-<p>Interlisp also has a backquote facility similar to Common Lisp&rsquo;s `
-and , read macros.</p>
-<p>Unlike Common Lisp, Interlisp does not have a special function for
-defining macros.  Macros are defined by placing their definition on
-the property list of the symbol.</p>
-<h2 id="medley-common-lisp">Medley Common Lisp</h2>
-<p>The term &ldquo;Common Lisp&rdquo; covers a range of development stages, first
-defined by the book &ldquo;Common Lisp, the Language&rdquo; editions 1 (aka CLtL1)
-and 2 (aka CLtL2) and ultimately the ANSI Standard Common Lisp (aka ANSI).
-The Common Lisp currently supported by Medley is somewhere between
-CLtl1 and CLtl2.  We are hoping to complete the move to
-CLtl2.</p>
-<p>In Medley Common Lisp and Interlisp are fully
-integrated.  From within Common Lisp, Interlisp functions may be
-accessed through the Common Lisp package nicknamed ``IL&rsquo;'.</p>
-<h2 id="continuing-on">Continuing On</h2>
-<p>This introduction was designed to provide the most general of
-information &ndash; just enough to get you started.  Medley comes
-with extensive documentation.</p>
-<p>In searchable PDF and (imperfect) HTML:</p>
+	<p>How is this different from the topic running on Docker Desktop?</p>
+<p>Medley does not yet run as a native Windows application.  Besides <a href="/medley/using/running/online">online</a>, you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).</p>
+<p>This methods requires the installation (if not already installed) of one additional component to your Windows system - WSL.</p>
+<p>On Windows, Medley requires a 64-bit machine.</p>
+<h3 id="running-on-windows-with-wsl"><strong>Running on Windows with WSL</strong></h3>
+<p>Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>) or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).</p>
+<p>When running under WSL2, Medley can display in one of two ways: in an X-Window (using the X_Windows server built-in to WSL2) or in a VNC-viewer Window.  Although the X-windows approach is simpler (i.e., behind the scenes) it does not scale well on high-DPI displays.  In VNC mode, the Medley window will scale according to the Windows Display Scale settings. The X vs Vnc mode is set on using the <code>--vnc</code> flag on the <code>medley</code> command line.  When running on WSL1, Vnc mode is always used.</p>
+<h4 id="to-install-an-run-medley-with-wsl">To install an run Medley with WSL</h4>
+<ol>
+<li>
+<p><em>Install WSL:</em> See <a href="https://learn.microsoft.com/en-us/windows/wsl/install">here</a> for instructions on installing WSL.</p>
+</li>
+<li>
+<p><em>Install medley within WSL:</em> Once WSL is installed, open a terminal to WSL (e.g., by typing &ldquo;wsl&rdquo; in a command or powershell window) and follow the instructions for installing and running Medley on Linux that can be found <a href="/medley/using/running/running-on-linux">here</a>.</p>
+</li>
+<li>
+<p><em>Run Medley:</em> Once Medley has been installed on WSL, you can run medley from either a WSL terminal as described in the Running Medley on Linux instructions (<a href="/medley/using/running/running-on-linux">here</a>) or by typing <code>wsl medley &lt;flags and options&gt;</code> in a Command or Powershell window.</p>
+<p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
+<p>For first-time users: <code>wsl medley --vnc --apps --interlisp --noscroll</code> or, equivalently, <code>wsl medley -v -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
+</li>
+</ol>
+<h4 id="notes">Notes</h4>
 <ul>
-<li>(1991) <a href="/documentation/SunUserGuide.pdf">Sun User Guide</a></li>
-<li>(1992) <a href="/documentation/Medley-Primer.pdf">Medley for the Novice</a></li>
-<li>(1993) <a href="/documentation/IRM.pdf">Interlisp Reference Manual</a></li>
+<li>If Medley for Docker (see below) is also installed on the system, you can also start Medley by typing <code>medley --wsl &lt;distro&gt; &lt;flags and options&gt;</code> in a Command or Powershell window.  This is equivalent to the <code>wsl medley &lt;flags and options&gt;</code> command described above.</li>
 </ul>
-<p>Medley Interlisp also includes an online reference:</p>
+<h3 id="running-on-windows-with-docker-desktop"><strong>Running on Windows with Docker Desktop</strong></h3>
+<p>When running with Docker, Medley runs in a Docker container using the Interlisp/medley image found on Docker Hub.  A VNC Viewer window is used to display the Medley desktop.  All of this is started up using the single <code>medley</code> command.</p>
+<h4 id="to-install-an-run-medley-with-docker-desktop">To install an run Medley with Docker Desktop</h4>
+<ol>
+<li>
+<p><em>Install Docker Desktop:</em> Install Docker Desktop for Windows as described <a href="https://docs.docker.com/desktop/install/windows-install/">here</a>.</p>
+</li>
+<li>
+<p><em>Install Medley</em>: To install Medley, download and run the the <code>medley-install_&lt;version&gt;.exe</code> that can be found <a href="https://online.interlisp.org/downloads/medley_downloads.html">here</a> under the Windows 10/11 heading.</p>
+<p>This will install Medley on your system, by default in the <code>%USERPROFILE%/AppData/Local/Medley/Scripts</code> folder.  This folder will be added to your %PATH%.  An uninstall will also be added so that you can remove Medley via the standard Add/Remove Programs control panel.</p>
+<p>Note that to download <code>medley-install_&lt;version&gt;.exe</code>, you may have to bypass any security concerns your browser has about downloading an .exe file.  In addition, you will have to bypass the Windows Defender protection against executing an unsigned .exe.  To do so, click <code>More info</code> followed by <code>Run Anyway</code> when the Windows Defender window pops up.</p>
+</li>
+<li>
+<p><em>Run Medley:</em> Once it is installed, you can run Medley by typing <code>medley &lt;flags and options&gt;</code> into either a Command or a Powershell window.</p>
+<p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
+<p>For first-time users: <code>medley --apps --interlisp --noscroll</code> or, equivalently, <code>medley -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
+</li>
+</ol>
+<h4 id="notes-1">Notes</h4>
 <ul>
-<li>right-click on the desktop to get to the system menu</li>
-<li>select DInfo</li>
+<li>
+<p>Docker needs to be installed and <em>running</em> in order to run Medley.  However, the Docker Dashboard window does not be open.  You can check the state and start/stop Docker by right clicking on the Docker icon <img alt="Docker icon" height=15 width=15 src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAK8AAAB+CAMAAABlLrHNAAAAY1BMVEUAAAD///+wsLDQ0NC/v7/r6+uioqLx8fEkJCQaGhrh4eFGRkZVVVW8vLwYGBj8/PxbW1tycnKqqqra2toRERHKyso3Nzd+fn5hYWGXl5doaGhMTEw8PDxBQUGNjY2GhoYwMDDd4iByAAAE4UlEQVR4nO2c69aqIBCGIQ8UHdSoTK30/q9ya7b7lIOMhUJr+f6chfZEMMwMEMJmtYo5PSKj70dG34bJHfGiRj/ANO924e1p4V14u1p4F96uFt6Ft6uF97d4i9/ixX7CKTP7ftO8OOJk+PXGeScWiDcKOJHGSnirtKnhDgbxhod1X3ENTOINZ22GasYb4/nzN7ITJr2H8V4wnhzJ36C8B0f878Ir0cr7KV6G0CP4HV4S1y2r88/wZm3bUuv83OAlp1fjVAfsBm/6bn0nP8BL13/Nk+EedoI37ba/Os8brXsPHF3nXXFPDLk10/HOB7xRwj1x+5I3ugoQDGNPMBZ1U/GraVetoOIfGcihQPEvDTk9f7E9ZzxSZdNBnYWvWKm/owP50EPgRQ9lYwd4xSGE1spVg+cNPE7NkxFvfP5elLc2np5ImzJZ05c4b9ZqBeQNitOmp0NeW0veeKkp6I23pnXThDc2XcXWh7711JlRwUnCq1zlON6z+HAE9mdIlb8dBeP97yNFP9MMCNWM43i9wxe8yvVC5N3+faQv40WqbMNV3rApZVBWi/ZKGK7ybst4e6maAkZ1KfLsTCJXeKXjV3x3vgrc4KUy/yDTOiQu8JINkLdep5kDvFgscat1dIBXEj8odXOAV4zP1HKhf4MLGHfDHODFJZg3dWG+NbUzoKhRXmX+Nhjv1MqBuKXgf6ngDJukTHwflfXKtW4aC1Yim1Fpv5dgS8ZdXC9w4Pd1fsbrnNFv43W+6TNelzZlsqadDxUTWpnqJNeFfIhl4iCS6ZlzWOWNAnYuZemQTHv85j2vLCjM0ryAxjrvjA7hKAM/Y083hv/z/gJu8k7nkDy8d0pxp0aE+GKbc9ruu8UTBB/xFnTYPRjuyTaRWps42zOhLmWbSqYtIURZ33FQyuJZwwvP9ubSbajC7SBvOYCLUWUbT9Dghgcak03Pot0QLkbQ2H42DW94oFT/hlm1G95ARmOqFXNoyJk1vGIuaFWnYVzn4rNQxwsrv86lu243FDGnFgxd92IUwJLTebTRn9+RbGbbk7Z76/wNXm2bXBrf2/JK9v1sydfi1rzUNuVbw5HDf15nQvYT5AQlku7nW5H60EOf15WCiX6ytbxj9jsmFGCytbyBeAbAgnIQ7rM+6UIIfAKNhpaXP69mQ5qwt8dLbMPy+xkaXvseTX0eSspre0CsmQ6zz0sru7yDJ1IlvJY9BGhh6/FaXTJG3TB67WdZrPLcRl2IevHam3HVuPs6L17JvUsncd/7m5bKJmvYrSGRF99s4G7G4v7x2kjjDrAYUsprIa+vRvdud38efirFkG7wVVjGO3deFEOuuw3xzuvTcnBIpuKdtRIxIsRR8s7nhC8fzDQJ76ijjF/ow7Eg8gpXeabQJvziyjd33ohMv72Vf+LGVLyTA1+giTCQF5NJh0T6kdMd4sXRdJPu+tVQUPBOFrwXgOvQH/Fiar4gcYg/drl6XhyZXjkSM7Tq85PkAT3XqFcBusn/HW8dXxqad/n+89VsDG/dx6udeNx6lKp8ZRJWw9tcLCzhh/fFnj1+77/G8TZi4XU88yV/eKb/KgjIW/cy9bMRHq7KQ59OAgvkbRV4YXotKvV5y6qI84dv9u9VBI07Dx4Ryjx/H2ZlmibPv3NN0iQts+Pe9xhVHiI0qH+feF7zFV+3XAAAAABJRU5ErkJggg=="> in the System Tray.</p>
+</li>
+<li>
+<p>The first time it runs, <code>medley</code> will automatically pull the latest Interlisp/medley docker image from Docker Hub.  It will use this docker image for all subsequent runs unless the &lsquo;&ndash;update&rsquo; flag is raised.  When &ndash;update is raised, <code>medley</code> will once again pull the latest Interlisp/medley docker image.</p>
+</li>
+<li>
+<p>When running with Docker, the Medley file system is for the most part &ldquo;within&rdquo; the Docker container.  This means that it is deleted whenever Medley stops and is recreated whenever Medley restarts.  The exception is the directory <code>/home/medley/il</code> (in the Medley file system) which is automatically mapped by <code>medley</code> to a directory in the host Windows file system, by default to <code>%USERPROFILE%/AppData/Local/Medley/il</code> folder.  You can change this mapping to a different windows folder using the <code>--logindir</code> option to <code>medley</code>.</p>
+</li>
 </ul>
-<p><em>or</em>, at any prompt, the <code>man</code> command will look up an (Interlisp) symbol.</p>
-<hr>
-<p><em>Many thanks to <a href="https://github.com/blakemcbride">Blake McBride</a> and his <a href="https://github.com/blakemcbride/medley-intro">Medley Intro</a> from which this was initially taken.</em></p>
 
 	
 	

@@ -7,25 +7,25 @@
 <meta name="robots" content="index, follow">
 <link rel="shortcut icon" href="/Resources/favicon.png" type="image/png">
 
-<title>The Basics of Interlisp | Medley Interlisp Project</title>
-<meta name="description" content="A few basics &amp;ndash; enough to get you started from the Medley User&amp;rsquo;s Guide of ~30 years ago.
-Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis. Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp. While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two.">
-<meta property="og:title" content="The Basics of Interlisp" />
-<meta property="og:description" content="A few basics &ndash; enough to get you started from the Medley User&rsquo;s Guide of ~30 years ago.
-Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis. Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp. While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two." />
+<title>Orientation to Medley | Medley Interlisp Project</title>
+<meta name="description" content="Once the system has been started, you will see some windows with title bars. Navigation within the system is a little unusual. To control a window, right-click on the window&amp;rsquo;s title bar. To bring up a system menu, right-click anywhere outside a window.
+Windows titled &amp;ldquo;Exec&amp;rdquo; work as read-eval-print loops with the addition of extensive &amp;ldquo;commands&amp;rdquo;. There are four different contexts, determined by the default &amp;ldquo;package&amp;rdquo; and &amp;ldquo;readtable&amp;rdquo;. The &amp;ldquo;package&amp;rdquo; of a window determines which (Common Lisp) package is the default while the &amp;ldquo;readtable&amp;rdquo; controls whether typing is treated as case sensitive or not.">
+<meta property="og:title" content="Orientation to Medley" />
+<meta property="og:description" content="Once the system has been started, you will see some windows with title bars. Navigation within the system is a little unusual. To control a window, right-click on the window&rsquo;s title bar. To bring up a system menu, right-click anywhere outside a window.
+Windows titled &ldquo;Exec&rdquo; work as read-eval-print loops with the addition of extensive &ldquo;commands&rdquo;. There are four different contexts, determined by the default &ldquo;package&rdquo; and &ldquo;readtable&rdquo;. The &ldquo;package&rdquo; of a window determines which (Common Lisp) package is the default while the &ldquo;readtable&rdquo; controls whether typing is treated as case sensitive or not." />
 <meta property="og:type" content="article" />
-<meta property="og:url" content="https://interlisp.org/doc/info/Using.html" /><meta property="article:section" content="medley" />
+<meta property="og:url" content="https://interlisp.org/medley/other/docs/medley/orientation/" /><meta property="article:section" content="medley" />
 
 
-<meta itemprop="name" content="The Basics of Interlisp">
-<meta itemprop="description" content="A few basics &ndash; enough to get you started from the Medley User&rsquo;s Guide of ~30 years ago.
-Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis. Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp. While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two.">
+<meta itemprop="name" content="Orientation to Medley">
+<meta itemprop="description" content="Once the system has been started, you will see some windows with title bars. Navigation within the system is a little unusual. To control a window, right-click on the window&rsquo;s title bar. To bring up a system menu, right-click anywhere outside a window.
+Windows titled &ldquo;Exec&rdquo; work as read-eval-print loops with the addition of extensive &ldquo;commands&rdquo;. There are four different contexts, determined by the default &ldquo;package&rdquo; and &ldquo;readtable&rdquo;. The &ldquo;package&rdquo; of a window determines which (Common Lisp) package is the default while the &ldquo;readtable&rdquo; controls whether typing is treated as case sensitive or not.">
 
-<meta itemprop="wordCount" content="833">
+<meta itemprop="wordCount" content="1031">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
-<meta name="twitter:title" content="The Basics of Interlisp"/>
-<meta name="twitter:description" content="A few basics &ndash; enough to get you started from the Medley User&rsquo;s Guide of ~30 years ago.
-Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis. Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp. While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two."/>
+<meta name="twitter:title" content="Orientation to Medley"/>
+<meta name="twitter:description" content="Once the system has been started, you will see some windows with title bars. Navigation within the system is a little unusual. To control a window, right-click on the window&rsquo;s title bar. To bring up a system menu, right-click anywhere outside a window.
+Windows titled &ldquo;Exec&rdquo; work as read-eval-print loops with the addition of extensive &ldquo;commands&rdquo;. There are four different contexts, determined by the default &ldquo;package&rdquo; and &ldquo;readtable&rdquo;. The &ldquo;package&rdquo; of a window determines which (Common Lisp) package is the default while the &ldquo;readtable&rdquo; controls whether typing is treated as case sensitive or not."/>
 
 
 
@@ -41,7 +41,7 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
   src="https://unpkg.com/lunr@2.3.9/lunr.min.js"
   integrity="sha384-203J0SNzyqHby3iU6hzvzltrWi/M41wOP5Gu+BiJMz5nwKykbkUx8Kp7iti0Lpli"
   crossorigin="anonymous"></script>
-<link rel="canonical" href="https://interlisp.org/doc/info/Using.html">
+<link rel="canonical" href="https://interlisp.org/medley/other/docs/medley/orientation/">
 
   </head>
   <body class="td-page">
@@ -212,30 +212,28 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
 
 <div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
 	
-	<a href="https://github.com/interlisp/Interlisp.github.io/tree/main/content/en/medley/other/docs/Using.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
-	<a href="https://github.com/interlisp/Interlisp.github.io/edit/main/content/en/medley/other/docs/Using.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
-	<a href="https://github.com/interlisp/Interlisp.github.io/new/main/content/en/medley/other/docs/Using.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank"	rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
-	<a href="https://github.com/interlisp/medley/issues/new?template=documentation.md&amp;projects=Interlisp/medley/5%25!%28EXTRA%20template.URL=The%20Basics%20of%20Interlisp%29" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+	<a href="https://github.com/interlisp/Interlisp.github.io/tree/main/content/en/medley/other/docs/medley/orientation.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+	<a href="https://github.com/interlisp/Interlisp.github.io/edit/main/content/en/medley/other/docs/medley/orientation.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+	<a href="https://github.com/interlisp/Interlisp.github.io/new/main/content/en/medley/other/docs/medley/orientation.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank"	rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+	<a href="https://github.com/interlisp/medley/issues/new?template=documentation.md&amp;projects=Interlisp/medley/5%25!%28EXTRA%20template.URL=Orientation%20to%20Medley%29" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
 	
 
-	<a id="print" href="https://interlisp.org/_print/documentation/"><i	class="fa-solid fa-print fa-fw"></i> Print entire section</a>
+	<a id="print" href="https://interlisp.org/medley/other/docs/medley/_print/"><i	class="fa-solid fa-print fa-fw"></i> Print entire section</a>
 	
 </div>
 
             <div class="td-toc">
         <nav id="TableOfContents">
   <ul>
-    <li><a href="#interlisp">Interlisp</a>
+    <li><a href="#different-lisp-environments">Different Lisp Environments</a></li>
+    <li><a href="#images-and-files">Images And Files</a></li>
+    <li><a href="#project-directory">Project Directory</a></li>
+    <li><a href="#saving-and-running-images">Saving And Running Images</a>
       <ul>
-        <li><a href="#upper--and-lower-case">Upper- and Lower Case</a></li>
-        <li><a href="#variables">Variables</a></li>
-        <li><a href="#lisp-2">LISP-2</a></li>
-        <li><a href="#lambda--nlambda--cllambda">LAMBDA &amp; NLAMBDA &amp; CL:LAMBDA</a></li>
-        <li><a href="#macros">Macros</a></li>
+        <li><a href="#creating-and-editing-functions">Creating And Editing Functions</a></li>
+        <li><a href="#saving--loading-source-code-tofrom-disk-files">Saving &amp; Loading Source Code To/From Disk Files</a></li>
       </ul>
     </li>
-    <li><a href="#medley-common-lisp">Medley Common Lisp</a></li>
-    <li><a href="#continuing-on">Continuing On</a></li>
   </ul>
 </nav>
       </div>
@@ -278,14 +276,17 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
   <li class="breadcrumb-item">
     <a href="https://interlisp.org/documentation/">Documentation</a>
   </li>
+  <li class="breadcrumb-item">
+    <a href="https://interlisp.org/medley/other/docs/medley/">What to Expect when Using Medley</a>
+  </li>
   <li class="breadcrumb-item active" aria-current="page">
-    <a href="https://interlisp.org/doc/info/Using.html" aria-disabled="true" class="btn-link disabled">The Basics of Interlisp</a>
+    <a href="https://interlisp.org/medley/other/docs/medley/orientation/" aria-disabled="true" class="btn-link disabled">Orientation to Medley</a>
   </li>
   </ol>
 </nav>
             
 <div class="td-content">
-	<h1>The Basics of Interlisp</h1>
+	<h1>Orientation to Medley</h1>
 	
 	<header class="article-meta">
 		
@@ -304,107 +305,102 @@ Interlisp Interlisp is a dialect of Lisp and as such, it is based on the familia
 
 		
 	</header>    
-	<p>A few basics &ndash; enough to get you started from the Medley User&rsquo;s Guide of ~30 years ago.</p>
-<h2 id="interlisp">Interlisp</h2>
-<p>Interlisp is a dialect of Lisp and as such, it is based on the familiar
-syntax of left-parenthesis, function name, arguments, and
-right-parenthesis.  Besides many of the functions having different
-names and arguments compared to Common Lisp, Interlisp has many other,
-more fundamental, differences from Common Lisp.  While this section
-will not go into any of the functional differences between Interlisp
-and Common Lisp, it will attempt to detail the more fundamental
-differences between the two.  The reference manual may be used for a
-detailed description of the Interlisp functions.</p>
-<h3 id="upper--and-lower-case">Upper- and Lower Case</h3>
-<p>Interlisp uses mixed case.  That is, upper-case letters and lower-case
-letters are treated as different.  This means you can have a variable
-name <code>my-var</code> and a variable named <code>MY-VAR</code> that are unique and
-unrelated to each other. This is true for Common Lisp too, but
-the READ function in Common Lisp translates.</p>
-<p>Most Interlisp primitives are upper case.</p>
-<p>As a side note, the Medley system includes a package called DWIM (Do
-What I Mean).  This system reads in what you type and attempts to
-automatically correct input errors.  At times, in an effort to correct
-typing errors this system will auto-convert something you type in
-lowercase into uppercase.  Thus it may appear that the case doesn&rsquo;t
-matter - but it does.</p>
-<h3 id="variables">Variables</h3>
-<p>Except for Special Variables, variables in Common Lisp are lexically
-scoped.  This means that local variables are only visible within the
-scope they are defined.  This means, among other things, that
-variables defined in one function are not visible to other functions.</p>
-<p>In functions that are running interpretively (as opposed to having
-been compiled), variables in Interlisp are dynamically scoped.  This
-means that variables are visible within the dynamic environment they
-are in.  For example, let&rsquo;s say we create two functions <code>FUN1</code>
-and <code>FUN2</code>.  If <code>FUN1</code> introduced a local variable and then
-called <code>FUN2</code>, then <code>FUN2</code> would have access to the variable
-since it is in the dynamic environment of being called by <code>FUN1</code>.
-In other words, the variable was in existence when <code>FUN2</code> was
-called.  However, the Interlisp compiler &ldquo;hides&rdquo; variables unless
-they are &ldquo;declared special&rdquo;, so that they are essentially lexically scoped,
-as in Common Lisp.</p>
-<p>Common Lisp also supports dynamic variables as well.  They are called
-the Special Variables.</p>
-<h3 id="lisp-2">LISP-2</h3>
-<p>Like Common Lisp but unlike Scheme, Interlisp is a LISP-2 language.
-This means, in part, that the namespace for variables is separate from
-the namespace for functions.  For example, in Interlisp and
-Common Lisp, you can simultaneously have a variable named <code>ABC</code>
-and a function named <code>ABC</code> that are unrelated.</p>
-<h3 id="lambda--nlambda--cllambda">LAMBDA &amp; NLAMBDA &amp; CL:LAMBDA</h3>
-<p>Interlisp shares the notion of <code>LAMBDA</code> expressions with Common Lisp,
-as a way of defining functions. Interlisp <code>LAMBDA</code> specifies a list
-of parameters; Common Lisp parameter lists can be decorated with
-<code>&amp;OPTIONAL</code>, <code>&amp;REST</code> and <code>&amp;KEYWORD</code> parameters. Interlisp also
-adds the notion of an <code>NLAMBDA</code> function that doesn&rsquo;t evaluate
-its arguments &ndash;  arguments to
-<code>NLAMBDA</code> function are passed directly into a function without
-being evaluated.</p>
-<p>Interlisp supports spread and no-spread lambda arguments similar to
-Common Lisp.  However, Interlisp treats all arguments as
-optional (if not provided they default to NIL) and ignores extra arguments
-(no warning or error is raised).</p>
-<h3 id="macros">Macros</h3>
-<p>Interlisp supports macros but unlike Common Lisp, Interlisp symbols
-may simultaneously have a function definition and a macro definition.
-If a symbol has both a function definition and a macro definition, the
-function definition is used by the interpreter and the macro
-is used by the compiler.  This allows for extra error checking during
-development and fast operation during production use.</p>
-<p>Interlisp also has a backquote facility similar to Common Lisp&rsquo;s `
-and , read macros.</p>
-<p>Unlike Common Lisp, Interlisp does not have a special function for
-defining macros.  Macros are defined by placing their definition on
-the property list of the symbol.</p>
-<h2 id="medley-common-lisp">Medley Common Lisp</h2>
-<p>The term &ldquo;Common Lisp&rdquo; covers a range of development stages, first
-defined by the book &ldquo;Common Lisp, the Language&rdquo; editions 1 (aka CLtL1)
-and 2 (aka CLtL2) and ultimately the ANSI Standard Common Lisp (aka ANSI).
-The Common Lisp currently supported by Medley is somewhere between
-CLtl1 and CLtl2.  We are hoping to complete the move to
-CLtl2.</p>
-<p>In Medley Common Lisp and Interlisp are fully
-integrated.  From within Common Lisp, Interlisp functions may be
-accessed through the Common Lisp package nicknamed ``IL&rsquo;'.</p>
-<h2 id="continuing-on">Continuing On</h2>
-<p>This introduction was designed to provide the most general of
-information &ndash; just enough to get you started.  Medley comes
-with extensive documentation.</p>
-<p>In searchable PDF and (imperfect) HTML:</p>
+	<p>Once the system has been started, you will see some windows with title bars. Navigation within the system is a little unusual.
+To control a window, right-click on the window&rsquo;s title bar. To bring up a system menu, right-click anywhere outside a window.</p>
+<p>Windows titled &ldquo;Exec&rdquo; work as read-eval-print loops with the addition of extensive &ldquo;commands&rdquo;. There are four different
+contexts, determined by the default &ldquo;package&rdquo; and &ldquo;readtable&rdquo;. The &ldquo;package&rdquo; of a window determines which (Common Lisp)
+package is the default while the &ldquo;readtable&rdquo; controls whether typing is treated as case sensitive or not.</p>
+<p>The title bar will also tell you whether you are running LISP (for Common Lisp), XCL (for Xerox Common Lisp), INTERLISP (for current Interlisp), or
+OLD-INTERLISP-T (for an older version of Interlisp).</p>
+<p>When the system first comes up you will notice a window labeled &ldquo;Exec (XCL)&rdquo;. This works as a Common Lisp read-eval-print loop.</p>
+<p>(Hint: When the system has completed its initialization process, a fresh prompt will appear.)</p>
+<h2 id="different-lisp-environments">Different Lisp Environments</h2>
+<p>The system comes with four versions of &ldquo;Exec&rdquo;:</p>
 <ul>
-<li>(1991) <a href="/documentation/SunUserGuide.pdf">Sun User Guide</a></li>
-<li>(1992) <a href="/documentation/Medley-Primer.pdf">Medley for the Novice</a></li>
-<li>(1993) <a href="/documentation/IRM.pdf">Interlisp Reference Manual</a></li>
+<li><code>Interlisp</code>:  Package: <em>Interlisp</em>, Readtable: a hybrid, case sensitive environment. Most Interlisp functions are all caps, so use of the SHIFT LOCK is recommended.</li>
+<li><code>Old Interlisp</code>: The same <em>Interlisp</em> package, but an older readtable (where &ldquo;:&rdquo; isn&rsquo;t a package delimiter)</li>
+<li><code>Common Lisp</code>: Package: <em>USER</em> (need to check)</li>
+<li><code>XCL</code>: (eXtended Common Lisp) Common Lisp with a number of extensions.</li>
 </ul>
-<p>Medley Interlisp also includes an online reference:</p>
+<p>Even though each of the possible Exec&rsquo;s gives a default environment, all of the various Lisp functions and variables are interchangeably available from any of the Exec windows via package specifications.  For example, an Interlisp function names <code>ABC</code> may be run from Common Lisp via <code>(IL:ABC ...)</code>. Likewise, a Common Lisp function <code>DEF</code> may be executed from Interlisp via <code>(CL:DEF ...)</code>.</p>
+<h2 id="images-and-files">Images And Files</h2>
+<p>The Medley system includes a virtual machine (VM) that runs the Lisp programs.
+Medley can run Lisp code interpreted or compiled into the byte-code for the
+Medley VM.  This is a bit similar to the Java Virtual Machine or the .NET CLR
+or Smalltalk.</p>
+<p>In traditional systems, a developer edits source code files and then
+compiles those files into something the machine can execute &mdash; be it
+a machine executable file or byte-code for a VM.  Medley does not work
+that way.  Medley is an image-based system similar to Smalltalk or Squeak.</p>
+<p>When Medley is started up, you are in the development and runtime
+environment.  All of your development is done here and all of your
+programs are run here.  You are essentially editing runnable programs
+in memory.  When you exit the system, Medley creates a backup of this
+memory onto what is called a SYSOUT (or <code>lisp.virtualmem</code>).  When the system is started
+up again, this image is read into memory and the system picks up right
+where it left off.  This is what is called an image-based development
+environment.</p>
+<p>In Medley, programs are developed, edited, debugged, and run all from
+within Medley.  The state of this development is saved in your image file.
+There is also a way to save your system to more traditional
+disk files.  This is called the ``File Package&rsquo;'.</p>
+<p>Medley utilizes the following file types:</p>
 <ul>
-<li>right-click on the desktop to get to the system menu</li>
-<li>select DInfo</li>
+<li><code>lisp.virtualmem</code>: This is located in your home directory and is an image of the last time Medley was run.  If you start Medley without specifying an image to run, this image is used.</li>
+<li><code>XXXX.SYSOUT</code>: This is an image that was explicitly saved by the developer.  This may be loaded by specifying its name when starting Medley.</li>
+<li><code>XXXX</code> (no file name extension): Source files created with the ``File Package&rsquo;'.</li>
+<li><code>XXXX.LCOM</code>: Compiled versions of the XXXX files</li>
+<li><code>XXXX.DFASL</code>: Another compiled form of XXXX files</li>
+<li><code>XXXX.TEDIT</code>: Text (like a word processor) in a Medley-specific format</li>
 </ul>
-<p><em>or</em>, at any prompt, the <code>man</code> command will look up an (Interlisp) symbol.</p>
-<hr>
-<p><em>Many thanks to <a href="https://github.com/blakemcbride">Blake McBride</a> and his <a href="https://github.com/blakemcbride/medley-intro">Medley Intro</a> from which this was initially taken.</em></p>
+<h2 id="project-directory">Project Directory</h2>
+<p>Medley has something called its &ldquo;connected directory&rdquo;.  This is just
+another way to say &ldquo;working directory&rdquo;.  All file reads and writes
+occur (if no path is specified) in the connected directory.  When Medley
+first starts up, its connected directory is your home directory.  This
+can be changed by executing one of the following commands:</p>
+<pre tabindex="0"><code>cd MyProject
+</code></pre><p>or</p>
+<pre tabindex="0"><code>(CNDIR &#34;MyProject&#34;)
+</code></pre><p>You will see the connected directory displayed at the top of the Medley
+window.  Once the connected directory has been changed, all future
+image saves or file loads or saves will occur in this directory.  Additionally,
+this directory will be saved in the image so when you re-load the image, you
+will already be in the desired directory.</p>
+<p>One thing to note, however, is that the default image
+<code>lisp.virtualmem</code> will still be saved in your home directory.  This
+assures that if you start Medley up without specifying an image, you
+will return to the last environment you were in.</p>
+<h2 id="saving-and-running-images">Saving And Running Images</h2>
+<p>You can also manually save an image to a specific file at any point by
+typing the following from an Interlisp prompt:</p>
+<pre tabindex="0"><code>(SYSOUT &#34;my-file&#34;)
+</code></pre><p>This will save your running image to a file named <code>my-file.SYSOUT</code> that can be loaded again by passing that file name to the
+<code>run-medley</code> command.</p>
+<h3 id="creating-and-editing-functions">Creating And Editing Functions</h3>
+<p>Objects (function, variables, etc.) can be credited and edited
+as follows:</p>
+<pre tabindex="0"><code>ED(myfunc)
+</code></pre><p>First, if it is a new object, the system will ask what type of object
+it is.  After that, the user will be presented with a GUI structure editor
+where the object may be defined or edited.</p>
+<p>When the window is closed, via right-clicking on the title bar,
+the object will be saved.</p>
+<h3 id="saving--loading-source-code-tofrom-disk-files">Saving &amp; Loading Source Code To/From Disk Files</h3>
+<p>When you edit or define a function, a variable, etc., Medley keeps
+track of the fact that they have been created or edited.  These
+functions and variables are grouped and ultimately get associated with
+a file on your disk.  In places, Interlisp refers to these disk files
+as &ldquo;symbolic files&rdquo;.</p>
+<ul>
+<li><code>FILELST</code> - list of user files the system is aware of</li>
+<li><code>SYSFILES</code> - list of system files loaded</li>
+<li><code>(FILES?)</code> - prompts user for which file to associate newly defined functions, variables, etc.</li>
+<li><code>(MAKEFILE &quot;myfile&quot;)</code> - writes out all of the functions, variables, etc. that have been associated with file &ldquo;myfile&rdquo;</li>
+<li><code>(LOAD &quot;myfile&quot;)</code> - loads a previously saved file</li>
+<li><code>(LOAD &quot;myfile.LCOM&quot;)</code>  - load a previously compiled file</li>
+<li><code>(CLEANUP)</code> - interactively save and compile all changed files</li>
+</ul>
 
 	
 	
