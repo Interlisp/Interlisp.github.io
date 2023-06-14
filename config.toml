@@ -7,12 +7,6 @@ enableRobotsTXT = true
 
 assetDir = "static"
 
-# Disabled not working correctly
-#[privacy.googleAnalytics]
-#   disable = false
-#   respectDoNotTrack = true
-#   useSessionStorage = false
-
 # ****************************************************************************
 #
 # Docsy
@@ -100,10 +94,10 @@ anchor = "smart"
 # 
 # Docsy - Services Configuration
 #
+# Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
 [services]
   [services.googleAnalytics]
-   # Comment out the next line to disable GA tracking. Also disables the feature described in [params.ui.feedback].
-   googleAnalytics = "G-JXK20KN1W1"
+    id = "G-JXK20KN1W1"
 
 # ****************************************************************************
 #
