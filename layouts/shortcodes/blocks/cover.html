@@ -34,7 +34,7 @@
   {{- end }} td-overlay td-overlay--dark -bg-{{ $col_id }}">
   <div class="col-12">
     <div class="container td-overlay__inner">
-      <img id="banner-hero-logo" class="hero-logo" alt="Interlisp Medley logotype" src="Resources/logo_red_no_background_568x385.png">
+      <img id="banner-hero-logo" class="hero-logo" alt="Interlisp Medley logotype" src="Resources/logo_white_no_border_568x385.png">
       <div class="text-center">
         {{ with .Get "title" }}<h1 class="display-1 mt-0 mt-md-5 pb-4">{{ $title := . }}{{ with $logo_image }}{{ $logo_image_resized := (.Fit (printf "70x70 %s" $logo_anchor)) }}<img class="td-cover-logo" src="{{ $logo_image_resized.RelPermalink }}" alt="{{ $title | html }} Logo">{{ end }}{{ $title | html }}</h1>{{ end }}
         {{ with .Get "subtitle" }}<p class="display-2 text-uppercase mb-0">{{ . | html }}</p>{{ end }}
