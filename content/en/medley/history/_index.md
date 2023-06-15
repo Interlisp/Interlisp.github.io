@@ -29,9 +29,3 @@ useful bibliography that can be used for research into the history of the
 languages development and impacts on modern computing.
 
 The [Publications](/medley/history/publications) page will help you explore this resource.
-
-## Credits
-
-The effort to create Interlisp and restored Medley Interlisp has taken the talents
-of many people.  The [Credits](/medley/history/credits) page is our attempt to recognize them for
-their contributions.
