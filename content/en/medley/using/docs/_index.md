@@ -1,6 +1,8 @@
 ---
 title: Documentation
 url: /documentation/
+aliases:
+ - /docs/
 weight: 60
 type: docs
 no_list: true
