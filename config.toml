@@ -31,6 +31,11 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 #
 
 [menu]
+  [[menu.main]]
+    name = "GitHub"
+    weight = -120
+    pre = "<i class='fab fa-github'></i>"
+    url = "https://github.com/interlisp"
 #  [[menu.main]]
 #    name = "Download"
 #    weight = -110
@@ -46,11 +51,6 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
     weight = -90
     pre = "<i class='fas fa-book'></i>"
     url = "/documentation/"    
-  [[menu.main]]
-    name = "GitHub"
-    weight = -80
-    pre = "<i class='fab fa-github'></i>"
-    url = "https://github.com/interlisp"
 
 # Highlighting config
 pygmentsCodeFences = true
