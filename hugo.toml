@@ -1,5 +1,4 @@
 baseURL = "https://interlisp.org"
-title = "Medley Interlisp Project"
 
 #relativeURLs = true
 
@@ -106,7 +105,6 @@ anchor = "smart"
 
 [languages]
   [languages.en]
-    title = "Medley Interlisp Project"
     description = "Dedicated to restoring and preserving the Interlisp experience"
     languageName ="English"
     # Weight used for sorting.
