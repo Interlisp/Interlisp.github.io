@@ -28,5 +28,3 @@ _Imagine someone let you into an alien spaceship they landed in your backyard, s
 {{< imgproc SimonBrooke_20211215 Resize "550x420">}} <a href="https://twitter.com/simon_brooke/status/1471238434719154189?ref_src=twsrc">Link to tweet</a> {{< /imgproc >}}
 
 {{< imgproc RainerJoswig_20220320 Resize "550x145" >}} {{< /imgproc >}}
-
-{{< imgproc PaulFord_20211214 Resize "550x803">}} <a href="https://twitter.com/ftrain/status/1470968024756895744?ref_src=twsrc">Link to tweet</a> {{< /imgproc >}}
