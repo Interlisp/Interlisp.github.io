@@ -69,7 +69,7 @@ if (!doNotTrack) {
     aria-label="Search this site…"
     autocomplete="off"
     
-    data-offline-search-index-json-src="/offline-search-index.fc08f134be50ce52a9647792b5225048.json"
+    data-offline-search-index-json-src="/offline-search-index.e18998ed6650f9f3697eccab49e7d848.json"
     data-offline-search-base-href="/"
     data-offline-search-max-results="10"
   >
@@ -1260,56 +1260,10 @@ being undertaken by the Medley project.</p>
 	<p>The names “Medley” “Medley Interlisp” “Interlisp” “Interlisp.org” “Common Lisp” in ways that are confusing. We’re talking about a lot of different things. And these are mostly not terms that we’ve made up, they’re cemented in by the titles that have appeared in different publications.</p>
 <h2 id="vocabulary-and-relationships">Vocabulary and relationships</h2>
 <dl>
-<dt>Interlisp.org</dt>
-<dd>a “domain name”, used for some web sites and email addresses</dd>
-</dl>
-<ul>
-<li><a href="https://interlisp.org">https://interlisp.org</a>  – the address of the main web site</li>
-<li><a href="https://online.interlisp.org">https://online.interlisp.org</a> – the address of a service that lets you run Medley</li>
-<li><a href="mailto:info@interlisp.org">info@interlisp.org</a>             - an email address of a group that can respond to questions</li>
-</ul>
-<dl>
-<dt>InterlispOrg</dt>
-<dd>A <a href="https://rct.doj.ca.gov/Verification/Web/Details.aspx?result=c7aa8cb2-16ec-458a-be56-41f963365258">California-registered</a> non-profit organization  (DBA Interlisp.org) Established
-August 2021. 501c3  EIN 87-2528093  California registered charity CT0278267.
-President Larry Masinter, Treasurer Ron Kaplan, Secretary Herb Jellinek.</dd>
-<dt>Interlisp</dt>
-<dd>A GitHub “organization” with ~20 repositories, see <a href="https://github.com/Interlisp">https://github.com/Interlisp</a></dd>
-<dd>Both a language and, in some cases, the implementation of that language. Usually used with some other wording or refinement</dd>
-<dt>Interlisp: The Language and its usage</dt>
-<dd>A book by Steve Kaisler which describes Interlisp of the 1970s &amp; 80s</dd>
-<dt>Interlisp-10</dt>
-<dd>The first implementation of “Interlisp” for the DEC PDP-10 / Tenex</dd>
-<dt>Interlisp-VAX, Interlisp-360</dt>
-<dd>Other implementations of Interlisp for other machines (sharing source code)</dd>
-<dt>DLISP</dt>
-<dd>By Warren Teitelman: a first attempt at building a “Display” (GUI) with Interlisp running on Maxc (A PDP-10 clone) a Xerox Alto as a graphics terminal connected to it via Ethernet.</dd>
 <dt>Alto Lisp</dt>
 <dd>An (unsuccessful) attempt to build a Lisp-based OS for running Interlisp on an Alto</dd>
-<dt>Dorado Lisp</dt>
-<dd>The reimplementation of AltoLisp microcode for the Dorado – a research prototype</dd>
-<dt>Interlisp-D</dt>
-<dd>What Dorado Lisp became.  The D stood for both “Display” and “D-machine”.  An implementation of</dd>
-</dl>
-<ul>
-<li>Interlisp the language</li>
-<li>The Interlisp programming tools</li>
-<li>A Graphical User interface to Interlisp programming development</li>
-<li>A large number of tools, utilities, games, screen-savers</li>
-<li>A Lisp-based operating system for D-machines which, when coupled with microcode
-implementation of a Virtual Machine, allowed the D-machines to operate as a
-personal workstation. Each D-machine had its own microcode with different
-configurations and micro-instructions.</li>
-</ul>
-<dl>
 <dt>Carol, Fugue, Harmony, Intermezzo, Koto, Lyric, Medley</dt>
 <dd>Named releases of Interlisp-D.  All are obsolete except Medley.</dd>
-<dt>Medley 1.0, Medley 2.01, Medley 3.5 numbered releases of Interlisp-D</dt>
-<dd>At some point the name Interlisp-D was retired and Medley used to name the software.</dd>
-<dt>Maiko</dt>
-<dd>An implementation of the functions of the microcode D-machine, but written in C for the
-Sun Microsystems (RISC-like) SPARC processor workstation, initially developed by
-Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.</dd>
 <dt>Common Lisp</dt>
 <dd>The subject of a 10-year standards process to converge multiple dialects of the
 Lisp language. Strong influences from many Lisp dialects, including Interlisp.</dd>
@@ -1325,6 +1279,78 @@ Lisp language. Strong influences from many Lisp dialects, including Interlisp.</
 <dd>The ANSI Standard for Common Lisp</dd>
 </dl>
 <p>Starting with the Lyric release of Interlisp-D and then the Medley release, the implementation of Medley included implementations of Common Lisp (CLtL 1) as well as the Interlisp dialect in a single development environment; this was made possible by using the (Common Lisp) “package” feature to allow both dialects to be intermixed.</p>
+<dl>
+<dt>Dfasl</dt>
+<dd>A compiled form of Medley Interlisp files.</dd>
+<dt>DLISP</dt>
+<dd>By Warren Teitelman: a first attempt at building a “Display” (GUI) with Interlisp running on Maxc (A PDP-10 clone) a Xerox Alto as a graphics terminal connected to it via Ethernet.`</dd>
+<dt>Dorado Lisp</dt>
+<dd>The reimplementation of the AltoLisp microcode on the Dorado – a research prototype.</dd>
+<dt>Fugue</dt>
+<dd>An obsolete named release of Interlisp-D.</dd>
+<dt>Harmony</dt>
+<dd>An obsolete named release of Interlisp-D.</dd>
+<dt>Intermezzo</dt>
+<dd>An obsolete named release of Interlisp-D.</dd>
+<dt>Interlisp</dt>
+<dd>A GitHub “organization” with ~20 repositories, see <a href="https://github.com/Interlisp">https://github.com/Interlisp</a></dd>
+<dd>Both a language and, in some cases, the implementation of that language. Usually used with some other wording or refinement</dd>
+<dt>Interlisp: The Language and its usage</dt>
+<dd>A book by Steve Kaisler which describes Interlisp of the 1970s &amp; 80s</dd>
+<dt>Interlisp.org</dt>
+<dd>a “domain name”, used for some web sites and email addresses</dd>
+</dl>
+<ul>
+<li><a href="https://interlisp.org">https://interlisp.org</a>  – the address of the main web site</li>
+<li><a href="https://online.interlisp.org">https://online.interlisp.org</a> – the address of a service that lets you run Medley</li>
+<li><a href="mailto:info@interlisp.org">info@interlisp.org</a>             - an email address of a group that can respond to questions</li>
+</ul>
+<dl>
+<dt>Interlisp-10</dt>
+<dd>The first implementation of “Interlisp” for the DEC PDP-10 / Tenex</dd>
+<dt>Interlisp-360</dt>
+<dd>Implemention of Interlisp for the IBM-360</dd>
+<dt>Interlisp-D</dt>
+<dd>What Dorado Lisp became.  The D stood for both “Display” and “D-machine”.  An implementation of</dd>
+</dl>
+<ul>
+<li>Interlisp the language</li>
+<li>The Interlisp programming tools</li>
+<li>A Graphical User interface to Interlisp programming development</li>
+<li>A large number of tools, utilities, games, screen-savers</li>
+<li>A Lisp-based operating system for D-machines which, when coupled with microcode
+implementation of a Virtual Machine, allowed the D-machines to operate as a
+personal workstation. Each D-machine had its own microcode with different
+configurations and micro-instructions.</li>
+</ul>
+<dl>
+<dt>Interlisp-VAX</dt>
+<dd>Implementation of Interlisp for Digitial Equipment Corporation VAX systems</dd>
+<dt>InterlispOrg</dt>
+<dd>A <a href="https://rct.doj.ca.gov/Verification/Web/Details.aspx?result=c7aa8cb2-16ec-458a-be56-41f963365258">California-registered</a> non-profit organization  (DBA Interlisp.org) Established
+August 2021. 501c3  EIN 87-2528093  California registered charity CT0278267.
+President Larry Masinter, Treasurer Ron Kaplan, Secretary Herb Jellinek.</dd>
+<dt>Koto</dt>
+<dd>An obsolete named releases of Interlisp-D.</dd>
+<dt>Lcom</dt>
+<dd>Used as a file ending, xxx.lcom, for compiled Medley files.</dd>
+<dt>Lyric</dt>
+<dd>An obsolete named releases of Interlisp-D.</dd>
+<dt>Medley</dt>
+<dd>The final named release of Interlisp-D.</dd>
+<dt>Medley 1.0, Medley 2.01, Medley 3.5 numbered releases of Interlisp-D</dt>
+<dd>At some point the name Interlisp-D was retired and Medley used to name the software.</dd>
+<dt>Maiko</dt>
+<dd>An implementation of the functions of the microcode D-machine, but written in C for the
+Sun Microsystems (RISC-like) SPARC processor workstation, initially developed by
+Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.</dd>
+<dt>SDL</dt>
+<dd>Structured Design Language</dd>
+<dt>Sysout</dt>
+<dd>A file containing the saved state of Interlisp virtual memroy</dd>
+<dt>X11</dt>
+<dd>The X Window System</dd>
+</dl>
 <h3 id="organizations">Organizations</h3>
 <dl>
 <dt>BBN</dt>
