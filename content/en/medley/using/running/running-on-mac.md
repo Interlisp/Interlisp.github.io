@@ -2,6 +2,8 @@
 title: Running on MacOS
 weight: 30
 type: docs
+aliases:
+  - /running/running-on-mac
 ---
 
 *DRAFT -- This page is currently being revised.*
