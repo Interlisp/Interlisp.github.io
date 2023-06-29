@@ -2,6 +2,8 @@
 title: Educopia
 weight: 20
 type: docs
+aliases:
+ - /hugo/about/partners/educopia/
 ---
 [Educopia](https://educopia.org) is a non-profit organization hosting the [Software Preservation Network](../spn) and other software preservation groups.
 

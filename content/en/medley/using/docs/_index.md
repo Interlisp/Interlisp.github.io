@@ -3,6 +3,7 @@ title: Documentation
 url: /documentation/
 aliases:
  - /docs/
+ - /hugo/documentation
 weight: 60
 type: docs
 no_list: true
