@@ -170,4 +170,8 @@
     <loc>https://interlisp.org/</loc>
   </url>
   
+  <url>
+    <loc>https://interlisp.org/search/</loc>
+  </url>
+  
 </urlset>
