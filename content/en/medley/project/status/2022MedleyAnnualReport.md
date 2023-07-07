@@ -2,6 +2,8 @@
 title: 2022 Medley Interlisp Annual Report
 weight: 1
 type: docs
+aliases:
+ - /news/2022medleyannualreport/
 ---
 
 ### Introduction
