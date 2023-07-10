@@ -5,7 +5,7 @@ type: docs
 description: Comments on Interlisp and this project
 ---
 
-Do you know of a new blog, tweet or other communication talking about Interlisp?  If so, we would like to hear now about it.
+Do you know of a new blog, tweet or other communication talking about Interlisp?  If so, we would like to hear about it.
 
 Submit the link using our [What People Are Saying](https://github.com/interlisp/medley/issues/new?template=what_people_are_saying.yml) form.
 
