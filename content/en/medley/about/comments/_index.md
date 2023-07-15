@@ -19,7 +19,7 @@ Various individuals thoughts on Interlisp and the Medley project can be found [h
 
 ## Blogs and Online Discussions
 
-- [What Were the Differences Between Symbolics Genera and Xerox Interlisp-D](https://news.ycombinator.com/item?id=36713595) asked by Simon Brooke
+- [What Were the Differences Between Symbolics Genera and Xerox Interlisp-D](https://news.ycombinator.com/item?id=36713595) asked by Simon Brooke  
 _... I'm curious about the similarities and differences between Symbolics Genera and Xerox Interlisp-D. Why is Genera more hyped than Interlisp-D? Unlike Genera, which is proprietary and is extremely difficult to obtain legally, Interlisp-D is now free, open-source software, and there's a community that has ported Interlisp-D to run on top of modern operating systems._
 
 - [Reviving Interlisp With The Medley Interlisp Project](https://hackaday.com/2023/07/09/reviving-interlisp-with-the-medley-interlisp-project/) by Maya Posch  
