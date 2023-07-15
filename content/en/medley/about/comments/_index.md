@@ -17,7 +17,10 @@ Both the [Interlisp](https://groups.google.com/u/0/g/interlisp?pli=1) and [LispC
 
 Various individuals thoughts on Interlisp and the Medley project can be found [here](stories).
 
-## Blogs
+## Blogs and Online Discussions
+
+- [What Were the Differences Between Symbolics Genera and Xerox Interlisp-D](https://news.ycombinator.com/item?id=36713595) asked by Simon Brooke
+_... I'm curious about the similarities and differences between Symbolics Genera and Xerox Interlisp-D. Why is Genera more hyped than Interlisp-D? Unlike Genera, which is proprietary and is extremely difficult to obtain legally, Interlisp-D is now free, open-source software, and there's a community that has ported Interlisp-D to run on top of modern operating systems._
 
 - [Reviving Interlisp With The Medley Interlisp Project](https://hackaday.com/2023/07/09/reviving-interlisp-with-the-medley-interlisp-project/) by Maya Posch  
 _Within the Artificial Intelligence and natural language research communities, Lisp has played a major role since 1960. Over the years since its introduction, various development environments have been created that sought to make using Lisp as easy and powerful as possible. One of these environments is Interlisp, which saw its first release in 1968, and its last official release in 1992. That release was Medley 2.0, which targeted various UNIX machines, DOS 4.0, and the Xerox 1186. Courtesy of the Interlisp open source project (GitHub), Medley Interlisp is available for all to use, even on modern systems._
