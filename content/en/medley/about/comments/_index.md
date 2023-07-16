@@ -25,8 +25,14 @@ _... I'm curious about the similarities and differences between Symbolics Genera
 - [Reviving Interlisp With The Medley Interlisp Project](https://hackaday.com/2023/07/09/reviving-interlisp-with-the-medley-interlisp-project/) by Maya Posch  
 _Within the Artificial Intelligence and natural language research communities, Lisp has played a major role since 1960. Over the years since its introduction, various development environments have been created that sought to make using Lisp as easy and powerful as possible. One of these environments is Interlisp, which saw its first release in 1968, and its last official release in 1992. That release was Medley 2.0, which targeted various UNIX machines, DOS 4.0, and the Xerox 1186. Courtesy of the Interlisp open source project (GitHub), Medley Interlisp is available for all to use, even on modern systems._
 
+- [Stringscope, a string listing tool in Interlisp](https://journal.paoloamoroso.com/stringscope-a-string-listing-tool-in-interlisp) by Paolo Amoroso  
+_I wanted to create something small that carries out a limited but useful task. My goal was to familiarize with the Medley Interlisp development environment, tools, and process through developing, optimizing, documenting, and sharing an Interlisp program._
+
 - [My encounter with Medley Interlisp](https://journal.paoloamoroso.com/my-encounter-with-medley-interlisp) by Paolo Amoroso  
 _Imagine someone let you into an alien spaceship they landed in your backyard, sat you at the controls, and encouraged you to fly the ship. This is the opportunity Medley Interlisp offers...._
+
+- [The Interlisp Programming Environment](https://news.ycombinator.com/item?id=5966328)  by gruseom  
+_Interlisp was the so-called "west coast" Lisp that emphasized an interactive programming environment and in retrospect looks more like a hybrid between Smalltalk and Lisp than modern Lisp implementations. It was developed at PARC for a while. I don't know if there was cross-pollination between Interlisp and Smalltalk or if the similarity was a zeitgeist thing._
 
 ## Tweets
 
