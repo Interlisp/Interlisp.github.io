@@ -34,7 +34,9 @@ _Imagine someone let you into an alien spaceship they landed in your backyard, s
 - [The Interlisp Programming Environment](https://news.ycombinator.com/item?id=5966328) asked by gruseom in [Hacker News](https://news.ycombinator.com/news)  
 _Interlisp was the so-called "west coast" Lisp that emphasized an interactive programming environment and in retrospect looks more like a hybrid between Smalltalk and Lisp than modern Lisp implementations. It was developed at PARC for a while. I don't know if there was cross-pollination between Interlisp and Smalltalk or if the similarity was a zeitgeist thing._
 
-## Tweets
+## Twitter and Mastodon
+
+{{< imgproc AlexanderShendi_20230719 Resize "1100x170">}} <a href="https://rollenspiel.social/@alexshendi/110741933293236916">Link to message</a> {{< /imgproc >}}
 
 {{< imgproc 8bitNews_20230127 Resize "550x743">}} <a href="https://twitter.com/8bitnews1/status/1618957059046645762">Link to tweet</a> {{< /imgproc >}}
 
