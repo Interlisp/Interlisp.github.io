@@ -31,6 +31,12 @@ _I wanted to create something small that carries out a limited but useful task. 
 - [My encounter with Medley Interlisp](https://journal.paoloamoroso.com/my-encounter-with-medley-interlisp) by Paolo Amoroso in his [blog](https://journal.paoloamoroso.com/) also cross-posted to [Hacker News](https://news.ycombinator.com/item?id=34300806)  
 _Imagine someone let you into an alien spaceship they landed in your backyard, sat you at the controls, and encouraged you to fly the ship. This is the opportunity Medley Interlisp offers...._
 
+- [FreeBSD on Dell T3600](https://www.reddit.com/r/freebsd/comments/vrjqa4/freebsd_on_dell_t3600/?utm_source=share&utm_medium=web2x&context=3) by trhawes  
+_... I'm a retro enthusiast who loves Lisp, so natually, I'd want to show off my Medley Interlisp virtual machine (emulating a Xerox Lisp Machine)._
+
+- [Computers Doing the Right Thing](https://amasad.me/right) by Amjad Masad in his [blog](https://amasad.me/)  
+_Interlisp is one of the most fascinating could-have-been computer systems in history. It shipped with one of the first from-the-ground-up interactive programming environments, structured editor, and many other innovations. Most impressive was the concept of Do What I Mean (DWIM)._
+
 - [The Interlisp Programming Environment](https://news.ycombinator.com/item?id=5966328) asked by gruseom in [Hacker News](https://news.ycombinator.com/news)  
 _Interlisp was the so-called "west coast" Lisp that emphasized an interactive programming environment and in retrospect looks more like a hybrid between Smalltalk and Lisp than modern Lisp implementations. It was developed at PARC for a while. I don't know if there was cross-pollination between Interlisp and Smalltalk or if the similarity was a zeitgeist thing._
 
