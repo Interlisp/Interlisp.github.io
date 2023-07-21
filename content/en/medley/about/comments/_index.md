@@ -28,7 +28,7 @@ _Within the Artificial Intelligence and natural language research communities, L
 - [Stringscope, a string listing tool in Interlisp](https://journal.paoloamoroso.com/stringscope-a-string-listing-tool-in-interlisp) by Paolo Amoroso in his [blog](https://journal.paoloamoroso.com/)  
 _I wanted to create something small that carries out a limited but useful task. My goal was to familiarize with the Medley Interlisp development environment, tools, and process through developing, optimizing, documenting, and sharing an Interlisp program._
 
-- [My encounter with Medley Interlisp](https://journal.paoloamoroso.com/my-encounter-with-medley-interlisp) by Paolo Amoroso in his [blog](https://journal.paoloamoroso.com/)  
+- [My encounter with Medley Interlisp](https://journal.paoloamoroso.com/my-encounter-with-medley-interlisp) by Paolo Amoroso in his [blog](https://journal.paoloamoroso.com/) also cross-posted to [Hacker News](https://news.ycombinator.com/item?id=34300806)  
 _Imagine someone let you into an alien spaceship they landed in your backyard, sat you at the controls, and encouraged you to fly the ship. This is the opportunity Medley Interlisp offers...._
 
 - [The Interlisp Programming Environment](https://news.ycombinator.com/item?id=5966328) asked by gruseom in [Hacker News](https://news.ycombinator.com/news)  
