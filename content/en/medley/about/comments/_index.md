@@ -31,7 +31,7 @@ _I wanted to create something small that carries out a limited but useful task. 
 - [My encounter with Medley Interlisp](https://journal.paoloamoroso.com/my-encounter-with-medley-interlisp) by Paolo Amoroso in his [blog](https://journal.paoloamoroso.com/) also cross-posted to [Hacker News](https://news.ycombinator.com/item?id=34300806)  
 _Imagine someone let you into an alien spaceship they landed in your backyard, sat you at the controls, and encouraged you to fly the ship. This is the opportunity Medley Interlisp offers...._
 
-- [FreeBSD on Dell T3600](https://www.reddit.com/r/freebsd/comments/vrjqa4/freebsd_on_dell_t3600/?utm_source=share&utm_medium=web2x&context=3) by trhawes  
+- [FreeBSD on Dell T3600](https://www.reddit.com/r/freebsd/comments/vrjqa4/freebsd_on_dell_t3600/?utm_source=share&utm_medium=web2x&context=3) by trhawes on [Reddit FreeBSD](https://www.reddit.com/r/freebsd/)  
 _... I'm a retro enthusiast who loves Lisp, so natually, I'd want to show off my Medley Interlisp virtual machine (emulating a Xerox Lisp Machine)._
 
 - [Computers Doing the Right Thing](https://amasad.me/right) by Amjad Masad in his [blog](https://amasad.me/)  
