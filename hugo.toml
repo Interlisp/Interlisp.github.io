@@ -177,7 +177,9 @@ github_project_repo = "https://github.com/interlisp/medley"
 github_branch= "main"
 
 # Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "a44f7775907034972"
+gcs_engine_id = "33ef4cbe0703b4f3a"
+
+# 33ef4cbe0703b4f3aa44f7775907034972"
 
 # Enable Algolia DocSearch
 #algolia_docsearch = false
