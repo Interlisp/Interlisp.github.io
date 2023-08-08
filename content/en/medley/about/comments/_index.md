@@ -25,7 +25,7 @@ _... I'm curious about the similarities and differences between Symbolics Genera
 - [Reviving Interlisp With The Medley Interlisp Project](https://hackaday.com/2023/07/09/reviving-interlisp-with-the-medley-interlisp-project/) posted to [Hackaday](https://hackaday.com/) by Maya Posch  
 _Within the Artificial Intelligence and natural language research communities, Lisp has played a major role since 1960. Over the years since its introduction, various development environments have been created that sought to make using Lisp as easy and powerful as possible. One of these environments is Interlisp, which saw its first release in 1968, and its last official release in 1992. That release was Medley 2.0, which targeted various UNIX machines, DOS 4.0, and the Xerox 1186. Courtesy of the Interlisp open source project (GitHub), Medley Interlisp is available for all to use, even on modern systems._
 
-- [InterLisp Fifteen Puzzle](https://pixel-outlaw.itch.io/interlisp-fifteen-puzle)  
+- [InterLisp Fifteen Puzzle](https://pixel-outlaw.itch.io/interlisp-fifteen-puzle) by Pixel_Outlaw in his [blog](https://pixel-outlaw.itch.io/)  
 _In some ways, this project was the fulfillment of me wanting to see what Xerox PARC brought to the table during the peak of Lisp AI research. It was from a time when what "Lisp" was was still being explored. You see heavy traces of the era in InterLisp._
 
 - [Stringscope, a string listing tool in Interlisp](https://journal.paoloamoroso.com/stringscope-a-string-listing-tool-in-interlisp) by Paolo Amoroso in his [blog](https://journal.paoloamoroso.com/)  
