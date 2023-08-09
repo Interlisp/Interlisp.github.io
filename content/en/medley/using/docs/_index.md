@@ -6,7 +6,6 @@ aliases:
  - /hugo/documentation
 weight: 60
 type: docs
-no_list: true
 ---
 
 We have a variety of documentation available for anyone interested in using Interlisp.

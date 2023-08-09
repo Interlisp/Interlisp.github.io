@@ -2,6 +2,8 @@
 title: Running on Windows 10/11
 weight: 40
 type: docs
+aliases:
+ - /hugo/running/running-on-win
 ---
 How is this different from the topic running on Docker Desktop?
 
