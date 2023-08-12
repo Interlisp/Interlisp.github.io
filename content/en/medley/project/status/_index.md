@@ -19,6 +19,8 @@ being undertaken by the Medley project.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N1MobfEaoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+Additional resources from the presentation are located here: [BALISP Presentation](https://drive.google.com/drive/folders/1xyWHZGUiAEz9UQsZcpC8ef-BpsWpSD7p)
+
 ## Closed Issues
 
 The [issues closed](https://github.com/Interlisp/medley/issues?q=is%3Aissue+is%3Aclosed) by the team can be found in our GitHub repository.
