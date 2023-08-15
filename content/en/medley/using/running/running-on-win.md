@@ -3,8 +3,8 @@ title: Running on Windows 10/11
 weight: 40
 type: docs
 aliases:
- - /hugo/running/running-on-win
----
+ - /hugo/running/running-on-win/
+
 How is this different from the topic running on Docker Desktop?
 
 Medley does not yet run as a native Windows application.  Besides [online](/medley/using/running/online), you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).

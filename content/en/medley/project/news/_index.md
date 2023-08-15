@@ -2,6 +2,8 @@
 title: News
 weight: 10
 type: docs
+aliases:
+ - /hugo/news/
 ---
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N1MobfEaoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 

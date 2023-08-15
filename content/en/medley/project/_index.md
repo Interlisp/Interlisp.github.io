@@ -2,6 +2,8 @@
 title: Project
 weight: 2
 type: docs
+aliases:
+ - /hugo/
 ---
 ## What is the Medley Interlisp Project?
 
