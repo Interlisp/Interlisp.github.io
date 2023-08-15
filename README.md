@@ -10,7 +10,8 @@ Interlisp and how to access and use the restored Medley system.
 
 The website is build using the [Hugo](https://gohugo.io/) static
 site generator and the [Docsy](https://www.docsy.dev/) technical documentation
-theme.
+theme. Both of these sites contain a wealth of information on how to setup and
+maintain a Hugo based website.
 
 The process can be summarized as follows:
 
