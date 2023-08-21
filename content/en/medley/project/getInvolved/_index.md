@@ -6,6 +6,7 @@ type: docs
 
 You have several ways to get involved in the Medley Interlisp Project:
 
+* Explore our working [project list](https://docs.google.com/document/d/1ceXj7VzPeLSM0sBwEnYQqArKsXg0VKCWLTF0zv10LRg/edit?usp=sharing) and take on one.
 * Look at, comment on, and contribute to our project in Github.
 * Participate in weekly meetings.
 * Read meeting agendas and notes.
