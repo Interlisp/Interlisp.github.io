@@ -6,7 +6,8 @@ type: docs
 
 You have several ways to get involved in the Medley Interlisp Project:
 
-* Explore our working [project list](https://docs.google.com/document/d/1ceXj7VzPeLSM0sBwEnYQqArKsXg0VKCWLTF0zv10LRg/edit?usp=sharing) and take on one.
+* Explore our working [project list](https://docs.google.com/document/d/1ceXj7VzPeLSM0sBwEnYQqArKsXg0VKCWLTF0zv10LRg/edit?usp=sharing).  In it you'll find a variety of different activies, many which do not require indepth knowledge of programming in the Medley Interlisp environment.
+  
 * Look at, comment on, and contribute to our project in Github.
 * Participate in weekly meetings.
 * Read meeting agendas and notes.
@@ -14,6 +15,28 @@ You have several ways to get involved in the Medley Interlisp Project:
 * [Send us a tax-deductible donation.](https://github.com/sponsors/Interlisp)
 
 Refer to the sections below for details.
+
+## Medley Projects
+
+Check out our [Project List](https://docs.google.com/document/d/1ceXj7VzPeLSM0sBwEnYQqArKsXg0VKCWLTF0zv10LRg/edit?usp=sharing) for ideas and find one that matches your interests.  Or, if you have an idea that isn't covered, make a proposal.  Funding is available to help support a limited number of projects.  Programming experience is not required for many projects.
+
+Some examples are:
+
+* [Documentation](https://github.com/orgs/Interlisp/projects/13)
+  * Medley Interlisp contains a wealth of documentation.  It needs cataloging and categorizing
+  * The [Intelisp.org](https://interlisp.org) website needs editing and enhancements
+* [Bibliography](https://github.com/orgs/Interlisp/projects/4/views/1)
+  * Cleanup / Update / Enhance our Zotero bibliography
+* [Website](https://github.com/orgs/Interlisp/projects/5/views/1)
+  * Update and enhance the [Interlisp.org](https:interlisp.org) website
+    * Improve presentation of material
+    * Search Engine Optimization
+* Videos
+  * Create videos documenting the history of Interlisp
+    * We need videos showing how to run Interlisp
+    * Document the architecutre of Medley
+* Demonstrations (these require some knowledge of Interlisp)
+  * Create sample programs that demonstraing basic concepts
 
 ## Contribute to our project in GitHub
 
