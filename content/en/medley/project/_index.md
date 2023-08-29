@@ -23,7 +23,7 @@ Medley Interlisp represents the last Xerox Interlisp release.  Medley continued 
 
 ## What are we trying to accomplish?
 
-ur aim is to allow *Medley Interlisp* to "live again": usable on modern systems, sufficient to allow someone to develop some code and experience what it was like to use this groundbreaking system. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle. 
+Our aim is to allow *Medley Interlisp* to "live again": usable on modern systems, sufficient to allow someone to develop some code and experience what it was like to use this groundbreaking system. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle. 
 
 We hope to provide a platform for demonstration of early experiments of hypertext (Notecards), Desktop management (Rooms), Object-oriented programming (LOOPS), as well as Interlisp itself.
 
