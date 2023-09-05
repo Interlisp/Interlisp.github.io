@@ -15,7 +15,7 @@ Both the [Interlisp](https://groups.google.com/u/0/g/interlisp?pli=1) and [LispC
 
 ## Musings on Medley and Interlisp
 
-Various individuals thoughts on Interlisp and the Medley project can be found [here](stories).
+Various individuals' thoughts on Interlisp and the Medley project can be found [here](stories).
 
 ## Blogs and Online Discussions
 
