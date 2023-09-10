@@ -1,39 +1,211 @@
+<style>
+.abstractExpander {
+  background-color: #00A6ED;
+  color: white;
+  cursor: pointer;
+  padding: 0px 3px;
+  border: none;
+  text-align: center;
+  margin: auto;
+  outline: none;
+  font-size: 1.5rem;
+}
 
+.abstractContent {
+  padding: 0 5px;
+  display: none;
+  font-size: 0.9rem;
+  overflow: hidden;
+  background-color: #f1f1f1;
+}
+
+.tooltipNotes {
+    position: relative;
+    display: inline-block;
+    font-size: 1.5rem;
+    font-weight: 550;
+    background-color: #00A6ED;
+    color: white;
+    cursor: pointer;
+    padding: 0px 5px;
+    border: none;
+    text-align: center;
+    margin: auto;
+    outline: none;
+}
+
+.tooltipNotes .tooltipNotesText {
+    visibility: hidden;
+    position: absolute;
+    min-width: 150px;
+    max-width: 600px;
+    background-color: #555;
+    color: white;
+    font-size: 1.0rem;
+    text-align: left;
+    padding: 5px;
+    border-radius: 6px;
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s;
+    overflow-wrap: break-word;
+}
+
+.tooltipNotes:hover .tooltipNotesText {
+    visibility: visible;
+    opacity: 1;
+}
+
+.tooltipNotes-left {
+  top: 0px;
+  bottom:auto;
+  right: 128%;  
+}
+
+.tooltipNotes-left::after {
+    content: "";
+    position: absolute;
+    top: 0.9rem;
+    left: 100%;
+    margin-top: 0px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent transparent #555;
+}
+.tooltipNotes-right {
+  top: -5px;
+  left: 125%;  
+}
+
+.tooltipNotes-right::after {
+    content: "";
+    position: absolute;
+    top: 50%;
+    right: 100%;
+    margin-top: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent #555 transparent transparent;
+}
+
+.tooltipNotes-bottom {
+  top: 135%;
+  left: 50%;  
+  margin-left: -60px;
+}
+
+.tooltipNotes-bottom::after {
+    content: "";
+    position: absolute;
+    bottom: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: transparent transparent #555 transparent;
+}
+
+.tooltipNotes-top {
+  bottom: 125%;
+  left: 50%;  
+  margin-left: -60px;
+}
+
+.tooltipNotes-top::after {
+    content: "";
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    margin-left: -5px;
+    border-width: 5px;
+    border-style: solid;
+    border-color: #555 transparent transparent transparent;
+}
+/* Center 3rd & 4th columns */
+table td:nth-child(3) {
+    text-align: center;
+table td:nth-child(4) {
+    text-align: center;
+}
+</style>
 <table style="max-width: 100%">
     <thead>
         <tr>
-          <th>Author</th>
+          <th style="width:40%">Author</th>
           <th>Title</th>
+          <th>Abstract</th>
           <th>Notes</th>
         </tr>
       </thead>
-      <tbody>
+      <tbody style="overflow:auto">
         {{ $years_items := getJSON "data/bibliography.json" }}
         {{ range $year, $items := $years_items }}
           <tr>
-            <th colspan="3">
-              {{ $year }}
-            </th>
+            <th colspan="4">{{ $year }}</th>
           </tr>
           {{ range $items }}
-            <tr>
-              <td>
-                {{ range .author }}
-                  {{ if .literal }}
-                    {{ .literal }}
-                  {{ else if and .family .given }}
-                    {{ .family }}, {{ .given }}
-                  {{ else }}
-                    {{ .family }}{{ .given }}
-                  {{ end }}<br>
+          <tr>
+            {{ $itemID := (cond (gt (len .id) 0) (replace .id `/` `_`) `_0`) }}
+            <td style="font-size: 0.9rem">  
+              {{ range $na, $au := .author }}
+                {{ if $na }} ;<br> {{ end }}
+                {{ if $au.literal }}
+                  {{ $au.literal }}
+                {{ else if and $au.family $au.given }}
+                  {{ $au.family }}, {{ $au.given }}
+                {{ else }}
+                  {{ $au.family }}{{ $au.given }}
                 {{ end }}
-
-              </td>
-              <td>{{ if .URL }}<a href="{{ .URL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</td>
-              <td>{{ .note }}</td>
-            </tr>
+              {{ end }}
+            </td>
+            <td>{{ if .URL }}<a href="{{ .URL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
+            {{ if .abstract }}<div class="abstractContent" id="A{{$itemID }}_Abs">{{ .abstract }}</div>{{ end }}</td>
+            <td>{{ if .abstract }}<button type="button" class="abstractExpander" id="A{{$itemID}}">&#x23EC;</button>{{ end }}</td>
+            <td>{{ if .note }}{{ $notes := split .note "\n" }}
+              <div class="tooltipNotes" id="N{{$itemID}}">&#x24C3;<span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
+                  {{ range $nn, $note := $notes }}
+                    {{ if $nn }}<br>{{ end }}
+                    {{ print (safeJS (replace (replace (replace (replace $note "<p>" "") "</p>" "") "-" "\u2011") " " " ")) }}
+                  {{ end }}</span>
+               </div>
+               {{ end }}
+             </td>
+          </tr>
           {{ end }}
         {{ end }}
       </tbody>
   
 </table>
+<script>
+function abstractExpanderClick() {
+    this.classList.toggle("active");
+    var abstractContent = document.getElementById(this.id.concat("_Abs"));
+    var bText = this.textContent;
+    if (abstractContent.style.display === "block") {
+      abstractContent.style.display = "none";
+      this.textContent = {{"\u23EC"}};
+    } else {
+      abstractContent.style.display = "block";
+      this.textContent = {{"\u23EB"}};
+    }
+  }
+
+// When the user clicks on <div>, open the popup
+function popupNotesClick() {
+  var popupNotes = document.getElementById(this.id + "_Text");
+  popupNotes.classList.toggle("show");
+}
+
+var i;
+var coll = document.getElementsByClassName("abstractExpander");
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", abstractExpanderClick); }
+
+coll = document.getElementsByClassName("popupNotes");
+
+for (i = 0; i < coll.length; i++) {
+  coll[i].addEventListener("click", popupNotesClick); }
+
+</script>
+
