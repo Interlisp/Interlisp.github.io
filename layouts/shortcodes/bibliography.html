@@ -1,0 +1,110 @@
+<!-- List citations by keyword -->
+{{- $json_filepath := path.Join "data" (print .Page.Params.bib ".json") }}
+{{- $kwd := .Get 0 }}
+{{- if fileExists $json_filepath -}}
+{{- $bib := getJSON $json_filepath -}}
+<div class ="box">
+  {{ range $bib -}}
+  {{- if in (lower .keyword) (lower $kwd) -}}
+  <p>
+    <!-- Author / editor -->
+    {{- if or .author .editor -}}
+    {{- if .author -}}
+    {{- $n := len .author -}}
+    {{- if le $n 2 -}}
+    {{- range $index, $author := (first 2 .author) -}}
+    {{- index . "non-dropping-particle" -}}{{- .family }}, {{ .given }}
+    {{- if and (gt $n 1) ( eq $index 0) }} and {{ end -}}
+    {{- end -}}
+    {{- end -}}
+    {{- if gt $n 2 }}
+    {{- range first 1 .author}}
+    {{- index . "non-dropping-particle" }}{{- .family }}, {{ .given }}{{- end }} et al.
+    {{- end -}}
+    {{- else -}}
+    {{- if .editor }}
+    {{- $n := len .editor }}
+    {{- if le $n 2}}
+    {{- range $index, $author := (first 2 .editor) }}
+    {{- index . "non-dropping-particle" }}{{- .family }} {{- if and (gt $n 1) ( eq $index 0) }}and {{- end }}
+    {{- end }}
+    {{- end }}
+    {{- if gt $n 2}}{{- range first 1 .editor}}{{- index . "non-dropping-particle" }} {{- .family }}{{- end }} et al.{{- end }}
+    (Ed{{- if gt $n 1 }}s{{- end }}.)
+    {{- end }}
+    {{- end }}
+    {{- else }}
+    Anonymous
+    {{- end -}}
+    <!-- Year -->
+    {{- range .issued }}
+    {{- $year := print (first 1 .) }} (
+    {{- strings.TrimRight "]" (strings.TrimLeft "[" $year) -}})
+    {{- end -}}.
+    <!-- Title  -->
+    {{- if or (eq .type "book") (eq .type  "thesis") -}}
+    <em>{{ title .title }}</em>
+    {{- else -}}
+    {{ .title }}
+    {{- end -}}
+    {{- if ne (substr .title -1) "?" }}.{{ end }}
+    <!-- Article -->
+    {{- if in .type "article" -}}
+    <i>{{ title (index . "container-title") }}</i>,
+    {{- if .volume }} {{ .volume }}{{ end -}}
+    {{- if .issue }}({{ .issue }}){{ end -}}
+    {{- if .page }}, {{ replace .page "-" "–"}}{{ end -}}.
+    {{- end -}}
+    <!-- Book -->
+    {{- if eq .type "book" -}}
+    {{- if .publisher }}{{ .publisher}}.{{ end }}
+    {{- end -}}
+    <!-- Chapter -->
+    {{- if eq .type "chapter" -}}
+    In: 
+    {{ if .editor -}}
+    {{- $n := len .editor }}
+    {{- if le $n 2}}
+    {{- range $index, $author := (first 2 .editor) }}
+    {{- index . "non-dropping-particle" }}{{- .family }} {{- if and (gt $n 1) ( eq $index 0) }}and {{- end }}
+    {{- end }}
+    {{- end }}
+    {{- if gt $n 2}}{{- range first 1 .editor}}{{- index . "non-dropping-particle" }} {{- .family }}{{- end }} et al.{{- end }}
+    (Ed{{- if gt $n 1 }}s{{- end }}.),
+    {{- end }}
+    <i>{{ title (index . "container-title") }}</i>
+    {{- $place := index . "publisher-place" -}}
+    {{- if or .publisher $place }} ({{ end }}
+    {{- if .publisher }}{{ .publisher}}{{ end }}
+    {{- if and .publisher $place }}, {{ end }}
+    {{- if $place }}{{ $place }}{{ end }}
+    {{- if or .publisher (index . "publisher-place") }}){{ end -}}.
+    {{- end -}}
+    <!-- Thesis -->
+    {{- if eq .type "thesis" -}}
+    {{ .genre }}. {{ .publisher }}.
+    {{- end -}}
+    <!-- Conference -->
+    {{- if eq .type "paper-conference" -}}
+    In: <em>{{ title (index . "container-title")}}</em>, {{ index . "publisher-place" }}.
+    {{- end -}}
+    <!-- Report -->
+    {{- if eq .type "report" -}}
+    {{ .title }},
+    {{- if .number }} ({{ .number }}).{{ end -}}
+    {{- if .publisher }}{{ .publisher }}{{ end -}}.
+    {{- end -}}
+    <!-- Hyperlinks -->
+    {{- if .DOI -}}
+    doi: <a href="https://doi.org/{{ .DOI }}" title="{{ .title }}" target="_blank">{{ .DOI }}</a>.
+    {{- end -}}
+    {{- if and .URL (not .DOI) -}}
+    <a href="{{ .URL }}" title="{{ .title }}" target="_blank">{{ .URL }}</a>.
+    {{- end -}}
+  </p>
+  {{ end -}}
+  {{- end -}}
+</div>
+{{- else -}}
+<span class="has-background-danger has-text-white">ERROR</span>
+{{- end -}}
