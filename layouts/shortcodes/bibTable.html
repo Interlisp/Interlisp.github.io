@@ -3,12 +3,12 @@
   background-color: #00A6ED;
   color: white;
   cursor: pointer;
-  padding: 0px 3px;
+  padding: 3px 5px;
   border: none;
   text-align: center;
   margin: auto;
   outline: none;
-  font-size: 1.5rem;
+  font-size: 1.2rem;
 }
 
 .abstractContent {
@@ -22,7 +22,7 @@
 .tooltipNotes {
     position: relative;
     display: inline-block;
-    font-size: 1.5rem;
+    font-size: 1.45rem;
     font-weight: 550;
     background-color: #00A6ED;
     color: white;
@@ -34,6 +34,11 @@
     outline: none;
 }
 
+/*
+Below, where populating the tooltipNotesText, the nested replace functions remove any p-tags, and make - non-breaking.
+It also makes space non-breaking.
+This is because I cannot determine how to specify not to word wrap the content UNTIL it would exceed the container's max-width (if there even IS a way to do so). This causes long items to wrap VERY BADLY. 
+*/
 .tooltipNotes .tooltipNotesText {
     visibility: hidden;
     position: absolute;
@@ -160,9 +165,9 @@ table td:nth-child(4) {
             </td>
             <td>{{ if .URL }}<a href="{{ .URL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
             {{ if .abstract }}<div class="abstractContent" id="A{{$itemID }}_Abs">{{ .abstract }}</div>{{ end }}</td>
-            <td>{{ if .abstract }}<button type="button" class="abstractExpander" id="A{{$itemID}}">&#x23EC;</button>{{ end }}</td>
+            <td>{{ if .abstract }}<button type="button" class="abstractExpander" id="A{{$itemID}}">AAA</button>{{ end }}</td>
             <td>{{ if .note }}{{ $notes := split .note "\n" }}
-              <div class="tooltipNotes" id="N{{$itemID}}">&#x24C3;<span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
+              <div class="tooltipNotes" id="N{{$itemID}}">NNN<span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
                   {{ range $nn, $note := $notes }}
                     {{ if $nn }}<br>{{ end }}
                     {{ print (safeJS (replace (replace (replace (replace $note "<p>" "") "</p>" "") "-" "\u2011") " " " ")) }}
@@ -177,35 +182,32 @@ table td:nth-child(4) {
   
 </table>
 <script>
+var abstractExpanderOpen = "\u25BC";
+var abstractExpanderClose = "\u25B2";
+var notesIcon = "\u24C3";
+
 function abstractExpanderClick() {
     this.classList.toggle("active");
     var abstractContent = document.getElementById(this.id.concat("_Abs"));
-    var bText = this.textContent;
     if (abstractContent.style.display === "block") {
       abstractContent.style.display = "none";
-      this.textContent = {{"\u23EC"}};
+      this.textContent = abstractExpanderOpen;
     } else {
       abstractContent.style.display = "block";
-      this.textContent = {{"\u23EB"}};
+      this.textContent = abstractExpanderClose;
     }
   }
 
-// When the user clicks on <div>, open the popup
-function popupNotesClick() {
-  var popupNotes = document.getElementById(this.id + "_Text");
-  popupNotes.classList.toggle("show");
-}
-
 var i;
 var coll = document.getElementsByClassName("abstractExpander");
-
 for (i = 0; i < coll.length; i++) {
+  coll[i].textContent = abstractExpanderOpen;
   coll[i].addEventListener("click", abstractExpanderClick); }
 
-coll = document.getElementsByClassName("popupNotes");
+coll = document.getElementsByClassName("tooltipNotes");
 
 for (i = 0; i < coll.length; i++) {
-  coll[i].addEventListener("click", popupNotesClick); }
+  coll[i].textContent = notesIcon; }
 
 </script>
 
