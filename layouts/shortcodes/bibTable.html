@@ -133,6 +133,13 @@ table td:nth-child(4) {
     text-align: center;
 }
 </style>
+
+{{ $notesIcon := "\u24C3" }}
+<script>
+var abstractExpanderOpen = "\u25BC";
+var abstractExpanderClose = "\u25B2";
+</script>
+
 <table style="max-width: 100%">
     <thead>
         <tr>
@@ -167,7 +174,7 @@ table td:nth-child(4) {
             {{ if .abstract }}<div class="abstractContent" id="A{{$itemID }}_Abs">{{ .abstract }}</div>{{ end }}</td>
             <td>{{ if .abstract }}<button type="button" class="abstractExpander" id="A{{$itemID}}">AAA</button>{{ end }}</td>
             <td>{{ if .note }}{{ $notes := split .note "\n" }}
-              <div class="tooltipNotes" id="N{{$itemID}}">NNN<span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
+              <div class="tooltipNotes" id="N{{$itemID}}">{{$notesIcon}}<span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
                   {{ range $nn, $note := $notes }}
                     {{ if $nn }}<br>{{ end }}
                     {{ print (safeJS (replace (replace (replace (replace $note "<p>" "") "</p>" "") "-" "\u2011") " " " ")) }}
@@ -182,10 +189,6 @@ table td:nth-child(4) {
   
 </table>
 <script>
-var abstractExpanderOpen = "\u25BC";
-var abstractExpanderClose = "\u25B2";
-var notesIcon = "\u24C3";
-
 function abstractExpanderClick() {
     this.classList.toggle("active");
     var abstractContent = document.getElementById(this.id.concat("_Abs"));
@@ -203,11 +206,6 @@ var coll = document.getElementsByClassName("abstractExpander");
 for (i = 0; i < coll.length; i++) {
   coll[i].textContent = abstractExpanderOpen;
   coll[i].addEventListener("click", abstractExpanderClick); }
-
-coll = document.getElementsByClassName("tooltipNotes");
-
-for (i = 0; i < coll.length; i++) {
-  coll[i].textContent = notesIcon; }
 
 </script>
 
