@@ -6079,6 +6079,75 @@
       "dateModified": "2021-06-12T14:59:01Z"
     },
     {
+      "id": "9296070/MCLDGGMU",
+      "type": "article-journal",
+      "title": "1983 - IMPULSE: A Display Oriented Editor for STROBE",
+      "container-title": "AAAI-83 Proceedings",
+      "page": "356-358",
+      "abstract": "In this paper, we discuss a display-oriented editor to aid in the construction of knowledge-based systems. We also report on our experiences concerning the utility of the editor.",
+      "language": "en",
+      "author": [
+        {
+          "family": "Schoen",
+          "given": "Eric"
+        },
+        {
+          "family": "Smith",
+          "given": "Reid G"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1983
+          ]
+        ]
+      },
+      "key": "MCLDGGMU",
+      "version": 3083,
+      "itemType": "journalArticle",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Eric",
+          "lastName": "Schoen"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Reid G",
+          "lastName": "Smith"
+        }
+      ],
+      "abstractNote": "In this paper, we discuss a display-oriented editor to aid in the construction of knowledge-based systems. We also report on our experiences concerning the utility of the editor.",
+      "publicationTitle": "AAAI-83 Proceedings",
+      "volume": "",
+      "issue": "",
+      "pages": "356-358",
+      "date": "1983",
+      "series": "",
+      "seriesTitle": "",
+      "seriesText": "",
+      "journalAbbreviation": "",
+      "DOI": "",
+      "ISSN": "",
+      "shortTitle": "",
+      "url": "",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Zotero",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MTUXENI8"
+      ],
+      "relations": {},
+      "dateAdded": "2023-09-17T12:11:18Z",
+      "dateModified": "2023-09-17T12:13:05Z"
+    },
+    {
       "id": "9296070/MKX86XFD",
       "type": "article-journal",
       "title": "KNOWLEDGE PROGRAMMING IN LOOPS:",
@@ -7797,6 +7866,128 @@
       "dateModified": "2021-06-01T20:27:19Z"
     },
     {
+      "id": "9296070/ULLE9MA2",
+      "type": "paper-conference",
+      "title": "Object-Oriented Data Representations for Statistical Data Analysis",
+      "container-title": "COMPSTAT",
+      "publisher": "Physica-Verlag HD",
+      "publisher-place": "Heidelberg",
+      "page": "301-306",
+      "event-place": "Heidelberg",
+      "abstract": "We discuss the design and implementation of object-oriented datatypes for a sophisticated statistical analysis environment The discussion draws on our experience with an experimental statistical analysis system, called DINDE. DINDE resides in the integrated programming environment of a Xerox Interlisp-D machine running LOOPS. The discussion begins with our implementation of arrays, matrices, and vectors as objects in this environment. We then discuss an additional set of objects that are based on statistical abstractions rather than mathematical ones and describe their implementation in the DINDE environment.",
+      "URL": "https://link.springer.com/chapter/10.1007/978-3-642-46890-2_45",
+      "DOI": "10.1007/978-3-642-46890-2_45",
+      "ISBN": "978-3-642-46890-2",
+      "language": "en",
+      "author": [
+        {
+          "family": "Oldford",
+          "given": "R. W."
+        },
+        {
+          "family": "Peters",
+          "given": "S. C."
+        }
+      ],
+      "editor": [
+        {
+          "family": "De Antoni",
+          "given": "F."
+        },
+        {
+          "family": "Lauro",
+          "given": "N."
+        },
+        {
+          "family": "Rizzi",
+          "given": "A."
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1986
+          ]
+        ]
+      },
+      "key": "ULLE9MA2",
+      "version": 3074,
+      "itemType": "conferencePaper",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "R. W.",
+          "lastName": "Oldford"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "S. C.",
+          "lastName": "Peters"
+        },
+        {
+          "creatorType": "editor",
+          "firstName": "F.",
+          "lastName": "De Antoni"
+        },
+        {
+          "creatorType": "editor",
+          "firstName": "N.",
+          "lastName": "Lauro"
+        },
+        {
+          "creatorType": "editor",
+          "firstName": "A.",
+          "lastName": "Rizzi"
+        }
+      ],
+      "abstractNote": "We discuss the design and implementation of object-oriented datatypes for a sophisticated statistical analysis environment The discussion draws on our experience with an experimental statistical analysis system, called DINDE. DINDE resides in the integrated programming environment of a Xerox Interlisp-D machine running LOOPS. The discussion begins with our implementation of arrays, matrices, and vectors as objects in this environment. We then discuss an additional set of objects that are based on statistical abstractions rather than mathematical ones and describe their implementation in the DINDE environment.",
+      "date": "1986",
+      "proceedingsTitle": "COMPSTAT",
+      "conferenceName": "",
+      "place": "Heidelberg",
+      "volume": "",
+      "pages": "301-306",
+      "series": "",
+      "shortTitle": "",
+      "url": "https://link.springer.com/chapter/10.1007/978-3-642-46890-2_45",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Springer Link",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Data Abstraction",
+          "type": 1
+        },
+        {
+          "tag": "Data Dictionary",
+          "type": 1
+        },
+        {
+          "tag": "Mathematical Abstraction",
+          "type": 1
+        },
+        {
+          "tag": "Multivariate Observation",
+          "type": 1
+        },
+        {
+          "tag": "Sophisticated Software",
+          "type": 1
+        }
+      ],
+      "collections": [
+        "MTUXENI8",
+        "8MSYRKQA"
+      ],
+      "relations": {},
+      "dateAdded": "2023-09-15T11:37:15Z",
+      "dateModified": "2023-09-15T11:38:05Z"
+    },
+    {
       "id": "9296070/BTUF3TN2",
       "type": "article-journal",
       "title": "Integrating Access-Oriented Programming into a Multiparadigm Environment",
@@ -8780,6 +8971,79 @@
       "dateModified": "2022-09-29T00:23:37Z"
     },
     {
+      "id": "9296070/7EPB9VSQ",
+      "type": "report",
+      "title": "A Compiler for Two-level Phonological Rules",
+      "publisher": "Stanford University, Center for the Study of Language and Information",
+      "abstract": "This paper describes a system for compiling two-level phonological or orthographical rules into finite-state transducers. The purpose of this system, called TWOL, is to aid the user in developing a set of such rules for morphological generation and recognition.",
+      "URL": "https://helda.helsinki.fi/server/api/core/bitstreams/6d604071-fb9d-4132-8a79-04e64218d335/content",
+      "language": "English",
+      "author": [
+        {
+          "family": "Karttunen, Lauri",
+          "given": ""
+        },
+        {
+          "family": "Koskenniemi, Kimmo",
+          "given": ""
+        },
+        {
+          "family": "Kaplan, Roland C.",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1987,
+            6,
+            27
+          ]
+        ]
+      },
+      "key": "7EPB9VSQ",
+      "version": 3073,
+      "itemType": "report",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Karttunen, Lauri"
+        },
+        {
+          "creatorType": "author",
+          "name": "Koskenniemi, Kimmo"
+        },
+        {
+          "creatorType": "author",
+          "name": "Kaplan, Roland C."
+        }
+      ],
+      "abstractNote": "This paper describes a system for compiling two-level phonological or orthographical rules into finite-state transducers. The purpose of this system, called TWOL, is to aid the user in developing a set of such rules for morphological generation and recognition.",
+      "reportNumber": "",
+      "reportType": "",
+      "seriesTitle": "",
+      "place": "",
+      "institution": "Stanford University, Center for the Study of Language and Information",
+      "date": "1987-06-27",
+      "pages": "",
+      "shortTitle": "",
+      "url": "https://helda.helsinki.fi/server/api/core/bitstreams/6d604071-fb9d-4132-8a79-04e64218d335/content",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MTUXENI8"
+      ],
+      "relations": {},
+      "dateAdded": "2023-09-15T11:29:28Z",
+      "dateModified": "2023-09-15T11:39:31Z"
+    },
+    {
       "id": "9296070/CGTUSD9T",
       "type": "report",
       "title": "Chips: A Tool for Developing Software Interfaces Interactively.",
@@ -9402,6 +9666,68 @@
       "dateModified": "2022-08-05T04:11:20Z"
     },
     {
+      "id": "9296070/76G7ACMS",
+      "type": "article-journal",
+      "title": "A Visual aide for designing regular expression parsers",
+      "container-title": "Theses",
+      "abstract": "This paper describes a thesis project in which a visually-oriented design utility is constructed in Interlisp-D for the Xerox 1108 Artificial Intelligence Workstation. This utility aids in the design of Regular Expression Parsers by visually simulating the operation of a parser. A textual program, suitable for utilization in the construction of a compiler scanner or other similar processor may be produced by the utility.",
+      "URL": "https://scholarworks.rit.edu/theses/501",
+      "author": [
+        {
+          "family": "Crowfoot",
+          "given": "Norman"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1988,
+            1,
+            1
+          ]
+        ]
+      },
+      "key": "76G7ACMS",
+      "version": 3043,
+      "itemType": "journalArticle",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Norman",
+          "lastName": "Crowfoot"
+        }
+      ],
+      "abstractNote": "This paper describes a thesis project in which a visually-oriented design utility is constructed in Interlisp-D for the Xerox 1108 Artificial Intelligence Workstation. This utility aids in the design of Regular Expression Parsers by visually simulating the operation of a parser. A textual program, suitable for utilization in the construction of a compiler scanner or other similar processor may be produced by the utility.",
+      "publicationTitle": "Theses",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "date": "1988-01-01",
+      "series": "",
+      "seriesTitle": "",
+      "seriesText": "",
+      "journalAbbreviation": "",
+      "language": "",
+      "DOI": "",
+      "ISSN": "",
+      "shortTitle": "",
+      "url": "https://scholarworks.rit.edu/theses/501",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MTUXENI8"
+      ],
+      "relations": {},
+      "dateAdded": "2023-09-12T15:37:51Z",
+      "dateModified": "2023-09-12T15:41:02Z"
+    },
+    {
       "id": "9296070/FDA3AUNV",
       "type": "article-journal",
       "title": "Bridging the gap between object-oriented and logic programming",
@@ -9478,6 +9804,97 @@
       "relations": {},
       "dateAdded": "2022-08-04T23:56:13Z",
       "dateModified": "2022-08-04T23:56:13Z"
+    },
+    {
+      "id": "9296070/5CIDP5G7",
+      "type": "paper-conference",
+      "title": "Design and implementation of the UW Illustrated compiler",
+      "container-title": "Proceedings of the ACM SIGPLAN 1988 conference on Programming language design and implementation",
+      "collection-title": "PLDI '88",
+      "publisher": "Association for Computing Machinery",
+      "publisher-place": "New York, NY, USA",
+      "page": "105–114",
+      "event-place": "New York, NY, USA",
+      "abstract": "We have implemented an illustrated compiler for a simple block structured language. The compiler graphically displays its control and data structures, and so gives its viewers an intuitive understanding of compiler organization and operation. The illustrations were planned by hand and display information naturally and concisely.",
+      "URL": "https://dl.acm.org/doi/10.1145/53990.54001",
+      "DOI": "10.1145/53990.54001",
+      "ISBN": "978-0-89791-269-3",
+      "author": [
+        {
+          "family": "Andrews",
+          "given": "K."
+        },
+        {
+          "family": "Henry",
+          "given": "R. R."
+        },
+        {
+          "family": "Yamamoto",
+          "given": "W. K."
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1988"
+          ]
+        ],
+        "season": "Giugno"
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2023,
+            9,
+            12
+          ]
+        ]
+      },
+      "key": "5CIDP5G7",
+      "version": 3039,
+      "itemType": "conferencePaper",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "K.",
+          "lastName": "Andrews"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "R. R.",
+          "lastName": "Henry"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "W. K.",
+          "lastName": "Yamamoto"
+        }
+      ],
+      "abstractNote": "We have implemented an illustrated compiler for a simple block structured language. The compiler graphically displays its control and data structures, and so gives its viewers an intuitive understanding of compiler organization and operation. The illustrations were planned by hand and display information naturally and concisely.",
+      "date": "Giugno 1, 1988",
+      "proceedingsTitle": "Proceedings of the ACM SIGPLAN 1988 conference on Programming language design and implementation",
+      "conferenceName": "",
+      "place": "New York, NY, USA",
+      "volume": "",
+      "pages": "105–114",
+      "series": "PLDI '88",
+      "language": "",
+      "shortTitle": "",
+      "url": "https://dl.acm.org/doi/10.1145/53990.54001",
+      "accessDate": "2023-09-12",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "ACM Digital Library",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MTUXENI8"
+      ],
+      "relations": {},
+      "dateAdded": "2023-09-12T15:40:09Z",
+      "dateModified": "2023-09-12T15:40:09Z"
     },
     {
       "id": "9296070/9RRR7G7F",
@@ -14624,6 +15041,57 @@
       "relations": {},
       "dateAdded": "2023-04-29T15:24:55Z",
       "dateModified": "2023-09-10T00:38:11Z"
+    },
+    {
+      "id": "9296070/F4Y4L8UJ",
+      "type": "article-journal",
+      "title": "Tailoring Mechanisms in Three Research Technologies.",
+      "abstract": "Tailoring is the technical and human art of modifying the functionality of technology while the technology is in use in the field. This position paper explores various styles of, and mechanisms for, tailoring in three research systems (Trillium, Rooms, and Buttons) created by the author to explore ways to enable players (end users) to achieve new behaviors from these systems appropriate to their particular circumstances.",
+      "language": "en",
+      "author": [
+        {
+          "family": "Henderson",
+          "given": "Austin"
+        }
+      ],
+      "key": "F4Y4L8UJ",
+      "version": 3075,
+      "itemType": "journalArticle",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Austin",
+          "lastName": "Henderson"
+        }
+      ],
+      "abstractNote": "Tailoring is the technical and human art of modifying the functionality of technology while the technology is in use in the field. This position paper explores various styles of, and mechanisms for, tailoring in three research systems (Trillium, Rooms, and Buttons) created by the author to explore ways to enable players (end users) to achieve new behaviors from these systems appropriate to their particular circumstances.",
+      "publicationTitle": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "date": "",
+      "series": "",
+      "seriesTitle": "",
+      "seriesText": "",
+      "journalAbbreviation": "",
+      "DOI": "",
+      "ISSN": "",
+      "shortTitle": "",
+      "url": "",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Zotero",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MTUXENI8"
+      ],
+      "relations": {},
+      "dateAdded": "2023-09-17T12:09:49Z",
+      "dateModified": "2023-09-17T12:09:49Z"
     },
     {
       "id": "9296070/GZU4TBQ5",
