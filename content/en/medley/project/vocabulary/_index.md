@@ -55,7 +55,7 @@ Interlisp: The Language and its usage
 : A book by Steve Kaisler which describes Interlisp of the 1970s & 80s
 
 Interlisp.org
-: a “domain name”, used for some web sites and email addresses
+: A “domain name”, used for some web sites and email addresses
 
 - <https://interlisp.org>  – the address of the main web site
 - <https://online.interlisp.org> – the address of a service that lets you run Medley
@@ -146,5 +146,5 @@ Venue
 : Smaller company, started by John Sybalsky; it had the license to create and distribute derivative works of Maiko and Medley   Venue ceased operations… … some history …. Software recovered from late 90s…. Fuji Xerox worked with John into the 90s with ports and addons and other software….
 
 Medley Interlisp Project
-: began late 2010’s with Nick Briggs getting Maiko to run on MacOS.
+: Began late 2010’s with Nick Briggs getting Maiko to run on MacOS.
 In earnest in 2020 with start of weekly Zoom meetings, getting it to run on Linux in a VM and getting the Interlisp and LispCore google groups and ….
