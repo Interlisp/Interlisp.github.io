@@ -20,7 +20,7 @@ We are approaching the project as a general software-preservation-through-emulat
 
 Advances over the last year include:
 
-- New versions of "online.interlisp.org" give users a virtual "lisp machine" accessed through the browser without any software to install.
+- New versions of online.interlisp.org give users a virtual "Lisp machine" accessed through the browser without any software to install.
 - New versions of (open source, in GitHub) emulator and VM images with numerous improvements.
 - Support for virtual networking of the Xerox Network Systems (XNS) protocol stack (pre-dating TCP/IP, as well as the "PUP" (PARC Universal Packets).
 - Further work reviving classic Interlisp applications, including Rooms (desktop management), Notecards (Hypertext from the 80s, well before the Web), LOOPS (Lisp Object Oriented Programming System), melding Smalltalk style object inheritance with class-based knowledge engineering tools.
