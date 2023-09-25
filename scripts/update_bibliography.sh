@@ -49,8 +49,8 @@ finalCount=$(jq '. | length' <<< "$items")
 # onlyURL=$(jq 'map(if ((has("url") and (.url | tostring | length)) | not) and (has("URL") and (.URL | tostring | length)) then . else empty end)' <<< "$items")
 # echo "$onlyURL" > onlyURL.json
 # consolidate URL into url key
-# consolidated=$(jq 'map(if (has("URL") and (.URL | tostring | length)) then setpath(["url"]; .URL) | del(.URL) else . end)' <<< "$items")
-# echo "$consolidated" > consolidated.json
+items=$(jq 'map(if (has("URL") and (.URL | tostring | length)) then setpath(["url"]; .URL) | del(.URL) else . end)' <<< "$items")
+# echo "$items" > consolidated.json
 # noURL=$(jq 'map(if (has("url") and (.url | tostring | length >= 1)) then empty else . end) | . // empty' <<< "$items")
 # echo "$noURL" > noURL.json
 items=$(jq 'group_by(.issued."date-parts"[0][0])' <<< "$items")
