@@ -6,7 +6,15 @@ aliases:
  - /hugo/running/running-on-win/
 ---
 
-How is this different from the topic running on Docker Desktop?
+There are two ways to run Medley on Windows:
+1.  Run Medley on Windows System for Linux (WSL)
+2.  Run the 'native' Medley Windows app (which uses cygwin behind the scenes)
+
+These two ways result in identical Medley experiences, but differ in the how Medley is installed and run.
+
+Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyways and/or prefer working in a Linux environment.
+Medley 'native' works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley 'native' is best for users who prefer to stay (almost) excluisively in the Windows environment.
+ 
 
 Medley does not yet run as a native Windows application.  Besides [online](/medley/using/running/online), you can run Medley on Windows 10/11 using Windows System For Linux (WSL1 or WSL2).
 
