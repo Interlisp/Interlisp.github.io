@@ -11,15 +11,15 @@ There are three ways to run Medley on Windows:
  2.  Run Medley on Windows System for Linux (WSL)
  3.  Run the 'native' Medley Windows app (which uses cygwin behind the scenes)
 
-These three ways result in (nearly) identical Medley experiences, but differ in the if and how Medley is installed and run.
+These three ways result in (nearly) identical Medley experiences, but differ in how Medley is installed and run.
 
-Medley Online requires nothing to be installed on your local machine.  Instead, Medley is run in the cloud and accessed from a browser running on Windows.  Medley Online is best from users wanting to try Medley out without having to install anything on Windows.  It is not well-suited to significant software development using Medley. 
+Medley Online requires nothing to be installed on your local machine.  Instead, Medley is run in the cloud and accessed from a browser running on Windows.  Medley Online is best for users wanting to try Medley out without having to install anything on Windows.  It is not well-suited to significant software development using Medley. 
 
 Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment.
 
 Medley 'native' works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley 'native' is best for users who prefer to stay (almost) exclusively in the Windows environment.
  
-Medley on WSL and 'native' Medley both require 64-bit Windows 10/11.  Medley Online will run on any Windows, providing that the browser is up-to-date..
+Medley on WSL and 'native' Medley both require 64-bit Windows 10/11.  Medley Online will run on any Windows, providing that the browser is up-to-date.
 
 
 ### **1.  Running Medley Online**
@@ -37,9 +37,9 @@ When running under WSL2, Medley can display in one of two ways: in an X-Window (
 
 1. *Install WSL:* See [here](https://learn.microsoft.com/en-us/windows/wsl/install) for instructions on installing WSL.
 
-2. *Install medley within WSL:* Once WSL is installed, open a terminal to WSL (e.g., by typing "wsl" in a Command or Powershell window) and follow the instructions for installing and running Medley on WSL and standard Linux that can be found [here](/medley/using/running/running-on-linux). 
+2. *Install Medley within WSL:* Once WSL is installed, open a terminal to WSL (e.g., by typing "wsl" in a Command or Powershell window) and follow the instructions for installing and running Medley on WSL and standard Linux that can be found [here](/medley/using/running/running-on-linux). 
 
-3. *Run Medley:* Once Medley has been installed on WSL, you can run medley from either a WSL terminal as described in the Running Medley on Linux instructions ([here](/medley/using/running/running-on-linux)) or by typing `wsl medley <flags and options>` in a Command or Powershell window.
+3. *Run Medley:* Once Medley has been installed on WSL, you can run Medley from either a WSL terminal as described in the Running Medley on Linux instructions ([here](/medley/using/running/running-on-linux)) or by typing `wsl medley <flags and options>` in a Command or Powershell window.
 
     Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
 
@@ -90,7 +90,7 @@ For first-time users: `medley --apps --interlisp --noscroll` or, equivalently, `
 
    Also, from within Medley you can refer to any file in the Windows file system using  ***/&lt;drive letter>/&lt;windows path using "/" instead of "\\">***. Example:  ***C:\User\Frank\Downloads\foo*** in Windows will be  ***/c/User/Frank/Downloads/foo*** in Medley. (Note that this means that within Medley, ***/medley/foo*** and ***/c/&lt;install_dir>/medley/foo*** will be references to the same Windows file.)
 
-2. If you want to work with Medley code using git, etc. You will probably find it easier to work with git within Cygwin rather than work with git in Windows. To work within the Medley-specific Cygwin, within a Powershell or Command window:
+2. If you want to work with the Medley code using git, etc. You will probably find it easier to work with git within Cygwin rather than work with git in Windows. To work within the Medley-specific Cygwin, within a Powershell or Command window:
 
    ```
    cd <install_dir>
@@ -99,5 +99,5 @@ For first-time users: `medley --apps --interlisp --noscroll` or, equivalently, `
 
    This will get you a bash terminal running under the Medley-specific Cygwin - which means that the file mappings will be the same as in Medley.
 
-3. The Medley-specific Cygwin install is rather minimal, so if you find you need other Linux tools to work with Medley code, the Cygwin setup tool (which also functions as its package manager) is available at  ***&lt;install_dir>\cygwin\setup_x86_64.exe***  (in Windows) or at  ***/cygwin/setup_x86_64.exe***  (from within Cygwin bash).
+3. The Medley-specific Cygwin install is rather minimal, so if you find you need other Linux tools to work with the Medley code, the Cygwin setup tool (which also functions as its package manager) is available at  ***&lt;install_dir>\cygwin\setup_x86_64.exe***  (in Windows) or at  ***/cygwin/setup_x86_64.exe***  (from within Cygwin bash).
 
