@@ -33,7 +33,7 @@ else
   items=$(<$1)
 fi
 
-echo "$items" > 00-rawItems-pre-needed.json
+# echo "$items" > 00-rawItems-pre-needed.json
 
 while read neededUrl; do
     item=$(curl -s "$neededUrl?include=data,csljson&v=3")
