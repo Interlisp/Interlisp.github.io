@@ -178,15 +178,26 @@ var abstractExpanderClose = "Abstract -";
             {{ range $na, $au := .author }}{{ if $na }}; {{ end }}{{ if $au.literal }}{{ $au.literal }}{{ else if and $au.family $au.given }}{{ $au.family }}, {{ $au.given }}{{ else }}{{ $au.family }}{{ $au.given }}{{ end }}{{ end }}
           </div>{{ end }}
           {{ if .abstract }}<button type="button" class="abstractExpander left" id="A{{$itemID}}">AAA</button>{{ end }}
-            {{ if .note }}
-			{{ $notes := split .note "\n" }}
-			<div class="tooltipNotes right" id="N{{$itemID}}">Notes
-			<span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
-                {{ range $nn, $note := $notes }}
-				{{ if $nn }}<br>{{ end }}
-				{{ print (safeJS (replace (replace (replace (replace $note "<p>" "") "</p>" "") "-" $nonBreakingHyphen) " " " ")) }}
-				{{ end }}</span></div>
-             {{ end }}{{ if .abstract }}<br><div class="abstractContent" id="A{{$itemID }}_Abs">{{ .abstract }}</div>{{ end }}</td>
+          {{ if .note }}
+            {{ $notes := split (plainify .note) "\n" }}
+            <div class="tooltipNotes right" id="N{{$itemID}}">Notes
+            <span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
+              {{ range $nn, $note := $notes }}
+                {{if strings.ContainsNonSpace $note }}
+                  {{ if $nn }}<br>{{ end }}
+                  {{ print (safeJS (replace (replace (htmlUnescape $note) "-" $nonBreakingHyphen) " " " ")) }}
+                {{ end }}
+              {{ end }}</span></div>
+          {{ end }}
+          {{ if .abstract }}<br><div class="abstractContent" id="A{{$itemID }}_Abs">
+            {{ range $na, $abstract := split (plainify .abstract) "\n" }}
+                {{if strings.ContainsNonSpace $abstract }}
+                  {{ if $na }}<br>{{ end }}
+                  {{ $trimmed := strings.TrimLeft " " $abstract }}{{ $indent := (sub ($abstract | len)  ($trimmed | len)) }}
+                  {{ print (safeJS (htmlUnescape (printf "%s" $trimmed | printf "%s%s" (strings.Repeat $indent " ") |  printf "%s"))) }}
+                {{ end }}
+              {{ end }}
+            </div>{{ end }}</td>
         </tr>
         {{ end }}
       {{ end }}
