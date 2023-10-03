@@ -3,31 +3,48 @@
   background-color: #00A6ED;
   color: white;
   cursor: pointer;
-  padding: 3px 5px;
+  padding: 1px 5px;
   border: none;
-  text-align: center;
-  margin: auto;
+  text-align: left;
+  margin: 5px auto 2px 25px;
   outline: none;
-  font-size: 1.2rem;
+  font-size: 1.0rem;
 }
 
 .abstractContent {
-  padding: 0 5px;
+  padding: 5px;
+  margin: 0 5px 0 15px;
   display: none;
   font-size: 0.9rem;
   overflow: hidden;
-  background-color: #f1f1f1;
+  background-color: #e8e8ff;
+  clear: both;
 }
+
+.right { float: right }
+.left { float: left }
+
+.year {
+    margin: 5px auto 2px 15px;
+    background-color: #88C;
+    color: white;
+}
+
+.bibTitle {
+    font-weight: 700;
+}
+
+.authors { margin: 5px auto 2px 5px; }
 
 .tooltipNotes {
     position: relative;
     display: inline-block;
-    font-size: 1.45rem;
-    font-weight: 550;
+    font-size: 1.0rem;
+    font-weight: 400;
     background-color: #00A6ED;
     color: white;
     cursor: pointer;
-    padding: 0px 5px;
+    padding: 1px 5px;
     border: none;
     text-align: center;
     margin: auto;
@@ -79,15 +96,16 @@ This is because I cannot determine how to specify not to word wrap the content U
 }
 .tooltipNotes-right {
   top: -5px;
+  bottom:auto;
   left: 125%;  
 }
 
 .tooltipNotes-right::after {
     content: "";
     position: absolute;
-    top: 50%;
+    top: 0.9rem;
     right: 100%;
-    margin-top: -5px;
+    margin-top: 0px;
     border-width: 5px;
     border-style: solid;
     border-color: transparent #555 transparent transparent;
@@ -126,66 +144,64 @@ This is because I cannot determine how to specify not to word wrap the content U
     border-style: solid;
     border-color: #555 transparent transparent transparent;
 }
-/* Center 3rd & 4th columns */
-table td:nth-child(3) {
-    text-align: center;
-table td:nth-child(4) {
-    text-align: center;
-}
+
 </style>
 
 {{ $notesIcon := "\u24C3" }}
+{{ $nonBreakingHyphen := "\u2011" }}
 <script>
-var abstractExpanderOpen = "\u25BC";
-var abstractExpanderClose = "\u25B2";
-</script>
+var abstractExpanderOpen = "Abstract \u25BC";
+var abstractExpanderClose = "Abstract \u25B2";
+
+/*
+var abstractExpanderOpen = "Abstract +";
+var abstractExpanderClose = "Abstract -";
+*/</script>
 
 <table style="max-width: 100%">
     <thead>
+      <tr>
+        <th>Reference</th>
+      </tr>
+    </thead>
+    <tbody style="overflow:auto">
+      {{ $years_items := getJSON "data/bibliography.json" }}
+      {{ range $year, $items := $years_items }}
         <tr>
-          <th style="width:40%">Author</th>
-          <th>Title</th>
-          <th>Abstract</th>
-          <th>Notes</th>
+          <th class="year"><b>{{ $year }}</b></th>
         </tr>
-      </thead>
-      <tbody style="overflow:auto">
-        {{ $years_items := getJSON "data/bibliography.json" }}
-        {{ range $year, $items := $years_items }}
-          <tr>
-            <th colspan="4">{{ $year }}</th>
-          </tr>
-          {{ range $items }}
-          <tr>
-            {{ $itemID := (cond (gt (len .id) 0) (replace .id `/` `_`) `_0`) }}
-            <td style="font-size: 0.9rem">  
-              {{ range $na, $au := .author }}
-                {{ if $na }} ;<br> {{ end }}
-                {{ if $au.literal }}
-                  {{ $au.literal }}
-                {{ else if and $au.family $au.given }}
-                  {{ $au.family }}, {{ $au.given }}
-                {{ else }}
-                  {{ $au.family }}{{ $au.given }}
+        {{ range $items }}
+        <tr>
+          {{ $itemID := (cond (gt (len .id) 0) (replace .id `/` `_`) `_0`) }}
+          <td><div class="bibTitle">{{ if .url }}<a href="{{ .url }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</div>
+          {{ if .author }}<div class="authors">  
+            {{ range $na, $au := .author }}{{ if $na }}; {{ end }}{{ if $au.literal }}{{ $au.literal }}{{ else if and $au.family $au.given }}{{ $au.family }}, {{ $au.given }}{{ else }}{{ $au.family }}{{ $au.given }}{{ end }}{{ end }}
+          </div>{{ end }}
+          {{ if .abstract }}<button type="button" class="abstractExpander left" id="A{{$itemID}}">AAA</button>{{ end }}
+          {{ if .note }}
+            {{ $notes := split (plainify .note) "\n" }}
+            <div class="tooltipNotes right" id="N{{$itemID}}">Notes
+            <span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
+              {{ range $nn, $note := $notes }}
+                {{if strings.ContainsNonSpace $note }}
+                  {{ if $nn }}<br>{{ end }}
+                  {{ print (safeJS (replace (replace (htmlUnescape $note) "-" $nonBreakingHyphen) " " " ")) }}
+                {{ end }}
+              {{ end }}</span></div>
+          {{ end }}
+          {{ if .abstract }}<br><div class="abstractContent" id="A{{$itemID }}_Abs">
+            {{ range $na, $abstract := split (plainify .abstract) "\n" }}
+                {{if strings.ContainsNonSpace $abstract }}
+                  {{ if $na }}<br>{{ end }}
+                  {{ $trimmed := strings.TrimLeft " " $abstract }}{{ $indent := (sub ($abstract | len)  ($trimmed | len)) }}
+                  {{ print (safeJS (htmlUnescape (printf "%s" $trimmed | printf "%s%s" (strings.Repeat $indent " ") |  printf "%s"))) }}
                 {{ end }}
               {{ end }}
-            </td>
-            <td>{{ if .URL }}<a href="{{ .URL }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}
-            {{ if .abstract }}<div class="abstractContent" id="A{{$itemID }}_Abs">{{ .abstract }}</div>{{ end }}</td>
-            <td>{{ if .abstract }}<button type="button" class="abstractExpander" id="A{{$itemID}}">AAA</button>{{ end }}</td>
-            <td>{{ if .note }}{{ $notes := split .note "\n" }}
-              <div class="tooltipNotes" id="N{{$itemID}}">{{$notesIcon}}<span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
-                  {{ range $nn, $note := $notes }}
-                    {{ if $nn }}<br>{{ end }}
-                    {{ print (safeJS (replace (replace (replace (replace $note "<p>" "") "</p>" "") "-" "\u2011") " " " ")) }}
-                  {{ end }}</span>
-               </div>
-               {{ end }}
-             </td>
-          </tr>
-          {{ end }}
+            </div>{{ end }}</td>
+        </tr>
         {{ end }}
-      </tbody>
+      {{ end }}
+    </tbody>
   
 </table>
 <script>
@@ -198,6 +214,18 @@ function abstractExpanderClick() {
     } else {
       abstractContent.style.display = "block";
       this.textContent = abstractExpanderClose;
+    }
+  }
+  
+function tooltipNotesTextMouseOver() {
+    // this.classList.toggle("active");
+    var content = document.getElementById(this.id.concat("_Text"));
+    if (content.style.display === "block") {
+      abstractContent.style.display = "none";
+      // this.textContent = abstractExpanderOpen;
+    } else {
+      abstractContent.style.display = "block";
+      // this.textContent = abstractExpanderClose;
     }
   }
 
