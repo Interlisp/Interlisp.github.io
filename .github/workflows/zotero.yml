@@ -16,8 +16,9 @@ jobs:
 
       - name: Run script file
         run: |
-          chmod +x ./scripts/update_bibliography.sh
-          ./scripts/update_bibliography.sh 
+          cd scripts
+          chmod +x ./update_bibliography.sh
+          ./update_bibliography.sh 
         shell: bash
 
       - name: Check for updates and push if needed
