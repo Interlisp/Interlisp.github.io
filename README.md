@@ -1,7 +1,7 @@
 # Interlisp.org Home Page
 
 The documentation repository for <https://interlisp.org>, the restoration
-project for the Interlisp ecosystem.
+project for the Interlisp ecosystem. This is a revision by Andrew Sengul.
 
 The collection of pages provides information on the restoration effort, Medley,
 Interlisp and how to access and use the restored Medley system.
