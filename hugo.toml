@@ -1,6 +1,8 @@
-baseURL = "https://interlisp.org"
+# baseURL = "https://interlisp.org"
+baseURL = "https://phantomics.github.io/InterlispDraft.github.io/"
 
-#relativeURLs = true
+relativeURLs = true
+canonifyURLs = true
 
 enableRobotsTXT = true
 
