@@ -1,18 +1,103 @@
+#*******************************************************************************
+#  gh-pages.yml
+#
+# Github Workflow to deploy Interlisp.org.
+#
+# Interlisp.org is a Hugo based static website that contains a 
+# detailed bibliography maintained using Zotero (https://www.zotero.org/groups/2914042/interlispwww.zotero.org/).
+#
+# This workflow consists of two jobs, one to ensure that we have the latest
+# version of the Zotero bibliography and a second job to deploy the website.
+#
+# The workflow is executed either on a push or via scheduled run times.  When
+# started at a scheduled run time we only do a deploy if the cached bibliography
+# is no longer current.  On a push, we always verifty the the current
+# bibliography is loaded and deploy a new version of the website.
+#
+# 2023-10-20 Bill Stumbo
+#
+# Copyright 2023 by Interlisp.org
+#
+# ******************************************************************************
 name: github pages
 
 on:
   push:
     branches:
       - main  # Set a branch to deploy
-  pull_request:
+  schedule:
+    - cron: "0 3 * * *"
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  # ----------------------------------------------------------------------------
+  # Use the Zotero REST API to get the current version of the Zotero Bibliography
+  # Compare against a cached version of the bibliography.
+  #
+  check:
+    outputs:
+      zoteroVersion: ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
+      cacheHit: ${{ steps.cache-zotero-bib.outputs.cache-hit }}
+    runs-on: ubuntu-latest
     concurrency:
       group:  ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v3
+
+      - name: Get Zotero Version Information
+        id: zoteroVersion
+        uses: fjogeleit/http-request-action@v1
+        with:
+          url: "https://api.zotero.org/groups/2914042/items?format=versions"
+          method: "GET"
+        
+      - name: Cache Zotero Bibliography
+        id: cache-zotero-bib
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-zotero_bib
+        with:
+          path: ~/data
+          key: ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
+          restore-keys: |
+            ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
+
+  # ----------------------------------------------------------------------------
+  # Deploy the website.  This job is conditional, we will always run it on a
+  # push or if on a scheduled run the cache was determined to be out of date.
+  #      
+  deploy:
+    needs: check
+    runs-on: ubuntu-latest
+    if:  github.event_name == 'push' || needs.check.outputs.cacheHit != 'true'
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Cache Zotero Bibliography
+        id: cache-zotero-bib
+        uses: actions/cache@v3
+        env:
+          cache-name: cache-zotero_bib
+        with:
+          path: ~/data
+          key: ${{ needs.check.outputs.zoteroVersion }}
+          restore-keys: |
+            ${{ needs.check.outputs.zoteroVersion }}
+
+      - name: Install Bibliography
+        env:
+          CACHE_HIT: ${{ steps.cache-zotero-bib.outputs.cache-hit }}
+        run: |
+          if [[ "$CACHE_HIT" == 'true' ]]; then
+            echo "Use Cache"
+            sudo cp --recursive ~/data ${GITHUB_WORKSPACE}
+            ls -la ${GITHUB_WORKSPACE}/data
+          else
+            echo "Retrieve bibliography"
+            cd scripts
+            chmod +x ./update_bibliography.sh
+            ./update_bibliography.sh
+            sudo cp --recursive ${GITHUB_WORKSPACE}/data ~/data
+          fi 
+        shell: bash
 
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v2
