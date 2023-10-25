@@ -19,8 +19,6 @@ Within the Xerox PARC environment, it was an early example of a network enabled 
 
 Medley Interlisp represents the last Xerox Interlisp release.  Medley continued Xerox PARC's experimentation with developing systems for [D-machines](http://www.bitsavers.org/pdf/xerox/parc/Exploring_the_Ethernet_with_Mouse_and_Keyboard_May81.pdf). A family of computers (Dorado, Dolphin, Dandelion, Daybreak) resulted. The project was later spun out to a company called Envos, which then turned into Venue.
 
-{{< imgproc Interlisp_Screen Fill "2000x600" >}} Medley Interlisp User Interface. {{< /imgproc >}}
-
 ## What are we trying to accomplish?
 
 Our aim is to allow *Medley Interlisp* to "live again": usable on modern systems, sufficient to allow someone to develop some code and experience what it was like to use this groundbreaking system. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle. 
