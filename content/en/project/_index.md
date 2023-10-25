@@ -38,7 +38,7 @@ We have done a lot of cleanup and adaptation to make Interlisp Medley usable aga
 We've also been working on integration of the Interlisp style development with git and GitHub, Docker and other modern components.
 
 <div class="mx-auto">
- <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "medley/using" >}}">
+ <a class="btn btn-lg btn-danger mr-3 mb-4" href="">
   How do I access and use Medley?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
  </a>
 </div>
@@ -48,7 +48,7 @@ We've also been working on integration of the Interlisp style development with g
 We are some of the original developers and users of the system 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](partners). And with you!
 
 <div class="mx-auto">
- <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "getinvolved" >}}">
+ <a class="btn btn-lg btn-danger mr-3 mb-4" href="">
   How do I get involved?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
  </a>
 </div>
