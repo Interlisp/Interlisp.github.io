@@ -12,7 +12,7 @@ We have a variety of documentation available for anyone interested in using Inte
 
 For general information to get you started, go to [The Basics of Interlisp]({{< ref "Using.md" >}}).
 
-For Medley orientation and tips, go to [Using Medley](/medley/using).
+For Medley orientation and tips, go to [Using Medley](/software/using).
 
 The following links provide access to PDF files containing Interlisp documentation.
 

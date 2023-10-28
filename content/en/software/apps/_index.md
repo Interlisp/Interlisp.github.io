@@ -1,5 +1,5 @@
 ---
-title: Other Applications
+title: Applications and Tools*
 type: docs
 weight: 100
 ---
