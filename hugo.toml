@@ -43,35 +43,35 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 #    pre = "<i class='fas fa-download'></i>"
 #    url = "/publications/"  
   [[menu.main]]
-    name = "Stuff"
-    weight = -90
-    pre = "<i class='fas fa-book'></i>"
-    url = "/stuff/"
-  [[menu.main]]
-    name = "Project"
-    weight = -90
-    pre = "<i class='fas fa-book'></i>"
-    url = "/project/"
-  [[menu.main]]
-    name = "Software"
-    weight = -90
-    pre = "<i class='fas fa-book'></i>"
-    url = "/software/"
-  [[menu.main]]
-    name = "History"
-    weight = -90
-    pre = "<i class='fas fa-book'></i>"
-    url = "/history/"
+    name = "GitHub"
+    weight = -120
+    pre = "<i class='fab fa-github'></i>"
+    url = "https://github.com/interlisp"
   [[menu.main]]
     name = "Get Involved"
     weight = -90
     pre = "<i class='fas fa-book'></i>"
     url = "/getInvolved/"
   [[menu.main]]
-    name = "GitHub"
-    weight = -120
-    pre = "<i class='fab fa-github'></i>"
-    url = "https://github.com/interlisp"
+    name = "History"
+    weight = -90
+    pre = "<i class='fas fa-book'></i>"
+    url = "/history/"
+  [[menu.main]]
+    name = "Software"
+    weight = -90
+    pre = "<i class='fas fa-book'></i>"
+    url = "/software/"
+  [[menu.main]]
+    name = "Project"
+    weight = -90
+    pre = "<i class='fas fa-book'></i>"
+    url = "/project/"
+  [[menu.main]]
+    name = "Stuff"
+    weight = -90
+    pre = "<i class='fas fa-book'></i>"
+    url = "/stuff/"
 
 # Highlighting config
 pygmentsCodeFences = true
