@@ -63,15 +63,15 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
     pre = "<i class='fas fa-book'></i>"
     url = "/software/"
   [[menu.main]]
-    name = "Project"
-    weight = -90
-    pre = "<i class='fas fa-book'></i>"
-    url = "/project/"
-  [[menu.main]]
     name = "Stuff"
     weight = -90
     pre = "<i class='fas fa-book'></i>"
     url = "/stuff/"
+  [[menu.main]]
+    name = "Project"
+    weight = -90
+    pre = "<i class='fas fa-book'></i>"
+    url = "/project/"
 
 # Highlighting config
 pygmentsCodeFences = true
