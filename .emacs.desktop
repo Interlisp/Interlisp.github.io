@@ -1,0 +1,427 @@
+;; -*- mode: emacs-lisp; lexical-binding:t; coding: utf-8-emacs; -*-
+;; --------------------------------------------------------------------------
+;; Desktop File for Emacs
+;; --------------------------------------------------------------------------
+;; Created Sat Oct 28 14:55:50 2023
+;; Desktop file format version 208
+;; Emacs version 27.1
+
+;; Global section:
+(setq desktop-saved-frameset [frameset 1 (25917 30038 616140 475000) (desktop . "208") "sloane@osidarta" nil nil ((((minibuffer . t) (undecorated) (override-redirect) (font . "-FSD -PragmataPro Mono-normal-normal-normal-*-16-*-*-*-m-0-iso10646-1") (font-parameter) (border-width . 0) (internal-border-width . 0) (right-divider-width . 0) (bottom-divider-width . 0) (vertical-scroll-bars . right) (horizontal-scroll-bars) (foreground-color . "#657b83") (background-color . "#fdf6e3") (mouse-color . "black") (border-color . "#eee8d5") (screen-gamma) (line-spacing) (left-fringe . 8) (right-fringe . 8) (no-special-glyphs) (scroll-bar-foreground) (scroll-bar-background) (menu-bar-lines . 1) (tab-bar-lines . 0) (height . 61) (tool-bar-lines . 1) (title) (wait-for-wm . t) (tool-bar-position . top) (inhibit-double-buffering) (icon-type . t) (auto-raise) (auto-lower) (cursor-type . box) (scroll-bar-width . 16) (scroll-bar-height . 16) (alpha) (no-focus-on-map) (no-accept-focus) (fullscreen . maximized) (visibility . t) (skip-taskbar) (z-group) (display-type . color) (background-mode . light) (cursor-color . "#d33682") (sticky) (environment) (last-focus-update . t) (frameset--id . "73AF-8D5D-DC04-3505") (frameset--mini t . t) (width . 231) (modeline . t) (unsplittable) (left . 36) (top . 0) (icon-name) (display . ":0.0") (explicit-name)) ((min-height . 4) (min-width . 10) (min-height-ignore . 3) (min-width-ignore . 6) (min-height-safe . 1) (min-width-safe . 2) (min-pixel-height . 72) (min-pixel-width . 80) (min-pixel-height-ignore . 54) (min-pixel-width-ignore . 48) (min-pixel-height-safe . 18) (min-pixel-width-safe . 16)) leaf (pixel-width . 1884) (pixel-height . 1089) (total-width . 236) (total-height . 60) (normal-height . 1.0) (normal-width . 1.0) (buffer "_index.md<using>" (selected . t) (hscroll . 0) (fringes 8 8 nil nil) (margins nil) (scroll-bars nil 2 t nil 0 t nil) (vscroll . 0) (dedicated) (point . 1) (start . 1)) (next-buffers "_index.md<using>") (prev-buffers ("_index.md<using>" 1 1) ("_index.md<docs>" 1 377) ("*Buffer List*" 151 2510) ("_index.md<en/project>" 1 2976) ("_index.md<lisp>" 1 50) ("_index.md<guis>" 1 71) ("_index.md<medley>" 1 56) ("_index.md<d-machines>" 1 45) ("_index.md<parc-alto>" 1 54) ("_index.md<apps>" 1 1) ("_index.md<news>" 1 1) ("hugo.toml" 1 1346) ("*Completions*" 1 1) ("*inferior-lisp*" 1 1098) ("*slime-compilation*" 1 56) ("*slime-events*" 48248 49033))))])
+(setq desktop-missing-file-warning nil)
+(setq tags-file-name nil)
+(setq tags-table-list nil)
+(setq search-ring '(#("about" 0 5 (isearch-regexp-function nil isearch-case-fold-search t)) #("foot" 0 4 (isearch-case-fold-search t isearch-regexp-function nil)) #("using" 0 5 (isearch-regexp-function nil isearch-case-fold-search t)) #("medley" 0 6 (isearch-regexp-function nil isearch-case-fold-search t)) #("imgpro" 0 6 (isearch-regexp-function nil isearch-case-fold-search t)) #("imgproc" 0 7 (isearch-regexp-function nil isearch-case-fold-search t))))
+(setq regexp-search-ring nil)
+(setq register-alist nil)
+(setq file-name-history '("~/src/web/InterlispDraft.github.io/content/en/software/using/" "~/src/web/InterlispDraft.github.io/layouts/output/single.html" "~/src/web/InterlispDraft.github.io/layouts/partials/hooks/body-end.html" "~/src/web/InterlispDraft.github.io/content/en/software/docs/_index.md" "~/src/web/InterlispDraft.github.io/content/en/project/vocabulary/_index.md" "~/src/web/InterlispDraft.github.io/content/en/project/status/_index.md" "~/src/web/InterlispDraft.github.io/content/en/project/partners/_index.md" "~/src/web/InterlispDraft.github.io/content/en/history/parc-alto/_index.md" "~/src/web/InterlispDraft.github.io/content/en/history/medley/_index.md" "~/src/web/InterlispDraft.github.io/content/en/history/" "~/src/web/InterlispDraft.github.io/" "~/src/web/InterlispDraft.github.io/content/en/software/emu-compat/_index.md" "~/src/web/InterlispDraft.github.io/content/en/software/apps/_index.md" "~/src/web/InterlispDraft.github.io/content/en/getInvolved/_index.md" "~/src/web/InterlispDraft.github.io/content/en/software/_index.md" "~/src/web/InterlispDraft.github.io/content/en/history/_index.md" "~/src/web/ilinvoices/package.lisp" "~/src/web/ilinvoices/ilinvoices.lisp" "~/src/web/ilinvoices/ilinvoices.asd" "~/src/web/ilinvoices/ilinvoices.as" "~/src/web/InterlispDraft.github.io/content/en/stuff/project/_index.md" "~/src/web/InterlispDraft.github.io/content/en/project/_index.md" "~/src/web/InterlispDraft.github.io/content/en/_index.html" "~/src/web/InterlispDraft.github.io/layouts/partials/hooks/body-end.html" "~/src/web/InterlispDraft.github.io/assets/scss/_variables_project.scss" "~/src/web/InterlispDraft.github.io/layouts/partials/page-meta-links.html" "~/src/web/InterlispDraft.github.io/layouts/partials/hooks/head-end.html" "~/src/web/InterlispDraft.github.io/layouts/output/baseof.html" "~/src/web/InterlispDraft.github.io/layouts/shortcodes/blocks/cover.html" "~/src/web/InterlispDraft.github.io/content/en/medley/project/news/_index.md" "~/src/web/InterlispDraft.github.io/layouts/partials/output-section-index.html" "~/src/web/InterlispDraft.github.io/layouts/Gallery/single.html" "~/src/web/InterlispDraft.github.io/content/en/_index.html" "~/src/web/InterlispDraft.github.io/carousel.yaml" "~/src/web/InterlispDraft.github.io/index.html" "~/src/web/InterlispDraft.github.io/hugo.toml"))
+
+;; Buffer section -- buffers listed in same order as in buffer list:
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/software/using/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 30029 723002 186000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/software/docs/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  377
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 30022 656999 537000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/project/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  2976
+  '(1 nil)
+  nil
+  nil
+  '((buffer-display-time 25917 29976 711144 199000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (3040 3388 2941 1459 1414 1 2941 3388 3388))))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/history/lisp/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  50
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 29960 270962 555000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/history/guis/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  71
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 29958 574964 86000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/history/medley/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  56
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 29946 790949 151000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/history/d-machines/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  45
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 29923 54750 185000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/history/parc-alto/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  54
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 29915 6755 135000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/software/apps/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 29906 814569 851000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/medley/project/news/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 29897 358599 402000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/layouts/output/single.html"
+  "single.html"
+  'mhtml-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 28268 446400 693000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/layouts/partials/hooks/body-end.html"
+  "body-end.html"
+  'mhtml-mode
+  nil
+  112
+  '(1 nil)
+  nil
+  nil
+  '((buffer-display-time 25917 28411 876036 992000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/project/partners/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 27991 987934 562000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/project/vocabulary/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 27879 731493 306000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/project/status/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 27873 115249 972000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/software/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  20
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 27856 154818 276000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/software/emu-compat/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 26436 216881 593000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/stuff/project/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  803
+  '(1 nil)
+  nil
+  nil
+  '((buffer-display-time 25917 26412 33367 96000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/getInvolved/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  2701
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25916 47722 71485 218000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/history/_index.md"
+  "_index.md"
+  'fundamental-mode
+  nil
+  19
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25917 20386 120795 499000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/ilinvoices/ilinvoices.lisp"
+  "ilinvoices.lisp"
+  'lisp-mode
+  '(eldoc-mode slime-mode slime-autodoc-mode)
+  523
+  '(521 nil)
+  nil
+  nil
+  '((buffer-display-time 25913 34382 647755 617000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (521 522 398 396 223 396 396 83 84 99 107 100 101 61 104 89))))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/ilinvoices/ilinvoices.asd"
+  "ilinvoices.asd"
+  'lisp-mode
+  '(eldoc-mode slime-mode slime-autodoc-mode)
+  226
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25913 34313 174102 702000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/ilinvoices/package.lisp"
+  "package.lisp"
+  'lisp-mode
+  '(eldoc-mode slime-mode slime-autodoc-mode)
+  65
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25913 28720 108463 214000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/layouts/partials/output-section-index.html"
+  "output-section-index.html"
+  'mhtml-mode
+  nil
+  170
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25913 28688 971161 346000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/content/en/_index.html"
+  "_index.html"
+  'mhtml-mode
+  nil
+  1920
+  '(1920 nil)
+  nil
+  nil
+  '((buffer-display-time 25913 28431 510545 452000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (1996 1042 1042 1042 1042 1134 1135 1042 1042 1042 1042 1042 1465 1996 1871 1914))))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/assets/scss/_variables_project.scss"
+  "_variables_project.scss"
+  'scss-mode
+  nil
+  40
+  '(1 nil)
+  nil
+  nil
+  '((buffer-display-time 25913 12507 277953 115000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/layouts/shortcodes/blocks/cover.html"
+  "cover.html"
+  'mhtml-mode
+  nil
+  560
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25913 11226 939725 719000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/layouts/partials/page-meta-links.html"
+  "page-meta-links.html"
+  'mhtml-mode
+  nil
+  2780
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25912 18553 986675 517000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/layouts/output/baseof.html"
+  "baseof.html"
+  'mhtml-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25912 18556 846029 24000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/layouts/partials/hooks/head-end.html"
+  "head-end.html"
+  'mhtml-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25912 18560 22266 332000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/layouts/Gallery/single.html"
+  "single.html"
+  'mhtml-mode
+  nil
+  1
+  '(nil nil)
+  nil
+  nil
+  '((buffer-display-time 25912 8147 104861 914000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/carousel.yaml"
+  "carousel.yaml"
+  'fundamental-mode
+  nil
+  249
+  '(1 nil)
+  nil
+  nil
+  '((buffer-display-time 25912 7324 452275 776000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring nil)))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/index.html"
+  "index.html"
+  'mhtml-mode
+  '(smerge-mode)
+  12984
+  '(12984 nil)
+  nil
+  nil
+  '((buffer-display-time 25909 50842 939984 587000) (buffer-file-coding-system . utf-8-unix))
+  '((mark-ring (342 12984))))
+
+(desktop-create-buffer 208
+  "/home/sloane/src/web/InterlispDraft.github.io/hugo.toml"
+  "hugo.toml"
+  'conf-toml-mode
+  nil
+  1346
+  '(6684 nil)
+  nil
+  nil
+  '((buffer-display-time 25917 29822 189991 918000) (buffer-file-coding-system . undecided-unix))
+  '((mark-ring (8020 7806 1485 1601 1485 1713 1367 1713 1251 1713 1126 1713 990 1713 1713 716))))
+
