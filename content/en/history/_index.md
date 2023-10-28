@@ -1,4 +1,4 @@
 ---
-title: The Project
+title: History
 type: docs
 ---
