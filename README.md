@@ -74,6 +74,48 @@ We use the `imgproc` shortcode to render the image and size it.  The label for t
 are titled with the author and the date of the tweet.  Ideally this will allow for easy identification of `jpeg` files.  The files are stored in the same
 directory as the `_index.md` file, so everything needed for the page is packaged together.
 
+### Bibliography.json
+
+The web page maintains an extensive bibliography.  The information displayed on
+the webpage is a snapshot of the data stored in our online [Zotero Group Library](https://www.zotero.org/groups/2914042/interlisp).
+
+The webpage data is updated on a daily version to help ensure it is an accurate
+reflection of the bibliographic material related to Medley Interlisp.
+
+### gh-pages GitHub Workflow
+
+Building the website is driven by a GitHub workflow.  
+
+The workflow is trigger by one of two events, a `push` to main, representing updates
+to the Interlisp.org website or a scheduled execution of the workflow.  The
+workflow is scheduled to run on a regular basis to ensure the bibliography remains
+consistent with the online Zotero catalog.
+
+The workflow consists of two jobs.  The first job, `check`, uses Zotero's REST
+interface to query for the latest version of the group bibliography.  The call
+made is a `GET` call to `https://api.zotero.org/groups/2914042/items`.  This call
+returns a collection of metadata and information describing the current state of
+items within the catalog.  We are interested in a specific header, `Last-Modified-Version`.
+The value returned with this header is incremented every time the Zotero Interlisp
+catalog is updated.  The value returned is used as a cache-key for a cached
+version of the json file of the bibliography we create.  The first job completes
+by providing the current Zotero version and whether the cache needs to be updated.
+
+The second job, `deploy`, starts by determining if a deploy needs to occur.  If
+the workflow was initiated by a `push` a deploy will always be done.  However,
+if the workflow was started by a scheduled execution, if the Zotero bibliography
+cache is consistent with the online Zotero catalog, the deploy is skipped.
+
+A deploy starts by checking out the `Interlisp.github.io` repository.  Then,
+if the cache is valid, the contents are copied into the `data` file within the
+repository directory structure.  If the cache is invalid, the `update_bibliography.sh`
+shell script is run to download a new copy of the bibliography as a `json` file.
+Once downloaded the script does some additional processing to complete the
+formatting of the file.
+
+Once this work is completed, Hugo is setup and the website is deployed.
+
+
 ### Running Hugo and Docsy Locally
 
 Local testing of updates to the Interlisp.org website requires running `Hugo` locally.
