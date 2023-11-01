@@ -1,5 +1,5 @@
 ---
-title: Vocabulary
+title: Glossary
 weight: 90
 type: docs
 ---
