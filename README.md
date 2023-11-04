@@ -240,5 +240,5 @@ Modfying the websites that are searched requires updating the Google Custom
 Search engine settings.  This is done via logging into Google's Programmable Search
 Engine Dashboard at:  [https://programmablesearchengine.google.com](https://programmablesearchengine.google.com)
 
-Access to the site is restricted.  To suggest updates or changes
-contact:  [info@interlisp.org](mailto:info@interlisp.org?subject=Search_Engine).
+Access to the Programmable Search Engine Dashboard is restricted.  To suggest updates or changes
+open an issue:  [Search Engine Issue](https://github.com/interlisp/medley/issues/new?template=bug_report.md&title=Search_Engine_Issue)
