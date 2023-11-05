@@ -30,6 +30,14 @@ For the searcher's conveneience, these have also been combined into searchable P
 - <a href="Medley-Primer.pdf">Medley Primer</a>
 <!-- - <a href="1992-02-An_Introduction_to_Medley_Release_2.0.pdf">Introduction to Medley, Release 2.0</a> -->
 
+#### Exported Medley Documentation
+These documents were converted from Medley's internal format into PDFs. Watch out for weird formatting, but these are firsthand sources on Medley features and applications.
+
+- <a href="All-Medley-PDFs.pdf">Medley Internal Documentation PDF</a>
+- <a href="All-Notecards-PDFs.pdf">Notecards Documentation PDF</a>
+- <a href="All-LOOPS-PDFs.pdf">LOOPS Documentation PDF</a>
+
+
 ### Interlisp Books
 
 - <a href="1986-interlisp-language-book-1.pdf">Interlisp - The Language and Its Usage</a>
