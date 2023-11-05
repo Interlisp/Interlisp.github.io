@@ -68,7 +68,7 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
     pre = "<i class='fas fa-book'></i>"
     url = "/project/"
   [[menu.main]]
-    name = "Stuff"
+    name = "Old Material"
     weight = -20
     pre = "<i class='fas fa-book'></i>"
     url = "/stuff/"
