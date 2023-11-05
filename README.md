@@ -215,3 +215,30 @@ that have components specific to `Interlisp.github.io` are as follows:
   - `favicons` - contains `favicon.png` a small icon that browsers can use when referencing the website
   - `Resources` - contains the current `Interlisp-D` logo, used on the home page, and another instance of `favicon.png`
   - `CNAME` - a oneline text file that provides support for using a [custom domain](https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain)
+
+## Search
+
+`Interlisp.org` uses Google Custom Search to provide search results encompassing
+the `Interlisp.org` website, our GitHub sites used for continued development of
+Medley Interlisp, and the discussions groups associated with both the Medley project and
+Interlisp.
+
+The search engine is identified in the `hugo.toml` file:
+
+```toml
+# Google Custom Search Engine ID. Remove or comment out to disable search.
+gcs_engine_id = "33ef4cbe0703b4f3a"
+```
+
+Search results are returned and presented using the page template, `search.md`.
+The page template currently contains only a `yaml` header specifying the
+layout as being `search`.
+
+### Updating Search
+
+Modfying the websites that are searched requires updating the Google Custom
+Search engine settings.  This is done via logging into Google's Programmable Search
+Engine Dashboard at:  [https://programmablesearchengine.google.com](https://programmablesearchengine.google.com)
+
+Access to the Programmable Search Engine Dashboard is restricted.  To suggest updates or changes
+open an issue:  [Search Engine Issue](https://github.com/interlisp/medley/issues/new?template=bug_report.md&title=Search_Engine_Issue)
