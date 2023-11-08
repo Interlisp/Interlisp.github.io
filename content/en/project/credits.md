@@ -23,6 +23,6 @@ For information about past contributors who are no longer with us, go to [In Mem
 
 See these Github pages for real-time summaries of people's contributions to Interlisp software development.
 
-[https://github.com/Interlisp/medley/graphs/contributors](Medley repository contributors)
+<a href="https://github.com/Interlisp/medley/graphs/contributors">Medley repository contributors</a>
 
-[https://github.com/Interlisp/maiko/graphs/contributors](Maiko repository contributors)
+<a href="https://github.com/Interlisp/maiko/graphs/contributors">Maiko repository contributors</a>
