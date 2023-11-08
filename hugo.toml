@@ -53,11 +53,6 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
     pre = "<i class='fas fa-book'></i>"
     url = "/getInvolved/"
   [[menu.main]]
-    name = "History"
-    weight = -50
-    pre = "<i class='fas fa-book'></i>"
-    url = "/history/"
-  [[menu.main]]
     name = "Software"
     weight = -70
     pre = "<i class='fas fa-book'></i>"
@@ -68,10 +63,10 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
     pre = "<i class='fas fa-book'></i>"
     url = "/project/"
   [[menu.main]]
-    name = "Old Material"
-    weight = -20
+    name = "History"
+    weight = -50
     pre = "<i class='fas fa-book'></i>"
-    url = "/stuff/"
+    url = "/history/"
 
 # Highlighting config
 pygmentsCodeFences = true

@@ -1,4 +1,0 @@
----
-title: Stuff
-type: docs
----
