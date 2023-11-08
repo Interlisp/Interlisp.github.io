@@ -54,17 +54,17 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
     url = "/getInvolved/"
   [[menu.main]]
     name = "Software"
-    weight = -70
+    weight = -50
     pre = "<i class='fas fa-book'></i>"
     url = "/software/"
   [[menu.main]]
     name = "Project"
-    weight = -90
+    weight = -70
     pre = "<i class='fas fa-book'></i>"
     url = "/project/"
   [[menu.main]]
     name = "History"
-    weight = -50
+    weight = -90
     pre = "<i class='fas fa-book'></i>"
     url = "/history/"
 
