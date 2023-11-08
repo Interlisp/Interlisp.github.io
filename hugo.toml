@@ -1,6 +1,8 @@
-baseURL = "https://interlisp.org"
+# baseURL = "https://interlisp.org"
+baseURL = "https://phantomics.github.io/InterlispDraft.github.io/"
 
-#relativeURLs = true
+relativeURLs = true
+canonifyURLs = true
 
 enableRobotsTXT = true
 
@@ -30,11 +32,6 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 #
 
 [menu]
-  [[menu.main]]
-    name = "GitHub"
-    weight = -120
-    pre = "<i class='fab fa-github'></i>"
-    url = "https://github.com/interlisp"
 #  [[menu.main]]
 #    name = "Download"
 #    weight = -110
@@ -46,10 +43,30 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 #    pre = "<i class='fas fa-download'></i>"
 #    url = "/publications/"  
   [[menu.main]]
-    name = "Documentation"
+    name = "GitHub"
+    weight = -10
+    pre = "<i class='fab fa-github'></i>"
+    url = "https://github.com/interlisp"
+  [[menu.main]]
+    name = "Get Involved"
+    weight = -30
+    pre = "<i class='fas fa-book'></i>"
+    url = "/getInvolved/"
+  [[menu.main]]
+    name = "Software"
+    weight = -50
+    pre = "<i class='fas fa-book'></i>"
+    url = "/software/"
+  [[menu.main]]
+    name = "Project"
+    weight = -70
+    pre = "<i class='fas fa-book'></i>"
+    url = "/project/"
+  [[menu.main]]
+    name = "History"
     weight = -90
     pre = "<i class='fas fa-book'></i>"
-    url = "/documentation/"    
+    url = "/history/"
 
 # Highlighting config
 pygmentsCodeFences = true
@@ -202,7 +219,7 @@ sidebar_search_disable = false
 #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
 navbar_logo = true
 # Set to true to disable the About link in the site footer
-footer_about_disable = false
+footer_about_disable = true # false
 # Turn off transparency in nav bar
 navbar_translucent_over_cover_disable = true
 
@@ -253,7 +270,7 @@ enable = false
 #  desc = "Practical questions and curated answers"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
-  name = "GitHub"
+  name = "On GitHub"
   url = "https://github.com/interlisp"
   icon = "fab fa-github"
         desc = "Development takes place here!"
