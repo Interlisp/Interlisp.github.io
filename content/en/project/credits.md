@@ -17,3 +17,12 @@ Larry Masinter, Rob Kaplan, Nick Briggs, Frank Halasz, Herb Jellinek, Steve Kais
 Matt Heffron, Eric Kaltman, Paolo Amoroso
 
 For information about past contributors who are no longer with us, go to [In Memoriam](/medley/history/in-memoriam).
+
+
+## Contributor Metrics
+
+See these Github pages for real-time summaries of people's contributions to Interlisp software development.
+
+[https://github.com/Interlisp/medley/graphs/contributors](Medley repository contributors)
+
+[https://github.com/Interlisp/maiko/graphs/contributors](Maiko repository contributors)
