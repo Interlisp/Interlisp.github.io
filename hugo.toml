@@ -275,7 +275,7 @@ enable = false
 #  desc = "Practical questions and curated answers"
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
-  name = "GitHub"
+  name = "On GitHub"
   url = "https://github.com/interlisp"
   icon = "fab fa-github"
         desc = "Development takes place here!"
