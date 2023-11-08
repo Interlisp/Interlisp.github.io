@@ -152,8 +152,21 @@ hugo v0.111.3-5d4eb5154e1fed125ca8e9b5a0315c4180dab192+extended linux/amd64 Buil
 
 Be sure your version is at least `v0.101.0`. Older versions of `hugo` may fail to load correctly.
 
-With `Hugo` successfully installed, change directories to the location where you cloned the `Interlisp.github.io`. Then run `Hugo` using the following
-command:
+Secondly, there is one data file that is required to successfully build and run the `Interlisp.org` website locally, `data/bibliography.json`.
+The production version of the website uses a GitHub Action to retrieve this file.
+We can mimic that functionality by going to the `scripts` directory in your clone of the `Intelisp.github.io` repository.
+Once in the directory, run the following command:
+
+```bash
+./update_bibliography.sh
+```
+
+This script will retrieve the bibliography from our Zotero site, format it appropriately and place the created file
+in the appropriate location, the `data` directory.
+
+This completes all the setup required for `Hugo`.
+
+To run `Hugo` go to the root directory of your repository clone and run the following command:
 
 ```bash
 hugo server
