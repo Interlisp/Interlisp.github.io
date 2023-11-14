@@ -11,15 +11,11 @@ The Medley Interlisp Project had its origin in an effort by Nick Briggs and Ron 
 
 ### Medley Revival Team
 
-Larry Masinter, Ron Kaplan, Nick Briggs, Frank Halasz, Herb Jellinek, Steve Kaisler, Wayne Marci, Paul McJones, Bruce Mitchener, John Cowan, Arun Welch, Michele Denber, Blake McBride, Abe Jellinek, Bill Stumbo, Matt Heffron, Eric Kaltman, Paolo Amoroso, Andrew Sengul.
-
-For information about past contributors who are no longer with us, go to [In Memoriam](/medley/history/in-memoriam).
+Larry Masinter, Ron Kaplan, Nick Briggs, Frank Halasz, Herb Jellinek, Steve Kaisler, Wayne Marci, Paul McJones, Bruce Mitchener, John Cowan, Arun Welch, Michele Denber, Blake McBride, Abe Jellinek, Bill Stumbo, Matt Heffron, Eric Kaltman, Paolo Amoroso, Andrew Sengul, as well as pseudonymous ecraven and devhwala.
 
 
 ## Contributor Metrics
 
 See these Github pages for real-time summaries of people's contributions to Interlisp software development.
 
-<a href="https://github.com/Interlisp/medley/graphs/contributors">Medley repository contributors</a>
-
-<a href="https://github.com/Interlisp/maiko/graphs/contributors">Maiko repository contributors</a>
+Another way of looking at contributors is to look at statistics for the [Medley](https://github.com/Interlisp/medley/graphs/contributors), [Maiko](https://github.com/Interlisp/maiko/graphs/contributors), [online](https::/github.com/Interlisp/online/graphs/contributors), and [website](https://github.com/Interlisp/Interlisp/Interlisp.github.io/graphs/contributors) repos.
