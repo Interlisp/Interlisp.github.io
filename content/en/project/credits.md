@@ -10,11 +10,7 @@ We owe the existence of Medley Interlisp to over one hundred contributors. These
 
 ### Medley Revival Inaugural Team
 
-Larry Masinter, Rob Kaplan, Nick Briggs, Frank Halasz, Herb Jellinek, Steve Kaisler, Wayne Marci, Paul McJones, Bruce Mitchener, John Cowan, Arun Welch, Michele Denber, Blake McBride, Abe Jellinek, Bill Stumbo
-
-### Newcomers to the Team
-
-Matt Heffron, Eric Kaltman, Paolo Amoroso
+Larry Masinter, Ron Kaplan, Nick Briggs, Frank Halasz, Herb Jellinek, Steve Kaisler, Wayne Marci, Paul McJones, Bruce Mitchener, John Cowan, Arun Welch, Michele Denber, Blake McBride, Abe Jellinek, Bill Stumbo, Matt Heffron, Eric Kaltman, Paolo Amoroso, Andrew Sengul
 
 For information about past contributors who are no longer with us, go to [In Memoriam](/medley/history/in-memoriam).
 
