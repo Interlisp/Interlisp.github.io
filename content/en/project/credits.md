@@ -12,9 +12,4 @@ The Medley Interlisp Project had its origin in an effort by Nick Briggs and Ron 
 
 Larry Masinter, Ron Kaplan, Nick Briggs, Frank Halasz, Herb Jellinek, Steve Kaisler, Wayne Marci, Paul McJones, Bruce Mitchener, John Cowan, Arun Welch, Michele Denber, Blake McBride, Abe Jellinek, Bill Stumbo, Matt Heffron, Eric Kaltman, Paolo Amoroso, Andrew Sengul, and pseudonymous ecraven and devhwala.
 
-
-## Contributor Metrics
-
-See these Github pages for real-time summaries of people's contributions to Interlisp software development.
-
 Another way of looking at contributors is to look at statistics for the [Medley](https://github.com/Interlisp/medley/graphs/contributors), [Maiko](https://github.com/Interlisp/maiko/graphs/contributors), [online](https::/github.com/Interlisp/online/graphs/contributors), and [website](https://github.com/Interlisp/Interlisp/Interlisp.github.io/graphs/contributors) repos.
