@@ -77,7 +77,7 @@
 
 .carousel ol, .carousel li {
   list-style: none;
-  height: 560px;
+  height: 572px;
   margin: 0;
   padding: 0;
 }
@@ -188,7 +188,7 @@
 .carousel__next {
   position: absolute;
   top: 0;
-  margin-top: 33%;
+  margin-top: 32%;
   width: 4rem;
   height: 4rem;
   transform: translateY(-50%);
