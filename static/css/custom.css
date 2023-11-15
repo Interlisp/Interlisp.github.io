@@ -11,3 +11,13 @@ div.td-page-meta {
     background-repeat: no-repeat;
     background-size: 28em 28em;
 }
+
+.hero-content-column .text-center h1, .hero-content-column .text-center p {
+    text-shadow: 3px 3px 0 #333;
+}
+
+.hero-content-column .top-summary {
+    background: rgba(0,0,0,0.3);
+    padding: 8px;
+    border-radius: 12px;
+}
