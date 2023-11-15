@@ -10,9 +10,6 @@ Interlisp was a joint effort of many people -- perhaps a hundred -- from its ini
 
 The Medley Interlisp Project had its origin in an effort by Nick Briggs and Ron Kaplan to get the virtual machine emulator (Maiko) to run on a newer MacOS; the goal was to let Ron continue to use it for linguistics research. Joined by Larry Masinter in 2020, the project evolved. Starting with a mailing list, private GitLab repository, DropBox folder, occasional emails. The project has grown and evolved, and continues to gain momentum. The modern contributors are also difficult to enumerate, but a list of contributors should include at least these names:
 
-
-### Medley Revival Team
-
 Larry Masinter, Ron Kaplan, Nick Briggs, Frank Halasz, Herb Jellinek, Steve Kaisler, Wayne Marci, Paul McJones, Bruce Mitchener, John Cowan, Arun Welch, Michele Denber, Blake McBride, Abe Jellinek, Bill Stumbo, Matt Heffron, Eric Kaltman, Paolo Amoroso, Andrew Sengul, as well as pseudonymous ecraven and devhwala.
 
 
