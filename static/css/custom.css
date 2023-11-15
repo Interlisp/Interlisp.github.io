@@ -187,7 +187,7 @@
 .carousel__next {
   position: absolute;
   top: 0;
-  margin-top: 37.5%;
+  margin-top: 15.5%;
   width: 4rem;
   height: 4rem;
   transform: translateY(-50%);
