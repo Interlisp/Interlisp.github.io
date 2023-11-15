@@ -1,6 +1,6 @@
 ---
 title: Install and Run
-weight: 30
+weight: 10
 type: docs
 ---
 

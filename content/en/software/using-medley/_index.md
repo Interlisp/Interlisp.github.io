@@ -1,6 +1,6 @@
 ---
-title: Documentation
-url: /documentation/
+title: Using Medley
+url: /using-medley/
 aliases:
  - /docs/
  - /hugo/documentation
@@ -8,13 +8,13 @@ weight: 60
 type: docs
 ---
 
-We have a variety of documentation available for anyone interested in using Interlisp.
+Whether you're just getting started or refreshing your knowledge of Interlisp, we have a variety of documentation to help you along.
 
-For general information to get you started, go to [The Basics of Interlisp]({{< ref "Using.md" >}}).
+You can find general information for new users at [The Basics of Interlisp]({{< ref "Using.md" >}}).
 
-For Medley orientation and tips, go to [Using Medley](/software/using).
+For Medley orientation and tips, go to [Using Medley](./medley).
 
-The following links provide access to PDF files containing Interlisp documentation.
+The following links lead to PDF files containing Interlisp documentation.
 
 ### Unsorted documentation content
 
