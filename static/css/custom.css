@@ -5,3 +5,9 @@
 div.td-page-meta {
     display: none;
 }
+
+.hero-content-column {
+    background-position: 0 0;
+    background-repeat: no-repeat;
+    background-size: 28em 28em;
+}
