@@ -13,7 +13,7 @@ The Medley Interlisp Project had its origin in an effort by Nick Briggs and Ron 
 
 <!-- Larry Masinter, Ron Kaplan, Nick Briggs, Frank Halasz, Herb Jellinek, Steve Kaisler, Wayne Marci, Paul McJones, Bruce Mitchener, John Cowan, Arun Welch, Michele Denber, Blake McBride, Abe Jellinek, Bill Stumbo, Matt Heffron, Eric Kaltman, Paolo Amoroso, Andrew Sengul, and pseudonymous ecraven and devhwala. -->
 
-{.table}
+{{.table}}
 |                                                |                                        |                                       |                                             |                                             |
 |------------------------------------------------|----------------------------------------|---------------------------------------|---------------------------------------------|---------------------------------------------|
 | [Abe Jellinek](https://github.com/AbeJellinek) | [Arun Welch](https://github.com/Anzus) | [ecraven](https://github.com/ecraven) | [Eric Kaltman](https://github.com/ekaltman) | [Frank Halasz](https://github.com/fghalasz) |
