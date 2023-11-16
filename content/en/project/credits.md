@@ -13,13 +13,12 @@ The Medley Interlisp Project had its origin in an effort by Nick Briggs and Ron 
 
 <!-- Larry Masinter, Ron Kaplan, Nick Briggs, Frank Halasz, Herb Jellinek, Steve Kaisler, Wayne Marci, Paul McJones, Bruce Mitchener, John Cowan, Arun Welch, Michele Denber, Blake McBride, Abe Jellinek, Bill Stumbo, Matt Heffron, Eric Kaltman, Paolo Amoroso, Andrew Sengul, and pseudonymous ecraven and devhwala. -->
 
-{.credits-table}
+{.table}
 |                                                |                                        |                                       |                                             |                                             |
 |------------------------------------------------|----------------------------------------|---------------------------------------|---------------------------------------------|---------------------------------------------|
 | [Abe Jellinek](https://github.com/AbeJellinek) | [Arun Welch](https://github.com/Anzus) | [ecraven](https://github.com/ecraven) | [Eric Kaltman](https://github.com/ekaltman) | [Frank Halasz](https://github.com/fghalasz) |
 | [Herb Jellinek](https://github.com/hjellinek) | [Larry Masinter](https://github.com/masinter) | [Matt Heffron](https://github.com/MattHeffron) | [Nick Briggs](https://github.com/nbriggs) | [Paolo Amoroso](https://github.com/pamoroso) |
 | [Andrew Sengul](https://github.com/phantomics) | [John D. Corbett](https://github.com/pictographer) | [Paul McJones](https://github.com/pmcjones) | [Ron Kaplan](https://en.wikipedia.org/wiki/Ronald_Kaplan) | [Steve Kaisler](https://github.com/skaisler1) |
 | [Bill Stumbo](https://github.com/stumbo) | [Bruce Mitchener](https://github.com/waywardmonkeys) | Wayne Marci | | |
-<!-- {{< credits-table />}} -->
 
 Another way of looking at contributors is to look at statistics for the [Medley](https://github.com/Interlisp/medley/graphs/contributors), [Maiko](https://github.com/Interlisp/maiko/graphs/contributors), [online](https::/github.com/Interlisp/online/graphs/contributors), and [website](https://github.com/Interlisp/Interlisp/Interlisp.github.io/graphs/contributors) repos.
