@@ -1,0 +1,446 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.120.4">
+<link rel="canonical" type="text/html" href="https://interlisp.org/software/using-medley/medley/">
+<meta name="robots" content="noindex, nofollow">
+<link rel="shortcut icon" href="../../../../Resources/favicon.png" type="image/png">
+
+<title>What to Expect when Using Medley | </title>
+<meta name="description" content="Dedicated to restoring and preserving the Interlisp experience">
+<meta property="og:title" content="What to Expect when Using Medley" />
+<meta property="og:description" content="Dedicated to restoring and preserving the Interlisp experience" />
+<meta property="og:type" content="website" />
+<meta property="og:url" content="https://interlisp.org/software/using-medley/medley/" />
+
+<meta itemprop="name" content="What to Expect when Using Medley">
+<meta itemprop="description" content="Dedicated to restoring and preserving the Interlisp experience"><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="What to Expect when Using Medley"/>
+<meta name="twitter:description" content="Dedicated to restoring and preserving the Interlisp experience"/>
+
+
+
+
+<link rel="preload" href="../../../../scss/main.min.5f7be202e27d1d986f6d9b9666f9a532caad89fd93e20831c5503c75bcbd6a05.css" as="style">
+<link href="../../../../scss/main.min.5f7be202e27d1d986f6d9b9666f9a532caad89fd93e20831c5503c75bcbd6a05.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+<link rel="canonical" href="https://interlisp.org/software/using-medley/medley/">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JXK20KN1W1"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-JXK20KN1W1');
+}
+</script>
+  </head>
+  <body class="td-section">
+    <header>
+      <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="../../../../"><span class="navbar-brand__logo navbar-logo"><svg preserveAspectRatio="xMinYMin meet" width="454pt" height="308pt" viewBox="0 0 2270 1539.9999" id="svg150293" sodipodi:docname="logo.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs150297"><rect x="1185.6038" y="942.88177" width="144.69968" height="130.69649" id="rect9306"/></defs><sodipodi:namedview id="namedview150295" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" inkscape:pageshadow="2" inkscape:pageopacity="0" inkscape:pagecheckerboard="true" showgrid="false" fit-margin-top="100" fit-margin-left="100" fit-margin-right="100" fit-margin-bottom="100" inkscape:zoom=".42847365" inkscape:cx="1508.8442" inkscape:cy="1037.4034" inkscape:window-width="3440" inkscape:window-height="1351" inkscape:window-x="-9" inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="svg150293" inkscape:document-units="pt" units="pt" scale-x="5"/><symbol id="window-icon" viewBox="0 0 372 300" transform="translate(48.537998,49.633999)"><rect x="10" y="10" width="352" height="280" style="fill:#fff;stroke:#000;stroke-width:20" id="rect150254"/><line x1="10" y1="30" x2="362" y2="30" style="fill:#fff;stroke:#000;stroke-width:20" id="line150256"/></symbol><text transform="scale(0.75)" id="text9304" style="font-size:40px;line-height:1.25;font-family:times new roman;-inkscape-font-specification:'Times New Roman, ';white-space:pre;shape-inside:url(#rect9306)"/><rect style="fill:#a50000;stroke:none;stroke-width:7.2;stroke-miterlimit:4;stroke-dasharray:none" id="rect17946" width="7.0015974" height="21.004791" x="575.88141" y="1044.9884"/><g id="g2424" transform="translate(41.362532,-59.633999)"><use xlink:href="#window-icon" x="1219.615" y="360" width="372" height="300" id="use2301"/><use xlink:href="#window-icon" x="1e3" y="162.34599" width="372" height="300" id="use2303"/><use xlink:href="#window-icon" x="700" y="90" width="372" height="300" id="use2305"/><use xlink:href="#window-icon" x="400" y="162.34599" width="372" height="300" id="use2307"/><use xlink:href="#window-icon" x="180.38499" y="360" width="372" height="300" id="use2309"/><use xlink:href="#window-icon" x="100" y="630" width="372" height="300" id="use2311"/><use xlink:href="#window-icon" x="180.38499" y="900" width="372" height="300" id="use2313"/><use xlink:href="#window-icon" x="400" y="1097.6541" width="372" height="300" id="use2315"/><use xlink:href="#window-icon" x="700" y="1170" width="372" height="300" id="use2317"/></g><text style="font-weight:700;font-size:360px;line-height:1.25;font-family:times new roman;-inkscape-font-specification:'Times New Roman, Bold';stroke:#fff;stroke-width:.75;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" x="699.01428" y="990.47559" id="text15676"><tspan sodipodi:role="line" id="tspan15674" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:480px;font-family:times new roman mt extra bold;-inkscape-font-specification:'Times New Roman MT Extra Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#fff;fill-opacity:1;stroke:#fff;stroke-width:.75;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" x="699.01428" y="990.47559">Medley</tspan></text></svg></span><span class="navbar-brand__name"></span></a>
+  <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="../../../../history/"><i class='fas fa-book'></i><span>History</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="../../../../project/"><i class='fas fa-globe'></i><span>Project</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="../../../../software/"><i class='fas fa-cube'></i><span>Software</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="../../../../getinvolved/"><i class='fas fa-handshake-simple'></i><span>Get Involved</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="https://github.com/interlisp" target="_blank"><i class='fab fa-github'></i><span>GitHub</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="navbar-nav d-none d-lg-block">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+
+  </div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+
+
+
+
+<div class="td-content">
+<div class="pageinfo pageinfo-primary d-print-none">
+<p>
+This is the multi-page printable view of this section.
+<a href="#" onclick="print();return false;">Click here to print</a>.
+</p><p>
+<a href="../../../../software/using-medley/medley/">Return to the regular view of this page</a>.
+</p>
+</div>
+
+
+
+<h1 class="title">What to Expect when Using Medley</h1>
+
+
+
+
+
+    <ul>
+    
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1: <a href="#pg-a0f6df6e860cda9dae26b150907de8a6">Modern Medley Release Notes</a></li>
+
+
+    
+  
+    
+    
+	
+<li>2: <a href="#pg-f7ff3519376b9f2bc0f2fb3a66c9e531">Orientation to Medley</a></li>
+
+
+    
+  
+    
+    
+	
+<li>3: <a href="#pg-6718f5ebe5f830c3d7262da3d864d107">The {DSK} file system</a></li>
+
+
+    
+  
+    
+    
+	
+<li>4: <a href="#pg-c0c63c2ba3f9ca8844fff88033adb082">Tips</a></li>
+
+
+    
+  
+
+    </ul>
+
+
+<div class="content">
+      <p>Refer to the following pages to learn about using Medley Interlisp:</p>
+<ul>
+<li><a href="orientation">Orientation</a>: A description of what you will see when you open Medley, and how to use the files and directories available.</li>
+<li><a href="tips">Medley Tips</a>: A few useful tips and tricks for using Medley.<br>
+<mark><strong>Note</strong>: I did not include links to the other two topics under Medley (Release Notes and The DSK file), because I am not sure if they are really complete or useful.</mark></li>
+<li><a href="https://drive.google.com/drive/folders/10ZBQty5gEwdBnZHtEbXfe5f1dHGziGZG?usp=sharing">Files from multiple Medley Interlisp repositories converted to PDF</a>: Most Interlisp/Medley documentation was written using the Medley Text Editor, one of the first WYSIWYG graphical user interface text editors, called TEdit. Written in and for Interlisp users, it features muliple fonts, embedded graphics including line drawings and raster images. Since TEdit files are scattered through the various Interlisp repositories, we created this PDF for convenience. For your conveneience, these have also been combined into searchable PDFs named All-*-PDFs.pdf.</li>
+<li><a href="../../../../documentation/SunUserGuide.pdf">Medley for the Sun Workstation User&rsquo;s Guide in PDF format</a></li>
+<li><a href="../../../../documentation/Medley-Primer.pdf">Medley Primer in PDF format</a></li>
+</ul>
+<!-- - <a href="1992-02-An_Introduction_to_Medley_Release_2.0.pdf">Introduction to Medley, Release 2.0</a> -->
+<ul>
+<li><a href="../../../../medley/history/">Historical Information about Interlisp</a></li>
+</ul>
+
+</div>
+</div>
+
+
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a0f6df6e860cda9dae26b150907de8a6">1 - Modern Medley Release Notes</h1>
+    
+	<p>This is a placeholder for gathering information about what&rsquo;s changed between Medley 2.0 (the last &ldquo;official&rdquo; release) and current Medley.
+Can we get to the point where release notes are built from commit messages?</p>
+<ul>
+<li>
+<p>caps lock default</p>
+</li>
+<li>
+<p>Explicit encoding :format, unicode support</p>
+</li>
+<li>
+<p>default hex in printcode</p>
+</li>
+<li>
+<p>Filebrowser</p>
+</li>
+<li>
+<p>filing.enumeration.depth for DSK</p>
+</li>
+<li>
+<p>&hellip;</p>
+</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f7ff3519376b9f2bc0f2fb3a66c9e531">2 - Orientation to Medley</h1>
+    
+	<p>Once the system has been started, you will see some windows with title bars. Navigation within the system is a little unusual.
+To control a window, right-click on the window&rsquo;s title bar. To bring up a system menu, right-click anywhere outside a window.</p>
+<p>Windows titled &ldquo;Exec&rdquo; work as read-eval-print loops with the addition of extensive &ldquo;commands&rdquo;. There are four different
+contexts, determined by the default &ldquo;package&rdquo; and &ldquo;readtable&rdquo;. The &ldquo;package&rdquo; of a window determines which (Common Lisp)
+package is the default while the &ldquo;readtable&rdquo; controls whether typing is treated as case sensitive or not.</p>
+<p>The title bar will also tell you whether you are running LISP (for Common Lisp), XCL (for Xerox Common Lisp), INTERLISP (for current Interlisp), or
+OLD-INTERLISP-T (for an older version of Interlisp).</p>
+<p>When the system first comes up you will notice a window labeled &ldquo;Exec (XCL)&rdquo;. This works as a Common Lisp read-eval-print loop.</p>
+<p>(Hint: When the system has completed its initialization process, a fresh prompt will appear.)</p>
+<h2 id="different-lisp-environments">Different Lisp Environments</h2>
+<p>The system comes with four versions of &ldquo;Exec&rdquo;:</p>
+<ul>
+<li><code>Interlisp</code>:  Package: <em>Interlisp</em>, Readtable: a hybrid, case sensitive environment. Most Interlisp functions are all caps, so use of the SHIFT LOCK is recommended.</li>
+<li><code>Old Interlisp</code>: The same <em>Interlisp</em> package, but an older readtable (where &ldquo;:&rdquo; isn&rsquo;t a package delimiter)</li>
+<li><code>Common Lisp</code>: Package: <em>USER</em> (need to check)</li>
+<li><code>XCL</code>: (eXtended Common Lisp) Common Lisp with a number of extensions.</li>
+</ul>
+<p>Even though each of the possible Exec&rsquo;s gives a default environment, all of the various Lisp functions and variables are interchangeably available from any of the Exec windows via package specifications.  For example, an Interlisp function names <code>ABC</code> may be run from Common Lisp via <code>(IL:ABC ...)</code>. Likewise, a Common Lisp function <code>DEF</code> may be executed from Interlisp via <code>(CL:DEF ...)</code>.</p>
+<h2 id="images-and-files">Images And Files</h2>
+<p>The Medley system includes a virtual machine (VM) that runs the Lisp programs.
+Medley can run Lisp code interpreted or compiled into the byte-code for the
+Medley VM.  This is a bit similar to the Java Virtual Machine or the .NET CLR
+or Smalltalk.</p>
+<p>In traditional systems, a developer edits source code files and then
+compiles those files into something the machine can execute &mdash; be it
+a machine executable file or byte-code for a VM.  Medley does not work
+that way.  Medley is an image-based system similar to Smalltalk or Squeak.</p>
+<p>When Medley is started up, you are in the development and runtime
+environment.  All of your development is done here and all of your
+programs are run here.  You are essentially editing runnable programs
+in memory.  When you exit the system, Medley creates a backup of this
+memory onto what is called a SYSOUT (or <code>lisp.virtualmem</code>).  When the system is started
+up again, this image is read into memory and the system picks up right
+where it left off.  This is what is called an image-based development
+environment.</p>
+<p>In Medley, programs are developed, edited, debugged, and run all from
+within Medley.  The state of this development is saved in your image file.
+There is also a way to save your system to more traditional
+disk files.  This is called the ``File Package&rsquo;'.</p>
+<p>Medley utilizes the following file types:</p>
+<ul>
+<li><code>lisp.virtualmem</code>: This is located in your home directory and is an image of the last time Medley was run.  If you start Medley without specifying an image to run, this image is used.</li>
+<li><code>XXXX.SYSOUT</code>: This is an image that was explicitly saved by the developer.  This may be loaded by specifying its name when starting Medley.</li>
+<li><code>XXXX</code> (no file name extension): Source files created with the ``File Package&rsquo;'.</li>
+<li><code>XXXX.LCOM</code>: Compiled versions of the XXXX files</li>
+<li><code>XXXX.DFASL</code>: Another compiled form of XXXX files</li>
+<li><code>XXXX.TEDIT</code>: Text (like a word processor) in a Medley-specific format</li>
+</ul>
+<h2 id="project-directory">Project Directory</h2>
+<p>Medley has something called its &ldquo;connected directory&rdquo;.  This is just
+another way to say &ldquo;working directory&rdquo;.  All file reads and writes
+occur (if no path is specified) in the connected directory.  When Medley
+first starts up, its connected directory is your home directory.  This
+can be changed by executing one of the following commands:</p>
+<pre tabindex="0"><code>cd MyProject
+</code></pre><p>or</p>
+<pre tabindex="0"><code>(CNDIR &#34;MyProject&#34;)
+</code></pre><p>You will see the connected directory displayed at the top of the Medley
+window.  Once the connected directory has been changed, all future
+image saves or file loads or saves will occur in this directory.  Additionally,
+this directory will be saved in the image so when you re-load the image, you
+will already be in the desired directory.</p>
+<p>One thing to note, however, is that the default image
+<code>lisp.virtualmem</code> will still be saved in your home directory.  This
+assures that if you start Medley up without specifying an image, you
+will return to the last environment you were in.</p>
+<h2 id="saving-and-running-images">Saving And Running Images</h2>
+<p>You can also manually save an image to a specific file at any point by
+typing the following from an Interlisp prompt:</p>
+<pre tabindex="0"><code>(SYSOUT &#34;my-file&#34;)
+</code></pre><p>This will save your running image to a file named <code>my-file.SYSOUT</code> that can be loaded again by passing that file name to the
+<code>run-medley</code> command.</p>
+<h3 id="creating-and-editing-functions">Creating And Editing Functions</h3>
+<p>Objects (function, variables, etc.) can be credited and edited
+as follows:</p>
+<pre tabindex="0"><code>ED(myfunc)
+</code></pre><p>First, if it is a new object, the system will ask what type of object
+it is.  After that, the user will be presented with a GUI structure editor
+where the object may be defined or edited.</p>
+<p>When the window is closed, via right-clicking on the title bar,
+the object will be saved.</p>
+<h3 id="saving--loading-source-code-tofrom-disk-files">Saving &amp; Loading Source Code To/From Disk Files</h3>
+<p>When you edit or define a function, a variable, etc., Medley keeps
+track of the fact that they have been created or edited.  These
+functions and variables are grouped and ultimately get associated with
+a file on your disk.  In places, Interlisp refers to these disk files
+as &ldquo;symbolic files&rdquo;.</p>
+<ul>
+<li><code>FILELST</code> - list of user files the system is aware of</li>
+<li><code>SYSFILES</code> - list of system files loaded</li>
+<li><code>(FILES?)</code> - prompts user for which file to associate newly defined functions, variables, etc.</li>
+<li><code>(MAKEFILE &quot;myfile&quot;)</code> - writes out all of the functions, variables, etc. that have been associated with file &ldquo;myfile&rdquo;</li>
+<li><code>(LOAD &quot;myfile&quot;)</code> - loads a previously saved file</li>
+<li><code>(LOAD &quot;myfile.LCOM&quot;)</code>  - load a previously compiled file</li>
+<li><code>(CLEANUP)</code> - interactively save and compile all changed files</li>
+</ul>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-6718f5ebe5f830c3d7262da3d864d107">3 - The {DSK} file system</h1>
+    
+	<p>Interlisp-D was built in an environment where people didn&rsquo;t keep files on their local disks. Files were kept on a File Server.
+Interlisp-D was built on Tenex, a PDP-10 operating system built for Lisp.</p>
+<p>Maiko implements a case INsensitive, versioned file system on top of normal Unix/Posix file system using the code in DSK.c.</p>
+<p>You may see references to file systems at PARC, at XAIS, at Envos and at Venue. There was a NFS implementation, XNS Filing system, and LEAF.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-c0c63c2ba3f9ca8844fff88033adb082">4 - Tips</h1>
+    
+	<h2 id="get-an-interlisp-exec-repl">Get an Interlisp Exec (REPL)</h2>
+<p>Click and hold the right mouse button on the background, hover over EXEC, move to the right, go to &ldquo;Interlisp&rdquo;, release the right mouse button.</p>
+<h2 id="increase-the-font-size">Increase the font size</h2>
+<p>In an Interlisp Exec, type one of the following:</p>
+<pre tabindex="0"><code>(FONTSET &#39;BIGGER)
+(FONTSET &#39;HUGE)
+</code></pre><p><strong>New</strong> windows and future lines in the Exec will now be in a larger font.</p>
+<h2 id="edit-a-function-definition">Edit a function definition</h2>
+<p>To edit the definition of a function FOO, type into an Interlisp Exec:</p>
+<pre tabindex="0"><code>(DF FOO)
+</code></pre><p>This will let you draw out a new SEdit window, which you can use to edit the code.</p>
+<p>Middle-click in the titlebar to get additional options.</p>
+
+</div>
+
+
+
+    
+	
+  
+
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing list" aria-label="User mailing list">
+    <a class="text-white" target="_blank" rel="noopener" href="mailto:Interlisp@googlegroups.com" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" rel="noopener" href="https://twitter.com/interlisp8" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="On GitHub" aria-label="On GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/interlisp" aria-label="On GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2023 Interlisp.org All Rights Reserved</small>
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+  <script src="../../../../js/main.min.f55d8568cba03788d804a5ef5f08fc8d7d09fe0b4ce2b3d3c3da9e752143e00e.js" integrity="sha256-9V2FaMugN4jYBKXvXwj8jX0J/gtM4rPTw9qedSFD4A4=" crossorigin="anonymous"></script>
+<script src='../../../../js/tabpane-persist.js'></script>
+
+<link rel="stylesheet" href="../../../../css/custom.css">
+
+  </body>
+</html>

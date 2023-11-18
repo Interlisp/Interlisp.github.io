@@ -1,0 +1,391 @@
+<!doctype html>
+<html itemscope itemtype="http://schema.org/WebPage" lang="en" class="no-js">
+  <head>
+    <meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+<meta name="generator" content="Hugo 0.120.4">
+<meta name="robots" content="index, follow">
+<link rel="shortcut icon" href="../../../Resources/favicon.png" type="image/png">
+
+<title>Install and Run on Windows 10/11 | </title>
+<meta name="description" content="There are two ways to run Medley on Windows:
+Run Medley on Windows System for Linux (WSL) Run the &amp;rsquo;native&amp;rsquo; Medley Windows app (which uses cygwin behind the scenes) These two ways result in (nearly) identical Medley experiences, but differ in how Medley is installed and run.
+Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux.">
+<meta property="og:title" content="Install and Run on Windows 10/11" />
+<meta property="og:description" content="There are two ways to run Medley on Windows:
+Run Medley on Windows System for Linux (WSL) Run the &rsquo;native&rsquo; Medley Windows app (which uses cygwin behind the scenes) These two ways result in (nearly) identical Medley experiences, but differ in how Medley is installed and run.
+Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux." />
+<meta property="og:type" content="article" />
+<meta property="og:url" content="https://interlisp.org/software/install-and-run/running-on-win/" /><meta property="article:section" content="software" />
+
+
+
+<meta itemprop="name" content="Install and Run on Windows 10/11">
+<meta itemprop="description" content="There are two ways to run Medley on Windows:
+Run Medley on Windows System for Linux (WSL) Run the &rsquo;native&rsquo; Medley Windows app (which uses cygwin behind the scenes) These two ways result in (nearly) identical Medley experiences, but differ in how Medley is installed and run.
+Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux.">
+
+<meta itemprop="wordCount" content="1038">
+<meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/>
+<meta name="twitter:title" content="Install and Run on Windows 10/11"/>
+<meta name="twitter:description" content="There are two ways to run Medley on Windows:
+Run Medley on Windows System for Linux (WSL) Run the &rsquo;native&rsquo; Medley Windows app (which uses cygwin behind the scenes) These two ways result in (nearly) identical Medley experiences, but differ in how Medley is installed and run.
+Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux."/>
+
+
+
+
+<link rel="preload" href="../../../scss/main.min.5f7be202e27d1d986f6d9b9666f9a532caad89fd93e20831c5503c75bcbd6a05.css" as="style">
+<link href="../../../scss/main.min.5f7be202e27d1d986f6d9b9666f9a532caad89fd93e20831c5503c75bcbd6a05.css" rel="stylesheet" integrity="">
+
+<script
+  src="https://code.jquery.com/jquery-3.6.0.min.js"
+  integrity="sha384-vtXRMe3mGCbOeY7l30aIg8H9p3GdeSe4IFlP6G8JMa7o7lXvnz3GFKzPxzJdPfGK"
+  crossorigin="anonymous"></script>
+<link rel="canonical" href="https://interlisp.org/software/install-and-run/running-on-win/">
+<script async src="https://www.googletagmanager.com/gtag/js?id=G-JXK20KN1W1"></script>
+<script>
+var doNotTrack = false;
+if (!doNotTrack) {
+	window.dataLayer = window.dataLayer || [];
+	function gtag(){dataLayer.push(arguments);}
+	gtag('js', new Date());
+	gtag('config', 'G-JXK20KN1W1');
+}
+</script>
+  </head>
+  <body class="td-page">
+    <header>
+      <nav class="js-navbar-scroll navbar navbar-expand navbar-dark flex-column flex-md-row td-navbar">
+  <a class="navbar-brand" href="../../../"><span class="navbar-brand__logo navbar-logo"><svg preserveAspectRatio="xMinYMin meet" width="454pt" height="308pt" viewBox="0 0 2270 1539.9999" id="svg150293" sodipodi:docname="logo.svg" inkscape:version="1.1.2 (b8e25be833, 2022-02-05)" xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape" xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd" xmlns:xlink="http://www.w3.org/1999/xlink" xmlns="http://www.w3.org/2000/svg" xmlns:svg="http://www.w3.org/2000/svg"><defs id="defs150297"><rect x="1185.6038" y="942.88177" width="144.69968" height="130.69649" id="rect9306"/></defs><sodipodi:namedview id="namedview150295" pagecolor="#ffffff" bordercolor="#666666" borderopacity="1" inkscape:pageshadow="2" inkscape:pageopacity="0" inkscape:pagecheckerboard="true" showgrid="false" fit-margin-top="100" fit-margin-left="100" fit-margin-right="100" fit-margin-bottom="100" inkscape:zoom=".42847365" inkscape:cx="1508.8442" inkscape:cy="1037.4034" inkscape:window-width="3440" inkscape:window-height="1351" inkscape:window-x="-9" inkscape:window-y="-9" inkscape:window-maximized="1" inkscape:current-layer="svg150293" inkscape:document-units="pt" units="pt" scale-x="5"/><symbol id="window-icon" viewBox="0 0 372 300" transform="translate(48.537998,49.633999)"><rect x="10" y="10" width="352" height="280" style="fill:#fff;stroke:#000;stroke-width:20" id="rect150254"/><line x1="10" y1="30" x2="362" y2="30" style="fill:#fff;stroke:#000;stroke-width:20" id="line150256"/></symbol><text transform="scale(0.75)" id="text9304" style="font-size:40px;line-height:1.25;font-family:times new roman;-inkscape-font-specification:'Times New Roman, ';white-space:pre;shape-inside:url(#rect9306)"/><rect style="fill:#a50000;stroke:none;stroke-width:7.2;stroke-miterlimit:4;stroke-dasharray:none" id="rect17946" width="7.0015974" height="21.004791" x="575.88141" y="1044.9884"/><g id="g2424" transform="translate(41.362532,-59.633999)"><use xlink:href="#window-icon" x="1219.615" y="360" width="372" height="300" id="use2301"/><use xlink:href="#window-icon" x="1e3" y="162.34599" width="372" height="300" id="use2303"/><use xlink:href="#window-icon" x="700" y="90" width="372" height="300" id="use2305"/><use xlink:href="#window-icon" x="400" y="162.34599" width="372" height="300" id="use2307"/><use xlink:href="#window-icon" x="180.38499" y="360" width="372" height="300" id="use2309"/><use xlink:href="#window-icon" x="100" y="630" width="372" height="300" id="use2311"/><use xlink:href="#window-icon" x="180.38499" y="900" width="372" height="300" id="use2313"/><use xlink:href="#window-icon" x="400" y="1097.6541" width="372" height="300" id="use2315"/><use xlink:href="#window-icon" x="700" y="1170" width="372" height="300" id="use2317"/></g><text style="font-weight:700;font-size:360px;line-height:1.25;font-family:times new roman;-inkscape-font-specification:'Times New Roman, Bold';stroke:#fff;stroke-width:.75;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" x="699.01428" y="990.47559" id="text15676"><tspan sodipodi:role="line" id="tspan15674" style="font-style:normal;font-variant:normal;font-weight:400;font-stretch:normal;font-size:480px;font-family:times new roman mt extra bold;-inkscape-font-specification:'Times New Roman MT Extra Bold, Normal';font-variant-ligatures:normal;font-variant-caps:normal;font-variant-numeric:normal;font-variant-east-asian:normal;fill:#fff;fill-opacity:1;stroke:#fff;stroke-width:.75;stroke-miterlimit:4;stroke-dasharray:none;stroke-opacity:1" x="699.01428" y="990.47559">Medley</tspan></text></svg></span><span class="navbar-brand__name"></span></a>
+  <div class="td-navbar-nav-scroll ml-md-auto" id="main_navbar">
+    <ul class="navbar-nav mt-2 mt-lg-0">
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="../../../history/"><i class='fas fa-book'></i><span>History</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="../../../project/"><i class='fas fa-globe'></i><span>Project</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="../../../software/"><i class='fas fa-cube'></i><span>Software</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="../../../getinvolved/"><i class='fas fa-handshake-simple'></i><span>Get Involved</span></a>
+      </li>
+      <li class="nav-item mr-4 mb-2 mb-lg-0">
+        <a class="nav-link" href="https://github.com/interlisp" target="_blank"><i class='fab fa-github'></i><span>GitHub</span></a>
+      </li>
+      </ul>
+  </div>
+  <div class="navbar-nav d-none d-lg-block">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+
+  </div>
+</nav>
+    </header>
+    <div class="container-fluid td-outer">
+      <div class="td-main">
+        <div class="row flex-xl-nowrap">
+          <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none">
+            
+<div id="td-sidebar-menu" class="td-sidebar__inner">
+  <form class="td-sidebar__search d-flex align-items-center">
+    <div class="td-search">
+  <div class="td-search__icon"></div>
+  <input type="search" class="td-search__input form-control td-search-input" placeholder="Search this site…" aria-label="Search this site…" autocomplete="off">
+</div>
+
+    <button class="btn btn-link td-sidebar__toggle d-md-none p-0 ml-3 fas fa-bars" type="button" data-toggle="collapse" data-target="#td-section-nav" aria-controls="td-section-nav" aria-expanded="false" aria-label="Toggle section navigation">
+    </button>
+  </form>
+  <nav class="collapse td-sidebar-nav" id="td-section-nav">
+    <ul class="td-sidebar-nav__section pr-md-3 ul-0">
+      <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-software-li">
+  <a href="../../../software/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section tree-root" id="m-software"><span class="">Software</span></a>
+  <ul class="ul-1">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-softwareinstall-and-run-li">
+  <a href="../../../software/install-and-run/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareinstall-and-run"><span class="">Install and Run</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runrunning-on-linux-li">
+  <a href="../../../software/install-and-run/running-on-linux/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareinstall-and-runrunning-on-linux"><span class="">Install and Run on Linux (incl. WSL)</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runrunning-on-mac-li">
+  <a href="../../../software/install-and-run/running-on-mac/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareinstall-and-runrunning-on-mac"><span class="">Install and Run on MacOS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child active-path" id="m-softwareinstall-and-runrunning-on-win-li">
+  <a href="../../../software/install-and-run/running-on-win/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__page" id="m-softwareinstall-and-runrunning-on-win"><span class="td-sidebar-nav-active-item">Install and Run on Windows 10/11</span></a>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareaccess-online-li">
+  <a href="../../../software/access-online/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareaccess-online"><span class="">Access Medley Online</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-using-medley-li">
+  <a href="../../../using-medley/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-using-medley"><span class="">Using Medley</span></a>
+  <ul class="ul-2 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-docinfousinghtml-li">
+  <a href="../../../doc/info/Using.html" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-docinfousinghtml"><span class="">The Basics of Interlisp</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-softwareusing-medleymedley-li">
+  <a href="../../../software/using-medley/medley/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareusing-medleymedley"><span class="">What to Expect when Using Medley</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareusing-medleymedleymodern-medley-release-notes-li">
+  <a href="../../../software/using-medley/medley/modern-medley-release-notes/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareusing-medleymedleymodern-medley-release-notes"><span class="">Modern Medley Release Notes</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareusing-medleymedleyorientation-li">
+  <a href="../../../software/using-medley/medley/orientation/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareusing-medleymedleyorientation"><span class="">Orientation to Medley</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareusing-medleymedleythe-medley-interlisp-dsk-file-system-li">
+  <a href="../../../software/using-medley/medley/the-medley-interlisp-dsk-file-system/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareusing-medleymedleythe-medley-interlisp-dsk-file-system"><span class="">The {DSK} file system</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareusing-medleymedleytips-li">
+  <a href="../../../software/using-medley/medley/tips/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareusing-medleymedleytips"><span class="">Tips</span></a>
+</li>
+  </ul>
+</li>
+  </ul>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareapps-li">
+  <a href="../../../software/apps/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareapps"><span class="">Applications and Tools*</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareemu-compat-li">
+  <a href="../../../software/emu-compat/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareemu-compat"><span class="">Emulation and Compatibility*</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareabout-li">
+  <a href="../../../software/about/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareabout"><span class="">About Interlisp and Medley*</span></a>
+</li>
+  </ul>
+</li>
+    </ul>
+  </nav>
+</div>
+
+          </aside>
+          <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none">
+            
+
+<div class="td-page-meta ms-2 pb-1 pt-2 mb-0">
+	
+	<a href="https://github.com/interlisp/Interlisp.github.io/tree/main/content/en/software/install-and-run/running-on-win.md" class="td-page-meta--view" target="_blank" rel="noopener"><i class="fa-solid fa-file-lines fa-fw"></i> View page source</a>
+	<a href="https://github.com/interlisp/Interlisp.github.io/edit/main/content/en/software/install-and-run/running-on-win.md" class="td-page-meta--edit" target="_blank" rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Edit this page</a>
+	<a href="https://github.com/interlisp/Interlisp.github.io/new/main/content/en/software/install-and-run/running-on-win.md?filename=change-me.md&amp;value=---%0Atitle%3A&#43;%22Long&#43;Page&#43;Title%22%0AlinkTitle%3A&#43;%22Short&#43;Nav&#43;Title%22%0Aweight%3A&#43;100%0Adescription%3A&#43;%3E-%0A&#43;&#43;&#43;&#43;&#43;Page&#43;description&#43;for&#43;heading&#43;and&#43;indexes.%0A---%0A%0A%23%23&#43;Heading%0A%0AEdit&#43;this&#43;template&#43;to&#43;create&#43;your&#43;new&#43;page.%0A%0A%2A&#43;Give&#43;it&#43;a&#43;good&#43;name%2C&#43;ending&#43;in&#43;%60.md%60&#43;-&#43;e.g.&#43;%60getting-started.md%60%0A%2A&#43;Edit&#43;the&#43;%22front&#43;matter%22&#43;section&#43;at&#43;the&#43;top&#43;of&#43;the&#43;page&#43;%28weight&#43;controls&#43;how&#43;its&#43;ordered&#43;amongst&#43;other&#43;pages&#43;in&#43;the&#43;same&#43;directory%3B&#43;lowest&#43;number&#43;first%29.%0A%2A&#43;Add&#43;a&#43;good&#43;commit&#43;message&#43;at&#43;the&#43;bottom&#43;of&#43;the&#43;page&#43;%28%3C80&#43;characters%3B&#43;use&#43;the&#43;extended&#43;description&#43;field&#43;for&#43;more&#43;detail%29.%0A%2A&#43;Create&#43;a&#43;new&#43;branch&#43;so&#43;you&#43;can&#43;preview&#43;your&#43;new&#43;file&#43;and&#43;request&#43;a&#43;review&#43;via&#43;Pull&#43;Request.%0A" class="td-page-meta--child" target="_blank"	rel="noopener"><i class="fa-solid fa-pen-to-square fa-fw"></i> Create child page</a>
+	<a href="https://github.com/interlisp/medley/issues/new?template=documentation.md&amp;projects=Interlisp/medley/5%25!%28EXTRA%20template.URL=Install%20and%20Run%20on%20Windows%2010/11%29" class="td-page-meta--issue" target="_blank" rel="noopener"><i class="fa-solid fa-list-check fa-fw"></i> Create documentation issue</a>
+	
+
+	<a id="print" href="https://interlisp.org/software/install-and-run/_print/"><i	class="fa-solid fa-print fa-fw"></i> Print entire section</a>
+	
+</div>
+
+            <div class="td-toc">
+        <nav id="TableOfContents">
+  <ul>
+    <li>
+      <ul>
+        <li><a href="#1--running-medley-online"><strong>1.  Running Medley Online</strong></a></li>
+        <li><a href="#2--running-on-windows-with-wsl"><strong>2.  Running on Windows with WSL</strong></a></li>
+        <li><a href="#3--running-on-windows-natively"><strong>3.  Running on Windows &rsquo;natively&rsquo;</strong></a></li>
+      </ul>
+    </li>
+  </ul>
+</nav>
+      </div>
+    
+            
+
+	
+		
+			
+
+
+
+  
+  
+
+		
+			
+
+
+
+  
+  
+
+		
+	
+
+          </aside>
+          <main class="col-12 col-md-9 col-xl-8 pl-md-5" role="main">
+            
+  
+
+            <nav aria-label="breadcrumb" class="td-breadcrumbs">
+  <ol class="breadcrumb">
+  <li class="breadcrumb-item">
+    <a href="https://interlisp.org/software/">Software</a>
+  </li>
+  <li class="breadcrumb-item">
+    <a href="https://interlisp.org/software/install-and-run/">Install and Run</a>
+  </li>
+  <li class="breadcrumb-item active" aria-current="page">
+    <a href="https://interlisp.org/software/install-and-run/running-on-win/" aria-disabled="true" class="btn-link disabled">Install and Run on Windows 10/11</a>
+  </li>
+  </ol>
+</nav>
+            
+<div class="td-content">
+	<h1>Install and Run on Windows 10/11</h1>
+	
+	<header class="article-meta">
+		
+
+  
+    
+      
+
+
+    
+      
+
+
+    
+  
+
+		
+	</header>    
+	<p>There are two ways to run Medley on Windows:</p>
+<ol>
+<li>Run Medley on Windows System for Linux (WSL)</li>
+<li>Run the &rsquo;native&rsquo; Medley Windows app (which uses cygwin behind the scenes)</li>
+</ol>
+<p>These two ways result in (nearly) identical Medley experiences, but differ in how Medley is installed and run.</p>
+<p>Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment.</p>
+<p>Medley &rsquo;native&rsquo; works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley &rsquo;native&rsquo; is best for users who prefer to stay (almost) exclusively in the Windows environment.</p>
+<p>Medley on WSL and &rsquo;native&rsquo; Medley both require 64-bit Windows 10/11.</p>
+<h3 id="1--running-medley-online"><strong>1.  Running Medley Online</strong></h3>
+<p>Instructions on running Medley Online can be found <a href="https://interlisp.org/medley/using/running/online/">here</a>.</p>
+<h3 id="2--running-on-windows-with-wsl"><strong>2.  Running on Windows with WSL</strong></h3>
+<p>Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>) or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).</p>
+<p>When running under WSL2, Medley can display in one of two ways: in an X-Window (using the X Windows server built-in to WSL2) or in a VNC-viewer Window.  Although the X-windows approach is simpler (i.e., behind the scenes), it does not scale well on high-DPI displays.  In VNC mode, the Medley window will scale according to the Windows Display Scale settings.  VNC mode is set using the <code>--vnc</code> flag on the <code>medley</code> command line.  In the absence of the &ndash;vnc flag,  X Windows mode will be used.  When running on WSL1, VNC mode is always used.</p>
+<h4 id="to-install-and-run-medley-with-wsl">To install and run Medley with WSL</h4>
+<ol>
+<li>
+<p><em>Install WSL:</em> See <a href="https://learn.microsoft.com/en-us/windows/wsl/install">here</a> for instructions on installing WSL.</p>
+</li>
+<li>
+<p><em>Install Medley within WSL:</em> Once WSL is installed, open a terminal to WSL (e.g., by typing &ldquo;wsl&rdquo; in a Command or Powershell window) and follow the instructions for installing and running Medley on WSL and standard Linux that can be found <a href="../../../medley/using/running/running-on-linux">here</a>.</p>
+</li>
+<li>
+<p><em>Run Medley:</em> Once Medley has been installed on WSL, you can run Medley from either a WSL terminal as described in the Running Medley on Linux instructions (<a href="../../../medley/using/running/running-on-linux">here</a>) or by typing <code>wsl medley &lt;flags and options&gt;</code> in a Command or Powershell window.</p>
+<p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
+<p>For first-time users: <code>wsl medley --vnc --apps --interlisp --noscroll</code> or, equivalently, <code>wsl medley -v -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
+</li>
+</ol>
+<h3 id="3--running-on-windows-natively"><strong>3.  Running on Windows &rsquo;natively&rsquo;</strong></h3>
+<p>When running on Windows &rsquo;natively&rsquo;, Medley will be installed into a directory (of your choice).  This directory will contain an isolated copy of the Cygwin environment and a version of Medley that runs within that specific Cygwin environment.  This complexity, however, is largely hidden from the user and Medley behaves as if it is a native Windows app.</p>
+<h4 id="to-install-and-run-medley-native">To install and run Medley &rsquo;native'</h4>
+<ol>
+<li>
+<p>Download the Medley Windows installer from under the Windows 10/11 heading <a href="https://online.interlisp.org/downloads/medley_downloads.html">here</a>.</p>
+</li>
+<li>
+<p>Start the Medley installation app (e.g., by double clicking on the .exe just downloaded).</p>
+<p>The installation app will ask for the directory in which to install Medley.  Any directory that you have read/write access to will suffice. (We will refer to this directory as the Medley <em><strong>install_dir</strong></em>.)</p>
+<p>The installation app will then copy the Medley files into the specified directory. It will also run the Cygwin installer to install Cygwin into the specified directory as well.</p>
+<p><strong>Note:</strong>  To run the installation app, you may have to bypass the Windows security protections against running .exe files downloaded from the web.  For example, if the following dialog appears, you will need to select the <code>More info</code> link and then click on the <code>Run anyway</code> button that appears.</p>
+</li>
+</ol>
+ <div align="center"><img alt="Windows Protection Dialog" height=333 width=311 src="data:image/png;base64,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"><p>&nbsp;</p></div>
+<ol start="3">
+<li>
+<p><em>Run Medley:</em> Once it is installed, you can start Medley from either a Command window or a Powershell window.  You cannot (currently) start Medley from the Start Menu or from an icon on the desktop.</p>
+<p>From a Command window, type:</p>
+<pre tabindex="0"><code>cd &lt;install_dir&gt;
+medley &lt;flags and options&gt;
+</code></pre><p>From a Powershell window, type:</p>
+<pre tabindex="0"><code>cd &lt;install_dir&gt;
+cmd /C medley &lt;flags and options&gt;
+</code></pre></li>
+</ol>
+<p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
+<p>For first-time users: <code>medley --apps --interlisp --noscroll</code> or, equivalently, <code>medley -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
+<h4 id="notes">Notes</h4>
+<ol>
+<li>
+<p>One anomaly of the &rsquo;native&rsquo; Windows install is that the file system from within Medley does not map directly to the file system as seen from the Windows Explorer.   Specifically, within Medley, the root (i.e., /) is mapped to <em><strong>install_dir</strong></em>, the directory into which you installed &rsquo;native&rsquo; Windows.</p>
+<p>Your Medley LOGINDIR will be  <em><strong>/home/&lt;name&gt;/il</strong></em>  (or <em><strong>&lt;install_dir&gt;\home\&lt;name&gt;\il</strong></em>  from the Windows perspective), where <em><strong>&lt;name&gt;</strong></em> is your Windows username.  Medley code is stored in  <em><strong>/medley</strong></em>  (or <em><strong>&lt;install_dir&gt;\medley</strong></em>  from the Windows perspective).</p>
+<p>Also, from within Medley you can refer to any file in the Windows file system using  <em><strong>/&lt;drive letter&gt;/&lt;windows path using &ldquo;/&rdquo; instead of &ldquo;\&quot;&gt;</strong></em>. Example:  <em><strong>C:\User\Frank\Downloads\foo</strong></em> in Windows will be  <em><strong>/c/User/Frank/Downloads/foo</strong></em> in Medley. (Note that this means that within Medley, <em><strong>/medley/foo</strong></em> and <em><strong>/c/&lt;install_dir&gt;/medley/foo</strong></em> will be references to the same Windows file.)</p>
+</li>
+<li>
+<p>If you want to work with the Medley code using git, etc. You will probably find it easier to work with git within Cygwin rather than work with git in Windows. To work within the Medley-specific Cygwin, within a Powershell or Command window:</p>
+<pre tabindex="0"><code>cd &lt;install_dir&gt;
+.\bin\bash -login
+</code></pre><p>This will get you a bash terminal running under the Medley-specific Cygwin - which means that the file mappings will be the same as in Medley.</p>
+</li>
+<li>
+<p>The Medley-specific Cygwin install is rather minimal, so if you find you need other Linux tools to work with the Medley code, the Cygwin setup tool (which also functions as its package manager) is available at  <em><strong>&lt;install_dir&gt;\cygwin\setup_x86_64.exe</strong></em>  (in Windows) or at  <em><strong>/cygwin/setup_x86_64.exe</strong></em>  (from within Cygwin bash).</p>
+</li>
+</ol>
+
+	
+	
+	
+</div>
+
+
+          </main>
+        </div>
+      </div>
+      
+<footer class="bg-dark py-5 row d-print-none">
+  <div class="container-fluid mx-sm-5">
+    <div class="row">
+      <div class="col-6 col-sm-4 text-xs-center order-sm-2">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="User mailing list" aria-label="User mailing list">
+    <a class="text-white" target="_blank" rel="noopener" href="mailto:Interlisp@googlegroups.com" aria-label="User mailing list">
+      <i class="fa fa-envelope"></i>
+    </a>
+  </li>
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="Twitter" aria-label="Twitter">
+    <a class="text-white" target="_blank" rel="noopener" href="https://twitter.com/interlisp8" aria-label="Twitter">
+      <i class="fab fa-twitter"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-6 col-sm-4 text-right text-xs-center order-sm-3">
+        
+        
+        
+<ul class="list-inline mb-0">
+  
+  <li class="list-inline-item mx-2 h3" data-toggle="tooltip" data-placement="top" title="On GitHub" aria-label="On GitHub">
+    <a class="text-white" target="_blank" rel="noopener" href="https://github.com/interlisp" aria-label="On GitHub">
+      <i class="fab fa-github"></i>
+    </a>
+  </li>
+  
+</ul>
+
+        
+        
+      </div>
+      <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
+        <small class="text-white">&copy; 2023 Interlisp.org All Rights Reserved</small>
+        
+	
+      </div>
+    </div>
+  </div>
+</footer>
+
+
+    </div>
+    
+  <script src="../../../js/main.min.f55d8568cba03788d804a5ef5f08fc8d7d09fe0b4ce2b3d3c3da9e752143e00e.js" integrity="sha256-9V2FaMugN4jYBKXvXwj8jX0J/gtM4rPTw9qedSFD4A4=" crossorigin="anonymous"></script>
+<script src='../../../js/tabpane-persist.js'></script>
+
+<link rel="stylesheet" href="../../../css/custom.css">
+
+  </body>
+</html>

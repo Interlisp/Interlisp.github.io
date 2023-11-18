@@ -11,7 +11,7 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/docs/medley/modern-medley-release-notes/</loc>
+    <loc>https://interlisp.org/software/using-medley/medley/modern-medley-release-notes/</loc>
   </url>
   
   <url>
@@ -23,19 +23,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/using/build/building/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/history/publications/table/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/docs/medley/orientation/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/software/using/build/releases/</loc>
+    <loc>https://interlisp.org/software/using-medley/medley/orientation/</loc>
   </url>
   
   <url>
@@ -43,15 +35,15 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/software/install-and-run/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/project/news/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/using/running/online/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/software/docs/medley/</loc>
+    <loc>https://interlisp.org/software/using-medley/medley/</loc>
   </url>
   
   <url>
@@ -63,11 +55,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/project/partners/</loc>
+    <loc>https://interlisp.org/software/using-medley/medley/the-medley-interlisp-dsk-file-system/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/docs/medley/the-medley-interlisp-dsk-file-system/</loc>
+    <loc>https://interlisp.org/software/access-online/</loc>
   </url>
   
   <url>
@@ -75,23 +67,15 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/project/partners/educopia/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/project/faqs/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/using/running/running-on-linux/</loc>
+    <loc>https://interlisp.org/software/install-and-run/running-on-linux/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/project/partners/spn/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/software/docs/medley/tips/</loc>
+    <loc>https://interlisp.org/software/using-medley/medley/tips/</loc>
   </url>
   
   <url>
@@ -99,19 +83,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/project/partners/interlisporg-inc/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/history/medley/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/using/running/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/software/using/running/running-on-mac/</loc>
+    <loc>https://interlisp.org/software/install-and-run/running-on-mac/</loc>
   </url>
   
   <url>
@@ -119,11 +95,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/project/stories/</loc>
+    <loc>https://interlisp.org/software/install-and-run/running-on-win/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/using/running/running-on-win/</loc>
+    <loc>https://interlisp.org/project/stories/</loc>
   </url>
   
   <url>
@@ -139,15 +115,7 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/using/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/software/using/build/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/documentation/</loc>
+    <loc>https://interlisp.org/using-medley/</loc>
   </url>
   
   <url>
