@@ -1,5 +1,5 @@
 ---
-title: Running on Linux (incl. WSL)
+title: Install and Run on Linux (incl. WSL)
 weight: 20
 type: docs
 ---

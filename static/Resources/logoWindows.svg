@@ -1,0 +1,148 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   preserveAspectRatio="xMinYMin meet"
+   width="2270pt"
+   height="1540pt"
+   viewBox="0 0 2270.0001 1540"
+   version="1.1"
+   id="svg150293"
+   sodipodi:docname="logoWindows.svg"
+   inkscape:version="1.1.1 (3bf5ae0d25, 2021-09-20)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns:xlink="http://www.w3.org/1999/xlink"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <defs
+     id="defs150297">
+    <rect
+       x="1185.6038"
+       y="942.88179"
+       width="144.69968"
+       height="130.69649"
+       id="rect9306" />
+  </defs>
+  <sodipodi:namedview
+     id="namedview150295"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:pageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     showgrid="false"
+     fit-margin-top="100"
+     fit-margin-left="100"
+     fit-margin-right="100"
+     fit-margin-bottom="100"
+     inkscape:zoom="0.21423683"
+     inkscape:cx="588.13418"
+     inkscape:cy="872.86581"
+     inkscape:window-width="1486"
+     inkscape:window-height="837"
+     inkscape:window-x="85"
+     inkscape:window-y="333"
+     inkscape:window-maximized="0"
+     inkscape:current-layer="svg150293"
+     inkscape:document-units="pt"
+     units="pt"
+     scale-x="1" />
+  <symbol
+     id="window-icon"
+     viewBox="0 0 372 300"
+     transform="translate(48.537998,49.633999)">
+    <rect
+       x="10"
+       y="10"
+       width="352"
+       height="280"
+       style="fill:#ffffff;stroke:#000000;stroke-width:20"
+       id="rect150254" />
+    <line
+       x1="10"
+       y1="30"
+       x2="362"
+       y2="30"
+       style="fill:#ffffff;stroke:#000000;stroke-width:20"
+       id="line150256" />
+  </symbol>
+  <text
+     xml:space="preserve"
+     transform="scale(0.75)"
+     id="text9304"
+     style="line-height:1.25;font-family:'Times New Roman';font-size:40px;-inkscape-font-specification:'Times New Roman, ';white-space:pre;shape-inside:url(#rect9306)" />
+  <rect
+     style="fill:#a50000;stroke:none;stroke-width:7.2;stroke-miterlimit:4;stroke-dasharray:none"
+     id="rect17946"
+     width="7.0015974"
+     height="21.004791"
+     x="575.88141"
+     y="1044.9884" />
+  <g
+     id="g2424"
+     transform="translate(41.362532,-59.633999)">
+    <use
+       xlink:href="#window-icon"
+       x="1219.615"
+       y="360"
+       width="372"
+       height="300"
+       id="use2301" />
+    <use
+       xlink:href="#window-icon"
+       x="1000"
+       y="162.34599"
+       width="372"
+       height="300"
+       id="use2303" />
+    <use
+       xlink:href="#window-icon"
+       x="700"
+       y="90"
+       width="372"
+       height="300"
+       id="use2305" />
+    <use
+       xlink:href="#window-icon"
+       x="400"
+       y="162.34599"
+       width="372"
+       height="300"
+       id="use2307" />
+    <use
+       xlink:href="#window-icon"
+       x="180.38499"
+       y="360"
+       width="372"
+       height="300"
+       id="use2309" />
+    <use
+       xlink:href="#window-icon"
+       x="100"
+       y="630"
+       width="372"
+       height="300"
+       id="use2311" />
+    <use
+       xlink:href="#window-icon"
+       x="180.38499"
+       y="900"
+       width="372"
+       height="300"
+       id="use2313" />
+    <use
+       xlink:href="#window-icon"
+       x="400"
+       y="1097.6541"
+       width="372"
+       height="300"
+       id="use2315" />
+    <use
+       xlink:href="#window-icon"
+       x="700"
+       y="1170"
+       width="372"
+       height="300"
+       id="use2317" />
+  </g>
+</svg>

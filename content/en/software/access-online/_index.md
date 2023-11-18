@@ -1,6 +1,6 @@
 ---
-title: Using Interlisp Online
-weight: 10
+title: Access Medley Online
+weight: 20
 type: docs
 aliases:
   - /running/online
