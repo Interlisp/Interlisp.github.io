@@ -219,10 +219,10 @@ that have components specific to `Interlisp.github.io` are as follows:
     - `_styles_project.scss` sets the size of the `svg` file in the header and disables the edit page functionality
     - `main.scss` - links in the `scss` updates
 - `content\en` - home of all the content for the web page.  We currently only support the English language.  `Hugo` supports multiple languages and we have not disabled that feature. However there are no plans at present to transcribe the web pages and documentation into another language.
-- `data`  - holds `bibliography.json` used to create the [bibliography table](https://interlisp.org/publications/table/)
+- `data`  - holds `bibliography.json` used to create the [bibliography table](https://interlisp.org/bibliography/)
 - `layout`
   - `shortcodes` - a simple snippet inside a content file that Hugo will render using a predefined template
-    - `bibTable.html` - a shortcode used to format the [bibliography table](https://interlisp.org/publications/table/)
+    - `bibTable.html` - a shortcode used to format the [bibliography table](https://interlisp.org/bibliography/)
 - `static` - the data in this folder is copied directly into the folder structure of the home page  
   - `documentation` - contains the pdf files referenced in the document section of the home page
   - `favicons` - contains `favicon.png` a small icon that browsers can use when referencing the website
