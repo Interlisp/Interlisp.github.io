@@ -15,5 +15,5 @@ The Medley Interlisp Project had its origin in an effort by Nick Briggs and Ron 
 
 Another way of looking at contributors is to look at statistics for the [Medley](https://github.com/Interlisp/medley/graphs/contributors),
 [Maiko](https://github.com/Interlisp/maiko/graphs/contributors),
-[online](https::/github.com/Interlisp/online/graphs/contributors),
-and [website](https://github.com/Interlisp/Interlisp/Interlisp.github.io/graphs/contributors) repos.
+[online](https://github.com/Interlisp/online/graphs/contributors),
+and [website](https://github.com/Interlisp/Interlisp.github.io/graphs/contributors) repos.
