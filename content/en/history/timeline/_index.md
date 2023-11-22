@@ -4,7 +4,7 @@ type: docs
 weight: 50
 ---
 
-This draft started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf), Still need to merge in links from [Software Preservation History](https://www.softwarepreservation.org/projects/LISP/interlisp_family), [info-1100](https://docs.google.com/document/d/e/2PACX-1vRARH1vFZf-mnIgZKovzqLCh-kj6AXyDi8c_9zTeyjPiJ9z4ncnDSYUVfFjh5BBlsKe6NL4YBaAykU_/pub?), and other sources. “facts” should be backed up by links to their sources.
+This draft started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf). The [Bibliography](../bibliography/) has a wealth of additional information. 
 
 ## 1960s
 
