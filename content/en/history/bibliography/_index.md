@@ -5,9 +5,6 @@ type: docs
 aliases: /bibliography
 ---
 
-## Interlisp Bibliography
-
-(This bibliography is kept in sync with a [Zotero](https://www.zotero.org/) collection [Library](https://www.zotero.org/groups/2914042/interlisp/library.)
-
+We are collecting documentation and literature about Interlisp (and applications written for it) in the [Interlisp Zotero Library](https://www.zotero.org/groups/2914042/interlisp/library), and keep this table in sync (see [the project website](https://github.com/Interlisp/Interlisp.github.io/#readme) documentation for more details.)
 
 {{< bibTable >}}
