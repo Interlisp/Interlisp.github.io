@@ -16,16 +16,3 @@ Development of the system moved from Xerox PARC to a Xerox AI Systems division, 
 
 A more extensive history of Interlisp can be found in the [Interlisp Timeline](/medley/history/timeline).
 
-## History of the Medley Interlisp Project
-
-The Medley Interlisp restoration project has created documents that are now historical in nature.
- While not needed today, we are preserving them [here](/medley/project/status) to help paint the full picture of Medley Interlisp.
-
-## Bibliography
-
-Work on Interlisp has been documented in many publications.  We have undertaken
-an effort to capture every reference we can find and organize them into a
-useful bibliography that can be used for research into the history of the
-languages development and impacts on modern computing.
-
-The [Publications](/medley/history/publications) page will help you explore this resource.

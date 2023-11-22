@@ -36,11 +36,6 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 #    weight = -110
 #    pre = "<i class='fas fa-download'></i>"
 #    url = "/running/download/"
-#  [[menu.main]]
-#    name = "Publications"
-#    weight = -100
-#    pre = "<i class='fas fa-download'></i>"
-#    url = "/publications/"  
   [[menu.main]]
     name = "GitHub"
     weight = -10
