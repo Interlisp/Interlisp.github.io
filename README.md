@@ -79,8 +79,8 @@ directory as the `_index.md` file, so everything needed for the page is packaged
 The web page maintains an extensive bibliography.  The information displayed on
 the webpage is a snapshot of the data stored in our online [Zotero Group Library](https://www.zotero.org/groups/2914042/interlisp).
 
-The webpage data is updated on a daily version to help ensure it is an accurate
-reflection of the bibliographic material related to Medley Interlisp.
+The webpage data is updated daily to help ensure it is an accurate
+reflection of the bibliographic material related to Medley and Interlisp.
 
 ### gh-pages GitHub Workflow
 
@@ -161,7 +161,7 @@ Once in the directory, run the following command:
 ./update_bibliography.sh
 ```
 
-This script will retrieve the bibliography from our Zotero site, format it appropriately and place the created file
+This script will retrieve the bibliography from our Zotero library, format it appropriately and place the created file
 in the appropriate location, the `data` directory.
 
 This completes all the setup required for `Hugo`.
