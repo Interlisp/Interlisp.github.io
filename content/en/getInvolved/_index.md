@@ -2,6 +2,8 @@
 title: Get Involved
 weight: 11
 type: docs
+aliases:
+ - /medley/project/getinvolved/
 ---
 
 There several ways to get involved in the Medley Interlisp Project, depending on your background and interests.
@@ -57,7 +59,7 @@ If you would like to join our weekly meetings, [let us know](mailto:info@interli
 
 Check out our [Project List](https://docs.google.com/document/d/1ceXj7VzPeLSM0sBwEnYQqArKsXg0VKCWLTF0zv10LRg/edit?usp=sharing) for ideas and find one that matches your interests, or make a proposal for something else.  Funding is available to help support a limited number of projects.
 
-##6: Donations
+## 6: Donations
 
 We use donations to pay for online services, web hosting; larger donations for hiring consultants and contract workers to help with various tasks.
 You can donate through GitHub sponsors, which is convenient. They do charge a fee -- 3% if done through ACH, 6% for credit card donations. For larger amounts contact [our donations team](mailto:board@interlisp.org).
