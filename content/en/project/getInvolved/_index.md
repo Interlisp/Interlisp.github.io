@@ -4,11 +4,12 @@ weight: 11
 type: docs
 aliases:
  - /medley/project/getinvolved/
+ - /project/getInvolved/
 ---
 
 There several ways to get involved in the Medley Interlisp Project, depending on your background and interests.
 
-1. If you know a little Lisp, [Try it!](../software) We've tried to make it easy. 
+1. If you know a little Lisp, [Try it!](/software) We've tried to make it easy. 
 2. Look at, comment on, and contribute to Interlisp on GitHub.
 3. Join in the discussions through a variety of interfaces.
 4. Participate in weekly meetings; Read meeting agendas and notes.
