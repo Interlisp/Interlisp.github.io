@@ -47,7 +47,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/getinvolved/</loc>
+    <loc>https://interlisp.org/project/getinvolved/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/project/partners/</loc>
   </url>
   
   <url>
@@ -63,6 +67,10 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/project/partners/educopia/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/project/faqs/</loc>
   </url>
   
@@ -71,11 +79,19 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/project/partners/spn/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/software/using-medley/medley/tips/</loc>
   </url>
   
   <url>
     <loc>https://interlisp.org/project/comments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/project/partners/interlisporg-inc/</loc>
   </url>
   
   <url>
@@ -140,10 +156,6 @@
   
   <url>
     <loc>https://interlisp.org/project/organization/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/software/about/</loc>
   </url>
   
   <url>
