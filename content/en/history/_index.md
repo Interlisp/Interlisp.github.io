@@ -2,6 +2,8 @@
 title: History
 weight: 500
 type: docs
+aliases:
+ - /medley/history/
 ---
 
 ## The Short History

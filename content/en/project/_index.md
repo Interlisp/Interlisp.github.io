@@ -4,6 +4,8 @@ weight: 2
 type: docs
 aliases:
  - /hugo/
+ - /medley/project/
+ - /medley/about/
 ---
 ## What is the Medley Interlisp Project?
 
