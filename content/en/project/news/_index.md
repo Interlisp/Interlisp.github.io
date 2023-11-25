@@ -5,24 +5,24 @@ type: docs
 aliases:
  - /hugo/news/
 ---
+
+### 2023 Annual Report (in preparation)
+
+Sneek Peek: We are working on our [2023 Medley Interlisp Annual Report](https://docs.google.com/document/d/1yL1WeYvgu5JstWyjD3fWl1mDZv8kIr_U3_1onSWvUko/edit?usp=sharing). Still a work in progress -- don't distribute until we announce it is ready.
+
+### 3/2023
+
+Bay Area Lisp talk:
+
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N1MobfEaoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-<p>
-
-The **2022 Medley Interlisp [Annual Report](/medley/project/status/2022medleyannualreport)** provides a detailed report on 2022 accomplishments.
-
-## Recent Updates
-
 ## 12/2022
-
 * [2022 Annual Report](/medley/project/status/2022medleyannualreport)
 
 ## 9/2022
-
 * Newcomers welcome!
 
 ## 6/2022
-
 * Documentation update. We're updating the project documentation. Feel free to make suggestions for improvement
 * Significant development of integration with GitHub (via the GITFNS module) for doing a Lisp-based PR review workflow
 
@@ -39,11 +39,10 @@ The **2022 Medley Interlisp [Annual Report](/medley/project/status/2022medleyann
 Merry Christmas and Happy New Year
 
 * Steve's [Medley Interlisp: The Interactive Environment](https://interlisp.org/documentation/20211225-interlisp-book-2.pdf) reformated for easier online reading.
-* Joining the Software Preservation Network.
+* Sponsoring the Software Preservation Network.
 * Interlisp.online progress, changes expected
 * New User documentation
-* Still awaiting California Franchise Tax Board (FTB) to confirm exempt status (ETA April) 
-* work on Lisp-based GitHub client, comparison of Lisp files
+* California Franchise Tax Board (FTB) confirming exempt status
 
 ## 12/2021
 
