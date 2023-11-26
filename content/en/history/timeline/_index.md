@@ -4,7 +4,7 @@ type: docs
 weight: 50
 ---
 
-This draft started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf). The [Bibliography](../bibliography/) has a wealth of additional information. 
+This draft started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf). The [Bibliography](/bibliography/) has a wealth of additional information. 
 
 ## 1960s
 
