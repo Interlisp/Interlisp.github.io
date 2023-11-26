@@ -16,8 +16,10 @@ Bay Area Lisp talk:
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N1MobfEaoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
+Drafts and final versions of slide decks can be found [here](https://drive.google.com/drive/folders/1wQZ9F-doxx5gsGaQ7gKtOa5AObJalNJ9?usp=sharing)
+
 ## 12/2022
-* [2022 Annual Report](/medley/project/status/2022medleyannualreport)
+* [2022 Annual Report](/project/status/2022medleyannualreport)
 
 ## 9/2022
 * Newcomers welcome!
@@ -57,4 +59,4 @@ Merry Christmas and Happy New Year
 ## 11/2021
 
 * [Medley Interlisp: Tools and Utilities](https://interlisp.org/documentation/2021-interlisp-book-3.pdf) (Interlisp book 3) now available for preview; comments and corrections welcome.
-* [2021 Annual Report](/medley/project/status/2021medleyannualreport), November 15, 2021.
+* [2021 Annual Report](/project/status/2021medleyannualreport), November 15, 2021.

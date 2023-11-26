@@ -111,7 +111,7 @@ In this document, we use “we” to mean our contributors:
 * as members of the [lispcore@googlegroups.com](mailto:lispcore@googlegroups.com) mailing list/group ([Medley Interlisp core - Google Groups](https://groups.google.com/g/lispcore))
 * as participants in a weekly zoom call
   * Meetings recorded but not public
-  * Agendas: [Meeting Agendas and Notes](/medley/project/getinvolved#meetings)
+  * Agendas: [Meeting Agendas and Notes](/project/getinvolved#meetings)
 * as members of the GitHub [Interlisp organization](https://github.com/orgs/Interlisp/people)
 * as contributors to an Open Source project
   * 384 issues, 133 closed, 151 open [Issues](https://github.com/Interlisp/medley/issues). 54 [discussions](https://github.com/Interlisp/medley/discussions)
