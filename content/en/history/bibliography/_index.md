@@ -2,7 +2,11 @@
 title: Bibliography
 weight: 5
 type: docs
-aliases: /bibliography
+aliases:
+ - /bibliography/
+ - /medley/history/publications/
+ - /medley/history/publications/table/
+
 ---
 
 ## Interlisp Bibliography

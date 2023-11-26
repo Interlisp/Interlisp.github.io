@@ -2,6 +2,8 @@
 title: What to Expect when Using Medley
 weight: 10
 type: docs
+aliases:
+ - /using-medley
 ---
 
 Refer to the following pages to learn about using Medley Interlisp:

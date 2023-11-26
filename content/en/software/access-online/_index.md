@@ -19,7 +19,7 @@ Running Interlisp online is good for experimenting and introducing yourself to t
 
 ## Accessing Interlisp Online
 
-1. Go to [Interlisp Online](https://online.interlisp.org/main)
+1. Go to [Interlisp Online](https://online.interlisp.org/)
 {{< imgproc Login_Screen Resize "400x450">}} Interlisp Online Login {{< /imgproc >}}
 2. Login to Medley Interlisp Online:
    * You can login as a guest by clicking <img src="Guest_Login_button.png" alt="Guest Login button"> on the login screen. However, guest sessions are not saved.
