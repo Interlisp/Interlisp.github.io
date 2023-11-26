@@ -9,13 +9,9 @@ Do you know of a new blog, tweet or other communication talking about Interlisp?
 
 Submit the link using our [What People Are Saying](https://github.com/interlisp/medley/issues/new?template=what_people_are_saying.yml) form.
 
-## Via email
-
-Both the [Interlisp](https://groups.google.com/u/0/g/interlisp?pli=1) and [LispCore](https://groups.google.com/u/0/g/lispcore) Google Groups have open discussions.  
-
 ## Musings on Medley and Interlisp
 
-Various individuals' thoughts on Interlisp and the Medley project can be found [here](stories).
+Various individuals have written thoughts on Interlisp and the Medley project; their stories can be found [here](/project/stories/).
 
 ## Blogs and Online Discussions
 

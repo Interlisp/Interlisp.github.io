@@ -21,8 +21,7 @@ Medley on WSL and 'native' Medley both require 64-bit Windows 10/11.
 
 ### **1.  Running Medley Online**
 
-Instructions on running Medley Online can be found [here](https://interlisp.org/medley/using/running/online/).
-
+Instructions on running Medley Online can be found [here](/software/access-online/)
 
 ### **2.  Running on Windows with WSL**
 
@@ -34,9 +33,9 @@ When running under WSL2, Medley can display in one of two ways: in an X-Window (
 
 1. *Install WSL:* See [here](https://learn.microsoft.com/en-us/windows/wsl/install) for instructions on installing WSL.
 
-2. *Install Medley within WSL:* Once WSL is installed, open a terminal to WSL (e.g., by typing "wsl" in a Command or Powershell window) and follow the instructions for installing and running Medley on WSL and standard Linux that can be found [here](/medley/using/running/running-on-linux). 
+2. *Install Medley within WSL:* Once WSL is installed, open a terminal to WSL (e.g., by typing "wsl" in a Command or Powershell window) and follow the instructions for installing and running Medley on WSL and standard Linux that can be found [here](/software/install-and-run/running-on-linux). 
 
-3. *Run Medley:* Once Medley has been installed on WSL, you can run Medley from either a WSL terminal as described in the Running Medley on Linux instructions ([here](/medley/using/running/running-on-linux)) or by typing `wsl medley <flags and options>` in a Command or Powershell window.
+3. *Run Medley:* Once Medley has been installed on WSL, you can run Medley from either a WSL terminal as described in the Running Medley on Linux instructions ([here](/software/install-and-run/running-on-linux)) or by typing `wsl medley <flags and options>` in a Command or Powershell window.
 
     Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
 

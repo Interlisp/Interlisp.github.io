@@ -6,7 +6,7 @@ aliases:
  - /hugo/about/partners/educopia/
  - /medley/project/partners/educopia/
 ---
-[Educopia](https://educopia.org) is a non-profit organization hosting the [Software Preservation Network](../spn) and other software preservation groups.
+[Educopia](https://educopia.org) is a non-profit organization hosting the [Software Preservation Network](/project/partners/spn) and other software preservation groups.
 
 The also offer additional resources on organizational principles.
 

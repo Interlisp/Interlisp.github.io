@@ -11,7 +11,7 @@ aliases:
 
 The Medley Interlisp Project was created to revive Medley Interlisp.
 
-Because Interlisp has been around a long time, with multiple iterations, you might find the multitude of names for the Interlisp language and related companies confusing. To assist, we have created a list of [common vocabulary](vocabulary) you will find on this website.
+Because Interlisp has been around a long time, with multiple iterations, you might find the multitude of names for the Interlisp language and related companies confusing. To assist, we have created a [glossary of terms](glossary) used on this website.
 
 ## What are the origins of Interlisp? Why do we care?
 

@@ -13,7 +13,7 @@ Running Interlisp online is good for experimenting and introducing yourself to t
 
 * Browser compatibility
 * Watch out for control-character conflicts (control-W always gets me)
-* Security is not guaranteed
+* Privacy and security is not guaranteed
 * You need a solid net connection to our AWS server (currently in Ohio)
 * Back to time-sharing: Maximum load ~24 simultaneous sessions
 

@@ -8,8 +8,8 @@ weight: 50
 
 The Medley team has produced annual reports documenting their major achievements.
 
-- [2021 Annual Report](/medley/project/status/2021medleyannualreport)
-- [2022 Annual Report](/medley/project/status/2022medleyannualreport)
+- [2021 Annual Report](/project/status/2021medleyannualreport)
+- [2022 Annual Report](/project/status/2022medleyannualreport)
 
 ## March 2023 Bay Area Lisp Meeting
 

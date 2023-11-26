@@ -18,7 +18,7 @@ Medley can be installed on your system in one of two configurations: *standard* 
 On WSL, Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see 
 [here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements))
 or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).
-See [here](/medley/using/running/running-on-win) for more information on running Medley on WSL.
+See [here](/software/install-and-run/running-on-win) for more information on running Medley on WSL.
 
 ## **Standard Installation \(Debian-based systems only\)**
 

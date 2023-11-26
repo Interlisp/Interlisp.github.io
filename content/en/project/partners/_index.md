@@ -8,9 +8,9 @@ aliases:
 
 ### [Software Preservation Network](https://www.softwarepreservationnetwork.org/about/)
 
-We joined SPN in 2021.
+We joined SPN in 2021 as an "Implementation Sponsor".
 
-* Membership of (mainly academic and  non-profit) organizations
+* SPN membership of (mainly academic and  non-profit) organizations
 * We might partner with one or more of their members
 * Membership is $4k/year
 * Hosts [Emulation as a Service infrastructure](https://www.softwarepreservationnetwork.org/emulation-as-a-service-infrastructure/)
@@ -28,12 +28,13 @@ California State University Channel Islands
 
 ### [Computer History Museum](https://computerhistory.org/)
 
-* PARC is purportedly giving a grant to CHM of software collection, including lisp sources
+* PARC gave CHM a "donation" of files from PARC backups, including lisp sources. This looks like an important trove of Information.
 * hosts Smalltalk Zoo
 * offered to record history interview
-* SPN member
 
 ### Internet Archive
+
+We have no formal relationship with IA, but we would be happy to have one.
 
 * MAME
 

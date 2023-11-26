@@ -15,12 +15,13 @@ You can find general information for new users at [The Basics of Interlisp]({{< 
 For Medley orientation and tips, go to [Using Medley](./medley).
 
 The following links lead to PDF files containing Interlisp documentation.
+We are in the process of organizing this documentation.
 
 ### Unsorted documentation content
 
 Most Interlisp/Medley documentation was written using the Medley Text Editor, one of the first WYSIWYG graphical user interface text editors, called TEdit. Written in and for Interlisp users, it features muliple fonts, embedded graphics including line drawings and raster images.
 
-TEdit files are scattered through the the various Interlisp repositories. For the convenience of those who would rather read the files using more modern tools, see the files from different Medley Interlisp repositories, [converted to PDF](https://drive.google.com/drive/folders/10ZBQty5gEwdBnZHtEbXfe5f1dHGziGZG?usp=sharing).
+TEdit files are scattered through the the various Interlisp repositories. For the convenience of those who would rather read the files using more modern tools, see the files from different Medley Interlisp repositories, [converted to PDF](https://drive.google.com/drive/folders/10ZBQty5gEwdBnZHtEbXfe5f1dHGziGZG?usp=sharing). NOTE: This is not a permanent location!
 
 For the searcher's conveneience, these have also been combined into searchable PDFs named All-*-PDFs.pdf.
 
