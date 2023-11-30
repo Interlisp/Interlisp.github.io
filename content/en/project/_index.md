@@ -6,6 +6,7 @@ aliases:
  - /hugo/
  - /medley/project/
  - /medley/about/
+ - /medley/other/
 ---
 ## What is the Medley Interlisp Project?
 

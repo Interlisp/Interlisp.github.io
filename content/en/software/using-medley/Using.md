@@ -1,6 +1,6 @@
 ---
 title: The Basics of Interlisp
-url: /doc/info/Using.html
+url: /software/Using.html
 type: docs
 weight: 2
 ---
