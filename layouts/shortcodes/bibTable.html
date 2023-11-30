@@ -178,7 +178,7 @@ var abstractExpanderClose = "Abstract -";
             {{ range $na, $au := .author }}{{ if $na }}; {{ end }}{{ if $au.literal }}{{ $au.literal }}{{ else if and $au.family $au.given }}{{ $au.family }}, {{ $au.given }}{{ else }}{{ $au.family }}{{ $au.given }}{{ end }}{{ end }}
           </div>{{ end }}
           {{ if .abstract }}<button type="button" class="abstractExpander left" id="A{{$itemID}}">AAA</button>{{ end }}
-          {{ if .note }}
+          {{ if and false .note }}
             {{ $notes := split (plainify .note) "\n" }}
             <div class="tooltipNotes right" id="N{{$itemID}}">Notes
             <span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
