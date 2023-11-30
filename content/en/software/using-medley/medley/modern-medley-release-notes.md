@@ -1,5 +1,7 @@
 ---
 title: Modern Medley Release Notes
+aliases:
+ - /medley/using/docs/medley/modern-medley-release-notes
 weight: 2
 type: docs
 ---

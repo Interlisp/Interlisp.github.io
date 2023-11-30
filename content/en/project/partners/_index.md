@@ -3,7 +3,7 @@ title: Organizational Partners
 weight: 12
 type: docs
 aliases:
- - /medley/project/partners/
+ - /medley/project/partners
 ---
 
 ### [Software Preservation Network](https://www.softwarepreservationnetwork.org/about/)
