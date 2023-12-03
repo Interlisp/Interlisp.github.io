@@ -5,6 +5,7 @@ type: docs
 aliases:
  - /hugo/news/
  - /medley/project/news/
+
 ---
 
 ### 2023 Annual Report (in preparation)

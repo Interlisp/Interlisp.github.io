@@ -1,5 +1,9 @@
 ---
 title: Install and Run
+aliases:
+ - /medley/using/build
+ - /medley/using/running
+ - /developing
 weight: 10
 type: docs
 ---

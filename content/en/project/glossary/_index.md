@@ -1,5 +1,7 @@
 ---
 title: Glossary
+aliases:
+ - /medley/project/glossary
 weight: 90
 type: docs
 ---

@@ -4,6 +4,7 @@ weight: 40
 type: docs
 aliases:
  - /hugo/running/running-on-win/
+ - /medley/using/running/running-on-win
 ---
 
 There are two ways to run Medley on Windows:

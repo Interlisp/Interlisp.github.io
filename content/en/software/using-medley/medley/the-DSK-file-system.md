@@ -1,5 +1,7 @@
 ---
 title: The {DSK} file system
+aliases:
+ - /hugo/docs/medley/the-medley-interlisp-dsk-file-system
 weight: 15
 type: docs
 ---
