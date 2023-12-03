@@ -2,9 +2,11 @@
 title:  Interlisp Timeline
 type: docs
 weight: 50
+aliases:
+ - /medley/history/timeline/
 ---
 
-This draft started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf). The [Bibliography](/bibliography/) has a wealth of additional information. 
+This timeline started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf). The [Bibliography](/bibliography/) has a wealth of additional historical information. 
 
 ## 1960s
 

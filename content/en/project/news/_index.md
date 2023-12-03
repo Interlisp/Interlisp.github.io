@@ -3,7 +3,9 @@ title: News
 weight: 10
 type: docs
 aliases:
- - /hugo/news
+ - /hugo/news/
+ - /medley/project/news/
+
 ---
 
 ### 2023 Annual Report (in preparation)
