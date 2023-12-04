@@ -6,7 +6,7 @@ aliases:
   - /medley/using/running/online/	
   - /medley/using/running/online
   - /running/online
-  - /running/online/usingonline
+  - /running/online/using/online
   - /software/access-online
 ---
 
