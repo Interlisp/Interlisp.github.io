@@ -4,20 +4,20 @@ weight: 20
 type: docs
 aliases:
   - /medley/using/running/online/	
+  - /medley/using/running/online
   - /running/online
   - /running/online/usingonline
-  - /medley/using/running/online
+  - /software/access-online
 ---
 
-Running Interlisp online is good for experimenting and introducing yourself to the environment. However, anything you create in the online environment should be treated as transient. If you're interested in developing and experimenting with Lisp programs, you will want to investigate other options. But, for a first foray, this is a good starting place.
+Running Interlisp online is good for experimenting and introducing yourself to the environment. However, anything you create in the online environment should be treated as transient. If you're interested in developing and experimenting with Lisp programs, you will want to investigate other options. For a first foray, it is a good starting point.
 
 ### Things to note when running online
 
-* Browser compatibility
-* Watch out for control-character conflicts (control-W always gets me)
-* Privacy and security is not guaranteed
-* You need a solid net connection to our AWS server (currently in Ohio)
-* Back to time-sharing: Maximum load ~24 simultaneous sessions
+* **Browser compatibility:** Older browsers may not support the VNC software we use; it should give you a warning if this is detected.
+* **control-character conflicts:** different browsers may intercept user typing control-characters; for example, control-W often is used to close the entire Medley window. Running Medley "full screen" (using Chrome) avoids some of these.
+* **No guarantees:** In general, Medley has NO WARRANTEE, but in particular we make no guarantees that private information will not be revealed, or that your files uploaded to your account will be held securely.
+* **Reliable Internet:** You need a solid net connection to our AWS server (currently in Ohio)
 
 ## Accessing Interlisp Online
 
