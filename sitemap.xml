@@ -19,11 +19,19 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/software/install-and-run/build/building/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/history/bibliography/</loc>
   </url>
   
   <url>
     <loc>https://interlisp.org/software/using-medley/medley/orientation/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/build/releases/</loc>
   </url>
   
   <url>
@@ -124,6 +132,10 @@
   
   <url>
     <loc>https://interlisp.org/project/status/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/build/</loc>
   </url>
   
   <url>

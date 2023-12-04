@@ -148,6 +148,41 @@ This is the multi-page printable view of this section.
 
     
   
+    
+    
+	
+<li>1.4: <a href="#pg-f15e6777b64b39ac46ac54b80dec3a74">Building the Interlisp system</a></li>
+
+
+    
+    <ul>
+        
+  
+  
+  
+  
+
+  
+    
+    
+	
+<li>1.4.1: <a href="#pg-59fa714f951e9eac27d8648a5e16fc1e">Building Medley Interlisp</a></li>
+
+
+    
+  
+    
+    
+	
+<li>1.4.2: <a href="#pg-a71b9a81e0641bcb7430cf6ddd981b29">Releases</a></li>
+
+
+    
+  
+
+    </ul>
+    
+  
 
     </ul>
     
@@ -631,6 +666,106 @@ cmd /C medley &lt;flags and options&gt;
 </div>
 
 
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-f15e6777b64b39ac46ac54b80dec3a74">1.4 - Building the Interlisp system</h1>
+    
+	<p>Medley Interlisp is open-source and may be obtained from GitHub. It is portable to many different systems: Linux, Windows (with or without WSL),  Apple MacOS and many more.</p>
+<h3 id="obtaining-the-system">Obtaining The System</h3>
+<p>The system comes in two parts. The first is a C-based virtual machine <a href="https://github.com/interlisp/maiko">Maiko</a>.</p>
+<p>The remainder of the Medley is independent of OS and computer architecture. Instrucdtions can be found in the <a href="https://github.com/interlisp/medley">Medley repository</a>.</p>
+<p>The Maiko <a href="https://github.com/Interlisp/maiko/#readme">README</a> has build instructions for Maiko. You may need to do this for systems for which there is no pre-built release.</p>
+<p>In the cases where you&rsquo;ve built your own Maiko (producing binaries lde, ldex, ldsdl), the instructions are changing.</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> medley
+</span></span><span style="display:flex;"><span>$ ./run-medley
+</span></span></code></pre></div><p>Or, if you wish to start Medley up with a particular image file (SYSOUT):</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-bash" data-lang="bash"><span style="display:flex;"><span>$ <span style="color:#204a87">cd</span> medley
+</span></span><span style="display:flex;"><span>$ ./run-medley &lt;SYSOUT-file-name&gt;
+</span></span></code></pre></div><h3 id="exiting-the-system">Exiting The System</h3>
+<p>The system may be exited from an Interlisp prompt by typing:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">LOGOUT</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>Or from a Common Lisp prompt with:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-lisp" data-lang="lisp"><span style="display:flex;"><span><span style="color:#000;font-weight:bold">(</span><span style="color:#000">IL:LOGOUT</span><span style="color:#000;font-weight:bold">)</span>
+</span></span></code></pre></div><p>The first time the system is run it loads the system image that comes
+with the system.  When you exit the system (or &ldquo;do a <code>SaveVM</code>&rdquo; menu option)
+the state of your machine is saved
+in a file named <code>~/lisp.virtualmem</code>.  Subsequent system startups
+load the <code>~/lisp.virtualmem</code> image by default.</p>
+<p><code>run-medley</code> is a script, documentation at the beginning.</p>
+
+</div>
+
+
+
+    
+      
+  
+  
+  
+  
+
+  
+  
+
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-59fa714f951e9eac27d8648a5e16fc1e">1.4.1 - Building Medley Interlisp</h1>
+    
+	<p>Medley Interlisp is open-source and may be obtained from GitHub.  It is
+portable to many different Linux and Apple MacOS systems, as well as Windows using WSL2.</p>
+<p>The core is written in portable C. The system currently depends on an
+X11 system for its display.</p>
+<h2 id="obtaining-the-system">Obtaining The System</h2>
+<p>The system comes in two parts.  The first is a C-based
+virtual machine <a href="https://github.com/interlisp/maiko">maiko</a>.</p>
+<p>The remainder of the system is OS / architecture-independent and can be found in
+the <a href="https://github.com/interlisp/medley">medley</a> repository.</p>
+<p>You can now download Medley Interlisp from a <a href="https://github.com/interlisp/medley/releases">release</a>
+without building anything; see <a href="https://github.com/Interlisp/medley#readme">medley README</a></p>
+<p>See <a href="https://github.com/Interlisp/maiko#readme">The Maiko README</a> for build instructions
+for Maiko, for systems for which there is no pre-built release.</p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-a71b9a81e0641bcb7430cf6ddd981b29">1.4.2 - Releases</h1>
+    
+	<p><a href="https://github.com/interlisp/medley/releases">Medley repo releases</a> contains the current Medley release. New releases are generated regularly as functionality is restored and extended.</p>
+<p>An alternative is to point your browser to <a href="https://online.interlisp.org/">Online Interlisp</a> and try our cloud hosted version of Medley Interlisp.</p>
+
+</div>
+
+
+
+    
+	
+  
 
     
 	
