@@ -6,8 +6,6 @@ aliases:
   - /medley/using/running/online/	
   - /medley/using/running/online
   - /running/online
-  - /running/online/usingonline
-  - /software/access-online
 ---
 
 Running Interlisp online is good for experimenting and introducing yourself to the environment. However, anything you create in the online environment should be treated as transient. If you're interested in developing and experimenting with Lisp programs, you will want to investigate other options. For a first foray, it is a good starting point.
