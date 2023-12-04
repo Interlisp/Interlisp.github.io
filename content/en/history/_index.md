@@ -16,5 +16,5 @@ Development of the system moved from Xerox PARC to a Xerox AI Systems division, 
 
 ### Detailed History
 
-A more extensive history of Interlisp can be found in the [Interlisp Timeline](/history/timeline). The [Interlisp Bibliography](/bibliography) has a wealth of historical material.
+A more extensive history of Interlisp can be found in the [Interlisp Timeline](timeline). The [Interlisp Bibliography](bibliography) has a wealth of historical material.
 
