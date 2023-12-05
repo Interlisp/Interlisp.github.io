@@ -15,7 +15,7 @@ Running Interlisp online is good for experimenting and introducing yourself to t
 ### Things to note when running online
 
 * **Browser compatibility:** Older browsers may not support the VNC software we use; it should give you a warning if this is detected.
-* **control-character conflicts:** different browsers may intercept user typing control-characters; for example, control-W often is used to close the entire Medley window. Running Medley "full screen" (using Chrome) avoids some of these.
+* **control-character conflicts:** different browsers may intercept user typing control-characters; for example, control-W often is used to close the entire Medley window. Running Medley "full screen" in Chrome avoids this redefinition.  See [browser-controls](browser-controls) for guides.
 * **No guarantees:** In general, Medley has NO WARRANTEE, but in particular we make no guarantees that private information will not be revealed, or that your files uploaded to your account will be held securely.
 * **Reliable Internet:** You need a solid net connection to our AWS server (currently in Ohio)
 
