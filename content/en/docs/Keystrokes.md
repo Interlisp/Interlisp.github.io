@@ -4,19 +4,19 @@ url: /doc/info/Keystrokes.html
 weight: 40
 ---
 The handling of keyboard and mouse clicks and gestures is different and varied within the Medley Interlisp environment. This chart shows common keystrokes.
-[Tabled of Keystrokes](https://docs.google.com/spreadsheets/d/1FOkrr62TtEhhY49m9U0T_6bvqSGRQt9fBRtMDw0YKtY/edit?usp=sharing) has the raw data.
+[Table of Keystrokes](https://docs.google.com/spreadsheets/d/1FOkrr62TtEhhY49m9U0T_6bvqSGRQt9fBRtMDw0YKtY/edit?usp=sharing) has the raw data.
 
 
 ## At an "exec" (i.e., the REPL)
 
-|character |action                        |
-|----------|------------------------------|
-|back      |delete the previous character|
-|ctrl-H    |  ""                         |
-|ctrl-M    |insert End-of-Line           |
-|ctrl-alt-J|move down                    |
-|ctrl-alt-L|move to start of line        |
-|ctrl-alt-Y|"get userexec" ????          |
+|character |action                          |
+|----------|--------------------------------|
+|back      |delete the previous character   |
+|ctrl-H    |  ""                            |
+|ctrl-M    |insert End-of-Line              |
+|ctrl-alt-J|move down                       |
+|ctrl-alt-L|move to start of line           |
+|ctrl-alt-Y|"get userexec" ????             |
 |ctrl-P    |interrupt typeout,set printlevel|
 
 
