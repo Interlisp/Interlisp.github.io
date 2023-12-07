@@ -5,7 +5,8 @@ aliases:
  - /hugo/documentation
  - /using-medley/
  - /medley/using/
-weight: 60
+ - /medley/using/docs/medley/orientation/
+ weight: 60
 type: docs
 ---
 
