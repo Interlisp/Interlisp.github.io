@@ -5,7 +5,6 @@ aliases:
  - /_pages/doc/build.html
  - /doc/build.html
  - /developing
- - /software/using/build/
 type: docs
 ---
 
@@ -34,7 +33,7 @@ Or, if you wish to start Medley up with a particular image file (SYSOUT):
 $ cd medley
 $ ./run-medley <SYSOUT-file-name>
 ```
-v
+
 ### Exiting The System
 
 The system may be exited from an Interlisp prompt by typing:

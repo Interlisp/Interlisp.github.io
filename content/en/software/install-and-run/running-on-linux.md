@@ -1,17 +1,24 @@
 ---
-title: Install and Run on Linux
+title: Install and Run on Linux (incl. WSL)
 weight: 20
 type: docs
 ---
 
-Medley can run on any Linux system that includes X Windows or otherwise has support for SDL. (This includes running on Windows under Windows System For Linux (WSL), which is explained in [Install and Run on Windows](running-on-win).
+Medley can run on any Linux system that includes X Windows, including Windows System For Linux (WSL) on Windows 11 and Windows 10 Build 19044+.
 
-It is recommended that the Linux system have a web browser installed. 
-A browser is not necessary to run Medley, but some new Medley features (e.g., displaying some user documentation) use an external browser. 
+We recommend the Linux system have a web browser installed.
+For WSL installations, the browser(s) on the Windows side will suffice.
+A browser is not strictly necessary to run Medley, but several features of the system (e.g., displaying some user documentation) will not work without an external browser installed.
 
-Medley can be installed on your Linux system in one of two configurations: *standard* and *local*.  
-* "Standard" installation will install Medley into system directories, and install any prerequisite packages. 
-* "Local" installation will install Medley into any user directory, but any prerequisite packages must be installed manually.
+Medley can be installed on your system in one of two configurations: *standard* and *local*.  
+
+* Standard installation will install Medley into system directories and install any prerequisite packages.  
+* Local installation will install Medley into any user directory but any prerequisite packages must be installed manually.
+
+On WSL, Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see 
+[here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements))
+or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).
+See [here](/software/install-and-run/running-on-win) for more information on running Medley on WSL.
 
 ## **Standard Installation \(Debian-based systems only\)**
 
@@ -20,7 +27,7 @@ Standard installations are currently supported only for Debian-based systems (i.
 In a standard installation, Medley is installed in system directories
 (specifically, /usr/local/interlisp). Support-like man pages and (a link to) the medley executable are also installed in standard system locations (e.g., /usr/local/man and /usr/local/bin).
 
-Standard installation is ideal for users who want to explore Medley (including its system code) or to develop applications built on top of Medley.  Standard installations are not good for users who want to modify the Medley system code, since that code is
+Standard installations are ideal for users who want to explore Medley (including its system code) or to develop applications built on top of Medley.  Standard installations are not good for users who want to modify the Medley system code, since that code is
 installed in protected locations.
 
 Standard installation uses `apt` to install a .deb package downloaded from
