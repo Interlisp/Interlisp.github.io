@@ -7,19 +7,19 @@ aliases:
  - /medley/using/running/running-on-win
 ---
 
-Running Medley on Windows can be done with some ease if you have WSL (Windows System for Linux).There's now the possibility a "native" install.
+Running Medley on Windows can be done with some ease if you have WSL (Windows System for Linux). There's now also the possibility a "native" install.
 
-The two ways result in similar Medley experiences, but differ in how Medley is installed and run, and how the Windows file system is seen, and possibly other problems (the "native" install is relatively new.)
+The two ways result in similar Medley experiences, but differ in how Medley is installed and run, how the Windows file system is seen, and possibly some unforseen challenges (the "native" install is relatively new).
 
-Medley "native" works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley 'native' is best for users who prefer to stay (almost) exclusively in the Windows environment.  
+Medley native works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley native is best for users who prefer to stay (almost) exclusively in the Windows environment.
  
-Medley on WSL and "native"' Medley both require 64-bit Windows 10/11.
+Medley on WSL and native Medley both require 64-bit Windows 10/11.
 
-### Running on Windows 'natively'**
+### Running on Windows natively**
 
-When running on Windows 'natively', Medley will be installed into a directory (of your choice).  This directory will contain an isolated copy of the Cygwin environment and a version of Medley that runs within that specific Cygwin environment.  This complexity, however, is largely hidden from the user and Medley behaves as if it is a native Windows app.
+When running on Windows natively, Medley will be installed into a directory (of your choice).  This directory will contain an isolated copy of the Cygwin environment and a version of Medley that runs within that specific Cygwin environment.  This complexity, however, is largely hidden from the user and Medley behaves as if it is a native Windows app.
 
-#### To install and run Medley 'native'
+#### To install and run Medley natively
 
 1. Download the Medley Windows installer from under the Windows 10/11 heading [here](https://online.interlisp.org/downloads/medley_downloads.html).
 
@@ -52,11 +52,11 @@ Documentation for the `<flags and options>` to the `medley` command can be found
 For first-time users: `medley --apps --interlisp --noscroll` or, equivalently, `medley -a -e -n` is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
 
 #### Notes
-1. One anomaly of the 'native' Windows install is that the file system from within Medley does not map directly to the file system as seen from the Windows Explorer.   Specifically, within Medley, the root (i.e., /) is mapped to ***install_dir***, the directory into which you installed 'native' Windows. 
+1. One anomaly of the native Windows install is that the file system from within Medley does not map directly to the file system as seen from the Windows Explorer.   Specifically, within Medley, the {DSK} and {UNIX} file system root (i.e., "{DSK}/" and "{UNIX}/") is mapped to [***install_dir***](#to-install-and-run-medley-native). Medley will find the Windows C: drive as {DSK}/c/ (or "{DSK}<c>").
 
-   Your Medley LOGINDIR will be  ***/home/&lt;name>/il***  (or ***&lt;install_dir>\home\\&lt;name>\il***  from the Windows perspective), where ***&lt;name>*** is your Windows username.  Medley code is stored in  ***/medley***  (or ***&lt;install_dir>\medley***  from the Windows perspective).
+Your Medley LOGINDIR will be  ***/home/&lt;name>/il***  (or ***&lt;install_dir>\home\\&lt;name>\il***  from the Windows perspective), where ***&lt;name>*** is your Windows username.  Medley code is stored in  ***/medley***  (or ***&lt;install_dir>\medley***  from the Windows perspective).
 
-   Also, from within Medley you can refer to any file in the Windows file system using  ***/&lt;drive letter>/&lt;windows path using "/" instead of "\\">***. Example:  ***C:\User\Frank\Downloads\foo*** in Windows will be  ***/c/User/Frank/Downloads/foo*** in Medley. (Note that this means that within Medley, ***/medley/foo*** and ***/c/&lt;install_dir>/medley/foo*** will be references to the same Windows file.)
+Also, from within Medley you can refer to any file in the Windows file system using  ***/&lt;drive letter>/&lt;windows path using "/" instead of "\\">***. Example:  ***C:\User\Frank\Downloads\foo*** in Windows will be  ***/c/User/Frank/Downloads/foo*** in Medley. (Note that this means that within Medley, ***/medley/foo*** and ***/c/&lt;install_dir>/medley/foo*** will be references to the same Windows file.)
 
 2. If you want to work with the Medley code using git, etc. You will probably find it easier to work with git within Cygwin rather than work with git in Windows. To work within the Medley-specific Cygwin, within a Powershell or Command window:
 

@@ -13,7 +13,7 @@ or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine alth
 
 For WSL installations, the browser(s) on the Windows side will suffice.
 
-There are release configurations fo Debian-based systems; i.e., systems that support dpkg), including Debian-based distros on WSL.
+There are release configurations for Debian-based systems; i.e., systems that support dpkg), including Debian-based distros on WSL.
 
 In the [Medley downloads site](https://online.interlisp.org/downloads/medley_downloads.html) get the release asset for WSL and your host machine type (X86_64, ARM64, ARMv7).
 

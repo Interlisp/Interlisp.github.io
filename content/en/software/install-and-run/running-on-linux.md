@@ -12,7 +12,7 @@ For Windows users of System For Linux (WSL) on Windows 11 and Windows 10 Build 1
 We recommend the Linux system have a web browser installed. 
 A browser is not strictly necessary to run Medley, but several features of the system (e.g., displaying some user documentation) will not work without an external browser installed.
 
-Medley can be installed on your linux system in one of two configurations: *standard* and *local*.  
+Medley can be installed on your Linux system in one of two configurations: *standard* and *local*.
 
 * Standard installation will install Medley into system directories and install any prerequisite packages.  
 * Local installation will install Medley into any user directory but any prerequisite packages must be installed manually.
