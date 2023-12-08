@@ -2,11 +2,14 @@
 title: Glossary
 aliases:
  - /medley/project/glossary
+ - /medley/project/glossary/
+ - /glossary/
+ - /project/glossary
 weight: 90
 type: docs
 ---
 
-The names “Medley” “Medley Interlisp” “Interlisp” “Interlisp.org” “Common Lisp” in ways that are confusing. We’re talking about a lot of different things. And these are mostly not terms that we’ve made up, they’re cemented in by the titles that have appeared in different publications.
+The names “Medley”, "Interlisp-D", “Interlisp.org”, “Common Lisp”, etc. are often used in confusing ways. We’re talking about a lot of different things that evolved over decades. And these are cemented in by the titles that have appeared in different publications. We hope this glossary of terms will help.
 
 ## Vocabulary and relationships
 

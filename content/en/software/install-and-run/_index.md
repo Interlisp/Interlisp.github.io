@@ -3,24 +3,31 @@ title: Install and Run
 aliases:
  - /medley/using/build
  - /medley/using/running
+ - /medley/using/build/building/
  - /developing
 weight: 10
 type: docs
 ---
 
-You can install Medley on a variety of different computer systems:
+You can install Medley on a variety of different computer systems. 
+
 
 ### Download and install from a release
   * [Running on Linux](./running-on-linux)
     * Packages for .deb distributions and source to build for others
   * [Running on Mac](./running-on-mac)
+    * for MacOS
   * [Running on Windows](./running-on-win)
-    * For Windows 10 or 11 with WSL1 or WSL2
+    * [Running on Windows with WSL](running-on-wsl]
 
-It's important to understand that the Medley and the Interlisp software it's built on are the same for any computer it runs on. What's different is Maiko, the virtual machine emulator that hosts Interlisp on a given computer system. It works a bit like the Java Virtual Machine -- and in fact Herb Jellinek, a member of the Interlisp team, went on to contribute to the Java project at Sun.
 
-If you'd like to run Medley on another OS or machine architecture like BSD or Android, you can (re)build Maiko from source and then run in a release or even build your own images (sysouts).
+Medley has a virtual machine architecture: there's a virtual machine implementation (called Maiko) and Lisp software that is compiled into instructions for it. The compiled code and memory images can be moved from one architecture to another -- only Maiko needs to be ported. Maiko has been substantially revised and modernized, so you can to run Medley on many different OSes and machine architectures.
 
-<!-- (Where does the link to the build topics fit into these pages?) -->
+See the [Maiko README](https://github.com/Interlisp/maiko#readme) and [Medley README](https://github.com/Interlisp/medley#readme) in their respective GitHub repository pages for more details on how to build and run them.
 
-See the [Medley README](https://github.com/Interlisp/medley) and [Maiko README](https://github.com/Interlisp/maiko) files at their repository pages for more details.
+The current systems we've tested or for which we have confirmed reports can be found [in the Maiko github repository](https://github.com/Interlisp/maiko/tree/master/bin), including:
+* OS:  FreeBSD, Linux, MacOS, Solaris, Windows (using WSL or CygWin)
+* CPU: arm7l, arm64, PowerPC, SPARC, i386, x86_64
+
+
+
