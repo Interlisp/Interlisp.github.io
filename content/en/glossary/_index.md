@@ -8,7 +8,7 @@ weight: 90
 type: docs
 ---
 
- The names “Medley”, "Interlisp-D", “Interlisp.org”, “Common Lisp”, etc. are used in ways that are confusing. We’re talking about a lot of different things that evolved over decades. And these are cemented in by the titles that have appeared in different publications.
+The names “Medley”, "Interlisp-D", “Interlisp.org”, “Common Lisp”, etc. are often used in confusing ways. We’re talking about a lot of different things that evolved over decades. And these are cemented in by the titles that have appeared in different publications. We hope this glossary of terms will help.
 
 ## Vocabulary and relationships
 
