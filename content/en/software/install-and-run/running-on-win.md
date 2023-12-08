@@ -7,38 +7,15 @@ aliases:
  - /medley/using/running/running-on-win
 ---
 
-dThere are two ways to run Medley on Windows:
- 1.  Run Medley on Windows System for Linux (WSL)
- 2.  Run the 'native' Medley Windows app
+Running Medley on Windows can be done with some ease if you have WSL (Windows System for Linux).There's now the possibility a "native" install.
 
-These two ways result in similar Medley experiences, but differ in how Medley is installed and run, and how the Windows file system is seen.
+The two ways result in similar Medley experiences, but differ in how Medley is installed and run, and how the Windows file system is seen, and possibly other problems (the "native" install is relativelynew.)
 
-Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment. Medley sees the WSL file system, and Windows files appear under "/mnt/c/", e.g., Windows download will be in "/mnt/c/Users/yourname/Downloads").
-
-Medley 'native' works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley 'native' is best for users who prefer to stay (almost) exclusively in the Windows environment.  
+Medley "native" works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley 'native' is best for users who prefer to stay (almost) exclusively in the Windows environment.  
  
-Medley on WSL and 'native' Medley both require 64-bit Windows 10/11.
+Medley on WSL and "native"' Medley both require 64-bit Windows 10/11.
 
-### **2.  Running on Windows with WSL**
-
-Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see [here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements)) or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).
-
-When running under WSL2, Medley can display in one of two ways: in an X-Window (using the X Windows server built-in to WSL2) or in a VNC-viewer Window.  Although the X-windows approach is simpler (i.e., behind the scenes), it does not scale well on high-DPI displays.  In VNC mode, the Medley window will scale according to the Windows Display Scale settings.  VNC mode is set using the `--vnc` flag on the `medley` command line.  In the absence of the --vnc flag,  X Windows mode will be used.  When running on WSL1, VNC mode is always used.
-
-#### To install and run Medley with WSL
-
-1. *Install WSL:* See [here](https://learn.microsoft.com/en-us/windows/wsl/install) for instructions on installing WSL.
-
-2. *Install Medley within WSL:* Once WSL is installed, open a terminal to WSL (e.g., by typing "wsl" in a Command or Powershell window) and follow the instructions for installing and running Medley on WSL and standard Linux that can be found [here](/software/install-and-run/running-on-linux). 
-
-3. *Run Medley:* Once Medley has been installed on WSL, you can run Medley from either a WSL terminal as described in the Running Medley on Linux instructions ([here](/software/install-and-run/running-on-linux)) or by typing `wsl medley <flags and options>` in a Command or Powershell window.
-
-    Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
-
-    For first-time users: `wsl medley --vnc --apps --interlisp --noscroll` or, equivalently, `wsl medley -v -a -e -n` is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
-
-
-### **3.  Running on Windows 'natively'**
+### Running on Windows 'natively'**
 
 When running on Windows 'natively', Medley will be installed into a directory (of your choice).  This directory will contain an isolated copy of the Cygwin environment and a version of Medley that runs within that specific Cygwin environment.  This complexity, however, is largely hidden from the user and Medley behaves as if it is a native Windows app.
 
@@ -48,7 +25,7 @@ When running on Windows 'natively', Medley will be installed into a directory (o
 
 2. Start the Medley installation app (e.g., by double clicking on the .exe just downloaded).
 
-     The installation app will ask for the directory in which to install Medley.  Any directory that you have read/write access to will suffice. (We will refer to this directory as the Medley ***install_dir***.)
+The installation app will ask for the directory in which to install Medley.  Any directory that you have read/write access to will suffice. (We will refer to this directory as the Medley ***install_dir***.)
 
     The installation app will then copy the Medley files into the specified directory. It will also run the Cygwin installer to install Cygwin into the specified directory as well.
 
