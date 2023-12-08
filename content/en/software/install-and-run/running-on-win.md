@@ -7,22 +7,17 @@ aliases:
  - /medley/using/running/running-on-win
 ---
 
-There are two ways to run Medley on Windows:
+dThere are two ways to run Medley on Windows:
  1.  Run Medley on Windows System for Linux (WSL)
- 2.  Run the 'native' Medley Windows app (which uses cygwin behind the scenes)
+ 2.  Run the 'native' Medley Windows app
 
-These two ways result in (nearly) identical Medley experiences, but differ in how Medley is installed and run.
+These two ways result in similar Medley experiences, but differ in how Medley is installed and run, and how the Windows file system is seen.
 
-Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment.
+Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment. Medley sees the WSL file system, and Windows files appear under "/mnt/c/", e.g., Windows download will be in "/mnt/c/Users/yourname/Downloads").
 
-Medley 'native' works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley 'native' is best for users who prefer to stay (almost) exclusively in the Windows environment.
+Medley 'native' works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley 'native' is best for users who prefer to stay (almost) exclusively in the Windows environment.  
  
 Medley on WSL and 'native' Medley both require 64-bit Windows 10/11.
-
-
-### **1.  Running Medley Online**
-
-Instructions on running Medley Online can be found [here](/software/access-online/)
 
 ### **2.  Running on Windows with WSL**
 
