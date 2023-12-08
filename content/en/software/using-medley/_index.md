@@ -1,12 +1,13 @@
 ---
 title: Using Medley
+weight: 60
+type: docs
 aliases:
+ - /medley/using/docs/medley/orientation/
  - /docs/
  - /hugo/documentation
  - /using-medley/
  - /medley/using/
-weight: 60
-type: docs
 ---
 
 Whether you're just getting started or refreshing your knowledge of Interlisp, we have a variety of documentation to help you along.
