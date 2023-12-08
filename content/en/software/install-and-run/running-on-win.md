@@ -9,7 +9,7 @@ aliases:
 
 Running Medley on Windows can be done with some ease if you have WSL (Windows System for Linux). There's now also the possibility a "native" install.
 
-The two ways result in similar Medley experiences, but differ in how Medley is installed and run, how the Windows file system is seen, and possibly some unforseen challenges (the "native" install is relatively new).
+The two ways result in similar Medley experiences, but differ in how Medley is installed and run, how the Windows file system is seen, and possibly some unforeseen challenges (the "native" install is relatively new).
 
 Medley native works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.  Medley native is best for users who prefer to stay (almost) exclusively in the Windows environment.
  
