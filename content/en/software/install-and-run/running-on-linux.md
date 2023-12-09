@@ -19,10 +19,10 @@ Medley can be installed on your Linux system in one of two configurations: *stan
 
 ## **Standard Installation \(Debian-based systems only\)**
 
-We are currently only building standard installations for Debian-based systems (i.e., systems that support dpkg).
+We are currently only building standard installations for Debian-based systems (i.e., systems that support dpkg). If you need something else, let us know.
 
-In a standard installation, Medley is installed in system directories
-(specifically, /usr/local/interlisp). Support-like man pages and (a link to) the medley executable are also installed in standard system locations (e.g., /usr/local/man and /usr/local/bin).
+In a standard Linux installation, Medley is installed in system directories
+under /usr/local/interlisp). Man pages and (links to) the medley executable are also installed in standard system locations (e.g., /usr/local/man and /usr/local/bin).
 
 Standard installations are ideal for users who want to explore Medley (including its system code) or to develop applications built on top of Medley.  Standard installations are not good for users who want to modify the Medley system code, since that code is installed in protected locations.
 
@@ -119,7 +119,7 @@ Also note that with local installations, `man medley` will not work.  However, a
 	ubuntu@oio:~$ tar -C <interlisp_directory> -xzf <tar_filepath>
 	```
 
-4. Run Medley
+4. [ ] Run Medley
 
 	In a terminal:
 
