@@ -119,7 +119,7 @@ Also note that with local installations, `man medley` will not work.  However, a
 	ubuntu@oio:~$ tar -C <interlisp_directory> -xzf <tar_filepath>
 	```
 
-4. [ ] Run Medley
+4. Run Medley
 
 	In a terminal:
 
