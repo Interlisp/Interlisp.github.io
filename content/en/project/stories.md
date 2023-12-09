@@ -3,7 +3,6 @@ title: Our Stories
 weight: 40
 type: docs
 ---
-Many of these weren from posts on one the Interlisp mailing lists, and others written expressedly. What are **you** using Medley for? 
 
 ### Blake McBride
 _Imagine finding an old car from the 1960s. It's been sitting in storage for decades, doesn't run, and looks like hell. You remember driving the car when you were young and how much fun you had with it. It had a number of features you enjoyed back then that don't exist anymore. You want to re-live the experience and be able to share it with future generations so that they can experience the same thing and learn from the lessons it taught._
@@ -62,7 +61,7 @@ _It was a real break when Nick had the time, about 3 years ago, to figure out wh
 
 _Along the way, I fixed a few other compatibility bugs to make it work better in the Mac environment, and I also did some modernization extensions (interface to the clipboard, moving and reshaping windows by dragging the title bar and corners instead of the silly pop-up menus)._
 
-_Another important modernization that I have worked on and has been discussed is to replace the XCCS character encodings and fonts with Unicode, so that text files at least can move back and forth between Medley and the OS. Especially because the XCCS fonts that we have are so incomplete, and a few other things that make it easy to interoperate with modern interface conventions as they evolved away from our intuitions in the 80s and 90s._
+_Another important modernization that I have worked on and has been discussed is to replace the XCCS character encodings and fonts with Unicode, so that text files at least can move back and forth between Medley and the OS. Especially because the XCCS fonts that we have are so incomplete. And a few other things that make it easy to interoperate with modern interface conventions as they evolved away from our intuitions in the 80s and 90s._
 
 _But none of this would change the core behavior of Interlisp, it would just reduce some of the barriers to entry and make it less confusing to move in and out._
 
