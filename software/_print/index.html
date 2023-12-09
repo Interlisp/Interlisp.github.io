@@ -311,8 +311,8 @@ A browser is not strictly necessary to run Medley, but several features of the s
 </ul>
 <h2 id="standard-installation-debian-based-systems-only"><strong>Standard Installation (Debian-based systems only)</strong></h2>
 <p>We are currently only building standard installations for Debian-based systems (i.e., systems that support dpkg).</p>
-<p>In a standard installation, Medley is installed in system directories
-(specifically, /usr/local/interlisp). Support-like man pages and (a link to) the medley executable are also installed in standard system locations (e.g., /usr/local/man and /usr/local/bin).</p>
+<p>In a standard Linux installation, Medley is installed in system directories
+under /usr/local/interlisp. Man pages and (links to) the medley executable are also installed in standard system locations (e.g., /usr/local/man and /usr/local/bin).</p>
 <p>Standard installations are ideal for users who want to explore Medley (including its system code) or to develop applications built on top of Medley.  Standard installations are not good for users who want to modify the Medley system code, since that code is installed in protected locations.</p>
 <p>Standard installation uses <code>apt</code> to install a .deb package downloaded from
 the <a href="https://online.interlisp.org/downloads/medley_downloads.html">Medley downloads site</a>.
@@ -434,7 +434,7 @@ installations of Medley that you would like to keep completely separate, then yo
     
 	<h1 id="pg-fde6fdd85b57172ab0e76ed71d8cf9ab">1.2 - Install and Run on Windows with WSL</h1>
     
-	<p>Medley on WSL involves installing and maintaining the WSL subsystem within Windows. And when installing and using Medley on WSL you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment. Medley sees the WSL file system, and Windows files appear under &ldquo;/mnt/c/&rdquo;, e.g., Windows download will be in &ldquo;/mnt/c/Users/yourname/Downloads&rdquo;).</p>
+	<p>Medley on WSL involves installing and maintaining the WSL subsystem within Windows. When installing and using Medley on WSL, you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment. Medley sees the WSL file system, and Windows files appear under &ldquo;/mnt/c/&rdquo;, e.g., Windows download will be in &ldquo;/mnt/c/Users/yourname/Downloads&rdquo;).</p>
 <p>Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see
 <a href="https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements">here</a>)
 or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).</p>
