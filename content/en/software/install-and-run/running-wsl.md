@@ -4,8 +4,10 @@ weight: 20
 type: docs
 ---
 
-
 Medley on WSL involves installing and maintaining the WSL subsystem within Windows. When installing and using Medley on WSL, you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment. Medley sees the WSL file system, and Windows files appear under "/mnt/c/", e.g., Windows download will be in "/mnt/c/Users/yourname/Downloads").
+=======
+Medley on WSL involves installing and maintaining the WSL subsystem within Windows. When installing and using Medley on WSL you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment. Medley sees the WSL file system, and Windows files appear under "/mnt/c/", e.g., Windows download will be in "/mnt/c/Users/yourname/Downloads").
+>>>>>>> Stashed changes
 
 Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see 
 [here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements))
