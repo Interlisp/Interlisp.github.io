@@ -1,13 +1,10 @@
 ---
-title: Install and Run on Windows with WSL
+title: Install and Run on Windows using WSL
 weight: 20
 type: docs
 ---
 
-Medley on WSL involves installing and maintaining the WSL subsystem within Windows. When installing and using Medley on WSL, you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment. Medley sees the WSL file system, and Windows files appear under "/mnt/c/", e.g., Windows download will be in "/mnt/c/Users/yourname/Downloads").
-=======
 Medley on WSL involves installing and maintaining the WSL subsystem within Windows. When installing and using Medley on WSL you are working within Linux. Some familiarity with Linux and the Linux command line is helpful.  Medley on WSL is best for users who are running WSL anyway and/or prefer working in a Linux environment. Medley sees the WSL file system, and Windows files appear under "/mnt/c/", e.g., Windows download will be in "/mnt/c/Users/yourname/Downloads").
->>>>>>> Stashed changes
 
 Medley will run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see 
 [here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements))
@@ -34,6 +31,7 @@ Aside from these two features, a non-WSL .deb package will install and run on WS
  `<deb_filepath>` will depend on whether the browser was started in Windows or in WSL:
  * If downloading to the standard Downloads folder, using a WSL-based browser `<deb_filepath>` will be in `~/Downloads`.  
 	* If using a Windows-based browser, `<deb_filepath>` will be in `/mnt/c/Users/<username>/Downloads`.
+
 
 
 

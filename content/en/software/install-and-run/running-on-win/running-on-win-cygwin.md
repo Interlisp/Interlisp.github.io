@@ -1,10 +1,7 @@
 ﻿﻿---
-title: Install and Run on Windows 10/11
+title: Install and Run on Windows "natively"
 weight: 40
 type: docs
-aliases:
- - /hugo/running/running-on-win/
- - /medley/using/running/running-on-win
 ---
 
 Running Medley on Windows can be done with some ease if you have WSL (Windows System for Linux). There's now also the possibility a "native" install.
