@@ -388,29 +388,56 @@ Aside from these two features, a non-WSL .deb package will install and run on WS
     
 	<h1 id="pg-dd44e894d8f3ae5f8b1525df82dc8a81">3 - Install and Run on MacOS</h1>
     
-	<h2 id="how-to-install"><strong>How to Install</strong></h2>
+	<style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
+<h2 id="prerequisite-install-xquartz"><strong>Prerequisite: Install XQuartz</strong></h2>
+<p>Before installing and running Medley on your Mac, you will need to download and install XQuartz - an open-source X11 Windows server for the Mac.  You can download the latest XQuartz .pkg from  <a href="https://xquartz.org">XQuartz.org</a> and install it using the MacOS installer.</p>
+<p>If you do not have a three-button mouse on your Mac, you will need to set <code>Emulate three button mouse</code> in the XQuartz preferences.</p>
+<blockquote>
+<p>To do so, start XQuartz (e.g., by double clicking the XQuartz icon within Launchpad). Select XQuartz-&gt;Preferences from the menu bar. In the Preferences dialog, select the Input tab and then check the <em>Emulate three button mouse</em> option.</p>
+</blockquote>
+<h2 id="install-medley"><strong>Install Medley</strong></h2>
+<p>Medley releases on MacOS are distributed as a .zip file.  The .zip file contains universal binaries so that the same file can be used for either Intel or Apple Silicon machines.</p>
+<p>To install Medley:</p>
 <ol>
 <li>
-<p>Get the Installer
-Download the MacOS installer from <a href="https://github.com/Interlisp/medley/releases/latest">the latest release page</a>.</p>
+<p>Download the latest release .zip from the Medley latest releases page <a href="https://online.interlisp.org/downloads/medley_downloads.html">(here)</a> , under the heading &ldquo;MacOS &hellip;&rdquo;.</p>
+<blockquote>
+<p>You can also download the latest release .zip as well as any prior release .zips from the Medley GitHub site <a href="https://github.com/Interlisp/medley/releases">(here)</a>.  In the Assets for any given release, the MacOS .zip file will be entitled <em>medley-full-macos-universal&hellip;zip</em></p>
+</blockquote>
 </li>
 <li>
-<p>Run Medley
-Unzip the <code>medley-full-macos-universal...zip</code> file on your computer. Run the <code>medley/run-medley</code> script in the unzipped folder to start Medley.</p>
+<p>Drag the downloaded <em>medley-full-macos-universal&hellip;zip</em> file (which MacOS treats as an unzipped folder) from the Downloads folder into any folder of your choosing.  For the purposes of these instructions, we will call this the <em>&lt;install_folder&gt;</em>.  And the file/folder just dragged into the &lt;install_foler&gt;, we will call the <em>&lt;medley_folder&gt;</em>.</p>
+<blockquote>
+<p>You may also want to rename the &lt;medley_folder&gt; from <em>medley-full-macos-universal&hellip;</em> to something more manageable - e.g., <em>medley-latest</em>.</p>
+</blockquote>
+</li>
+<li>
+<p>In a Terminal window, you will need to remove the quarantine attributes from the executable files by executing the following command:
+<code>xattr -d com.apple.quarantine &lt;install_folder&gt;/&lt;medley_folder&gt;/maiko/darwin.universal/lde*</code></p>
+<p>For example:</p>
 </li>
 </ol>
-<h2 id="install-medley-from-release-build-maiko">install medley from release, build maiko</h2>
-<p>Need XCode
-Need XQuartz installed before you build maiko (includes XClient libraries).</p>
-<ul>
-<li>Requirements</li>
-</ul>
-<ul>
-<li>Intel or M1/M2 Macintosh (or even older)</li>
-<li>XQuartz Macintosh X server for your OS/mac vintage)</li>
-</ul>
-<h2 id="xquartz-settings">XQuartz settings</h2>
-<p>emulate 3-button mouse</p>
+<pre tabindex="0"><code>ssd@Mac-mini ~ % xattr -d com.apple.quarantine ~/il/medley-latest/maiko/darwin.universal/lde*
+</code></pre><h2 id="run-medley"><strong>Run Medley</strong></h2>
+<p>On MacOS, Medley must be started from a Terminal window.</p>
+<p>At the Terminal prompt, you need to execute the  command <code>&lt;install_folder&gt;/&lt;medley_folder&gt;/medley/medley</code>.</p>
+<blockquote>
+<p>Note: it is usually easiest to first <code>cd \&lt;install_folder&gt;/\&lt;medley_folder&gt;/medley</code> and then just execute <code>./medley</code></p>
+</blockquote>
+<p>For example:</p>
+<pre tabindex="0"><code>ssd@Mac-mini ~ % cd ~/il/medley-latest/medley
+ssd@Mac-mini medley % ./medley -a -e -n
+</code></pre><p>Note that the first time you run it, Medley may take 10-15 seconds to start up as it starts the XQuartz X Windows server (assuming that it is not already running).</p>
+<blockquote>
+<p>You can optionally start the XQuartz server manually before starting Medley.  It will take 10-15 seconds to start up and then display an Xterm window in the upper-left corner of the screen.  You can just close this Xterm window.</p>
+</blockquote>
+<p>There are many options to the <code>medley</code> command.  For a brief overview, run <code>./medley --help</code>. For a more complete description, run <code>./medley --man</code> or click
+<a href="https://online.interlisp.org/downloads/man_medley.html">here</a>.</p>
+<p>For first-time users: <code>./medley -a -e -n</code> is a good starting	point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.  It will start with a Interlisp Exec window (instead of the Xerox Common Lisp Exec window).</p>
+<h4 id="notes">Notes:</h4>
+<blockquote>
+<p>By default, <code>medley</code> will create a directory in <em>$HOME/il</em>.  This will be used by the Medley system as its <em>LOGINDIR</em>.  Medley will start up with <em>LOGINDIR</em> as its current connected directory. 	It will load the personal init file (if any) from <em>LOGINDIR</em>/INIT or <em>LOGINDIR</em>/INIT.LCOM.  Finally,  Medley will use <em>LOGINDIR</em>/vmem/ to store its virtual memory file(s).  The location of <em>LOGINDIR</em> can be changed using the <code>--logindir</code> option to <code>medley</code>.</p>
+</blockquote>
 
 </div>
 
