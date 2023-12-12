@@ -10,17 +10,19 @@ aliases:
 ---
 ## What is the Medley Interlisp Project?
 
-The Medley Interlisp Project was created to revive Medley Interlisp.
+The Medley Interlisp Project was created to revive the "Interlisp experience" by creating an environment that could be used by (and might even be useful for) modern users. Starting from the 20-year-old sources for the not-quite-released Medley 3.5 version of Interlisp, we have made good progress adapting Medley to work in the current environment -- open source, GitHub integration, improving Common Lisp support, running on a wide variety of platforms -- but there is much more to be done.
 
-Because Interlisp has been around a long time, with multiple iterations, you might find the multitude of names for the Interlisp language and related companies confusing. To assist, we have created a [glossary of terms](glossary) used on this website.
+Because of the long history of naming and renaming of groups, software, environments, machines, languages, we have created a [glossary of terms](glossary).
 
-## What are the origins of Interlisp? Why do we care?
+## What are the origins of Medley and Interlisp?
 
-The 1970s and 80s saw major advances in computing and Human-Computer interaction.  Interlisp was one of the many experimental systems developed during these heady times.  It represents an early example of a system with a GUI (Graphical User Interface), and IDE (Integrated Development Environment).
+The 1970s and 80s saw major advances in computing and Human-Computer interaction.  At Xerox PARC there were four IDEs developed with different approaches: Smalltalk, with an object-oriented system; Interlisp, for researchers in AI and exploratory development; Cedar/Mesa, with a strongly typed language for software engineering. They each had a different model for source code management, development and versioning. In common they shared an infrastructure and vision computing and distributed systems, with support for Ethernet networking, printing, file servers and network protocols. Each environment had its own Virtual Machine instruction set tuned for the language "all the way down", in a single address space, in a way that opened the systems to customization.
 
-Within the Xerox PARC environment, it was an early example of a network enabled machine supporting email, file sharing, printing and more.  In essence it was a forerunner of today's computing systems.
+There were several different [D-machines](http://www.bitsavers.org/pdf/xerox/parc/Exploring_the_Ethernet_with_Mouse_and_Keyboard_May81.pdf): Dorado, Dolphin, Dandelion, Daybreak, and others. Each environment had its own microcode to implement its instruction set; once loaded, each would take over the machine -- there was no OS. Each had large-screen black and white CRTs for a graphical user interface, mouse and cursor pointer, high quality fonts.
 
-Medley Interlisp represents the last Xerox Interlisp release.  Medley continued Xerox PARC's experimentation with developing systems for [D-machines](http://www.bitsavers.org/pdf/xerox/parc/Exploring_the_Ethernet_with_Mouse_and_Keyboard_May81.pdf). A family of computers (Dorado, Dolphin, Dandelion, Daybreak) resulted. The project was later spun out to a company called Envos, which then turned into Venue.
+Xerox marketed the Interlisp-D enviornment primarily to the AI community world wide, starting in 1980, from XEOS to Xerox Artificial Intelligence Systems, then a spin-out company called Envos, and then further development and porting to other systems by a company called Venue, until development tapered off. Along the way, the name changed from Interlisp-D to Medley.
+
+We started with sources from Venue for a not-quite-finished release of what was to be Medley 3.5.
 
 ## What are we trying to accomplish?
 
