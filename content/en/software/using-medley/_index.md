@@ -5,6 +5,7 @@ type: docs
 aliases:
  - /medley/using/docs/medley/orientation/
  - /docs/
+ - /doc/info/Using
  - /hugo/documentation
  - /using-medley/
  - /medley/using/

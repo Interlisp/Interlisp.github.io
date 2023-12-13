@@ -1,5 +1,5 @@
 ---
-title: Project
+title: The Medley Interlisp Project: Reviving a Groundbreaking System
 weight: 2
 type: docs
 aliases:
@@ -8,19 +8,6 @@ aliases:
  - /medley/about/
  - /medley/other/
 ---
-## What is the Medley Interlisp Project?
-
-The Medley Interlisp Project was created to revive Medley Interlisp.
-
-Because Interlisp has been around a long time, with multiple iterations, you might find the multitude of names for the Interlisp language and related companies confusing. To assist, we have created a [glossary of terms](glossary) used on this website.
-
-## What are the origins of Interlisp? Why do we care?
-
-The 1970s and 80s saw major advances in computing and Human-Computer interaction.  Interlisp was one of the many experimental systems developed during these heady times.  It represents an early example of a system with a GUI (Graphical User Interface), and IDE (Integrated Development Environment).
-
-Within the Xerox PARC environment, it was an early example of a network enabled machine supporting email, file sharing, printing and more.  In essence it was a forerunner of today's computing systems.
-
-Medley Interlisp represents the last Xerox Interlisp release.  Medley continued Xerox PARC's experimentation with developing systems for [D-machines](http://www.bitsavers.org/pdf/xerox/parc/Exploring_the_Ethernet_with_Mouse_and_Keyboard_May81.pdf). A family of computers (Dorado, Dolphin, Dandelion, Daybreak) resulted. The project was later spun out to a company called Envos, which then turned into Venue.
 
 ## What are we trying to accomplish?
 
@@ -40,12 +27,6 @@ We have done a lot of cleanup and adaptation to make Interlisp Medley usable aga
 
 We've also been working on integration of the Interlisp style development with git and GitHub, Docker and other modern components.
 
-<div class="mx-auto">
- <a class="btn btn-lg btn-danger mr-3 mb-4" href="">
-  How do I access and use Medley?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
- </a>
-</div>
-
 ## Who is involved?
 
 We are some of the original developers and users of the system 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](partners). And with you!
@@ -56,7 +37,7 @@ We are some of the original developers and users of the system 30 years ago, joi
  </a>
 </div>
 
-## Check out this presentation for more information
+## Why?
 
 A presentation from the 2020 Remote Chaos Experience conference highlights some of the interesting aspects of Interlisp.  
 
