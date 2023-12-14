@@ -1,5 +1,5 @@
 ---
-title: The Medley Interlisp Project: Reviving a Groundbreaking System
+Title: The Medley Interlisp Project
 weight: 2
 type: docs
 aliases:
@@ -8,6 +8,7 @@ aliases:
  - /medley/about/
  - /medley/other/
 ---
+#  Reviving a Groundbreaking System
 
 ## What are we trying to accomplish?
 
@@ -15,15 +16,13 @@ Our aim is to allow Medley to "live again": to be useable enough on modern syste
 
 We also hope to provide a platform for revival of systems developed using Interlisp., including 1980's work in hypertext (Notecards), desktop management (Rooms), and object-oriented programming (LOOPS).
 
+The lessons from the Interlisp interactive environment is likely more relevant in today's "devops" environment -- managing large networks of independent microservices, with no single serialization of the components quite comprehensible. Development in this model has been called "repl-driven development": you are working in the 'live' environment (or a copy) making changes without a separate, lengthy edit-compile-load-restart.
+
 ## What are our challenges?
 
-Being compatible with modern systems requires compensating for changes input and output channels.  Mouse, cursor, scroll wheels need to function in the expected way. Support for the plethora of different keyboard layouts available today requires rearchitecting some of the lowest levels of stream handling. The replacement of the "XCCS" (Xerox Character Code Standard) with Unicode isn't complete. Today's screens are bigger. CPUs are multi-threading, Big-endian 64-bit character codes. Three-button mouse vs. one button. Subtle bugs because of change of address space.
+"Reviving" old software requires some judgment of tradeoffs. There are often disagreements. Backward compatibility, fixing what seems to be a bug might cause other problems. For more on the work we're doing, see [Reviving Medley](reviving) and [Status](status).
 
-We also want to restore and present earlier versions of Interlisp, for the student of computer history. 
-
-We have done a lot of cleanup and adaptation, to make Medley usable again in the modern world. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or in the cloud, using a web browser. 
-
-We have also developed tools for managing the GitHub workflow, to integrate the Interlisp style development with git and GitHub, Docker and other modern components.
+We are trying to address this conflict by also making older versions of Interlisp available. There is an emulator for the Xerox 1108 (Dandelion) D-machine that will run the old software unchanged, it is slow and cumbersome; not something you would want to use for day-to-day work. 
 
 ## Who is involved?
 
