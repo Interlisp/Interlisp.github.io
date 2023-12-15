@@ -56,7 +56,7 @@ These documents were converted from Medley's internal format into PDFs. Watch ou
 
 - [Medley Internal Documentation PDF](https://interlisp.org/documentation/All-Medley-PDFs.pdf)
 - [Notecards Documentation PDF](https://interlisp.org/documentation/All-Notecards-PDFs.pdf)
-- [LOOPS Documentation PDF](https://interlisp.org/documentation/All-LOOPS-PDFs.pdf)
+- [LOOPS Documentation PDF](https://interlisp.org/documentation/All-Loops-PDFs.pdf)
 
 
 ### Interlisp Books
