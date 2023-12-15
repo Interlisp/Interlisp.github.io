@@ -12,7 +12,7 @@ This outlines some of the areas of work.
 
 We started with the most recent working files from Venue sources. This was not a finished and tested release, but rather a work in progress, nearly complete, labeled Medley 3.5. (The last release by Venue was called Medley 2.01.)
 
-Among other improvements, Medley 3.5 increased the address space by a factor of 16.  But the changes to addres space affects some highly optimized code which took advantage of short-cuts.
+Among other improvements, Medley 3.5 increased the address space by a factor of 16.  But the changes to the address space affects some highly optimized code which took advantage of short-cuts.
 
 ## Common Lisp and Interlisp file manager
 
