@@ -1,5 +1,5 @@
 ---
-title: Project
+Title: The Medley Interlisp Project
 weight: 2
 type: docs
 aliases:
@@ -8,55 +8,36 @@ aliases:
  - /medley/about/
  - /medley/other/
 ---
-## What is the Medley Interlisp Project?
-
-The Medley Interlisp Project was created to revive Medley Interlisp.
-
-Because Interlisp has been around a long time, with multiple iterations, you might find the multitude of names for the Interlisp language and related companies confusing. To assist, we have created a [glossary of terms](glossary) used on this website.
-
-## What are the origins of Interlisp? Why do we care?
-
-The 1970s and 80s saw major advances in computing and Human-Computer interaction.  Interlisp was one of the many experimental systems developed during these heady times.  It represents an early example of a system with a GUI (Graphical User Interface), and IDE (Integrated Development Environment).
-
-Within the Xerox PARC environment, it was an early example of a network enabled machine supporting email, file sharing, printing and more.  In essence it was a forerunner of today's computing systems.
-
-Medley Interlisp represents the last Xerox Interlisp release.  Medley continued Xerox PARC's experimentation with developing systems for [D-machines](http://www.bitsavers.org/pdf/xerox/parc/Exploring_the_Ethernet_with_Mouse_and_Keyboard_May81.pdf). A family of computers (Dorado, Dolphin, Dandelion, Daybreak) resulted. The project was later spun out to a company called Envos, which then turned into Venue.
+#  Reviving a Groundbreaking System
 
 ## What are we trying to accomplish?
 
-Our aim is to allow *Medley Interlisp* to "live again": usable on modern systems, sufficient to allow someone to develop some code and experience what it was like to use this groundbreaking system. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle. 
+Our aim is to allow Medley to "live again": to be useable enough on modern systema that someone could develop some code and experience what it was like to use this groundbreaking system. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle. 
 
-We hope to provide a platform for demonstration of early experiments of hypertext (Notecards), Desktop management (Rooms), Object-oriented programming (LOOPS), as well as Interlisp itself.
+We also hope to provide a platform for revival of systems developed using Interlisp., including 1980's work in hypertext (Notecards), desktop management (Rooms), and object-oriented programming (LOOPS).
+
+The lessons from the Interlisp interactive environment is likely more relevant in today's "devops" environment -- managing large networks of independent microservices, with no single serialization of the components quite comprehensible. Development in this model has been called "repl-driven development": you are working in the 'live' environment (or a copy) making changes without a separate, lengthy edit-compile-load-restart.
 
 ## What are our challenges?
 
-Since we aim to revive Medley Interlisp to support not just a demo or test drive, but actual use as a development and learning tool, we need to overcome a number of compatibility problems with current systems and interfaces.
+"Reviving" old software requires some judgment of tradeoffs. There are often disagreements. Backward compatibility, fixing what seems to be a bug might cause other problems. For more on the work we're doing, see [Reviving Medley](reviving) and [Status](status).
 
-We also want to restore and present earlier versions of Interlisp, for the student of computer history. For more information go to [Interlisp and Software Preservation Network](https://www.softwarepreservationnetwork.org/Interlisp/).
-
-## What have we done so far?
-
-We have done a lot of cleanup and adaptation to make Interlisp Medley usable again in the modern world. Among other developments, you can now run Medley Interlisp on many OS and hardware configurations, or in the cloud, using a web browser.
-
-We've also been working on integration of the Interlisp style development with git and GitHub, Docker and other modern components.
-
-<div class="mx-auto">
- <a class="btn btn-lg btn-danger mr-3 mb-4" href="">
-  How do I access and use Medley?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
- </a>
-</div>
+We are trying to address this conflict by also making older versions of Interlisp available. There is an emulator for the Xerox 1108 (Dandelion) D-machine that will run the old software unchanged, it is slow and cumbersome; not something you would want to use for day-to-day work. 
 
 ## Who is involved?
 
-We are some of the original developers and users of the system 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](partners). And with you!
+We are [some of the original developers and users of Interlisp](/project/credits) 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](partners). And with you!
 
 <div class="mx-auto">
  <a class="btn btn-lg btn-danger mr-3 mb-4" href="">
   How do I get involved?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
- </a>
+</a>
 </div>
 
-## Check out this presentation for more information
+## Why?
+
+People have [different stories](stories) for why they are interested.
+
 
 A presentation from the 2020 Remote Chaos Experience conference highlights some of the interesting aspects of Interlisp.  
 
