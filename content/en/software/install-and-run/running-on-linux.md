@@ -4,10 +4,9 @@ weight: 20
 type: docs
 ---
 
-Medley can run on any Linux system that includes X Windows and a
-number of others.
+Medley runs on most any Linux system that includes X Windows.
 
-For Windows users of System For Linux (WSL) on Windows 11 and Windows 10 Build 19044+, there are [separate instructions](running-on-wsl).
+Note that for Windows users of System For Linux (WSL) on Windows 11 and Windows 10 Build 19044+, there are [separate instructions](./running-on-wsl).
 
 We recommend the Linux system have a web browser installed. 
 A browser is not strictly necessary to run Medley, but several features of the system (e.g., displaying some user documentation) will not work without an external browser installed.
