@@ -7,11 +7,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/project/</loc>
+    <loc>https://interlisp.org/software/Using.html</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/Using.html</loc>
+    <loc>https://interlisp.org/project/</loc>
   </url>
   
   <url>
@@ -24,10 +24,6 @@
   
   <url>
     <loc>https://interlisp.org/software/install-and-run/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/project/news/</loc>
   </url>
   
   <url>
@@ -116,6 +112,10 @@
   
   <url>
     <loc>https://interlisp.org/project/credits/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/project/reviving/</loc>
   </url>
   
   <url>
