@@ -31,7 +31,7 @@ We are [some of the original developers and users of Interlisp](/project/credits
 <div class="mx-auto">
  <a class="btn btn-lg btn-danger mr-3 mb-4" href="">
   How do I get involved?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
-a </a>
+</a>
 </div>
 
 ## Why?
