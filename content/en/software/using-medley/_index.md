@@ -5,10 +5,12 @@ type: docs
 aliases:
  - /medley/using/docs/medley/orientation/
  - /docs/
+ - /doc/info/Using.html
  - /doc/info/Using
  - /hugo/documentation
  - /using-medley/
  - /medley/using/
+ - /medley/using/docs/medley/orientation/
 ---
 
 Whether you're just getting started or refreshing your knowledge of Interlisp, we have a variety of documentation to help you along.
