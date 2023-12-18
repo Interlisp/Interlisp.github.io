@@ -1,4 +1,8 @@
-# 2023 Medley Interlisp Project Annual Report
+---
+title: 2023 Medley Interlisp Project Annual Report
+weight: 1
+type: docs
+---
 
 ### **Overview**
 
@@ -21,7 +25,7 @@ In 2023, we improved the initial version of online.interlisp.org and began to at
 
 **Platforms, Releases, Builds, Automation, Installers**
 
-* **Support for SDL2:** We added to Medley support for SDL2 which can now be built from source. Further work is needed to provide appropriate binaries in the software releases. The SDL2 backend is useful running Medley on operating systems where X-Windows is not directly available, such as Windows, or which, being based on Wayland, may degrade the performance of X-Windows applications like Medley. Examples of the latter are Raspberry Pi OS Bookworm and later and ChromeOS.
+* **Support for SDL2:** We added to Medley support for SDL2 which can now be built from source. Further work is needed to provide appropriate binaries in the software releases. The SDL2 backend is useful for running Medley on operating systems where X-Windows is not directly available, such as Windows, or which, being based on Wayland, may degrade the performance of X-Windows applications like Medley. Examples of the latter are Raspberry Pi OS Bookworm and later and ChromeOS.
 * **Support for running ‘natively’ on Windows:** Previously, the only way to run Medley on Windows was via the Medley Docker container or via Windows System for Linux. Both of these require significant setup and expertise that are not common for Windows users. This year, we developed ‘native’ Windows support for Medley (based on Cygwin and SDL2) that is much more compatible with the ordinary setup and practices of Windows users.
 * **Better Support for AArch64:** We extended the build scripts of the Maiko virtual machine to compile and run Medley on the AArch64 platform under Raspberry Pi OS Bookworm and later. Now Maiko can generate loadups on this platform too.
 * **Build and Release Automation**: We completed the task of automating in GitHub Actions the build and release process for all major components of Medley including Maiko, Medley, Notecards and Online. These automations were synchronized, to the extent possible with the corresponding manual build, loadup and release tasks. Automated releases were set to run Weekly.
@@ -68,7 +72,7 @@ We are continuing to spread information about the availability of Medley through
 
 As the work proceeds we expand our resources and adjust our processes to better achieve the project goals. In 2023 our team grew and we devised ways of keeping track of the work on the GitHub repositories.
 
-* Three new regular contributors joined the team, Matt Heffron, Paolo Amoroso and Andrew Sengul. Matt joined the team as a former Medley and Interlisp user and developer, and contributor to various projecta. Paolo exercised Medley as a user, reporting any bugs and issues that needed attention, and reviewed the existing documentation. Andrew, who came to the project as a Lisp developer, undertook a major redesign of the project site, restructuring it according to the project goals and making it easier to find the information users need, as well as clarifying and expanding the content. He also investigated how the development of Interlisp and other Lisps can proceed. As part of this work, for example, he started checking out the Medley test harness in view of using it again for testing system builds.
+* Three new regular contributors joined the team, Matt Heffron, Paolo Amoroso and Andrew Sengul. Matt joined the team as a former Medley and Interlisp user and developer, and contributor to various projects. Paolo exercised Medley as a user, reporting any bugs and issues that needed attention, and reviewed the existing documentation. Andrew, who came to the project as a Lisp developer, undertook a major redesign of the project site, restructuring it according to the project goals and making it easier to find the information users need, as well as clarifying and expanding the content. He also investigated how the development of Interlisp and other Lisps can proceed. As part of this work, for example, he started checking out the Medley test harness in view of using it again for testing system builds.
 * In our GitHub repositories we began tagging issues and pull requests with a set of projects that will help us track the progress of the work and ensure it fulfills the project goals.
 
 ### **Looking Ahead**
