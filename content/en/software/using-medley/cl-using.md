@@ -1,5 +1,5 @@
 ---
-title: Interlisp Basics for Common Lisp Programmers
+title: Interlisp Basics for Common Lisp users
 url: /software/using-medley/cl-using/
 type: docs
 weight: 20
@@ -8,7 +8,7 @@ aliases:
 ---
 ## Interlisp Basics for Common Lisp users
 
-If you are familiar with Common Lisp, this guide includes some basics.
+If you are familiar with Common Lisp, this guide helps with some unexpected features.
 
 ## Interlisp
 
