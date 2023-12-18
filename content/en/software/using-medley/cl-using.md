@@ -29,7 +29,7 @@ What I Mean).  When code would ordinarily cause an error to occur,
 DWIM first  attempts to correct the error, e.g., by spelling correction
 on variables and function names. In many situations DWIM will ask the
 user to approve the change, but in some situations (like evaluating
-a typed in variable using the wrong case-shift).DWIM will just
+a typed in variable using the wrong case-shift). DWIM will just
 make the change, printing out that what it did.
  It may appear that the case doesn't matter - but it does.
 
