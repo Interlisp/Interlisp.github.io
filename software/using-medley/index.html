@@ -111,8 +111,8 @@ if (!doNotTrack) {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-softwareusing-medley-li">
   <a href="../../software/using-medley/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id="m-softwareusing-medley"><span class="td-sidebar-nav-active-item">Using Medley</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareusinghtml-li">
-  <a href="../../software/Using.html" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareusinghtml"><span class="">The Basics of Interlisp</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareusing-medleycl-using-li">
+  <a href="../../software/using-medley/cl-using/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareusing-medleycl-using"><span class="">Interlisp Basics for Common Lisp users</span></a>
 </li>
   </ul>
 </li>
@@ -145,7 +145,7 @@ if (!doNotTrack) {
       <ul>
         <li><a href="#getting-started">Getting started</a></li>
         <li><a href="#unsorted-documentation-content">Unsorted documentation content</a></li>
-        <li><a href="#medley-interlisp-references">Medley Interlisp References</a></li>
+        <li><a href="#medley-references">Medley References</a></li>
         <li><a href="#interlisp-books">Interlisp Books</a></li>
       </ul>
     </li>
@@ -219,35 +219,37 @@ We are in the process of organizing this documentation.</p>
 <p>The introductory list gets you started using Medley. The advanced list builds from there and covers programming the system and mastering its tools.</p>
 <p>Most of these resources were created decades ago when Medley was a research system and a commercial product, so they may be incomplete or out of date. We will eventually update them.</p>
 <h4 id="introductory-material">Introductory material</h4>
+<p>Items marked with  are at temporary locations, likely to change.</p>
 <ol>
-<li><a href="../../software/Using.html">The Basics of Interlisp</a>. Essential information on the Interlisp language and the differences with Common Lisp.</li>
-<li><a href="https://interlisp.org/documentation/Medley-Primer.pdf">Medley for the Novice</a> (also known as Medley Primer).  An introductory guide to the basics of Medley such as executing commands, using menus and files, manipulating windows, editing and saving Lisp code, using the development tools, and more. Read it in full. The code in chapter 20 &ldquo;Free Menus&rdquo; doesn&rsquo;t work and some illustrations are missing.</li>
+<li><a href="../../software/using-medley/cl-using">Interlisp Basics for Common Lisp</a>.
+If you are familiar with Common Lisp, this guide points out some differences.</li>
+<li><a href="../../documentation/Medley-Primer.pdf">Medley for the Novice</a> (also known as Medley Primer).  An introductory guide to the basics of Medley such as executing commands, using menus and files, manipulating windows, editing and saving Lisp code, using the development tools, and more. Read it in full. The code in chapter 20 &ldquo;Free Menus&rdquo; doesn&rsquo;t work and some illustrations are missing.</li>
 <li><a href="https://drive.google.com/file/d/12LW5zCZauJvC63NRMJhjNv5qJkuuCflb/view?usp=sharing">SEdit — The Lisp Editor</a>. The manual of SEdit, the default Lisp code editor.</li>
 <li><a href="https://interlisp.org/pub-pdfs/lispcourse/lispcourse.pdf">LispCourse notes</a>. The notes of a beginner course on the Interlisp environment that goes from the basics of interacting with the system to programming in Lisp. Highly recommended. Skip the sections on printing and the network as modern Medley doesn&rsquo;t fully implement the described functionality. The formatting of the text is partially broken and some sections are missing.</li>
 </ol>
 <h4 id="advanced-material">Advanced material</h4>
 <ol>
-<li><a href="https://interlisp.org/documentation/1986-interlisp-language-book-1.pdf">INTERLISP: The Language and Its Usage</a>. An extensive book on the Interlisp language, a prerequisite for accessing the full functionality of Medley from Lisp. Some of the material is about early Interlisp versions that differ from Medley. You may skip the chapters on the Interlisp TTY editor, DWIM, and Conversational Lisp (CLISP).</li>
-<li><a href="https://interlisp.org/documentation/IRM.pdf">Medley Language Reference</a> (also known as Interlisp Reference Manual). The reference documentation on the Interlisp language, the application platform, and the development environment. The chapters on the Interlisp language are highly recommended. You may skip the chapters on DWIM and CLISP. Some chapters are duplicated, others are missing.</li>
-<li><a href="https://interlisp.org/documentation/2021-interlisp-book-3.pdf">Medley Interlisp: Interactive Programming Tools</a>. Using the development tools and applications. Skip the chapter on DEdit as the tool was replaced by SEdit, the current default Lisp code editor.</li>
+<li><a href="../../documentation/1986-interlisp-language-book-1.pdf">INTERLISP: The Language and Its Usage</a>. An extensive book on the Interlisp language, a prerequisite for accessing the full functionality of Interlisp. Some of the material prepared in 1986 about earlier Interlisp versions and differs from Medley. You may skip the chapters on the Interlisp TTY editor, DWIM, and Conversational Lisp (CLISP).</li>
+<li><a href="../../documentation/IRM.pdf">Medley Language Reference</a> (also known as Interlisp Reference Manual). The reference documentation on the Interlisp language, the application platform, and the development environment. The chapters on the Interlisp language are highly recommended. You may skip the chapters on DWIM and CLISP. Some chapters are duplicated, others are missing.</li>
+<li><a href="../../documentation/2021-interlisp-book-3.pdf">Medley Interlisp: Interactive Programming Tools</a>. Using the development tools and applications. Skip the chapter on DEdit as the tool was replaced by SEdit, the current default Lisp code editor.</li>
 <li><a href="https://interlisp.org/documentation/20211225-interlisp-book-2.pdf">Medley Interlisp: The Interactive Programming Environment</a>. Accessing from Lisp the facilities and tools of the Medley environment such as windows, menus, fonts, and image streams.</li>
 </ol>
 <h3 id="unsorted-documentation-content">Unsorted documentation content</h3>
 <p>Most Interlisp/Medley documentation was written using the Medley Text Editor, one of the first WYSIWYG graphical user interface text editors, called TEdit. Written in and for Interlisp users, it features muliple fonts, embedded graphics including line drawings and raster images.</p>
-<p>TEdit files are scattered through the various Interlisp repositories. For the convenience of those who would rather read the files using more modern tools, see the files from different Medley Interlisp repositories, <a href="https://drive.google.com/drive/folders/10ZBQty5gEwdBnZHtEbXfe5f1dHGziGZG?usp=sharing">converted to PDF</a>. NOTE: This is not a permanent location!</p>
+<p>TEdit files are scattered through the various Interlisp repositories. For the convenience of those who would rather read the files using more modern tools, see the files from different Medley Interlisp repositories, <a href="https://drive.google.com/drive/folders/10ZBQty5gEwdBnZHtEbXfe5f1dHGziGZG?usp=sharing">converted to PDF</a>.</p>
 <p>For the searcher&rsquo;s conveneience, these have also been combined into searchable PDFs named All-*-PDFs.pdf.</p>
-<h3 id="medley-interlisp-references">Medley Interlisp References</h3>
+<h3 id="medley-references">Medley References</h3>
 <ul>
-<li><a href="SunUserGuide.pdf">Medley for the Sun Workstation User&rsquo;s Guide</a></li>
-<li><a href="Medley-Primer.pdf">Medley Primer</a></li>
+<li><a href="../../documentation/Medley-Primer.pdf">Medley Primer</a></li>
+<li><a href="../../documentation/SunUserGuide.pdf">Medley for the Sun Workstation User&rsquo;s Guide</a></li>
 </ul>
 <!-- - <a href="1992-02-An_Introduction_to_Medley_Release_2.0.pdf">Introduction to Medley, Release 2.0</a> -->
 <h4 id="exported-medley-documentation">Exported Medley Documentation</h4>
 <p>These documents were converted from Medley&rsquo;s internal format into PDFs. Watch out for weird formatting, but these are firsthand sources on Medley features and applications.</p>
 <ul>
-<li><a href="https://interlisp.org/documentation/All-Medley-PDFs.pdf">Medley Internal Documentation PDF</a></li>
-<li><a href="https://interlisp.org/documentation/All-Notecards-PDFs.pdf">Notecards Documentation PDF</a></li>
-<li><a href="https://interlisp.org/documentation/All-Loops-PDFs.pdf">LOOPS Documentation PDF</a></li>
+<li><a href="../../documentation/All-Medley-PDFs.pdf">Medley Internal Documentation PDF</a></li>
+<li><a href="../../documentation/All-Notecards-PDFs.pdf">Notecards Documentation PDF</a></li>
+<li><a href="../../documentation/All-Loops-PDFs.pdf">LOOPS Documentation PDF</a></li>
 </ul>
 <h3 id="interlisp-books">Interlisp Books</h3>
 <ul>
@@ -275,7 +277,7 @@ Now also available in <a href="../../documentation/1986-Interlisp-Language-Usage
             
             <div class="entry">
                 <h5>
-                    <a href="../../software/Using.html">The Basics of Interlisp</a>
+                    <a href="../../software/using-medley/cl-using/">Interlisp Basics for Common Lisp users</a>
                 </h5>
                 <p></p>
             </div>

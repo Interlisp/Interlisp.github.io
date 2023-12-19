@@ -7,10 +7,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/Using.html</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/project/</loc>
   </url>
   
@@ -60,6 +56,10 @@
   
   <url>
     <loc>https://interlisp.org/software/install-and-run/running-on-wsl/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/using-medley/cl-using/</loc>
   </url>
   
   <url>
