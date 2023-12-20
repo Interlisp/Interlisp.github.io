@@ -1,5 +1,5 @@
 ---
-title: 2023 Medley Interlisp Project Annual Report
+title: 2023 Annual Report
 weight: 1
 type: docs
 ---
