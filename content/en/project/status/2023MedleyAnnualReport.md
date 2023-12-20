@@ -4,6 +4,8 @@ weight: 1
 type: docs
 ---
 
+![Medley Logo](Resources/logo_red_no_border_568x385.png)
+
 ### **Overview**
 
 The Medley Interlisp Project has made significant progress toward its goals of preserving, extending, and documenting the “experience” of Interlisp for now and for the future. This annual report highlights our achievements and ongoing efforts.
