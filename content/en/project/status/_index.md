@@ -1,7 +1,7 @@
 ---
 title: News and Status Reports
 type: docs
-weight: 50
+weight: 2
 aliases:
  - /hugo/news/
  - /medley/project/news/
@@ -10,14 +10,16 @@ aliases:
  - /news/2021medleyannualreport/
 ---
 
-# 2023 Annual Report (in preparation)
+# 2023 Annual Report released!
 
-Sneak Peek: We are working on our [2023 Medley Interlisp Annual Report](/project/status/2023medleyannualreport). Final Draft -- don't distribute until we announce it.
+The [2023 Medley Interlisp Annual Report](/project/status/2023medleyannualreport) is ready! "Read all about it!"
+
 
 ## Annual Reports
 
 The Medley team has produced annual reports documenting their major achievements.
 
+- [2023 Annual Report](/project/status/2023medleyannualreport)
 - [2022 Annual Report](/project/status/2022medleyannualreport)
 - [2021 Annual Report](/project/status/2021medleyannualreport)
 
