@@ -35,7 +35,8 @@ Items marked with  are at temporary locations, likely to change.
 If you are familiar with Common Lisp, this guide points out some differences.
 1. [Medley for the Novice](/documentation/Medley-Primer.pdf) (also known as Medley Primer).  An introductory guide to the basics of Medley such as executing commands, using menus and files, manipulating windows, editing and saving Lisp code, using the development tools, and more. Read it in full. The code in chapter 20 "Free Menus" doesn't work and some illustrations are missing.
 1. [SEdit — The Lisp Editor](https://drive.google.com/file/d/12LW5zCZauJvC63NRMJhjNv5qJkuuCflb/view?usp=sharing). The manual of SEdit, the default Lisp code editor.
-1. [LispCourse notes](https://interlisp.org/pub-pdfs/lispcourse/lispcourse.pdf). The notes of a beginner course on the Interlisp environment that goes from the basics of interacting with the system to programming in Lisp. Highly recommended. Skip the sections on printing and the network as modern Medley doesn't fully implement the described functionality. The formatting of the text is partially broken and some sections are missing. 
+
+1. [LispCourse notes](https://interlisp.org/documentation/lispcourse.pdf). The notes of a beginner course on the Interlisp environment that goes from the basics of interacting with the system to programming in Lisp. Highly recommended. Skip the sections on printing and the network as modern Medley doesn't fully implement the described functionality. The formatting of the text is partially broken and some sections are missing. 
 
 #### Advanced material
 
