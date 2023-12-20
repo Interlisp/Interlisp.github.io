@@ -4,7 +4,7 @@ weight: 1
 type: docs
 ---
 
-![Medley Logo](Resources/logo_red_no_border_568x385.png)
+<img src="/Resources/logo_red_no_border_568x385.png" width="568" height="385">Medley logo</img>
 
 ### **Overview**
 
