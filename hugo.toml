@@ -7,6 +7,14 @@ enableRobotsTXT = true
 
 assetDir = "static"
 
+# *************************************************************************
+# Sitemap
+#
+[sitemap]
+  changeFreq = ''
+  filename = 'sitemap.xml'
+  priority = -1
+
 # ****************************************************************************
 #
 # Docsy
@@ -38,27 +46,27 @@ disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
 #    url = "/running/download/"
   [[menu.main]]
     name = "GitHub"
-    weight = -10
+    weight = 90
     pre = "<i class='fab fa-github'></i>"
     url = "https://github.com/interlisp"
   [[menu.main]]
     name = "Get Involved"
-    weight = -30
+    weight = 80
     pre = "<i class='fas fa-handshake-simple'></i>"
-    url = "/getInvolved/"
+    url = "/project/getInvolved/"
   [[menu.main]]
     name = "Software"
-    weight = -50
+    weight = 70
     pre = "<i class='fas fa-cube'></i>"
     url = "/software/"
   [[menu.main]]
     name = "Project"
-    weight = -70
+    weight = 60
     pre = "<i class='fas fa-globe'></i>"
     url = "/project/"
   [[menu.main]]
     name = "History"
-    weight = -90
+    weight = 50
     pre = "<i class='fas fa-book'></i>"
     url = "/history/"
 
@@ -112,7 +120,7 @@ anchor = "smart"
 # ****************************************************************************
 #
 # docsy - Language configuration
-#
+0#
 
 [languages]
   [languages.en]
@@ -142,8 +150,8 @@ anchor = "smart"
 #
 
 # Comment out if you don't want the "print entire section" link enabled.
-[outputs]
-section = ["HTML", "print"]
+# [outputs]
+# section = ["HTML", "print"]
 
 [params]
 copyright = "Interlisp.org"
@@ -175,10 +183,10 @@ version = "0.0"
 url_latest_version = "https://example.com"
 
 # Repository configuration (URLs for in-page links to opening issues and suggesting changes)
-github_repo = "https://github.com/interlisp/Interlisp.github.io"
+github_repo = "https://github.com/Interlisp/Interlisp.github.io"
 
 # An optional link to a related project repo. For example, the sibling repository where your product code lives.
-github_project_repo = "https://github.com/interlisp/medley"
+github_project_repo = "https://github.com/Interlisp/medley"
 
 # Specify a value here if your content directory is not in your repo's root directory
 # github_subdir = ""
@@ -252,11 +260,11 @@ enable = false
   url = "mailto:Interlisp@googlegroups.com"
   icon = "fa fa-envelope"
   desc = "Discussion and help from your fellow users"
-[[params.links.user]]
-  name ="Twitter"
-  url = "https://twitter.com/interlisp8"
-  icon = "fab fa-twitter"
-  desc = "Follow us on Twitter to get the latest news!"
+# [[params.links.user]]
+#   name ="Twitter"
+#   url = "https://twitter.com/interlisp8"
+#   icon = "fab fa-twitter"
+#   desc = "Follow us on Twitter to get the latest news!"
 # [[params.links.user]]
 #  name = "Stack Overflow"
 #  url = "https://stackoverflow.com/questions/tagged/graphviz"
@@ -265,7 +273,7 @@ enable = false
 # Developer relevant links. These will show up on right side of footer and in the community page if you have one.
 [[params.links.developer]]
   name = "On GitHub"
-  url = "https://github.com/interlisp"
+  url = "https://github.com/Interlisp"
   icon = "fab fa-github"
         desc = "Development takes place here!"
 # [[params.links.developer]]
