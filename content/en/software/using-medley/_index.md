@@ -12,6 +12,7 @@ aliases:
  - /medley/using/
  - /medley/using/docs/medley/orientation/
  - /medley/using/docs/medley/
+ - /docs/medley/orientation
 ---
 
 Whether you're just getting started or refreshing your knowledge of Interlisp, we have a variety of documentation to help you along.
@@ -27,9 +28,9 @@ The introductory list gets you started using Medley. The advanced list builds fr
 
 Most of these resources were created decades ago when Medley was a research system and a commercial product, so they may be incomplete or out of date. We will eventually update them.
 
-#### Introductory material
+Note: locations of documents are likely to change. Best to bookmark this page, which we'll update as the documentation settles down.
 
-Items marked with  are at temporary locations, likely to change.
+#### Introductory material
 
 1. [Interlisp Basics for Common Lisp](/software/using-medley/cl-using). 
 If you are familiar with Common Lisp, this guide points out some differences.
