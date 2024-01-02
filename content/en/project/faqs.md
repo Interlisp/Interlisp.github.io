@@ -49,15 +49,16 @@ Interlisp EXEC commands are case and package insensitive, although the rest of t
 
 Interlisp uses a heuristic to decide when to simply print an error message and when to open a "break" window for the error; the decision is based on compute-time-since-last-user-input and stack depth. We've adjusted these parameters but modern machines are 1000 times faster, and the clock resolution is too coarse.
 
-The `retry` command is handy. 
+The `retry` command is handy in this situation.
 
-For example typing `(+ 1 Z)` may only show the error message:
-`Z is an unbound variable.`
+For example typing `(+ 1 Z)` may only show the error message:  
+`Z is an unbound variable.`  
+without a break window opening. If you 
 ```
  RETRY
 ```
-  and a debugger window will pop up. Let's give Z a value while in the debugger:
+then a debugger window will pop up. Let's give Z a value while in the debugger:
 ```
 (SETQ Z 9)
 ```
-now type `OK` and _enter_ or middle click in the debugger then choose Ok. It will continue the execution as if the fault never happened. It will return the value 10.
+now type `OK` and _enter_ (or middle click in the debugger then choose Ok). It will continue the execution as if the fault never happened. It will return the value 10.
