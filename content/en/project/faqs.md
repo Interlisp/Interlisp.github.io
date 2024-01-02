@@ -47,10 +47,12 @@ Interlisp EXEC commands are case and package insensitive, although the rest of t
 
 ## When to pop up a debugger or just report an error and unwind?
 
-The command `retry` will redo a typein but invoke the debugger.
+Interlisp uses a heuristic to decide when to simply print an error message and when to open a "break" window for the error; the decision is based on compute-time-since-last-user-input and stack depth. We've adjusted these parameters but modern machines are 1000 times faster, and the clock resolution is too coarse.
 
-For example typing (+ 1 Z) will only show the error message:
-Z is an unbound variable.
+The `retry` command is handy. 
+
+For example typing `(+ 1 Z)` may only show the error message:
+`Z is an unbound variable.`
 ```
  RETRY
 ```
@@ -58,4 +60,4 @@ Z is an unbound variable.
 ```
 (SETQ Z 9)
 ```
-now middle click in the debugger then choose Ok and it will continue the execution as if the fault never happened. It will return the value 10.
+now type `OK` and _enter_ or middle click in the debugger then choose Ok. It will continue the execution as if the fault never happened. It will return the value 10.
