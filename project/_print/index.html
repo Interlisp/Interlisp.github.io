@@ -855,28 +855,34 @@ The principal activity is to &ldquo;develop demonstrations of software ideas bas
 </ul>
 <p>The original method for copy/paste is different from most modern systems:</p>
 <ul>
-<li>click with ouse the destination</li>
-<li>hold down the shift key, and, while holding, select the source (using left mouwse button to select a point, right button or repeated left button to extend the selection)</li>
+<li>click with mouse the destination</li>
+<li>hold down the shift key, and, while holding, select the source (using left mouse button to select a point, right button or repeated left button to extend the selection)</li>
 <li>let up the shift key. The system will copy from the selected content and paste it in the destination.</li>
 </ul>
 <p>To do a cut/paste operation, hold down the control key as well as the shift key.</p>
-<p>Modern Medley (in the CLUPBOARD software) adds an interface with the host OS&rsquo;s Clipboard.  Typing meta-C does copy to clipboard, and meta-V will paste from the clipboard into the destination. The &lsquo;meta&rsquo; key is the one labeled &lsquo;cmd&rsquo; on a Macintosh and &lsquo;alt&rsquo; on most windows keyboards.</p>
+<p>Modern Medley (in the CLIPBOARD software) adds an interface with the host OS&rsquo;s Clipboard.  Typing meta-C does copy to clipboard, and meta-V will paste from the clipboard into the destination. The &lsquo;meta&rsquo; key is the one labeled &lsquo;cmd&rsquo; on a Macintosh, and the left side &lsquo;Alt&rsquo; key on most windows keyboards.</p>
 <h2 id="how-to-ask-for-help-about-a-specific-function">How to ask for help about a specific function?</h2>
 <p>There is a graphical browser of the Interlisp Reference Manual &ndash; right click any area of the screen not in a window (i.e., the background) and select DInfo.</p>
-<p>The <code>MAN</code> command can be used:</p>
+<p>The <code>MAN</code> command can be used in an EXEC:</p>
 <pre tabindex="0"><code>MAN HELP
-</code></pre><p>In addition,  typein of a list structure a question mark followed by a &rsquo;enter&rsquo; will look up in the symbol entered in the enclosing list:</p>
-<pre tabindex="0"><code>(list ?
-</code></pre><p>Modern Medley extends this to look up Commonn Lisp functioins in the Common Lisp HyperSpec.</p>
-<p>Interlisp EXEC commands are case and package insensitive, although the rest of the input line depends on the context.</p>
+</code></pre><p>In addition, typein of a list structure followed by a question mark followed by an &rsquo;enter&rsquo; will look up (using DInfo) the symbol entered in the enclosing list:</p>
+<pre tabindex="0"><code>(CONS ?
+</code></pre><p>Modern Medley extends this to look up Common Lisp functions in the Common Lisp HyperSpec.</p>
+<p>Further, typein of a expression form followed by a question mark and equals sign followed by an &rsquo;enter&rsquo; will look up the <em>closest</em> function name (for any defined function) entered in the form and display that function&rsquo;s invocation form:</p>
+<pre tabindex="0"><code>(SETQ FOO (LOAD ?=
+</code></pre><p>shows</p>
+<pre tabindex="0"><code>(LOAD FILE LDFLG PRINTFLG)
+</code></pre><p>Interlisp EXEC commands are case and package insensitive, although the rest of the input line depends on the context.</p>
 <h2 id="when-to-pop-up-a-debugger-or-just-report-an-error-and-unwind">When to pop up a debugger or just report an error and unwind?</h2>
-<p>The command <code>retry</code> will redo a typein but invoke the debugger.</p>
-<p>For example typing (+ 1 A) will only show the error message:
-A is an unbound variable.</p>
+<p>Interlisp uses a heuristic to decide when to simply print an error message and when to open a &ldquo;break&rdquo; window for the error; the decision is based on compute-time-since-last-user-input and stack depth. We&rsquo;ve adjusted these parameters but modern machines are 1000 times faster, and the clock resolution is too coarse.</p>
+<p>The <code>retry</code> command is handy in this situation.</p>
+<p>For example typing <code>(+ 1 Z)</code> may only show the error message:<br>
+<code>Z is an unbound variable.</code><br>
+without a break window opening. If you</p>
 <pre tabindex="0"><code> RETRY
-</code></pre><p>and a debugger window will pop up. let&rsquo;s give A a value while in the debugger:</p>
-<pre tabindex="0"><code>(SETQ A 9)
-</code></pre><p>now middle click in the debugger then choose Ok and it will continue the execution as if the fault never happened. It will return the value 10.</p>
+</code></pre><p>then a debugger window will pop up. Let&rsquo;s give Z a value while in the debugger:</p>
+<pre tabindex="0"><code>(SETQ Z 9)
+</code></pre><p>now type <code>OK</code> and <em>enter</em> (or middle click in the debugger then choose Ok). It will continue the execution as if the fault never happened. It will return the value 10.</p>
 
 </div>
 
@@ -1387,7 +1393,7 @@ The principal activity is to develop demonstrations of software ideas based on I
         
       </div>
       <div class="col-12 col-sm-4 text-center py-2 order-sm-2">
-        <small class="text-white">&copy; 2023 Interlisp.org All Rights Reserved</small>
+        <small class="text-white">&copy; 2024 Interlisp.org All Rights Reserved</small>
         
 	
       </div>
