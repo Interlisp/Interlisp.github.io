@@ -201,6 +201,14 @@ This is the multi-page printable view of this section.
 
     
   
+    
+    
+	
+<li>3.2: <a href="#pg-9e6d8dfde780c88578ec4c0fb529cb2f">Keystrokes, Mouse menus and Gestures</a></li>
+
+
+    
+  
 
     </ul>
     
@@ -919,6 +927,93 @@ with extensive documentation.</p>
 <p><em>or</em>, at any prompt, the <code>man</code> command will look up an (Interlisp) symbol.</p>
 <hr>
 <p><em>Many thanks to <a href="https://github.com/blakemcbride">Blake McBride</a> and his <a href="https://github.com/blakemcbride/medley-intro">Medley Intro</a> from which this was initially taken.</em></p>
+
+</div>
+
+
+
+    
+	
+  
+    
+    
+	
+    
+
+<div class="td-content" style="page-break-before: always">
+    
+	<h1 id="pg-9e6d8dfde780c88578ec4c0fb529cb2f">3.2 - Keystrokes, Mouse menus and Gestures</h1>
+    
+	<p>The handling of keyboard and mouse clicks and gestures is different and varied within the Medley environment. This chart shows common keystrokes.
+<a href="https://docs.google.com/spreadsheets/d/1FOkrr62TtEhhY49m9U0T_6bvqSGRQt9fBRtMDw0YKtY/edit?usp=sharing">Table of Keystrokes</a> more data.</p>
+<p>We&rsquo;d like to improve keyboard handling but haven&rsquo;t yet found a path.</p>
+<h2 id="at-an-exec-ie-the-repl">At an &ldquo;exec&rdquo; (i.e., the REPL).</h2>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>backspace</td>
+<td>delete the previous character</td>
+</tr>
+<tr>
+<td>ctrl-H</td>
+<td>(same as backspace)</td>
+</tr>
+<tr>
+<td>enter</td>
+<td>if at end of line, terminate</td>
+</tr>
+<tr>
+<td>ctrl-M</td>
+<td>(same as enter)</td>
+</tr>
+<tr>
+<td>ctrl-alt-J</td>
+<td>move down</td>
+</tr>
+<tr>
+<td>ctrl-alt-L</td>
+<td>move to start of line</td>
+</tr>
+<tr>
+<td>ctrl-alt-Y</td>
+<td>&ldquo;get userexec&rdquo; ????</td>
+</tr>
+</tbody>
+</table>
+<h2 id="interrupt-characters">Interrupt characters</h2>
+<p>These are enabled per-process. Medley maintains, for each process, a &ldquo;termtable&rdquo; which enables different kinds of interrupts. In general, the process (sometimes known as the &ldquo;TTY&rdquo; process or the process that &ldquo;has the keyboard&rdquo;.</p>
+<table>
+<thead>
+<tr>
+<th>character</th>
+<th>action</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ctrl-B</td>
+<td>stop the process and enter a break window</td>
+</tr>
+<tr>
+<td>ctrl-D</td>
+<td>reset the process, unwind the stack to the top level</td>
+</tr>
+<tr>
+<td>ctrl-E</td>
+<td>unwind the stack as if an error occured without break</td>
+</tr>
+<tr>
+<td>ctrl-P</td>
+<td>interrupt printing and reset the PRINTLEVEL</td>
+</tr>
+</tbody>
+</table>
 
 </div>
 
