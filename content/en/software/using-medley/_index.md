@@ -20,6 +20,22 @@ Whether you're just getting started or refreshing your knowledge of Interlisp, w
 The following links lead to PDF files containing Interlisp documentation.
 We are in the process of organizing this documentation.
 
+### Advice for newcomers
+
+A coding project is a great learning experience. But porting existing Common Lisp software to Medley may be challenging as a first project.
+
+Modern Common Lisps are similar and implement most of ANSI. Adapting software to these environments usually involves minor modifications you can carry out with familiar tools. But the Medley environment is completely different and its Common Lisp farther from ANSI.
+
+Porting to Medley is a substantial task for a newcomer who has to deal at the same time with an incomplete Common Lisp implementation, unfamiliar tools, and an unknown workflow.
+
+It's like hustling the move to a new country you barely speak the language and know the culture of. Within hours of landing at the airport you attempt to open a bank account, apply for a loan, file for health care, register with the tax system, negotiate renting an apartment, and do the paperwork for requesting the services of utility companies. Doing all this immediately after your arrival is overwhelming at best.
+
+For a more enjoyable stay take the time to settle, absorb the local language and culture, and live like a native.
+
+Rather than porting Common Lisp programs, it's better to start with small Interlisp projects that rely only on Medley's features and resources with no external dependencies or interactions. Write Interlisp code from scratch instead of bringing in existing software.
+
+We recommend to take Medley a little bit at a time. [Read the introductory material](#introductory-material), and write at least one or two small Interlisp programs of no more than a thousand lines of code.
+
 ### Getting started
 
 To learn Medley we recommend that you go over the following reading lists and pursue the resources in the indicated order.
