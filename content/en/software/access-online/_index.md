@@ -1,6 +1,6 @@
 ---
 title: Access Medley Online
-weight: 20
+weight: 10
 type: docs
 aliases:
   - /medley/using/running/online/	

@@ -5,6 +5,7 @@ type: docs
 aliases:
  - /medley/using/docs/medley/orientation/
  - /docs/
+ - /medley/using/docs/medley/the-medley-interlisp-dsk-file-system/
  - /doc/info/Using.html
  - /doc/info/Using
  - /hugo/documentation
@@ -12,7 +13,11 @@ aliases:
  - /medley/using/
  - /medley/using/docs/medley/orientation/
  - /medley/using/docs/medley/
- - /docs/medley/orientation
+ - /docs/medley/orientation/
+ - /medley/using/docs/medley/tips/
+ - /docs/medley/orientation/
+ - /software/using-medley/medley/
+ - /software/using-medley/IRM.pdf
 ---
 
 Whether you're just getting started or refreshing your knowledge of Interlisp, we have a variety of documentation to help you along.
