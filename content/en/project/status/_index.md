@@ -24,6 +24,12 @@ The Medley team has produced annual reports documenting their major achievements
 - [2022 Annual Report](/project/status/2022medleyannualreport)
 - [2021 Annual Report](/project/status/2021medleyannualreport)
 
+## November 2023 Computer Conservation Society event
+
+On November 16, 2023 Steve Kaisler gave the talk "Software Archaeology: The Medley Interlisp Modernisation Project" at a [Computer Conservation Society](https://www.computerconservationsociety.org/) event in London and the recording is available here.
+
+<iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/VcRsSAzUIx0?si=QIbQ3_owOYbC57uW" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+
 ## March 2023 Bay Area Lisp Meeting
 
 An overview of the Medley Interlisp project was presented at the March Bay Area
