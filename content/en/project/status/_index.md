@@ -8,6 +8,7 @@ aliases:
  - /project/news
  - /news/2022medleyannualreport/
  - /news/2021medleyannualreport/
+ - /medley/project/status/
 ---
 
 # 2023 Annual Report released!

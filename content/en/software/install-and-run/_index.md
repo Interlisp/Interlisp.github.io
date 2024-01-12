@@ -1,10 +1,12 @@
 ---
 title: Install and Run
 aliases:
- - /medley/using/build
- - /medley/using/running
+ - /medley/using/build/
+ - /medley/using/running/
  - /medley/using/build/building/
- - /developing
+ - /developing/
+ - /software/emu-compat/
+ - /using/running/
 weight: 10
 type: docs
 ---

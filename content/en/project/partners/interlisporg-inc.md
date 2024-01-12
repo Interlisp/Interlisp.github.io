@@ -2,6 +2,8 @@
 title: InterlispOrg
 weight: 25
 type: docs
+aliases:
+ - /medley/project/partners/interlisporg-inc/
 ---
 
 InterlispOrg Inc has beem formed as a non-profit corporation in California.
