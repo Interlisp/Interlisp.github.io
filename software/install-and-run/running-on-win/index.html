@@ -25,7 +25,7 @@ Medley native works within the ordinary Windows environment. Installation uses s
 The two ways result in similar Medley experiences, but differ in how Medley is installed and run, how the Windows file system is seen, and possibly some unforeseen challenges (the &ldquo;native&rdquo; install is relatively new).
 Medley native works within the ordinary Windows environment. Installation uses standard Windows installer and you start Medley from a standard Command (or Powershell) window.">
 
-<meta itemprop="wordCount" content="688">
+<meta itemprop="wordCount" content="697">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Install and Run on Windows 10/11"/>
 <meta name="twitter:description" content="Running Medley on Windows can be done with some ease if you have WSL (Windows System for Linux). There&rsquo;s now also the possibility a &ldquo;native&rdquo; install.
 The two ways result in similar Medley experiences, but differ in how Medley is installed and run, how the Windows file system is seen, and possibly some unforeseen challenges (the &ldquo;native&rdquo; install is relatively new).
@@ -256,6 +256,9 @@ medley &lt;flags and options&gt;
 <pre tabindex="0"><code>cd &lt;install_dir&gt;
 cmd /C medley &lt;flags and options&gt;
 </code></pre></li>
+<li>
+<p>To exit Medley execute <code>(IL:LOGOUT)</code> at the Lisp prompt.</p>
+</li>
 </ol>
 <p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
 <p>For first-time users: <code>medley --apps --interlisp --noscroll</code> or, equivalently, <code>medley -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>

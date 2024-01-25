@@ -25,7 +25,7 @@ To do so, start XQuartz (e." />
 If you do not have a three-button mouse on your Mac, you will need to set Emulate three button mouse in the XQuartz preferences.
 To do so, start XQuartz (e.">
 
-<meta itemprop="wordCount" content="557">
+<meta itemprop="wordCount" content="566">
 <meta itemprop="keywords" content="" /><meta name="twitter:card" content="summary"/><meta name="twitter:title" content="Install and Run on MacOS"/>
 <meta name="twitter:description" content="Prerequisite: Install XQuartz Before installing and running Medley on your Mac, you will need to download and install XQuartz - an open-source X11 Windows server for the Mac. You can download the latest XQuartz .pkg from XQuartz.org and install it using the MacOS installer.
 If you do not have a three-button mouse on your Mac, you will need to set Emulate three button mouse in the XQuartz preferences.
@@ -273,6 +273,7 @@ ssd@Mac-mini medley % ./medley -a -e -n
 <p>There are many options to the <code>medley</code> command.  For a brief overview, run <code>./medley --help</code>. For a more complete description, run <code>./medley --man</code> or click
 <a href="https://online.interlisp.org/downloads/man_medley.html">here</a>.</p>
 <p>For first-time users: <code>./medley -a -e -n</code> is a good starting	point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.  It will start with a Interlisp Exec window (instead of the Xerox Common Lisp Exec window).</p>
+<p>To exit Medley execute <code>(IL:LOGOUT)</code> at the Lisp prompt.</p>
 <h4 id="notes">Notes:</h4>
 <blockquote>
 <p>By default, <code>medley</code> will create a directory in <em>$HOME/il</em>.  This will be used by the Medley system as its <em>LOGINDIR</em>.  Medley will start up with <em>LOGINDIR</em> as its current connected directory. 	It will load the personal init file (if any) from <em>LOGINDIR</em>/INIT or <em>LOGINDIR</em>/INIT.LCOM.  Finally,  Medley will use <em>LOGINDIR</em>/vmem/ to store its virtual memory file(s).  The location of <em>LOGINDIR</em> can be changed using the <code>--logindir</code> option to <code>medley</code>.</p>
