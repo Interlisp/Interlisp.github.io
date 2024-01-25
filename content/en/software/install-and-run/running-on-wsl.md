@@ -26,6 +26,8 @@ while the X Window on WSL will not so scale. The WSL packages also install the w
 package, which is used by Medley to connect to external browsers as described above.
 Aside from these two features, a non-WSL .deb package will install and run on WSL.
 
+To exit Medley execute `(IL:LOGOUT)` at the Lisp prompt.
+
 ## Accessing Medley for WSL
 
 1. Use a browser to download from the .deb package for your platform (i.e., "standard" WSL) and your machine architecture (X86_64, ARM64, or ARMv7) to `<deb_filepath>` from [the Medley downloads site](https://online.interlisp.org/downloads/medley_downloads.html)  

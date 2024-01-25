@@ -53,6 +53,8 @@ The .deb package will install Medley as well as any other packages needed for Me
 	For first-time users: `medley --apps` or for WSL `medley --apps --vnc` is a good starting
 	point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
 
+4. To exit Medley execute `(IL:LOGOUT)` at the Lisp prompt.
+
 #### Notes:
 
 * By default, `medley` will create a directory in *$HOME/il*.  This will be used by the Medley
