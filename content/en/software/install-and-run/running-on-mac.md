@@ -58,6 +58,8 @@ There are many options to the `medley` command.  For a brief overview, run `./me
 
 For first-time users: `./medley -a -e -n` is a good starting	point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.  It will start with a Interlisp Exec window (instead of the Xerox Common Lisp Exec window).
 
+To exit Medley execute `(IL:LOGOUT)` at the Lisp prompt.
+
 #### Notes:
 
 >By default, `medley` will create a directory in *$HOME/il*.  This will be used by the Medley system as its *LOGINDIR*.  Medley will start up with *LOGINDIR* as its current connected directory. 	It will load the personal init file (if any) from *LOGINDIR*/INIT or *LOGINDIR*/INIT.LCOM.  Finally,  Medley will use *LOGINDIR*/vmem/ to store its virtual memory file(s).  The location of *LOGINDIR* can be changed using the `--logindir` option to `medley`.	
