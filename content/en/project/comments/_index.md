@@ -3,9 +3,11 @@ title: What people are saying
 weight: 20
 type: docs
 description: Comments on Interlisp and this project
+aliases: 
+ - /medley/about/comments/
 ---
 
-Do you know of a new blog, tweet or other communication talking about Interlisp?  If so, we would like to hear about it.
+Do you know of a new blog, tweet or other communication talking about Interlisp or Medley?  If so, we would like to hear about it.
 
 Submit the link using our [What People Are Saying](https://github.com/interlisp/medley/issues/new?template=what_people_are_saying.yml) form.
 
@@ -13,15 +15,24 @@ Submit the link using our [What People Are Saying](https://github.com/interlisp/
 
 Various individuals have written thoughts on Interlisp and the Medley project; their stories can be found [here](/project/stories/).
 
-## Blogs and Online Discussions
+## News Articles and Reporting
 
-- [What Were the Differences Between Symbolics Genera and Xerox Interlisp-D](https://news.ycombinator.com/item?id=36713595) asked by Simon Brooke in [Hacker News](https://news.ycombinator.com/news)  
-_... I'm curious about the similarities and differences between Symbolics Genera and Xerox Interlisp-D. Why is Genera more hyped than Interlisp-D? Unlike Genera, which is proprietary and is extremely difficult to obtain legally, Interlisp-D is now free, open-source software, and there's a community that has ported Interlisp-D to run on top of modern operating systems._
+- [War of the workstations: How the lowest bidders shaped today's tech landscape](https://www.theregister.com/2023/12/25/the_war_of_the_workstations/) posted to [The Register](https://www.theregister.com) by Liam Proven
+_There were several big vendors of Lisp machines. As [we covered recently](https://www.theregister.com/2023/11/23/medley_interlisp_revival/), Xerox sold them, and its Lisp OS is now FOSS._
 
-- [Reviving Interlisp With The Medley Interlisp Project](https://hackaday.com/2023/07/09/reviving-interlisp-with-the-medley-interlisp-project/) posted to [Hackaday](https://hackaday.com/) by Maya Posch  
+- [Revival of Medley/Interlisp: Elegant weapon for a more civilized age sharpened up again](https://www.theregister.com/2023/11/23/medley_interlisp_revival/) posted to [The Register](https://www.theregister.com) by Liam Proven
+_Xerox's pioneering graphical Lisp workstation operating system is not only alive, well, and MIT-licensed, but running in the cloud as well as on modern OSes._
+
+- [Reviving Interlisp With The Medley Interlisp Project](https://hackaday.com/2023/07/09/reviving-interlisp-with-the-medley-interlisp-project/) posted to [Hackaday](https://hackaday.com/) by Maya Posch
 _Within the Artificial Intelligence and natural language research communities, Lisp has played a major role since 1960. Over the years since its introduction, various development environments have been created that sought to make using Lisp as easy and powerful as possible. One of these environments is Interlisp, which saw its first release in 1968, and its last official release in 1992. That release was Medley 2.0, which targeted various UNIX machines, DOS 4.0, and the Xerox 1186. Courtesy of the Interlisp open source project (GitHub), Medley Interlisp is available for all to use, even on modern systems._
 
-- [InterLisp Fifteen Puzzle](https://pixel-outlaw.itch.io/interlisp-fifteen-puzle) by Pixel_Outlaw in his [blog](https://pixel-outlaw.itch.io/)  
+
+## Blogs and Online Discussions
+
+- [What Were the Differences Between Symbolics Genera and Xerox Interlisp-D](https://news.ycombinator.com/item?id=36713595) asked by Simon Brooke in [Hacker News](https://news.ycombinator.com/news)
+_... I'm curious about the similarities and differences between Symbolics Genera and Xerox Interlisp-D. Why is Genera more hyped than Interlisp-D? Unlike Genera, which is proprietary and is extremely difficult to obtain legally, Interlisp-D is now free, open-source software, and there's a community that has ported Interlisp-D to run on top of modern operating systems._
+
+- [InterLisp Fifteen Puzzle](https://pixel-outlaw.itch.io/interlisp-fifteen-puzle) by Pixel_Outlaw in his blog.
 _In some ways, this project was the fulfillment of me wanting to see what Xerox PARC brought to the table during the peak of Lisp AI research. It was from a time when what "Lisp" was was still being explored. You see heavy traces of the era in InterLisp._
 
 - [Stringscope, a string listing tool in Interlisp](https://journal.paoloamoroso.com/stringscope-a-string-listing-tool-in-interlisp) by Paolo Amoroso in his [blog](https://journal.paoloamoroso.com/)  
@@ -30,7 +41,7 @@ _I wanted to create something small that carries out a limited but useful task. 
 - [My encounter with Medley Interlisp](https://journal.paoloamoroso.com/my-encounter-with-medley-interlisp) by Paolo Amoroso in his [blog](https://journal.paoloamoroso.com/) also cross-posted to [Hacker News](https://news.ycombinator.com/item?id=34300806)  
 _Imagine someone let you into an alien spaceship they landed in your backyard, sat you at the controls, and encouraged you to fly the ship. This is the opportunity Medley Interlisp offers...._
 
-- [FreeBSD on Dell T3600](https://www.reddit.com/r/freebsd/comments/vrjqa4/freebsd_on_dell_t3600/?utm_source=share&utm_medium=web2x&context=3) by trhawes on [Reddit FreeBSD](https://www.reddit.com/r/freebsd/)  
+- [FreeBSD on Dell T3600](https://www.reddit.com/r/freebsd/comments/vrjqa4/freebsd_on_dell_t3600/?utm_source=share&utm_medium=web2x&context=3) by trhawes on [Reddit FreeBSD](https://www.reddit.com/r/freebsd/)
 _... I'm a retro enthusiast who loves Lisp, so natually, I'd want to show off my Medley Interlisp virtual machine (emulating a Xerox Lisp Machine)._
 
 - [Computers Doing the Right Thing](https://amasad.me/right) by Amjad Masad in his [blog](https://amasad.me/)  

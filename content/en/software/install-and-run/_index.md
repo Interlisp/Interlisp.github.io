@@ -1,11 +1,13 @@
 ---
 title: Install and Run
 aliases:
- - /medley/using/build
- - /medley/using/running
+ - /medley/using/build/
+ - /medley/using/running/
  - /medley/using/build/building/
- - /developing
-weight: 20
+ - /developing/
+ - /software/emu-compat/
+ - /using/running/
+weight: 10
 type: docs
 ---
 
@@ -18,6 +20,7 @@ You can install Medley on a variety of different computer systems.
   * [Running on Mac](./running-on-mac)
     * for MacOS
   * [Running on Windows](./running-on-win)
+    * [Running on Windows with WSL](./running-on-wsl)
 
 
 Medley has a virtual machine architecture: there's a virtual machine implementation (called Maiko) and Lisp software that is compiled into instructions for it. The compiled code and memory images can be moved from one architecture to another -- only Maiko needs to be ported. Maiko has been substantially revised and modernized, so you can to run Medley on many different OSes and machine architectures.

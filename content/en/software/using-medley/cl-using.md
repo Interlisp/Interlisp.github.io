@@ -1,23 +1,18 @@
 ---
-title: The Basics of Interlisp
-url: /software/Using.html
+title: Interlisp Basics for Common Lisp users
+url: /software/using-medley/cl-using/
 type: docs
-weight: 2
+weight: 20
+aliases:
+ - 
 ---
+## Interlisp Basics for Common Lisp users
 
-A few basics -- enough to get you started from the Medley User's Guide of ~30 years ago.
+If you are familiar with Common Lisp, this guide helps with some unexpected features.
 
 ## Interlisp
 
-Interlisp is a dialect of Lisp and as such, it is based on the familiar
-syntax of left-parenthesis, function name, arguments, and
-right-parenthesis.  Besides many of the functions having different
-names and arguments compared to Common Lisp, Interlisp has many other,
-more fundamental, differences from Common Lisp.  While this section
-will not go into any of the functional differences between Interlisp
-and Common Lisp, it will attempt to detail the more fundamental
-differences between the two.  The reference manual may be used for a
-detailed description of the Interlisp functions.
+Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis.  Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp.  While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two.  The reference manual may be used for a detailed description of the Interlisp functions.
 
 ### Upper- and Lower Case
 
@@ -29,12 +24,14 @@ the READ function in Common Lisp translates.
 
 Most Interlisp primitives are upper case.
 
-As a side note, the Medley system includes a package called DWIM (Do
-What I Mean).  This system reads in what you type and attempts to
-automatically correct input errors.  At times, in an effort to correct
-typing errors this system will auto-convert something you type in
-lowercase into uppercase.  Thus it may appear that the case doesn't
-matter - but it does.
+As a side note, the Medley system includes feature called DWIM (Do
+What I Mean).  When code would ordinarily cause an error to occur,
+DWIM first  attempts to correct the error, e.g., by spelling correction
+on variables and function names. In many situations DWIM will ask the
+user to approve the change, but in some situations (like evaluating
+a typed in variable using the wrong case-shift). DWIM will just
+make the change, printing out that what it did.
+ It may appear that the case doesn't matter - but it does.
 
 ### Variables
 
@@ -97,6 +94,8 @@ and \, read macros.
 Unlike Common Lisp, Interlisp does not have a special function for
 defining macros.  Macros are defined by placing their definition on
 the property list of the symbol.
+
+Medley handling of macros is different: from a Common Lisp point of view, Interlisp "macros" are treated as compiler-optimizers (if the symbol has a function definition) or as (Common Lisp) macros.
 
 ## Medley Common Lisp
 

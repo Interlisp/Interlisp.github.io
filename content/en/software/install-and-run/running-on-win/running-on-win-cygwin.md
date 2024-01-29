@@ -44,6 +44,8 @@ The installation app will ask for the directory in which to install Medley.  Any
    cmd /C medley <flags and options>
    ```
 
+4. To exit Medley execute `(IL:LOGOUT)` at the Lisp prompt.
+
 Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
 
 For first-time users: `medley --apps --interlisp --noscroll` or, equivalently, `medley -a -e -n` is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
