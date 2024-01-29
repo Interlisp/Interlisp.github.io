@@ -78,7 +78,7 @@ ubuntu@oio:~$ ./medley <flags and options>
 ```
 This will bring up the Medley environment in a separate Window on your Windows desktop.  The Medley desktop and windows will all be contained within this Window as shown below.
 
-![Medley window open on Windows desktop](./Medley-on-Windows.png)
+![Medley window open on Windows desktop](../Medley-on-Windows.png)
 
 Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
 
