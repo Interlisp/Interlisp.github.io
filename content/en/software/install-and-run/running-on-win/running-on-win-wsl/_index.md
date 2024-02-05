@@ -27,7 +27,14 @@ Standard installations are ideal for users who want to explore Medley (including
 ### **Standard Installation (for Debian-based distros only)**
 
 1.  Download the installation file (.deb) for the latest release from the [Medley downloads site](https://online.interlisp.org/downloads/medley_downloads.html)  from under the heading Linux/Standard/WSL.  There are are separate .deb files for X86_64 and ARM64 systems.  Download the one that corresponds to your machine architecture.  We will refer to the downloaded file as ***\<deb_filepath>***
-> Note that you can download the file either using a Windows browser into the Windows file system or using a Linux browser into the Linux file system.  If you download into the Windows file system, you will need to copy the file from the Windows file system into the Linux file system for your distro.  See [Copy files from Windows to your WSL instance](https://megamorf.gitlab.io/2021/08/11/copy-files-from-windows-to-your-wsl-instance/).  In these instructions, ***\<deb_filepath>*** refers to a file in the Linux file system.
+
+ <div align="center"><img alt="Medley Downloads Page" width=500 src="../images/downloads-page-wsl-standard.png"><p>&nbsp;</p></div>
+
+   > >Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](./windows-wsl-standard-from-github).
+
+> ***Note***:  under WSL, you can download the file either using a Windows browser into the Windows file system or using a Linux browser into the Linux file system.  If you download into the Windows file system, you will need to copy the file from the Windows file system into the Linux file system for your distro.  See [Copy files from Windows to your WSL instance](https://megamorf.gitlab.io/2021/08/11/copy-files-from-windows-to-your-wsl-instance/).  
+
+> In these instructions, ***\<deb_filepath>*** refers to a file in the Linux file system.
 2.  Into a WSL terminal, enter the following commands.  This will install Medley and all prerequisite packages.
 
 	```
@@ -37,19 +44,29 @@ Standard installations are ideal for users who want to explore Medley (including
 	
 ### **Local Installation**
 1.  In the WSL file system for your distro, create a directory into which Medley will be installed.  We will refer to this directory as ***\<install_dir>***
+
 2.  Download the release tar file (.tgz) for the latest release from the [Medley downloads site](https://online.interlisp.org/downloads/medley_downloads.html)  from under the heading Linux/Local/WSL.  There are are separate .tgz files for X86_64 and ARM64 systems.  Download the one that corresponds to your machine architecture.  We will refer to the downloaded file as ***\<tgz_filepath>***
-> Note that you can download the .tgz file either using a Windows browser into the Windows file system or using a Linux browser into the Linux file system.  If you download into the Windows file system, you will need to copy the file from the Windows file system into the Linux file system for your distro.  See [Copy files from Windows to your WSL instance](https://megamorf.gitlab.io/2021/08/11/copy-files-from-windows-to-your-wsl-instance/).  In these instructions, ***\<tgz_filepath>*** refers to a file in the Linux file system.
+ 
+<div align="center"><img alt="Medley Downloads Page" width=500 src="../images/downloads-page-wsl-local.png"><p>&nbsp;</p></div>
+
+   > >Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](./windows-wsl-local-from-github).
+
+> ***Note***: Under WSL, you can download the .tgz file either using a Windows browser into the Windows file system or using a Linux browser into the Linux file system.  If you download into the Windows file system, you will need to copy the file from the Windows file system into the Linux file system for your distro.  See [Copy files from Windows to your WSL instance](https://megamorf.gitlab.io/2021/08/11/copy-files-from-windows-to-your-wsl-instance/). 
+
+>  In these instructions, ***\<tgz_filepath>*** refers to a file in the Linux file system.
+
 3. Untar ***<tgz_filepath>*** using the following command:
-```
-ubuntu@oio:~$ tar -xz -C <install_dir> -f <tgz_filepath>
-```
+   ```
+   ubuntu@oio:~$ tar -xz -C <install_dir> -f <tgz_filepath>
+   ```
 4.  Using the package manager for your distro (e.g., apt for Debian and Ubuntu distros), install the following packages:
 a) man-db
 b) wslu
 c) tigervnc
-> Notes:
-> 4.1.  If wslu is not available via the standard package repos for your WSL distro, then see [the wslu wiki](https://wslutiliti.es/wslu/install.html).  If wslu is still not available, then try installing the xdg-utils package instead.  If xdg-utils is not available either, then Medley will still run well, with the exception of a few sub-systems that require opening external (to Medley) files.
-> 4.2. On Debian-based systems (including Ubuntu), the tigervnc package is not available.  Instead install both the tigervnc-standalone-server package and the tigervnc-xorg-extension package.
+> ***Notes:***
+> 4.1.  If *wslu* is not available via the standard package repos for your WSL distro, then see [the wslu wiki](https://wslutiliti.es/wslu/install.html).  If *wslu* is still not available, then try installing the *xdg-utils* package instead.  If *xdg-utils* is not available either, then Medley will still run well, with the exception of a few sub-systems that require opening external (to Medley) files.
+
+> 4.2. On Debian-based systems (including Ubuntu), the tigervnc package is not available.  Instead install both the *tigervnc-standalone-server package* and the *tigervnc-xorg-extension* package.
 
 ## Multiple Installations
 **Standard Installations**
@@ -69,24 +86,33 @@ The chosen Medley installation will be updated.  Any user files (i.e., files cre
 Medley is started from the WSL terminal for your distro using the following commands.
 ##### **Standard Installations**
 ```
-ubuntu@oio:~$ medley <flags and options>
+medley <flags and options>
 ```
+   Example:
+<img alt="Start Medley Standard" width=500 src="../images/windows-wsl-standard.png">
+
 ##### **Local Installations**
 ```
-ubuntu@oio:~$ cd <install_dir>
-ubuntu@oio:~$ ./medley <flags and options>
+cd <install_dir>
+./medley <flags and options>
 ```
-This will bring up the Medley environment in a separate Window on your Windows desktop.  The Medley desktop and windows will all be contained within this Window as shown below.
-
-![Medley window open on Windows desktop](../Medley-on-Windows.png)
+   Example:
+<img alt="Start Medley Standard" width=500 src="../images/windows-wsl-local.png">
 
 Documentation for the `<flags and options>` to the `medley` command can be found [here](https://online.interlisp.org/downloads/man_medley.html)
 
 For first-time users: `medley --vnc --apps --interlisp --noscroll` or, equivalently, `medley -v -a -e -n` is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
-####  X-Windows mode versus VNC mode
-On WSL2, Medley will normally run using the X-Windows built into WSL2 to display the Medley window on the Windows desktop.  This works well as long a you do not have a hi-dpi monitor.  But X-Windows on WSL2 does not scale well and ignores the Windows display scaling settings.  On hi-dpi monitors, this often results in the Medley window being to small to use effectively.
 
-By using the --vnc (or -v) option to the medley command, you can instruct Medley to display into a VNC viewer contained in a standard Windows window.  The VNC viewer window scales effectively on the Windows desktop and follows the WIndows display scale settings.  The result is a much more useable Medley window on hi-dpi displays.
+This will bring up the Medley environment in a separate Window on your Windows desktop.  The Medley desktop and windows will all be contained within this Window as shown below.
+
+![Medley window open on Windows desktop](../images/Medley-on-Windows.png)
+
+
+
+####  X-Windows mode versus VNC mode
+On WSL2, Medley will normally run using the X-Windows built into WSL to display the Medley window on the Windows desktop.  This works well as long a you do not have a hi-dpi monitor.  But X-Windows on WSL2 does not scale well and ignores the Windows display scaling settings.  On hi-dpi monitors, this often results in the Medley window being to small to use effectively.
+
+By using the --vnc (or -v) option to the *medley* command, you can instruct Medley to display into a VNC viewer contained in a standard Windows window.  The VNC viewer window scales effectively on the Windows desktop and follows the Windows display scale settings.  The result is a much more useable Medley window on hi-dpi displays.
 
 Aside from this scaling issue, running in VNC mode is no different from running in the default X-Windows mode on WSL2. 
 
