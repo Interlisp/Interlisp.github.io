@@ -5,7 +5,7 @@ type: docs
 ---
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
-*Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  [Separate instructions are available for WSL here.](../windows/running-on-wsl).*
+*Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  [Separate instructions are available for WSL here.](../windows/running-on-win-wsl).*
 
 Medley installs and runs on most recent Linux distros (Alpine Linux is one exception).  All that is strictly required is that the distro include an X Windows server.   Most of the testing for Medley has been done on Ubuntu 20.04 and 22.04.
 
@@ -51,6 +51,7 @@ a) man-db
 b) xdg-utils
 c) tigervnc
 > ***Notes:***
+
 > 4.1.  If *xdg-utils* is not available for your Linux distro, then Medley will still run well, with the exception of a few sub-systems that require opening external (to Medley) files.
 
 > 4.2. On Debian-based systems (including Ubuntu), the *tigervnc* package is not available.  Instead install both the *tigervnc-standalone-server package* and the *tigervnc-xorg-extension* package.
