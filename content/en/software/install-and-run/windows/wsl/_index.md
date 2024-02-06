@@ -2,6 +2,8 @@
 title: Install and Run on Windows using WSL
 weight: 20
 type: docs
+aliases:
+ - /software/install-and-run/running-on-wsl/
 ---
 
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>

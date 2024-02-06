@@ -1,15 +1,19 @@
 ﻿---
 title: Install and Run on Linux
 weight: 20
+aliases:
+ - /software/install-and-run/running-on-linux/
 type: docs
 ---
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
-*Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  [Separate instructions are available for WSL here.](../windows/running-on-win-wsl).*
+*Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  [Separate instructions are available for WSL here.](../windows/wsl).*
 
 Medley installs and runs on most recent Linux distros (Alpine Linux is one exception).  All that is strictly required is that the distro include an X Windows server.   Most of the testing for Medley has been done on Ubuntu 20.04 and 22.04.
 
 We also recommend that the Linux system have a web browser installed.  A browser is not strictly necessary to run Medley, but several features of the system (e.g., displaying some user documentation) will not work without a browser installed.
+
+## **Install Medley**
 
 Medley can be installed on Linux in one of two configurations: *standard* and *local*. 
 
@@ -56,21 +60,21 @@ c) tigervnc
 
 > 4.2. On Debian-based systems (including Ubuntu), the *tigervnc* package is not available.  Instead install both the *tigervnc-standalone-server package* and the *tigervnc-xorg-extension* package.
 
-## Multiple Installations
+## **Multiple Installations**
 **Standard Installations**
 Multiple standard installations are not possible.  It is possible to have a single Standard installation alongside one or more Local installations.
 
 **Local Installations**
-For local installations, you can install multiple copies of Medley (e.g. different releases)c.  Simply place each installation into a separate ***install_dir***. And follow the install instructions above.
+For local installations, you can install multiple copies of Medley (e.g. different releases).  Simply place each installation into a separate ***install_dir***. And follow the install instructions above.
 
 Each Medley installation so installed will operate independently of other Medley installations.  The Medley system code for each installation will remain separate. However, in general the installations will share a single file system. So care must be taken to coordinate access to the file system.
 
-## Update Medley
+## **Update Medley**
 To update any given Medley installation (e.g., to install a new release), download the updated .deb or .tgz installer file as described above.  Then (re)run the appropriate install procedure as described above.
 
 The chosen Medley installation will be updated.  Any user files (i.e., files created by the user that are not part of the Medley distribution) in the Medley file system will remain intact.
 
-## Run Medley
+## **Run Medley**
 Medley is started from any Linux terminal using the following commands.
 ##### **Standard Installations**
 ```
@@ -97,11 +101,10 @@ This will bring up the Medley environment in a separate Window on your Windows d
 
 
 
-## Use Medley
+## **Use Medley**
 Once Medley is up and running, see [here](../../using-medley/_index) for tips on how to navigate and use the Medley environment.
 
-By default, Medley will use (creating, if necessary) a directory called *$HOME/il*.  This will be used by the Medley
-system as its *LOGINDIR* as follows:
+By default, Medley will use (creating, if necessary) a directory called *$HOME/il*.  This will be used by the Medley system as its *LOGINDIR* as follows:
  
   1.  Medley will start up with *LOGINDIR* as its current connected directory.
 
