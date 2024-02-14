@@ -59,11 +59,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/install-and-run/running-on-linux/</loc>
+    <loc>https://interlisp.org/software/install-and-run/linux/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/install-and-run/running-on-wsl/</loc>
+    <loc>https://interlisp.org/software/install-and-run/windows/wsl/</loc>
   </url>
   
   <url>
@@ -87,7 +87,31 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/install-and-run/running-on-mac/</loc>
+    <loc>https://interlisp.org/software/install-and-run/macos/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/macos/macos-from-github/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/windows/native/windows-native-from-github/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/linux/linux-local-from-github/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/windows/wsl/windows-wsl-local-from-github/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/linux/linux-standard-from-github/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/windows/wsl/windows-wsl-standard-from-github/</loc>
   </url>
   
   <url>
@@ -95,7 +119,11 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/install-and-run/running-on-win/</loc>
+    <loc>https://interlisp.org/software/install-and-run/windows/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/windows/native/</loc>
   </url>
   
   <url>

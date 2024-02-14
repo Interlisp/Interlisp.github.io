@@ -98,14 +98,19 @@ if (!doNotTrack) {
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child active-path" id="m-softwareinstall-and-run-li">
   <a href="../../software/install-and-run/" class="align-left pl-0 active td-sidebar-link td-sidebar-link__section" id="m-softwareinstall-and-run"><span class="td-sidebar-nav-active-item">Install and Run</span></a>
   <ul class="ul-2 foldable">
-    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runrunning-on-linux-li">
-  <a href="../../software/install-and-run/running-on-linux/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareinstall-and-runrunning-on-linux"><span class="">Install and Run on Linux</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runrunning-on-wsl-li">
-  <a href="../../software/install-and-run/running-on-wsl/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareinstall-and-runrunning-on-wsl"><span class="">Install and Run on Windows with WSL</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runrunning-on-mac-li">
-  <a href="../../software/install-and-run/running-on-mac/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareinstall-and-runrunning-on-mac"><span class="">Install and Run on MacOS</span></a>
-</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runrunning-on-win-li">
-  <a href="../../software/install-and-run/running-on-win/" class="align-left pl-0 td-sidebar-link td-sidebar-link__page" id="m-softwareinstall-and-runrunning-on-win"><span class="">Install and Run on Windows 10/11</span></a>
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runlinux-li">
+  <a href="../../software/install-and-run/linux/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareinstall-and-runlinux"><span class="">Install and Run on Linux</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runmacos-li">
+  <a href="../../software/install-and-run/macos/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareinstall-and-runmacos"><span class="">Install and Run on MacOS</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-softwareinstall-and-runwindows-li">
+  <a href="../../software/install-and-run/windows/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareinstall-and-runwindows"><span class="">Install and Run on Windows</span></a>
+  <ul class="ul-3 foldable">
+    <li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runwindowswsl-li">
+  <a href="../../software/install-and-run/windows/wsl/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareinstall-and-runwindowswsl"><span class="">Install and Run on Windows using WSL</span></a>
+</li><li class="td-sidebar-nav__section-title td-sidebar-nav__section without-child" id="m-softwareinstall-and-runwindowsnative-li">
+  <a href="../../software/install-and-run/windows/native/" class="align-left pl-0 td-sidebar-link td-sidebar-link__section" id="m-softwareinstall-and-runwindowsnative"><span class="">Install and Run on Windows &#34;natively&#34;</span></a>
+</li>
+  </ul>
 </li>
   </ul>
 </li><li class="td-sidebar-nav__section-title td-sidebar-nav__section with-child" id="m-softwareusing-medley-li">
@@ -140,18 +145,7 @@ if (!doNotTrack) {
 	
 </div>
 
-            <div class="td-toc">
-        <nav id="TableOfContents">
-  <ul>
-    <li>
-      <ul>
-        <li><a href="#download-and-install-from-a-release">Download and install from a release</a></li>
-      </ul>
-    </li>
-  </ul>
-</nav>
-      </div>
-    
+            
             
 
 	
@@ -210,32 +204,8 @@ if (!doNotTrack) {
 
 		
 	</header>
-	<p>You can install Medley on a variety of different computer systems.</p>
-<h3 id="download-and-install-from-a-release">Download and install from a release</h3>
-<ul>
-<li><a href="./running-on-linux">Running on Linux</a>
-<ul>
-<li>Packages for .deb distributions and source to build for others</li>
-</ul>
-</li>
-<li><a href="./running-on-mac">Running on Mac</a>
-<ul>
-<li>for MacOS</li>
-</ul>
-</li>
-<li><a href="./running-on-win">Running on Windows</a>
-<ul>
-<li><a href="./running-on-wsl">Running on Windows with WSL</a></li>
-</ul>
-</li>
-</ul>
-<p>Medley has a virtual machine architecture: there&rsquo;s a virtual machine implementation (called Maiko) and Lisp software that is compiled into instructions for it. The compiled code and memory images can be moved from one architecture to another &ndash; only Maiko needs to be ported. Maiko has been substantially revised and modernized, so you can to run Medley on many different OSes and machine architectures.</p>
-<p>See the <a href="https://github.com/Interlisp/maiko#readme">Maiko README</a> and <a href="https://github.com/Interlisp/medley#readme">Medley README</a> in their respective GitHub repository pages for more details on how to build and run them.</p>
-<p>The current systems we&rsquo;ve tested or for which we have confirmed reports can be found <a href="https://github.com/Interlisp/maiko/tree/master/bin">in the Maiko github repository</a>, including:</p>
-<ul>
-<li>OS:  FreeBSD, Linux, MacOS, Solaris, Windows (using WSL or CygWin)</li>
-<li>CPU: arm7l, arm64, PowerPC, SPARC, i386, x86_64</li>
-</ul>
+	<p>Packaged releases of Medley are available for Linux (most recent distros), MacOS and Windows 10/11.  Both x86_64 and Arm64 systems are supported (as well as Arm7 - e.g., Raspberry Pi - for Linux).  Instructions for installing and running Medley on these platforms are linked below.</p>
+<p>Medley is capable of running on a variety of other OSes including FreeBSD and Solaris as well as on other CPU architectures including i386, SPARC, PowerPC, and Risc-V.  To install and run Medley on these platforms, you will need to build Medley (and its underlying virtual machine, <em>Maiko</em>) from the sources available in the Interlisp repos on github.com.  Instructions for building Medley and Maiko can be be found on github in the <a href="https://github.com/interlisp/maiko"><em>readme</em> for Maiko</a> and the <a href="https://github.com/interlisp/medley"><em>readme</em> for Medley</a>.</p>
 
         <div class="section-index">
     
@@ -251,7 +221,7 @@ if (!doNotTrack) {
             
             <div class="entry">
                 <h5>
-                    <a href="../../software/install-and-run/running-on-linux/">Install and Run on Linux</a>
+                    <a href="../../software/install-and-run/linux/">Install and Run on Linux</a>
                 </h5>
                 <p></p>
             </div>
@@ -259,7 +229,7 @@ if (!doNotTrack) {
             
             <div class="entry">
                 <h5>
-                    <a href="../../software/install-and-run/running-on-wsl/">Install and Run on Windows with WSL</a>
+                    <a href="../../software/install-and-run/macos/">Install and Run on MacOS</a>
                 </h5>
                 <p></p>
             </div>
@@ -267,15 +237,7 @@ if (!doNotTrack) {
             
             <div class="entry">
                 <h5>
-                    <a href="../../software/install-and-run/running-on-mac/">Install and Run on MacOS</a>
-                </h5>
-                <p></p>
-            </div>
-        
-            
-            <div class="entry">
-                <h5>
-                    <a href="../../software/install-and-run/running-on-win/">Install and Run on Windows 10/11</a>
+                    <a href="../../software/install-and-run/windows/">Install and Run on Windows</a>
                 </h5>
                 <p></p>
             </div>
