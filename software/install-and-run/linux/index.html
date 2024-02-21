@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.123.0">
+<meta name="generator" content="Hugo 0.122.0">
 <link rel="alternate" type="text/html" href="https://interlisp.org/software/install-and-run/linux/_print/">
 <meta name="robots" content="index, follow">
 <link rel="shortcut icon" href="../../../Resources/favicon.png" type="image/png">
@@ -228,7 +228,7 @@ if (!doNotTrack) {
 		
 	</header>
 	<style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
-<p><em>Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  <a href="../../../software/install-and-run/windows/wsl/">Separate instructions are available for WSL here.</a>.</em></p>
+<p><em>Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  <a href="../windows/wsl">Separate instructions are available for WSL here.</a>.</em></p>
 <p>Medley installs and runs on most recent Linux distros (Alpine Linux is one exception).  All that is strictly required is that the distro include an X Windows server.   Most of the testing for Medley has been done on Ubuntu 20.04 and 22.04.</p>
 <p>We also recommend that the Linux system have a web browser installed.  A browser is not strictly necessary to run Medley, but several features of the system (e.g., displaying some user documentation) will not work without a browser installed.</p>
 <h2 id="install-medley"><strong>Install Medley</strong></h2>
@@ -245,7 +245,7 @@ if (!doNotTrack) {
  <div align="center"><img alt="Medley Downloads Page" width=500 src="./images/downloads-page-linux-standard.png"><p>&nbsp;</p></div>
 <blockquote>
 <blockquote>
-<p>Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="../../../software/install-and-run/linux/linux-standard-from-github/">Instructions for this can be found here</a>.</p>
+<p>Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="./linux-standard-from-github">Instructions for this can be found here</a>.</p>
 </blockquote>
 </blockquote>
 <ol start="2">
@@ -267,7 +267,7 @@ ubuntu@oio:~$ sudo apt install -y &lt;deb_filepath&gt;
 <div align="center"><img alt="Medley Downloads Page" width=500 src="./images/downloads-page-linux-local.png"><p>&nbsp;</p></div>
 <blockquote>
 <blockquote>
-<p>Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="../../../software/install-and-run/linux/linux-local-from-github/">Instructions for this can be found here</a>.</p>
+<p>Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="./linux-local-from-github">Instructions for this can be found here</a>.</p>
 </blockquote>
 </blockquote>
 <ol start="3">
@@ -311,9 +311,9 @@ For local installations, you can install multiple copies of Medley (e.g. differe
 <p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
 <p>For first-time users: <code>medley --vnc --apps --interlisp --noscroll</code> or, equivalently, <code>medley -v -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
 <p>This will bring up the Medley environment in a separate Window on your Windows desktop.  The Medley desktop and windows will all be contained within this Window as shown below.</p>
-<p><img alt="Medley window open on Windows desktop" src="./images/Medley-on-Linux.png"></p>
+<p><img src="./images/Medley-on-Linux.png" alt="Medley window open on Windows desktop"></p>
 <h2 id="use-medley"><strong>Use Medley</strong></h2>
-<p>Once Medley is up and running, see <a href="../../../software/using-medley/">here</a> for tips on how to navigate and use the Medley environment.</p>
+<p>Once Medley is up and running, see <a href="../../using-medley/_index">here</a> for tips on how to navigate and use the Medley environment.</p>
 <p>By default, Medley will use (creating, if necessary) a directory called <em>$HOME/il</em>.  This will be used by the Medley system as its <em>LOGINDIR</em> as follows:</p>
 <ol>
 <li>

@@ -3,7 +3,7 @@
   <head>
     <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-<meta name="generator" content="Hugo 0.123.0">
+<meta name="generator" content="Hugo 0.122.0">
 <link rel="canonical" type="text/html" href="https://interlisp.org/software/install-and-run/windows/">
 <meta name="robots" content="noindex, nofollow">
 <link rel="shortcut icon" href="../../../../Resources/favicon.png" type="image/png">
@@ -228,7 +228,7 @@ or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine alth
  <div align="center"><img alt="Medley Downloads Page" width=500 src="../images/downloads-page-wsl-standard.png"><p>&nbsp;</p></div>
 <blockquote>
 <blockquote>
-<p>Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="../../../../software/install-and-run/windows/wsl/windows-wsl-standard-from-github/">Instructions for this can be found here</a>.</p>
+<p>Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="./windows-wsl-standard-from-github">Instructions for this can be found here</a>.</p>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -256,7 +256,7 @@ ubuntu@oio:~$ sudo apt install -y &lt;deb_filepath&gt;
 <div align="center"><img alt="Medley Downloads Page" width=500 src="../images/downloads-page-wsl-local.png"><p>&nbsp;</p></div>
 <blockquote>
 <blockquote>
-<p>Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="../../../../software/install-and-run/windows/wsl/windows-wsl-local-from-github/">Instructions for this can be found here</a>.</p>
+<p>Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="./windows-wsl-local-from-github">Instructions for this can be found here</a>.</p>
 </blockquote>
 </blockquote>
 <blockquote>
@@ -304,7 +304,7 @@ For local installations, you can install multiple copies of Medley (e.g. differe
 <p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
 <p>For first-time users: <code>medley --vnc --apps --interlisp --noscroll</code> or, equivalently, <code>medley -v -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
 <p>This will bring up the Medley environment in a separate Window on your Windows desktop.  The Medley desktop and windows will all be contained within this Window as shown below.</p>
-<p><img alt="Medley window open on Windows desktop" src="../images/Medley-on-Windows.png"></p>
+<p><img src="../images/Medley-on-Windows.png" alt="Medley window open on Windows desktop"></p>
 <h4 id="x-windows-mode-versus-vnc-mode">X-Windows mode versus VNC mode</h4>
 <p>On WSL2, Medley will normally run using the X-Windows built into WSL to display the Medley window on the Windows desktop.  This works well as long a you do not have a hi-dpi monitor.  But X-Windows on WSL2 does not scale well and ignores the Windows display scaling settings.  On hi-dpi monitors, this often results in the Medley window being to small to use effectively.</p>
 <p>By using the &ndash;vnc (or -v) option to the <em>medley</em> command, you can instruct Medley to display into a VNC viewer contained in a standard Windows window.  The VNC viewer window scales effectively on the Windows desktop and follows the Windows display scale settings.  The result is a much more useable Medley window on hi-dpi displays.</p>
@@ -419,7 +419,7 @@ For local installations, you can install multiple copies of Medley (e.g. differe
 <p> </p>
 <blockquote>
 <blockquote>
-<p>Alternatively, you can download the Medley Windows installer for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="../../../../software/install-and-run/windows/native/windows-native-from-github/">Instructions for this can be found here</a>.</p>
+<p>Alternatively, you can download the Medley Windows installer for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  <a href="./windows-native-from-github">Instructions for this can be found here</a>.</p>
 </blockquote>
 </blockquote>
 <ol start="2">
@@ -457,7 +457,7 @@ cmd /C medley &lt;flags and options&gt;
 <p>Documentation for the <code>&lt;flags and options&gt;</code> to the <code>medley</code> command can be found <a href="https://online.interlisp.org/downloads/man_medley.html">here</a></p>
 <p>For first-time users: <code>medley --apps --interlisp --noscroll</code> or, equivalently, <code>medley -a -e -n</code> is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.</p>
 <p>This will bring up the Medley environment in a separate Window on your Windows desktop.  The Medley desktop and windows will all be contained within this Window as shown below.</p>
-<p><img alt="Medley window open on Windows desktop" src="../images/Medley-on-Windows.png"></p>
+<p><img src="../images/Medley-on-Windows.png" alt="Medley window open on Windows desktop"></p>
 <h2 id="use-medley">Use Medley</h2>
 <p>Once Medley is up and running, see <a href="../../using-medley/_index">here</a> for tips on how to navigate and use the Medley environment.</p>
 <p>To exit Medley, type <code>(IL:LOGOUT)</code> at any Exec window prompt.</p>
