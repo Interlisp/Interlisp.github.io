@@ -5,6 +5,7 @@ set -e
 GROUP_ID=2914042
 
 items=""
+collections=""
 
 function add_items_from_collection () {
     local collection_key="$1"
@@ -19,27 +20,35 @@ function add_items_from_collection () {
         # Break when we don't get any more items
         [[ $(jq '. | length' <<< "$this_page") > 0 ]] || break
     done
+    
+    local subcollections=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$collection_key/collections" | jq -r '.[].data|{key, name, parentCollection}' | jq -s '.')
+    collections=$(jq -s 'add' <<< "$subcollections$collections")
 
     # Recurse into subcollections
     while read subcollection_key; do
         add_items_from_collection $subcollection_key
-    done < <(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$collection_key/collections" | jq -r '.[].key')
+    done < <(jq -r '.[].key' <<< "$subcollections")
 }
 
 root_collection="FSK5IX4F"
+
 if [[ $# -eq 0 ]] ; then
+  # Initialize with the root collection.
+  collections=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/top" | jq -r '.[].data|{key, name, parentCollection}' | jq -s '.' | jq "map(select(.key==\"$root_collection\"))")
   add_items_from_collection $root_collection
+  echo "$collections" > collections.json
+
+  while read neededUrl; do
+      item=$(curl -s "$neededUrl?include=data,csljson&v=3")
+  	items=$(jq -s 'add' <<< "[$item]$items")
+  done < <(jq -r 'include "./bib-fns";getNeededUrls|.[]' <<< "$items")
+  
+  grouped_collections=$(jq 'group_by(.parentCollection)' <<< "$collections")
+  # This is not yet fully hierarchically nested.
+  # echo "$grouped_collections" > grouped_collections.json
 else
   items=$(<$1)
 fi
-
-# echo "$items" > 00-rawItems-pre-needed.json
-
-while read neededUrl; do
-    item=$(curl -s "$neededUrl?include=data,csljson&v=3")
-	items=$(jq -s 'add' <<< "[$item]$items")
-done < <(jq -r 'include "./bib-fns";getNeededUrls|.[]' <<< "$items")
-
 
 echo "Got $(jq '. | length' <<< "$items") items"
 
