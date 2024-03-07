@@ -73,7 +73,7 @@ This will bring up the Medley environment in a separate Window on your Windows d
 
 
 ## Use Medley
-Once Medley is up and running, see [here](../../using-medley/_index) for tips on how to navigate and use the Medley environment.
+Once Medley is up and running, see [here](../../using-medley/) for tips on how to navigate and use the Medley environment.
 
 To exit Medley, type ```(IL:LOGOUT)``` at any Exec window prompt.
 

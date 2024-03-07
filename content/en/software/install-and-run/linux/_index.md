@@ -102,7 +102,7 @@ This will bring up the Medley environment in a separate Window on your Windows d
 
 
 ## **Use Medley**
-Once Medley is up and running, see [here](../../using-medley/_index) for tips on how to navigate and use the Medley environment.
+Once Medley is up and running, see [here](../../using-medley/) for tips on how to navigate and use the Medley environment.
 
 By default, Medley will use (creating, if necessary) a directory called *$HOME/il*.  This will be used by the Medley system as its *LOGINDIR* as follows:
  

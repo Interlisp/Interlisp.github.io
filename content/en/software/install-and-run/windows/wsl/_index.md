@@ -121,7 +121,7 @@ Aside from this scaling issue, running in VNC mode is no different from running 
 For WSL1, X-Windows mode is not available - Medley is always run in VNC mode.
 
 ## Use Medley
-Once Medley is up and running, see [here](../../using-medley/_index) for tips on how to navigate and use the Medley environment.
+Once Medley is up and running, see [here](../../using-medley/) for tips on how to navigate and use the Medley environment.
 
 To exit Medley, type ```(IL:LOGOUT)``` at any Exec window prompt.
 
