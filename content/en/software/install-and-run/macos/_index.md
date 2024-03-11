@@ -22,7 +22,7 @@ Medley releases on MacOS are distributed as a .zip file.  The .zip file contains
 
 To install Medley:
 
-1. Download the latest release .zip from the [Medley downloads page](https://online.interlisp.org/downloads/medley_downloads.html) , under the heading "MacOS ...".
+1. Download the latest release .zip from the [Medley downloads page](https://online.interlisp.org/downloads/medley_downloads.html), under the heading "MacOS ...".
 
  <div align="center"><img alt="Medley Downloads Page" width=500 src="./images/downloads-page-macos.png"><p>&nbsp;</p></div>
 
@@ -88,7 +88,7 @@ This will bring up the Medley environment in a separate window on your desktop. 
 ![Medley window open on MacOS desktop](./images/Medley-on-MacOS.png)
 
 ## **Use Medley**
-Once Medley is up and running, see [here](../../using-medley/) for tips on how to navigate and use the Medley environment.
+Once Medley is up and running, see [here](/software/using-medley/) for tips on how to navigate and use the Medley environment.
 
 By default, Medley will use (creating, if necessary) a directory called *$HOME/il*.  This will be used by the Medley
 system as its *LOGINDIR* as follows:

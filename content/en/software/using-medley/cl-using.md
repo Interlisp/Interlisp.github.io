@@ -2,17 +2,33 @@
 title: Interlisp Basics for Common Lisp users
 url: /software/using-medley/cl-using/
 type: docs
-weight: 20
+weight: 30
 aliases:
  - 
 ---
-## Interlisp Basics for Common Lisp users
+# Interlisp Basics for Common Lisp users
 
 If you are familiar with Common Lisp, this guide helps with some unexpected features.
 
+### Advice for newcomers
+
+A coding project is a great learning experience. But porting existing Common Lisp software to Medley may be challenging as a first project.
+
+Modern Common Lisps are similar and implement most of ANSI Common Lisp. Adapting software to these environments usually involves minor modifications you can carry out with familiar tools. But the Medley environment is very different and its Common Lisp farther from ANSI.
+
+Porting to Medley is a substantial task for a newcomer who has to deal at the same time with an incomplete Common Lisp implementation, unfamiliar tools, and an unknown workflow.
+
+It's like hustling the move to a new country you barely speak the language and know the culture of. Within hours of landing at the airport you attempt to open a bank account, apply for a loan, file for health care, register with the tax system, negotiate renting an apartment, and do the paperwork for requesting the services of utility companies. Doing all this immediately after your arrival is overwhelming at best.
+
+For a more enjoyable stay take the time to settle, absorb the local language and culture, and live like a native.
+
+Rather than porting Common Lisp programs, it's better to start with small Interlisp projects that rely only on Medley's features and resources with no external dependencies or interactions. Write Interlisp code from scratch instead of bringing in existing software.
+
+We recommend to take Medley a little bit at a time. [Read the introductory material](/software/using-medley/#introductory-material), and write at least one or two small Interlisp programs of no more than a thousand lines of code.
+
 ## Interlisp
 
-Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis.  Besides many of the functions having different names and arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp.  While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two.  The reference manual may be used for a detailed description of the Interlisp functions.
+Interlisp is a dialect of Lisp and as such, it is based on the familiar syntax of left-parenthesis, function name, arguments, and right-parenthesis.  Besides many of the functions having different names and/or arguments compared to Common Lisp, Interlisp has many other, more fundamental, differences from Common Lisp.  While this section will not go into any of the functional differences between Interlisp and Common Lisp, it will attempt to detail the more fundamental differences between the two. 
 
 ### Upper- and Lower Case
 
@@ -20,9 +36,7 @@ Interlisp uses mixed case.  That is, upper-case letters and lower-case
 letters are treated as different.  This means you can have a variable
 name `my-var` and a variable named `MY-VAR` that are unique and
 unrelated to each other. This is true for Common Lisp too, but
-the READ function in Common Lisp translates.
-
-Most Interlisp primitives are upper case.
+the READ function in Common Lisp translates (unescaped) lower-case to upper-case within symbols. Most Interlisp primitives are upper case. 
 
 As a side note, the Medley system includes feature called DWIM (Do
 What I Mean).  When code would ordinarily cause an error to occur,
@@ -58,7 +72,7 @@ the Special Variables.
 ### LISP-2
 
 Like Common Lisp but unlike Scheme, Interlisp is a LISP-2 language.
-This means, in part, that the namespace for variables is separate from
+aThis means, in part, that the namespace for variables is separate from
 the namespace for functions.  For example, in Interlisp and
 Common Lisp, you can simultaneously have a variable named `ABC`
 and a function named `ABC` that are unrelated.
@@ -112,22 +126,8 @@ accessed through the Common Lisp package nicknamed ``IL''.
 
 ## Continuing On
 
-This introduction was designed to provide the most general of
-information -- just enough to get you started.  Medley comes
-with extensive documentation. 
-
-In searchable PDF and (imperfect) HTML:
-
-* (1991) [Sun User Guide](/documentation/SunUserGuide.pdf)
-* (1992) [Medley for the Novice](/documentation/Medley-Primer.pdf)
-* (1993) [Interlisp Reference Manual](/documentation/IRM.pdf)
-
-Medley Interlisp also includes an online reference:
-
-* right-click on the desktop to get to the system menu
-* select DInfo
-
-_or_, at any prompt, the `man` command will look up an (Interlisp) symbol.
-
-------------
-_Many thanks to [Blake McBride](https://github.com/blakemcbride) and his [Medley Intro](https://github.com/blakemcbride/medley-intro) from which this was initially taken._
+<div class="mx-auto">
+ <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "/software/using-medley" >}}">
+  Guide to Using Medley <i class="fas fa-arrow-alt-circle-right ml-2"></i>
+ </a>
+</div>
