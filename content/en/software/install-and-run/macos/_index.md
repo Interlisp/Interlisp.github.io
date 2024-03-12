@@ -1,5 +1,6 @@
 ﻿---
-title: on MacOS
+title: Install and Run on MacOS
+linkTitle: MacOS
 weight: 30
 type: docs
 aliases:

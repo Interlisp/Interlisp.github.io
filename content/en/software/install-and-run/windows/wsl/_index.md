@@ -1,12 +1,11 @@
 ﻿---
-title: with WSL
+title: Install and Run on Windows with WSL
+linkTitle: WSL
 weight: 20
 type: docs
 aliases:
  - /software/install-and-run/running-on-wsl/
 ---
-
-## Install and Run on Windows with WSL
 
 ### Prerequisite: Install WSL
 Medley can be installed and run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see
@@ -32,7 +31,7 @@ Standard installations are ideal for users who want to explore Medley (including
 
  <div align="center"><img alt="Medley Downloads Page" width=500 src="../images/downloads-page-wsl-standard.png"><p>&nbsp;</p></div>
 
-   > >Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](./windows-wsl-standard-from-github).
+   > >Alternatively, you can download the .deb files for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](windows-wsl-standard-from-github).
 
 > ***Note***:  under WSL, you can download the file either using a Windows browser into the Windows file system or using a Linux browser into the Linux file system.  If you download into the Windows file system, you will need to copy the file from the Windows file system into the Linux file system for your distro.  See [Copy files from Windows to your WSL instance](https://megamorf.gitlab.io/2021/08/11/copy-files-from-windows-to-your-wsl-instance/).  
 

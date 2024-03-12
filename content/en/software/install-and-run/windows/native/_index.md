@@ -1,5 +1,6 @@
 ﻿---
-title: "native"
+title: Install and Run on Windows "native"
+linkTitle: native
 weight: 40
 type: docs
 aliases:
@@ -17,7 +18,7 @@ When running on Windows natively, Medley will be installed into a directory of y
 
 &nbsp;
 
-   > >Alternatively, you can download the Medley Windows installer for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](./windows-native-from-github).
+   > >Alternatively, you can download the Medley Windows installer for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](windows-native-from-github).
  
  2. Start the Medley installation app (e.g., by double clicking on the .exe just downloaded).
 

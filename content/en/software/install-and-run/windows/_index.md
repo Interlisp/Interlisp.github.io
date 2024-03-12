@@ -1,10 +1,9 @@
 ---
-title: on Windows
+title: Install and Run on Windows
+linkTitle: Windows
 weight: 40
 type: docs
 ---
-
-# Install and Run on Windows
 
 There are two ways to install and run Medley on Windows. These two ways result in (nearly) identical Medley experiences, but differ in how Medley is installed and started.
 

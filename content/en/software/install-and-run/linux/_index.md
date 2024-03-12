@@ -1,5 +1,6 @@
 ﻿---
-title: Linux
+title: Install and Run on Linux
+linkTitle: Linux
 weight: 20
 aliases:
  - /software/install-and-run/running-on-linux/
