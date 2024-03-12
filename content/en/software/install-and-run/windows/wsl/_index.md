@@ -8,9 +8,7 @@ aliases:
 
 ## Install and Run on Windows with WSL
 
-<style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
-
-## **Prerequisite: Install WSL**
+### Prerequisite: Install WSL
 Medley can be installed and run on either WSL1 or WSL2.  WSL2 is preferred, but for older machines that do not support virtualization (see
 [here](https://learn.microsoft.com/en-us/virtualization/hyper-v-on-windows/reference/hyper-v-requirements))
 or Windows builds prior to Windows 10 Build 19041, WSL1 will work just fine although it will be limited to the VNC mode (see below).
@@ -19,7 +17,7 @@ To install/activate WSL on Windows, see [How to install Linux on Windows with WS
 
 To use WSL, you must install one or more Linux "distros" on top of WSL.   Medley has been tested most extensively on the Ubuntu (20.04 and later) distros.  But Medley can be installed and run on (almost) any of the Linux distros available for WSL (Alpine Linux, is one known exception).
 
-## **Install Medley**
+## Install Medley
 
 Medley can be installed on WSL in one of two configurations: *standard* and *local*. 
 
@@ -28,7 +26,7 @@ Medley can be installed on WSL in one of two configurations: *standard* and *loc
 
 Standard installations are ideal for users who want to explore Medley (including its system code) or to develop applications built on top of Medley.  Standard installations are not good for users who want to modify the Medley system code, since that code is installed in protected locations.
 
-### **Standard Installation (for Debian-based distros only)**
+### Standard Installation (for Debian-based distros only)
 
 1.  Download the installation file (.deb) for the latest release from the [Medley downloads site](https://online.interlisp.org/downloads/medley_downloads.html)  from under the heading Linux/Standard/WSL.  There are are separate .deb files for X86_64 and ARM64 systems.  Download the one that corresponds to your machine architecture.  We will refer to the downloaded file as ***\<deb_filepath>***
 
@@ -46,7 +44,7 @@ Standard installations are ideal for users who want to explore Medley (including
 	ubuntu@oio:~$ sudo apt install -y <deb_filepath>
 	```
 	
-### **Local Installation**
+### Local Installation
 1.  In the WSL file system for your distro, create a directory into which Medley will be installed.  We will refer to this directory as ***\<install_dir>***
 
 2.  Download the release tar file (.tgz) for the latest release from the [Medley downloads site](https://online.interlisp.org/downloads/medley_downloads.html)  from under the heading Linux/Local/WSL.  There are are separate .tgz files for X86_64 and ARM64 systems.  Download the one that corresponds to your machine architecture.  We will refer to the downloaded file as ***\<tgz_filepath>***
@@ -73,10 +71,11 @@ c) tigervnc
 > 4.2. On Debian-based systems (including Ubuntu), the tigervnc package is not available.  Instead install both the *tigervnc-standalone-server package* and the *tigervnc-xorg-extension* package.
 
 ## Multiple Installations
-**Standard Installations**
+
+### Standard Installations
 Multiple standard installations are not possible on a single WSL distro.  It is possible to have a single Standard installation alongside one or more Local installations on a single WSL distro.
 
-**Local Installations**
+### Local Installations
 For local installations, you can install multiple copies of Medley (e.g. different releases) on a single WSL distro.  Simply place each installation into a separate ***install_dir***. And follow the install instructions above.
 
 Each Medley installation so installed will operate independently of other Medley installations.  The Medley system code for each installation will remain separate. However, in general the installations will share a single file system (which is the WSL file system for the distro). So care must be taken to coordinate access to the file system.
@@ -88,14 +87,14 @@ The chosen Medley installation will be updated.  Any user files (i.e., files cre
 
 ## Run Medley
 Medley is started from the WSL terminal for your distro using the following commands.
-##### **Standard Installations**
+### Standard Installations
 ```
 medley <flags and options>
 ```
    Example:
 <img alt="Start Medley Standard" width=500 src="../images/windows-wsl-standard.png">
 
-##### **Local Installations**
+### Local Installations
 ```
 cd <install_dir>
 ./medley <flags and options>
@@ -111,9 +110,7 @@ This will bring up the Medley environment in a separate Window on your Windows d
 
 ![Medley window open on Windows desktop](../images/Medley-on-Windows.png)
 
-
-
-####  X-Windows mode versus VNC mode
+###  X-Windows mode versus VNC mode
 On WSL2, Medley will normally run using the X-Windows built into WSL to display the Medley window on the Windows desktop.  This works well as long a you do not have a hi-dpi monitor.  But X-Windows on WSL2 does not scale well and ignores the Windows display scaling settings.  On hi-dpi monitors, this often results in the Medley window being to small to use effectively.
 
 By using the --vnc (or -v) option to the *medley* command, you can instruct Medley to display into a VNC viewer contained in a standard Windows window.  The VNC viewer window scales effectively on the Windows desktop and follows the Windows display scale settings.  The result is a much more useable Medley window on hi-dpi displays.
@@ -123,7 +120,7 @@ Aside from this scaling issue, running in VNC mode is no different from running 
 For WSL1, X-Windows mode is not available - Medley is always run in VNC mode.
 
 ## Use Medley
-Once Medley is up and running, see [here](../../using-medley/) for tips on how to navigate and use the Medley environment.
+Once Medley is up and running, see [here](/software/using-medley/) for tips on how to navigate and use the Medley environment.
 
 To exit Medley, type ```(IL:LOGOUT)``` at any Exec window prompt.
 

@@ -1,5 +1,5 @@
 ---
-title: Using Medley Basics
+title: Using Medley Interlisp Basics
 weight: 20
 type: docs
 ---

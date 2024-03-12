@@ -39,7 +39,7 @@ Your browser will open a window that represents the Interlisp Desktop and looks 
 {{< imgproc Online_Initial_Medley Resize "800x450">}} Medley Interlisp{{< /imgproc >}}
 
 <div class="mx-auto">
- <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "../.." >}}">
+ <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "../using-medley/" >}}">
   Guide to Using Medley<i class="fas fa-arrow-alt-circle-right ml-2"></i>
  </a>
 </div>

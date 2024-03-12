@@ -121,8 +121,6 @@ In Medley Common Lisp and Interlisp are fully
 integrated.  From within Common Lisp, Interlisp functions may be
 accessed through the Common Lisp package nicknamed ``IL''.
 
-## Continuing On
-
 <div class="mx-auto">
  <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "/software/using-medley" >}}">
   Guide to Using Medley <i class="fas fa-arrow-alt-circle-right ml-2"></i>
