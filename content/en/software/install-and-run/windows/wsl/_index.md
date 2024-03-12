@@ -1,5 +1,5 @@
 ﻿---
-title: Run using WSL
+title: with WSL
 weight: 20
 type: docs
 aliases:

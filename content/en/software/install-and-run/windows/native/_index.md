@@ -1,12 +1,10 @@
 ﻿---
-title: "natively"
+title: "native"
 weight: 40
 type: docs
 aliases:
  - /software/install-and-run/running-on-win/
 ---
-
-# Install and Run on Windows "natively"
 
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
