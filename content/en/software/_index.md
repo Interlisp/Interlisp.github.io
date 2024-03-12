@@ -6,7 +6,7 @@ aliases:
 ---
 ## Welcome to the Medley Interlisp Experience
 
-The [Medley Interlisp Project](/project) has focused on bringing the [historical software](/history) to life. This section contains information on setting up the Medley system and using it.
+The [Medley Interlisp Project](/project) has focused on bringing this [historical software](/history) to life. This section contains information on setting up the Medley system and using it.
 
 There are two main ways of running Medley: accessing it online in a web browser or installing and running the system on your computer. Online access is good for trying out Medley without installing anything, as well as for basic usage. Install the system on your computer if you want to run Medley offline, customize the environment, and have direct access to local files.
 
