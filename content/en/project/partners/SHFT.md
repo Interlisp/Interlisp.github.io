@@ -1,6 +1,5 @@
 ---
 title: Software History Futures and Technologies SHFT
-title: Educopia
 weight: 20
 type: docs
 ---
