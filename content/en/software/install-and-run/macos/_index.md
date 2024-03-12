@@ -1,11 +1,12 @@
 ﻿---
-title: Install and Run on MacOS
+title: on MacOS
 weight: 30
 type: docs
 aliases:
   - /running/running-on-mac
   - /software/install-and-run/running-on-mac/
 ---
+
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
 ## **Prerequisite: Install XQuartz**
@@ -26,7 +27,7 @@ To install Medley:
 
  <div align="center"><img alt="Medley Downloads Page" width=500 src="./images/downloads-page-macos.png"><p>&nbsp;</p></div>
 
->> You can also download the installation .zip file for the latest as well as any prior releases from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](./macos-from-github). 
+>> You can also download the installation .zip file for the latest as well as any prior releases from the Medley Releases page on the Interlisp GitHub site. Instructions for this can be found [here](macos-from-github). 
 
 2.  Copy the downloaded *medley-full-macos-universal...zip* file (which MacOS treats as an unzipped folder) from the Downloads folder into any folder of your choosing.  Optionally,  rename the target folder of the copy from *medley-full-macos-universal...* to something more manageable - e.g., *medley-latest*.  For the purposes of these instructions, we will call this (renamed) folder the *\<medley_folder>*.
 

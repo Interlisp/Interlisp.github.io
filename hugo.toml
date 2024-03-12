@@ -142,8 +142,8 @@ anchor = "smart"
 #
 
 # Comment out if you don't want the "print entire section" link enabled.
-[outputs]
-section = ["HTML", "print"]
+# [outputs]
+# section = ["HTML", "print"]
 
 [params]
 copyright = "Interlisp.org"

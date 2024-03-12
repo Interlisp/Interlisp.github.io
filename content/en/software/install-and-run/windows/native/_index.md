@@ -1,10 +1,13 @@
 ﻿---
-title: Install and Run on Windows "natively"
+title: "natively"
 weight: 40
 type: docs
 aliases:
  - /software/install-and-run/running-on-win/
 ---
+
+# Install and Run on Windows "natively"
+
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
 When running on Windows natively, Medley will be installed into a directory of your choice.  This directory will contain an isolated copy of the Cygwin environment (an adaptation of Linux tools and apps to Windows) and a version of Medley that runs within that specific Cygwin environment.  This presence of Cygwin, however, is largely hidden from the user and Medley behaves as if it is a native Windows app.

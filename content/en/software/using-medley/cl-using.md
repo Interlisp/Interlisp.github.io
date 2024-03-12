@@ -72,7 +72,7 @@ the Special Variables.
 ### LISP-2
 
 Like Common Lisp but unlike Scheme, Interlisp is a LISP-2 language.
-aThis means, in part, that the namespace for variables is separate from
+This means, in part, that the namespace for variables is separate from
 the namespace for functions.  For example, in Interlisp and
 Common Lisp, you can simultaneously have a variable named `ABC`
 and a function named `ABC` that are unrelated.
