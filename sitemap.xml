@@ -35,6 +35,10 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/software/using-medley/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/history/parc-alto/</loc>
   </url>
   
@@ -63,11 +67,7 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/install-and-run/windows/wsl/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/software/using-medley/cl-using/</loc>
+    <loc>https://interlisp.org/project/partners/shft/</loc>
   </url>
   
   <url>
@@ -75,7 +75,15 @@
   </url>
   
   <url>
+    <loc>https://interlisp.org/software/using-medley/il-using/</loc>
+  </url>
+  
+  <url>
     <loc>https://interlisp.org/project/comments/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/windows/wsl/</loc>
   </url>
   
   <url>
@@ -84,6 +92,10 @@
   
   <url>
     <loc>https://interlisp.org/history/medley/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/using-medley/cl-using/</loc>
   </url>
   
   <url>
@@ -119,7 +131,7 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/install-and-run/windows/</loc>
+    <loc>https://interlisp.org/software/using-medley/keystrokes/</loc>
   </url>
   
   <url>
@@ -127,11 +139,15 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/using-medley/keystrokes/</loc>
+    <loc>https://interlisp.org/project/stories/</loc>
   </url>
   
   <url>
-    <loc>https://interlisp.org/project/stories/</loc>
+    <loc>https://interlisp.org/software/using-medley/online-using/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/install-and-run/windows/</loc>
   </url>
   
   <url>
@@ -140,10 +156,6 @@
   
   <url>
     <loc>https://interlisp.org/history/timeline/</loc>
-  </url>
-  
-  <url>
-    <loc>https://interlisp.org/software/using-medley/</loc>
   </url>
   
   <url>
