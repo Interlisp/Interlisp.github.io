@@ -1,11 +1,13 @@
 ﻿---
 title: Install and Run on MacOS
+linkTitle: MacOS
 weight: 30
 type: docs
 aliases:
   - /running/running-on-mac
   - /software/install-and-run/running-on-mac/
 ---
+
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
 ## **Prerequisite: Install XQuartz**
@@ -22,11 +24,11 @@ Medley releases on MacOS are distributed as a .zip file.  The .zip file contains
 
 To install Medley:
 
-1. Download the latest release .zip from the [Medley downloads page](https://online.interlisp.org/downloads/medley_downloads.html) , under the heading "MacOS ...".
+1. Download the latest release .zip from the [Medley downloads page](https://online.interlisp.org/downloads/medley_downloads.html), under the heading "MacOS ...".
 
  <div align="center"><img alt="Medley Downloads Page" width=500 src="./images/downloads-page-macos.png"><p>&nbsp;</p></div>
 
->> You can also download the installation .zip file for the latest as well as any prior releases from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](./macos-from-github). 
+>> You can also download the installation .zip file for the latest as well as any prior releases from the Medley Releases page on the Interlisp GitHub site. Instructions for this can be found [here](macos-from-github). 
 
 2.  Copy the downloaded *medley-full-macos-universal...zip* file (which MacOS treats as an unzipped folder) from the Downloads folder into any folder of your choosing.  Optionally,  rename the target folder of the copy from *medley-full-macos-universal...* to something more manageable - e.g., *medley-latest*.  For the purposes of these instructions, we will call this (renamed) folder the *\<medley_folder>*.
 
@@ -88,7 +90,7 @@ This will bring up the Medley environment in a separate window on your desktop. 
 ![Medley window open on MacOS desktop](./images/Medley-on-MacOS.png)
 
 ## **Use Medley**
-Once Medley is up and running, see [here](../../using-medley/) for tips on how to navigate and use the Medley environment.
+Once Medley is up and running, see [here](/software/using-medley/) for tips on how to navigate and use the Medley environment.
 
 By default, Medley will use (creating, if necessary) a directory called *$HOME/il*.  This will be used by the Medley
 system as its *LOGINDIR* as follows:

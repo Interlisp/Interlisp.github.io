@@ -1,10 +1,12 @@
-﻿﻿---
-title: Install and Run on Windows "natively"
+﻿---
+title: Install and Run on Windows "native"
+linkTitle: native
 weight: 40
 type: docs
 aliases:
  - /software/install-and-run/running-on-win/
 ---
+
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
 When running on Windows natively, Medley will be installed into a directory of your choice.  This directory will contain an isolated copy of the Cygwin environment (an adaptation of Linux tools and apps to Windows) and a version of Medley that runs within that specific Cygwin environment.  This presence of Cygwin, however, is largely hidden from the user and Medley behaves as if it is a native Windows app.
@@ -16,7 +18,7 @@ When running on Windows natively, Medley will be installed into a directory of y
 
 &nbsp;
 
-   > >Alternatively, you can download the Medley Windows installer for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](./windows-native-from-github).
+   > >Alternatively, you can download the Medley Windows installer for the current or any previous release from the Medley Releases page on the Interlisp GitHub site.  [Instructions for this can be found here](windows-native-from-github).
  
  2. Start the Medley installation app (e.g., by double clicking on the .exe just downloaded).
 
@@ -73,7 +75,7 @@ This will bring up the Medley environment in a separate Window on your Windows d
 
 
 ## Use Medley
-Once Medley is up and running, see [here](../../using-medley/) for tips on how to navigate and use the Medley environment.
+Once Medley is up and running, see [here](/software/using-medley/) for tips on how to navigate and use the Medley environment.
 
 To exit Medley, type ```(IL:LOGOUT)``` at any Exec window prompt.
 

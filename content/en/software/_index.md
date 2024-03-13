@@ -4,18 +4,17 @@ type: docs
 aliases:
 
 ---
-This section contains information on installing or setting up Medley and using it.
+## Welcome to the Medley Interlisp Experience
 
-There are two main ways of running Medley: accessing it online in a web browser or installing and running the system on your computer. Online access is best for trying out Medley without installing anything, as well as for basic usage. Install the system on your computer if you want to run Medley offline, customize the environment, or simplify the exchange of files with Medley.
+The [Medley Interlisp Project](/project) has focused on bringing this [historical software](/history) to life. This section contains information on setting up the Medley system and using it.
 
-We are working on making an early version of Medley run in the browser. This example of software preservation will let you access a technology artifact of historical significance.
+There are two main ways of running Medley: accessing it online in a web browser or installing and running the system on your computer. Online access is good for trying out Medley without installing anything, as well as for basic usage. Install the system on your computer if you want to run Medley offline, customize the environment, and have direct access to local files.
 
-These are the available options for running Medley:
+* [Access Medley Online](access-online): how to access Medley running on our servers using your web browser. 
+* [Install and Run](install-and-run): how to set Medley up on your computer, and (re)start each time.
 
-* [Access Medley Online](access-online): how to access Medley running on our servers using your web browser.
-* [Install and Run](install-and-run): how to set Medley up on your computer, and restart each time.
-* [Using Medley](using-medley): Once you are up and running, some basics and pointers to other documentation.
+Once you are up and running, see "[Using Medley](using-medley)" for some basics and pointers to other documentation.
 
 * *Coming*: [Running Medley in the browser!!](https://groups.google.com/g/lispcore/c/tiD2PUzBLCo/m/HuqWV63_AQAJ)
 
-
+We are working on making earlier version of Interlisp-D run in the browser. This example of software preservation will let you access a technology artifact of historical significance.

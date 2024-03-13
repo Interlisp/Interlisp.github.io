@@ -1,5 +1,6 @@
 ﻿---
 title: Install and Run on Linux
+linkTitle: Linux
 weight: 20
 aliases:
  - /software/install-and-run/running-on-linux/
@@ -7,7 +8,7 @@ type: docs
 ---
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
-*Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  [Separate instructions are available for WSL here.](../windows/wsl).*
+*Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  Separate instructions are available for WSL [here](../windows/wsl).*
 
 Medley installs and runs on most recent Linux distros (Alpine Linux is one exception).  All that is strictly required is that the distro include an X Windows server.   Most of the testing for Medley has been done on Ubuntu 20.04 and 22.04.
 
@@ -95,14 +96,13 @@ Documentation for the `<flags and options>` to the `medley` command can be found
 
 For first-time users: `medley --vnc --apps --interlisp --noscroll` or, equivalently, `medley -v -a -e -n` is a good starting point.  This will give you a fully populated Medley system, including the applications built on Medley such as Notecards and Rooms.
 
-This will bring up the Medley environment in a separate Window on your Windows desktop.  The Medley desktop and windows will all be contained within this Window as shown below.
+This will bring up the Medley environment in a separate Window on your Linux desktop.  The Medley desktop and windows will all be contained within this Window as shown below.
 
-![Medley window open on Windows desktop](./images/Medley-on-Linux.png)
-
+![Medley window open on Linux desktop](./images/Medley-on-Linux.png)
 
 
 ## **Use Medley**
-Once Medley is up and running, see [here](../../using-medley/) for tips on how to navigate and use the Medley environment.
+Once Medley is up and running, see [here](software/using-medley/) for tips on how to navigate and use the Medley environment.
 
 By default, Medley will use (creating, if necessary) a directory called *$HOME/il*.  This will be used by the Medley system as its *LOGINDIR* as follows:
  
