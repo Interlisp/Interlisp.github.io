@@ -71,9 +71,6 @@ This will bring up the Medley environment in a separate Window on your Windows d
 
 ![Medley window open on Windows desktop](../images/Medley-on-Windows.png)
 
-
-
-
 ## Use Medley
 Once Medley is up and running, see [here](/software/using-medley/) for tips on how to navigate and use the Medley environment.
 

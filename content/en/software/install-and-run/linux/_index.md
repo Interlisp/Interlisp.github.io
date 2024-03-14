@@ -8,8 +8,12 @@ type: docs
 ---
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
+<<<<<<< Updated upstream
 *Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  Separate instructions are available for WSL
 [here](/software/install-and-run/windows/wsl/).*
+=======
+*Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  [Separate instructions are available for WSL herea(/software/install-and-run/windows/wsl).*
+>>>>>>> Stashed changes
 
 Medley installs and runs on most recent Linux distros (Alpine Linux is one exception).  All that is strictly required is that the distro include an X Windows server.   Most of the testing for Medley has been done on Ubuntu 20.04 and 22.04.
 

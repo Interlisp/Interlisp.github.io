@@ -13,17 +13,17 @@ We joined SPN in 2021 as an "Implementation Sponsor".
 * SPN membership of (mainly academic and  non-profit) organizations
 * We might partner with one or more of their members
 * Membership is $4k/year
-* Hosts [Emulation as a Service infrastructure](https://www.softwarepreservationnetwork.org/emulation-as-a-service-infrastructure/)
+* SPN is Hosted by Educopia, which also hosts [Emulation as a Service infrastructure](https://www.softwarepreservationnetwork.org/emulation-as-a-service-infrastructure/)
 
-### Universities: CSUCI
+### Universities: [SHFT group](SHFT) at University of Alberta
 
-California State University Channel Islands
+This group was reviously located in southern California, at the California State University Channel Islands, now is centered at the University of Alberta, in Canada.
 
 * Professor Eric Kaltman
 
 ### [LFG (Lexical Functional Grammar) group](https://ling.sprachwiss.uni-konstanz.de/pages/home/lfg/ilfga/constitution.html)
 
-* Set up to allow tax-deductable donations for student travel to conferences
+* LFG incorporated to allow tax-deductable donations for student travel to conferences
 * LFG is a current Medley application maintained by Ron Kaplan
 
 ### [Computer History Museum](https://computerhistory.org/)
@@ -34,9 +34,7 @@ California State University Channel Islands
 
 ### Internet Archive
 
-We have no formal relationship with IA, but we would be happy to have one.
-
-* MAME
+We have been working with the Internet Archive to help preserve important artifacts associated with Interlisp-D and systems built using it.
 
 ### [Software Heritage](https://www.softwareheritage.org/)
 

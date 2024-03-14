@@ -1,5 +1,6 @@
 ---
-title: History
+title: The History of Interlisp
+linkTitle: History
 weight: 500
 type: docs
 aliases:
