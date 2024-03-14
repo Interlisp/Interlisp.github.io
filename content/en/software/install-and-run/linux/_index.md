@@ -8,7 +8,8 @@ type: docs
 ---
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
 
-*Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  Separate instructions are available for WSL [here](../windows/wsl).*
+*Note that these instructions do not apply to Linux distros running within Windows System For Linux (WSL).  Separate instructions are available for WSL
+[here](/software/install-and-run/windows/wsl/).*
 
 Medley installs and runs on most recent Linux distros (Alpine Linux is one exception).  All that is strictly required is that the distro include an X Windows server.   Most of the testing for Medley has been done on Ubuntu 20.04 and 22.04.
 
@@ -102,7 +103,7 @@ This will bring up the Medley environment in a separate Window on your Linux des
 
 
 ## **Use Medley**
-Once Medley is up and running, see [here](software/using-medley/) for tips on how to navigate and use the Medley environment.
+Once Medley is up and running, see [here](/software/using-medley/) for tips on how to navigate and use the Medley environment.
 
 By default, Medley will use (creating, if necessary) a directory called *$HOME/il*.  This will be used by the Medley system as its *LOGINDIR* as follows:
  

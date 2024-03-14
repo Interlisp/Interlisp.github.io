@@ -38,6 +38,7 @@ Note: locations of documents are likely to change. Best to bookmark this page, w
 2. [Medley Basics for Common Lisp users](cl-using). 
 If you are familiar with Common Lisp, this guide points out some differences.
 3. [Using Medley Online](online-using) -- additional introduction primarily for online users
+4. [Key bindings](keystrokes) -- a short list of useful but unfamiliar keystrokes.
 1. [Medley for the Novice](/documentation/Medley-Primer.pdf) (also known as Medley Primer).  An introductory guide to the basics of Medley such as executing commands, using menus and files, manipulating windows, editing and saving Lisp code, using the development tools, and more. Read it in full. The code in chapter 20 "Free Menus" doesn't work and some illustrations are missing.
 1. [SEdit — The Lisp Editor](https://drive.google.com/file/d/12LW5zCZauJvC63NRMJhjNv5qJkuuCflb/view?usp=sharing). The manual of SEdit, the default Lisp code editor.
 
