@@ -1,6 +1,6 @@
 baseURL = "https://interlisp.org"
 
-relativeURLs = true
+relativeURLs = false
 canonifyURLs = true
 
 enableRobotsTXT = true
