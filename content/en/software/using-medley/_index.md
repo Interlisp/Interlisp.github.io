@@ -1,5 +1,6 @@
 ---
 title: Using Medley
+linkTitle: Using
 weight: 10
 type: docs
 aliases:

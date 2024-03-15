@@ -1,13 +1,15 @@
 ---
-title: Keystrokes, Mouse menus and Gestures
+title: Keystrokes, Menus, and More
 url: /software/using-medley/keystrokes/
 weight: 40
-aliases:
- - /doc/info/Keystrokes.html
+type: docs
 ---
 
-The handling of keyboard and mouse clicks and gestures is different and varied within the Medley environment. This chart shows common keystrokes.
-[Table of Keystrokes](https://docs.google.com/spreadsheets/d/1FOkrr62TtEhhY49m9U0T_6bvqSGRQt9fBRtMDw0YKtY/edit?usp=sharing) more data.
+The handling of keyboard and mouse clicks and gestures is different from what modern users expect, and varied within the Medley environment. Most of the GUI of Medley had been built haphazardly by different developers. As part of "modernizing" Medley, we're hoping to change some of the non-obvious differences with modern expecation. In the meanwhile, here are some things you might not guess.
+
+This chart shows some commony used keystrokes.
+
+[Table of Keystrokes](https://docs.google.com/spreadsheets/d/1FOkrr62TtEhhY49m9U0T_6bvqSGRQt9fBRtMDw0YKtY/edit?usp=sharing) has even more data.
 
 We'd like to improve keyboard handling but haven't yet found a path.
 

@@ -1,24 +1,25 @@
 ---
 title: Using Medley Online
-weight: 40
+weight: 79
 type: docs
 ---
 
-
-## Starting up
+### Starting up
 
 The Medley Desktop at startup contains 4 windows of interest:
 
 * Prompt Window: The black window at the top of the screen. It is used to display system or application prompts
-* Exec (INTERLISP or XCL) window: The main window where you run functions and develop programs.
+* Exec (INTERLISP or XCL) window: The main window where you run functions and develop programs. It's a kind of "REPL" (read, eval, print loop) with more options and commands.
 * Medley logo window: A window containing the Interlisp Medley logo as a bit map.
 * Status Bar window
+
+(also known as the "who line" shows status of various controls.
 
 Medley Online users get some additional buttons on the right-hand side of the screen.
 
 ### Managing memory images and sessions
 
-Medley has a byte-coded virtual machine architecture with a VM designed for Lisp.  This is a common practice, used by Javascript, Flash and Java and other systems to aid in portability: to support a new architecture, you just port the "virtual machine emulator" rather than the whole system.
+Medley has a byte-coded virtual machine architecture with a VM designed for Lisp.  This is now a common practice, used by Javascript, Flash and Java and other systems to aid in portability: to support a new architecture, you just port the "virtual machine emulator" rather than the whole system.
 
 With Medley, there are two types of files relevant to managing memory images and updating them across sessions: `lisp.virtualmem` and `.sysout`.
 

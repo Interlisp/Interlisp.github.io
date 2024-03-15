@@ -1,5 +1,6 @@
 ---
-title: Interlisp Basics for Common Lisp users
+title: Interlisp Basics for CommonLispers
+linkTitle: For CommonLispers
 url: /software/using-medley/cl-using/
 type: docs
 weight: 30
@@ -7,13 +8,13 @@ weight: 30
 
 If you are familiar with Common Lisp, this guide helps with some unexpected features.
 
-### Advice for newcomers
+## Advice for newcomers
 
 A coding project is a great learning experience. But porting existing Common Lisp software to Medley may be challenging as a first project.
 
-Modern Common Lisps are similar and implement most of ANSI Common Lisp. Adapting software to these environments usually involves minor modifications you can carry out with familiar tools. But the Medley environment is very different and its Common Lisp farther from ANSI.
+Modern Common Lisps are similar to each other, and implement most of ANSI Common Lisp. Adapting software to these environments usually involves minor modifications you can carry out with familiar tools. But the Medley environment is quite different. 
 
-Porting to Medley is a substantial task for a newcomer who has to deal at the same time with an incomplete Common Lisp implementation, unfamiliar tools, and an unknown workflow.
+Porting Common Lisp libraries to Medley can be a substantial task for a newcomer who has to deal at the same time with an incomplete Common Lisp implementation, unfamiliar tools, and an unknown workflow.
 
 It's like hustling the move to a new country you barely speak the language and know the culture of. Within hours of landing at the airport you attempt to open a bank account, apply for a loan, file for health care, register with the tax system, negotiate renting an apartment, and do the paperwork for requesting the services of utility companies. Doing all this immediately after your arrival is overwhelming at best.
 

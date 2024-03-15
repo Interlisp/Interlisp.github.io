@@ -1,5 +1,6 @@
 ---
 title: Access Medley Online
+linkTitle: Online
 weight: 10
 type: docs
 aliases:
