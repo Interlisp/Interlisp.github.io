@@ -2,43 +2,43 @@
 #
 # Hugo parameters for Interlisp.org
 #
-
-relativeURLs = true
-canonifyURLs = true
-
-enableRobotsTXT = true
-
-assetDir = "static"
-
-# ****************************************************************************
-#
-# Docsy
+# An overview of hugo configuration files can be found at:
+#  https://gohugo.io/getting-started/configuration/#configure-server
 #
 
-# Will give values to .Lastmod etc.
-# enableGitInfo = true
+# relativeURLs: Enable to force all relative URLs to be relative to content root
+relativeURLs: true
 
-# Language settings
-defaultContentLanguage = "en"
-defaultContentLanguageInSubdir = false
+# canonifyURLs: Convert relative URLs to absolute URLs
+canonifyURLs: true
+
+# enableRobotsTXT:  Enable generation of Robots.txt file
+enableRobotsTXT: true
+
+# aasetDir:  Location where Hugo looks for assets
+assetDir: static
+
+# Enable .GitInfo object for each page.  This will give values to .Lastmod etc.
+enableGitInfo: false
+
+# Top Level Language defaults 
+#  See languages.yaml for language specific values
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
 
 # Useful when translating.
-enableMissingTranslationPlaceholders = true
+enableMissingTranslationPlaceholders: true
 
-disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+# Disable rendering of the specified page kinds 
+disableKinds: [taxonomy, term, RSS]
 
-# Highlighting config
-pygmentsCodeFences = true
-pygmentsUseClasses = false
+# Code Highlighting configuration 
+pygmentsCodeFences: true
+pygmentsUseClasses: false
 # Use the new Chroma Go highlighter in Hugo.
-pygmentsUseClassic = false
+pygmentsUseClassic: false
 #pygmentsOptions = "linenos=table"
 # See https://help.farbox.com/pygments.html
-pygmentsStyle = "tango"
-
-# Configure how URLs look like per section.
-[permalinks]
-blog = "/:section/:year/:month/:day/:slug/"
 
 # ****************************************************************************
 #
@@ -49,34 +49,31 @@ blog = "/:section/:year/:month/:day/:slug/"
 # [outputs]
 # section = ["HTML", "print"]
 
-[params]
-
-# privacy_policy = "https://policies.google.com/privacy"
+# paramas
 
 # Set Google Analytics to use GA4
-disableGtagForUniversalAnalytics = false
-
+disableGtagForUniversalAnalytics: false
 
 # First one is picked as the Twitter card image if not set on page.
 # images = ["images/project-illustration.png"]
 
 # Menu title if your navbar has a versions selector to access old versions of your site.
 # This menu appears only if you have at least one [params.versions] set.
-version_menu = "Releases"
+version_menu: Releases
 
 # Flag used in the "version-banner" partial to decide whether to display a 
 # banner on every page indicating that this is an archived version of the docs.
 # Set this flag to "true" if you want to display the banner.
-archived_version = false
+archived_version: false
 
 # The version number for the version of the docs represented in this doc set.
 # Used in the "version-banner" partial to display a version number for the 
 # current doc set.
-version = "0.0"
+version: 0.0
 
 # A link to latest version of the docs. Used in the "version-banner" partial to
 # point people to the main doc site.
-url_latest_version = "https://example.com"
+url_latest_version: https://example.com
 
 # Enable Algolia DocSearch
 #algolia_docsearch = false
@@ -86,5 +83,5 @@ url_latest_version = "https://example.com"
 
 # Enable syntax highlighting and copy buttons on code blocks with Prism
 # Default "Chroma" syntax highlighter has no dot support, so use Prism instead
-prism_syntax_highlighting = false
+prism_syntax_highlighting: false
 
