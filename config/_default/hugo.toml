@@ -1,0 +1,90 @@
+# *******************************************************************
+#
+# Hugo parameters for Interlisp.org
+#
+
+relativeURLs = true
+canonifyURLs = true
+
+enableRobotsTXT = true
+
+assetDir = "static"
+
+# ****************************************************************************
+#
+# Docsy
+#
+
+# Will give values to .Lastmod etc.
+# enableGitInfo = true
+
+# Language settings
+defaultContentLanguage = "en"
+defaultContentLanguageInSubdir = false
+
+# Useful when translating.
+enableMissingTranslationPlaceholders = true
+
+disableKinds = ["taxonomy", "taxonomyTerm", "RSS"]
+
+# Highlighting config
+pygmentsCodeFences = true
+pygmentsUseClasses = false
+# Use the new Chroma Go highlighter in Hugo.
+pygmentsUseClassic = false
+#pygmentsOptions = "linenos=table"
+# See https://help.farbox.com/pygments.html
+pygmentsStyle = "tango"
+
+# Configure how URLs look like per section.
+[permalinks]
+blog = "/:section/:year/:month/:day/:slug/"
+
+# ****************************************************************************
+#
+# Docsy - Everything below this are Site Params
+#
+
+# Comment out if you don't want the "print entire section" link enabled.
+# [outputs]
+# section = ["HTML", "print"]
+
+[params]
+
+# privacy_policy = "https://policies.google.com/privacy"
+
+# Set Google Analytics to use GA4
+disableGtagForUniversalAnalytics = false
+
+
+# First one is picked as the Twitter card image if not set on page.
+# images = ["images/project-illustration.png"]
+
+# Menu title if your navbar has a versions selector to access old versions of your site.
+# This menu appears only if you have at least one [params.versions] set.
+version_menu = "Releases"
+
+# Flag used in the "version-banner" partial to decide whether to display a 
+# banner on every page indicating that this is an archived version of the docs.
+# Set this flag to "true" if you want to display the banner.
+archived_version = false
+
+# The version number for the version of the docs represented in this doc set.
+# Used in the "version-banner" partial to display a version number for the 
+# current doc set.
+version = "0.0"
+
+# A link to latest version of the docs. Used in the "version-banner" partial to
+# point people to the main doc site.
+url_latest_version = "https://example.com"
+
+# Enable Algolia DocSearch
+#algolia_docsearch = false
+
+# Enable Lunr.js offline search
+# offlineSearch = true
+
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+# Default "Chroma" syntax highlighter has no dot support, so use Prism instead
+prism_syntax_highlighting = false
+

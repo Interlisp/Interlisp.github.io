@@ -1,0 +1,10 @@
+# ****************************************************************************
+#
+# Language configuration
+#
+en:
+  description: "Dedicated to restoring and preserving the Interlisp experience"
+  languageName: English"
+  # Weight used for sorting.
+  weight: 1
+  contentDir: content/en
