@@ -7,7 +7,7 @@
 #
 
 # relativeURLs: Enable to force all relative URLs to be relative to content root
-relativeURLs: true
+relativeURLs: false
 
 # canonifyURLs: Convert relative URLs to absolute URLs
 canonifyURLs: true
@@ -30,58 +30,21 @@ defaultContentLanguageInSubdir: false
 enableMissingTranslationPlaceholders: true
 
 # Disable rendering of the specified page kinds 
-disableKinds: [taxonomy, term, RSS]
+disableKinds: 
+ - taxonomy
+ - term
+ - RSS
 
 # Code Highlighting configuration 
-pygmentsCodeFences: true
-pygmentsUseClasses: false
+#  Not Used.  Code highlighting is controlled using the highlighting
+#  section in `markup.yaml`
+#pygmentsCodeFences: false
+#pygmentsUseClasses: false
 # Use the new Chroma Go highlighter in Hugo.
-pygmentsUseClassic: false
-#pygmentsOptions = "linenos=table"
+# pygmentsUseClassic: false
+# pygmentsOptions: linenos=table
 # See https://help.farbox.com/pygments.html
-
-# ****************************************************************************
-#
-# Docsy - Everything below this are Site Params
-#
 
 # Comment out if you don't want the "print entire section" link enabled.
 # [outputs]
 # section = ["HTML", "print"]
-
-# paramas
-
-# Set Google Analytics to use GA4
-disableGtagForUniversalAnalytics: false
-
-# First one is picked as the Twitter card image if not set on page.
-# images = ["images/project-illustration.png"]
-
-# Menu title if your navbar has a versions selector to access old versions of your site.
-# This menu appears only if you have at least one [params.versions] set.
-version_menu: Releases
-
-# Flag used in the "version-banner" partial to decide whether to display a 
-# banner on every page indicating that this is an archived version of the docs.
-# Set this flag to "true" if you want to display the banner.
-archived_version: false
-
-# The version number for the version of the docs represented in this doc set.
-# Used in the "version-banner" partial to display a version number for the 
-# current doc set.
-version: 0.0
-
-# A link to latest version of the docs. Used in the "version-banner" partial to
-# point people to the main doc site.
-url_latest_version: https://example.com
-
-# Enable Algolia DocSearch
-#algolia_docsearch = false
-
-# Enable Lunr.js offline search
-# offlineSearch = true
-
-# Enable syntax highlighting and copy buttons on code blocks with Prism
-# Default "Chroma" syntax highlighter has no dot support, so use Prism instead
-prism_syntax_highlighting: false
-
