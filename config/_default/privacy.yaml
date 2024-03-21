@@ -1,0 +1,18 @@
+# ------------------------------------------------------------------
+# 
+# Privacy Settings
+#
+# See:  https://gohugo.io/about/hugo-and-gdpr/
+#
+# googleAnalytics:
+#  ananymizIP:  Enable anonymiation of IP addresses
+#  disable:  Set to true to disable googleAnalytics
+#  respectDoNotTrack:  Check for Do Not Track in headers
+#  useSessionStorage:  Store session information in storage and
+#                      not in cookies
+privacy:
+  googleAnalytics:
+    anonymizeIP: true
+    disable: false
+    respectDoNotTrack: true
+    useSessionStorage: true

@@ -1,0 +1,9 @@
+# ****************************************************************************
+#
+# Image processing setup 
+#
+# Configuration information available at:
+# https://gohugo.io/content-management/image-processing/#resampling-filter
+resampleFilter: CatmullRom
+quality: 75
+anchor: smart

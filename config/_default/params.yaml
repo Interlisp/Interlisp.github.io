@@ -1,0 +1,154 @@
+# --------------------------------------------------------------------
+#
+# Parameters
+#
+
+# Set Google Analytics to use GA4
+disableGtagForUniversalAnalytics: false
+
+# First one is picked as the Twitter card image if not set on page.
+# images = ["images/project-illustration.png"]
+
+# Menu title if your navbar has a versions selector to access old versions of your site.
+# This menu appears only if you have at least one [params.versions] set.
+version_menu: Releases
+
+# Flag used in the "version-banner" partial to decide whether to display a 
+# banner on every page indicating that this is an archived version of the docs.
+# Set this flag to "true" if you want to display the banner.
+archived_version: false
+
+# The version number for the version of the docs represented in this doc set.
+# Used in the "version-banner" partial to display a version number for the 
+# current doc set.
+version: 0.0
+
+# A link to latest version of the docs. Used in the "version-banner" partial to
+# point people to the main doc site.
+url_latest_version: https://example.com
+
+# Enable syntax highlighting and copy buttons on code blocks with Prism
+# We are using code highlighting via Chroma.  Chroma options are defined
+# in `markup.yaml`
+prism_syntax_highlighting: false
+
+#  copyright:  site copyright information
+#    authors:  text list of authors
+#    from_year:  year in copyright statement
+#
+copyright: 
+  authors: Interlisp.org
+  from_year: 2024
+  license: MIT
+
+# github information
+#  github_repo:  url to repo of web site
+#  github_branch:  main branch of repo
+#  github_subdir:  unused by Interlisp.org
+#  github_project_repo: added by Interlisp.org points to repo used
+#                       for issue reporting
+#  
+github_repo: https://github.com/interlisp/Interlisp.github.io
+github_branch: main
+github_subdir: 
+github_project_repo: https://github.com/interlisp/medley
+
+# Google custom seach engine configuration
+#  gcs_engine_id:  search engine 
+gcs_engine_id: 33ef4cbe0703b4f3a
+
+# Footer Links
+# 
+# user:  End user relevant links. These will show up on 
+#        left side of footer and in the community page if you have one.
+#   name: displayed when moused over
+#   url:  url to use when selected
+#   desc: description
+#   icon:  icon to display
+links:
+  user:
+  - name: "User mailing list"
+    url: "mailto:Interlisp@googlegroups.com"
+    icon: "fa fa-envelope"
+    desc:  "Discussion and help from your fellow users"
+  - name: "Twitter"
+    url: "https://twitter.com/interlisp8"
+    icon: "fab fa-twitter"
+    desc: "Follow us on Twitter to get the latest news!"
+# - name: "Stack Overflow"
+#   url: "https://stackoverflow.com/questions/tagged/graphviz"
+#   icon: "fab fa-stack-overflow"
+#   desc: "Practical questions and curated answers"
+
+# developer:  Developer relevant links. These will show up on right 
+#             side of footer and in the community page if you have one.
+  developer:
+  - name: "On GitHub"
+    url: "https://github.com/interlisp"
+    icon: "fab fa-github"
+    desc: "Development takes place here!"
+# - name: "Slack"
+#   url: "https://example.org/slack"
+#   icon: "fab fa-slack"
+#   desc: "Chat with other project developers"
+# - name: "Developer mailing list"
+#   url: "https://example.org/mail"
+#   icon: "fa fa-envelope"
+#   desc: "Discuss development issues around the project"
+
+taxonomies:
+# Nothing defined
+
+# User Interface Configuration options
+#
+# feedback:
+#   Adds a H2 section titled "Feedback" to the bottom of each doc. The responses 
+#   are sent to Google Analytics as events.  This feature depends 
+#   on [services.googleAnalytics] and will be disabled if 
+#   "services.googleAnalytics.id" is not set.
+#
+#   If you want this feature, but occasionally need to remove the 
+#   "Feedback" section from a single page,
+#   add "hide_feedback: true" to the page's front matter.
+#    enable:  boolean Turn feedback
+#    yes: text to display with yes is selected
+#    no: text to display when no is selected
+
+ui:
+  feedback:
+    enable: true
+    yes: 'Glad to hear it! Please <a href="https://github.com/Interlisp/medley/issues/new?template=documentation.md&projects=Interlisp/medley/5">tell us how we can improve</a>.'
+    no: 'Sorry to hear that. Please <a href="https://github.com/Interlisp/medley/issues/new?template=documentation.md&projects=Interlisp/medley/5">tell us how we can improve</a>.'
+
+  # Adds a reading time to the top of each doc.
+  # If you want this feature, but occasionally need to remove the Reading time from a single page, 
+  # add "hide_readingtime: true" to the page's front matter
+  readingtime:
+    enable: false
+
+  #  Set to false if you don't want to display a logo (/assets/icons/logo.svg) in the top nav bar
+  navbar_logo: true
+      
+    # Turn off transparency in nav bar
+  navbar_translucent_over_cover_disable: true
+
+  # Enable to show the side bar menu in its compact state.
+  sidebar_menu_compact: true
+  sidebar_menu_foldable: true
+
+  #  Set to true to hide the sidebar search box (the top nav search box will still be displayed if search is enabled)
+  sidebar_search_disable: false
+  # Sidebar generation is slow otherwise
+  sidebar_cache_limit: 100
+
+  # We have almost 200 attributes; don't truncate the sidebar to max 50 contents.
+  sidebar_menu_truncate:  1000
+
+  #  Set to true to disable breadcrumb navigation.
+  breadcrumb_disable: false
+  
+  # Set to true to disable the About link in the site footer
+  footer_about_disable: true
+
+  ul_show: 3
+
