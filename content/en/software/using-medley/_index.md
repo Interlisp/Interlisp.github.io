@@ -77,7 +77,7 @@ These documents were converted from Medley's internal format into PDFs. Watch ou
 
 - [Interlisp - The Language and Its Usage](/documentation/1986-interlisp-language-book-1.pdf)
   Also available in [zipped DJVU format](/documentation/1986-Interlisp-Language-Usage.ocr.djvu.zip)
-  - <a href="20211225-interlisp-book-2.pdf">Medley Interlisp: Interactive Programming Environment (derived from Interlisp-D)</a>
-  - <a href="2021-interlisp-book-3.pdf">Medley Interlisp: Interactive Programming Tools (derived from Interlisp-D)</a>
-- <a href="IRM.pdf">(1993) Interlisp Reference Manual</a>
+  - [Medley Interlisp: Interactive Programming Environment (derived from Interlisp-D)](/documentation/20211225-interlisp-book-2.pdf)
+  - [Medley Interlisp: Interactive Programming Tools (derived from Interlisp-D)](/documentation/2021-interlisp-book-3.pdf)
+- [Interlisp Reference Manual (1993)](/documentation/IRM.pdf)
 
