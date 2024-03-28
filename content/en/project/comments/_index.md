@@ -29,6 +29,9 @@ _Within the Artificial Intelligence and natural language research communities, L
 
 ## Blogs and Online Discussions
 
+- Eugene Zaikonnikov recapped the discovery of the [Interlisp code of Eurisko](https://blog.funcall.org/lisp/2024/03/22/eurisko-lives/), the seminal AI system by Doug Lenat, and shared a video in which Eugene introduces the program and demonstrates it running on Medley.
+_Truly an Indiana Jones finding the Lost Ark moment._
+
 - [What Were the Differences Between Symbolics Genera and Xerox Interlisp-D](https://news.ycombinator.com/item?id=36713595) asked by Simon Brooke in [Hacker News](https://news.ycombinator.com/news)
 _... I'm curious about the similarities and differences between Symbolics Genera and Xerox Interlisp-D. Why is Genera more hyped than Interlisp-D? Unlike Genera, which is proprietary and is extremely difficult to obtain legally, Interlisp-D is now free, open-source software, and there's a community that has ported Interlisp-D to run on top of modern operating systems._
 
