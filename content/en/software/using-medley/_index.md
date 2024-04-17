@@ -1,6 +1,6 @@
 ---
-title: Using Medley
-weight: 10
+title: Documentation
+weight: 20
 type: docs
 aliases:
  - /medley/using/docs/medley/orientation/
