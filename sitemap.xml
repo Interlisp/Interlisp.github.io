@@ -35,10 +35,6 @@
   </url>
   
   <url>
-    <loc>https://interlisp.org/software/using-medley/</loc>
-  </url>
-  
-  <url>
     <loc>https://interlisp.org/history/parc-alto/</loc>
   </url>
   
@@ -52,6 +48,10 @@
   
   <url>
     <loc>https://interlisp.org/history/d-machines/</loc>
+  </url>
+  
+  <url>
+    <loc>https://interlisp.org/software/using-medley/</loc>
   </url>
   
   <url>
