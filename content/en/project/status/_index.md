@@ -24,6 +24,10 @@ The Medley team has produced annual reports documenting their major achievements
 - [2022 Annual Report](/project/status/2022medleyannualreport)
 - [2021 Annual Report](/project/status/2021medleyannualreport)
 
+## Build Notes
+
+Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases).
+
 ## November 2023 Computer Conservation Society event
 
 On November 16, 2023 Steve Kaisler gave the talk "Software Archaeology: The Medley Interlisp Modernisation Project" at a [Computer Conservation Society](https://www.computerconservationsociety.org/) event in London and the recording is available here.
