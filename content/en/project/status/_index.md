@@ -24,9 +24,9 @@ The Medley team has produced annual reports documenting their major achievements
 - [2022 Annual Report](/project/status/2022medleyannualreport)
 - [2021 Annual Report](/project/status/2021medleyannualreport)
 
-## Release Notes
+## Build Notes
 
-Builds of Medley for several operating systems and architectures are released every week on Monday. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases).
+Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases).
 
 ## November 2023 Computer Conservation Society event
 
