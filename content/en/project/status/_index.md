@@ -11,7 +11,11 @@ aliases:
  - /medley/project/status/
 ---
 
-# 2023 Annual Report released!
+## Build Notes
+
+Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases). We advise caution as these builds are untested and may have bugs or other issues.
+
+## 2023 Annual Report released!
 
 The [2023 Medley Interlisp Annual Report](/project/status/2023medleyannualreport) is ready! "Read all about it!"
 
@@ -23,10 +27,6 @@ The Medley team has produced annual reports documenting their major achievements
 - [2023 Annual Report](/project/status/2023medleyannualreport)
 - [2022 Annual Report](/project/status/2022medleyannualreport)
 - [2021 Annual Report](/project/status/2021medleyannualreport)
-
-## Build Notes
-
-Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases).
 
 ## November 2023 Computer Conservation Society event
 
