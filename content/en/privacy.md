@@ -13,7 +13,7 @@ At Interlisp.org, we value your privacy and are committed to protecting your per
 
 *Google Analytics:* We utilize Google Analytics to analyze website traffic and improve user experience. Google Analytics collects anonymous data such as your IP address, browser type, and pages visited. This information helps us understand user behavior and enhance our services.
 
-*Registered Users:* For users who register on dnline.interlisp.org, we collect email addresses. The email addresses are used to establish accounts, and associate the data we store between sessions, and may be used for communication related to your account. Our online service is not intended for handling sensitive information such as private data, logins, passwords. If you have any further concerns or questions, feel free to reach out.
+*Registered Users:* For users who register on online.interlisp.org, we collect email addresses. The email addresses are used to establish accounts, and associate the data we store between sessions, and may be used for communication related to your account. Our online service is not intended for handling sensitive information such as private data, logins, passwords. If you have any further concerns or questions, feel free to reach out.
 
 ### Data Sharing
 
