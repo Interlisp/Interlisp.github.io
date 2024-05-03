@@ -147,7 +147,7 @@ anchor = "smart"
 
 [params]
 copyright = "Interlisp.org"
-# privacy_policy = "https://policies.google.com/privacy"
+privacy_policy = "https://interlisp.org/privacy"
 
 # Set Google Analytics to use GA4
 disableGtagForUniversalAnalytics = false
