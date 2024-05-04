@@ -62,7 +62,13 @@ If you would like to join our weekly meetings, [let us know](mailto:info@interli
 
 Check out our [Project List](https://docs.google.com/document/d/1ceXj7VzPeLSM0sBwEnYQqArKsXg0VKCWLTF0zv10LRg/edit?usp=sharing) for ideas. Find something that matches your interests, or propose a different project. Funding is available to help support a limited number of projects.
 
-## 6: Donations
+## 6. Donations
 
 We use donations to pay for online services, web hosting; larger donations for hiring consultants and contract workers to help with various tasks.
-You can donate through GitHub sponsors, which is convenient. They do charge a fee -- 3% if done through ACH, 6% for credit card donations. For larger amounts contact [our donations team](mailto:board@interlisp.org).
+
+You can donate through the following methods:
+
+- [GitHub Sponsors](https://github.com/sponsors/Interlisp): it's convenient but they do charge a fee — 3% if done through ACH, 6% for credit card donations
+- [PayPal](https://www.paypal.com/donate/?hosted_button_id=MCHS5GWLVYLUY): [paypal@interlisp.org](mailto:paypal@interlisp.org)
+- [our donations team](mailto:board@interlisp.org): for larger amounts contact [board@interlisp.org](mailto:board@interlisp.org)
+
