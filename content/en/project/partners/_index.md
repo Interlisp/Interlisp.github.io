@@ -1,6 +1,6 @@
 ---
 title: Organizational Partners
-weight: 12
+weight: 18
 type: docs
 aliases:
  - /medley/project/partners
