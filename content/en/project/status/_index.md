@@ -17,9 +17,7 @@ Builds of Medley for several operating systems and architectures are generated a
 
 ## May 2024 European Lisp Symposium
 
-On May 6, 2024 Andrew Sengul gave the remote talk "The Medley Interlisp Revival" at the [European Lisp Symposium 2024](https://european-lisp-symposium.org/2024/index.html). The video recording is below (from 01:36:19) and the paper is [available online](https://doi.org/10.5281/zenodo.11090093).
-
-<iframe src="https://player.twitch.tv/?video=2138739613&time=1h36m21s&parent=www.interlisp.org" frameborder="0" allowfullscreen="true" scrolling="no" height="378" width="620"></iframe>
+On May 6, 2024 Andrew Sengul gave the remote talk "The Medley Interlisp Revival" at the [European Lisp Symposium 2024](https://european-lisp-symposium.org/2024/index.html) and you can read the [paper](https://doi.org/10.5281/zenodo.11090093). The video recording will be available soon.
 
 ## 2023 Annual Report released!
 
