@@ -8,7 +8,7 @@ aliases:
 
 We use donations to pay for online services, web hosting; larger donations for hiring consultants and contract workers to help with various tasks.
 
-See our [InterlispOrg profile](https://www.guidestar.org/profile/shared/31fad8e3-de97-4d71-9401-b896bf085498) and rating at the [GuideStar](https://www.guidestar.org) directory of nonprofits.
+See our [profile](https://www.guidestar.org/profile/shared/31fad8e3-de97-4d71-9401-b896bf085498) and rating at [GuideStar](https://www.guidestar.org).
 
 <a href="https://www.guidestar.org/profile/shared/31fad8e3-de97-4d71-9401-b896bf085498" target="_blank"><img src="https://widgets.guidestar.org/TransparencySeal/10019973" /></a>
 
