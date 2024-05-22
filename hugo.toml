@@ -255,8 +255,8 @@ enable = false
 [[params.links.user]]
   name ="Twitter"
   url = "https://twitter.com/interlisp8"
-  icon = "fab fa-twitter"
-  desc = "Follow us on Twitter to get the latest news!"
+  icon = "fab fa-x-twitter"
+  desc = "Follow us on X to get the latest news!"
 # [[params.links.user]]
 #  name = "Stack Overflow"
 #  url = "https://stackoverflow.com/questions/tagged/graphviz"
