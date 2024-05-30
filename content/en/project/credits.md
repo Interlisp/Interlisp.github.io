@@ -2,7 +2,6 @@
 title: Credits
 weight: 80
 type: docs
-markup: mmark
 ---
 
 Interlisp was a joint effort of many people -- likely more than one hundred -- from its initial beginnings through its heyday until its virtual disappearance. There are more than we can name. There were contributions by employees of BBN, Xerox, and Fuji Xerox and later, employees of Envos and Venue. There are initials in the source code with date of last edit, but who wrote what is sometimes a mystery.
