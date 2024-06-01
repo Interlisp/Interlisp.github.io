@@ -6,7 +6,7 @@ project for the Interlisp ecosystem.
 The collection of pages provides information on the restoration effort, Medley,
 Interlisp and how to access and use the restored Medley system.
 
-## Mainitaining the website
+## Maintaining the website
 
 The website is build using the [Hugo](https://gohugo.io/) static
 site generator and the [Docsy](https://www.docsy.dev/) technical documentation
