@@ -15,11 +15,14 @@ We joined SPN in 2021 as an "Implementation Sponsor".
 * Membership is $4k/year
 * Hosts [Emulation as a Service infrastructure](https://www.softwarepreservationnetwork.org/emulation-as-a-service-infrastructure/)
 
-### Universities: CSUCI
+### Universities:
 
-California State University Channel Islands
+University of Alberta
 
-* Professor Eric Kaltman
+* Professor Eric Kaltman, [Software History Futures and Technologies](SHFT.md)
+* Graduate students:
+  * Eleanor Young
+  * Abhik Hasnain
 
 ### [LFG (Lexical Functional Grammar) group](https://ling.sprachwiss.uni-konstanz.de/pages/home/lfg/ilfga/constitution.html)
 
@@ -29,8 +32,8 @@ California State University Channel Islands
 ### [Computer History Museum](https://computerhistory.org/)
 
 * PARC gave CHM a "donation" of files from PARC backups, including lisp sources. This looks like an important trove of Information.
-* hosts Smalltalk Zoo
-* offered to record history interview
+* Hosts Smalltalk Zoo
+* Offered to record history interview
 
 ### Internet Archive
 
