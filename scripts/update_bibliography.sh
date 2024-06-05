@@ -102,4 +102,4 @@ items=$(jq 'include "./bib-fns";map(reconstituteGroupedEntries) | from_entries' 
 
 echo "Outputting CSL JSON"
 echo "$finalCount entries"
-echo "$items" > "$(dirname "$0")/../data/bibliography.json"
+echo "$items" > "$(dirname "$0")/../static/data/bibliography.json"

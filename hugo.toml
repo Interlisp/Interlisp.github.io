@@ -7,6 +7,8 @@ enableRobotsTXT = true
 
 assetDir = "static"
 
+
+
 # ****************************************************************************
 #
 # Docsy
@@ -214,6 +216,7 @@ sidebar_search_disable = false
 navbar_logo = true
 # Set to true to disable the About link in the site footer
 footer_about_enable = false
+
 # Turn off transparency in nav bar
 navbar_translucent_over_cover_disable = true
 
@@ -278,3 +281,10 @@ enable = false
 #   url = "https://example.org/mail"
 #   icon = "fa fa-envelope"
 #   desc = "Discuss development issues around the project"
+
+[params.cdn]
+  jquery = 'https://code.jquery.com/jquery-3.7.1.min.js'
+	jquery_hash = 'sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo='
+
+[params.csp]
+  scriptsrc = ["'self'", "'unsafe-inline'", "https://code.jquery.com"]

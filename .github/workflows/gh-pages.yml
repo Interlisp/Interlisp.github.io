@@ -77,7 +77,7 @@ jobs:
         env:
           cache-name: cache-zotero_bib
         with:
-          path: ~/data
+          path: ~/static/data
           key: ${{ needs.check.outputs.zoteroVersion }}
           restore-keys: |
             ${{ needs.check.outputs.zoteroVersion }}
@@ -88,14 +88,14 @@ jobs:
         run: |
           if [[ "$CACHE_HIT" == 'true' ]]; then
             echo "Use Cache"
-            sudo cp --recursive ~/data ${GITHUB_WORKSPACE}
-            ls -la ${GITHUB_WORKSPACE}/data
+            sudo cp --recursive ~/static/data ${GITHUB_WORKSPACE}
+            ls -la ${GITHUB_WORKSPACE}/static/data
           else
             echo "Retrieve bibliography"
             cd scripts
             chmod +x ./update_bibliography.sh
             ./update_bibliography.sh
-            sudo cp --recursive ${GITHUB_WORKSPACE}/data ~/data
+            sudo cp --recursive ${GITHUB_WORKSPACE}/static/data ~/static/data
           fi 
         shell: bash
 
