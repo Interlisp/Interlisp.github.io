@@ -1,12 +1,12 @@
 # Interlisp.org Home Page
 
 The documentation repository for <https://interlisp.org>, the restoration
-project for the Interlisp ecosystem. This is a revision by Andrew Sengul.
+project for the Interlisp ecosystem.
 
 The collection of pages provides information on the restoration effort, Medley,
 Interlisp and how to access and use the restored Medley system.
 
-## Mainitaining the website
+## Maintaining the website
 
 The website is build using the [Hugo](https://gohugo.io/) static
 site generator and the [Docsy](https://www.docsy.dev/) technical documentation
@@ -172,7 +172,7 @@ To run `Hugo` go to the root directory of your repository clone and run the foll
 hugo server
 ```
 
-`Hugo` will start and automatically download the Docsy theme and it's dependencies as hugo modules.  You should see output along the lines of:
+`Hugo` will start and automatically download the Docsy theme and its dependencies as hugo modules.  You should see output along the lines of:
 
 ```bash
 hugo: downloading modules …
