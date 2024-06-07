@@ -281,10 +281,3 @@ enable = false
 #   url = "https://example.org/mail"
 #   icon = "fa fa-envelope"
 #   desc = "Discuss development issues around the project"
-
-[params.cdn]
-  jquery = 'https://code.jquery.com/jquery-3.7.1.min.js'
-	jquery_hash = 'sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo='
-
-[params.csp]
-  scriptsrc = ["'self'", "'unsafe-inline'", "https://code.jquery.com"]
