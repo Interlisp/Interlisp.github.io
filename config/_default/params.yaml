@@ -73,8 +73,8 @@ links:
     desc:  "Discussion and help from your fellow users"
   - name: "Twitter"
     url: "https://twitter.com/interlisp8"
-    icon: "fab fa-twitter"
-    desc: "Follow us on Twitter to get the latest news!"
+    icon: "fab fa-x-twitter"
+    desc: "Follow us on X to get the latest news!"
 # - name: "Stack Overflow"
 #   url: "https://stackoverflow.com/questions/tagged/graphviz"
 #   icon: "fab fa-stack-overflow"
@@ -147,8 +147,8 @@ ui:
   #  Set to true to disable breadcrumb navigation.
   breadcrumb_disable: false
   
-  # Set to true to disable the About link in the site footer
-  footer_about_disable: true
+  # Set to false to disable the About link in the site footer
+  footer_about_enable: false
 
   ul_show: 3
 
