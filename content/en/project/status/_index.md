@@ -11,7 +11,15 @@ aliases:
  - /medley/project/status/
 ---
 
-# 2023 Annual Report released!
+## Build Notes
+
+Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases). We advise caution as these builds are untested and may have bugs or other issues.
+
+## May 2024 European Lisp Symposium
+
+On May 6, 2024 Andrew Sengul gave the remote talk "The Medley Interlisp Revival" at the [European Lisp Symposium 2024](https://european-lisp-symposium.org/2024/index.html) and you can read the [paper](https://doi.org/10.5281/zenodo.11090093). The video recording will be available soon.
+
+## 2023 Annual Report released!
 
 The [2023 Medley Interlisp Annual Report](/project/status/2023medleyannualreport) is ready! "Read all about it!"
 

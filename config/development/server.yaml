@@ -1,8 +1,13 @@
 headers:
 - for: /**
   values:
-    Content-Security-Policy: script-src localhost:1313
+    Content-Security-Policy: script-src 'unsafe-inline' 'unsafe-eval' localhost:1313 https://code.jquery.com https://*.google.com http://*.google.com https://partner.googleadservices.com
     Referrer-Policy: strict-origin-when-cross-origin
     X-Content-Type-Options: nosniff
     X-Frame-Options: DENY
     X-XSS-Protection: 1; mode=block
+
+redirects:
+- from: /**
+  status: 404
+  to: /404.html
