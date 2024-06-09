@@ -165,7 +165,15 @@ var abstractExpanderClose = "Abstract -";
       </tr>
     </thead>
     <tbody style="overflow:auto">
-      {{ $years_items := getJSON "data/bibliography.json" }}
+      {{ $years_items := dict }}
+      {{ $bib := resources.Get "data/bibliography.json" }}
+      {{ with $bib }}
+        {{ with . | transform.Unmarshal }}
+          {{ $years_items = . }}
+        {{ end }}
+      {{ else }}
+        {{ errorf "Unable to get global resource 'data/bibliography.json'" }}
+      {{ end }}
       {{ range $year, $items := $years_items }}
         <tr>
           <th class="year"><b>{{ $year }}</b></th>
