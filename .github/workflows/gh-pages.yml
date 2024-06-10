@@ -28,6 +28,11 @@ on:
   schedule:
     - cron: "0 3 * * *"
 
+env:
+  # ----------------------------------------------------------------------------
+  # Specify the deployment environment:  staging or production
+  hugoEnvironment: production
+
 jobs:
   # ----------------------------------------------------------------------------
   # Use the Zotero REST API to get the current version of the Zotero Bibliography
@@ -102,7 +107,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.122.0'
+          hugo-version: '0.127.0'
           extended: true
 
       - name: Setup Node
@@ -115,7 +120,7 @@ jobs:
       - run: npm install --verbose
 
       - name: Build
-        run: hugo
+        run: hugo -e $hugoEnvironment
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
