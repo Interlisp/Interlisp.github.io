@@ -10,10 +10,12 @@
 relativeURLs: false
 
 # canonifyURLs: Convert relative URLs to absolute URLs
-canonifyURLs: true
+canonifyURLs: false
 
-# enableRobotsTXT:  Enable generation of Robots.txt file
-enableRobotsTXT: true
+# enableRobotsTXT:  Enable generation of robots.txt file.  When enabled this
+# will overwrite the default robots.txt file that disallows crawling.
+# Default to false and set to true for production in config/production/hugo.yaml
+enableRobotsTXT: false
 
 # aasetDir:  Location where Hugo looks for assets
 assetDir: static
