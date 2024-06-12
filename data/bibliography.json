@@ -780,7 +780,7 @@
         ]
       },
       "key": "6RAE6DBF",
-      "version": 2165,
+      "version": 6356,
       "itemType": "report",
       "creators": [
         {
@@ -815,6 +815,15 @@
           "tag": "BBN-LISP"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "hardware overview"
+        },
+        {
+          "tag": "memory management"
+        },
+        {
           "tag": "s2z"
         }
       ],
@@ -823,7 +832,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T14:43:36Z",
-      "dateModified": "2021-07-26T02:35:03Z"
+      "dateModified": "2024-06-11T14:44:35Z"
     },
     {
       "target": "M6869X84",
@@ -831,6 +840,7 @@
       "type": "book",
       "title": "The programming language LISP: Its operation and applications",
       "publisher": "The M.I.T. Press",
+      "abstract": "Among the new languages for instructing computers is a remarkable one called LISP. The name cornes from the first three\nletters of LIST and the first letter of PROCESSING. Not only is LISP a language for instructing computers but it is also a formal mathematical language, in the same way as elëmentary algebra when rigorously defined and used is a formal mathematical language. \n\nLISP is designed primarily for processing data consisting of lists of symbols. It has been used for symbolic calculations in differential and integral calculus, electrical circuit theory, mathematical logic, game playing, and other fields of intelligent handling of symbols. \n\nThe purpose of the present article is to make a bridge between the ideas and terms of ordinary English and elementary\nmathematics, and the ideas and terms known and used by LISP programmers.",
       "ISBN": "0-262-59004-2",
       "shortTitle": "The programming language LISP",
       "author": [
@@ -851,7 +861,7 @@
         ]
       },
       "key": "M6869X84",
-      "version": 2255,
+      "version": 6363,
       "itemType": "book",
       "creators": [
         {
@@ -884,6 +894,21 @@
       "extra": "",
       "tags": [
         {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "programming applications"
+        },
+        {
+          "tag": "programming fundamentals"
+        },
+        {
+          "tag": "programming overview"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -895,7 +920,7 @@
         "dc:replaces": "http://zotero.org/groups/2914042/items/J6V82TJX"
       },
       "dateAdded": "2021-04-22T04:57:15Z",
-      "dateModified": "2021-08-28T00:04:16Z"
+      "dateModified": "2024-06-11T15:12:23Z"
     }
   ],
   "1967": [
@@ -5790,7 +5815,7 @@
         ]
       },
       "key": "59BVIIF8",
-      "version": 3171,
+      "version": 6371,
       "itemType": "report",
       "creators": [
         {
@@ -5818,10 +5843,22 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "implementation"
+        },
+        {
           "tag": "interlisp"
         },
         {
           "tag": "s2z"
+        },
+        {
+          "tag": "system overview"
+        },
+        {
+          "tag": "virtual machine"
         }
       ],
       "collections": [
@@ -5829,7 +5866,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:01:10Z",
-      "dateModified": "2023-10-30T19:43:45Z"
+      "dateModified": "2024-06-11T15:25:54Z"
     },
     {
       "target": "C86QBBMZ",
@@ -7548,7 +7585,7 @@
         ]
       },
       "key": "RV6K2EVG",
-      "version": 3183,
+      "version": 6367,
       "itemType": "thesis",
       "creators": [
         {
@@ -7572,7 +7609,25 @@
       "extra": "DOI: 10.14288/1.0051801",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "abstract machine"
+        },
+        {
+          "tag": "multilisp"
+        },
+        {
+          "tag": "system overview"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "virtual machine"
         }
       ],
       "collections": [
@@ -7580,7 +7635,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T17:17:08Z",
-      "dateModified": "2023-10-30T20:00:15Z"
+      "dateModified": "2024-06-11T15:20:21Z"
     }
   ],
   "1981": [
@@ -8470,7 +8525,7 @@
         ]
       },
       "key": "7T3AV4PM",
-      "version": 2066,
+      "version": 6378,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -8503,7 +8558,16 @@
       "extra": "Publisher: IEEE Computer Society",
       "tags": [
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "interlisp"
+        },
+        {
+          "tag": "programming environments"
+        },
+        {
+          "tag": "programming overview"
         }
       ],
       "collections": [
@@ -8511,7 +8575,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-05T15:43:12Z",
-      "dateModified": "2021-06-14T02:25:22Z"
+      "dateModified": "2024-06-11T15:43:27Z"
     },
     {
       "target": "THYZ7UPH",
