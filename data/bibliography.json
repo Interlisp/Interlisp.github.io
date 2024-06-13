@@ -2526,7 +2526,7 @@
         ]
       },
       "key": "EM6WJF9A",
-      "version": 6241,
+      "version": 6462,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -2558,6 +2558,9 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
           "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
@@ -2565,9 +2568,6 @@
         },
         {
           "tag": "dynamic storage allocation"
-        },
-        {
-          "tag": "interlisp"
         },
         {
           "tag": "programming environments"
@@ -2587,7 +2587,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-16T02:11:24Z",
-      "dateModified": "2024-06-03T11:53:20Z"
+      "dateModified": "2024-06-12T15:16:23Z"
     },
     {
       "target": "I5AH4B95",
@@ -2839,7 +2839,7 @@
         ]
       },
       "key": "K4LSMPDE",
-      "version": 3174,
+      "version": 6416,
       "itemType": "document",
       "creators": [
         {
@@ -2872,7 +2872,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:04:25Z",
-      "dateModified": "2023-10-30T19:47:24Z"
+      "dateModified": "2024-06-12T13:08:00Z"
     },
     {
       "target": "QQ4WARPF",
@@ -3080,7 +3080,7 @@
         ]
       },
       "key": "QFBSW8AZ",
-      "version": 6245,
+      "version": 6461,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -3107,6 +3107,9 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
           "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
@@ -3114,9 +3117,6 @@
         },
         {
           "tag": "hash search"
-        },
-        {
-          "tag": "interlisp"
         },
         {
           "tag": "programming techniques"
@@ -3130,7 +3130,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-16T02:11:24Z",
-      "dateModified": "2024-06-03T12:01:50Z"
+      "dateModified": "2024-06-12T15:08:52Z"
     },
     {
       "target": "FW3Z9TSW",
@@ -3227,7 +3227,7 @@
         ]
       },
       "key": "VCQ8JN33",
-      "version": 3135,
+      "version": 6460,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -3260,7 +3260,16 @@
           "tag": "INTERLISP/360-370"
         },
         {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "s2z"
+        },
+        {
+          "tag": "technical overview"
         }
       ],
       "collections": [
@@ -3268,7 +3277,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T17:07:38Z",
-      "dateModified": "2023-10-30T18:06:23Z"
+      "dateModified": "2024-06-12T15:06:15Z"
     },
     {
       "target": "KQM2N5FW",
@@ -4523,6 +4532,7 @@
       "type": "article",
       "title": "INSIDE INTERLISP: TWO IMPLEMENTATIONS",
       "publisher": "Xerox Palo Alto Research Center",
+      "abstract": "Interlisp and Standard Lisp are the only Lisp dialects for which anything like a comprehensive functional specification exists. The Interlisp Virtual Machine (VM) document speaks for itself: only the highlights appear just below.\n\nThe non-technical qualities of Interlisp are unique and deserve mention. Interlisp has an exhaustive and well-organized reference manual, which is available on-line to answer questions about particular functions or (to a 1esser, extent) topics. It is only through amazing amounts of\nlabor expended on this manual that the proliferation of features in Interlisp has remained usable.",
       "language": "English",
       "author": [
         {
@@ -4540,7 +4550,7 @@
         ]
       },
       "key": "JEW9IHTC",
-      "version": 2242,
+      "version": 6420,
       "itemType": "document",
       "creators": [
         {
@@ -4561,7 +4571,16 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "s2z"
+        },
+        {
+          "tag": "system overview"
         }
       ],
       "collections": [
@@ -4569,7 +4588,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T15:55:43Z",
-      "dateModified": "2021-08-27T23:01:57Z"
+      "dateModified": "2024-06-12T13:15:52Z"
     },
     {
       "target": "YT8PC2CA",
@@ -5321,7 +5340,7 @@
         ]
       },
       "key": "BSE5UV9A",
-      "version": 1332,
+      "version": 6459,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -5356,7 +5375,22 @@
           "tag": "Interlisp-D"
         },
         {
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "encoding"
+        },
+        {
+          "tag": "list structure"
+        },
+        {
           "tag": "s2z"
+        },
+        {
+          "tag": "technical overview"
         }
       ],
       "collections": [
@@ -5364,7 +5398,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T21:00:12Z",
-      "dateModified": "2021-05-31T18:25:51Z"
+      "dateModified": "2024-06-12T14:49:41Z"
     },
     {
       "target": "H5Q65H3M",
@@ -5815,7 +5849,7 @@
         ]
       },
       "key": "59BVIIF8",
-      "version": 6371,
+      "version": 6465,
       "itemType": "report",
       "creators": [
         {
@@ -5843,13 +5877,13 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
           "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
           "tag": "implementation"
-        },
-        {
-          "tag": "interlisp"
         },
         {
           "tag": "s2z"
@@ -5866,7 +5900,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:01:10Z",
-      "dateModified": "2024-06-11T15:25:54Z"
+      "dateModified": "2024-06-12T15:25:37Z"
     },
     {
       "target": "C86QBBMZ",
@@ -6210,7 +6244,7 @@
         ]
       },
       "key": "6IR4DI6L",
-      "version": 6258,
+      "version": 6463,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -6246,10 +6280,10 @@
       "extra": "",
       "tags": [
         {
-          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+          "tag": "Interlisp"
         },
         {
-          "tag": "interlisp"
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
           "tag": "programming techniques"
@@ -6263,7 +6297,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-08-24T03:41:17Z",
-      "dateModified": "2024-06-03T12:28:50Z"
+      "dateModified": "2024-06-12T15:19:32Z"
     },
     {
       "target": "8SMP58AA",
@@ -6670,7 +6704,7 @@
         ]
       },
       "key": "IWAVJBR2",
-      "version": 3094,
+      "version": 6407,
       "itemType": "thesis",
       "creators": [
         {
@@ -6695,6 +6729,21 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "SCOPE"
+        },
+        {
+          "tag": "programming environments"
+        },
+        {
+          "tag": "programming overview"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -6708,7 +6757,7 @@
         ]
       },
       "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2023-10-04T04:34:29Z"
+      "dateModified": "2024-06-12T10:17:50Z"
     },
     {
       "target": "KIDFPIUA",
@@ -7863,7 +7912,7 @@
         ]
       },
       "key": "EKSBMRUL",
-      "version": 6007,
+      "version": 6427,
       "itemType": "document",
       "creators": [],
       "date": "September, 1981",
@@ -7881,6 +7930,9 @@
           "tag": "Chaosnet"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "file protocol"
         },
         {
@@ -7892,7 +7944,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-19T02:21:12Z",
-      "dateModified": "2024-05-20T16:29:45Z"
+      "dateModified": "2024-06-12T13:23:06Z"
     },
     {
       "target": "NQ5ACUG6",
@@ -8090,7 +8142,7 @@
         ]
       },
       "key": "6BCFJ639",
-      "version": 3143,
+      "version": 6414,
       "itemType": "report",
       "creators": [
         {
@@ -8118,7 +8170,16 @@
       "extra": "",
       "tags": [
         {
-          "tag": "INTERLISP-VAX"
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "VAX"
+        },
+        {
+          "tag": "system overview"
         }
       ],
       "collections": [
@@ -8131,7 +8192,7 @@
         ]
       },
       "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2023-10-30T18:56:20Z"
+      "dateModified": "2024-06-12T12:59:58Z"
     },
     {
       "target": "ZM552A7Q",
@@ -8150,7 +8211,7 @@
         ]
       },
       "key": "ZM552A7Q",
-      "version": 6068,
+      "version": 6428,
       "itemType": "document",
       "creators": [],
       "date": "September, 1981",
@@ -8168,6 +8229,9 @@
           "tag": "I/O"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "Unibus"
         },
         {
@@ -8182,7 +8246,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-19T02:33:30Z",
-      "dateModified": "2024-05-21T03:59:05Z"
+      "dateModified": "2024-06-12T13:23:21Z"
     },
     {
       "target": "W96JCCYH",
@@ -8525,7 +8589,7 @@
         ]
       },
       "key": "7T3AV4PM",
-      "version": 6378,
+      "version": 6464,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -8558,10 +8622,10 @@
       "extra": "Publisher: IEEE Computer Society",
       "tags": [
         {
-          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+          "tag": "Interlisp"
         },
         {
-          "tag": "interlisp"
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
           "tag": "programming environments"
@@ -8575,7 +8639,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-05T15:43:12Z",
-      "dateModified": "2024-06-11T15:43:27Z"
+      "dateModified": "2024-06-12T15:23:14Z"
     },
     {
       "target": "THYZ7UPH",
@@ -8837,7 +8901,7 @@
         ]
       },
       "key": "G4F5FZND",
-      "version": 2706,
+      "version": 6450,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -8874,10 +8938,22 @@
       "extra": "",
       "tags": [
         {
-          "tag": "INTERLISP-VAX"
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "VAX"
+        },
+        {
+          "tag": "implementation"
         },
         {
           "tag": "s2z"
+        },
+        {
+          "tag": "system overview"
         }
       ],
       "collections": [
@@ -8885,7 +8961,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-16T02:11:24Z",
-      "dateModified": "2023-04-20T02:56:47Z"
+      "dateModified": "2024-06-12T14:40:19Z"
     },
     {
       "target": "IGYFMP8H",
@@ -9039,13 +9115,10 @@
     {
       "target": "8AB9NPK7",
       "id": "9296070/8AB9NPK7",
-      "type": "book",
+      "type": "article",
       "title": "Interlisp-VAX Users Manual",
       "publisher": "Xerox Corporation",
-      "publisher-place": "300 N. Halstead St. Pasadena CA 91107 USA",
-      "number-of-pages": "57",
-      "edition": "First",
-      "event-place": "300 N. Halstead St. Pasadena CA 91107 USA",
+      "abstract": "The Interlisp-VAX project was begun in mid-1979 to provide a newer, more powerful alternative to Interlisp-10 as a LISP environment suitable for research. The result is an efficient, portable, fully\nfunctional system compatible with other Interlisps and supporting a large virtual address space. Interlisp-VAX runs under two operating systems, VMS and UNIX' . Its implementation on the VAX, one of the most popular machines in research facilities and college campuses today, assures it of a long, productive future.",
       "language": "English",
       "author": [
         {
@@ -9088,8 +9161,8 @@
         ]
       },
       "key": "8AB9NPK7",
-      "version": 2078,
-      "itemType": "book",
+      "version": 6443,
+      "itemType": "document",
       "creators": [
         {
           "creatorType": "author",
@@ -9117,14 +9190,7 @@
           "lastName": "Voreck"
         }
       ],
-      "series": "",
-      "seriesNumber": "",
-      "volume": "",
-      "numberOfVolumes": "",
-      "place": "300 N. Halstead St. Pasadena CA 91107 USA",
       "date": "December 5, 1982",
-      "numPages": "57",
-      "ISBN": "",
       "shortTitle": "",
       "url": "http://www.softwarepreservation.org/projects/LISP/interlisp/Interlisp-VAX-Users_Manual.pdf/view",
       "accessDate": "2021-04-23T17:25:31Z",
@@ -9136,10 +9202,19 @@
       "extra": "",
       "tags": [
         {
-          "tag": "INTERLISP-VAX"
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "VAX"
         },
         {
           "tag": "s2z"
+        },
+        {
+          "tag": "user guide"
         }
       ],
       "collections": [
@@ -9147,7 +9222,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2021-05-31T18:37:37Z"
+      "dateModified": "2024-06-12T14:37:29Z"
     },
     {
       "target": "F3ILHMQ5",
@@ -9177,7 +9252,7 @@
         ]
       },
       "key": "F3ILHMQ5",
-      "version": 5977,
+      "version": 6424,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -9215,6 +9290,9 @@
           "tag": "Loops"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "data oriented programming"
         },
         {
@@ -9233,7 +9311,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-17T19:50:15Z",
-      "dateModified": "2024-05-19T17:34:25Z"
+      "dateModified": "2024-06-12T13:20:57Z"
     },
     {
       "target": "HGA2VE8A",
@@ -9252,7 +9330,7 @@
         ]
       },
       "key": "HGA2VE8A",
-      "version": 6106,
+      "version": 6429,
       "itemType": "document",
       "creators": [],
       "date": "June, 1982",
@@ -9270,6 +9348,9 @@
           "tag": "Lisp Machine"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "introductory"
         },
         {
@@ -9281,7 +9362,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-19T02:57:31Z",
-      "dateModified": "2024-05-22T16:38:36Z"
+      "dateModified": "2024-06-12T13:23:36Z"
     },
     {
       "target": "RNAZ2XUW",
@@ -9447,7 +9528,7 @@
         ]
       },
       "key": "U7BKRSGY",
-      "version": 5990,
+      "version": 6425,
       "itemType": "document",
       "creators": [],
       "date": "February, 1983",
@@ -9463,6 +9544,9 @@
       "tags": [
         {
           "tag": "3600"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
           "tag": "Symbolics"
@@ -9500,7 +9584,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-18T17:16:51Z",
-      "dateModified": "2024-05-19T17:48:21Z"
+      "dateModified": "2024-06-12T13:21:27Z"
     },
     {
       "target": "E5NDSA26",
@@ -9732,11 +9816,10 @@
     {
       "target": "L378BFRQ",
       "id": "9296070/L378BFRQ",
-      "type": "book",
+      "type": "article",
       "title": "Interlisp reference manual: Revised",
       "publisher": "Xerox Corp.",
-      "publisher-place": "Palo Alto Research Center, Pasadena, Calif.",
-      "event-place": "Palo Alto Research Center, Pasadena, Calif.",
+      "abstract": "Interlisp is a programming system. A programming system consists of a programming language, a large number of predefined programs (or functions, to use the Lisp tenninology) that can be used either as direct user commands or as subroutines in user programs, and an environment that supports the programmer by providing a variety of specialized programming tools. The language and predefined functions of Interlisp are rich, but similar to those of other modem programming languages. The Interlisp programming environment, on the other hand, is very distinctive. Its most salient characteristic is an integrated set of programming tools which know enough about Interlisp programming so that they can act as semi-autonomous, intelligent \"assistants\" to the programmer. In addition, the environment provides a completely self-contained world for creating, debugging and maintaining Interlisp programs. \n\nThis manual describes all three components of the Interlisp system. There are discussions about the content and structure of the language, about the pieces of the system that can be incorporated into user programs, and about the environment. The line between user code and the environment is thin and changing. Most users extend the environment with some special features of their own. Because Interlisp is so easily extended, the system has grown over time to incorporate many different ideas about effective and useful ways to program. This gradual accumulation over many years has resulted in a rich and diverse system.",
       "note": "OCLC: 11098633",
       "language": "English",
       "author": [
@@ -9753,23 +9836,15 @@
         ]
       },
       "key": "L378BFRQ",
-      "version": 2063,
-      "itemType": "book",
+      "version": 6400,
+      "itemType": "document",
       "creators": [
         {
           "creatorType": "author",
           "name": "Michael Sannella"
         }
       ],
-      "series": "",
-      "seriesNumber": "",
-      "volume": "",
-      "numberOfVolumes": "",
-      "edition": "",
-      "place": "Palo Alto Research Center, Pasadena, Calif.",
       "date": "1983",
-      "numPages": "",
-      "ISBN": "",
       "shortTitle": "",
       "url": "",
       "accessDate": "",
@@ -9781,6 +9856,15 @@
       "extra": "OCLC: 11098633",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "reference manual"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -9789,7 +9873,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T10:16:58Z",
-      "dateModified": "2021-06-12T14:59:01Z"
+      "dateModified": "2024-06-12T09:51:50Z"
     },
     {
       "target": "A7ZZFYKB",
@@ -9992,7 +10076,7 @@
         ]
       },
       "key": "MTUV5W75",
-      "version": 5978,
+      "version": 6423,
       "itemType": "document",
       "creators": [],
       "date": "August, 1983",
@@ -10013,6 +10097,9 @@
           "tag": "Lisp Machine"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "Symbolics"
         },
         {
@@ -10027,7 +10114,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-18T16:34:20Z",
-      "dateModified": "2024-05-19T17:36:36Z"
+      "dateModified": "2024-06-12T13:20:35Z"
     },
     {
       "target": "PVEEX4BT",
@@ -13190,7 +13277,7 @@
         ]
       },
       "key": "45RYTQTD",
-      "version": 5961,
+      "version": 6421,
       "itemType": "magazineArticle",
       "creators": [
         {
@@ -13222,6 +13309,9 @@
           "tag": "Loops"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "introductory"
         },
         {
@@ -13237,7 +13327,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-18T14:46:26Z",
-      "dateModified": "2024-05-19T15:59:03Z"
+      "dateModified": "2024-06-12T13:20:00Z"
     },
     {
       "target": "MSPJNWAV",
@@ -13803,6 +13893,12 @@
       "note": "Details a Common LISP Framework at the outset of the report.",
       "number": "ISI/SR-86-170",
       "language": "English",
+      "author": [
+        {
+          "family": "Uncapher",
+          "given": ""
+        }
+      ],
       "issued": {
         "date-parts": [
           [
@@ -13821,9 +13917,15 @@
         ]
       },
       "key": "99EC48NP",
-      "version": 6191,
+      "version": 6467,
       "itemType": "report",
-      "creators": [],
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "",
+          "lastName": "Uncapher"
+        }
+      ],
       "reportNumber": "ISI/SR-86-170",
       "reportType": "Research / Technical Report",
       "seriesTitle": "",
@@ -13860,7 +13962,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-21T18:34:16Z",
-      "dateModified": "2024-05-29T17:13:07Z"
+      "dateModified": "2024-06-12T17:10:50Z"
     },
     {
       "target": "3VK4IB8T",
@@ -13894,7 +13996,7 @@
         ]
       },
       "key": "3VK4IB8T",
-      "version": 5965,
+      "version": 6422,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -13937,6 +14039,9 @@
           "tag": "Loops"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "access oriented programming"
         },
         {
@@ -13952,7 +14057,7 @@
       ],
       "relations": {},
       "dateAdded": "2023-04-24T17:14:34Z",
-      "dateModified": "2024-05-19T16:03:49Z"
+      "dateModified": "2024-06-12T13:20:21Z"
     },
     {
       "target": "NJEBFRHB",
@@ -16516,7 +16621,7 @@
         ]
       },
       "key": "L3N6FT72",
-      "version": 5994,
+      "version": 6426,
       "itemType": "document",
       "creators": [],
       "date": "July, 1986",
@@ -16530,6 +16635,9 @@
       "rights": "",
       "extra": "",
       "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
         {
           "tag": "Symbolics"
         },
@@ -16545,7 +16653,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-18T17:24:26Z",
-      "dateModified": "2024-05-20T13:48:59Z"
+      "dateModified": "2024-06-12T13:22:49Z"
     }
   ],
   "1987": [
@@ -32643,7 +32751,7 @@
         ]
       },
       "key": "23ZCTJ9Z",
-      "version": 2157,
+      "version": 6392,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -32675,7 +32783,19 @@
           "tag": "BBN-LISP"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "history"
+        },
+        {
           "tag": "s2z"
+        },
+        {
+          "tag": "tenex"
+        },
+        {
+          "tag": "tops-20"
         }
       ],
       "collections": [
@@ -32683,7 +32803,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T14:47:05Z",
-      "dateModified": "2021-07-26T02:27:23Z"
+      "dateModified": "2024-06-12T09:27:22Z"
     }
   ],
   "2016": [
@@ -35473,7 +35593,7 @@
       "number-of-pages": "347",
       "edition": "Version 1.0",
       "abstract": "This volume focuses on a set of tools for the interactive programming interface for Medley Interlisp. I tried to select the tools that I felt were extremely useful to the Interlisp user. Some tools were omitted due to space limitations. The decisions are solely mine.",
-      "note": "Software Version: Interlisp-D\nSoftware Version Certainty: Inferred from cover page",
+      "note": "Software Version: Interlisp-D\nSoftware Version Certainty: Inferred from cover page\nRevised from a 1988 document",
       "language": "English",
       "author": [
         {
@@ -35490,7 +35610,7 @@
         ]
       },
       "key": "QBBTXQSF",
-      "version": 3298,
+      "version": 6471,
       "itemType": "book",
       "creators": [
         {
@@ -35515,14 +35635,14 @@
       "libraryCatalog": "",
       "callNumber": "",
       "rights": "",
-      "extra": "Software Version: Interlisp-D\nSoftware Version Certainty: Inferred from cover page",
+      "extra": "Software Version: Interlisp-D\nSoftware Version Certainty: Inferred from cover page\nRevised from a 1988 document",
       "tags": [],
       "collections": [
         "ATGZ3WVE"
       ],
       "relations": {},
       "dateAdded": "2023-11-18T10:26:12Z",
-      "dateModified": "2023-11-18T10:34:21Z"
+      "dateModified": "2024-06-12T17:39:17Z"
     },
     {
       "target": "64SBG6EC",
@@ -36187,6 +36307,81 @@
       "dateModified": "2024-04-11T00:44:47Z"
     },
     {
+      "target": "7IN9AGWP",
+      "id": "9296070/7IN9AGWP",
+      "type": "book",
+      "title": "Medley Interlisp: The Interactive Programming Environment (derived from Interlisp-D)",
+      "number-of-pages": "386",
+      "edition": "Version 1.0",
+      "abstract": "In this volume, I explore the features of Interlisp-D: The Interactive Programming Environment. Interlisp-D was a rehosting of Interlisp to a new class of powerful, microprogrammed computer systems specifically designed to execute Lisp and other high level languages efficiently.",
+      "note": "Software Version: Medley\nSoftware Version Certainty: Stated in Authors Note on page 3\nRevised version of 1988 document",
+      "language": "English",
+      "author": [
+        {
+          "family": "Kaisler, Stephen Hendrick",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "2022",
+            12
+          ]
+        ]
+      },
+      "key": "7IN9AGWP",
+      "version": 6470,
+      "itemType": "book",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Kaisler, Stephen Hendrick"
+        }
+      ],
+      "series": "",
+      "seriesNumber": "",
+      "volume": "",
+      "numberOfVolumes": "",
+      "place": "",
+      "publisher": "",
+      "date": "December 2022",
+      "numPages": "386",
+      "ISBN": "",
+      "shortTitle": "",
+      "url": "https://interlisp.org/documentation/20211225-interlisp-book-2.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Software Version: Medley\nSoftware Version Certainty: Stated in Authors Note on page 3\nRevised version of 1988 document",
+      "tags": [
+        {
+          "tag": "Interlisp-D"
+        },
+        {
+          "tag": "Medley Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "introductory"
+        }
+      ],
+      "collections": [
+        "ATGZ3WVE"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-18T10:35:05Z",
+      "dateModified": "2024-06-12T17:38:26Z"
+    },
+    {
       "target": "AYXDSYAJ",
       "id": "9296070/AYXDSYAJ",
       "type": "article",
@@ -36739,6 +36934,60 @@
       "dateModified": "2023-02-25T14:06:15Z"
     }
   ],
+  "2024": [
+    {
+      "target": "QB7I4CXC",
+      "id": "9296070/QB7I4CXC",
+      "type": "webpage",
+      "title": "Doug Lenat's source code for AM and possibly EURISKO w/Traveller found in public archives",
+      "issued": {
+        "date-parts": [
+          [
+            "2024",
+            1,
+            2
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2023,
+            11,
+            26
+          ]
+        ]
+      },
+      "key": "QB7I4CXC",
+      "version": 6466,
+      "itemType": "webpage",
+      "creators": [],
+      "websiteTitle": "",
+      "websiteType": "",
+      "date": "January 2, 2024",
+      "shortTitle": "",
+      "url": "https://white-flame.com/am-eurisko.html",
+      "accessDate": "2023-11-26T21:01:51Z",
+      "language": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Artificial Intelligence"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        }
+      ],
+      "collections": [
+        "MTUXENI8",
+        "RH95QH8N"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-26T21:01:51Z",
+      "dateModified": "2024-06-12T06:10:33Z"
+    }
+  ],
   "Undated": [
     {
       "target": "24B6QE9B",
@@ -37192,42 +37441,6 @@
       "relations": {},
       "dateAdded": "2023-11-24T12:54:44Z",
       "dateModified": "2023-11-24T12:56:11Z"
-    },
-    {
-      "target": "QB7I4CXC",
-      "id": "9296070/QB7I4CXC",
-      "type": "webpage",
-      "title": "Doug Lenat's source code for AM and possibly EURISKO w/Traveller found in public archives",
-      "accessed": {
-        "date-parts": [
-          [
-            2023,
-            11,
-            26
-          ]
-        ]
-      },
-      "key": "QB7I4CXC",
-      "version": 5708,
-      "itemType": "webpage",
-      "creators": [],
-      "websiteTitle": "",
-      "websiteType": "",
-      "date": "",
-      "shortTitle": "",
-      "url": "https://white-flame.com/am-eurisko.html",
-      "accessDate": "2023-11-26T21:01:51Z",
-      "language": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "MTUXENI8",
-        "RH95QH8N"
-      ],
-      "relations": {},
-      "dateAdded": "2023-11-26T21:01:51Z",
-      "dateModified": "2023-11-26T21:01:51Z"
     },
     {
       "target": "D6SLY893",
@@ -38389,73 +38602,6 @@
       "relations": {},
       "dateAdded": "2023-11-23T13:12:25Z",
       "dateModified": "2024-04-14T12:34:21Z"
-    },
-    {
-      "target": "7IN9AGWP",
-      "id": "9296070/7IN9AGWP",
-      "type": "book",
-      "title": "Medley Interlisp: The Interactive Programming Environment (derived from Interlisp-D)",
-      "number-of-pages": "386",
-      "edition": "Version 1.0",
-      "abstract": "In this volume, I explore the features of Interlisp-D: The Interactive Programming Environment. Interlisp-D was a rehosting of Interlisp to a new class of powerful, microprogrammed computer systems specifically designed to execute Lisp and other high level languages efficiently.",
-      "note": "Software Version: Medley\nSoftware Version Certainty: Stated in Authors Note on page 3",
-      "language": "English",
-      "author": [
-        {
-          "family": "Kaisler, Stephen Hendrick",
-          "given": ""
-        }
-      ],
-      "key": "7IN9AGWP",
-      "version": 6218,
-      "itemType": "book",
-      "creators": [
-        {
-          "creatorType": "author",
-          "name": "Kaisler, Stephen Hendrick"
-        }
-      ],
-      "series": "",
-      "seriesNumber": "",
-      "volume": "",
-      "numberOfVolumes": "",
-      "place": "",
-      "publisher": "",
-      "date": "",
-      "numPages": "386",
-      "ISBN": "",
-      "shortTitle": "",
-      "url": "https://interlisp.org/documentation/20211225-interlisp-book-2.pdf",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "Software Version: Medley\nSoftware Version Certainty: Stated in Authors Note on page 3",
-      "tags": [
-        {
-          "tag": "Interlisp-D"
-        },
-        {
-          "tag": "Medley Interlisp"
-        },
-        {
-          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
-        },
-        {
-          "tag": "documentation"
-        },
-        {
-          "tag": "introductory"
-        }
-      ],
-      "collections": [
-        "ATGZ3WVE"
-      ],
-      "relations": {},
-      "dateAdded": "2023-11-18T10:35:05Z",
-      "dateModified": "2024-05-29T17:37:17Z"
     },
     {
       "target": "CER4PF8K",
