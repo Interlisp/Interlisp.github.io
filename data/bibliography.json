@@ -10692,7 +10692,7 @@
         ]
       },
       "key": "S3S3DFYD",
-      "version": 6188,
+      "version": 6475,
       "itemType": "report",
       "creators": [
         {
@@ -10722,6 +10722,9 @@
           "tag": "CoLab project"
         },
         {
+          "tag": "Collaborative Computing"
+        },
+        {
           "tag": "InterLisp"
         },
         {
@@ -10734,6 +10737,9 @@
           "tag": "Xerox PARC"
         },
         {
+          "tag": "collaboration"
+        },
+        {
           "tag": "research proposal"
         }
       ],
@@ -10743,7 +10749,7 @@
       ],
       "relations": {},
       "dateAdded": "2023-03-27T22:46:55Z",
-      "dateModified": "2024-05-29T17:12:15Z"
+      "dateModified": "2024-06-14T18:12:24Z"
     },
     {
       "target": "GI8MCHKF",
@@ -17155,7 +17161,7 @@
         ]
       },
       "key": "RUKCD423",
-      "version": 6337,
+      "version": 6474,
       "itemType": "webpage",
       "creators": [
         {
@@ -17185,6 +17191,9 @@
         },
         {
           "tag": "collaboration"
+        },
+        {
+          "tag": "multiple pieces"
         }
       ],
       "collections": [
@@ -17193,7 +17202,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-17T19:51:10Z",
-      "dateModified": "2024-06-05T00:47:26Z"
+      "dateModified": "2024-06-14T18:00:20Z"
     },
     {
       "target": "S7I4SN5I",
@@ -21692,7 +21701,7 @@
         ]
       },
       "key": "RXSL33GK",
-      "version": 6193,
+      "version": 6472,
       "itemType": "document",
       "creators": [
         {
@@ -21713,7 +21722,7 @@
       "extra": "",
       "tags": [
         {
-          "tag": "Medley Lisp implemented"
+          "tag": "Medley Interlisp"
         },
         {
           "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
@@ -21730,7 +21739,7 @@
       ],
       "relations": {},
       "dateAdded": "2023-12-04T11:17:49Z",
-      "dateModified": "2024-05-29T17:14:02Z"
+      "dateModified": "2024-06-14T17:55:45Z"
     },
     {
       "target": "JBXLKYFM",
@@ -29137,7 +29146,7 @@
         ]
       },
       "key": "MPE7R87M",
-      "version": 6189,
+      "version": 6473,
       "itemType": "document",
       "creators": [
         {
@@ -29166,7 +29175,7 @@
           "tag": "Lexical Functional Grammars"
         },
         {
-          "tag": "Medley Lisp implemented"
+          "tag": "Medley Interlisp"
         },
         {
           "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
@@ -29186,7 +29195,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-04-11T00:05:29Z",
-      "dateModified": "2024-05-29T17:12:34Z"
+      "dateModified": "2024-06-14T17:58:43Z"
     },
     {
       "target": "YC7VFI2W",
