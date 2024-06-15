@@ -50,10 +50,10 @@ The archives are public. The LispCore group gets much more email, and posts from
 * X (Twitter) handle: [interlisp8](https://twitter.com/interlisp8).
 * _Direct email:_ In addition to the email groups listed above, you can email us at [info@interlisp.org](mailto:info@interlisp.org).
 
-## 4. Weekly meetings. We have weekly meetings on Zoom:
+## 4. Weekly meetings. We have weekly video conferencing meetings:
 
 Mondays:    2pm PT/5pm ET. Implementation -- technical discussions  
-Wednesdays: 10am PT/1pm ET. Communication -- website, talks,
+Wednesdays: 10:30am PT/1:30pm ET. Communication -- website, talks,
                              documentation, bibliography, etc.  
 
 Meetings are to report accomplishments, status, plans, and problems, and discuss directions. Meetings are recorded, but recordings are not public.
