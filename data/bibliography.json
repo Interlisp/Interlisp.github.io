@@ -5173,7 +5173,7 @@
         ]
       },
       "key": "HDTBEDYF",
-      "version": 6225,
+      "version": 6479,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -5209,12 +5209,6 @@
         },
         {
           "tag": "knowledge representation"
-        },
-        {
-          "tag": "representation system"
-        },
-        {
-          "tag": "semantic network"
         }
       ],
       "collections": [
@@ -5223,7 +5217,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-18T14:17:21Z",
-      "dateModified": "2024-05-29T17:40:22Z"
+      "dateModified": "2024-06-20T15:04:12Z"
     },
     {
       "target": "J6VTRV7Q",
@@ -6673,12 +6667,12 @@
       "target": "IWAVJBR2",
       "id": "9296070/IWAVJBR2",
       "type": "thesis",
-      "title": "Global Program Analysis in an Interactive Environment by Larry Melvin Masinter SSL.80-1 JANUARY 1980",
-      "publisher": "PALO ALTO RESEARCH CENTER",
-      "publisher-place": "3333 Coyote Hil Road I Palo Alto I Caliornia 94304",
+      "title": "Global Program Analysis in an Interactive Environment  SSL-80-1",
+      "publisher": "Stanford University",
+      "publisher-place": "XEROX PALO ALTO RESEARCH CENTER | 3333 Coyote Hill Road I Palo Alto I California 94304",
       "number-of-pages": "114",
       "genre": "Doctor of Philosophy",
-      "event-place": "3333 Coyote Hil Road I Palo Alto I Caliornia 94304",
+      "event-place": "XEROX PALO ALTO RESEARCH CENTER | 3333 Coyote Hill Road I Palo Alto I California 94304",
       "abstract": "This dissertation describes a programming tool, implemented in Lisp, called SCOPE. The basic idea behind SCOPE can be stated simply: SCOPE analyzes a user's programs, remembers what it sees, is able to answer questions based on the facts it remembers, and is able to incrementally update the data base when a piece of the program changes. A variety of program information is available about cross references, data flow and program organization. Facts about programs are stored in a data base: to answer a question, SCOPE retrieves and makes inferences based on information in the data base. SCOPE is interactive because it keeps track of which part of the programs have changed during the course of an editing and debugging session, and is able to automatically and incrementally update its data base. Because SCOPE performs whatever re-analysis is necessary to answer the question when the question is asked. SCOPE maintains the illusion that the data base is always up to date—other than the additional wait time, it is as if SCOPE knew the answer all along.\nSCOPE'S foundation is a representation system in which properties of pieces of programs can be expressed. The objects of SCOPE'S language are pieces of programs, and in part, definitions of symbols—e.g., the definition of a procedure or a data structure. SCOPE does not model properties of individual statements or expressions in the program; SCOPE knows only individual facts about procedures variables data structures and other pieces of a program which can be assigned as the definition of symbols. The facts are relations between the name of a definition and other symbols. For example, one of the relations that SCOPE keeps track of is Call: Call[FN₁,FN₂] holds if the definition whose name is FN₁ contains a call to a procedure named FN₂.\nSCOPE has two interfaces: one to the user and one to other programs. The user interface is an English-like command language which allows for a uniform command structure and convenient defaults: the most frequently used commands are the easiest to type. All of the power available with the command language is accessible through the program interface as well. The compiler and various other utilities use the program interface.",
       "language": "en-US",
       "author": [
@@ -6690,7 +6684,8 @@
       "issued": {
         "date-parts": [
           [
-            1980
+            "1980",
+            1
           ]
         ]
       },
@@ -6704,7 +6699,7 @@
         ]
       },
       "key": "IWAVJBR2",
-      "version": 6407,
+      "version": 6503,
       "itemType": "thesis",
       "creators": [
         {
@@ -6714,9 +6709,9 @@
         }
       ],
       "thesisType": "Doctor of Philosophy",
-      "university": "PALO ALTO RESEARCH CENTER",
-      "place": "3333 Coyote Hil Road I Palo Alto I Caliornia 94304",
-      "date": "1980",
+      "university": "Stanford University",
+      "place": "XEROX PALO ALTO RESEARCH CENTER | 3333 Coyote Hill Road I Palo Alto I California 94304",
+      "date": "January 1980",
       "numPages": "114",
       "shortTitle": "",
       "url": "https://larrymasinter.net/thesis.pdf",
@@ -6757,7 +6752,7 @@
         ]
       },
       "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2024-06-12T10:17:50Z"
+      "dateModified": "2024-06-20T16:32:24Z"
     },
     {
       "target": "KIDFPIUA",
@@ -7620,7 +7615,8 @@
       "issued": {
         "date-parts": [
           [
-            1980
+            "1980",
+            7
           ]
         ]
       },
@@ -7634,7 +7630,7 @@
         ]
       },
       "key": "RV6K2EVG",
-      "version": 6367,
+      "version": 6504,
       "itemType": "thesis",
       "creators": [
         {
@@ -7646,7 +7642,7 @@
       "thesisType": "",
       "university": "University of British Columbia",
       "place": "",
-      "date": "1980",
+      "date": "July 1980",
       "numPages": "",
       "url": "https://open.library.ubc.ca/cIRcle/collections/ubctheses/831/items/1.0051801",
       "accessDate": "2021-06-02T17:17:08Z",
@@ -7684,7 +7680,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T17:17:08Z",
-      "dateModified": "2024-06-11T15:20:21Z"
+      "dateModified": "2024-06-20T16:34:19Z"
     }
   ],
   "1981": [
@@ -8563,11 +8559,11 @@
       "author": [
         {
           "family": "Teitelman",
-          "given": "W."
+          "given": "Warren"
         },
         {
           "family": "Masinter",
-          "given": "L."
+          "given": "Larry"
         }
       ],
       "issued": {
@@ -8589,17 +8585,17 @@
         ]
       },
       "key": "7T3AV4PM",
-      "version": 6464,
+      "version": 6497,
       "itemType": "journalArticle",
       "creators": [
         {
           "creatorType": "author",
-          "firstName": "W.",
+          "firstName": "Warren",
           "lastName": "Teitelman"
         },
         {
           "creatorType": "author",
-          "firstName": "L.",
+          "firstName": "Larry",
           "lastName": "Masinter"
         }
       ],
@@ -8639,7 +8635,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-05T15:43:12Z",
-      "dateModified": "2024-06-12T15:23:14Z"
+      "dateModified": "2024-06-20T16:26:19Z"
     },
     {
       "target": "THYZ7UPH",
@@ -8802,7 +8798,7 @@
         ]
       },
       "key": "VVJUR7FA",
-      "version": 6185,
+      "version": 6505,
       "itemType": "document",
       "creators": [
         {
@@ -8844,6 +8840,9 @@
           "tag": "local network"
         },
         {
+          "tag": "networking"
+        },
+        {
           "tag": "software protocol"
         }
       ],
@@ -8852,7 +8851,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-20T16:20:52Z",
-      "dateModified": "2024-05-29T17:10:04Z"
+      "dateModified": "2024-06-20T16:41:26Z"
     },
     {
       "target": "G4F5FZND",
@@ -9528,7 +9527,7 @@
         ]
       },
       "key": "U7BKRSGY",
-      "version": 6425,
+      "version": 6507,
       "itemType": "document",
       "creators": [],
       "date": "February, 1983",
@@ -9558,9 +9557,6 @@
           "tag": "hardware overview"
         },
         {
-          "tag": "history"
-        },
-        {
           "tag": "processor architecture"
         },
         {
@@ -9584,7 +9580,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-18T17:16:51Z",
-      "dateModified": "2024-06-12T13:21:27Z"
+      "dateModified": "2024-06-20T16:47:34Z"
     },
     {
       "target": "E5NDSA26",
@@ -14368,7 +14364,7 @@
         ]
       },
       "key": "H2TKFB3M",
-      "version": 6343,
+      "version": 6476,
       "itemType": "document",
       "creators": [
         {
@@ -14395,9 +14391,6 @@
         },
         {
           "tag": "documentation"
-        },
-        {
-          "tag": "package code"
         }
       ],
       "collections": [
@@ -14405,7 +14398,7 @@
       ],
       "relations": {},
       "dateAdded": "2023-11-22T10:59:55Z",
-      "dateModified": "2024-06-05T16:56:04Z"
+      "dateModified": "2024-06-20T05:07:18Z"
     },
     {
       "target": "YR58NY6F",
@@ -15845,7 +15838,7 @@
         ]
       },
       "key": "GZU4TBQ5",
-      "version": 6187,
+      "version": 6477,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -15896,7 +15889,7 @@
           "tag": "object oriented programming"
         },
         {
-          "tag": "programming style"
+          "tag": "programming language style"
         }
       ],
       "collections": [
@@ -15908,7 +15901,7 @@
         "dc:replaces": "http://zotero.org/groups/2914042/items/9LHKWE3T"
       },
       "dateAdded": "2022-07-04T20:14:17Z",
-      "dateModified": "2024-05-29T17:11:54Z"
+      "dateModified": "2024-06-20T05:39:29Z"
     },
     {
       "target": "GWU6SW5W",
@@ -16613,7 +16606,7 @@
     {
       "target": "L3N6FT72",
       "id": "9296070/L3N6FT72",
-      "type": "article",
+      "type": "book",
       "title": "User's Guide to Symbolics Computers",
       "publisher": "Symbolics Inc.",
       "abstract": "This is an extensive technical guide to using the Symbolics computers. The Symbolics family of advanced symbolic processing machines covers a full range of symbolic processing power and functionality. The unique design of Symbolics machines allows them to implement LISP and other symbolic programming languages with both speed and efficiency. The machines are faster and more efficient than other language specific machines and are superior to conventional computers for applications ranging from artificial intelligence, CAD/CAM, high resolution graphics, and expert system research and development as well as many general-purpose applications.",
@@ -16627,10 +16620,18 @@
         ]
       },
       "key": "L3N6FT72",
-      "version": 6426,
-      "itemType": "document",
+      "version": 6492,
+      "itemType": "book",
       "creators": [],
+      "series": "",
+      "seriesNumber": "",
+      "volume": "",
+      "numberOfVolumes": "",
+      "edition": "",
+      "place": "",
       "date": "July, 1986",
+      "numPages": "",
+      "ISBN": "",
       "shortTitle": "",
       "url": "",
       "accessDate": "",
@@ -16659,7 +16660,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-18T17:24:26Z",
-      "dateModified": "2024-06-12T13:22:49Z"
+      "dateModified": "2024-06-20T16:14:34Z"
     }
   ],
   "1987": [
@@ -35522,6 +35523,77 @@
       "dateModified": "2024-04-11T00:43:52Z"
     },
     {
+      "target": "24B6QE9B",
+      "id": "9296070/24B6QE9B",
+      "type": "webpage",
+      "title": "Email Archives about Common Lisp Standard and Other Related Topics",
+      "abstract": "An HTML document containing what seem to be lists of emails from between 1969 and 1997.",
+      "note": "https://web.archive.org/web/20230610101708/https://ml.cddddr.org/",
+      "issued": {
+        "date-parts": [
+          [
+            "2021",
+            9,
+            15
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2021,
+            9,
+            16
+          ]
+        ]
+      },
+      "key": "24B6QE9B",
+      "version": 6506,
+      "itemType": "webpage",
+      "creators": [],
+      "websiteTitle": "",
+      "websiteType": "",
+      "date": "Saved September 15, 2021",
+      "shortTitle": "",
+      "url": "https://ml.cddddr.org/",
+      "accessDate": "2021-09-16T06:23:36Z",
+      "language": "",
+      "rights": "",
+      "extra": "https://web.archive.org/web/20230610101708/https://ml.cddddr.org/",
+      "tags": [
+        {
+          "tag": "Common Lisp"
+        },
+        {
+          "tag": "Lisp Machine"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "design guidelines"
+        },
+        {
+          "tag": "development"
+        },
+        {
+          "tag": "emails"
+        },
+        {
+          "tag": "object oriented programming"
+        },
+        {
+          "tag": "programming language style"
+        }
+      ],
+      "collections": [
+        "VHRSGD3H"
+      ],
+      "relations": {},
+      "dateAdded": "2021-09-16T06:23:36Z",
+      "dateModified": "2024-06-20T16:43:42Z"
+    },
+    {
       "target": "JELN3BBL",
       "id": "9296070/JELN3BBL",
       "type": "entry-encyclopedia",
@@ -36998,41 +37070,6 @@
     }
   ],
   "Undated": [
-    {
-      "target": "24B6QE9B",
-      "id": "9296070/24B6QE9B",
-      "type": "webpage",
-      "title": "(archives of email about the common lisp standard and related)",
-      "accessed": {
-        "date-parts": [
-          [
-            2021,
-            9,
-            16
-          ]
-        ]
-      },
-      "key": "24B6QE9B",
-      "version": 2321,
-      "itemType": "webpage",
-      "creators": [],
-      "websiteTitle": "",
-      "websiteType": "",
-      "date": "",
-      "shortTitle": "",
-      "url": "https://ml.cddddr.org/",
-      "accessDate": "2021-09-16T06:23:36Z",
-      "language": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "VHRSGD3H"
-      ],
-      "relations": {},
-      "dateAdded": "2021-09-16T06:23:36Z",
-      "dateModified": "2022-01-23T19:35:34Z"
-    },
     {
       "target": "AHWN95Z6",
       "id": "9296070/AHWN95Z6",
