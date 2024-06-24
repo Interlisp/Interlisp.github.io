@@ -32,6 +32,10 @@ Bug reports, feature requests, documentation problems, and questions are posted 
 
 ## 3. Join in the discussions
 
+### Discussion board
+
+The [discussion board on GitHub](https://github.com/orgs/Interlisp/discussions) is for general discussions and questions on the Medley environment, the Interlisp language, and Lisp development on the Medley system.
+
 ### EMail
 
 There are two Google groups (mailing lists):
