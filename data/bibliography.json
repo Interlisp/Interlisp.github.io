@@ -13249,6 +13249,67 @@
       "dateModified": "2023-11-21T14:38:13Z"
     },
     {
+      "target": "59H4TK35",
+      "id": "9296070/59H4TK35",
+      "type": "article",
+      "title": "Notice of release of Notecards 1.2i",
+      "publisher": "Xerox Corporation",
+      "abstract": "Release notes of The 1.2i Intermezzo release of NoteCards.",
+      "note": "Software Version: 1.2i Intermezzo\nSoftware Version Certainty: Mentioned in text",
+      "language": "English",
+      "author": [
+        {
+          "family": "Trigg, Randall",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1985"
+          ]
+        ]
+      },
+      "key": "59H4TK35",
+      "version": 6558,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Trigg, Randall"
+        }
+      ],
+      "date": ">1985",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/12__jnXD43V0AeG6e2100gZck9Q3anMNs/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Software Version: 1.2i Intermezzo\nSoftware Version Certainty: Mentioned in text",
+      "tags": [
+        {
+          "tag": "NoteCards"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "communications"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H"
+      ],
+      "relations": {
+        "dc:relation": "http://zotero.org/groups/2914042/items/WYUCXSNJ"
+      },
+      "dateAdded": "2023-11-21T14:26:13Z",
+      "dateModified": "2024-06-24T22:31:44Z"
+    },
+    {
       "target": "45RYTQTD",
       "id": "9296070/45RYTQTD",
       "type": "article-magazine",
@@ -32605,6 +32666,78 @@
       "dateModified": "2024-06-03T21:07:13Z"
     },
     {
+      "target": "5BCFD3VW",
+      "id": "9296070/5BCFD3VW",
+      "type": "webpage",
+      "title": "Dan Murphy's Collection of TECO, TENEX, and TOPS-20 Papers",
+      "container-title": "TECO, TENEX, and TOPS-20 Papers And assorted memorabilia",
+      "genre": "Blog",
+      "language": "en",
+      "author": [
+        {
+          "family": "Murphy",
+          "given": "Dan"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "2015"
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2022,
+            1,
+            30
+          ]
+        ]
+      },
+      "key": "5BCFD3VW",
+      "version": 6516,
+      "itemType": "webpage",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Dan",
+          "lastName": "Murphy"
+        }
+      ],
+      "websiteTitle": "TECO, TENEX, and TOPS-20 Papers And assorted memorabilia",
+      "websiteType": "Blog",
+      "date": ">2015",
+      "shortTitle": "",
+      "url": "https://opost.com/tenex/",
+      "accessDate": "2022-01-30T21:03:46Z",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - CSUCI (Joseph Moreno)"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "design"
+        },
+        {
+          "tag": "history"
+        },
+        {
+          "tag": "multiple pieces"
+        }
+      ],
+      "collections": [
+        "VHRSGD3H"
+      ],
+      "relations": {},
+      "dateAdded": "2022-01-30T21:03:46Z",
+      "dateModified": "2024-06-24T18:52:23Z"
+    },
+    {
       "target": "THLV47EY",
       "id": "9296070/THLV47EY",
       "type": "report",
@@ -35305,6 +35438,77 @@
       "dateModified": "2021-10-21T19:07:29Z"
     },
     {
+      "target": "79F2SRLA",
+      "id": "9296070/79F2SRLA",
+      "type": "article",
+      "title": "COMPARESOURCES",
+      "publisher": "Envos Corporation",
+      "abstract": "COMPARESOURCES is a program for comparing two versions of a Lisp source file for differences. The comparison is completely brute-force: COMPARESOURCES reads the complete contents of both files, and compares all the expressions for differences. The files need not be ones produced by MAKEFILE, as COMPARESOURCES reads the contents with READFILE; however, the program is tuned for files of the type produced by MAKEFILE.",
+      "note": "Original Date: Late 1980s",
+      "language": "English",
+      "author": [
+        {
+          "family": "van Melle, Bill",
+          "given": ""
+        },
+        {
+          "family": "Kaplan, Ronald M.",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "2021",
+            12
+          ]
+        ]
+      },
+      "key": "79F2SRLA",
+      "version": 6548,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "van Melle, Bill"
+        },
+        {
+          "creatorType": "author",
+          "name": "Kaplan, Ronald M."
+        }
+      ],
+      "date": "December 2021",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/1zlYL8ricQ9CvTzvScYYxqWozWtUKdG9O/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Original Date: Late 1980s",
+      "tags": [
+        {
+          "tag": "Envos Corporation"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "program"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H"
+      ],
+      "relations": {},
+      "dateAdded": "2023-12-04T11:06:29Z",
+      "dateModified": "2024-06-24T21:51:08Z"
+    },
+    {
       "target": "ZKPNK7N8",
       "id": "9296070/ZKPNK7N8",
       "type": "post-weblog",
@@ -37132,55 +37336,6 @@
       "dateModified": "2023-12-04T11:04:04Z"
     },
     {
-      "target": "79F2SRLA",
-      "id": "9296070/79F2SRLA",
-      "type": "article",
-      "title": "COMPARESOURCES",
-      "publisher": "Envos Corporation",
-      "abstract": "COMPARESOURCES is a program for comparing two versions of a Lisp source file for differences. The comparison is completely brute-force: COMPARESOURCES reads the complete contents of both files, and compares all the expressions for differences. The files need not be ones produced by MAKEFILE, as COMPARESOURCES reads the contents with READFILE; however, the program is tuned for files of the type produced by MAKEFILE.",
-      "language": "English",
-      "author": [
-        {
-          "family": "van Melle, Bill",
-          "given": ""
-        },
-        {
-          "family": "Kaplan, Ronald M.",
-          "given": ""
-        }
-      ],
-      "key": "79F2SRLA",
-      "version": 5761,
-      "itemType": "document",
-      "creators": [
-        {
-          "creatorType": "author",
-          "name": "van Melle, Bill"
-        },
-        {
-          "creatorType": "author",
-          "name": "Kaplan, Ronald M."
-        }
-      ],
-      "date": "",
-      "shortTitle": "",
-      "url": "https://drive.google.com/file/d/1zlYL8ricQ9CvTzvScYYxqWozWtUKdG9O/view?usp=sharing",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "H4WH7B9H"
-      ],
-      "relations": {},
-      "dateAdded": "2023-12-04T11:06:29Z",
-      "dateModified": "2024-04-11T00:47:08Z"
-    },
-    {
       "target": "B5HG4LAS",
       "id": "9296070/B5HG4LAS",
       "type": "article",
@@ -37406,59 +37561,6 @@
       "dateModified": "2024-04-14T12:31:28Z"
     },
     {
-      "target": "5BCFD3VW",
-      "id": "9296070/5BCFD3VW",
-      "type": "webpage",
-      "title": "Dan Murphy's TECO, TENEX, and TOPS-20 Papers",
-      "container-title": "TECO, TENEX, and TOPS-20 Papers And assorted memorabilia",
-      "genre": "Blog",
-      "language": "en",
-      "author": [
-        {
-          "family": "Murphy",
-          "given": "Dan"
-        }
-      ],
-      "accessed": {
-        "date-parts": [
-          [
-            2022,
-            1,
-            30
-          ]
-        ]
-      },
-      "key": "5BCFD3VW",
-      "version": 6182,
-      "itemType": "webpage",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Dan",
-          "lastName": "Murphy"
-        }
-      ],
-      "websiteTitle": "TECO, TENEX, and TOPS-20 Papers And assorted memorabilia",
-      "websiteType": "Blog",
-      "date": "",
-      "shortTitle": "",
-      "url": "https://opost.com/tenex/",
-      "accessDate": "2022-01-30T21:03:46Z",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Reviewed by SHFT - CSUCI (Joseph Moreno)"
-        }
-      ],
-      "collections": [
-        "VHRSGD3H"
-      ],
-      "relations": {},
-      "dateAdded": "2022-01-30T21:03:46Z",
-      "dateModified": "2024-05-29T17:04:33Z"
-    },
-    {
       "target": "P444YIBC",
       "id": "9296070/P444YIBC",
       "type": "article",
@@ -37467,7 +37569,7 @@
       "abstract": "Instructions for installing Lisp and other software on a Daybreak machine.",
       "language": "English",
       "key": "P444YIBC",
-      "version": 4599,
+      "version": 6520,
       "itemType": "document",
       "creators": [],
       "date": "",
@@ -37480,13 +37582,23 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "prototype"
+        }
+      ],
       "collections": [
         "H4WH7B9H"
       ],
       "relations": {},
       "dateAdded": "2023-11-24T12:54:44Z",
-      "dateModified": "2023-11-24T12:56:11Z"
+      "dateModified": "2024-06-24T21:03:58Z"
     },
     {
       "target": "D6SLY893",
@@ -38954,50 +39066,6 @@
       "relations": {},
       "dateAdded": "2023-11-23T12:35:18Z",
       "dateModified": "2023-11-24T21:49:28Z"
-    },
-    {
-      "target": "59H4TK35",
-      "id": "9296070/59H4TK35",
-      "type": "article",
-      "title": "Notice of release of Notecards 1.2i",
-      "publisher": "Xerox Corporation",
-      "abstract": "Release notes of The 1.2i Intermezzo release of NoteCards.",
-      "note": "Software Version: 1.2i Intermezzo\nSoftware Version Certainty: Mentioned in text",
-      "language": "English",
-      "author": [
-        {
-          "family": "Trigg, Randall",
-          "given": ""
-        }
-      ],
-      "key": "59H4TK35",
-      "version": 4050,
-      "itemType": "document",
-      "creators": [
-        {
-          "creatorType": "author",
-          "name": "Trigg, Randall"
-        }
-      ],
-      "date": "",
-      "shortTitle": "",
-      "url": "https://drive.google.com/file/d/12__jnXD43V0AeG6e2100gZck9Q3anMNs/view?usp=sharing",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "Software Version: 1.2i Intermezzo\nSoftware Version Certainty: Mentioned in text",
-      "tags": [],
-      "collections": [
-        "H4WH7B9H"
-      ],
-      "relations": {
-        "dc:relation": "http://zotero.org/groups/2914042/items/WYUCXSNJ"
-      },
-      "dateAdded": "2023-11-21T14:26:13Z",
-      "dateModified": "2023-11-21T14:28:57Z"
     },
     {
       "target": "KLIMRHQI",
