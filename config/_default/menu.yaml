@@ -1,0 +1,25 @@
+# ****************************************************************************
+#
+# Hugo - Top-level navigation (horizontal)
+#
+main:
+  - name: GitHub
+    weight:  -10
+    pre: <i class='fab fa-github'></i>
+    url: https://github.com/interlisp
+  - name: Get Involved
+    weight: -30
+    pre: <i class='fas fa-handshake-simple'></i>
+    url: /getInvolved/
+  - name: Software
+    weight: -50
+    pre: <i class='fas fa-cube'></i>
+    url: /software/
+  - name: Project
+    weight: -70
+    pre: <i class='fas fa-globe'></i>
+    url: /project/
+  - name: History
+    weight: -90
+    pre: "<i class='fas fa-book'></i>"
+    url: /history/ 

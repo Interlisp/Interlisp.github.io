@@ -1,0 +1,29 @@
+# ****************************************************************************
+#
+# Goldmark markdown processor setup 
+#
+# See: https://gohugo.io/getting-started/configuration-markup/#goldmark
+#      for additional configuration options
+#
+goldmark:
+  renderer:
+    unsafe: true
+#
+# Code block processing
+#
+# See:  https://gohugo.io/getting-started/configuration-markup/#highlight
+#       for additional information on configuration options.
+#   https://www.docsy.dev/docs/adding-content/lookandfeel/#code-highlighting-with-chroma
+#       contains Docsy specfiic code highlighting information    
+highlight:
+  # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
+  #style: solarized-dark
+  style: tango
+  codeFences: true
+  noClasses: true
+  hl_inline: false
+  # Uncomment if you want your chosen highlight style used for code blocks without a specified language
+  guessSyntax: true
+  tabWidth: 4
+  #lineNoStart: 1
+  lineNos: false

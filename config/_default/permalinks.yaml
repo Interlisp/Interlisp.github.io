@@ -1,0 +1,9 @@
+# --------------------------------------------------------------------
+# 
+# Permalinks
+# 
+# Define a URL pattern for each top-level section.
+# 
+# see: https://gohugo.io/content-management/urls/#permalinks
+#
+blog: /:section/:year/:month/:day/:slug/

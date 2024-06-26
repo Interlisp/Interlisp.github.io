@@ -147,12 +147,12 @@ hugo version
 The response will be something along the lines of:
 
 ```bash
-hugo v0.111.3-5d4eb5154e1fed125ca8e9b5a0315c4180dab192+extended linux/amd64 BuildDate=2023-03-12T11:40:50Z VendorInfo=gohugoio
+hugo v0.126.1-3d40aba512931031921463dafc172c0d124437b8+extended linux/amd64 BuildDate=2024-05-15T10:42:34Z VendorInfo=gohugoio
 ```
 
-Be sure your version is at least `v0.101.0`. Older versions of `hugo` may fail to load correctly.
+Be sure your version is at least `v0.122.0`. Older versions of `hugo` may fail to load correctly.
 
-Secondly, there is one data file that is required to successfully build and run the `Interlisp.org` website locally, `data/bibliography.json`.
+Secondly, there is one data file that is required to successfully build and run the `Interlisp.org` website locally, `static/data/bibliography.json`.
 The production version of the website uses a GitHub Action to retrieve this file.
 We can mimic that functionality by going to the `scripts` directory in your clone of the `Intelisp.github.io` repository.
 Once in the directory, run the following command:
@@ -162,47 +162,48 @@ Once in the directory, run the following command:
 ```
 
 This script will retrieve the bibliography from our Zotero library, format it appropriately and place the created file
-in the appropriate location, the `data` directory.
+in the appropriate location, the `static/data` directory.
 
 This completes all the setup required for `Hugo`.
 
 To run `Hugo` go to the root directory of your repository clone and run the following command:
 
 ```bash
-hugo server
+hugo server --logLevel debug -v --renderToMemory -e development
 ```
 
 `Hugo` will start and automatically download the Docsy theme and its dependencies as hugo modules.  You should see output along the lines of:
 
 ```bash
-hugo: downloading modules …
-hugo: collected modules in 17781 ms
+Watching for changes in /home/wstumbo/development/stumbo.github.io/{archetypes,content,layouts,package.json,static}
+Watching for config changes in /home/wstumbo/development/stumbo.github.io/config/_default, /home/wstumbo/development/stumbo.github.io/config/development, /home/wstumbo/development/stumbo.github.io/go.mod
 Start building sites …
-hugo v0.111.3-5d4eb5154e1fed125ca8e9b5a0315c4180dab192+extended linux/amd64 BuildDate=2023-03-12T11:40:50Z VendorInfo=gohugoio
+hugo v0.126.1-3d40aba512931031921463dafc172c0d124437b8+extended linux/amd64 BuildDate=2024-05-15T10:42:34Z VendorInfo=gohugoio
+
 
                    | EN
 -------------------+-----
-  Pages            | 61
+  Pages            | 52
   Paginator pages  |  0
-  Non-page files   | 13
-  Static files     | 68
-  Processed images | 46
-  Aliases          |  4
-  Sitemaps         |  1
+  Non-page files   | 46
+  Static files     | 97
+  Processed images | 47
+  Aliases          | 66
   Cleaned          |  0
 
-Built in 1349 ms
-Watching for changes in /home/wstumbo/development/Interlisp.github.io/{archetypes,assets,content,data,layouts,package.json,static,themes}
-Watching for config changes in /home/wstumbo/development/Interlisp.github.io/config.toml, /home/wstumbo/development/Interlisp.github.io/go.mod
+Built in 3230 ms
 Environment: "development"
 Serving pages from memory
 Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at http://localhost:1313/ (bind address 127.0.0.1)
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
 Press Ctrl+C to stop
 ```
 
 `Hugo` is now running.  You can go to [http://localhost:1313](http://localhost:1313) to review the locally running version of the website.  
 For most changes you should be able to review the text and layout to validate the effects are as expected.
+
+You can get additional debugging information by adding the following two options
+to your `hugo` command `--logLevel debug -v`.  
 
 Once you have validated your changes, create a pull request to merge your changes into the `main` branch.
 
@@ -211,19 +212,24 @@ Once you have validated your changes, create a pull request to merge your change
 The layout of the `Interlisp.github.io` repository follows the standard [`Hugo` directory structure](https://gohugo.io/getting-started/directory-structure/).  Directories
 that have components specific to `Interlisp.github.io` are as follows:
 
-- `.` - at the root, `config.toml` file provides the general site configuration information
 - `.github\workflows`  - home to the github actions `gh-pages.yml` that specifies how to build and release the Interlisp home page
 - `assets` - customization of the `Docsy` theme for Interlisp.
   - `icons` - holds and `svg` version of `Interlisp-D' logo.  This logo is used in the page header
   - `scss` - contains some custom `scss`
     - `_styles_project.scss` sets the size of the `svg` file in the header and disables the edit page functionality
     - `main.scss` - links in the `scss` updates
+- `config` - contains all the site specific configuration information
+  - `_default` - configuration information shared across different supported environments [development, staging, production]
+  - `development` - configuration information specific to the development environment
+  - `production` - configuration information specific to the production environment
+  - `staging` - configuration information specific to the staging environment
 - `content\en` - home of all the content for the web page.  We currently only support the English language.  `Hugo` supports multiple languages and we have not disabled that feature. However there are no plans at present to transcribe the web pages and documentation into another language.
-- `data`  - holds `bibliography.json` used to create the [bibliography table](https://interlisp.org/bibliography/)
 - `layout`
   - `shortcodes` - a simple snippet inside a content file that Hugo will render using a predefined template
     - `bibTable.html` - a shortcode used to format the [bibliography table](https://interlisp.org/bibliography/)
-- `static` - the data in this folder is copied directly into the folder structure of the home page  
+- `static` - the data in this folder is copied directly into the folder structure of the home page 
+  - `css` - custom css files 
+  - `data`  - holds `bibliography.json` used to create the [bibliography table](https://interlisp.org/bibliography/)
   - `documentation` - contains the pdf files referenced in the document section of the home page
   - `favicons` - contains `favicon.png` a small icon that browsers can use when referencing the website
   - `Resources` - contains the current `Interlisp-D` logo, used on the home page, and another instance of `favicon.png`
@@ -236,11 +242,12 @@ the `Interlisp.org` website, our GitHub sites used for continued development of
 Medley Interlisp, and the discussions groups associated with both the Medley project and
 Interlisp.
 
-The search engine is identified in the `hugo.toml` file:
+The search engine is identified in the `config/params.yaml` file:
 
-```toml
-# Google Custom Search Engine ID. Remove or comment out to disable search.
-gcs_engine_id = "33ef4cbe0703b4f3a"
+```yaml
+# Google custom seach engine configuration
+#  gcs_engine_id:  search engine 
+gcs_engine_id: 33ef4cbe0703b4f3ax
 ```
 
 Search results are returned and presented using the page template, `search.md`.

@@ -1,0 +1,52 @@
+# *******************************************************************
+#
+# Hugo parameters for Interlisp.org
+#
+# An overview of hugo configuration files can be found at:
+#  https://gohugo.io/getting-started/configuration/#configure-server
+#
+
+# relativeURLs: Enable to force all relative URLs to be relative to content root
+relativeURLs: false
+
+# canonifyURLs: Convert relative URLs to absolute URLs
+canonifyURLs: false
+
+# enableRobotsTXT:  Enable generation of robots.txt file.  When enabled this
+# will overwrite the default robots.txt file that disallows crawling.
+# Default to false and set to true for production in config/production/hugo.yaml
+enableRobotsTXT: false
+
+# aasetDir:  Location where Hugo looks for assets
+assetDir: static
+
+# Enable .GitInfo object for each page.  This will give values to .Lastmod etc.
+enableGitInfo: false
+
+# Top Level Language defaults 
+#  See languages.yaml for language specific values
+defaultContentLanguage: "en"
+defaultContentLanguageInSubdir: false
+
+# Useful when translating.
+enableMissingTranslationPlaceholders: true
+
+# Disable rendering of the specified page kinds 
+disableKinds: 
+ - taxonomy
+ - term
+ - RSS
+
+# Code Highlighting configuration 
+#  Not Used.  Code highlighting is controlled using the highlighting
+#  section in `markup.yaml`
+#pygmentsCodeFences: false
+#pygmentsUseClasses: false
+# Use the new Chroma Go highlighter in Hugo.
+# pygmentsUseClassic: false
+# pygmentsOptions: linenos=table
+# See https://help.farbox.com/pygments.html
+
+# Comment out if you don't want the "print entire section" link enabled.
+# [outputs]
+# section = ["HTML", "print"]
