@@ -10987,6 +10987,68 @@
       "dateModified": "2021-06-03T19:18:59Z"
     },
     {
+      "target": "MZQKBKQ5",
+      "id": "9296070/MZQKBKQ5",
+      "type": "article",
+      "title": "Hello 11.0",
+      "publisher": "Xerox Corporation",
+      "abstract": "Hello 11.0 is a modified version of the Othello 11.0 utility, which is used for managing Pilot disk volumes. It offers most of the Othello commands (documented in the Mesa Users Guide), and adds a few commands which are useful when using Interlisp-D on a Dlion.",
+      "note": "Software Version: 11.0\nSoftware Version Certainty: Mentioned in text",
+      "language": "English",
+      "author": [
+        {
+          "family": "Sannella",
+          "given": "Michael"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1984",
+            9,
+            6
+          ]
+        ]
+      },
+      "key": "MZQKBKQ5",
+      "version": 6593,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Michael",
+          "lastName": "Sannella"
+        }
+      ],
+      "date": "September 6, 1984",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/10AJ9XmSqi8BbAKMNIn7610O_PyxWZ_bg/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Software Version: 11.0\nSoftware Version Certainty: Mentioned in text",
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "program"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-24T12:59:16Z",
+      "dateModified": "2024-07-03T06:05:34Z"
+    },
+    {
       "target": "YK6MRM4K",
       "id": "9296070/YK6MRM4K",
       "type": "chapter",
@@ -19983,6 +20045,83 @@
       "dateModified": "2023-09-12T15:40:09Z"
     },
     {
+      "target": "CC6LYBJJ",
+      "id": "9296070/CC6LYBJJ",
+      "type": "paper-conference",
+      "title": "Effective Browsing in Hypertext Systems",
+      "publisher": "LE CENTRE DE HAUTES ETUDES INTERNATIONALES D'INFORMATIQUE DOCUMENTAIRE",
+      "publisher-place": "Cambridge, MA",
+      "page": "82-98",
+      "event": "RIAO '88: User-Oriented Content-Based Text and Image Handling",
+      "event-place": "Cambridge, MA",
+      "abstract": "A drawback of browsing through nonlinear electronic documents is the accompanying sense of disorientation often reported by users. It is difficult to ascertain the layout of the document network so people often lose their place or forget to follow up on tasks they meant to complete, while wondering if they are missing anything relevant to their interests. This paper critiques existing approaches to computerized support for browsing and describes four new types of browsers, which have been implemented in the Xerox NoteCards hypertext system. These browsers support the process of pursing and returning from digressions and facilitate the integration of diverse sets of materials that have been browsed.",
+      "note": "Extra URL: https://dl.acm.org/doi/10.5555/3374430.3374437",
+      "language": "en",
+      "author": [
+        {
+          "family": "Foss, Carolyn L.",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1988",
+            3,
+            21
+          ]
+        ]
+      },
+      "key": "CC6LYBJJ",
+      "version": 6586,
+      "itemType": "conferencePaper",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Foss, Carolyn L."
+        }
+      ],
+      "date": "March 21, 1988",
+      "proceedingsTitle": "",
+      "conferenceName": "RIAO '88: User-Oriented Content-Based Text and Image Handling",
+      "place": "Cambridge, MA",
+      "volume": "",
+      "pages": "82-98",
+      "series": "",
+      "DOI": "",
+      "ISBN": "",
+      "shortTitle": "",
+      "url": "https://web.archive.org/web/20220908201122id_/https://dl.acm.org/doi/pdf/10.5555/3374430.3374437",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Extra URL: https://dl.acm.org/doi/10.5555/3374430.3374437",
+      "tags": [
+        {
+          "tag": "Interlisp-D"
+        },
+        {
+          "tag": "NoteCards"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "hypertext"
+        }
+      ],
+      "collections": [
+        "QTUS8XEQ",
+        "NAEHNSUS"
+      ],
+      "relations": {},
+      "dateAdded": "2024-01-17T12:27:36Z",
+      "dateModified": "2024-07-03T05:56:34Z"
+    },
+    {
       "target": "5MUR5DXT",
       "id": "9296070/5MUR5DXT",
       "type": "book",
@@ -27568,6 +27707,76 @@
       "relations": {},
       "dateAdded": "2021-04-15T23:22:52Z",
       "dateModified": "2021-05-29T20:45:27Z"
+    },
+    {
+      "target": "F4Y4L8UJ",
+      "id": "9296070/F4Y4L8UJ",
+      "type": "article-journal",
+      "title": "Tailoring Mechanisms in Three Research Technologies.",
+      "abstract": "Tailoring is the technical and human art of modifying the functionality of technology while the technology is in use in the field. This position paper explores various styles of, and mechanisms for, tailoring in three research systems (Trillium, Rooms, and Buttons) created by the author to explore ways to enable players (end users) to achieve new behaviors from these systems appropriate to their particular circumstances.",
+      "language": "en",
+      "author": [
+        {
+          "family": "Henderson",
+          "given": "Austin"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1997",
+            12
+          ]
+        ]
+      },
+      "key": "F4Y4L8UJ",
+      "version": 6580,
+      "itemType": "journalArticle",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Austin",
+          "lastName": "Henderson"
+        }
+      ],
+      "publicationTitle": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "date": "December 1997",
+      "series": "",
+      "seriesTitle": "",
+      "seriesText": "",
+      "journalAbbreviation": "",
+      "DOI": "",
+      "ISSN": "",
+      "shortTitle": "",
+      "url": "https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=13a6fa6b38f85f50e6c1e64f450e7fead7c6e8ed",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Zotero",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Interlisp-D"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "tailoring"
+        }
+      ],
+      "collections": [
+        "MTUXENI8",
+        "7HXTYX6K"
+      ],
+      "relations": {},
+      "dateAdded": "2023-09-17T12:09:49Z",
+      "dateModified": "2024-07-03T05:41:50Z"
     }
   ],
   "1998": [
@@ -37631,58 +37840,6 @@
       "dateModified": "2023-11-21T13:09:57Z"
     },
     {
-      "target": "CC6LYBJJ",
-      "id": "9296070/CC6LYBJJ",
-      "type": "article-journal",
-      "title": "Effective Browsing in Hypertext Systems",
-      "page": "82-98",
-      "abstract": "A drawback of browsing through nonlinear electronic documents is the accompanying sense of disorientation often reported by users. It is difficult to ascertain the layout of the document network so people often lose their place or forget to follow up on tasks they meant to complete, while wondering if they are missing anything relevant to their interests. This paper critiques existing approaches to computerized support for browsing and dexribes four new types of browsers, which have been implemented in the Xerox NoteCards hypertext system. These browsers support the process of pursing and returning from digressions and facilitate the integration of diverse sets of materials that have been browsed.",
-      "language": "en",
-      "author": [
-        {
-          "family": "Foss, Carolyn L.",
-          "given": ""
-        }
-      ],
-      "key": "CC6LYBJJ",
-      "version": 5656,
-      "itemType": "journalArticle",
-      "creators": [
-        {
-          "creatorType": "author",
-          "name": "Foss, Carolyn L."
-        }
-      ],
-      "publicationTitle": "",
-      "volume": "",
-      "issue": "",
-      "pages": "82-98",
-      "date": "",
-      "series": "",
-      "seriesTitle": "",
-      "seriesText": "",
-      "journalAbbreviation": "",
-      "DOI": "",
-      "ISSN": "",
-      "shortTitle": "",
-      "url": "https://web.archive.org/web/20220908201122id_/https://dl.acm.org/doi/pdf/10.5555/3374430.3374437",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "QTUS8XEQ",
-        "NAEHNSUS"
-      ],
-      "relations": {},
-      "dateAdded": "2024-01-17T12:27:36Z",
-      "dateModified": "2024-01-17T12:31:46Z"
-    },
-    {
       "target": "MYBIKTYS",
       "id": "9296070/MYBIKTYS",
       "type": "article",
@@ -37826,37 +37983,6 @@
       "relations": {},
       "dateAdded": "2021-08-04T12:49:25Z",
       "dateModified": "2021-08-04T12:49:25Z"
-    },
-    {
-      "target": "MZQKBKQ5",
-      "id": "9296070/MZQKBKQ5",
-      "type": "article",
-      "title": "Hello 11.0",
-      "publisher": "Xerox Corporation",
-      "abstract": "Hello 11.0 is a modified version of the Othello 11.0 utility, which is used for managing Pilot disk volumes. It offers most of the Othello commands (documented in the Mesa Users Guide), and adds a few commands which are useful when using Interlisp-D on a Dlion.",
-      "note": "Software Version: 11.0\nSoftware Version Certainty: Mentioned in text",
-      "language": "English",
-      "key": "MZQKBKQ5",
-      "version": 4608,
-      "itemType": "document",
-      "creators": [],
-      "date": "",
-      "shortTitle": "",
-      "url": "https://drive.google.com/file/d/10AJ9XmSqi8BbAKMNIn7610O_PyxWZ_bg/view?usp=sharing",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "Software Version: 11.0\nSoftware Version Certainty: Mentioned in text",
-      "tags": [],
-      "collections": [
-        "H4WH7B9H"
-      ],
-      "relations": {},
-      "dateAdded": "2023-11-24T12:59:16Z",
-      "dateModified": "2023-11-24T13:00:30Z"
     },
     {
       "target": "ZW4T6EMZ",
@@ -39953,58 +40079,6 @@
       "relations": {},
       "dateAdded": "2023-11-23T10:32:36Z",
       "dateModified": "2023-11-23T10:33:58Z"
-    },
-    {
-      "target": "F4Y4L8UJ",
-      "id": "9296070/F4Y4L8UJ",
-      "type": "article-journal",
-      "title": "Tailoring Mechanisms in Three Research Technologies.",
-      "abstract": "Tailoring is the technical and human art of modifying the functionality of technology while the technology is in use in the field. This position paper explores various styles of, and mechanisms for, tailoring in three research systems (Trillium, Rooms, and Buttons) created by the author to explore ways to enable players (end users) to achieve new behaviors from these systems appropriate to their particular circumstances.",
-      "language": "en",
-      "author": [
-        {
-          "family": "Henderson",
-          "given": "Austin"
-        }
-      ],
-      "key": "F4Y4L8UJ",
-      "version": 5664,
-      "itemType": "journalArticle",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Austin",
-          "lastName": "Henderson"
-        }
-      ],
-      "publicationTitle": "",
-      "volume": "",
-      "issue": "",
-      "pages": "",
-      "date": "",
-      "series": "",
-      "seriesTitle": "",
-      "seriesText": "",
-      "journalAbbreviation": "",
-      "DOI": "",
-      "ISSN": "",
-      "shortTitle": "",
-      "url": "https://citeseerx.ist.psu.edu/document?repid=rep1&type=pdf&doi=13a6fa6b38f85f50e6c1e64f450e7fead7c6e8ed",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "Zotero",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "MTUXENI8",
-        "7HXTYX6K"
-      ],
-      "relations": {},
-      "dateAdded": "2023-09-17T12:09:49Z",
-      "dateModified": "2023-09-17T12:09:49Z"
     },
     {
       "target": "SVIQ724G",
