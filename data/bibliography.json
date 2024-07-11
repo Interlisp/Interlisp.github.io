@@ -35718,6 +35718,78 @@
       "dateModified": "2024-06-24T21:51:08Z"
     },
     {
+      "target": "B5HG4LAS",
+      "id": "9296070/B5HG4LAS",
+      "type": "article",
+      "title": "COMPARETEXT",
+      "publisher": "Envos Corporation",
+      "abstract": "COMPARETEXT is a rather non-standard text file comparison program which tries to address two problems: (1) the problem of detecting certain types of changes, such as detecting when a paragraph is moved to a different part of a document; and (2) the problem of showing the user what changes have been made in a document.",
+      "note": "Updated: December 2021",
+      "language": "English",
+      "author": [
+        {
+          "family": "Sannella, Michael",
+          "given": ""
+        },
+        {
+          "family": "Kaplan, Ronald M.",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "2021",
+            12
+          ]
+        ]
+      },
+      "key": "B5HG4LAS",
+      "version": 6598,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Sannella, Michael"
+        },
+        {
+          "creatorType": "author",
+          "name": "Kaplan, Ronald M."
+        },
+        {
+          "creatorType": "contributor",
+          "name": "Masinter, Larry Melvin"
+        }
+      ],
+      "date": "December 2021",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/1zmZUJ9cOXrJcVthh39PKi1rt079Z-6bd/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Updated: December 2021",
+      "tags": [
+        {
+          "tag": "Envos Corporation"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "TEdit"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H"
+      ],
+      "relations": {},
+      "dateAdded": "2023-12-04T11:11:47Z",
+      "dateModified": "2024-07-10T17:26:07Z"
+    },
+    {
       "target": "ZKPNK7N8",
       "id": "9296070/ZKPNK7N8",
       "type": "post-weblog",
@@ -37543,59 +37615,6 @@
       "relations": {},
       "dateAdded": "2023-12-04T11:03:05Z",
       "dateModified": "2023-12-04T11:04:04Z"
-    },
-    {
-      "target": "B5HG4LAS",
-      "id": "9296070/B5HG4LAS",
-      "type": "article",
-      "title": "COMPARETEXT",
-      "publisher": "Envos Corporation",
-      "abstract": "COMPARETEXT is a rather non-standard text file comparison program which tries to address two problems: (1) the problem of detecting certain types of changes, such as detecting when a paragraph is moved to a different part of a document; and (2) the problem of showing the user what changes have been made in a document.",
-      "language": "English",
-      "author": [
-        {
-          "family": "Sannella, Michael",
-          "given": ""
-        },
-        {
-          "family": "Kaplan, Ronald M.",
-          "given": ""
-        }
-      ],
-      "key": "B5HG4LAS",
-      "version": 5762,
-      "itemType": "document",
-      "creators": [
-        {
-          "creatorType": "author",
-          "name": "Sannella, Michael"
-        },
-        {
-          "creatorType": "author",
-          "name": "Kaplan, Ronald M."
-        },
-        {
-          "creatorType": "contributor",
-          "name": "Masinter, Larry Melvin"
-        }
-      ],
-      "date": "",
-      "shortTitle": "",
-      "url": "https://drive.google.com/file/d/1zmZUJ9cOXrJcVthh39PKi1rt079Z-6bd/view?usp=sharing",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "H4WH7B9H"
-      ],
-      "relations": {},
-      "dateAdded": "2023-12-04T11:11:47Z",
-      "dateModified": "2024-04-11T00:47:29Z"
     },
     {
       "target": "XVCDQ6QR",
