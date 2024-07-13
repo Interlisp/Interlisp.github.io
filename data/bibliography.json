@@ -394,7 +394,7 @@
         ]
       },
       "key": "KVDN9PE5",
-      "version": 2025,
+      "version": 6602,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -422,7 +422,7 @@
       "extra": "",
       "tags": [
         {
-          "tag": "Basic PDP-1 LISP"
+          "tag": "PDP-1 LISP"
         },
         {
           "tag": "s2z"
@@ -433,7 +433,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:29:50Z",
-      "dateModified": "2021-05-31T19:36:21Z"
+      "dateModified": "2024-07-12T18:24:02Z"
     },
     {
       "target": "LQQWKMEZ",
@@ -1096,7 +1096,7 @@
         ]
       },
       "key": "ZK7MFMNE",
-      "version": 2078,
+      "version": 6603,
       "itemType": "document",
       "creators": [
         {
@@ -1119,7 +1119,7 @@
       "extra": "",
       "tags": [
         {
-          "tag": "Basic PDP-1 LISP"
+          "tag": "PDP-1 LISP"
         },
         {
           "tag": "s2z"
@@ -1130,7 +1130,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:38:15Z",
-      "dateModified": "2021-05-31T19:40:13Z"
+      "dateModified": "2024-07-12T18:24:07Z"
     },
     {
       "target": "PGGC8GAZ",
@@ -7974,7 +7974,7 @@
         ]
       },
       "key": "NQ5ACUG6",
-      "version": 5732,
+      "version": 6617,
       "itemType": "film",
       "creators": [
         {
@@ -8003,16 +8003,15 @@
           "type": 1
         },
         {
-          "tag": "CADR",
-          "type": 1
-        },
-        {
           "tag": "Interlisp-D",
           "type": 1
         },
         {
           "tag": "MACLISP",
           "type": 1
+        },
+        {
+          "tag": "MIT CADR Lisp Machine"
         }
       ],
       "collections": [
@@ -8020,7 +8019,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-02-19T22:58:07Z",
-      "dateModified": "2024-02-19T22:58:07Z"
+      "dateModified": "2024-07-12T18:36:36Z"
     },
     {
       "target": "C6TTQVYB",
@@ -9527,7 +9526,7 @@
         ]
       },
       "key": "U7BKRSGY",
-      "version": 6507,
+      "version": 6601,
       "itemType": "document",
       "creators": [],
       "date": "February, 1983",
@@ -9542,13 +9541,13 @@
       "extra": "",
       "tags": [
         {
-          "tag": "3600"
-        },
-        {
           "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
           "tag": "Symbolics"
+        },
+        {
+          "tag": "Symbolics 3600"
         },
         {
           "tag": "development tools"
@@ -9580,7 +9579,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-18T17:16:51Z",
-      "dateModified": "2024-06-20T16:47:34Z"
+      "dateModified": "2024-07-12T18:12:29Z"
     },
     {
       "target": "E5NDSA26",
@@ -10072,7 +10071,7 @@
         ]
       },
       "key": "MTUV5W75",
-      "version": 6423,
+      "version": 6600,
       "itemType": "document",
       "creators": [],
       "date": "August, 1983",
@@ -10087,9 +10086,6 @@
       "extra": "",
       "tags": [
         {
-          "tag": "3600"
-        },
-        {
           "tag": "Lisp Machine"
         },
         {
@@ -10097,6 +10093,9 @@
         },
         {
           "tag": "Symbolics"
+        },
+        {
+          "tag": "Symbolics 3600"
         },
         {
           "tag": "introductory"
@@ -10110,7 +10109,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-18T16:34:20Z",
-      "dateModified": "2024-06-12T13:20:35Z"
+      "dateModified": "2024-07-12T18:12:23Z"
     },
     {
       "target": "PVEEX4BT",
@@ -14042,7 +14041,7 @@
         ]
       },
       "key": "99EC48NP",
-      "version": 6467,
+      "version": 6622,
       "itemType": "report",
       "creators": [
         {
@@ -14072,9 +14071,6 @@
           "tag": "COMMON LISP (Computer program language)"
         },
         {
-          "tag": "Common LISP framework"
-        },
-        {
           "tag": "Research"
         },
         {
@@ -14087,7 +14083,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-21T18:34:16Z",
-      "dateModified": "2024-06-12T17:10:50Z"
+      "dateModified": "2024-07-12T18:46:44Z"
     },
     {
       "target": "3VK4IB8T",
@@ -14336,7 +14332,7 @@
         ]
       },
       "key": "DY9YATE2",
-      "version": 1982,
+      "version": 6618,
       "itemType": "bookSection",
       "creators": [
         {
@@ -14385,10 +14381,6 @@
       "extra": "DOI: 10.1007/978-1-4612-4980-1_33",
       "tags": [
         {
-          "tag": "Causal Knowledge",
-          "type": 1
-        },
-        {
           "tag": "Data Representation",
           "type": 1
         },
@@ -14413,7 +14405,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-29T20:21:43Z",
-      "dateModified": "2021-05-29T20:24:40Z"
+      "dateModified": "2024-07-12T18:42:37Z"
     },
     {
       "target": "49TBVYCE",
@@ -18693,7 +18685,7 @@
         ]
       },
       "key": "AA2LK9EE",
-      "version": 2050,
+      "version": 6619,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -18748,10 +18740,6 @@
           "type": 1
         },
         {
-          "tag": "Class Graph",
-          "type": 1
-        },
-        {
           "tag": "Method Combination",
           "type": 1
         },
@@ -18772,7 +18760,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T17:42:20Z",
-      "dateModified": "2021-06-02T17:43:10Z"
+      "dateModified": "2024-07-12T18:42:58Z"
     },
     {
       "target": "8CFC7VH5",
@@ -28732,7 +28720,7 @@
         ]
       },
       "key": "HVTRFS6C",
-      "version": 1460,
+      "version": 6607,
       "itemType": "document",
       "creators": [
         {
@@ -28753,6 +28741,9 @@
       "extra": "",
       "tags": [
         {
+          "tag": "ANSI X3J13"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -28761,7 +28752,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-16T04:18:46Z",
-      "dateModified": "2021-06-01T15:34:15Z"
+      "dateModified": "2024-07-12T18:26:57Z"
     }
   ],
   "2000": [
@@ -30862,7 +30853,7 @@
         ]
       },
       "key": "2KURWNZM",
-      "version": 1553,
+      "version": 6599,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -30889,8 +30880,7 @@
       "extra": "",
       "tags": [
         {
-          "tag": "ANSI",
-          "type": 1
+          "tag": "ANSI X3J13"
         },
         {
           "tag": "ISLISP",
@@ -30933,7 +30923,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-15T23:18:51Z",
-      "dateModified": "2021-06-01T20:14:01Z"
+      "dateModified": "2024-07-12T18:12:02Z"
     },
     {
       "target": "HZRJT7NY",
@@ -33205,7 +33195,7 @@
         ]
       },
       "key": "RYF24FVN",
-      "version": 1541,
+      "version": 6611,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -33244,27 +33234,7 @@
       "extra": "",
       "tags": [
         {
-          "tag": "Bazel",
-          "type": 1
-        },
-        {
-          "tag": "Build System",
-          "type": 1
-        },
-        {
           "tag": "Common Lisp",
-          "type": 1
-        },
-        {
-          "tag": "Determinism",
-          "type": 1
-        },
-        {
-          "tag": "Hermeticity",
-          "type": 1
-        },
-        {
-          "tag": "Reproducibility",
           "type": 1
         },
         {
@@ -33272,11 +33242,12 @@
         }
       ],
       "collections": [
-        "JP4FIV7I"
+        "JP4FIV7I",
+        "XKP77FFK"
       ],
       "relations": {},
       "dateAdded": "2021-04-25T21:01:25Z",
-      "dateModified": "2021-06-01T19:51:15Z"
+      "dateModified": "2024-07-12T18:29:27Z"
     },
     {
       "target": "7CSMGPUT",
@@ -33317,7 +33288,7 @@
         ]
       },
       "key": "7CSMGPUT",
-      "version": 1954,
+      "version": 6616,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -33369,13 +33340,13 @@
         }
       ],
       "collections": [
-        "MV55NAER"
+        "JP4FIV7I"
       ],
       "relations": {
         "dc:replaces": "http://zotero.org/groups/2914042/items/PS9ML5RQ"
       },
       "dateAdded": "2021-04-25T19:54:45Z",
-      "dateModified": "2021-05-29T19:41:25Z"
+      "dateModified": "2024-07-12T18:34:11Z"
     },
     {
       "target": "6MUG9UQA",
@@ -34894,7 +34865,7 @@
       "title": "Introducing Darkstar: A Xerox Star Emulator",
       "container-title": "Adafruit Industries - Makers, hackers, artists, designers and engineers!",
       "genre": "Blog",
-      "abstract": "Via libingcomputers.org: Josh Dersch writes about research into the Xerox 8010 Information System (codenamed “Dandelion” during development) and commonly referred to as the Star. The Star was envisioned as center point of the office of the future, combining high-resolution graphics with the now-familiar mouse, Ethernet networking for sharing and collaborating, and Xerox’s Laser Printer technology for faithful “WYSIWYG” document reproduction. A revolutionary system when most everyone else was using text based systems.",
+      "abstract": "Via livingcomputers.org: Josh Dersch writes about research into the Xerox 8010 Information System (codenamed “Dandelion” during development) and commonly referred to as the Star. The Star was envisioned as center point of the office of the future, combining high-resolution graphics with the now-familiar mouse, Ethernet networking for sharing and collaborating, and Xerox’s Laser Printer technology for faithful “WYSIWYG” document reproduction. A revolutionary system when most everyone else was using text based systems.",
       "shortTitle": "Introducing Darkstar",
       "language": "en-US",
       "author": [
@@ -34922,7 +34893,7 @@
         ]
       },
       "key": "IRKEPIAR",
-      "version": 2837,
+      "version": 6623,
       "itemType": "blogPost",
       "creators": [
         {
@@ -34963,7 +34934,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-22T04:57:15Z",
-      "dateModified": "2023-05-05T14:13:43Z"
+      "dateModified": "2024-07-12T18:54:05Z"
     }
   ],
   "2020": [
