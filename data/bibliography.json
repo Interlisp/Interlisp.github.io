@@ -10687,7 +10687,7 @@
         ]
       },
       "key": "S3S3DFYD",
-      "version": 6475,
+      "version": 6649,
       "itemType": "report",
       "creators": [
         {
@@ -10714,7 +10714,7 @@
       "extra": "Refers to LOOPS, InterLisp, and other related topics multiple times.",
       "tags": [
         {
-          "tag": "CoLab project"
+          "tag": "CoLab"
         },
         {
           "tag": "Collaborative Computing"
@@ -10744,7 +10744,7 @@
       ],
       "relations": {},
       "dateAdded": "2023-03-27T22:46:55Z",
-      "dateModified": "2024-06-14T18:12:24Z"
+      "dateModified": "2024-07-14T04:12:30Z"
     },
     {
       "target": "GI8MCHKF",
@@ -28793,7 +28793,7 @@
         ]
       },
       "key": "HLPX2KR5",
-      "version": 1519,
+      "version": 6645,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -28821,8 +28821,7 @@
       "extra": "",
       "tags": [
         {
-          "tag": "CASE",
-          "type": 1
+          "tag": "Computer-Aided Software Engineering (CASE)"
         },
         {
           "tag": "applications development",
@@ -28841,7 +28840,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-15T23:22:52Z",
-      "dateModified": "2021-06-01T19:11:01Z"
+      "dateModified": "2024-07-14T04:09:44Z"
     },
     {
       "target": "E6M2EYRP",
@@ -32428,7 +32427,7 @@
         ]
       },
       "key": "4Y6C6GIS",
-      "version": 1888,
+      "version": 6646,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -32456,12 +32455,11 @@
       "extra": "",
       "tags": [
         {
-          "tag": "CLOS",
+          "tag": "Common Lisp",
           "type": 1
         },
         {
-          "tag": "Common Lisp",
-          "type": 1
+          "tag": "Common Lisp Object System (CLOS)"
         },
         {
           "tag": "Generic dispatch",
@@ -32480,7 +32478,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T21:01:26Z",
-      "dateModified": "2021-06-03T19:14:26Z"
+      "dateModified": "2024-07-14T04:11:14Z"
     },
     {
       "target": "4IVLXUAF",
