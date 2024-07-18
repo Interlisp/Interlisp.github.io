@@ -14332,7 +14332,7 @@
         ]
       },
       "key": "DY9YATE2",
-      "version": 6618,
+      "version": 6650,
       "itemType": "bookSection",
       "creators": [
         {
@@ -14385,8 +14385,7 @@
           "type": 1
         },
         {
-          "tag": "Defense Advance Research Project Agency",
-          "type": 1
+          "tag": "Defense Advanced Research Project Agency"
         },
         {
           "tag": "Medical Knowledge",
@@ -14405,7 +14404,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-29T20:21:43Z",
-      "dateModified": "2024-07-12T18:42:37Z"
+      "dateModified": "2024-07-17T17:14:43Z"
     },
     {
       "target": "49TBVYCE",
