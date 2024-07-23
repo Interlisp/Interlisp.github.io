@@ -38322,7 +38322,7 @@
         }
       ],
       "key": "4EXTB254",
-      "version": 4822,
+      "version": 6661,
       "itemType": "document",
       "creators": [
         {
@@ -38340,13 +38340,20 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "TEdit file"
+        }
+      ],
       "collections": [
         "H4WH7B9H"
       ],
       "relations": {},
       "dateAdded": "2023-11-25T13:36:46Z",
-      "dateModified": "2023-11-25T13:38:41Z"
+      "dateModified": "2024-07-22T20:51:52Z"
     },
     {
       "target": "ZQJJKWXN",
@@ -40360,7 +40367,7 @@
         }
       ],
       "key": "M2HXTN7J",
-      "version": 4680,
+      "version": 6662,
       "itemType": "document",
       "creators": [
         {
@@ -40379,13 +40386,38 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Lafite"
+        },
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "TEdit file"
+        },
+        {
+          "tag": "communications"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "emails"
+        },
+        {
+          "tag": "no date"
+        }
+      ],
       "collections": [
         "H4WH7B9H"
       ],
       "relations": {},
       "dateAdded": "2023-11-25T10:48:44Z",
-      "dateModified": "2023-11-25T10:49:37Z"
+      "dateModified": "2024-07-22T20:51:58Z"
     },
     {
       "target": "TCPLXRW4",
