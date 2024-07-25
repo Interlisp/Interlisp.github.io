@@ -1135,8 +1135,10 @@
     {
       "target": "PGGC8GAZ",
       "id": "9296070/PGGC8GAZ",
-      "type": "article",
+      "type": "report",
       "title": "Recent Improvements to 940 LISP Library",
+      "page": "2-6",
+      "abstract": "A memo listing the latest changes made to the 940 LISP Library.",
       "author": [
         {
           "family": "Teitelman",
@@ -1162,8 +1164,8 @@
         ]
       },
       "key": "PGGC8GAZ",
-      "version": 2247,
-      "itemType": "document",
+      "version": 6735,
+      "itemType": "report",
       "creators": [
         {
           "creatorType": "author",
@@ -1171,8 +1173,13 @@
           "lastName": "Teitelman"
         }
       ],
-      "publisher": "",
+      "reportNumber": "",
+      "reportType": "",
+      "seriesTitle": "",
+      "place": "",
+      "institution": "",
       "date": "April 10, 1967",
+      "pages": "2-6",
       "language": "",
       "shortTitle": "",
       "url": "http://bitsavers.org/pdf/sds/9xx/940/ucbProjectGenie/940_LISP_Memo_2_Apr67.pdf",
@@ -1188,7 +1195,19 @@
           "tag": "BBN-LISP"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "SDS 940"
+        },
+        {
+          "tag": "release notes"
+        },
+        {
           "tag": "s2z"
+        },
+        {
+          "tag": "technical"
         }
       ],
       "collections": [
@@ -1196,7 +1215,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-22T03:48:38Z",
-      "dateModified": "2021-08-27T23:41:22Z"
+      "dateModified": "2024-07-24T16:03:51Z"
     },
     {
       "target": "IZP9D9PC",
@@ -1948,7 +1967,9 @@
       "id": "9296070/JCVVQUVD",
       "type": "article",
       "title": "BBN - LISP, TENEX Reference Manual",
-      "publisher": "Bolt, Beranek and Newman, Inc. (BBN)",
+      "publisher": "Bolt, Beranek and Newman Inc.",
+      "abstract": "This document describes the BBN-LISP system currently implemented on the DEC-PDP-10 under the BBN TENEX time sharing system. BBN-LISP is designed to provide the user access to the large cirtual memory allowed by TENEX with a relatively small penalty in speed (using special paging techniques described in Bobrow and Murphy, 1967). Additional datatypes have been added, including strings and has association tables (hash linkes). This system has been designed to be a good on-line interactive system. Some of the features provided include sophisticiated debugging facilities with tracing and conditional breakpoints, a sophisticated LISP oriented editor wihin the system, an compatible compiler and interpreter.",
+      "language": "en",
       "author": [
         {
           "family": "Teitelman",
@@ -1985,7 +2006,7 @@
         ]
       },
       "key": "JCVVQUVD",
-      "version": 2240,
+      "version": 6760,
       "itemType": "document",
       "creators": [
         {
@@ -2010,7 +2031,6 @@
         }
       ],
       "date": "July 1971",
-      "language": "",
       "shortTitle": "",
       "url": "http://www.softwarepreservation.org/projects/LISP/bbnlisp/TenexLispRef_Jul71.pdf",
       "accessDate": "2021-06-01T14:08:20Z",
@@ -2025,7 +2045,25 @@
           "tag": "BBN-LISP"
         },
         {
+          "tag": "PDP-10"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Tenex"
+        },
+        {
+          "tag": "programming overview"
+        },
+        {
+          "tag": "reference manual"
+        },
+        {
           "tag": "s2z"
+        },
+        {
+          "tag": "system overview"
         }
       ],
       "collections": [
@@ -2033,7 +2071,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T14:08:20Z",
-      "dateModified": "2021-08-27T22:43:31Z"
+      "dateModified": "2024-07-24T16:21:16Z"
     }
   ],
   "1972": [
@@ -2131,7 +2169,9 @@
       "id": "9296070/KP33M4DP",
       "type": "article",
       "title": "BBN - LISP, TENEX Reference Manual, Revised",
-      "publisher": "Bolt, Beranek and Newman, Inc. (BBN)",
+      "publisher": "Bolt, Beranek and Newman Inc.",
+      "abstract": "This document describes the BBN-LISP system currently implemented on the DEC PDP-10 under the BBN TENEX time sharing system. BBN-LISP is designed to provide the user access to the large virtual memory allowed by TENEX, with a relatively small penalty in speed (using special paging techiques described in Bobrow and Murphy, 1967). Additional data types have been added, including strings and hash association tables (hash links). This system has been designed to be a good on-line interactive system. Some of the features provided include sophisticated debugging facilities with tracing and conditional breakpoints, a sophisticated LISP oriented editor within the system, and compatible compiler and interpreter.",
+      "language": "en",
       "author": [
         {
           "family": "Teitelman",
@@ -2168,7 +2208,7 @@
         ]
       },
       "key": "KP33M4DP",
-      "version": 2003,
+      "version": 6748,
       "itemType": "document",
       "creators": [
         {
@@ -2193,7 +2233,6 @@
         }
       ],
       "date": "August 1972",
-      "language": "",
       "shortTitle": "",
       "url": "http://www.bitsavers.org/pdf/bbn/tenex/TenexLispRef_Aug72.pdf",
       "accessDate": "2021-06-01T14:08:20Z",
@@ -2208,7 +2247,25 @@
           "tag": "BBN-LISP"
         },
         {
+          "tag": "PDP-10"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Tenex"
+        },
+        {
+          "tag": "programming overview"
+        },
+        {
+          "tag": "reference manual"
+        },
+        {
           "tag": "s2z"
+        },
+        {
+          "tag": "system overview"
         }
       ],
       "collections": [
@@ -2216,17 +2273,23 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T14:37:38Z",
-      "dateModified": "2021-06-01T14:41:06Z"
+      "dateModified": "2024-07-24T16:13:19Z"
     },
     {
       "target": "5MWT6G4D",
       "id": "9296070/5MWT6G4D",
-      "type": "book",
+      "type": "article",
       "title": "J778.SYSREM DOC on SYS05 (LISP features dsigned to aid the LISP programmer)",
       "publisher": "Masinter",
       "archive": "Computer History Museum",
       "archive_location": "X6058.2011",
       "note": "Catalog Number: 102721861\nCategory: Program Listing\nCollection Title: Gift of Larry Masinter\nCredit: Gift of Larry Masinter",
+      "author": [
+        {
+          "family": "Masinter",
+          "given": ""
+        }
+      ],
       "issued": {
         "date-parts": [
           [
@@ -2235,19 +2298,17 @@
         ]
       },
       "key": "5MWT6G4D",
-      "version": 2512,
-      "itemType": "book",
-      "creators": [],
-      "series": "",
-      "seriesNumber": "",
-      "volume": "",
-      "numberOfVolumes": "",
-      "edition": "",
-      "place": "",
+      "version": 6822,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "",
+          "lastName": "Masinter"
+        }
+      ],
       "date": "1972",
-      "numPages": "",
       "language": "",
-      "ISBN": "",
       "shortTitle": "",
       "url": "",
       "accessDate": "",
@@ -2262,7 +2323,7 @@
       ],
       "relations": {},
       "dateAdded": "2022-10-08T18:17:04Z",
-      "dateModified": "2022-10-08T18:17:04Z"
+      "dateModified": "2024-07-24T17:37:06Z"
     },
     {
       "target": "MMYVAME3",
@@ -2656,14 +2717,10 @@
     {
       "target": "LSJRVJU8",
       "id": "9296070/LSJRVJU8",
-      "type": "article-journal",
-      "title": "INTERLISP",
-      "container-title": "ACM SIGART Bulletin",
+      "type": "report",
+      "title": "INTERLISP Progress Report",
       "page": "8-9",
-      "issue": "43",
       "abstract": "INTERLISP (INTERactive LISP) is a LISP system currently implemented on the DEC PDP-10 under the BBN TENEX time sharing system<*R1>. INTERLISP is designed to provide the user access to the large virtual memory allowed by TENEX, with a relatively small penalty in speed (using special paging techniques described in <*R2>). Additional data types have been added, including strings, arrays, and hash association tables (hash links). The system includes a compatible compiler and interpreter. Machine code can be intermixed with INTERLISP expressions via the assemble directive of the compiler. The compiler also contains a facility for \"block compilation\" which allows a group of functions to be compiled as a unit, suppressing internal names. Each successive level of computation, from interpreted through compiled, to block-compiled provides greater speed at a cost of debugging ease.",
-      "DOI": "10.1145/1056786.1056787",
-      "journalAbbreviation": "SIGART Bull.",
       "author": [
         {
           "family": "Teitelman",
@@ -2689,8 +2746,8 @@
         ]
       },
       "key": "LSJRVJU8",
-      "version": 1936,
-      "itemType": "journalArticle",
+      "version": 6714,
+      "itemType": "report",
       "creators": [
         {
           "creatorType": "author",
@@ -2698,15 +2755,14 @@
           "lastName": "Teitelman"
         }
       ],
-      "publicationTitle": "ACM SIGART Bulletin",
-      "volume": "",
-      "pages": "8-9",
-      "date": "December 1, 1973",
-      "series": "",
+      "reportNumber": "",
+      "reportType": "",
       "seriesTitle": "",
-      "seriesText": "",
+      "place": "",
+      "institution": "",
+      "date": "December 1, 1973",
+      "pages": "8-9",
       "language": "",
-      "ISSN": "0163-5719",
       "shortTitle": "",
       "url": "https://doi.org/10.1145/1056786.1056787",
       "accessDate": "2021-04-15T23:17:58Z",
@@ -2718,7 +2774,13 @@
       "extra": "",
       "tags": [
         {
-          "tag": "interlisp"
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "history"
         },
         {
           "tag": "s2z"
@@ -2739,7 +2801,7 @@
         ]
       },
       "dateAdded": "2021-04-15T23:18:51Z",
-      "dateModified": "2021-06-03T19:53:25Z"
+      "dateModified": "2024-07-24T15:57:28Z"
     }
   ],
   "1974": [
@@ -3538,7 +3600,7 @@
         ]
       },
       "key": "QBBQSH3V",
-      "version": 1996,
+      "version": 6706,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -3566,14 +3628,28 @@
       "extra": "Conference Name: IEEE Transactions on Computers",
       "tags": [
         {
-          "tag": "Automatic error correction, extensible languages, interactive systems, Lisp, list processing, programming, programming languages.",
-          "type": 1
+          "tag": "CLISP"
         },
         {
-          "tag": "interlisp"
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "error handling"
+        },
+        {
+          "tag": "programming techniques"
         },
         {
           "tag": "s2z"
+        },
+        {
+          "tag": "syntax"
         }
       ],
       "collections": [
@@ -3581,7 +3657,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T17:36:23Z",
-      "dateModified": "2021-06-03T19:53:22Z"
+      "dateModified": "2024-07-24T15:48:55Z"
     },
     {
       "target": "B2PF228B",
@@ -3851,6 +3927,7 @@
       "title": "Qlisp: a language for the interactive development of complex systems",
       "container-title": "Proceedings of the June 7-10, 1976, national computer conference and exposition",
       "page": "349-356",
+      "abstract": "This paper presents a functional overview of the features and capabilities of QLIS, one of the newest of the current generation of very high level languages developer for use in artificaly intelligence (AI) researc. QLISP is both a programming language and an interactive programming environment. It embeds an etended version of QA4, an earlier AI language, in INTERLISP, a widely available version of LISP with a variety of sophisticated programming aids.",
       "shortTitle": "Qlisp",
       "author": [
         {
@@ -3886,7 +3963,7 @@
         ]
       },
       "key": "WRHC5YI7",
-      "version": 2059,
+      "version": 6797,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -3939,13 +4016,26 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "QLISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "programming overview"
+        },
+        {
+          "tag": "system overview"
+        }
+      ],
       "collections": [
         "TVX6WEZX"
       ],
       "relations": {},
       "dateAdded": "2021-06-09T23:36:05Z",
-      "dateModified": "2021-06-09T23:36:05Z"
+      "dateModified": "2024-07-24T16:41:28Z"
     },
     {
       "target": "V3ECJHJ3",
@@ -9779,7 +9869,7 @@
         ]
       },
       "key": "MSBZ5IMI",
-      "version": 3096,
+      "version": 6687,
       "itemType": "document",
       "creators": [
         {
@@ -9798,7 +9888,25 @@
       "extra": "OCLC: 802551877",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "programming overview"
+        },
+        {
+          "tag": "reference manual"
+        },
+        {
+          "tag": "system overview"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "user guide"
         }
       ],
       "collections": [
@@ -9806,7 +9914,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T10:18:35Z",
-      "dateModified": "2023-10-04T04:41:51Z"
+      "dateModified": "2024-07-24T15:36:36Z"
     },
     {
       "target": "L378BFRQ",
@@ -12617,6 +12725,7 @@
       "id": "9296070/PMXCAM4Y",
       "type": "article",
       "title": "Interlisp-D Release Notes",
+      "publisher": "Xerox Corporation",
       "abstract": "The Koto release of Interlisp-D provides a wide range of added functionality, increased performance and improved reliability.\nCentral among these is that Koto is the first release of Interlisp that supports the new Xerox 1185/1186 artificial inteilligence work stations, including the new features of these work stations such as the expanded 19\" display, and the PC emulation option.  Of course, like previous releases of Interlisp, Koto also supports the other current members of the 1100 series of machines, specifically the 1132 and various models of the 1108.",
       "language": "English",
       "author": [
@@ -12643,7 +12752,7 @@
         ]
       },
       "key": "PMXCAM4Y",
-      "version": 3142,
+      "version": 6730,
       "itemType": "document",
       "creators": [
         {
@@ -12651,7 +12760,6 @@
           "name": "XEROX"
         }
       ],
-      "publisher": "",
       "date": "December 1985",
       "shortTitle": "",
       "url": "http://www.bitsavers.org/pdf/xerox/interlisp-d/198510_Koto/198512_3101312_Koto_Release_Notes.pdf",
@@ -12662,7 +12770,26 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Interlisp-D"
+        },
+        {
+          "tag": "Koto"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "release notes"
+        },
+        {
+          "tag": "system overview"
+        },
+        {
+          "tag": "technical overview"
+        }
+      ],
       "collections": [
         "TVX6WEZX"
       ],
@@ -12675,7 +12802,7 @@
         ]
       },
       "dateAdded": "2021-04-22T03:48:38Z",
-      "dateModified": "2023-10-30T18:48:12Z"
+      "dateModified": "2024-07-24T16:00:50Z"
     },
     {
       "target": "LYVRMQB2",
@@ -13524,7 +13651,8 @@
       "id": "9296070/68LHCGJF",
       "type": "book",
       "title": "Performance and evaluation of LISP systems",
-      "publisher": "Massachusetts Institute of Technology",
+      "collection-title": "Computer Systems",
+      "publisher": "The MIT Press",
       "publisher-place": "USA",
       "number-of-pages": "285",
       "event-place": "USA",
@@ -13546,7 +13674,7 @@
         ]
       },
       "key": "68LHCGJF",
-      "version": 2080,
+      "version": 6784,
       "itemType": "book",
       "creators": [
         {
@@ -13555,7 +13683,7 @@
           "lastName": "Gabriel"
         }
       ],
-      "series": "",
+      "series": "Computer Systems",
       "seriesNumber": "",
       "volume": "",
       "numberOfVolumes": "",
@@ -13575,6 +13703,21 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "benchmarks"
+        },
+        {
+          "tag": "computational efficiency"
+        },
+        {
+          "tag": "performance"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -13583,7 +13726,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T17:14:22Z",
-      "dateModified": "2021-06-07T19:08:48Z"
+      "dateModified": "2024-07-24T16:34:03Z"
     },
     {
       "target": "Y6GV46BI",
@@ -13659,6 +13802,54 @@
       "relations": {},
       "dateAdded": "2021-04-15T23:18:51Z",
       "dateModified": "2023-10-30T18:35:02Z"
+    },
+    {
+      "target": "DCC4VF65",
+      "id": "9296070/DCC4VF65",
+      "type": "article",
+      "title": "TWODINSPECTOR",
+      "abstract": "Documentation of the TWODINSPECTOR package that provides a two-dimensional inspector window.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Pedersen, Jan",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1985
+          ]
+        ]
+      },
+      "key": "DCC4VF65",
+      "version": 6806,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Pedersen, Jan"
+        }
+      ],
+      "publisher": "",
+      "date": "1985",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/sources/twodinspector.tedit.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "H4WH7B9H"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-23T10:32:36Z",
+      "dateModified": "2024-07-24T17:11:42Z"
     },
     {
       "target": "4I89EW6J",
@@ -15029,7 +15220,7 @@
       "publisher-place": "Canada",
       "number-of-pages": "1181",
       "event-place": "Canada",
-      "abstract": "LISP, as a language, has been around for about 25 years [mcca78]. It was originally developed to support artificial intelligence (AI) research. At first, it seemed to be little noticed except by a small band of academics who implemented some of the early LISP interpreters and wrote some of the early AI programs. In the early 60’s, LISP began to diverge as various implementations were developed for different machines. McCarthy [mcca78] gives a short history of its early days.",
+      "abstract": "LISP, as a language, has been around for about 25 years. It was originally developed to support artificial intelligence (AI) research. At first, it seemed to be little noticed except by a small band of academics who implemented some of the early LISP interpreters and wrote some of the early AI programs. In the early 60’s, LISP began to diverge as various implementations were developed for different machines. McCarthy gives a short history of its early days.",
       "language": "eng",
       "author": [
         {
@@ -15054,7 +15245,7 @@
         ]
       },
       "key": "48ESB5WE",
-      "version": 3105,
+      "version": 6771,
       "itemType": "book",
       "creators": [
         {
@@ -15082,11 +15273,22 @@
       "extra": "",
       "tags": [
         {
-          "tag": "lisp",
-          "type": 1
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "programming fundamentals"
+        },
+        {
+          "tag": "programming overview"
         },
         {
           "tag": "sz"
+        },
+        {
+          "tag": "technical overview"
         }
       ],
       "collections": [
@@ -15099,7 +15301,7 @@
         ]
       },
       "dateAdded": "2021-04-24T06:12:25Z",
-      "dateModified": "2023-10-04T05:12:31Z"
+      "dateModified": "2024-07-24T16:28:09Z"
     },
     {
       "target": "UXXJ8JIH",
@@ -16016,6 +16218,73 @@
       },
       "dateAdded": "2022-07-04T20:14:17Z",
       "dateModified": "2024-06-20T05:39:29Z"
+    },
+    {
+      "target": "YQ3XCQL7",
+      "id": "9296070/YQ3XCQL7",
+      "type": "article",
+      "title": "RULES",
+      "abstract": "The core of decision-making expertise in many kinds of problem solving can be expressed succinctly in terms of rules. The following sections describe facilities in Xerox LOOPS for representing rules, and for organizing knowledge-based systems with rule-oriented programming. The Xerox LOOPS rule language provides an experimental framework for developing knowledge-based systems. The rule language and programming environment are integrated with the object-oriented, data oriented, and procedure-oriented parts of Xerox LOOPS.",
+      "note": "Multipart: Yes",
+      "language": "English",
+      "author": [
+        {
+          "family": "Martin, Rick",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1986",
+            4,
+            14
+          ]
+        ]
+      },
+      "key": "YQ3XCQL7",
+      "version": 6800,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Martin, Rick"
+        }
+      ],
+      "publisher": "",
+      "date": "April 14, 1986",
+      "shortTitle": "",
+      "url": "https://drive.google.com/drive/folders/1unq6LRNsiNe8JfRH0CmMGC-gGVSs7oax?usp=drive_link",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Multipart: Yes",
+      "tags": [
+        {
+          "tag": "LOOPS"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "TEdit file"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "introductory"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-29T12:00:30Z",
+      "dateModified": "2024-07-24T16:44:42Z"
     },
     {
       "target": "GWU6SW5W",
@@ -18564,6 +18833,70 @@
       "relations": {},
       "dateAdded": "2023-11-23T12:50:24Z",
       "dateModified": "2024-04-14T12:39:17Z"
+    },
+    {
+      "target": "9MDNLLV9",
+      "id": "9296070/9MDNLLV9",
+      "type": "article",
+      "title": "TKDORADO",
+      "abstract": "TKDorado makes the full range of TEditKey commands available from the Dorado keyboard.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Dixon, Mike",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1987
+          ]
+        ]
+      },
+      "key": "9MDNLLV9",
+      "version": 6817,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Dixon, Mike"
+        }
+      ],
+      "publisher": "",
+      "date": "1987",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/lispusers/tkdorado.tedit.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "TEdit"
+        },
+        {
+          "tag": "TEdit file"
+        },
+        {
+          "tag": "documentation"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H"
+      ],
+      "relations": {},
+      "dateAdded": "2023-12-04T11:43:45Z",
+      "dateModified": "2024-07-24T17:18:55Z"
     },
     {
       "target": "3W2WQS2B",
@@ -31048,7 +31381,7 @@
         ]
       },
       "key": "DVGRZ62H",
-      "version": 1327,
+      "version": 6694,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -31076,7 +31409,16 @@
       "extra": "",
       "tags": [
         {
-          "tag": "Interlisp-D"
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "history"
         },
         {
           "tag": "s2z"
@@ -31087,7 +31429,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-15T23:18:51Z",
-      "dateModified": "2021-05-31T18:21:01Z"
+      "dateModified": "2024-07-24T15:44:11Z"
     },
     {
       "target": "RI94XGIV",
@@ -31172,9 +31514,15 @@
       "type": "post-weblog",
       "title": "Lisp50 Notes part V: Interlisp, PARC, and the Common Lisp Consolidation Wars",
       "container-title": "Learning Lisp",
-      "abstract": "Okay, quick… how many people besides Alan Kay can you name that worked at Xerox PARC? Not very many, eh? Yeah, that’s your loss. It wasn’t all about the guys like Kay that get all…",
+      "abstract": "Provides an engaging narrative of the significant contributions and events in the history of Lisp, particularly focusing on the pivotal work done at Xerox PARC. It highlights the notable contributions of Warren Teitelman, detailing his innovative work on debugging Lisp programs and developing the first spell checker, undo system, and online help system. The document also delves into the intense debates and processes involved in the consolidation of various Lisp dialects into Common Lisp, featuring insights from key figures such as Guy Steele and Kent Pitman. Through personal anecdotes and historical recounting, it underscores the technical and philosophical clashes that shaped the evolution of Lisp and its community.",
       "shortTitle": "Lisp50 Notes part V",
       "language": "en",
+      "author": [
+        {
+          "family": "Miller",
+          "given": "Mark"
+        }
+      ],
       "issued": {
         "date-parts": [
           [
@@ -31194,9 +31542,15 @@
         ]
       },
       "key": "PCL5WHQQ",
-      "version": 2484,
+      "version": 6674,
       "itemType": "blogPost",
-      "creators": [],
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Mark",
+          "lastName": "Miller"
+        }
+      ],
       "blogTitle": "Learning Lisp",
       "websiteType": "",
       "date": "2008-10-24T18:43:08+00:00",
@@ -31204,13 +31558,35 @@
       "accessDate": "2022-08-05T00:01:02Z",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Common Lisp"
+        },
+        {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox PARC"
+        },
+        {
+          "tag": "history"
+        },
+        {
+          "tag": "programming environments"
+        }
+      ],
       "collections": [
         "TVX6WEZX"
       ],
       "relations": {},
       "dateAdded": "2022-08-05T00:01:02Z",
-      "dateModified": "2022-08-05T00:01:02Z"
+      "dateModified": "2024-07-24T15:19:43Z"
     }
   ],
   "2009": [
@@ -38322,7 +38698,7 @@
         }
       ],
       "key": "4EXTB254",
-      "version": 6661,
+      "version": 6812,
       "itemType": "document",
       "creators": [
         {
@@ -38345,7 +38721,13 @@
           "tag": "LispUsers packages"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
           "tag": "TEdit file"
+        },
+        {
+          "tag": "needs date"
         }
       ],
       "collections": [
@@ -38353,7 +38735,7 @@
       ],
       "relations": {},
       "dateAdded": "2023-11-25T13:36:46Z",
-      "dateModified": "2024-07-22T20:51:52Z"
+      "dateModified": "2024-07-24T17:17:08Z"
     },
     {
       "target": "ZQJJKWXN",
@@ -38455,7 +38837,7 @@
         }
       ],
       "key": "UB73FJTP",
-      "version": 5273,
+      "version": 6736,
       "itemType": "document",
       "creators": [
         {
@@ -38473,13 +38855,23 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "LOOPS"
+        },
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        }
+      ],
       "collections": [
         "H4WH7B9H"
       ],
       "relations": {},
       "dateAdded": "2023-11-29T12:10:11Z",
-      "dateModified": "2023-11-29T12:11:11Z"
+      "dateModified": "2024-07-24T16:04:56Z"
     },
     {
       "target": "NMZTXW5Z",
@@ -38555,7 +38947,7 @@
         "literal": "https://drive.google.com/file/d/128Rh2ZvCkpMKIQovru-ojnXsuw-XRCgR/view?usp=sharing"
       },
       "key": "FHQDFEU2",
-      "version": 4955,
+      "version": 6804,
       "itemType": "document",
       "creators": [
         {
@@ -38573,13 +38965,29 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "TEdit file"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "reference manual"
+        }
+      ],
       "collections": [
         "H4WH7B9H"
       ],
       "relations": {},
       "dateAdded": "2023-11-26T16:14:51Z",
-      "dateModified": "2023-11-26T16:16:32Z"
+      "dateModified": "2024-07-24T16:50:41Z"
     },
     {
       "target": "IM9RHIFA",
@@ -39354,48 +39762,6 @@
       "dateModified": "2023-11-23T10:21:57Z"
     },
     {
-      "target": "YQ3XCQL7",
-      "id": "9296070/YQ3XCQL7",
-      "type": "article",
-      "title": "RULES",
-      "abstract": "The core of decision-making expertise in many kinds of problem solving can be expressed succinctly in terms of rules. The following sections describe facilities in Xerox LOOPS for representing rules, and for organizing knowledge-based systems with rule-oriented programming. The Xerox LOOPS rule language provides an experimental framework for developing knowledge-based systems. The rule language and programming environment are integrated with the object-oriented, data oriented, and procedure-oriented parts of Xerox LOOPS.",
-      "note": "Multipart: Yes",
-      "language": "English",
-      "author": [
-        {
-          "family": "Martin, Rick",
-          "given": ""
-        }
-      ],
-      "key": "YQ3XCQL7",
-      "version": 5248,
-      "itemType": "document",
-      "creators": [
-        {
-          "creatorType": "author",
-          "name": "Martin, Rick"
-        }
-      ],
-      "publisher": "",
-      "date": "",
-      "shortTitle": "",
-      "url": "https://drive.google.com/drive/folders/1unq6LRNsiNe8JfRH0CmMGC-gGVSs7oax?usp=drive_link",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "Multipart: Yes",
-      "tags": [],
-      "collections": [
-        "H4WH7B9H"
-      ],
-      "relations": {},
-      "dateAdded": "2023-11-29T12:00:30Z",
-      "dateModified": "2023-11-29T12:02:29Z"
-    },
-    {
       "target": "JRSP6SZZ",
       "id": "9296070/JRSP6SZZ",
       "type": "article",
@@ -39904,47 +40270,6 @@
       "dateModified": "2024-04-14T12:42:47Z"
     },
     {
-      "target": "9MDNLLV9",
-      "id": "9296070/9MDNLLV9",
-      "type": "article",
-      "title": "TKDORADO",
-      "abstract": "TKDorado makes the full range of TEditKey commands available from the Dorado keyboard.",
-      "language": "English",
-      "author": [
-        {
-          "family": "Dixon, Mike",
-          "given": ""
-        }
-      ],
-      "key": "9MDNLLV9",
-      "version": 5427,
-      "itemType": "document",
-      "creators": [
-        {
-          "creatorType": "author",
-          "name": "Dixon, Mike"
-        }
-      ],
-      "publisher": "",
-      "date": "",
-      "shortTitle": "",
-      "url": "https://drive.google.com/file/d/112SL-gB77X5plkvWdHAFJUdW2BWgNvgH/view?usp=sharing",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "H4WH7B9H"
-      ],
-      "relations": {},
-      "dateAdded": "2023-12-04T11:43:45Z",
-      "dateModified": "2023-12-04T11:44:50Z"
-    },
-    {
       "target": "9PIUJJ79",
       "id": "9296070/9PIUJJ79",
       "type": "article",
@@ -40032,47 +40357,6 @@
       "relations": {},
       "dateAdded": "2023-11-25T14:00:17Z",
       "dateModified": "2023-11-25T14:01:32Z"
-    },
-    {
-      "target": "DCC4VF65",
-      "id": "9296070/DCC4VF65",
-      "type": "article",
-      "title": "TWODINSPECTOR",
-      "abstract": "Documentation of the TWODINSPECTOR package that provides a two-dimensional inspector window.",
-      "language": "English",
-      "author": [
-        {
-          "family": "Pedersen, Jan",
-          "given": ""
-        }
-      ],
-      "key": "DCC4VF65",
-      "version": 4304,
-      "itemType": "document",
-      "creators": [
-        {
-          "creatorType": "author",
-          "name": "Pedersen, Jan"
-        }
-      ],
-      "publisher": "",
-      "date": "",
-      "shortTitle": "",
-      "url": "https://drive.google.com/file/d/10bjg3SZM3HAoh_aF8jU5vkVnWABht4Pj/view?usp=sharing",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "H4WH7B9H"
-      ],
-      "relations": {},
-      "dateAdded": "2023-11-23T10:32:36Z",
-      "dateModified": "2023-11-23T10:33:58Z"
     },
     {
       "target": "SVIQ724G",
@@ -40367,7 +40651,7 @@
         }
       ],
       "key": "M2HXTN7J",
-      "version": 6662,
+      "version": 6808,
       "itemType": "document",
       "creators": [
         {
@@ -40378,7 +40662,7 @@
       "publisher": "",
       "date": "",
       "shortTitle": "",
-      "url": "https://drive.google.com/file/d/1-QVLlcX1gGjtUhKV6uCA9Vtvft8Rctnm/view?usp=sharing",
+      "url": "https://files.interlisp.org/medley/internal/envos/unixmail.tedit.pdf",
       "accessDate": "",
       "archive": "",
       "archiveLocation": "",
@@ -40409,7 +40693,7 @@
           "tag": "emails"
         },
         {
-          "tag": "no date"
+          "tag": "needs date"
         }
       ],
       "collections": [
@@ -40417,7 +40701,7 @@
       ],
       "relations": {},
       "dateAdded": "2023-11-25T10:48:44Z",
-      "dateModified": "2024-07-22T20:51:58Z"
+      "dateModified": "2024-07-24T17:13:19Z"
     },
     {
       "target": "TCPLXRW4",
