@@ -7982,57 +7982,6 @@
       "dateModified": "2024-06-05T16:30:11Z"
     },
     {
-      "target": "EKSBMRUL",
-      "id": "9296070/EKSBMRUL",
-      "type": "article",
-      "title": "Chaosnet FILE Protocol",
-      "publisher": "Symbolics Inc.",
-      "abstract": "The FILE protocol allows one Chaosnet host (the user) to make use of a file system on another host (the server). This document describes the protocol by which a user host and a server host communicate. It describes the requirements for both users and servers. It is assumed that the reader of this document is familiar with basic Chaosnet protocol, and undersands the meanings of \"connections\", \"packets\", \"packet opcodes\", \"connect names\", \"opening\" and \"closing\" connections, and so on.",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            "1981",
-            9
-          ]
-        ]
-      },
-      "key": "EKSBMRUL",
-      "version": 6427,
-      "itemType": "document",
-      "creators": [],
-      "date": "September, 1981",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Chaosnet"
-        },
-        {
-          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
-        },
-        {
-          "tag": "file protocol"
-        },
-        {
-          "tag": "technical overview"
-        }
-      ],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2024-05-19T02:21:12Z",
-      "dateModified": "2024-06-12T13:23:06Z"
-    },
-    {
       "target": "NQ5ACUG6",
       "id": "9296070/NQ5ACUG6",
       "type": "motion_picture",
@@ -8280,60 +8229,6 @@
       "dateModified": "2024-06-12T12:59:58Z"
     },
     {
-      "target": "ZM552A7Q",
-      "id": "9296070/ZM552A7Q",
-      "type": "article",
-      "title": "LM-2 Unibus I/O",
-      "publisher": "Symbolics Inc.",
-      "abstract": "The LM-2 contains a Unibus (trademark of Digital Equipment Corp.) for connection of I/O devices. This document describes the hardware related to the Unibus, a explaining how to attach new devices, and what is included on the IOB. It is assumed that the reader understands the basic concepts of the Unibus, what kinds of signals it cincludes, and what a Small Peripheral Controller Slot (\"SPC slot\") is.",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            "1981",
-            9
-          ]
-        ]
-      },
-      "key": "ZM552A7Q",
-      "version": 6428,
-      "itemType": "document",
-      "creators": [],
-      "date": "September, 1981",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "I/O"
-        },
-        {
-          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
-        },
-        {
-          "tag": "Unibus"
-        },
-        {
-          "tag": "hardware overview"
-        },
-        {
-          "tag": "technical overview"
-        }
-      ],
-      "collections": [
-        "38VWRV6T"
-      ],
-      "relations": {},
-      "dateAdded": "2024-05-19T02:33:30Z",
-      "dateModified": "2024-06-12T13:23:21Z"
-    },
-    {
       "target": "W96JCCYH",
       "id": "9296070/W96JCCYH",
       "type": "paper-conference",
@@ -8406,115 +8301,6 @@
       "relations": {},
       "dateAdded": "2021-05-04T22:22:53Z",
       "dateModified": "2023-10-30T19:23:41Z"
-    },
-    {
-      "target": "U34DPFVP",
-      "id": "9296070/U34DPFVP",
-      "type": "article",
-      "title": "Symbolics File Systems",
-      "publisher": "Symbolics Corporaiton",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            "1981",
-            8
-          ]
-        ]
-      },
-      "key": "U34DPFVP",
-      "version": 2315,
-      "itemType": "document",
-      "creators": [],
-      "date": "August 1981",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "3P7DS9NY"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:38:19Z",
-      "dateModified": "2021-08-04T12:39:18Z"
-    },
-    {
-      "target": "KE7KG52R",
-      "id": "9296070/KE7KG52R",
-      "type": "article",
-      "title": "Symbolics Software",
-      "publisher": "Symbolics Corporaiton",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            1981
-          ]
-        ]
-      },
-      "key": "KE7KG52R",
-      "version": 2315,
-      "itemType": "document",
-      "creators": [],
-      "date": "1981",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "3P7DS9NY"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:41:30Z",
-      "dateModified": "2021-08-04T12:42:48Z"
-    },
-    {
-      "target": "L4HZ49TB",
-      "id": "9296070/L4HZ49TB",
-      "type": "article",
-      "title": "Symbolics_Software_1981.pdf",
-      "publisher": "Symbolics Inc.",
-      "language": "en",
-      "issued": {
-        "date-parts": [
-          [
-            1981
-          ]
-        ]
-      },
-      "key": "L4HZ49TB",
-      "version": 6208,
-      "itemType": "document",
-      "creators": [],
-      "date": "1981",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2024-05-29T17:16:05Z",
-      "dateModified": "2024-05-29T17:20:51Z"
     },
     {
       "target": "A94JY5AD",
@@ -8863,84 +8649,6 @@
       "relations": {},
       "dateAdded": "2024-01-07T10:57:01Z",
       "dateModified": "2024-01-07T10:58:16Z"
-    },
-    {
-      "target": "VVJUR7FA",
-      "id": "9296070/VVJUR7FA",
-      "type": "article",
-      "title": "Chaosnet Documentation",
-      "publisher": "Symbolics Inc.",
-      "abstract": "Chaosnet is a local network, that is, a system for communication among a group of computers located within about 1000 meters of each other. Originally developed by the Artificial Intelligence Laboratory as the internal communications medium of the Lisp Machine system, it has since come to be used to link a variety of machines around MIT and elsewhere.",
-      "language": "English",
-      "author": [
-        {
-          "family": "Moon",
-          "given": "David A."
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            "1982",
-            6
-          ]
-        ]
-      },
-      "key": "VVJUR7FA",
-      "version": 6505,
-      "itemType": "document",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "David A.",
-          "lastName": "Moon"
-        }
-      ],
-      "date": "June 1982",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Artificial Intelligence Laboratory"
-        },
-        {
-          "tag": "Chaosnet"
-        },
-        {
-          "tag": "Lisp Machine"
-        },
-        {
-          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
-        },
-        {
-          "tag": "documentation"
-        },
-        {
-          "tag": "hardware protocol"
-        },
-        {
-          "tag": "local network"
-        },
-        {
-          "tag": "networking"
-        },
-        {
-          "tag": "software protocol"
-        }
-      ],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2024-05-20T16:20:52Z",
-      "dateModified": "2024-06-20T16:41:26Z"
     },
     {
       "target": "G4F5FZND",
@@ -9402,57 +9110,6 @@
       "dateModified": "2024-06-12T13:20:57Z"
     },
     {
-      "target": "HGA2VE8A",
-      "id": "9296070/HGA2VE8A",
-      "type": "article",
-      "title": "Overview of the LMI Lisp Machine Software",
-      "publisher": "LISP Machine Inc.",
-      "abstract": "LMI LISP Machines are integrated hardware and software systems, providing a richer LISP interactive environment than that obtained from either MACLISP or INTERLISP. The LISP Machine provides greater productivity by reducing the time, trouble and cost of programming large systems. As the last eight years of continuing programming development at MIT have shown, large programs can be built, tested, debugged rapidly and with ease. This allows software developers to spend more time on program development rather than building system utilities.",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            "1982",
-            6
-          ]
-        ]
-      },
-      "key": "HGA2VE8A",
-      "version": 6429,
-      "itemType": "document",
-      "creators": [],
-      "date": "June, 1982",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Lisp Machine"
-        },
-        {
-          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
-        },
-        {
-          "tag": "introductory"
-        },
-        {
-          "tag": "software overview"
-        }
-      ],
-      "collections": [
-        "38VWRV6T"
-      ],
-      "relations": {},
-      "dateAdded": "2024-05-19T02:57:31Z",
-      "dateModified": "2024-06-12T13:23:36Z"
-    },
-    {
       "target": "RNAZ2XUW",
       "id": "9296070/RNAZ2XUW",
       "type": "paper-conference",
@@ -9598,78 +9255,6 @@
       "relations": {},
       "dateAdded": "2023-09-17T12:11:18Z",
       "dateModified": "2023-09-17T12:13:05Z"
-    },
-    {
-      "target": "U7BKRSGY",
-      "id": "9296070/U7BKRSGY",
-      "type": "article",
-      "title": "3600 Technical Summary",
-      "publisher": "Symbolics Inc.",
-      "abstract": "This technical summary is a detailed introduction to all aspects of the Symbolics 3600 system. It is addressed to technical managers, programmers, and computer system specialists who are already familiar with computer software, hardware, and terminology.\n\nThe text begins by outlining the history of the Lisp Machine concept, its development at the Massachusetts Intitute of Technology (M.I.T), and its evolution at Symbolics, Inc. Next are overviews of the 3600 software and hardware. For a general description of the 3600 system, read only these reviews.",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            "1983",
-            2
-          ]
-        ]
-      },
-      "key": "U7BKRSGY",
-      "version": 6601,
-      "itemType": "document",
-      "creators": [],
-      "date": "February, 1983",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
-        },
-        {
-          "tag": "Symbolics"
-        },
-        {
-          "tag": "Symbolics 3600"
-        },
-        {
-          "tag": "development tools"
-        },
-        {
-          "tag": "hardware overview"
-        },
-        {
-          "tag": "processor architecture"
-        },
-        {
-          "tag": "programming overview"
-        },
-        {
-          "tag": "software overview"
-        },
-        {
-          "tag": "system overview"
-        },
-        {
-          "tag": "technical summary"
-        },
-        {
-          "tag": "user interface"
-        }
-      ],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2024-05-18T17:16:51Z",
-      "dateModified": "2024-07-12T18:12:29Z"
     },
     {
       "target": "E5NDSA26",
@@ -10161,63 +9746,6 @@
       "relations": {},
       "dateAdded": "2021-06-03T18:16:12Z",
       "dateModified": "2023-10-30T20:01:13Z"
-    },
-    {
-      "target": "MTUV5W75",
-      "id": "9296070/MTUV5W75",
-      "type": "article",
-      "title": "Lisp Machine Summary 3600 Edition",
-      "publisher": "Symbolics Inc.",
-      "abstract": "The Lisp Machine Summary 3600 Edition provides basic information about the Symbolics 3600 Lisp Machine. It is designed to assist both new and experienced users in effectively operating the 3600. New users will find helpful information about getting started on the 3600 and about such topics as windows, errors and stuck states, pathnames, Zmail, the editor and the Lisp environment.",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            "1983",
-            8
-          ]
-        ]
-      },
-      "key": "MTUV5W75",
-      "version": 6600,
-      "itemType": "document",
-      "creators": [],
-      "date": "August, 1983",
-      "shortTitle": "",
-      "url": "https://bitsavers.org/pdf/symbolics/3600_series/990075_Lisp_Machine_Summary_3600_Edition_Aug83.pdf",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Lisp Machine"
-        },
-        {
-          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
-        },
-        {
-          "tag": "Symbolics"
-        },
-        {
-          "tag": "Symbolics 3600"
-        },
-        {
-          "tag": "introductory"
-        },
-        {
-          "tag": "system overview"
-        }
-      ],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2024-05-18T16:34:20Z",
-      "dateModified": "2024-07-12T18:12:23Z"
     },
     {
       "target": "PVEEX4BT",
@@ -11685,154 +11213,6 @@
       "dateModified": "2023-11-21T14:07:27Z"
     },
     {
-      "target": "2PNW5DWU",
-      "id": "9296070/2PNW5DWU",
-      "type": "article",
-      "title": "TI Explorer Symbolic Processing System, DEES055 (brochure)",
-      "publisher": "Texas Instruments",
-      "note": "Austin, TX 78792",
-      "issued": {
-        "date-parts": [
-          [
-            1984
-          ]
-        ]
-      },
-      "key": "2PNW5DWU",
-      "version": 2183,
-      "itemType": "document",
-      "creators": [],
-      "date": "1984",
-      "language": "",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "Austin, TX 78792",
-      "tags": [],
-      "collections": [
-        "KWWLPTUD"
-      ],
-      "relations": {},
-      "dateAdded": "2021-06-23T23:17:52Z",
-      "dateModified": "2021-06-23T23:17:52Z"
-    },
-    {
-      "target": "WXM4V4SP",
-      "id": "9296070/WXM4V4SP",
-      "type": "article",
-      "title": "Texas Instruments Expert System Development Tools, DNJS058",
-      "publisher": "Texas Instruments",
-      "note": "Austin, TX 78792",
-      "issued": {
-        "date-parts": [
-          [
-            1984
-          ]
-        ]
-      },
-      "key": "WXM4V4SP",
-      "version": 2183,
-      "itemType": "document",
-      "creators": [],
-      "date": "1984",
-      "language": "",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "Austin, TX 78792",
-      "tags": [],
-      "collections": [
-        "KWWLPTUD"
-      ],
-      "relations": {},
-      "dateAdded": "2021-06-23T23:17:42Z",
-      "dateModified": "2021-06-23T23:17:42Z"
-    },
-    {
-      "target": "7EPMG3KN",
-      "id": "9296070/7EPMG3KN",
-      "type": "article",
-      "title": "Texas Instruments Explorer Technical Summary, DDYB022",
-      "publisher": "Texas Imstruments",
-      "note": "Austin, TX 7879",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            1984
-          ]
-        ]
-      },
-      "key": "7EPMG3KN",
-      "version": 2183,
-      "itemType": "document",
-      "creators": [],
-      "date": "1984",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "Austin, TX 7879",
-      "tags": [],
-      "collections": [
-        "KWWLPTUD"
-      ],
-      "relations": {},
-      "dateAdded": "2021-06-23T23:17:45Z",
-      "dateModified": "2021-06-23T23:17:45Z"
-    },
-    {
-      "target": "T33JWZ9V",
-      "id": "9296070/T33JWZ9V",
-      "type": "article",
-      "title": "Texas Instruments New Developments in Artificial Intelligence, DEEB024 (brochure)",
-      "publisher": "Texas Instruments",
-      "note": "Austin, TX 78792",
-      "issued": {
-        "date-parts": [
-          [
-            1984
-          ]
-        ]
-      },
-      "key": "T33JWZ9V",
-      "version": 2183,
-      "itemType": "document",
-      "creators": [],
-      "date": "1984",
-      "language": "",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "Austin, TX 78792",
-      "tags": [],
-      "collections": [
-        "KWWLPTUD"
-      ],
-      "relations": {},
-      "dateAdded": "2021-06-23T23:17:49Z",
-      "dateModified": "2021-06-23T23:17:49Z"
-    },
-    {
       "target": "QNWUA2SK",
       "id": "9296070/QNWUA2SK",
       "type": "article",
@@ -12023,74 +11403,6 @@
       "relations": {},
       "dateAdded": "2023-11-26T21:01:14Z",
       "dateModified": "2024-05-29T17:29:14Z"
-    },
-    {
-      "target": "5X5A3G63",
-      "id": "9296070/5X5A3G63",
-      "type": "article",
-      "title": "ZMACS Introductory Manual",
-      "publisher": "LISP Machine Inc.",
-      "abstract": "This manual is designed to introduce ZMACS, the LISP machine's text editor. ZMACS participates fully in the global LISP environment. It can be used for writing and editing English text and for preparing, testing, and debugging LISP programs.",
-      "language": "English",
-      "author": [
-        {
-          "family": "Smith",
-          "given": "Sarah"
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            1984
-          ]
-        ]
-      },
-      "key": "5X5A3G63",
-      "version": 6341,
-      "itemType": "document",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Sarah",
-          "lastName": "Smith"
-        }
-      ],
-      "date": "1984",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Artificial Intelligence Laboratory"
-        },
-        {
-          "tag": "Lisp Machine"
-        },
-        {
-          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
-        },
-        {
-          "tag": "documentation"
-        },
-        {
-          "tag": "mouse"
-        },
-        {
-          "tag": "text editor"
-        }
-      ],
-      "collections": [
-        "38VWRV6T"
-      ],
-      "relations": {},
-      "dateAdded": "2024-05-20T16:38:13Z",
-      "dateModified": "2024-06-05T16:43:49Z"
     }
   ],
   "1985": [
@@ -16708,42 +16020,6 @@
       "dateModified": "2023-03-03T10:48:17Z"
     },
     {
-      "target": "HWM5FF7S",
-      "id": "9296070/HWM5FF7S",
-      "type": "article",
-      "title": "Symbolics Overview (Briefing)",
-      "publisher": "Symbolics Corporaiton",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            1986
-          ]
-        ]
-      },
-      "key": "HWM5FF7S",
-      "version": 2316,
-      "itemType": "document",
-      "creators": [],
-      "date": "1986",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "3P7DS9NY"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:40:01Z",
-      "dateModified": "2021-08-04T12:41:30Z"
-    },
-    {
       "target": "AH85W4DE",
       "id": "9296070/AH85W4DE",
       "type": "paper-conference",
@@ -16985,65 +16261,6 @@
       "relations": {},
       "dateAdded": "2023-11-10T02:18:20Z",
       "dateModified": "2023-11-10T02:20:48Z"
-    },
-    {
-      "target": "L3N6FT72",
-      "id": "9296070/L3N6FT72",
-      "type": "book",
-      "title": "User's Guide to Symbolics Computers",
-      "publisher": "Symbolics Inc.",
-      "abstract": "This is an extensive technical guide to using the Symbolics computers. The Symbolics family of advanced symbolic processing machines covers a full range of symbolic processing power and functionality. The unique design of Symbolics machines allows them to implement LISP and other symbolic programming languages with both speed and efficiency. The machines are faster and more efficient than other language specific machines and are superior to conventional computers for applications ranging from artificial intelligence, CAD/CAM, high resolution graphics, and expert system research and development as well as many general-purpose applications.",
-      "language": "English",
-      "issued": {
-        "date-parts": [
-          [
-            "1986",
-            7
-          ]
-        ]
-      },
-      "key": "L3N6FT72",
-      "version": 6492,
-      "itemType": "book",
-      "creators": [],
-      "series": "",
-      "seriesNumber": "",
-      "volume": "",
-      "numberOfVolumes": "",
-      "edition": "",
-      "place": "",
-      "date": "July, 1986",
-      "numPages": "",
-      "ISBN": "",
-      "shortTitle": "",
-      "url": "",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
-        },
-        {
-          "tag": "Symbolics"
-        },
-        {
-          "tag": "system overview"
-        },
-        {
-          "tag": "user guide"
-        }
-      ],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2024-05-18T17:24:26Z",
-      "dateModified": "2024-06-20T16:14:34Z"
     }
   ],
   "1987": [
@@ -33523,106 +32740,6 @@
   ],
   "2016": [
     {
-      "target": "RYF24FVN",
-      "id": "9296070/RYF24FVN",
-      "type": "paper-conference",
-      "title": "Building Common Lisp programs using Bazel",
-      "container-title": "Proceedings of the 9th European Lisp Symposium on European Lisp Symposium",
-      "collection-title": "ELS2016",
-      "publisher": "European Lisp Scientific Activities Association",
-      "publisher-place": "Kraków, Poland",
-      "page": "95-96",
-      "event-place": "Kraków, Poland",
-      "abstract": "We will demonstrate how to build Common Lisp programs using Bazel, Google's hermetic and reproducible build system. Unlike the state of the art so far for building Lisp programs, Bazel ensures that incremental builds are always both fast and correct. With Bazel, one can statically link C libraries into the SBCL runtime, making the executable file self-contained.",
-      "ISBN": "978-2-9557474-0-7",
-      "author": [
-        {
-          "family": "Knight",
-          "given": "James Y."
-        },
-        {
-          "family": "Rideau",
-          "given": "François-René"
-        },
-        {
-          "family": "Walczak",
-          "given": "Andrzej"
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            "2016",
-            5,
-            9
-          ]
-        ]
-      },
-      "accessed": {
-        "date-parts": [
-          [
-            2021,
-            4,
-            25
-          ]
-        ]
-      },
-      "key": "RYF24FVN",
-      "version": 6611,
-      "itemType": "conferencePaper",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "James Y.",
-          "lastName": "Knight"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "François-René",
-          "lastName": "Rideau"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Andrzej",
-          "lastName": "Walczak"
-        }
-      ],
-      "date": "May 9, 2016",
-      "proceedingsTitle": "Proceedings of the 9th European Lisp Symposium on European Lisp Symposium",
-      "conferenceName": "",
-      "place": "Kraków, Poland",
-      "volume": "",
-      "pages": "95-96",
-      "series": "ELS2016",
-      "language": "",
-      "DOI": "",
-      "shortTitle": "",
-      "url": "https://dl.acm.org/doi/10.5555/3005729.3005741",
-      "accessDate": "2021-04-25",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "ACM Digital Library",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Common Lisp",
-          "type": 1
-        },
-        {
-          "tag": "sz"
-        }
-      ],
-      "collections": [
-        "JP4FIV7I",
-        "XKP77FFK"
-      ],
-      "relations": {},
-      "dateAdded": "2021-04-25T21:01:25Z",
-      "dateModified": "2024-07-12T18:29:27Z"
-    },
-    {
       "target": "7CSMGPUT",
       "id": "9296070/7CSMGPUT",
       "type": "paper-conference",
@@ -34533,69 +33650,6 @@
       "relations": {},
       "dateAdded": "2021-04-15T23:18:51Z",
       "dateModified": "2021-06-03T19:10:37Z"
-    },
-    {
-      "target": "2YGL9ZNE",
-      "id": "9296070/2YGL9ZNE",
-      "type": "post-weblog",
-      "title": "That’s A Lisp Machine In Your Pocket",
-      "container-title": "Hackaday",
-      "genre": "Blog",
-      "abstract": "Computer languages have always advanced faster than computer hardware. Case in point: we’re just now getting CPU instructions for JavaScript floating point numbers. The 1970s and 80s wasn&#82…",
-      "language": "en-US",
-      "author": [
-        {
-          "family": "Benchoff",
-          "given": "Brian"
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            2018,
-            12,
-            19
-          ]
-        ]
-      },
-      "accessed": {
-        "date-parts": [
-          [
-            2023,
-            2,
-            19
-          ]
-        ]
-      },
-      "key": "2YGL9ZNE",
-      "version": 2967,
-      "itemType": "blogPost",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Brian",
-          "lastName": "Benchoff"
-        }
-      ],
-      "blogTitle": "Hackaday",
-      "websiteType": "Blog",
-      "date": "2018-12-19T09:00:00+00:00",
-      "url": "https://hackaday.com/2018/12/19/thats-a-lisp-machine-in-your-pocket/",
-      "accessDate": "2023-02-19T05:35:41Z",
-      "shortTitle": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Reviewed by SHFT - CSUCI (Joseph Moreno)"
-        }
-      ],
-      "collections": [
-        "3P7DS9NY"
-      ],
-      "relations": {},
-      "dateAdded": "2023-02-19T05:35:41Z",
-      "dateModified": "2023-05-08T15:13:51Z"
     },
     {
       "target": "KAGGGPEG",
@@ -38323,31 +37377,6 @@
       "dateModified": "2023-11-21T10:06:47Z"
     },
     {
-      "target": "XHHS7YPX",
-      "id": "9296070/XHHS7YPX",
-      "type": "article",
-      "title": "HARDWARE_1.pdf",
-      "key": "XHHS7YPX",
-      "version": 2291,
-      "itemType": "attachment",
-      "linkMode": "imported_file",
-      "accessDate": "",
-      "url": "",
-      "note": "",
-      "contentType": "application/pdf",
-      "charset": "",
-      "filename": "HARDWARE_1.pdf",
-      "md5": "04ed2de53dfe99d103e2527089b88b49",
-      "mtime": 1618693267458,
-      "tags": [],
-      "collections": [
-        "38VWRV6T"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:49:25Z",
-      "dateModified": "2021-08-04T12:49:25Z"
-    },
-    {
       "target": "ZW4T6EMZ",
       "id": "9296070/ZW4T6EMZ",
       "type": "article",
@@ -38738,31 +37767,6 @@
       "dateModified": "2024-07-24T17:17:08Z"
     },
     {
-      "target": "ZQJJKWXN",
-      "id": "9296070/ZQJJKWXN",
-      "type": "article",
-      "title": "LMI_lambdaOverview_1982.pdf",
-      "key": "ZQJJKWXN",
-      "version": 2293,
-      "itemType": "attachment",
-      "linkMode": "imported_file",
-      "accessDate": "",
-      "url": "",
-      "note": "",
-      "contentType": "application/pdf",
-      "charset": "",
-      "filename": "LMI_lambdaOverview_1982.pdf",
-      "md5": "9246eb03b03c33b2ccf980f0a075c5bf",
-      "mtime": 1618693368868,
-      "tags": [],
-      "collections": [
-        "38VWRV6T"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:48:10Z",
-      "dateModified": "2021-08-04T12:48:10Z"
-    },
-    {
       "target": "QY4NMWEG",
       "id": "9296070/QY4NMWEG",
       "type": "article",
@@ -38905,31 +37909,6 @@
       "dateModified": "2023-11-28T12:49:36Z"
     },
     {
-      "target": "EDSDHLJB",
-      "id": "9296070/EDSDHLJB",
-      "type": "article",
-      "title": "Lisp-Machine_Data_Types.pdf",
-      "key": "EDSDHLJB",
-      "version": 2213,
-      "itemType": "attachment",
-      "linkMode": "imported_file",
-      "accessDate": "",
-      "url": "",
-      "note": "",
-      "contentType": "application/pdf",
-      "charset": "",
-      "filename": "Lisp-Machine_Data_Types.pdf",
-      "md5": "f3359c9a435ef590adbdbc34824159b6",
-      "mtime": 1237311866000,
-      "tags": [],
-      "collections": [
-        "38VWRV6T"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:47:13Z",
-      "dateModified": "2021-08-04T12:47:13Z"
-    },
-    {
       "target": "FHQDFEU2",
       "id": "9296070/FHQDFEU2",
       "type": "article",
@@ -38988,31 +37967,6 @@
       "relations": {},
       "dateAdded": "2023-11-26T16:14:51Z",
       "dateModified": "2024-07-24T16:50:41Z"
-    },
-    {
-      "target": "IM9RHIFA",
-      "id": "9296070/IM9RHIFA",
-      "type": "article",
-      "title": "Lisp_Machine_Hardware_Memos.pdf",
-      "key": "IM9RHIFA",
-      "version": 2290,
-      "itemType": "attachment",
-      "linkMode": "imported_file",
-      "accessDate": "",
-      "url": "",
-      "note": "",
-      "contentType": "application/pdf",
-      "charset": "",
-      "filename": "Lisp_Machine_Hardware_Memos.pdf",
-      "md5": "91bed9cebe81a6a0a6cb26c2caf2104c",
-      "mtime": 1237310514000,
-      "tags": [],
-      "collections": [
-        "38VWRV6T"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:47:10Z",
-      "dateModified": "2021-08-04T12:47:10Z"
     },
     {
       "target": "9T9UUQFZ",
@@ -40096,56 +39050,6 @@
       "dateModified": "2024-04-14T12:39:46Z"
     },
     {
-      "target": "VAP8TX7K",
-      "id": "9296070/VAP8TX7K",
-      "type": "article",
-      "title": "Symbolics_File_System_Aug81.pdf",
-      "key": "VAP8TX7K",
-      "version": 2205,
-      "itemType": "attachment",
-      "linkMode": "imported_file",
-      "accessDate": "",
-      "url": "",
-      "note": "",
-      "contentType": "application/pdf",
-      "charset": "",
-      "filename": "Symbolics_File_System_Aug81.pdf",
-      "md5": "9175a2d6d06970490d8b563210ad38bd",
-      "mtime": 1237314782000,
-      "tags": [],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:44:59Z",
-      "dateModified": "2021-08-04T12:44:59Z"
-    },
-    {
-      "target": "6RDAKQHK",
-      "id": "9296070/6RDAKQHK",
-      "type": "article",
-      "title": "Symbolics_Overview_1986.pdf",
-      "key": "6RDAKQHK",
-      "version": 5840,
-      "itemType": "attachment",
-      "linkMode": "imported_file",
-      "accessDate": "",
-      "url": "",
-      "note": "",
-      "contentType": "application/pdf",
-      "charset": "",
-      "filename": "Symbolics_Overview_1986.pdf",
-      "md5": "1f0da299a7286d90697d28576307d089",
-      "mtime": 1237312170000,
-      "tags": [],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:44:34Z",
-      "dateModified": "2024-05-17T19:43:51Z"
-    },
-    {
       "target": "4R2EXMY4",
       "id": "9296070/4R2EXMY4",
       "type": "article",
@@ -40913,56 +39817,6 @@
       "relations": {},
       "dateAdded": "2023-04-03T22:21:46Z",
       "dateModified": "2023-04-03T22:22:11Z"
-    },
-    {
-      "target": "QCUSPBJ4",
-      "id": "9296070/QCUSPBJ4",
-      "type": "article",
-      "title": "genera-concepts.pdf",
-      "key": "QCUSPBJ4",
-      "version": 2222,
-      "itemType": "attachment",
-      "linkMode": "imported_file",
-      "accessDate": "",
-      "url": "",
-      "note": "",
-      "contentType": "application/pdf",
-      "charset": "",
-      "filename": "genera-concepts.pdf",
-      "md5": "2f70f0fad1c06046e26e6c3870480075",
-      "mtime": 1430658392000,
-      "tags": [],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:52:11Z",
-      "dateModified": "2021-08-04T12:52:11Z"
-    },
-    {
-      "target": "424E5JE4",
-      "id": "9296070/424E5JE4",
-      "type": "article",
-      "title": "genera-handbook.pdf",
-      "key": "424E5JE4",
-      "version": 2287,
-      "itemType": "attachment",
-      "linkMode": "imported_file",
-      "accessDate": "",
-      "url": "",
-      "note": "",
-      "contentType": "application/pdf",
-      "charset": "",
-      "filename": "genera-handbook.pdf",
-      "md5": "1a9f79d812dc0aaa922c8da481844069",
-      "mtime": 1430658384000,
-      "tags": [],
-      "collections": [
-        "JMQYPZHY"
-      ],
-      "relations": {},
-      "dateAdded": "2021-08-04T12:52:15Z",
-      "dateModified": "2021-08-04T12:52:15Z"
     },
     {
       "target": "TPUHFRYJ",
