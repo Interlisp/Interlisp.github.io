@@ -40,7 +40,7 @@
         ]
       },
       "key": "WJ7DBZTL",
-      "version": 2067,
+      "version": 6836,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -65,13 +65,23 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "LISP"
+        },
+        {
+          "tag": "MIT"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        }
+      ],
       "collections": [
         "MV55NAER"
       ],
       "relations": {},
       "dateAdded": "2021-06-02T19:14:08Z",
-      "dateModified": "2021-06-14T02:26:42Z"
+      "dateModified": "2024-07-30T02:46:06Z"
     }
   ],
   "1960": [
@@ -95,7 +105,7 @@
         ]
       },
       "key": "Y8FT8NIV",
-      "version": 2319,
+      "version": 6841,
       "itemType": "document",
       "creators": [
         {
@@ -118,6 +128,12 @@
       "extra": "",
       "tags": [
         {
+          "tag": "PDP-1 LISP"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -126,7 +142,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:41:44Z",
-      "dateModified": "2022-01-23T19:28:32Z"
+      "dateModified": "2024-07-30T02:50:32Z"
     },
     {
       "target": "UFJLXXCL",
@@ -37058,7 +37074,7 @@
         }
       ],
       "key": "ML7D8ZIS",
-      "version": 4901,
+      "version": 6833,
       "itemType": "document",
       "creators": [
         {
@@ -37077,13 +37093,23 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "needs date"
+        }
+      ],
       "collections": [
         "H4WH7B9H"
       ],
       "relations": {},
       "dateAdded": "2023-11-26T15:55:17Z",
-      "dateModified": "2023-11-26T15:56:51Z"
+      "dateModified": "2024-07-30T02:36:41Z"
     },
     {
       "target": "WZ86VGK6",
