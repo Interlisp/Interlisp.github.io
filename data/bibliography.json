@@ -40,7 +40,7 @@
         ]
       },
       "key": "WJ7DBZTL",
-      "version": 6836,
+      "version": 6845,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -74,6 +74,9 @@
         },
         {
           "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "early programming"
         }
       ],
       "collections": [
@@ -81,7 +84,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T19:14:08Z",
-      "dateModified": "2024-07-30T02:46:06Z"
+      "dateModified": "2024-07-30T03:35:45Z"
     }
   ],
   "1960": [
@@ -105,7 +108,7 @@
         ]
       },
       "key": "Y8FT8NIV",
-      "version": 6841,
+      "version": 6842,
       "itemType": "document",
       "creators": [
         {
@@ -131,6 +134,9 @@
           "tag": "PDP-1 LISP"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
           "tag": "documentation"
         },
         {
@@ -142,7 +148,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:41:44Z",
-      "dateModified": "2024-07-30T02:50:32Z"
+      "dateModified": "2024-07-30T03:16:31Z"
     },
     {
       "target": "UFJLXXCL",
@@ -181,7 +187,7 @@
         ]
       },
       "key": "UFJLXXCL",
-      "version": 1704,
+      "version": 6844,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -208,6 +214,12 @@
       "extra": "",
       "tags": [
         {
+          "tag": "LISP"
+        },
+        {
+          "tag": "early programming"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -216,7 +228,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T21:00:55Z",
-      "dateModified": "2021-06-02T18:12:52Z"
+      "dateModified": "2024-07-30T03:35:40Z"
     }
   ],
   "1963": [
@@ -257,7 +269,7 @@
         ]
       },
       "key": "EIATQTVR",
-      "version": 1978,
+      "version": 6854,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -284,6 +296,15 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Heuristics"
+        },
+        {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -292,7 +313,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T21:00:55Z",
-      "dateModified": "2021-05-29T19:59:29Z"
+      "dateModified": "2024-07-30T04:19:26Z"
     }
   ],
   "1965": [
@@ -687,11 +708,11 @@
       "target": "36TCME67",
       "id": "9296070/36TCME67",
       "type": "report",
-      "title": "Storage management in LISP",
+      "title": "Storage Management in LISP",
       "publisher": "BOLT BERANEK AND NEWMAN INC",
       "publisher-place": "Cambridge, MA",
       "event-place": "Cambridge, MA",
-      "abstract": "Storage allocation, maintenance, and reclamation are handled automatically in LISP systems.  Storage is allocated as needed, and a garbage collection process periodically reclaims storage no longer in use.  A number of different garbage collection algorithms are described.  A common property of most of these algorithms is that during garbage collection all other computation ceases.  This is an untenable situation for programs which must respond to real time interrupts.  The paper concludes with a proposal for an incremental garbage collection scheme which allows simultaneous computation and storage reclamation.  Author",
+      "abstract": "Storage allocation, maintenance, and reclamation are handled automatically in LISP systems.  Storage is allocated as needed, and a garbage collection process periodically reclaims storage no longer in use.  A number of different garbage collection algorithms are described.  A common property of most of these algorithms is that during garbage collection all other computation ceases.  This is an untenable situation for programs which must respond to real time interrupts.  The paper concludes with a proposal for an incremental garbage collection scheme which allows simultaneous computation and storage reclamation.",
       "note": "Section: Technical Reports",
       "language": "en",
       "author": [
@@ -719,7 +740,7 @@
         ]
       },
       "key": "36TCME67",
-      "version": 2153,
+      "version": 6865,
       "itemType": "report",
       "creators": [
         {
@@ -746,6 +767,18 @@
       "extra": "Section: Technical Reports",
       "tags": [
         {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "garbage collection"
+        },
+        {
+          "tag": "memory management"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -754,7 +787,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T17:49:56Z",
-      "dateModified": "2021-07-26T02:23:33Z"
+      "dateModified": "2024-07-30T04:32:27Z"
     },
     {
       "target": "6RAE6DBF",
@@ -1843,7 +1876,7 @@
         ]
       },
       "key": "I2U8XT9Z",
-      "version": 1781,
+      "version": 6885,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -1871,7 +1904,19 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "news bulletin"
+        },
+        {
+          "tag": "programming"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "technical overview"
         }
       ],
       "collections": [
@@ -1879,7 +1924,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T19:54:39Z",
-      "dateModified": "2021-06-02T19:23:50Z"
+      "dateModified": "2024-07-31T02:59:24Z"
     },
     {
       "target": "9SDF3BWD",
@@ -2956,7 +3001,7 @@
       "target": "QQ4WARPF",
       "id": "9296070/QQ4WARPF",
       "type": "article-journal",
-      "title": "INTERLISP documentation",
+      "title": "INTERLISP Documentation Bulletin",
       "container-title": "ACM SIGART Bulletin",
       "page": "5-22",
       "issue": "44",
@@ -2988,7 +3033,7 @@
         ]
       },
       "key": "QQ4WARPF",
-      "version": 3117,
+      "version": 6880,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -3017,7 +3062,13 @@
       "extra": "",
       "tags": [
         {
-          "tag": "interlisp"
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "news bulletin"
         },
         {
           "tag": "s2z"
@@ -3034,7 +3085,7 @@
         ]
       },
       "dateAdded": "2021-04-15T23:18:51Z",
-      "dateModified": "2023-10-04T05:40:28Z"
+      "dateModified": "2024-07-31T02:53:40Z"
     },
     {
       "target": "HP2N2EKF",
@@ -3705,7 +3756,7 @@
         ]
       },
       "key": "B2PF228B",
-      "version": 1856,
+      "version": 6873,
       "itemType": "report",
       "creators": [
         {
@@ -3737,6 +3788,18 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "computational efficiency"
+        },
+        {
+          "tag": "performance"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -3745,7 +3808,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T19:54:39Z",
-      "dateModified": "2021-06-03T18:46:42Z"
+      "dateModified": "2024-07-31T02:50:32Z"
     },
     {
       "target": "ZNK9J6YF",
@@ -6082,9 +6145,8 @@
     {
       "target": "398X5WQZ",
       "id": "9296070/398X5WQZ",
-      "type": "webpage",
+      "type": "personal_communication",
       "title": "new-lisp-messages.txt.1.",
-      "container-title": "Software Preservation Group",
       "author": [
         {
           "family": "Teitelman",
@@ -6112,8 +6174,8 @@
         ]
       },
       "key": "398X5WQZ",
-      "version": 5580,
-      "itemType": "webpage",
+      "version": 6889,
+      "itemType": "instantMessage",
       "creators": [
         {
           "creatorType": "author",
@@ -6126,13 +6188,11 @@
           "lastName": "Kaplan"
         }
       ],
-      "websiteTitle": "Software Preservation Group",
-      "websiteType": "",
       "date": "1979",
+      "language": "",
       "shortTitle": "",
       "url": "http://www.softwarepreservation.org/projects/LISP/interlisp/tenex/sumex-aim/new-lisp-messages.txt.1/view",
       "accessDate": "2021-04-23T17:51:42Z",
-      "language": "",
       "rights": "",
       "extra": "",
       "tags": [
@@ -6150,7 +6210,7 @@
         ]
       },
       "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2024-01-24T20:50:28Z"
+      "dateModified": "2024-07-31T03:01:47Z"
     }
   ],
   "1980": [
@@ -35525,7 +35585,7 @@
         ]
       },
       "key": "JELN3BBL",
-      "version": 1395,
+      "version": 6881,
       "itemType": "encyclopediaArticle",
       "creators": [
         {
@@ -35555,6 +35615,18 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "history"
+        },
+        {
+          "tag": "introductory"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -35563,7 +35635,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-22T03:48:38Z",
-      "dateModified": "2021-05-29T20:57:33Z"
+      "dateModified": "2024-07-31T02:53:51Z"
     },
     {
       "target": "QBBTXQSF",
