@@ -431,7 +431,7 @@
         ]
       },
       "key": "KVDN9PE5",
-      "version": 6602,
+      "version": 7015,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -459,7 +459,13 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Artificial Intelligence"
+        },
+        {
           "tag": "PDP-1 LISP"
+        },
+        {
+          "tag": "communications"
         },
         {
           "tag": "s2z"
@@ -470,7 +476,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:29:50Z",
-      "dateModified": "2024-07-12T18:24:02Z"
+      "dateModified": "2024-07-31T16:43:04Z"
     },
     {
       "target": "LQQWKMEZ",
@@ -515,7 +521,7 @@
         ]
       },
       "key": "LQQWKMEZ",
-      "version": 5688,
+      "version": 6929,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -551,6 +557,12 @@
           "tag": "BBN-LISP"
         },
         {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
           "tag": "s2z"
         }
       ],
@@ -560,7 +572,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T20:22:30Z",
-      "dateModified": "2021-05-31T20:23:33Z"
+      "dateModified": "2024-07-31T05:04:14Z"
     },
     {
       "target": "RQWU8ZW9",
@@ -597,7 +609,7 @@
         ]
       },
       "key": "RQWU8ZW9",
-      "version": 1985,
+      "version": 7013,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -627,7 +639,16 @@
       "extra": "Accepted: 2004-10-20T20:06:03Z",
       "tags": [
         {
-          "tag": "interlisp"
+          "tag": "Artificial Intelligence"
+        },
+        {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "dissertation"
         },
         {
           "tag": "s2z"
@@ -638,7 +659,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T17:49:12Z",
-      "dateModified": "2021-05-31T18:41:59Z"
+      "dateModified": "2024-07-31T16:42:22Z"
     },
     {
       "target": "6M8ISEUL",
@@ -666,7 +687,7 @@
         ]
       },
       "key": "6M8ISEUL",
-      "version": 2042,
+      "version": 6937,
       "itemType": "document",
       "creators": [
         {
@@ -691,7 +712,13 @@
       "extra": "",
       "tags": [
         {
-          "tag": "BBN-LISP"
+          "tag": "BBN 940 LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "programming overview"
         },
         {
           "tag": "s2z"
@@ -702,7 +729,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T20:26:36Z",
-      "dateModified": "2021-05-31T20:28:41Z"
+      "dateModified": "2024-07-31T14:19:44Z"
     },
     {
       "target": "36TCME67",
@@ -1007,7 +1034,7 @@
         ]
       },
       "key": "6KKLXERD",
-      "version": 2024,
+      "version": 6976,
       "itemType": "report",
       "creators": [
         {
@@ -1034,10 +1061,28 @@
       "extra": "Section: Technical Reports",
       "tags": [
         {
+          "tag": "ARPA"
+        },
+        {
           "tag": "BBN-LISP"
         },
         {
+          "tag": "FLIP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "design guidelines"
+        },
+        {
+          "tag": "implementation"
+        },
+        {
           "tag": "s2z"
+        },
+        {
+          "tag": "system overview"
         }
       ],
       "collections": [
@@ -1045,7 +1090,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T14:06:01Z",
-      "dateModified": "2021-06-01T14:33:48Z"
+      "dateModified": "2024-07-31T15:25:13Z"
     },
     {
       "target": "SI447SFB",
@@ -1390,7 +1435,7 @@
         ]
       },
       "key": "G796KZSG",
-      "version": 1437,
+      "version": 6951,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -1425,6 +1470,18 @@
           "tag": "BBN-LISP"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "list processing"
+        },
+        {
+          "tag": "memory management"
+        },
+        {
+          "tag": "programming techniques"
+        },
+        {
           "tag": "s2z"
         }
       ],
@@ -1433,123 +1490,13 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-16T02:11:24Z",
-      "dateModified": "2021-06-01T14:44:46Z"
-    },
-    {
-      "target": "XSVG2PVI",
-      "id": "9296070/XSVG2PVI",
-      "type": "report",
-      "title": "THE BBN 940 LISP SYSTEM",
-      "publisher": "BOLT BERANEK AND NEWMAN INC CAMBRIDGE MA",
-      "abstract": "The report describes the LISP system implemented at BBN on the SDS 940 Computer. This LISP is an upward compatible extension of LISP 1.5 for the IBM 7090, with a number of new features which make it work well as an on-line language. These new features include tracing, and conditional breakpoints in functions for debugging and a sophisticated LISP oriented editor. The BBN 940 LISP SYSTEM has a large memory store approximately 50,000 free words utilizing special paging techniques for a drum to provide reasonable computation times. The system includes both an interpreter, a fully compatible compiler, and an assembly language facility for inserting machine code subroutines.",
-      "note": "Section: Technical Reports",
-      "language": "en",
-      "author": [
-        {
-          "family": "Bobrow",
-          "given": "Daniel G."
-        },
-        {
-          "family": "Darley",
-          "given": "D. Lucille"
-        },
-        {
-          "family": "Deutsch",
-          "given": "L. Peter"
-        },
-        {
-          "family": "Murphy",
-          "given": "Daniel L."
-        },
-        {
-          "family": "Teitelman",
-          "given": "Warren"
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            1967,
-            7,
-            15
-          ]
-        ]
-      },
-      "accessed": {
-        "date-parts": [
-          [
-            2021,
-            6,
-            1
-          ]
-        ]
-      },
-      "key": "XSVG2PVI",
-      "version": 2044,
-      "itemType": "report",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Daniel G.",
-          "lastName": "Bobrow"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "D. Lucille",
-          "lastName": "Darley"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "L. Peter",
-          "lastName": "Deutsch"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Daniel L.",
-          "lastName": "Murphy"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Warren",
-          "lastName": "Teitelman"
-        }
-      ],
-      "reportNumber": "",
-      "reportType": "",
-      "seriesTitle": "",
-      "place": "",
-      "institution": "BOLT BERANEK AND NEWMAN INC CAMBRIDGE MA",
-      "date": "1967-07-15",
-      "pages": "",
-      "shortTitle": "",
-      "url": "https://apps.dtic.mil/sti/citations/AD0656771",
-      "accessDate": "2021-06-01T14:02:18Z",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "apps.dtic.mil",
-      "callNumber": "",
-      "rights": "",
-      "extra": "Section: Technical Reports",
-      "tags": [
-        {
-          "tag": "BBN-LISP"
-        },
-        {
-          "tag": "s2z"
-        }
-      ],
-      "collections": [
-        "TVX6WEZX"
-      ],
-      "relations": {},
-      "dateAdded": "2021-06-01T14:02:18Z",
-      "dateModified": "2021-06-01T14:34:05Z"
+      "dateModified": "2024-07-31T14:36:47Z"
     },
     {
       "target": "LQAA78HI",
       "id": "9296070/LQAA78HI",
       "type": "report",
-      "title": "The BBN-LISP System",
+      "title": "The BBN 940  LISP SYSTEM",
       "page": "138",
       "abstract": "This report describes the LISP system implemented at BBN on the SDS 940 Computer. This LISP is an upward compatible extension of LISP 1.5 for the IBM 7090, with a number of new features which make it work well as an on-line language. These new features include tracing, and conditional breakpoints in functions for debugging and a sophisticated LISP oriented editor. The BBN 940 LISP SYSTEM has a large memory store (approximately 50,000 free words) utilizing special paging techniques for a drum to provide reasonable computation times. The system includes both an interpreter, a fully compatible compiler, and an assembly language facility for inserting machine code subroutines.",
       "number": "9",
@@ -1595,7 +1542,7 @@
         ]
       },
       "key": "LQAA78HI",
-      "version": 3114,
+      "version": 6997,
       "itemType": "report",
       "creators": [
         {
@@ -1637,10 +1584,22 @@
       "extra": "",
       "tags": [
         {
+          "tag": "ARPA"
+        },
+        {
+          "tag": "BBN 940 LISP"
+        },
+        {
           "tag": "BBN-LISP"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "s2z"
+        },
+        {
+          "tag": "system overview"
         }
       ],
       "collections": [
@@ -1648,7 +1607,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2023-10-04T05:36:58Z"
+      "dateModified": "2024-07-31T16:14:49Z"
     }
   ],
   "1968": [
@@ -1961,7 +1920,7 @@
         ]
       },
       "key": "9SDF3BWD",
-      "version": 3175,
+      "version": 6965,
       "itemType": "book",
       "creators": [
         {
@@ -2003,15 +1962,19 @@
           "tag": "BBN-LISP"
         },
         {
-          "tag": "Information storage and retrieval systems",
-          "type": 1
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
-          "tag": "LISP (Computer program language)",
-          "type": 1
+          "tag": "programming overview"
+        },
+        {
+          "tag": "reference manual"
         },
         {
           "tag": "s2z"
+        },
+        {
+          "tag": "system overview"
         }
       ],
       "collections": [
@@ -2019,7 +1982,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T14:29:17Z",
-      "dateModified": "2023-10-30T19:50:13Z"
+      "dateModified": "2024-07-31T14:53:41Z"
     }
   ],
   "1971": [
@@ -2340,7 +2303,7 @@
       "target": "5MWT6G4D",
       "id": "9296070/5MWT6G4D",
       "type": "article",
-      "title": "J778.SYSREM DOC on SYS05 (LISP features dsigned to aid the LISP programmer)",
+      "title": "J778.SYSREM DOC on SYS05 (LISP features designed to aid the LISP programmer)",
       "publisher": "Masinter",
       "archive": "Computer History Museum",
       "archive_location": "X6058.2011",
@@ -2359,7 +2322,7 @@
         ]
       },
       "key": "5MWT6G4D",
-      "version": 6822,
+      "version": 6901,
       "itemType": "document",
       "creators": [
         {
@@ -2378,13 +2341,23 @@
       "callNumber": "",
       "rights": "",
       "extra": "Catalog Number: 102721861\nCategory: Program Listing\nCollection Title: Gift of Larry Masinter\nCredit: Gift of Larry Masinter",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "technical overview"
+        }
+      ],
       "collections": [
         "TVX6WEZX"
       ],
       "relations": {},
       "dateAdded": "2022-10-08T18:17:04Z",
-      "dateModified": "2024-07-24T17:37:06Z"
+      "dateModified": "2024-07-31T03:48:56Z"
     },
     {
       "target": "MMYVAME3",
@@ -2962,7 +2935,7 @@
         ]
       },
       "key": "K4LSMPDE",
-      "version": 6416,
+      "version": 6980,
       "itemType": "document",
       "creators": [
         {
@@ -2984,7 +2957,16 @@
       "extra": "",
       "tags": [
         {
-          "tag": "interlisp"
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox PARC"
+        },
+        {
+          "tag": "display primitives"
         },
         {
           "tag": "s2z"
@@ -2995,7 +2977,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:04:25Z",
-      "dateModified": "2024-06-12T13:08:00Z"
+      "dateModified": "2024-07-31T15:37:14Z"
     },
     {
       "target": "QQ4WARPF",
@@ -3727,6 +3709,83 @@
       "dateModified": "2024-07-24T15:48:55Z"
     },
     {
+      "target": "P43BUE35",
+      "id": "9296070/P43BUE35",
+      "type": "personal_communication",
+      "title": "Emails to/from PARC INTERLISP maintainers",
+      "author": [
+        {
+          "family": "Masinter",
+          "given": "Larry"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1976",
+            1
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2021,
+            4,
+            23
+          ]
+        ]
+      },
+      "key": "P43BUE35",
+      "version": 6911,
+      "itemType": "instantMessage",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Larry",
+          "lastName": "Masinter"
+        }
+      ],
+      "date": "January 1976",
+      "language": "",
+      "shortTitle": "",
+      "url": "http://www.softwarepreservation.org/projects/LISP/interlisp/tenex/twenex.org/PARCMESSAGE.TXT.1/view",
+      "accessDate": "2021-04-23T18:22:13Z",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox PARC"
+        },
+        {
+          "tag": "communications"
+        },
+        {
+          "tag": "emails"
+        },
+        {
+          "tag": "sz"
+        }
+      ],
+      "collections": [
+        "TVX6WEZX"
+      ],
+      "relations": {
+        "dc:replaces": [
+          "http://zotero.org/groups/2914042/items/BKXXHJSI",
+          "http://zotero.org/groups/2914042/items/5D56GW2J"
+        ]
+      },
+      "dateAdded": "2021-04-25T18:13:25Z",
+      "dateModified": "2024-07-31T03:51:52Z"
+    },
+    {
       "target": "B2PF228B",
       "id": "9296070/B2PF228B",
       "type": "report",
@@ -3826,12 +3885,13 @@
       "issued": {
         "date-parts": [
           [
-            1976
+            "1976",
+            8
           ]
         ]
       },
       "key": "ZNK9J6YF",
-      "version": 3118,
+      "version": 6919,
       "itemType": "thesis",
       "creators": [
         {
@@ -3843,7 +3903,7 @@
       "thesisType": "",
       "university": "CMU",
       "place": "",
-      "date": "1976",
+      "date": "August 1976",
       "numPages": "",
       "language": "",
       "shortTitle": "",
@@ -3855,78 +3915,32 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "algorithms"
+        },
+        {
+          "tag": "computational efficiency"
+        },
+        {
+          "tag": "list structure"
+        },
+        {
+          "tag": "performance"
+        }
+      ],
       "collections": [
         "TVX6WEZX"
       ],
       "relations": {},
       "dateAdded": "2022-01-23T19:55:47Z",
-      "dateModified": "2023-10-04T05:41:30Z"
-    },
-    {
-      "target": "P43BUE35",
-      "id": "9296070/P43BUE35",
-      "type": "webpage",
-      "title": "PARCMESSAGE.TXT.1.",
-      "container-title": "Software Preservation Group",
-      "author": [
-        {
-          "family": "Masinter",
-          "given": "Larry"
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            "1976",
-            1
-          ]
-        ]
-      },
-      "accessed": {
-        "date-parts": [
-          [
-            2021,
-            4,
-            23
-          ]
-        ]
-      },
-      "key": "P43BUE35",
-      "version": 1999,
-      "itemType": "webpage",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Larry",
-          "lastName": "Masinter"
-        }
-      ],
-      "websiteTitle": "Software Preservation Group",
-      "websiteType": "",
-      "date": "January 1976",
-      "shortTitle": "",
-      "url": "http://www.softwarepreservation.org/projects/LISP/interlisp/tenex/twenex.org/PARCMESSAGE.TXT.1/view",
-      "accessDate": "2021-04-23T18:22:13Z",
-      "language": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "sz"
-        }
-      ],
-      "collections": [
-        "TVX6WEZX"
-      ],
-      "relations": {
-        "dc:replaces": [
-          "http://zotero.org/groups/2914042/items/BKXXHJSI",
-          "http://zotero.org/groups/2914042/items/5D56GW2J"
-        ]
-      },
-      "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2021-06-02T18:33:59Z"
+      "dateModified": "2024-07-31T04:00:55Z"
     },
     {
       "target": "GCAQS8MG",
@@ -3962,7 +3976,7 @@
         ]
       },
       "key": "GCAQS8MG",
-      "version": 1995,
+      "version": 6990,
       "itemType": "report",
       "creators": [
         {
@@ -3989,6 +4003,21 @@
       "extra": "Section: Technical Reports",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox PARC"
+        },
+        {
+          "tag": "network systems"
+        },
+        {
+          "tag": "research proposal"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -3997,7 +4026,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T18:22:28Z",
-      "dateModified": "2021-06-03T19:24:38Z"
+      "dateModified": "2024-07-31T16:07:50Z"
     },
     {
       "target": "WRHC5YI7",
@@ -4122,7 +4151,7 @@
       "type": "report",
       "title": "The Interlisp Virtual Machine Specification",
       "publisher": "Xerox Palo Alto Research Center",
-      "abstract": "The INTERLISP Virtual Machine is the environment in which the INTERLISP System is implemented. It includes such abstract objects as \"Literal Atoms\", \"List Cells\", \"Integers\", etc., the basic LISP functions for manipulating them, the underlying program control and variable binding mechanisms, the input/output facilities, and interrupt processing facilities. In order to Implement the INTERLISP System (as described in \"The INTERLISP Reference Manual\" by W. Teitelman, et. al.) on some physical machine, it is only necessary to implement the INTERLISP Virtual Machine, since Virtual Machine compatible source code for the rest of the INTERLISP System can be obtained from publicly available files. This document specifies the behavior of the INTERLISP Virtual Machine from the implementor's point of view. That is, it is an attempt to make explicit those things which must be implemented to allow the INTERLISP System to run on some machine.",
+      "abstract": "INTERLISP is an interactive LISP system. It consists of a large and sophisticated collection of user support facilities (such as DWIM and the Programmer's Assistant [TEl]) built on top of a fairly conventional LISP language. We call this underlying conventional language \"Virtual Machine\" (or simply VM) LISP. The user support facilities are written entirely in VM LISP, and are in the public domain. Thus, if VM LISP is implemented on some machine, the rest of INTERLISP can be obtained from publicly available files1. Although the INTERLISP System is extensively documented at the user level in the INTERLISP Reference Manual [2], it is not possible to implement the system from that documentation. The purpose of this document is to specify VM LISP as fully as possible from the implementor's point of view. Consequently, this document emphasises clarity and conciseness over intuitive appeal. It is expected that a prospective implementor will have access to the INTERLISP Reference Manual for explanations of the justification or implications of certain specifications. Furthermore, since its purpose is mainly a practical one (i.e., to tell an implementor what must be done), the document is not altogether formal. Because INTERLISP evolved under the rather sophisticated BBN TENEX2 time sharing system, it assumes the presence of capabilities (such as user-defined interrupt characters) which may not be found in the implementor's environment. If an implementor is forced by such circumstances to forego the implementation of certain INTERLISP features, the user-support facilities may not perform as described in the Reference Manual. The implementor assumes responsibility for the documentation of such deficiencies. A great deal of care has been taken in the preparation of this document to determine the assumptions made in the high-level facilities about features in the underlying VM. Because of the size and complexity of the system we cannot guarantee that we have identified them all, and therefore do not assure the prospective implementor that the rest of INTERLISP will run perfectly upon loading it into the just implemented VM. However, this document goes a long way toward that admirable (and probably impossible) goal.",
       "author": [
         {
           "family": "Moore",
@@ -4137,7 +4166,7 @@
         ]
       },
       "key": "V3ECJHJ3",
-      "version": 3170,
+      "version": 7003,
       "itemType": "report",
       "creators": [
         {
@@ -4165,7 +4194,22 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "implementation"
+        },
+        {
+          "tag": "system overview"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "virtual machine"
         }
       ],
       "collections": [
@@ -4173,7 +4217,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-16T04:04:12Z",
-      "dateModified": "2023-10-30T19:42:32Z"
+      "dateModified": "2024-07-31T16:18:05Z"
     }
   ],
   "1977": [
@@ -5564,6 +5608,88 @@
       "dateModified": "2024-06-12T14:49:41Z"
     },
     {
+      "target": "398X5WQZ",
+      "id": "9296070/398X5WQZ",
+      "type": "personal_communication",
+      "title": "Email Exchanges about Lisp",
+      "author": [
+        {
+          "family": "Teitelman",
+          "given": "Warren"
+        },
+        {
+          "family": "Kaplan",
+          "given": "Ronald M."
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1979
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2021,
+            4,
+            23
+          ]
+        ]
+      },
+      "key": "398X5WQZ",
+      "version": 6897,
+      "itemType": "instantMessage",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Warren",
+          "lastName": "Teitelman"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Ronald M.",
+          "lastName": "Kaplan"
+        }
+      ],
+      "date": "1979",
+      "language": "",
+      "shortTitle": "",
+      "url": "http://www.softwarepreservation.org/projects/LISP/interlisp/tenex/sumex-aim/new-lisp-messages.txt.1/view",
+      "accessDate": "2021-04-23T17:51:42Z",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "communications"
+        },
+        {
+          "tag": "emails"
+        },
+        {
+          "tag": "sz"
+        }
+      ],
+      "collections": [
+        "TVX6WEZX"
+      ],
+      "relations": {
+        "dc:replaces": [
+          "http://zotero.org/groups/2914042/items/7XZP5C7W",
+          "http://zotero.org/groups/2914042/items/47AC2GGA"
+        ]
+      },
+      "dateAdded": "2021-04-25T18:13:25Z",
+      "dateModified": "2024-07-31T03:39:12Z"
+    },
+    {
       "target": "H5Q65H3M",
       "id": "9296070/H5Q65H3M",
       "type": "paper-conference",
@@ -6141,76 +6267,6 @@
       },
       "dateAdded": "2021-04-25T19:54:39Z",
       "dateModified": "2021-06-01T16:01:09Z"
-    },
-    {
-      "target": "398X5WQZ",
-      "id": "9296070/398X5WQZ",
-      "type": "personal_communication",
-      "title": "new-lisp-messages.txt.1.",
-      "author": [
-        {
-          "family": "Teitelman",
-          "given": "Warren"
-        },
-        {
-          "family": "Kaplan",
-          "given": "Ronald M."
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            1979
-          ]
-        ]
-      },
-      "accessed": {
-        "date-parts": [
-          [
-            2021,
-            4,
-            23
-          ]
-        ]
-      },
-      "key": "398X5WQZ",
-      "version": 6889,
-      "itemType": "instantMessage",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Warren",
-          "lastName": "Teitelman"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Ronald M.",
-          "lastName": "Kaplan"
-        }
-      ],
-      "date": "1979",
-      "language": "",
-      "shortTitle": "",
-      "url": "http://www.softwarepreservation.org/projects/LISP/interlisp/tenex/sumex-aim/new-lisp-messages.txt.1/view",
-      "accessDate": "2021-04-23T17:51:42Z",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "sz"
-        }
-      ],
-      "collections": [
-        "TVX6WEZX"
-      ],
-      "relations": {
-        "dc:replaces": [
-          "http://zotero.org/groups/2914042/items/7XZP5C7W",
-          "http://zotero.org/groups/2914042/items/47AC2GGA"
-        ]
-      },
-      "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2024-07-31T03:01:47Z"
     }
   ],
   "1980": [
@@ -11188,7 +11244,7 @@
         ]
       },
       "key": "BNAYT94G",
-      "version": 1995,
+      "version": 6995,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -11226,7 +11282,25 @@
       "extra": "",
       "tags": [
         {
+          "tag": "ISI-Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "VAX"
+        },
+        {
+          "tag": "history"
+        },
+        {
+          "tag": "peformance"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "technical summary"
         }
       ],
       "collections": [
@@ -11234,7 +11308,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T18:13:23Z",
-      "dateModified": "2021-06-03T19:32:08Z"
+      "dateModified": "2024-07-31T16:11:29Z"
     },
     {
       "target": "D3T97HNF",
@@ -17996,7 +18070,7 @@
         ]
       },
       "key": "Y73ECKA4",
-      "version": 3168,
+      "version": 6940,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -18023,7 +18097,13 @@
       "extra": "Publisher: IEEE Computer Society",
       "tags": [
         {
-          "tag": "interlisp"
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "review"
         },
         {
           "tag": "s2z"
@@ -18034,7 +18114,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T18:46:00Z",
-      "dateModified": "2023-10-30T19:35:57Z"
+      "dateModified": "2024-07-31T14:25:35Z"
     },
     {
       "target": "YBLRHM75",
@@ -23829,6 +23909,12 @@
       "title": "1992 ACM Software System Award",
       "abstract": "ACM Award Recipient page for Larry Masinter that shows the Award content.",
       "language": "en",
+      "author": [
+        {
+          "family": "ACM",
+          "given": ""
+        }
+      ],
       "issued": {
         "date-parts": [
           [
@@ -23846,9 +23932,15 @@
         ]
       },
       "key": "5B4G424J",
-      "version": 5434,
+      "version": 7008,
       "itemType": "webpage",
-      "creators": [],
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "",
+          "lastName": "ACM"
+        }
+      ],
       "websiteTitle": "",
       "websiteType": "",
       "date": "1992",
@@ -23857,13 +23949,20 @@
       "accessDate": "2023-12-11T05:10:34Z",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "awards"
+        }
+      ],
       "collections": [
         "TVX6WEZX"
       ],
       "relations": {},
       "dateAdded": "2023-12-11T05:10:34Z",
-      "dateModified": "2023-12-11T05:19:15Z"
+      "dateModified": "2024-07-31T16:19:55Z"
     },
     {
       "target": "IBU2VVFT",
@@ -39751,7 +39850,7 @@
         ]
       },
       "key": "A4BWUEHM",
-      "version": 5501,
+      "version": 7007,
       "itemType": "webpage",
       "creators": [],
       "websiteTitle": "",
@@ -39763,13 +39862,26 @@
       "language": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "ARPANET"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "history"
+        },
+        {
+          "tag": "memoir"
+        }
+      ],
       "collections": [
         "TVX6WEZX"
       ],
       "relations": {},
       "dateAdded": "2024-01-04T05:52:48Z",
-      "dateModified": "2024-01-04T05:52:48Z"
+      "dateModified": "2024-07-31T16:19:37Z"
     },
     {
       "target": "4IYBQFQM",

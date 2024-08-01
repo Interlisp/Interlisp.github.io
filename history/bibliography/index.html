@@ -18,7 +18,7 @@ Reference 1959 LISP: a programming system for symbolic manipulations McCarthy, J
   <meta itemprop="name" content="Bibliography">
   <meta itemprop="description" content="Interlisp Bibliography (This bibliography is kept in sync with our Zotero collection Library.
 Reference 1959 LISP: a programming system for symbolic manipulations McCarthy, John AAA LISP (for LISt Processor) is a programming system for the IBM 704 being developed by the Artificial Intelligence Group at MIT. We are developing it in order to program the Advice Taker which is to be a system for instructing a machine in a combination of declarative and imperative sentences.">
-  <meta itemprop="wordCount" content="51754">
+  <meta itemprop="wordCount" content="51840">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="Bibliography">
   <meta name="twitter:description" content="Interlisp Bibliography (This bibliography is kept in sync with our Zotero collection Library.
@@ -749,26 +749,7 @@ var abstractExpanderClose = "Abstract \u25B2";
         
         <tr>
           
-          <td><div class="bibTitle"><a href="https://apps.dtic.mil/sti/citations/AD0656771">THE BBN 940 LISP SYSTEM</a></div>
-          <div class="authors">  
-            Bobrow, Daniel G.; Darley, D. Lucille; Deutsch, L. Peter; Murphy, Daniel L.; Teitelman, Warren
-          </div>
-          <button type="button" class="abstractExpander left" id="A9296070_XSVG2PVI">AAA</button>
-          
-          <br><div class="abstractContent" id="A9296070_XSVG2PVI_Abs">
-            
-                
-                  
-                  
-                  The report describes the LISP system implemented at BBN on the SDS 940 Computer. This LISP is an upward compatible extension of LISP 1.5 for the IBM 7090, with a number of new features which make it work well as an on-line language. These new features include tracing, and conditional breakpoints in functions for debugging and a sophisticated LISP oriented editor. The BBN 940 LISP SYSTEM has a large memory store approximately 50,000 free words utilizing special paging techniques for a drum to provide reasonable computation times. The system includes both an interpreter, a fully compatible compiler, and an assembly language facility for inserting machine code subroutines.
-                
-              
-            </div></td>
-        </tr>
-        
-        <tr>
-          
-          <td><div class="bibTitle"><a href="http://www.softwarepreservation.org/projects/LISP/bbnlisp/BBN940Lisp_Jul67.pdf/view">The BBN-LISP System</a></div>
+          <td><div class="bibTitle"><a href="http://www.softwarepreservation.org/projects/LISP/bbnlisp/BBN940Lisp_Jul67.pdf/view">The BBN 940  LISP SYSTEM</a></div>
           <div class="authors">  
             Daniel G. Bobrow; D. Lucille Darley; L. Peter Deutsch; Daniel L. Murphy; Warren Teitelman
           </div>
@@ -938,7 +919,7 @@ var abstractExpanderClose = "Abstract \u25B2";
         
         <tr>
           
-          <td><div class="bibTitle">J778.SYSREM DOC on SYS05 (LISP features dsigned to aid the LISP programmer)</div>
+          <td><div class="bibTitle">J778.SYSREM DOC on SYS05 (LISP features designed to aid the LISP programmer)</div>
           <div class="authors">  
             Masinter
           </div>
@@ -1290,6 +1271,17 @@ var abstractExpanderClose = "Abstract \u25B2";
         
         <tr>
           
+          <td><div class="bibTitle"><a href="http://www.softwarepreservation.org/projects/LISP/interlisp/tenex/twenex.org/PARCMESSAGE.TXT.1/view">Emails to/from PARC INTERLISP maintainers</a></div>
+          <div class="authors">  
+            Masinter, Larry
+          </div>
+          
+          
+          </td>
+        </tr>
+        
+        <tr>
+          
           <td><div class="bibTitle"><a href="https://archive.org/details/DTIC_ADA1045834">Interlisp performance measurements</a></div>
           <div class="authors">  
             Bobrow, Robert; Grignetti, Mario
@@ -1330,17 +1322,6 @@ var abstractExpanderClose = "Abstract \u25B2";
                 
               
             </div></td>
-        </tr>
-        
-        <tr>
-          
-          <td><div class="bibTitle"><a href="http://www.softwarepreservation.org/projects/LISP/interlisp/tenex/twenex.org/PARCMESSAGE.TXT.1/view">PARCMESSAGE.TXT.1.</a></div>
-          <div class="authors">  
-            Masinter, Larry
-          </div>
-          
-          
-          </td>
         </tr>
         
         <tr>
@@ -1394,7 +1375,7 @@ var abstractExpanderClose = "Abstract \u25B2";
                 
                   
                   
-                  The INTERLISP Virtual Machine is the environment in which the INTERLISP System is implemented. It includes such abstract objects as &#34;Literal Atoms&#34;, &#34;List Cells&#34;, &#34;Integers&#34;, etc., the basic LISP functions for manipulating them, the underlying program control and variable binding mechanisms, the input/output facilities, and interrupt processing facilities. In order to Implement the INTERLISP System (as described in &#34;The INTERLISP Reference Manual&#34; by W. Teitelman, et. al.) on some physical machine, it is only necessary to implement the INTERLISP Virtual Machine, since Virtual Machine compatible source code for the rest of the INTERLISP System can be obtained from publicly available files. This document specifies the behavior of the INTERLISP Virtual Machine from the implementor&#39;s point of view. That is, it is an attempt to make explicit those things which must be implemented to allow the INTERLISP System to run on some machine.
+                  INTERLISP is an interactive LISP system. It consists of a large and sophisticated collection of user support facilities (such as DWIM and the Programmer&#39;s Assistant [TEl]) built on top of a fairly conventional LISP language. We call this underlying conventional language &#34;Virtual Machine&#34; (or simply VM) LISP. The user support facilities are written entirely in VM LISP, and are in the public domain. Thus, if VM LISP is implemented on some machine, the rest of INTERLISP can be obtained from publicly available files1. Although the INTERLISP System is extensively documented at the user level in the INTERLISP Reference Manual [2], it is not possible to implement the system from that documentation. The purpose of this document is to specify VM LISP as fully as possible from the implementor&#39;s point of view. Consequently, this document emphasises clarity and conciseness over intuitive appeal. It is expected that a prospective implementor will have access to the INTERLISP Reference Manual for explanations of the justification or implications of certain specifications. Furthermore, since its purpose is mainly a practical one (i.e., to tell an implementor what must be done), the document is not altogether formal. Because INTERLISP evolved under the rather sophisticated BBN TENEX2 time sharing system, it assumes the presence of capabilities (such as user-defined interrupt characters) which may not be found in the implementor&#39;s environment. If an implementor is forced by such circumstances to forego the implementation of certain INTERLISP features, the user-support facilities may not perform as described in the Reference Manual. The implementor assumes responsibility for the documentation of such deficiencies. A great deal of care has been taken in the preparation of this document to determine the assumptions made in the high-level facilities about features in the underlying VM. Because of the size and complexity of the system we cannot guarantee that we have identified them all, and therefore do not assure the prospective implementor that the rest of INTERLISP will run perfectly upon loading it into the just implemented VM. However, this document goes a long way toward that admirable (and probably impossible) goal.
                 
               
             </div></td>
@@ -1811,6 +1792,17 @@ var abstractExpanderClose = "Abstract \u25B2";
         
         <tr>
           
+          <td><div class="bibTitle"><a href="http://www.softwarepreservation.org/projects/LISP/interlisp/tenex/sumex-aim/new-lisp-messages.txt.1/view">Email Exchanges about Lisp</a></div>
+          <div class="authors">  
+            Teitelman, Warren; Kaplan, Ronald M.
+          </div>
+          
+          
+          </td>
+        </tr>
+        
+        <tr>
+          
           <td><div class="bibTitle"><a href="https://dl.acm.org/doi/10.5555/646670.699000">Extending Interlisp for modularization and efficiency</a></div>
           <div class="authors">  
             Bobrow, Daniel G.; Deutsch, L. Peter
@@ -1932,17 +1924,6 @@ var abstractExpanderClose = "Abstract \u25B2";
                 
               
             </div></td>
-        </tr>
-        
-        <tr>
-          
-          <td><div class="bibTitle"><a href="http://www.softwarepreservation.org/projects/LISP/interlisp/tenex/sumex-aim/new-lisp-messages.txt.1/view">new-lisp-messages.txt.1.</a></div>
-          <div class="authors">  
-            Teitelman, Warren; Kaplan, Ronald M.
-          </div>
-          
-          
-          </td>
         </tr>
         
       
@@ -8120,7 +8101,9 @@ var abstractExpanderClose = "Abstract \u25B2";
         <tr>
           
           <td><div class="bibTitle"><a href="https://awards.acm.org/award-recipients/masinter_3814811">1992 ACM Software System Award</a></div>
-          
+          <div class="authors">  
+            ACM
+          </div>
           <button type="button" class="abstractExpander left" id="A9296070_5B4G424J">AAA</button>
           
           <br><div class="abstractContent" id="A9296070_5B4G424J_Abs">
