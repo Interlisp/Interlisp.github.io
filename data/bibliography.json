@@ -39217,6 +39217,92 @@
       "dateModified": "2024-04-14T12:38:39Z"
     },
     {
+      "target": "ESYD2MQR",
+      "id": "9296070/ESYD2MQR",
+      "type": "article-journal",
+      "title": "Semantics of Procedures: A Cognitive Basis for Maintenance Training Competency",
+      "language": "en",
+      "author": [
+        {
+          "family": "Moran",
+          "given": "Thomas D"
+        },
+        {
+          "family": "Russell",
+          "given": "Daniel M"
+        },
+        {
+          "family": "Jordan",
+          "given": "Daniel"
+        },
+        {
+          "family": "Jensen",
+          "given": "Anne-Marie"
+        },
+        {
+          "family": "Orr",
+          "given": "Julian"
+        }
+      ],
+      "key": "ESYD2MQR",
+      "version": 7020,
+      "itemType": "journalArticle",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Thomas D",
+          "lastName": "Moran"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Daniel M",
+          "lastName": "Russell"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Daniel",
+          "lastName": "Jordan"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Anne-Marie",
+          "lastName": "Jensen"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Julian",
+          "lastName": "Orr"
+        }
+      ],
+      "publicationTitle": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "date": "",
+      "series": "",
+      "seriesTitle": "",
+      "seriesText": "",
+      "journalAbbreviation": "",
+      "DOI": "",
+      "ISSN": "",
+      "shortTitle": "",
+      "url": "",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Zotero",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MTUXENI8"
+      ],
+      "relations": {},
+      "dateAdded": "2024-08-06T22:17:39Z",
+      "dateModified": "2024-08-06T22:17:39Z"
+    },
+    {
       "target": "7KUMIRNC",
       "id": "9296070/7KUMIRNC",
       "type": "article",
