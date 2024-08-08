@@ -1,5 +1,2 @@
-# Placeholder file.  Overwritten in production by setting enableRobotsTXT to true
-# See config/production/hugo.yaml
-#
 User-agent: *
-Disallow: /
+Allow: /
