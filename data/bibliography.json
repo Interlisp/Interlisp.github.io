@@ -1122,7 +1122,7 @@
         ]
       },
       "key": "SI447SFB",
-      "version": 2006,
+      "version": 7045,
       "itemType": "document",
       "creators": [
         {
@@ -1158,6 +1158,15 @@
           "tag": "BBN-LISP"
         },
         {
+          "tag": "SDS 940"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "introductory"
+        },
+        {
           "tag": "s2z"
         }
       ],
@@ -1166,7 +1175,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T13:53:25Z",
-      "dateModified": "2021-06-01T13:56:30Z"
+      "dateModified": "2024-08-12T21:41:51Z"
     },
     {
       "target": "ZK7MFMNE",
@@ -1190,7 +1199,7 @@
         ]
       },
       "key": "ZK7MFMNE",
-      "version": 6603,
+      "version": 7039,
       "itemType": "document",
       "creators": [
         {
@@ -1216,6 +1225,15 @@
           "tag": "PDP-1 LISP"
         },
         {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "editors"
+        },
+        {
           "tag": "s2z"
         }
       ],
@@ -1224,7 +1242,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-31T19:38:15Z",
-      "dateModified": "2024-07-12T18:24:07Z"
+      "dateModified": "2024-08-12T21:11:55Z"
     },
     {
       "target": "PGGC8GAZ",
@@ -1347,7 +1365,7 @@
         ]
       },
       "key": "IZP9D9PC",
-      "version": 2055,
+      "version": 7050,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -1385,6 +1403,12 @@
       "extra": "Publisher: American Mathematical Society",
       "tags": [
         {
+          "tag": "LISP"
+        },
+        {
+          "tag": "introductory"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -1393,7 +1417,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T18:42:56Z",
-      "dateModified": "2021-06-01T18:44:25Z"
+      "dateModified": "2024-08-12T22:32:15Z"
     },
     {
       "target": "G796KZSG",
