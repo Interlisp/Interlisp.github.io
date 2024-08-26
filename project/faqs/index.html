@@ -23,7 +23,7 @@ click with mouse the destination hold down the shift key, and, while holding, se
   <meta itemprop="description" content="Is copy and paste available? In Medley, there are three main editors used commonly:
 TEdit (full WYSIWYG styled text editor) SEdit (structure editor for Lisp code, package aware) TTYIN (Type-in using keyboard) The original method for copy/paste is different from most modern systems:
 click with mouse the destination hold down the shift key, and, while holding, select the source (using left mouse button to select a point, right button or repeated left button to extend the selection) let up the shift key.">
-  <meta itemprop="wordCount" content="469">
+  <meta itemprop="wordCount" content="616">
   <meta name="twitter:card" content="summary">
   <meta name="twitter:title" content="FAQs">
   <meta name="twitter:description" content="Is copy and paste available? In Medley, there are three main editors used commonly:
@@ -205,6 +205,7 @@ if (!doNotTrack) {
     <li><a href="#is-copy-and-paste-available">Is copy and paste available?</a></li>
     <li><a href="#how-to-ask-for-help-about-a-specific-function">How to ask for help about a specific function?</a></li>
     <li><a href="#when-to-pop-up-a-debugger-or-just-report-an-error-and-unwind">When to pop up a debugger or just report an error and unwind?</a></li>
+    <li><a href="#i-have-a-large-display--medley-is-so-tiny-its-hard-to-read">I have a large display.  Medley is so tiny it&rsquo;s hard to read.</a></li>
   </ul>
 </nav>
       </div>
@@ -268,7 +269,24 @@ without a break window opening. If you</p>
 </span></span></code></pre></div><p>then a debugger window will pop up. Let&rsquo;s give Z a value while in the debugger:</p>
 <div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>(SETQ Z 9)
 </span></span></code></pre></div><p>now type <code>OK</code> and <em>enter</em> (or middle click in the debugger then choose Ok). It will continue the execution as if the fault never happened. It will return the value 10.</p>
-
+<h2 id="i-have-a-large-display--medley-is-so-tiny-its-hard-to-read">I have a large display.  Medley is so tiny it&rsquo;s hard to read.</h2>
+<p>(This information is specific to macOS.  We need someone who runs Medley under Windows or Linux
+to expand this section.)</p>
+<p>There are two ways to build and run the Maiko virtual machine/host interface layer
+that underlies Medley: running under X Windows (<a href="https://www.xquartz.org/">XQuartz</a>) and running in a native window
+using <a href="https://www.libsdl.org/">SDL</a>.  Full instructions for building Maiko for X Windows are <a href="https://github.com/Interlisp/maiko">here</a>.</p>
+<p>To make the Medley window larger on a large display, we first build and run Maiko for SDL.
+Follow the Maiko build instructions above, but instead of</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ cd maiko/bin
+</span></span><span style="display:flex;"><span>$ ./makeright x
+</span></span></code></pre></div><p>Do these steps:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ cd maiko/bin
+</span></span><span style="display:flex;"><span>$ ./makeright sdl
+</span></span></code></pre></div><p>Then we tell Medley to run with pixel scaling (<code>-ps</code> <em>n</em>): every Medley pixel is rendered as
+<em>n</em>*<em>n</em> screen pixels.</p>
+<p>To double each pixel, set <em>n</em> to 2:</p>
+<div class="highlight"><pre tabindex="0" style="background-color:#f8f8f8;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"><code class="language-fallback" data-lang="fallback"><span style="display:flex;"><span>$ /path/to/my/medley.sh -ps 2
+</span></span></code></pre></div>
 	<style>
   .feedback--answer {
     display: inline-block;
