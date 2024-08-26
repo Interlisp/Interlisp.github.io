@@ -62,3 +62,34 @@ then a debugger window will pop up. Let's give Z a value while in the debugger:
 (SETQ Z 9)
 ```
 now type `OK` and _enter_ (or middle click in the debugger then choose Ok). It will continue the execution as if the fault never happened. It will return the value 10.
+
+## I have a large display.  Medley is so tiny it's hard to read.
+
+(This information is specific to macOS.  We need someone who runs Medley under Windows or Linux
+to expand this section.)
+
+There are two ways to build and run the Maiko virtual machine/host interface layer
+that underlies Medley: running under X Windows ([XQuartz](https://www.xquartz.org/)) and running in a native window
+using [SDL](https://www.libsdl.org/).  Full instructions for building Maiko for X Windows are [here](https://github.com/Interlisp/maiko).
+
+To make the Medley window larger on a large display, we first build and run Maiko for SDL.
+Follow the Maiko build instructions above, but instead of
+```
+$ cd maiko/bin
+$ ./makeright x
+```
+
+Do these steps:
+```
+$ cd maiko/bin
+$ ./makeright sdl
+```
+
+Then we tell Medley to run with pixel scaling (`-ps` _n_): every Medley pixel is rendered as
+_n_*_n_ screen pixels.
+
+To double each pixel, set _n_ to 2:
+
+```
+$ /path/to/my/medley.sh -ps 2
+```
