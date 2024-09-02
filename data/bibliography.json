@@ -2553,9 +2553,8 @@
       "issued": {
         "date-parts": [
           [
-            1973,
-            8,
-            1
+            "1973",
+            8
           ]
         ]
       },
@@ -2569,7 +2568,7 @@
         ]
       },
       "key": "NPV6XFQB",
-      "version": 5702,
+      "version": 7201,
       "itemType": "report",
       "creators": [
         {
@@ -2588,7 +2587,7 @@
       "seriesTitle": "",
       "place": "",
       "institution": "Stanford Research Institute Menlo Park United States",
-      "date": "1973-08-01",
+      "date": "August 1973",
       "pages": "38",
       "shortTitle": "",
       "url": "https://apps.dtic.mil/sti/citations/AD1015722",
@@ -2601,6 +2600,12 @@
       "extra": "Section: Technical Reports",
       "tags": [
         {
+          "tag": "QLISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -2610,7 +2615,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-29T20:23:42Z",
-      "dateModified": "2023-10-04T05:38:57Z"
+      "dateModified": "2024-09-01T15:18:47Z"
     },
     {
       "target": "EM6WJF9A",
@@ -3293,6 +3298,7 @@
       "type": "report",
       "title": "An Interlisp Relational Data Base System.",
       "publisher": "STANFORD RESEARCH INST MENLO PARK CALIF",
+      "page": "40",
       "abstract": "This report describes the file system for the experimental large file management support system currently being implemented at SRI. INTERLISP, an interactive, development-oriented computer programming system, has been augmented to support applications requiring large data bases maintained on secondary store.  The data base support programs are separated into two levels  an advanced file system and relational data base management procedures. The file system allows programmers to make full use of the capabilities of on-line random access devices using problem related symbolic primitives rather than page and word numbers.  It also performs several useful data storage functions such as data compression, sequencing, and generation of symbols which are unique for a file.",
       "note": "Section: Technical Reports",
       "language": "en",
@@ -3306,7 +3312,7 @@
         "date-parts": [
           [
             1975,
-            11,
+            10,
             1
           ]
         ]
@@ -3321,7 +3327,7 @@
         ]
       },
       "key": "FW3Z9TSW",
-      "version": 5706,
+      "version": 7231,
       "itemType": "report",
       "creators": [
         {
@@ -3335,8 +3341,8 @@
       "seriesTitle": "",
       "place": "",
       "institution": "STANFORD RESEARCH INST MENLO PARK CALIF",
-      "date": "1975-11-01",
-      "pages": "",
+      "date": "1975-10-01",
+      "pages": "40",
       "shortTitle": "",
       "url": "https://apps.dtic.mil/sti/citations/ADA018962",
       "accessDate": "2021-05-29T20:22:56Z",
@@ -3348,6 +3354,27 @@
       "extra": "Section: Technical Reports",
       "tags": [
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "data compression"
+        },
+        {
+          "tag": "data management"
+        },
+        {
+          "tag": "databases"
+        },
+        {
+          "tag": "file system"
+        },
+        {
+          "tag": "memory devices"
+        },
+        {
+          "tag": "online systems"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -3357,7 +3384,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-29T20:22:56Z",
-      "dateModified": "2021-05-29T20:24:48Z"
+      "dateModified": "2024-09-01T15:58:53Z"
     },
     {
       "target": "VCQ8JN33",
@@ -9417,82 +9444,12 @@
   ],
   "1983": [
     {
-      "target": "MCLDGGMU",
-      "id": "9296070/MCLDGGMU",
-      "type": "article-journal",
-      "title": "1983 - IMPULSE: A Display Oriented Editor for STROBE",
-      "container-title": "AAAI-83 Proceedings",
-      "page": "356-358",
-      "abstract": "In this paper, we discuss a display-oriented editor to aid in the construction of knowledge-based systems. We also report on our experiences concerning the utility of the editor.",
-      "language": "en",
-      "author": [
-        {
-          "family": "Schoen",
-          "given": "Eric"
-        },
-        {
-          "family": "Smith",
-          "given": "Reid G"
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            1983
-          ]
-        ]
-      },
-      "key": "MCLDGGMU",
-      "version": 5703,
-      "itemType": "journalArticle",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Eric",
-          "lastName": "Schoen"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Reid G",
-          "lastName": "Smith"
-        }
-      ],
-      "publicationTitle": "AAAI-83 Proceedings",
-      "volume": "",
-      "issue": "",
-      "pages": "356-358",
-      "date": "1983",
-      "series": "",
-      "seriesTitle": "",
-      "seriesText": "",
-      "journalAbbreviation": "",
-      "DOI": "",
-      "ISSN": "",
-      "shortTitle": "",
-      "url": "https://cdn.aaai.org/AAAI/1983/AAAI83-092.pdf",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "Zotero",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "MTUXENI8",
-        "RH95QH8N"
-      ],
-      "relations": {},
-      "dateAdded": "2023-09-17T12:11:18Z",
-      "dateModified": "2023-09-17T12:13:05Z"
-    },
-    {
       "target": "E5NDSA26",
       "id": "9296070/E5NDSA26",
       "type": "report",
       "title": "AQINTERLISP: An INTERLISP Program for Inductive Generalization of VL1 Event Sets",
       "publisher": "University of Illinois Urbana-Champaign",
-      "abstract": "This paper describes the operation and internal structure of a program called AQINTERLISP. revision IS-July-1983. AQINTERLISP is an interactive INTERLISP-I0 program for generalization and optimization of discriminant descriptions of object classes. The descriptions are expressed as disjunctive normal expressions in the variable valued logic system VLl [7]. Such expressions are unions of conjunctive statements (complexes) involving relations on multiple-valued variables. Input data to the program are sets of VLl events (sequences of attribute-value pairs) describing individual objects. Each event is associated with a given class name. \nFor further information on the VLl system the reader is referred to [7]. \nand for a detailed description of the theory behind the AQ algorithm the reader is referred to [8, 9].",
+      "abstract": "This paper describes the operation and internal structure of a program called AQINTERLISP. AQINTERLISP is an interactive INTERLISP-10 program for generalization and optimization of discriminant descriptions of object classes. The descriptions are expressed as disjunctive normal expressions in the variable valued logic system. Such expressions are unions of conjunctive statements (complexes) involving relations on multiple-valued variables. Input data to the program are sets of VLI events (sequences of attribute-value pairs) describing individual objects. Each even is associated with a given class name.",
       "number": "ISG 83-28",
       "shortTitle": "AQINTERLISP",
       "author": [
@@ -9510,7 +9467,7 @@
         ]
       },
       "key": "E5NDSA26",
-      "version": 5688,
+      "version": 7240,
       "itemType": "report",
       "creators": [
         {
@@ -9537,7 +9494,22 @@
       "extra": "",
       "tags": [
         {
+          "tag": "AQINTERLISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "object classes"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "user guide"
+        },
+        {
+          "tag": "variable valued logic system"
         }
       ],
       "collections": [
@@ -9546,7 +9518,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T19:54:39Z",
-      "dateModified": "2023-10-30T19:03:28Z"
+      "dateModified": "2024-09-01T16:21:12Z"
     },
     {
       "target": "NRI8I8V8",
@@ -9658,6 +9630,97 @@
       "relations": {},
       "dateAdded": "2022-08-05T00:09:07Z",
       "dateModified": "2022-09-11T06:31:34Z"
+    },
+    {
+      "target": "MCLDGGMU",
+      "id": "9296070/MCLDGGMU",
+      "type": "paper-conference",
+      "title": "IMPULSE: A Display Oriented Editor for STROBE",
+      "container-title": "AAAI-83 Proceedings",
+      "page": "356-358",
+      "volume": "1",
+      "abstract": "In this paper, we discuss a display-oriented editor to aid in the construction of knowledge-based systems. We also report on our experiences concerning the utility of the editor.",
+      "language": "en",
+      "author": [
+        {
+          "family": "Schoen",
+          "given": "Eric"
+        },
+        {
+          "family": "Smith",
+          "given": "Reid G."
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1983
+          ]
+        ]
+      },
+      "key": "MCLDGGMU",
+      "version": 7173,
+      "itemType": "conferencePaper",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Eric",
+          "lastName": "Schoen"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Reid G.",
+          "lastName": "Smith"
+        }
+      ],
+      "date": "1983",
+      "proceedingsTitle": "AAAI-83 Proceedings",
+      "conferenceName": "",
+      "place": "",
+      "publisher": "",
+      "pages": "356-358",
+      "series": "",
+      "DOI": "",
+      "ISBN": "",
+      "shortTitle": "",
+      "url": "https://cdn.aaai.org/AAAI/1983/AAAI83-092.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Zotero",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "IMPULSE"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "STROBE"
+        },
+        {
+          "tag": "display"
+        },
+        {
+          "tag": "editors"
+        },
+        {
+          "tag": "knowledge base"
+        },
+        {
+          "tag": "knowledge representation"
+        }
+      ],
+      "collections": [
+        "MTUXENI8",
+        "RH95QH8N"
+      ],
+      "relations": {},
+      "dateAdded": "2023-09-17T12:11:18Z",
+      "dateModified": "2024-09-01T14:54:16Z"
     },
     {
       "target": "MSBZ5IMI",
@@ -13842,7 +13905,7 @@
         ]
       },
       "key": "99EC48NP",
-      "version": 6622,
+      "version": 7168,
       "itemType": "report",
       "creators": [
         {
@@ -13884,7 +13947,7 @@
       ],
       "relations": {},
       "dateAdded": "2024-05-21T18:34:16Z",
-      "dateModified": "2024-07-12T18:46:44Z"
+      "dateModified": "2024-09-01T14:49:05Z"
     },
     {
       "target": "3VK4IB8T",
@@ -14029,7 +14092,7 @@
         ]
       },
       "key": "NJEBFRHB",
-      "version": 5687,
+      "version": 7216,
       "itemType": "bookSection",
       "creators": [
         {
@@ -14066,7 +14129,20 @@
       "callNumber": "",
       "rights": "",
       "extra": "Section: 23\nDOI: 10.1021/bk-1986-0306.ch023",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "SpinPro Ultracentrifugation Expert System"
+        },
+        {
+          "tag": "computational efficiency"
+        },
+        {
+          "tag": "expert systems"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
@@ -14075,7 +14151,7 @@
         "dc:relation": "http://zotero.org/groups/2914042/items/PW6BDWQ2"
       },
       "dateAdded": "2022-06-20T19:00:59Z",
-      "dateModified": "2022-06-29T19:40:01Z"
+      "dateModified": "2024-09-01T15:34:47Z"
     },
     {
       "target": "DY9YATE2",
@@ -16612,7 +16688,11 @@
       "id": "9296070/7EPB9VSQ",
       "type": "report",
       "title": "A Compiler for Two-level Phonological Rules",
-      "publisher": "Stanford University, Center for the Study of Language and Information",
+      "collection-title": "Tools for Morphological Analysis",
+      "publisher": "Xeror Palo Alto Research Center, Stanford University, Center for the Study of Language and Information",
+      "publisher-place": "California",
+      "page": "1-51",
+      "event-place": "California",
       "abstract": "This paper describes a system for compiling two-level phonological or orthographical rules into finite-state transducers. The purpose of this system, called TWOL, is to aid the user in developing a set of such rules for morphological generation and recognition.",
       "language": "English",
       "author": [
@@ -16634,12 +16714,12 @@
           [
             1987,
             6,
-            27
+            25
           ]
         ]
       },
       "key": "7EPB9VSQ",
-      "version": 5760,
+      "version": 7185,
       "itemType": "report",
       "creators": [
         {
@@ -16657,11 +16737,11 @@
       ],
       "reportNumber": "",
       "reportType": "",
-      "seriesTitle": "",
-      "place": "",
-      "institution": "Stanford University, Center for the Study of Language and Information",
-      "date": "1987-06-27",
-      "pages": "",
+      "seriesTitle": "Tools for Morphological Analysis",
+      "place": "California",
+      "institution": "Xeror Palo Alto Research Center, Stanford University, Center for the Study of Language and Information",
+      "date": "1987-06-25",
+      "pages": "1-51",
       "shortTitle": "",
       "url": "https://helda.helsinki.fi/server/api/core/bitstreams/6d604071-fb9d-4132-8a79-04e64218d335/content",
       "accessDate": "",
@@ -16671,14 +16751,36 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "TWOL"
+        },
+        {
+          "tag": "compilers"
+        },
+        {
+          "tag": "finite-state"
+        },
+        {
+          "tag": "morphological generation"
+        },
+        {
+          "tag": "morphological recognition"
+        },
+        {
+          "tag": "transducers"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2023-09-15T11:29:28Z",
-      "dateModified": "2024-04-11T00:46:33Z"
+      "dateModified": "2024-09-01T15:04:26Z"
     },
     {
       "target": "PXHVFM62",
@@ -19072,9 +19174,9 @@
     {
       "target": "76G7ACMS",
       "id": "9296070/76G7ACMS",
-      "type": "article-journal",
+      "type": "thesis",
       "title": "A Visual aide for designing regular expression parsers",
-      "container-title": "Theses",
+      "publisher": "Rochester Institute of Technology",
       "abstract": "This paper describes a thesis project in which a visually-oriented design utility is constructed in Interlisp-D for the Xerox 1108 Artificial Intelligence Workstation. This utility aids in the design of Regular Expression Parsers by visually simulating the operation of a parser. A textual program, suitable for utilization in the construction of a compiler scanner or other similar processor may be produced by the utility.",
       "author": [
         {
@@ -19092,8 +19194,8 @@
         ]
       },
       "key": "76G7ACMS",
-      "version": 5689,
-      "itemType": "journalArticle",
+      "version": 7211,
+      "itemType": "thesis",
       "creators": [
         {
           "creatorType": "author",
@@ -19101,35 +19203,48 @@
           "lastName": "Crowfoot"
         }
       ],
-      "publicationTitle": "Theses",
-      "volume": "",
-      "issue": "",
-      "pages": "",
+      "thesisType": "",
+      "university": "Rochester Institute of Technology",
+      "place": "",
       "date": "1988-01-01",
-      "series": "",
-      "seriesTitle": "",
-      "seriesText": "",
-      "journalAbbreviation": "",
+      "numPages": "",
       "language": "",
-      "DOI": "",
-      "ISSN": "",
       "shortTitle": "",
       "url": "https://scholarworks.rit.edu/theses/501",
       "accessDate": "",
       "archive": "",
       "archiveLocation": "",
-      "libraryCatalog": "",
+      "libraryCatalog": "RIT Libraries",
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox 1108 workstation"
+        },
+        {
+          "tag": "design guidelines"
+        },
+        {
+          "tag": "parser"
+        },
+        {
+          "tag": "regular expression"
+        },
+        {
+          "tag": "visual programming"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2023-09-12T15:37:51Z",
-      "dateModified": "2023-09-12T15:41:02Z"
+      "dateModified": "2024-09-01T15:31:21Z"
     },
     {
       "target": "LT8JP57T",
@@ -19177,7 +19292,7 @@
         ]
       },
       "key": "LT8JP57T",
-      "version": 2002,
+      "version": 7243,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -19214,7 +19329,13 @@
       "extra": "",
       "tags": [
         {
-          "tag": "sz"
+          "tag": "BBN LISP"
+        },
+        {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
         }
       ],
       "collections": [
@@ -19227,7 +19348,7 @@
         ]
       },
       "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2021-06-03T19:43:01Z"
+      "dateModified": "2024-09-01T20:54:23Z"
     },
     {
       "target": "VS7BU7LL",
@@ -19255,7 +19376,7 @@
         ]
       },
       "key": "VS7BU7LL",
-      "version": 5704,
+      "version": 7222,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -19284,24 +19405,19 @@
       "extra": "Place: US\nPublisher: Institute of Electrical & Electronics Engineers Inc",
       "tags": [
         {
-          "tag": "Computer Applications",
-          "type": 1
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
-          "tag": "Education",
-          "type": 1
+          "tag": "distributed system"
         },
         {
-          "tag": "Group Problem Solving",
-          "type": 1
+          "tag": "groupware"
         },
         {
-          "tag": "Human Machine Systems",
-          "type": 1
+          "tag": "human computer interaction"
         },
         {
-          "tag": "Management",
-          "type": 1
+          "tag": "network systems"
         }
       ],
       "collections": [
@@ -19312,7 +19428,7 @@
       ],
       "relations": {},
       "dateAdded": "2022-08-05T04:11:20Z",
-      "dateModified": "2022-08-05T04:11:20Z"
+      "dateModified": "2024-09-01T15:54:39Z"
     },
     {
       "target": "K6FEL5H6",
@@ -21632,7 +21748,7 @@
       "page": "7-61",
       "volume": "III",
       "issue": "1",
-      "abstract": "No abstract available",
+      "abstract": "The editor of Lisp Pointers has been asking me for a long time to write down my view of Lisp. I was even given permission to flame. This paper is the result and, naturally, is entirely my own opinion.",
       "DOI": "10.1145/121999.122004",
       "journalAbbreviation": "SIGPLAN Lisp Pointers",
       "language": "en",
@@ -21660,7 +21776,7 @@
         ]
       },
       "key": "EV5ZT2WL",
-      "version": 1795,
+      "version": 7256,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -21669,6 +21785,7 @@
           "lastName": "Queinnec"
         }
       ],
+      "abstractNote": "\"The editor of Lisp Pointers has been asking me for a long time to write down my view of Lisp. I was even given permission to flame. This paper is the result and, naturally, is entirely my own opinion.\"",
       "publicationTitle": "ACM SIGPLAN Lisp Pointers",
       "pages": "7-61",
       "date": "July 1989",
@@ -21687,7 +21804,16 @@
       "extra": "",
       "tags": [
         {
-          "tag": "sz"
+          "tag": "COMMON LISP (Computer program language)"
+        },
+        {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "overview"
         }
       ],
       "collections": [
@@ -21697,7 +21823,7 @@
         "dc:replaces": "http://zotero.org/groups/2914042/items/CQRV39IT"
       },
       "dateAdded": "2021-04-25T19:54:45Z",
-      "dateModified": "2021-05-29T20:24:58Z"
+      "dateModified": "2024-09-02T02:23:42Z"
     },
     {
       "target": "2MU5XENN",
@@ -22726,7 +22852,7 @@
         ]
       },
       "key": "HNE2HXZ8",
-      "version": 1956,
+      "version": 7257,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -22753,6 +22879,9 @@
       "extra": "",
       "tags": [
         {
+          "tag": "should this be in here?"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -22763,7 +22892,7 @@
         "dc:replaces": "http://zotero.org/groups/2914042/items/ASDUNVUX"
       },
       "dateAdded": "2021-04-25T19:54:45Z",
-      "dateModified": "2021-05-29T19:47:17Z"
+      "dateModified": "2024-09-02T02:26:29Z"
     },
     {
       "target": "GLIMJDIW",
@@ -27755,6 +27884,7 @@
       "page": "36–47",
       "volume": "5",
       "issue": "6",
+      "abstract": "An interview of Austin Henderson, a pioneer in the field of Human Computer Interaction.",
       "DOI": "10.1145/287821.287827",
       "journalAbbreviation": "interactions",
       "author": [
@@ -27782,7 +27912,7 @@
         ]
       },
       "key": "ZRI4MHTQ",
-      "version": 5660,
+      "version": 7195,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -27810,6 +27940,18 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "hci"
+        },
+        {
+          "tag": "human computer interaction"
+        },
+        {
+          "tag": "interview"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -27819,7 +27961,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-15T23:22:52Z",
-      "dateModified": "2021-06-01T18:51:38Z"
+      "dateModified": "2024-09-01T15:11:05Z"
     },
     {
       "target": "VJ7M6CL5",
