@@ -22852,7 +22852,7 @@
         ]
       },
       "key": "HNE2HXZ8",
-      "version": 7257,
+      "version": 7259,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -22879,10 +22879,10 @@
       "extra": "",
       "tags": [
         {
-          "tag": "should this be in here?"
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
         },
         {
-          "tag": "sz"
+          "tag": "should this be in here?"
         }
       ],
       "collections": [
@@ -22892,7 +22892,7 @@
         "dc:replaces": "http://zotero.org/groups/2914042/items/ASDUNVUX"
       },
       "dateAdded": "2021-04-25T19:54:45Z",
-      "dateModified": "2024-09-02T02:26:29Z"
+      "dateModified": "2024-09-02T03:50:10Z"
     },
     {
       "target": "GLIMJDIW",
@@ -24110,6 +24110,7 @@
       "publisher-place": "USA",
       "page": "409–426",
       "event-place": "USA",
+      "abstract": "In this chapter, some of the events of LISP development are protocolled. Step by step, the implementers became independent of McCarthy. In 1962 the internal drive was stronger than McCarthy's proposals. The results are somehow ambiguous.",
       "ISBN": "978-0-12-450010-5",
       "author": [
         {
@@ -24136,7 +24137,7 @@
         ]
       },
       "key": "JEBHSFXU",
-      "version": 2154,
+      "version": 7273,
       "itemType": "bookSection",
       "creators": [
         {
@@ -24166,7 +24167,19 @@
       "extra": "",
       "tags": [
         {
-          "tag": "sz"
+          "tag": "LISP"
+        },
+        {
+          "tag": "Programming Languages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "early programming"
+        },
+        {
+          "tag": "list processing"
         }
       ],
       "collections": [
@@ -24174,7 +24187,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T17:31:32Z",
-      "dateModified": "2021-07-26T02:24:15Z"
+      "dateModified": "2024-09-02T04:09:04Z"
     },
     {
       "target": "KXVS2RBT",
@@ -25633,7 +25646,7 @@
         ]
       },
       "key": "9IIYFLFK",
-      "version": 2047,
+      "version": 7277,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -25659,7 +25672,13 @@
       "extra": "",
       "tags": [
         {
-          "tag": "sz"
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "computer-aided design"
         }
       ],
       "collections": [
@@ -25667,7 +25686,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T17:55:44Z",
-      "dateModified": "2021-06-02T17:56:09Z"
+      "dateModified": "2024-09-02T04:10:11Z"
     },
     {
       "target": "JSW29WAW",
@@ -25711,7 +25730,7 @@
         ]
       },
       "key": "JSW29WAW",
-      "version": 1998,
+      "version": 7287,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -25743,7 +25762,22 @@
       "extra": "",
       "tags": [
         {
-          "tag": "sz"
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Programming Languages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "history"
+        },
+        {
+          "tag": "overview"
         }
       ],
       "collections": [
@@ -25751,7 +25785,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-02T17:33:20Z",
-      "dateModified": "2021-06-02T17:34:16Z"
+      "dateModified": "2024-09-02T04:16:08Z"
     }
   ],
   "1994": [
@@ -26866,7 +26900,7 @@
         ]
       },
       "key": "HFRDQ97U",
-      "version": 1892,
+      "version": 7293,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -26893,7 +26927,16 @@
       "extra": "",
       "tags": [
         {
-          "tag": "sz"
+          "tag": "Common Lisp"
+        },
+        {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "compilers"
         }
       ],
       "collections": [
@@ -26902,7 +26945,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T19:54:39Z",
-      "dateModified": "2021-06-03T19:16:47Z"
+      "dateModified": "2024-09-02T04:22:45Z"
     },
     {
       "target": "5WCSNA4L",
@@ -26913,7 +26956,7 @@
       "page": "15-24",
       "volume": "VIII",
       "issue": "2",
-      "abstract": "We consider the impact of introducing the future construct to the multiple value facility in Lisp (Common Lisp and Scheme). A natural way to accommodate this problem is by modifying the implementation of futures so that one future object returns (or resolves to) multiple values instead of one. We first show how a such straightforward modification fails to maintain the crucial characteristic of futures, namely that inserting futures in a functional program does not alter the the result of the computation. A straightforward modification may result in wrong number of values. We then present two methods which we call the mv-context method and the mv-p flag method to overcome this problem. Both of these methods have been tested in TOP-1 Common Lisp, an implementation of a parallel Common Lisp on the TOP-1 multiprocessor workstation. To our knowledge, this problem has never been analyzed nor solved in an implementation of parallel Lisp. We also present the technique of\nfuture chain elimination\nwhich avoids creation of unnecessary futures and processes at run-time, which was inspired by this solution.",
+      "abstract": "We consider the impact of introducing the future construct to the multiple value facility in Lisp (Common Lisp and Scheme). A natural way to accommodate this problem is by modifying the implementation of futures so that one future object returns (or resolves to) multiple values instead of one. We first show how a such straightforward modification fails to maintain the crucial characteristic of futures, namely that inserting futures in a functional program does not alter the the result of the computation. A straightforward modification may result in wrong number of values. We then present two methods which we call the mv-context method and the mv-p flag method to overcome this problem. Both of these methods have been tested in TOP-1 Common Lisp, an implementation of a parallel Common Lisp on the TOP-1 multiprocessor workstation. To our knowledge, this problem has never been analyzed nor solved in an implementation of parallel Lisp. We also present the technique of future chain elimination which avoids creation of unnecessary futures and processes at run-time, which was inspired by this solution.",
       "DOI": "10.1145/224133.224135",
       "journalAbbreviation": "SIGPLAN Lisp Pointers",
       "language": "en",
@@ -26946,7 +26989,7 @@
         ]
       },
       "key": "5WCSNA4L",
-      "version": 1320,
+      "version": 7305,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -26978,6 +27021,12 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Common Lisp"
+        },
+        {
+          "tag": "LISP"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -26988,7 +27037,7 @@
         "dc:replaces": "http://zotero.org/groups/2914042/items/YFSCXZRI"
       },
       "dateAdded": "2021-04-25T19:54:47Z",
-      "dateModified": "2021-05-29T20:37:55Z"
+      "dateModified": "2024-09-02T06:05:33Z"
     },
     {
       "target": "QHTE5I6X",
@@ -27028,7 +27077,7 @@
         ]
       },
       "key": "QHTE5I6X",
-      "version": 1790,
+      "version": 7299,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -27055,7 +27104,13 @@
       "extra": "",
       "tags": [
         {
-          "tag": "sz"
+          "tag": "LISP"
+        },
+        {
+          "tag": "Programming Languages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
         }
       ],
       "collections": [
@@ -27065,7 +27120,7 @@
         "dc:replaces": "http://zotero.org/groups/2914042/items/H5UXX97B"
       },
       "dateAdded": "2021-04-25T19:54:47Z",
-      "dateModified": "2021-06-02T18:33:42Z"
+      "dateModified": "2024-09-02T04:29:19Z"
     },
     {
       "target": "A52363YK",
