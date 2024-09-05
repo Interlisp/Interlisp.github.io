@@ -9569,6 +9569,11 @@
       "id": "9296070/H8QEYLT7",
       "type": "article-journal",
       "title": "GLISP: A Lisp-based Programming System with Data Abstraction",
+      "container-title": "The AI Magazine",
+      "page": "37-47",
+      "volume": "4",
+      "issue": "3",
+      "abstract": "GLISP is a high-level language that is compiled into LISP. It provides a versatile abstract-data-type facility with hierarchical inheritance of properties and object-centered programming. GLISP programs are shorter and more readable than equivalent LISP programs. The object code produced by GLISP is optimized, making it about as efficient as handwritten LISP. An integrated programming environment is provided, including automatic incremental compilation, interpretive programming features, and an intelligent display-based inspector/editor for data and data-type descriptions. GLISP code is relatively portable; the compiler and the data inspector are implemented for most, major dialects of LISP and are available free or at nominal cost.\n\nGLISP (Novak 1982, 1983A, 198313) is a high-level language, based on LISP and including LISP as a sublanguage, that is compiled into LISP (which can be further compiled to machine language by the LISP compiler). The GLISP system runs within an existing LISP system and provides an integrated programming environment that includes automatic incremental compilation of GLISP programs, interactive execution and debugging, and display-based editing and inspection of data. Use of GLISP makes writing, debugging, and modifying programs significantly easier; at the same time, the code produced by the compiler is optimized so that its execution. efficiency is comparable to that of handwritten LISP. This article describes features or GLISP and illustrates them with examples. most or the syntax of GLISP is similar to LISP syntax or PASCAL syntax, so explicit treatment of GLISP syntax will be brief.\n\nGLISP programs are compiled relative to a knowledge base or object descriptions, a form of abstract data types (Liskov et al. 1977; Wulf, London, and Shaw 1976). A primary goal of the use of abstract data types in GLISP is to make programming easier. The implernentations of objects are described in a single place; the compiler uses the object descriptions to convert GLISP code written in terms or user objects into efficient LISP code written in terms of the implementations of the objects in LISP. This allows the implementations of objects to be changed without changing the code; it also allows the same code to be effective for objects that are implemented in different ways and thereby allows the accumulation of programming knowledge in the form of generic programs. Figure I illustrates the combination of information from these three sources; the recursive use of abstract data types and generic programs in the compilation process provides multiplicative power for describing programs.",
       "shortTitle": "GLISP",
       "author": [
         {
@@ -9579,9 +9584,10 @@
       "issued": {
         "date-parts": [
           [
-            1983
+            "1983"
           ]
-        ]
+        ],
+        "season": "Fall"
       },
       "accessed": {
         "date-parts": [
@@ -9593,7 +9599,7 @@
         ]
       },
       "key": "H8QEYLT7",
-      "version": 5701,
+      "version": 7425,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -9602,11 +9608,9 @@
           "lastName": "Novak, Jr"
         }
       ],
-      "publicationTitle": "",
-      "volume": "",
-      "issue": "",
-      "pages": "",
-      "date": "1983",
+      "publicationTitle": "The AI Magazine",
+      "pages": "37-47",
+      "date": "Fall 1983",
       "series": "",
       "seriesTitle": "",
       "seriesText": "",
@@ -9622,14 +9626,24 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "GLISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "programming overview"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2022-08-05T00:09:07Z",
-      "dateModified": "2022-09-11T06:31:34Z"
+      "dateModified": "2024-09-04T16:49:22Z"
     },
     {
       "target": "MCLDGGMU",
@@ -11851,7 +11865,7 @@
       "page": "65-65",
       "volume": "6",
       "issue": "4",
-      "abstract": "The major limitations in building large software have always been (a) its brittleness when confronted by problems that were not foreseen by its builders, and (by the amount of manpower required. The recent history of expert systems, for example highlights how constricting the brittleness and knowledge acquisition bottlenecks are. Moreover, standard software methodology (e.g., working from a detailed \"spec\") has proven of little use in AI, a field which by definition tackles ill-structured problems. How can these bottlenecks be widened? Attractive, elegant answers have included machine learning, automatic programming, and natural language understanding. But decades of work on such systems have convinced us that each of these approaches has difficulty \"scaling up\" for want a substantial base of real world knowledge.",
+      "abstract": "MC& CYC project is the building, over the coming decade, of a large knowledge base (or KB) of real world facts and heuristics and-as a part of the KB itself-methods for efficiently reasoning over the KB. As the title of this article suggests, our hypothesis is that the two major limitations to building large intelligent programs might be overcome by using such a system. We briefly illustrate how common sense reasoning and analogy can widen the knowledge acquisition bottleneck The next section (“How CYC Works”) illustrates how those same two abilities can solve problems of the type that stymie current expert systems. We then report how the project is being conducted currently: its strategic philosophy, its tactical methodology, and a case study of how we are currently putting that into practice. We conclude with a discussion of the project’s feasibility and timetable.",
       "DOI": "https://doi.org/10.1609/aimag.v6i4.510",
       "shortTitle": "CYC",
       "author": [
@@ -11878,7 +11892,7 @@
         ]
       },
       "key": "QXTFTCCF",
-      "version": 5698,
+      "version": 7379,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -11916,6 +11930,30 @@
       "extra": "",
       "tags": [
         {
+          "tag": "AI"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "artifical intelligence"
+        },
+        {
+          "tag": "bottlenecks"
+        },
+        {
+          "tag": "knowledge base"
+        },
+        {
+          "tag": "scalability"
+        },
+        {
+          "tag": "software design"
+        },
+        {
+          "tag": "software engineering"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -11925,7 +11963,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T21:01:13Z",
-      "dateModified": "2023-10-30T19:18:39Z"
+      "dateModified": "2024-09-04T13:21:41Z"
     },
     {
       "target": "MDW679B9",
@@ -12015,7 +12053,7 @@
         ]
       },
       "key": "2B4J79N6",
-      "version": 5689,
+      "version": 7342,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -12042,6 +12080,21 @@
       "extra": "",
       "tags": [
         {
+          "tag": "PDP-11/70"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox 1108 workstation"
+        },
+        {
+          "tag": "geography"
+        },
+        {
+          "tag": "petroleum exploration"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -12051,7 +12104,112 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-15T23:03:04Z",
-      "dateModified": "2021-06-01T20:24:03Z"
+      "dateModified": "2024-09-04T12:44:40Z"
+    },
+    {
+      "target": "PB5L9AVM",
+      "id": "9296070/PB5L9AVM",
+      "type": "article-journal",
+      "title": "Computer-aided analysis of structures in INTERLISP environment",
+      "container-title": "Computers & Structures",
+      "page": "393-407",
+      "volume": "23",
+      "issue": "3",
+      "abstract": "LISP appears to be the language of choice among the developers of knowledge-based expert systems. Analysis of structures in INTERLISP environment is discussed in this paper. An interactive INTERLISP program is presented for analysis of frames which can be used as part of an expert system for computer-aided design of structures. Some of the concepts and characteristics of INTERLISP language are explained by referring to the INTERLISP program.",
+      "DOI": "https://doi.org/10.1016/0045-7949(86)90231-2",
+      "author": [
+        {
+          "family": "Adeli",
+          "given": "H."
+        },
+        {
+          "family": "Paek",
+          "given": "Y. J."
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1985",
+            7
+          ]
+        ]
+      },
+      "key": "PB5L9AVM",
+      "version": 7357,
+      "itemType": "journalArticle",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "H.",
+          "lastName": "Adeli"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Y. J.",
+          "lastName": "Paek"
+        }
+      ],
+      "publicationTitle": "Computers & Structures",
+      "pages": "393-407",
+      "date": "July 1985",
+      "series": "",
+      "seriesTitle": "",
+      "seriesText": "",
+      "journalAbbreviation": "",
+      "language": "",
+      "ISSN": "",
+      "shortTitle": "",
+      "url": "https://www.sciencedirect.com/science/article/abs/pii/0045794986902312",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Google Scholar",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "AI"
+        },
+        {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "SSPG"
+        },
+        {
+          "tag": "artifical intelligence"
+        },
+        {
+          "tag": "computer-aided design"
+        },
+        {
+          "tag": "expert systems"
+        },
+        {
+          "tag": "knowledge-based system"
+        },
+        {
+          "tag": "structural analysis"
+        },
+        {
+          "tag": "sz"
+        }
+      ],
+      "collections": [
+        "MTUXENI8",
+        "JP4FIV7I",
+        "RH95QH8N"
+      ],
+      "relations": {
+        "dc:replaces": "http://zotero.org/groups/2914042/items/K7TBGT8A"
+      },
+      "dateAdded": "2021-04-16T04:08:28Z",
+      "dateModified": "2024-09-04T13:06:22Z"
     },
     {
       "target": "NVDTZ3L2",
@@ -14451,7 +14609,7 @@
         ]
       },
       "key": "YR58NY6F",
-      "version": 5663,
+      "version": 7334,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -14503,6 +14661,24 @@
       "extra": "",
       "tags": [
         {
+          "tag": "CommonLoops"
+        },
+        {
+          "tag": "Lisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "meta-objects"
+        },
+        {
+          "tag": "object oriented programming"
+        },
+        {
+          "tag": "procedure oriented design"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -14512,84 +14688,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T21:01:23Z",
-      "dateModified": "2023-10-30T19:19:17Z"
-    },
-    {
-      "target": "PB5L9AVM",
-      "id": "9296070/PB5L9AVM",
-      "type": "article-journal",
-      "title": "Computer-aided analysis of structures in INTERLISP environment",
-      "container-title": "Computers & structures",
-      "page": "393-407",
-      "volume": "23",
-      "issue": "3",
-      "abstract": "LISP appears to be the language of choice among the developers of knowledge-based expert systems. Analysis of structures in INTERLISP environment is discussed in this paper. An interactive INTERLISP program is presented for analysis of frames which can be used as part of an expert system for computer-aided design of structures. Some of the concepts and characteristics of INTERLISP language are explained by referring to the INTERLISP program.",
-      "DOI": "https://doi.org/10.1016/0045-7949(86)90231-2",
-      "author": [
-        {
-          "family": "Adeli",
-          "given": "H."
-        },
-        {
-          "family": "Paek",
-          "given": "Y. J."
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            1986
-          ]
-        ]
-      },
-      "key": "PB5L9AVM",
-      "version": 5688,
-      "itemType": "journalArticle",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "H.",
-          "lastName": "Adeli"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "Y. J.",
-          "lastName": "Paek"
-        }
-      ],
-      "publicationTitle": "Computers & structures",
-      "pages": "393-407",
-      "date": "1986",
-      "series": "",
-      "seriesTitle": "",
-      "seriesText": "",
-      "journalAbbreviation": "",
-      "language": "",
-      "ISSN": "",
-      "shortTitle": "",
-      "url": "https://www.sciencedirect.com/science/article/abs/pii/0045794986902312",
-      "accessDate": "",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "Google Scholar",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "sz"
-        }
-      ],
-      "collections": [
-        "MTUXENI8",
-        "JP4FIV7I",
-        "RH95QH8N"
-      ],
-      "relations": {
-        "dc:replaces": "http://zotero.org/groups/2914042/items/K7TBGT8A"
-      },
-      "dateAdded": "2021-04-16T04:08:28Z",
-      "dateModified": "2021-06-01T20:27:19Z"
+      "dateModified": "2024-09-04T12:37:14Z"
     },
     {
       "target": "FHBWRWVS",
@@ -16974,7 +17073,8 @@
       "id": "9296070/CGTUSD9T",
       "type": "report",
       "title": "Chips: A Tool for Developing Software Interfaces Interactively.",
-      "page": "71.0",
+      "publisher": "University of Pittsburgh",
+      "page": "71",
       "abstract": "Chips is an interactive tool for developing software employing graphical humancomputer interfaces on Xerox Lisp machines. For the programmer, It provides a rich graphical interface for the creation of rich graphical interfaces. In the service of an end user, It provides classes for modeling the graphical relationships of objects on the screen and maintaining constraints between them. Several large applications have been developed with Chips including intelligent tutors for programming and electricity. Chips is implemented as a collection of customizable classes in the LOOPS object-oriented extensions to Interlisp-D. The three fundamental classes are 1 DomainObject which defines objects of the application domain - the domain for which the interface is being built - and ties together the various functionalities provided by the Chips system 2 DisplayObject which defines mouse-sensitive graphical objects and 3 Substrate which defines specialized windows for displaying and storing collections of instances of DisplayObject. A programmer creates an interface by specializing existing DomainObjects and drawing new Displayobjects with a graphics editor. Instances of DispalyObject and Substrate are assembled on screen to form the interface. Once the interface has been sketched in this manner, the programmer can build inward, creating all other parts of the application through the objects on the screen.",
       "note": "Section: Technical Reports",
       "shortTitle": "Chips",
@@ -17012,7 +17112,7 @@
         ]
       },
       "key": "CGTUSD9T",
-      "version": 5691,
+      "version": 7325,
       "itemType": "report",
       "creators": [
         {
@@ -17032,9 +17132,9 @@
       "reportType": "",
       "seriesTitle": "",
       "place": "",
-      "institution": "",
+      "institution": "University of Pittsburgh",
       "date": "1987-10-01",
-      "pages": "71.0",
+      "pages": "71",
       "url": "https://apps.dtic.mil/sti/citations/ADA187499",
       "accessDate": "2023-04-12T19:02:22Z",
       "archive": "",
@@ -17043,14 +17143,39 @@
       "callNumber": "",
       "rights": "",
       "extra": "Section: Technical Reports",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Chips"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "graphical editing"
+        },
+        {
+          "tag": "human computer interaction"
+        },
+        {
+          "tag": "interface design"
+        },
+        {
+          "tag": "programming environments"
+        },
+        {
+          "tag": "user interface"
+        },
+        {
+          "tag": "visual programming"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2023-04-12T19:02:22Z",
-      "dateModified": "2023-04-12T19:08:29Z"
+      "dateModified": "2024-09-04T12:28:44Z"
     },
     {
       "target": "TAYYCYB8",
@@ -19540,6 +19665,7 @@
       "page": "36-42",
       "volume": "5",
       "issue": "4",
+      "abstract": "Object-oriented programming (OOP) is highly effective for problems involving hierarchical data categorization, leveraging inheritance and data encapsulation to promote structured implementation and maintainability. However, OOP environments often lack generalized facilities for deductive retrieval and pattern matching, which are crucial for knowledge-based applications. Conversely, logic programming languages like Prolog excel in these areas with built-in deductive retrieval through backtracking and pattern matching via unification, offering a natural representation of rule-based knowledge. Despite its strengths, Prolog’s declarative style is awkward for inherently procedural tasks, and it lacks a robust library for graphical interfaces and user interactions. Combining object-oriented and logic programming in a multiparadigm approach could harness the strengths of both paradigms, utilizing each for its optimal tasks. This integration seeks to preserve the advantages of both OOP and logic programming, addressing the challenge of effectively merging these paradigms in a unified application.",
       "DOI": "10.1109/52.17800",
       "journalAbbreviation": "IEEE Softw.",
       "language": "en",
@@ -19550,7 +19676,7 @@
         },
         {
           "family": "Evens",
-          "given": "M.W."
+          "given": "Martha Walton"
         }
       ],
       "issued": {
@@ -19570,7 +19696,7 @@
         ]
       },
       "key": "FDA3AUNV",
-      "version": 5696,
+      "version": 7313,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -19580,7 +19706,7 @@
         },
         {
           "creatorType": "author",
-          "firstName": "M.W.",
+          "firstName": "Martha Walton",
           "lastName": "Evens"
         }
       ],
@@ -19600,14 +19726,36 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Loops"
+        },
+        {
+          "tag": "Prolog"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "logic programming"
+        },
+        {
+          "tag": "object oriented programming"
+        },
+        {
+          "tag": "programming applications"
+        },
+        {
+          "tag": "programming techniques"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2022-08-04T23:56:13Z",
-      "dateModified": "2022-08-04T23:56:13Z"
+      "dateModified": "2024-09-04T12:09:59Z"
     },
     {
       "target": "4WFNIVS9",
@@ -19927,7 +20075,7 @@
       "id": "9296070/5CIDP5G7",
       "type": "paper-conference",
       "title": "Design and implementation of the UW Illustrated compiler",
-      "container-title": "Proceedings of the ACM SIGPLAN 1988 conference on Programming language design and implementation",
+      "container-title": "Proceedings of the ACM SIGPLAN 1988 conference on Programming Language Design and Implementation",
       "collection-title": "PLDI '88",
       "publisher": "Association for Computing Machinery",
       "publisher-place": "New York, NY, USA",
@@ -19953,10 +20101,10 @@
       "issued": {
         "date-parts": [
           [
-            "1988"
+            "1988",
+            6
           ]
-        ],
-        "season": "Giugno"
+        ]
       },
       "accessed": {
         "date-parts": [
@@ -19968,7 +20116,7 @@
         ]
       },
       "key": "5CIDP5G7",
-      "version": 5688,
+      "version": 7385,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -19987,8 +20135,8 @@
           "lastName": "Yamamoto"
         }
       ],
-      "date": "Giugno 1, 1988",
-      "proceedingsTitle": "Proceedings of the ACM SIGPLAN 1988 conference on Programming language design and implementation",
+      "date": "June, 1988",
+      "proceedingsTitle": "Proceedings of the ACM SIGPLAN 1988 conference on Programming Language Design and Implementation",
       "conferenceName": "",
       "place": "New York, NY, USA",
       "volume": "",
@@ -20004,14 +20152,27 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "ICOMP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "compilers"
+        },
+        {
+          "tag": "visual programming"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2023-09-12T15:40:09Z",
-      "dateModified": "2023-09-12T15:40:09Z"
+      "dateModified": "2024-09-04T16:32:30Z"
     },
     {
       "target": "CC6LYBJJ",
@@ -22988,7 +23149,7 @@
         ]
       },
       "key": "SYHYTLHH",
-      "version": 5659,
+      "version": 7392,
       "itemType": "patent",
       "creators": [
         {
@@ -23012,7 +23173,7 @@
       "assignee": "Savoir",
       "issuingAuthority": "United States",
       "patentNumber": "US4914567A",
-      "filingDate": "1988-10-24",
+      "filingDate": "April 3, 1990",
       "pages": "",
       "applicationNumber": "US07/261,953",
       "priorityNumbers": "",
@@ -23027,27 +23188,22 @@
       "extra": "",
       "tags": [
         {
-          "tag": "control",
-          "type": 1
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
-          "tag": "designing",
-          "type": 1
+          "tag": "asynchronous processes"
         },
         {
-          "tag": "objects",
-          "type": 1
+          "tag": "control system"
         },
         {
-          "tag": "programming",
-          "type": 1
-        },
-        {
-          "tag": "recited",
-          "type": 1
+          "tag": "illustration"
         },
         {
           "tag": "sz"
+        },
+        {
+          "tag": "technical overview"
         }
       ],
       "collections": [
@@ -23056,7 +23212,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T20:38:19Z",
-      "dateModified": "2023-04-20T02:58:38Z"
+      "dateModified": "2024-09-04T16:35:58Z"
     },
     {
       "target": "KJ9F3PJY",
@@ -26792,7 +26948,7 @@
         ]
       },
       "key": "HXGPKBTB",
-      "version": 5694,
+      "version": 7403,
       "itemType": "patent",
       "creators": [
         {
@@ -26831,27 +26987,25 @@
       "extra": "",
       "tags": [
         {
-          "tag": "alternative",
-          "type": 1
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
-          "tag": "data",
-          "type": 1
+          "tag": "finite state machine"
         },
         {
-          "tag": "state",
-          "type": 1
+          "tag": "illustration"
         },
         {
-          "tag": "subsequence",
-          "type": 1
+          "tag": "memory management"
+        },
+        {
+          "tag": "stack allocation"
         },
         {
           "tag": "sz"
         },
         {
-          "tag": "transition",
-          "type": 1
+          "tag": "technical overview"
         }
       ],
       "collections": [
@@ -26860,7 +27014,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T20:39:53Z",
-      "dateModified": "2021-06-01T20:40:17Z"
+      "dateModified": "2024-09-04T16:41:09Z"
     },
     {
       "target": "HFRDQ97U",
@@ -32131,7 +32285,9 @@
       "target": "TEHSJNIS",
       "id": "9296070/TEHSJNIS",
       "type": "motion_picture",
-      "title": "Computer-Assisted Instruction (Bits and Bytes, Episode 7)",
+      "title": "Computer-Assisted Instruction",
+      "collection-title": "Bits and Bytes",
+      "volume": "7",
       "abstract": "This clip looks at two examples of larger tutorial--CAI systems that were developed by the Ontario Institute for Studies and Education, and Xerox's PARC.\n\nIt is from Episode 7 of the classic 1983 television series, Bits and Bytes, which starred Luba Goy and Billy Van.  It was produced by TVOntario, but is no longer available for purchase.",
       "issued": {
         "date-parts": [
@@ -32152,7 +32308,7 @@
         ]
       },
       "key": "TEHSJNIS",
-      "version": 5710,
+      "version": 7369,
       "itemType": "videoRecording",
       "creators": [
         {
@@ -32161,8 +32317,7 @@
         }
       ],
       "videoRecordingFormat": "",
-      "seriesTitle": "",
-      "volume": "",
+      "seriesTitle": "Bits and Bytes",
       "numberOfVolumes": "",
       "place": "",
       "studio": "",
@@ -32181,6 +32336,21 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp-D"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox PARC"
+        },
+        {
+          "tag": "demonstration"
+        },
+        {
+          "tag": "history"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -32190,7 +32360,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-02T21:17:01Z",
-      "dateModified": "2021-07-06T19:37:34Z"
+      "dateModified": "2024-09-04T13:09:48Z"
     },
     {
       "target": "ZE7EVJYM",
@@ -34786,7 +34956,7 @@
         ]
       },
       "key": "ETMY665Q",
-      "version": 5656,
+      "version": 7418,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -34813,31 +34983,28 @@
       "extra": "",
       "tags": [
         {
-          "tag": "computational literacy",
-          "type": 1
+          "tag": "Dexter"
         },
         {
-          "tag": "computational notebooks",
-          "type": 1
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
-          "tag": "end user programming",
-          "type": 1
+          "tag": "computational literacy"
         },
         {
-          "tag": "hypermedia",
-          "type": 1
+          "tag": "computational notebooks"
         },
         {
-          "tag": "open hypermedia",
-          "type": 1
+          "tag": "human-centered computing"
+        },
+        {
+          "tag": "hypermedia"
+        },
+        {
+          "tag": "hypertext"
         },
         {
           "tag": "sz"
-        },
-        {
-          "tag": "world wide web",
-          "type": 1
         }
       ],
       "collections": [
@@ -34847,7 +35014,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-15T23:18:51Z",
-      "dateModified": "2021-06-03T19:17:59Z"
+      "dateModified": "2024-09-04T16:45:52Z"
     },
     {
       "target": "5FXRXRFT",
@@ -35952,7 +36119,7 @@
         ]
       },
       "key": "2DFHC6FQ",
-      "version": 5709,
+      "version": 7396,
       "itemType": "encyclopediaArticle",
       "creators": [],
       "encyclopediaTitle": "Wikipedia",
@@ -35975,14 +36142,27 @@
       "callNumber": "",
       "rights": "Creative Commons Attribution-ShareAlike License",
       "extra": "Page Version ID: 1060421060",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "artifical intelligence"
+        },
+        {
+          "tag": "expert systems"
+        },
+        {
+          "tag": "petroleum exploration"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2022-06-27T01:39:35Z",
-      "dateModified": "2022-06-27T01:39:35Z"
+      "dateModified": "2024-09-04T16:37:45Z"
     },
     {
       "target": "99N6XLDH",
@@ -40206,7 +40386,7 @@
         }
       ],
       "key": "M2HXTN7J",
-      "version": 6808,
+      "version": 7427,
       "itemType": "document",
       "creators": [
         {
@@ -40252,7 +40432,7 @@
         }
       ],
       "collections": [
-        "H4WH7B9H"
+        "MASL2F46"
       ],
       "relations": {},
       "dateAdded": "2023-11-25T10:48:44Z",
