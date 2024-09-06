@@ -74,6 +74,10 @@ jobs:
     runs-on: ubuntu-latest
     if:  github.event_name == 'push' || needs.check.outputs.cacheHit != 'true'
     steps:
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.18.1'
+            
       - uses: actions/checkout@v4
 
       - name: Cache Zotero Bibliography
@@ -107,7 +111,7 @@ jobs:
       - name: Setup Hugo
         uses: peaceiris/actions-hugo@v3
         with:
-          hugo-version: '0.127.0'
+          hugo-version: '0.133.1'
           extended: true
 
       - name: Setup Node
@@ -120,11 +124,12 @@ jobs:
       - run: npm install --verbose
 
       - name: Build
-        run: hugo -e $hugoEnvironment
+        run: hugo -e $hugoEnvironment -d ~/temp/deploy
 
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+
+#      - name: Deploy
+#        uses: peaceiris/actions-gh-pages@v4
+#        if: github.ref == 'refs/heads/main'
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_dir: ./public
