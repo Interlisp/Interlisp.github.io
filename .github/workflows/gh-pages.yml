@@ -120,7 +120,7 @@ jobs:
       - run: npm install --verbose
 
       - name: Build
-        run: hugo -e $hugoEnvironment
+        run: hugo -e staging
 
 
 #      - name: Deploy
