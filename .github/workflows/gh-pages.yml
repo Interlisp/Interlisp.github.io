@@ -74,10 +74,6 @@ jobs:
     runs-on: ubuntu-latest
     if:  github.event_name == 'push' || needs.check.outputs.cacheHit != 'true'
     steps:
-      - uses: actions/setup-go@v5
-        with:
-          go-version: '1.18.1'
-            
       - uses: actions/checkout@v4
 
       - name: Cache Zotero Bibliography
@@ -124,7 +120,7 @@ jobs:
       - run: npm install --verbose
 
       - name: Build
-        run: hugo -e $hugoEnvironment -d ~/temp/deploy
+        run: hugo -e $hugoEnvironment
 
 
 #      - name: Deploy
