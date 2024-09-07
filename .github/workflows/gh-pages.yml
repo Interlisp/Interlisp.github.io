@@ -88,7 +88,7 @@ jobs:
     runs-on: ubuntu-latest
     if:  github.event_name == 'push' || needs.check.outputs.cacheHit != 'true'
     steps:
-      - uses: actions/checkout@v4A
+      - uses: actions/checkout@v4
         with:
           submodules: recursive
           fetch-depth: 0
