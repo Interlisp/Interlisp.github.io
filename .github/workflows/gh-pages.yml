@@ -154,14 +154,18 @@ jobs:
           TZ: America/New York
         run: hugo --gc 
 
-   #   - name: Upload artifact
-   #     uses: actions/upload-pages-artifact@v3
-   #     with:
-   #       path: ./public
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      
+#      - name: Deploy
+#        uses: peaceiris/actions-gh-pages@v4
+#        if: github.ref == 'refs/heads/main'
+#        with:
+#          github_token: ${{ secrets.GITHUB_TOKEN }}
+#          publish_dir: ./public
