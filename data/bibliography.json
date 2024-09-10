@@ -18615,7 +18615,7 @@
         ]
       },
       "key": "9MDNLLV9",
-      "version": 6817,
+      "version": 7452,
       "itemType": "document",
       "creators": [
         {
@@ -18652,7 +18652,8 @@
         }
       ],
       "collections": [
-        "H4WH7B9H"
+        "H4WH7B9H",
+        "MASL2F46"
       ],
       "relations": {},
       "dateAdded": "2023-12-04T11:43:45Z",
@@ -24578,6 +24579,8 @@
       "id": "9296070/LP7U9CZK",
       "type": "patent",
       "title": "Graphics display system with improved dynamic menu selection",
+      "publisher-place": "Rochester, NY",
+      "event-place": "Rochester, NY",
       "abstract": "In a graphic display system, display control software is modified to impart motion to a pop-up menu to attract the attention of the user. The menu becomes animated when a control and comparison circuit confirms that a mouse driven cursor on the screen is moving away from the pop-up menu indicating that the operator is unaware of the menu's presence. The menu moves or \"tags-along\" after the cursor until the user takes notice and makes the appropriate selection.",
       "number": "EP0464742A2",
       "language": "en",
@@ -24606,7 +24609,7 @@
         ]
       },
       "key": "LP7U9CZK",
-      "version": 5662,
+      "version": 7480,
       "itemType": "patent",
       "creators": [
         {
@@ -24615,8 +24618,8 @@
           "lastName": "Denber"
         }
       ],
-      "place": "",
-      "country": "EP",
+      "place": "Rochester, NY",
+      "country": "US",
       "assignee": "Xerox Corp",
       "issuingAuthority": "European Union",
       "patentNumber": "EP0464742A2",
@@ -24634,24 +24637,25 @@
       "extra": "",
       "tags": [
         {
-          "tag": "cursor",
-          "type": 1
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
-          "tag": "menu",
-          "type": 1
+          "tag": "display systems"
         },
         {
-          "tag": "mouse",
-          "type": 1
+          "tag": "dynamic menu"
         },
         {
-          "tag": "pop",
-          "type": 1
+          "tag": "illustration"
         },
         {
-          "tag": "screen",
-          "type": 1
+          "tag": "interaction design"
+        },
+        {
+          "tag": "technical overview"
+        },
+        {
+          "tag": "user interface"
         }
       ],
       "collections": [
@@ -24660,7 +24664,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T20:41:11Z",
-      "dateModified": "2021-07-06T19:46:52Z"
+      "dateModified": "2024-09-10T01:22:57Z"
     },
     {
       "target": "9SEIVVBA",
@@ -28435,6 +28439,8 @@
       "id": "9296070/MV2TXBJZ",
       "type": "patent",
       "title": "Image display systems",
+      "publisher-place": "Rochester, New York",
+      "event-place": "Rochester, New York",
       "abstract": "The present invention relates to techniques for producing the perception of a moving viewpoint within a three-dimensional space presented on a display.\nThe invention provides techniques for operating a system to produce the perception of a moving viewpoint within a three-dimensional workspace. When the user indicates a point of interest on an object, the viewpoint can approach the point of interest asymptotically, with both radial and lateral motion. The orientation of the viewpoint can rotate to keep the point of interest in the field of view. The field of view can also be centered about the point of interest by rotating the viewpoint.",
       "number": "EP0471484B1",
       "language": "en",
@@ -28471,7 +28477,7 @@
         ]
       },
       "key": "MV2TXBJZ",
-      "version": 5660,
+      "version": 7488,
       "itemType": "patent",
       "creators": [
         {
@@ -28490,8 +28496,8 @@
           "lastName": "Robertson"
         }
       ],
-      "place": "",
-      "country": "EP",
+      "place": "Rochester, New York",
+      "country": "US",
       "assignee": "Xerox Corp",
       "issuingAuthority": "European Union",
       "patentNumber": "EP0471484B1",
@@ -28509,27 +28515,22 @@
       "extra": "",
       "tags": [
         {
-          "tag": "image",
-          "type": 1
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
-          "tag": "motion",
-          "type": 1
+          "tag": "display primitives"
         },
         {
-          "tag": "poi",
-          "type": 1
+          "tag": "display systems"
         },
         {
-          "tag": "region",
-          "type": 1
+          "tag": "motion design"
         },
         {
           "tag": "sz"
         },
         {
-          "tag": "viewpoint",
-          "type": 1
+          "tag": "viewpoint motion"
         }
       ],
       "collections": [
@@ -28538,7 +28539,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T20:41:54Z",
-      "dateModified": "2023-10-30T19:56:57Z"
+      "dateModified": "2024-09-10T01:27:52Z"
     },
     {
       "target": "7MK4IUTY",
@@ -32368,11 +32369,15 @@
       "type": "motion_picture",
       "title": "Graphical Programming (1988) - Part 0",
       "publisher": "Xerox Lisp Workstation",
-      "abstract": "Guy DesVignes and R. Wayne Oldford, 1988 \n \nThis video (in 3 pieces) describes the use of graphical programming with an example, showing the encapsulation of several steps of an analysis into a single reusable tool.   An INTERLISP-D programming environment with the object oriented system LOOPS is used for software development. \nWork is on a Xerox Lisp Workstation  (Xerox 1186). \n \nFirst of 3 pieces of a single video. \n \nFirst piece: Graphical Programming (1988) - Part 0 \n       Contains: \n        \"Opening\"   \n            -  Introduction by a young Wayne Oldford   \n               (refers to earlier video called \"Data Analysis Networks \n                in DINDE\")  \n       \"Part 0 Statistical Analysis Maps\" \n            - review of the interactive data analysis network representation  \n              of a statistical analysis. \n \nSecond piece:  Graphical Programming (1988) - Parts 1 and 2 \n       Contains: \n        \"Part 1   Toolboxes\"   \n            -  Review of the elements of a statistical toolbox in DINDE  \n       \"Part 2 The Analysis Path\" \n            - Demonstrates exploration of a path in an existing \n              analysis map and its representation as a pattern, \n              It is shown how to capture this pattern in DINDE as a new \n             new program represented as an \"AnalysisPath\" object.. \n              This is what is meant by  \"graphical programming\". \n \n \nThird piece: \"Graphical Programming (1988) - Part 3\" \n       Contains: \n        \"Part 3   Graphical Programming \n                        Example: Added Variable Plots\"   \n            - Demonstrates graphical programming by constructing \n              an added variable plot.  This is done by constructing the \n              appropriate analysis path on some data, capturing the pattern \n              adding it to the toolbox and then applying it to new data. \n \n        \"Summary\" \n \n \nSound has been cleaned up a little. \nComplete video also available in whole at  \n        stat-graphics.org/movies/graphical-programming.html",
+      "abstract": "This video (in 3 pieces) describes the use of graphical programming with an example, showing the encapsulation of several steps of an analysis into a single reusable tool.   An INTERLISP-D programming environment with the object oriented system LOOPS is used for software development. Work is on a Xerox Lisp Workstation  (Xerox 1186). \n \nFirst of 3 pieces of a single video. \n \nFirst piece: Graphical Programming (1988) - Part 0 \nContains: \n\"Opening\"   \n            -  Introduction by a young Wayne Oldford   \n(refers to earlier video called \"Data Analysis Networks in DINDE\")  \n\"Part 0 Statistical Analysis Maps\" \n- review of the interactive data analysis network representation of a statistical analysis. \n \nSecond piece:  Graphical Programming (1988) - Parts 1 and 2 \nContains: \n\"Part 1   Toolboxes\"   \n-  Review of the elements of a statistical toolbox in DINDE  \n\"Part 2 The Analysis Path\" \n- Demonstrates exploration of a path in an existing \nanalysis map and its representation as a pattern, \nIt is shown how to capture this pattern in DINDE as a new \nnew program represented as an \"AnalysisPath\" object.. \nThis is what is meant by  \"graphical programming\". \n \n \nThird piece: \"Graphical Programming (1988) - Part 3\" \nContains: \n\"Part 3   Graphical Programming \nExample: Added Variable Plots\"   \n- Demonstrates graphical programming by constructing \nan added variable plot.  This is done by constructing the appropriate analysis path on some data, capturing the pattern \nadding it to the toolbox and then applying it to new data.",
       "author": [
         {
           "family": "Oldford",
           "given": "Wayne"
+        },
+        {
+          "family": "DesVignes",
+          "given": "Guy"
         }
       ],
       "issued": {
@@ -32394,13 +32399,18 @@
         ]
       },
       "key": "ZE7EVJYM",
-      "version": 5663,
+      "version": 7472,
       "itemType": "videoRecording",
       "creators": [
         {
           "creatorType": "director",
           "firstName": "Wayne",
           "lastName": "Oldford"
+        },
+        {
+          "creatorType": "director",
+          "firstName": "Guy",
+          "lastName": "DesVignes"
         }
       ],
       "videoRecordingFormat": "",
@@ -32424,7 +32434,22 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp-D"
+        },
+        {
+          "tag": "LOOPS"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "graphical editing"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "visual programming"
         }
       ],
       "collections": [
@@ -32433,7 +32458,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-02T21:20:07Z",
-      "dateModified": "2021-06-03T19:20:49Z"
+      "dateModified": "2024-09-10T01:15:25Z"
     },
     {
       "target": "FJ2M3GNL",
@@ -32441,11 +32466,15 @@
       "type": "motion_picture",
       "title": "Graphical Programming (1988) - Parts 1 and 2",
       "publisher": "Xerox Lisp Workstation",
-      "abstract": "Guy DesVignes and R. Wayne Oldford, 1988 \n \nThis video (in 3 pieces) describes the use of graphical programming with an example, showing the encapsulation of several steps of an analysis into a single reusable tool.   An INTERLISP-D programming environment with the object oriented system LOOPS is used for software development. \nWork is on a Xerox Lisp Workstation  (Xerox 1186). \n \nSecond of 3 pieces of a single video. \n \nFirst piece: Graphical Programming (1988) - Part 0 \n       Contains: \n        \"Opening\"   \n            -  Introduction by Wayne Oldford   \n               (refers to earlier video called \"Data Analysis Networks \n                in DINDE\")  \n       \"Part 0 Statistical Analysis Maps\" \n            - review of the interactive data analysis network representation  \n              of a statistical analysis. \n \nSecond piece:  Graphical Programming (1988) - Parts 1 and 2 \n       Contains: \n        \"Part 1   Toolboxes\"   \n            -  Review of the elements of a statistical toolbox in DINDE  \n       \"Part 2 The Analysis Path\" \n            - Demonstrates exploration of a path in an existing \n              analysis map and its representation as a pattern, \n              It is shown how to capture this pattern in DINDE as a new \n             new program represented as an \"AnalysisPath\" object.. \n              This is what is meant by  \"graphical programming\". \n \n \nThird piece: \"Graphical Programming (1988) - Part 3\" \n       Contains: \n        \"Part 3   Graphical Programming \n                        Example: Added Variable Plots\"   \n            - Demonstrates graphical programming by constructing \n              an added variable plot.  This is done by constructing the \n              appropriate analysis path on some data, capturing the pattern \n              adding it to the toolbox and then applying it to new data. \n \n        \"Summary\" \n \n \nSound has been cleaned up a little. \nComplete video also available in whole at  \n        stat-graphics.org/movies/graphical-programming.html",
+      "abstract": "This video (in 3 pieces) describes the use of graphical programming with an example, showing the encapsulation of several steps of an analysis into a single reusable tool.   An INTERLISP-D programming environment with the object oriented system LOOPS is used for software development. Work is on a Xerox Lisp Workstation  (Xerox 1186). \n \nSecond of 3 pieces of a single video. \n \nFirst piece: Graphical Programming (1988) - Part 0 \nContains: \n\"Opening\"   \n-  Introduction by Wayne Oldford   \n(refers to earlier video called \"Data Analysis Networks \nin DINDE\")  \n\"Part 0 Statistical Analysis Maps\" \n- review of the interactive data analysis network representation  \nof a statistical analysis. \n \nSecond piece:  Graphical Programming (1988) - Parts 1 and 2 \nContains: \n\"Part 1   Toolboxes\"   \n-  Review of the elements of a statistical toolbox in DINDE  \n\"Part 2 The Analysis Path\" \n- Demonstrates exploration of a path in an existing \nanalysis map and its representation as a pattern, \nIt is shown how to capture this pattern in DINDE as a new \nnew program represented as an \"AnalysisPath\" object.. \nThis is what is meant by  \"graphical programming\". \n \n \nThird piece: \"Graphical Programming (1988) - Part 3\" \nContains: \n\"Part 3   Graphical Programming \nExample: Added Variable Plots\"   \n- Demonstrates graphical programming by constructing an added variable plot.  This is done by constructing the appropriate analysis path on some data, capturing the pattern adding it to the toolbox and then applying it to new data.",
       "author": [
         {
           "family": "Oldford",
           "given": "Wayne"
+        },
+        {
+          "family": "DesVignes",
+          "given": "Guy"
         }
       ],
       "issued": {
@@ -32453,7 +32482,7 @@
           [
             2012,
             2,
-            17
+            16
           ]
         ]
       },
@@ -32467,13 +32496,18 @@
         ]
       },
       "key": "FJ2M3GNL",
-      "version": 5663,
+      "version": 7471,
       "itemType": "videoRecording",
       "creators": [
         {
           "creatorType": "director",
           "firstName": "Wayne",
           "lastName": "Oldford"
+        },
+        {
+          "creatorType": "director",
+          "firstName": "Guy",
+          "lastName": "DesVignes"
         }
       ],
       "videoRecordingFormat": "",
@@ -32482,7 +32516,7 @@
       "numberOfVolumes": "",
       "place": "",
       "studio": "Xerox Lisp Workstation",
-      "date": "2012-02-17",
+      "date": "2012-02-16",
       "runningTime": "11:18",
       "language": "",
       "ISBN": "",
@@ -32497,7 +32531,22 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp-D"
+        },
+        {
+          "tag": "LOOPS"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "graphical editing"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "visual programming"
         }
       ],
       "collections": [
@@ -32506,7 +32555,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-02T21:22:30Z",
-      "dateModified": "2021-06-03T19:21:33Z"
+      "dateModified": "2024-09-10T01:15:16Z"
     }
   ],
   "2013": [
@@ -38558,7 +38607,7 @@
         }
       ],
       "key": "4EXTB254",
-      "version": 6812,
+      "version": 7454,
       "itemType": "document",
       "creators": [
         {
@@ -38591,7 +38640,8 @@
         }
       ],
       "collections": [
-        "H4WH7B9H"
+        "H4WH7B9H",
+        "MASL2F46"
       ],
       "relations": {},
       "dateAdded": "2023-11-25T13:36:46Z",
@@ -38672,7 +38722,7 @@
         }
       ],
       "key": "UB73FJTP",
-      "version": 6736,
+      "version": 7453,
       "itemType": "document",
       "creators": [
         {
@@ -38702,7 +38752,8 @@
         }
       ],
       "collections": [
-        "H4WH7B9H"
+        "H4WH7B9H",
+        "MASL2F46"
       ],
       "relations": {},
       "dateAdded": "2023-11-29T12:10:11Z",
@@ -38757,7 +38808,7 @@
         "literal": "https://drive.google.com/file/d/128Rh2ZvCkpMKIQovru-ojnXsuw-XRCgR/view?usp=sharing"
       },
       "key": "FHQDFEU2",
-      "version": 6804,
+      "version": 7455,
       "itemType": "document",
       "creators": [
         {
@@ -38793,7 +38844,8 @@
         }
       ],
       "collections": [
-        "H4WH7B9H"
+        "H4WH7B9H",
+        "MASL2F46"
       ],
       "relations": {},
       "dateAdded": "2023-11-26T16:14:51Z",
