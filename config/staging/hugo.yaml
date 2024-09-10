@@ -1,4 +1,3 @@
-baseURL: https://wasm.interlisp.org
 languageCode: en-us
 title: 'Staging Environment'
 publishDir: stage
