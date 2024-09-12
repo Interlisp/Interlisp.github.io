@@ -31,10 +31,10 @@ on:
 
   workflow_dispatch:
 
-permissions:
-    contents: read
-    pages: write
-    id-token: write
+# permissions:
+#    contents: read
+#    pages: write
+#    id-token: write
 
 defaults:
     run:
