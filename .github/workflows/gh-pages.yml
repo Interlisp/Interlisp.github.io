@@ -149,7 +149,7 @@ jobs:
 #          HUGO_ENVIRONMENT: staging
 #          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           TZ: America/New York
-        run: hugo --gc --logLevel info
+        run: hugo --logLevel info
 
 #      - name: Upload artifact
 #        uses: actions/upload-pages-artifact@v3
