@@ -149,7 +149,15 @@ jobs:
 #          HUGO_ENVIRONMENT: staging
 #          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           TZ: America/New York
-        run: hugo --logLevel debug
+        run: hugo --debug
+
+      - name: Deploy
+        uses: peaceiris/actions-gh-pages@v4
+        if: github.ref == 'refs/heads/main'
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
+          publish_dir: ./public
+        
 
 #      - name: Upload artifact
 #        uses: actions/upload-pages-artifact@v3
@@ -169,9 +177,3 @@ jobs:
 #        id: deployment
 #        uses: actions/deploy-pages@v4
       
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
