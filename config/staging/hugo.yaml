@@ -1,6 +1,7 @@
 baseURL: https://interlisp.org/InterlispDraft.github.io
 
 canonifyURLs: true
+relativeURLs: true
 
 languageCode: en-us
 title: 'Staging Environment'
