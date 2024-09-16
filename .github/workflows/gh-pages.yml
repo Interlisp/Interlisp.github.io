@@ -88,6 +88,10 @@ jobs:
     runs-on: ubuntu-latest
     if:  github.event_name == 'push' || needs.check.outputs.cacheHit != 'true'
     steps:
+      - uses: actions/setup-go@v5
+        with:
+          go-version: '1.18.1'
+
       - uses: actions/checkout@v4
         with:
           submodules: recursive
@@ -150,6 +154,8 @@ jobs:
 #          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           TZ: America/New York
         run: hugo --logLevel debug --baseURL "https://interlisp.org/InterlispDraft.github.io" -e staging
+        
+      - run: ls ; ls public
 
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
