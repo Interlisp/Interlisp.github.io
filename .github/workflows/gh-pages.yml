@@ -155,7 +155,7 @@ jobs:
 #          HUGO_ENVIRONMENT: staging
 #          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           TZ: America/New York
-        run: hugo --baseURL "https://stumbo.github.io/" -e staging
+        run: hugo -d "./public" --baseURL "https://stumbo.github.io/" -e staging
         
       - run: ls ; ls public
 
