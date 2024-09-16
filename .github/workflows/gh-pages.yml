@@ -88,10 +88,6 @@ jobs:
     runs-on: ubuntu-latest
     if:  github.event_name == 'push' || needs.check.outputs.cacheHit != 'true'
     steps:
-      - uses: actions/setup-go@v5
-        with:
-          go-version: '1.18.1'
-
       - uses: actions/checkout@v4
         with:
           submodules: recursive
@@ -148,17 +144,13 @@ jobs:
       - run: npm install -g postcss-cli --save-dev
       - run: npm install --verbose
 
-      - run: mkdir ./public ; pwd
-
       - name: Build
         env:
 #          HUGO_ENVIRONMENT: staging
 #          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           TZ: America/New York
-        run: hugo -d "./public" --baseURL "https://stumbo.github.io/" -e staging
+        run: hugo -d "./public" --cleanDestinationDir --baseURL "https://stumbo.github.io/" -e staging
         
-      - run: ls ; ls public
-
       - name: Deploy
         uses: peaceiris/actions-gh-pages@v4
         if: github.ref == 'refs/heads/main'
