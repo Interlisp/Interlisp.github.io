@@ -148,6 +148,8 @@ jobs:
       - run: npm install -g postcss-cli --save-dev
       - run: npm install --verbose
 
+      - run: mkdir ./public
+
       - name: Build
         env:
 #          HUGO_ENVIRONMENT: staging
