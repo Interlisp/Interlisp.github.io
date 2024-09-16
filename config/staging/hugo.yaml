@@ -1,4 +1,4 @@
-baseURL: https://interlisp.org/InterlispDraft.github.io
+baseURL: /InterlispDraft.github.io
 
 canonifyURLs: true
 relativeURLs: true
