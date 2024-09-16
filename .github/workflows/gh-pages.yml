@@ -155,7 +155,7 @@ jobs:
 #          HUGO_ENVIRONMENT: staging
 #          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           TZ: America/New York
-        run: hugo --logLevel debug --baseURL "https://interlisp.org/InterlispDraft.github.io" -e staging
+        run: hugo --logLevel debug --baseURL "https://stumbo.github.io/InterlispDraft.github.io" -e staging
         
       - run: ls ; ls public
 
