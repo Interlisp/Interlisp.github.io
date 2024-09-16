@@ -1,4 +1,4 @@
-baseURL: /InterlispDraft.github.io
+baseURL: https://stumbo.github.io
 
 canonifyURLs: true
 relativeURLs: true
