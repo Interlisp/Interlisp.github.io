@@ -148,7 +148,7 @@ jobs:
       - run: npm install -g postcss-cli --save-dev
       - run: npm install --verbose
 
-      - run: mkdir ./public
+      - run: mkdir ./public ; pwd
 
       - name: Build
         env:
