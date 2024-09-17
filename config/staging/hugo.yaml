@@ -1,7 +1,4 @@
-baseURL: https://stumbo.github.io
-
-canonifyURLs: true
-relativeURLs: true
+baseURL: https://stumbo.github.io/
 
 languageCode: en-us
 title: 'Staging Environment'
