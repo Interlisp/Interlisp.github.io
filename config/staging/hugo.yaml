@@ -1,7 +1,9 @@
 baseURL: https://stumbo.github.io/
 
+# canonifyURLs: Convert relative URLs to absolute URLs
+#   Enable for staging to map to appropriate baseURL
 canonifyURLs: true
 
 languageCode: en-us
 title: 'Staging Environment'
-publishDir: stage
+# publishDir: stage
