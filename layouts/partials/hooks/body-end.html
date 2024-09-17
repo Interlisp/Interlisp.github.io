@@ -1,5 +1,5 @@
 <!-- ><script type="text/javascript" src="/js/carousel.js"></script>
 <link rel="stylesheet" href="/css/carousel.css"> -->
 {{range .Site.Params.custom_css -}}
-      <link rel="stylesheet" href="{{ . | absURL }}">
+      <link rel="stylesheet" href="{{ . | relURL }}">
 {{- end}}
