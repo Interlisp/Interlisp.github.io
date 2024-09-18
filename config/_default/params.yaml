@@ -53,7 +53,7 @@ github_branch: main
 github_subdir: 
 github_project_repo: https://github.com/interlisp/medley
 
-# Google custom seach engine configuration
+# Google custom search engine configuration
 #  gcs_engine_id:  search engine 
 gcs_engine_id: 33ef4cbe0703b4f3a
 

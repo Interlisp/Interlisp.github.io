@@ -12,7 +12,6 @@
 _site
 .sass-cache
 .jekyll-metadata
-public/
 node_modules/
 _gen/
 .hugo_build.lock

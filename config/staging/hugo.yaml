@@ -1,4 +1,8 @@
-baseURL: https://wasm.interlisp.org
+baseURL: https://stumbo.github.io/InterlispDraft.github.io/
+
 languageCode: en-us
+
+# title
+#  Insert Staging Environment onto every page to make clear
+#  this is not the production site
 title: 'Staging Environment'
-publishDir: stage
