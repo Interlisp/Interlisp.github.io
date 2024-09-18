@@ -9986,7 +9986,7 @@
       "publisher-place": "San Francisco",
       "page": "859–861",
       "event-place": "San Francisco",
-      "abstract": "ROSS [7] is an object-oriented language developed for building knowledge-based simulations [4]. SWIRL [5, 6] is a program written in ROSS that embeds knowledge about defensive and offensive air battle strategies. Given an initial configuration of military forces, SWIRL simulates the resulting air battle. We have implemented ROSS and SWIRL in several different Lisp environments. We report upon this experience by comparing the various environments in terms of cpu usage, real-time usage, and various user aids.",
+      "abstract": "ROSS is an object-oriented language developed for building knowledge-based simulations. SWIRL is a program written in ROSS that embeds knowledge about defensive and offensive air battle strategies. Given an initial configuration of military forces, SWIRL simulates the resulting air battle. We have implemented ROSS and SWIRL in several different Lisp environments. We report upon this experience by comparing the various environments in terms of cpu usage, real-time usage, and various user aids.",
       "author": [
         {
           "family": "Naraln",
@@ -10020,7 +10020,7 @@
         ]
       },
       "key": "XR77BB2T",
-      "version": 5701,
+      "version": 7538,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -10060,6 +10060,21 @@
       "extra": "",
       "tags": [
         {
+          "tag": "LISP"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "computational efficiency"
+        },
+        {
+          "tag": "knowledge-based system"
+        },
+        {
+          "tag": "object oriented programming"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -10069,7 +10084,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-03T18:16:12Z",
-      "dateModified": "2023-10-30T20:01:13Z"
+      "dateModified": "2024-09-18T02:49:51Z"
     },
     {
       "target": "PVEEX4BT",
@@ -12804,7 +12819,7 @@
         ]
       },
       "key": "FKDCVZJ5",
-      "version": 5698,
+      "version": 7528,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -12843,6 +12858,18 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Computational linguistics"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "knowledge engineering"
+        },
+        {
+          "tag": "natural language processing"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -12852,7 +12879,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-15T23:18:51Z",
-      "dateModified": "2021-06-03T18:17:23Z"
+      "dateModified": "2024-09-18T02:42:16Z"
     },
     {
       "target": "J3ZEIKMJ",
@@ -18158,6 +18185,7 @@
       "type": "article",
       "title": "LOOPS: A Friendly Primer",
       "publisher": "Xerox Corporation",
+      "abstract": "This primer is the equivalent of a tourist's guide book. It shows you the \"sights\" but it leaves out a lot of detail. Once you are comfortable with the basic LOOPS programming concepts and procedures described here, you can use the LOOPS Reference Manual as it was intended and fully exploit the capabilities of LOOPS. This primer was written with the beginner's viewpoint in mind.\nit addresses strategic considerations, introduces basic procedures and methods, and provides numerous examples and pictures. The material in each chapter is presented with step-by-step instructions. What this primer does not assume you have any previous programming experience in LOOPS, it does assume you have a Xerox 1108/9 or a Xerox 1 186 AI Workstation which is running the Cantilever version of LOOPS, and that you have experience with interlisp-D and its programming environment.",
       "language": "en",
       "author": [
         {
@@ -18187,7 +18215,7 @@
         ]
       },
       "key": "F9XE85C9",
-      "version": 5653,
+      "version": 7545,
       "itemType": "document",
       "creators": [
         {
@@ -18213,7 +18241,16 @@
       "extra": "",
       "tags": [
         {
-          "tag": "Interlisp-D"
+          "tag": "LOOPS"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "exploratory programming"
+        },
+        {
+          "tag": "reference manual"
         },
         {
           "tag": "s2z"
@@ -18231,7 +18268,7 @@
         ]
       },
       "dateAdded": "2021-04-25T18:13:25Z",
-      "dateModified": "2023-10-30T18:57:57Z"
+      "dateModified": "2024-09-18T02:55:47Z"
     },
     {
       "target": "9V8CDHPU",
