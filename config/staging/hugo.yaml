@@ -1,10 +1,8 @@
 baseURL: https://stumbo.github.io/InterlispDraft.github.io/
 
-# canonifyURLs: Convert relative URLs to absolute URLs
-#   Enable for staging to map to appropriate baseURL
-#canonifyURLs: true
-#relativeURLs: true
-
 languageCode: en-us
+
+# title
+#  Insert Staging Environment onto every page to make clear
+#  this is not the production site
 title: 'Staging Environment'
-#publishDir: stage
