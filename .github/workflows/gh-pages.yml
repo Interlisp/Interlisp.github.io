@@ -43,7 +43,7 @@ defaults:
 env:
   # ----------------------------------------------------------------------------
   # Specify the deployment environment:  staging or production
-  HUGO_ENVIRONMENT: staging
+  HUGO_ENVIRONMENT: production
   HUGO_VERSION: 0.133.1
 
 jobs:
@@ -142,10 +142,9 @@ jobs:
 
       - name: Build
         env:
-#          HUGO_ENVIRONMENT: staging
           HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
           TZ: America/New York
-        run: hugo -d "./public" --cleanDestinationDir -e staging
+        run: hugo --cleanDestinationDir -e $HUGO_ENVIRONMENT
         
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v3
