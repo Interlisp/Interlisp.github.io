@@ -3119,6 +3119,84 @@
       "dateModified": "2024-07-31T02:53:40Z"
     },
     {
+      "target": "3QDQ2YQS",
+      "id": "9296070/3QDQ2YQS",
+      "type": "article-journal",
+      "title": "New Programming Languages for Artificial Intelligence Research",
+      "container-title": "ACM Computing Surveys",
+      "page": "153-174",
+      "volume": "6",
+      "issue": "3",
+      "abstract": "New directions in Artificial Intelligence research have led to the need for certain novel features to be embedded in programming languages. This paper gives an overview of the nature of these features, and their implementation in four principal families of AI languages: SAIL; PLANNER/CONNIVER; QLISP/INTERLISP; and POPLER/POP-2. The programming featurcs described include: new data types and accessing mechanisms for stored expressions; more flexible control structures, including multiple processes and backtracking; pattern matching to allow comparison of data item with a template, and extraction of labeled subexpressions; and deductive mechanisms which allow the programming system to carry o u t certain activities including modifying the data base and deciding which subroutines to run next using only constraints and guidelines set up by the programmer.",
+      "DOI": "10.1145/356631.356632",
+      "journalAbbreviation": "ACM Comput. Surv.",
+      "language": "en",
+      "author": [
+        {
+          "family": "Bobrow",
+          "given": "Daniel G."
+        },
+        {
+          "family": "Raphael",
+          "given": "Bertram"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1974"
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2024,
+            2,
+            18
+          ]
+        ]
+      },
+      "key": "3QDQ2YQS",
+      "version": 7752,
+      "itemType": "journalArticle",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Daniel G.",
+          "lastName": "Bobrow"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Bertram",
+          "lastName": "Raphael"
+        }
+      ],
+      "publicationTitle": "ACM Computing Surveys",
+      "pages": "153-174",
+      "date": "09/1974",
+      "series": "",
+      "seriesTitle": "",
+      "seriesText": "",
+      "ISSN": "0360-0300, 1557-7341",
+      "shortTitle": "",
+      "url": "https://dl.acm.org/doi/10.1145/356631.356632",
+      "accessDate": "2024-02-18T21:20:15Z",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "DOI.org (Crossref)",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "JP4FIV7I"
+      ],
+      "relations": {},
+      "dateAdded": "2024-02-18T21:20:15Z",
+      "dateModified": "2024-02-18T21:20:15Z"
+    },
+    {
       "target": "HP2N2EKF",
       "id": "9296070/HP2N2EKF",
       "type": "article-journal",
@@ -5478,6 +5556,65 @@
       "relations": {},
       "dateAdded": "2021-05-31T17:24:59Z",
       "dateModified": "2024-05-19T01:52:22Z"
+    },
+    {
+      "target": "WMVLUTUL",
+      "id": "9296070/WMVLUTUL",
+      "type": "article-journal",
+      "title": "An Historical Overview of Artifiicial Intellligence Programming Languages",
+      "language": "en",
+      "author": [
+        {
+          "family": "Westfold",
+          "given": "Stephen"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1979",
+            5,
+            29
+          ]
+        ]
+      },
+      "key": "WMVLUTUL",
+      "version": 7710,
+      "itemType": "journalArticle",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Stephen",
+          "lastName": "Westfold"
+        }
+      ],
+      "publicationTitle": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "date": "29 May 1979",
+      "series": "",
+      "seriesTitle": "",
+      "seriesText": "",
+      "journalAbbreviation": "",
+      "DOI": "",
+      "ISSN": "",
+      "shortTitle": "",
+      "url": "https://stacks.stanford.edu/file/druid:vg077ps3762/vg077ps3762.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Zotero",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "JP4FIV7I"
+      ],
+      "relations": {},
+      "dateAdded": "2022-12-23T11:14:39Z",
+      "dateModified": "2024-09-23T16:47:18Z"
     },
     {
       "target": "HDTBEDYF",
@@ -10521,6 +10658,49 @@
       "dateModified": "2021-06-03T19:44:28Z"
     },
     {
+      "target": "NV5D3XCV",
+      "id": "9296070/NV5D3XCV",
+      "type": "article",
+      "title": "CAROL RELEASE NOTES",
+      "publisher": "Xerox Corporation",
+      "abstract": "These notes accompany the Carol Release of Interlisp-D. They describe changes made since the Fugue.4 Release of October, 1983 and the Fugue.6 Release of April, 1984. The most prominent feature is support for the Xerox 1108 local file system. A new release of TEdit provides a powerful, menudriven interface. Xerox 1100 and 1132 users can now initialize Interlisp-D from disk partitions other than the currently booted partition.",
+      "note": "Software Version: Carol\nSoftware Version Certainty: Stated on cover page",
+      "language": "English",
+      "issued": {
+        "date-parts": [
+          [
+            1984
+          ]
+        ]
+      },
+      "key": "NV5D3XCV",
+      "version": 7730,
+      "itemType": "document",
+      "creators": [],
+      "date": "1984",
+      "shortTitle": "",
+      "url": "http://www.bitsavers.org/pdf/xerox/interlisp-d/198406_Carol/198406_Carol_Release_Notes.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Software Version: Carol\nSoftware Version Certainty: Stated on cover page",
+      "tags": [],
+      "collections": [
+        "3CNYFDHF"
+      ],
+      "relations": {
+        "dc:relation": [
+          "http://zotero.org/groups/2914042/items/NRI8I8V8",
+          "http://zotero.org/groups/2914042/items/4UJC8MZS"
+        ]
+      },
+      "dateAdded": "2023-11-18T17:15:35Z",
+      "dateModified": "2023-11-18T17:25:15Z"
+    },
+    {
       "target": "CAYFCPIB",
       "id": "9296070/CAYFCPIB",
       "type": "book",
@@ -10594,6 +10774,56 @@
       "relations": {},
       "dateAdded": "2021-04-16T04:20:02Z",
       "dateModified": "2022-01-23T19:33:15Z"
+    },
+    {
+      "target": "RLCP2IDH",
+      "id": "9296070/RLCP2IDH",
+      "type": "article",
+      "title": "Chat Streams",
+      "publisher": "Xerox Corporation",
+      "abstract": "A chat stream is a connection between two processes oriented towards terminal service, but not necessarily restricted to that.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Acuff, Richard",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1984",
+            8,
+            25
+          ]
+        ]
+      },
+      "key": "RLCP2IDH",
+      "version": 7735,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Acuff, Richard"
+        }
+      ],
+      "date": "25 August 1984",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/docs/internal/CHAT-GENERIC.TEDIT.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T13:29:57Z",
+      "dateModified": "2024-09-23T16:52:25Z"
     },
     {
       "target": "S3S3DFYD",
@@ -10689,6 +10919,150 @@
       "relations": {},
       "dateAdded": "2023-03-27T22:46:55Z",
       "dateModified": "2024-07-14T04:12:30Z"
+    },
+    {
+      "target": "QAMYKTVN",
+      "id": "9296070/QAMYKTVN",
+      "type": "motion_picture",
+      "title": "Colab Cognoter - Reel 3",
+      "abstract": "Colab Cognoter - Reel 3. \nGregg Foster, Colab project.",
+      "language": "English",
+      "issued": {
+        "date-parts": [
+          [
+            "1984"
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2024,
+            2,
+            18
+          ]
+        ]
+      },
+      "key": "QAMYKTVN",
+      "version": 7742,
+      "itemType": "videoRecording",
+      "creators": [],
+      "videoRecordingFormat": "",
+      "seriesTitle": "",
+      "volume": "",
+      "numberOfVolumes": "",
+      "place": "",
+      "studio": "",
+      "date": ">1984?",
+      "runningTime": "",
+      "ISBN": "",
+      "shortTitle": "",
+      "url": "http://archive.org/details/xerox-parc_V-30",
+      "accessDate": "2024-02-18T21:08:22Z",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Internet Archive",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "CoLab"
+        },
+        {
+          "tag": "Collaborative Computing",
+          "type": 1
+        },
+        {
+          "tag": "Interlisp-D",
+          "type": 1
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "groupware",
+          "type": 1
+        }
+      ],
+      "collections": [
+        "8L58VACY"
+      ],
+      "relations": {},
+      "dateAdded": "2024-02-18T21:08:22Z",
+      "dateModified": "2024-07-14T04:12:09Z"
+    },
+    {
+      "target": "LIW9WNCY",
+      "id": "9296070/LIW9WNCY",
+      "type": "motion_picture",
+      "title": "Colab Cognoter Demo - Reel 1",
+      "abstract": "Colab Cognoter Demo - Reel 1.\nGregg Foster, Colab project.",
+      "language": "English",
+      "issued": {
+        "date-parts": [
+          [
+            "1984"
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2024,
+            2,
+            18
+          ]
+        ]
+      },
+      "key": "LIW9WNCY",
+      "version": 7742,
+      "itemType": "videoRecording",
+      "creators": [],
+      "videoRecordingFormat": "",
+      "seriesTitle": "",
+      "volume": "",
+      "numberOfVolumes": "",
+      "place": "",
+      "studio": "",
+      "date": ">1984?",
+      "runningTime": "",
+      "ISBN": "",
+      "shortTitle": "",
+      "url": "http://archive.org/details/xerox-parc_V-28",
+      "accessDate": "2024-02-18T21:06:29Z",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Internet Archive",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "CoLab"
+        },
+        {
+          "tag": "Collaborative Computing",
+          "type": 1
+        },
+        {
+          "tag": "Interlisp-D",
+          "type": 1
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "groupware",
+          "type": 1
+        }
+      ],
+      "collections": [
+        "8L58VACY"
+      ],
+      "relations": {},
+      "dateAdded": "2024-02-18T21:06:42Z",
+      "dateModified": "2024-09-23T16:56:19Z"
     },
     {
       "target": "GI8MCHKF",
@@ -11781,6 +12155,56 @@
       },
       "dateAdded": "2021-04-16T04:08:28Z",
       "dateModified": "2024-09-04T13:06:22Z"
+    },
+    {
+      "target": "ARPJPUZE",
+      "id": "9296070/ARPJPUZE",
+      "type": "article",
+      "title": "Errors and related matters in CommonLoops - A Proposal",
+      "publisher": "Xerox Corporation",
+      "abstract": "This proposal represents an attempt to provide a set of control primatives for CommonLoops which will\n1) Support the existing Interlisp error handling mechanisms (including ERROR and friends, ERRORSET and friends, RESETLST and friends, ERRORTYPELST, BREAKCHECK and its consequences, and the relationships between ERRORX, FAULT1 and BREAK1, all in the context of spaghetti stacks and the existing process mechanisms;\n2) Support the CommonLisp constructs catch, throw, unwindprotect, the relationship of unwindprotect to go and return(-from), error, cerror and warn;\n3) Substantially reproduce the functionality of the ZetaLisp signalling facility;\n4) Be a reasonably plausible attempt to take the high ground wrt whatever proposals the CommonLisp working party on error handling come up with;\n5) Be a Good Thing in its own right.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Thompson, Henry",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1985",
+            8,
+            11
+          ]
+        ]
+      },
+      "key": "ARPJPUZE",
+      "version": 7746,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Thompson, Henry"
+        }
+      ],
+      "date": "11 August 1985",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/12-NScS7z-A2O9fzxISyN4Jdmt6ua0C-S/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T13:33:54Z",
+      "dateModified": "2023-11-20T13:38:01Z"
     },
     {
       "target": "NVDTZ3L2",
@@ -17923,6 +18347,56 @@
       "dateModified": "2024-09-04T16:32:30Z"
     },
     {
+      "target": "U5Y98KHM",
+      "id": "9296070/U5Y98KHM",
+      "type": "article",
+      "title": "EVERYTHING YOU WANTED TO KNOW ABOUT THE AR DATA BASE BUT WERE AFRAID TO QUERY",
+      "publisher": "Xerox Corporation",
+      "abstract": "The Action Request data base is the primary vehicle through which the state of Xerox Lisp, including outstanding problems, requested features, and the like, is tracked.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Kohlsaat, Kat",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1988",
+            3,
+            9
+          ]
+        ]
+      },
+      "key": "U5Y98KHM",
+      "version": 7748,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Kohlsaat, Kat"
+        }
+      ],
+      "date": "9 March 1988",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/docs/internal/AR-How-To-Edit.tedit.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T12:43:35Z",
+      "dateModified": "2024-09-23T16:58:35Z"
+    },
+    {
       "target": "CC6LYBJJ",
       "id": "9296070/CC6LYBJJ",
       "type": "paper-conference",
@@ -18862,6 +19336,56 @@
       },
       "dateAdded": "2021-04-25T19:54:45Z",
       "dateModified": "2024-09-02T02:23:42Z"
+    },
+    {
+      "target": "WLPGWJD6",
+      "id": "9296070/WLPGWJD6",
+      "type": "article",
+      "title": "Array Space: Misc Notes",
+      "publisher": "Xerox Corporation",
+      "abstract": "Email with a short note on the Interlisp-D function \\COUNTREALPAGES.",
+      "language": "English",
+      "author": [
+        {
+          "family": "van Melle, Bill",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1989",
+            4,
+            3
+          ]
+        ]
+      },
+      "key": "WLPGWJD6",
+      "version": 7716,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "van Melle, Bill"
+        }
+      ],
+      "date": "3 April 1989",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/docs/internal/Array-Space.TEdit.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T12:49:56Z",
+      "dateModified": "2024-09-23T16:48:57Z"
     },
     {
       "target": "WIVA4TM3",
@@ -33264,6 +33788,81 @@
   ],
   "Undated": [
     {
+      "target": "EZK52S4L",
+      "id": "9296070/EZK52S4L",
+      "type": "article",
+      "title": "1982 BUGS",
+      "abstract": "Collection of 1982 emails reporting and discussing Interlisp-D bugs and system performance issues.",
+      "language": "English",
+      "key": "EZK52S4L",
+      "version": 7705,
+      "itemType": "document",
+      "creators": [],
+      "publisher": "",
+      "date": "",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/docs/internal/1982BUGS.TEDIT.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T12:29:45Z",
+      "dateModified": "2024-09-23T16:41:42Z"
+    },
+    {
+      "target": "57LCUIDE",
+      "id": "9296070/57LCUIDE",
+      "type": "article",
+      "title": "A proposed design for big bitmaps (for Maiko Color (aka Kaleidoscope))",
+      "publisher": "Envos Corporation",
+      "abstract": "Here's a proposed design for big bitmaps (for Maiko Color).",
+      "language": "English",
+      "author": [
+        {
+          "family": "shih:mv:envos",
+          "given": ""
+        }
+      ],
+      "key": "57LCUIDE",
+      "version": 7705,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "shih:mv:envos"
+        }
+      ],
+      "date": "",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/docs/internal/BigBitmaps.TEdit.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        }
+      ],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T12:54:10Z",
+      "dateModified": "2024-09-23T16:42:09Z"
+    },
+    {
       "target": "AHWN95Z6",
       "id": "9296070/AHWN95Z6",
       "type": "article",
@@ -33293,6 +33892,67 @@
       "relations": {},
       "dateAdded": "2023-11-23T13:07:11Z",
       "dateModified": "2024-04-14T12:27:59Z"
+    },
+    {
+      "target": "5MUI5S55",
+      "id": "9296070/5MUI5S55",
+      "type": "article",
+      "title": "CALL-C Specification",
+      "abstract": "The Call-C-Function MISCN opcode. DEFFOREIGN—Define a foreign function for lisp.",
+      "note": "Dead link.",
+      "language": "English",
+      "key": "5MUI5S55",
+      "version": 7722,
+      "itemType": "document",
+      "creators": [],
+      "publisher": "",
+      "date": "",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/docs/internal/CALL-C-SPEC.TEDIT.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Dead link.",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T13:23:43Z",
+      "dateModified": "2024-09-23T16:50:08Z"
+    },
+    {
+      "target": "N8GZR74C",
+      "id": "9296070/N8GZR74C",
+      "type": "article",
+      "title": "DLD-* opcodes",
+      "abstract": "Descriptions of DLD-* opcodes of the Maiko Virtual Machine of Interlisp.",
+      "language": "English",
+      "key": "N8GZR74C",
+      "version": 7744,
+      "itemType": "document",
+      "creators": [],
+      "publisher": "",
+      "date": "",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/docs/internal/DLD.TEDIT.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T13:54:14Z",
+      "dateModified": "2024-09-23T16:57:08Z"
     },
     {
       "target": "KN94D7N7",
@@ -33360,6 +34020,36 @@
       "relations": {},
       "dateAdded": "2023-04-29T15:24:55Z",
       "dateModified": "2023-09-10T00:38:11Z"
+    },
+    {
+      "target": "62CFBRGC",
+      "id": "9296070/62CFBRGC",
+      "type": "article",
+      "title": "Interlisp to Common Lisp Concordia",
+      "abstract": "Table of the Common Lisp equivalents of Interlisp data types and functions.",
+      "language": "English",
+      "key": "62CFBRGC",
+      "version": 7750,
+      "itemType": "document",
+      "creators": [],
+      "publisher": "",
+      "date": "",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/docs/internal/concordia.tedit.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T13:42:55Z",
+      "dateModified": "2024-09-23T16:59:26Z"
     },
     {
       "target": "N7IBB3VW",
