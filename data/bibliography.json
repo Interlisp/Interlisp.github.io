@@ -2872,6 +2872,82 @@
       },
       "dateAdded": "2021-04-15T23:18:51Z",
       "dateModified": "2024-07-24T15:57:28Z"
+    },
+    {
+      "target": "7NHP2RP3",
+      "id": "9296070/7NHP2RP3",
+      "type": "motion_picture",
+      "title": "Languages for Artificial Intelligence   D. Bobrow   B. Raphael Tape 2 of 2",
+      "abstract": "Tape 2 of a recorded lecture and demonstration in Interlisp.",
+      "language": "eng",
+      "author": [
+        {
+          "family": "Bobrow",
+          "given": "Daniel G."
+        },
+        {
+          "family": "Raphael",
+          "given": "Bertram"
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1973",
+            10,
+            29
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2024,
+            2,
+            18
+          ]
+        ]
+      },
+      "key": "7NHP2RP3",
+      "version": 7824,
+      "itemType": "videoRecording",
+      "creators": [
+        {
+          "creatorType": "director",
+          "firstName": "Daniel G.",
+          "lastName": "Bobrow"
+        },
+        {
+          "creatorType": "director",
+          "firstName": "Bertram",
+          "lastName": "Raphael"
+        }
+      ],
+      "videoRecordingFormat": "",
+      "seriesTitle": "",
+      "volume": "",
+      "numberOfVolumes": "",
+      "place": "",
+      "studio": "",
+      "date": "October 29, 1973",
+      "runningTime": "",
+      "ISBN": "",
+      "shortTitle": "",
+      "url": "http://archive.org/details/Languages_for_Artificial_Intelligence_D._Brobrow_B._Raphael_1973-10-29_Tape_2_of",
+      "accessDate": "2024-02-18T21:20:32Z",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Internet Archive",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "JP4FIV7I"
+      ],
+      "relations": {},
+      "dateAdded": "2024-02-18T21:20:32Z",
+      "dateModified": "2024-06-04T22:45:08Z"
     }
   ],
   "1974": [
@@ -8747,8 +8823,10 @@
       "id": "9296070/A94JY5AD",
       "type": "paper-conference",
       "title": "The DIPMETER ADVISOR: Interpretation of Geologic Signals.",
+      "publisher-place": "Vancouver, BC, Canada",
       "page": "846-849",
-      "event": "[No source information available]",
+      "event": "Proceedings of the 7th International Joint Conference on Artificial Intelligence",
+      "event-place": "Vancouver, BC, Canada",
       "abstract": "The DIPMETER ADVISOR program is an application of Al and Expert System techniques to the problem of inferring subsurface geologic structure. It synthesizes techniques developed in two previous lines of work, rulte-based systems and signal understanding programs. This report on the prototype system has four main concerns. First, we describe the task and characterize the various bodies of knowledge required. Second, we describe the design of the system we have built and the level of performance it has currently reached. Third, we use this task as a case study and examine it in the light of other, related efforts, showing how particular characteristics of this problem have dictated a number of design decisions. We consider the character of the interpretation hypotheses generated and the sources of the expertise involved. Finally, we discuss future directions of this early effort. We describe the problem of \"shallow knowledge\" in expert systems and explain why this task appears to provide an attractive setting for exploring the use of deeper models.",
       "shortTitle": "The DIPMETER ADVISOR",
       "author": [
@@ -8791,7 +8869,7 @@
         ]
       },
       "key": "A94JY5AD",
-      "version": 5691,
+      "version": 7761,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -8832,8 +8910,8 @@
       ],
       "date": "1981-01-01",
       "proceedingsTitle": "",
-      "conferenceName": "[No source information available]",
-      "place": "",
+      "conferenceName": "Proceedings of the 7th International Joint Conference on Artificial Intelligence",
+      "place": "Vancouver, BC, Canada",
       "publisher": "",
       "volume": "",
       "pages": "846-849",
@@ -8849,14 +8927,27 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "artifical intelligence"
+        },
+        {
+          "tag": "computational geology"
+        },
+        {
+          "tag": "expert systems"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2022-06-27T01:46:53Z",
-      "dateModified": "2022-06-27T01:46:53Z"
+      "dateModified": "2024-09-25T12:08:22Z"
     },
     {
       "target": "7T3AV4PM",
@@ -8976,7 +9067,7 @@
         ]
       },
       "key": "THYZ7UPH",
-      "version": 5701,
+      "version": 7781,
       "itemType": "report",
       "creators": [
         {
@@ -9004,7 +9095,16 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "text editor"
         }
       ],
       "collections": [
@@ -9013,7 +9113,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-25T19:54:45Z",
-      "dateModified": "2021-06-01T16:08:16Z"
+      "dateModified": "2024-09-25T13:26:40Z"
     }
   ],
   "1982": [
@@ -9512,7 +9612,7 @@
         ]
       },
       "key": "RNAZ2XUW",
-      "version": 5692,
+      "version": 7790,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -9541,7 +9641,25 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Franzlisp"
+        },
+        {
+          "tag": "Interlisp"
+        },
+        {
+          "tag": "KL-ONE"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "VAX"
+        },
+        {
           "tag": "sz"
+        },
+        {
+          "tag": "translation engine"
         }
       ],
       "collections": [
@@ -9550,7 +9668,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T16:00:24Z",
-      "dateModified": "2023-10-30T19:54:27Z"
+      "dateModified": "2024-09-25T13:32:31Z"
     }
   ],
   "1983": [
@@ -10265,6 +10383,43 @@
       "dateModified": "2024-09-18T04:59:56Z"
     },
     {
+      "target": "SEMJZNI7",
+      "id": "9296070/SEMJZNI7",
+      "type": "article",
+      "title": "OSU LOOPS class notebook",
+      "publisher": "Xerox Corporation",
+      "abstract": "The OSU LOOPS class notebook contains the following materials.\n1. three short papers concerning the INTERLISP environment and the LOOPS language [Notebook Section #II],\n2. a set of exercises we will be using throughout the course [Notebook Sections #III - #XIII],\n3. a set of descriptive materials about the TRUCKIN knowledge engineering game [Notebook Section #XIV],\n4. samples of LOOPS gauges [Notebook Section #XV],\n5. samples of LOOPS ClassBrowsers [Notebook Section #XVI],\n6. samples of TRUCKIN game boards [Notebook Section #XVII],\n7. LOOPS summary and manual [Notebook Section #XVIII], and\n8. documentation for the SSI tool [Notebook Section #XIX].",
+      "language": "English",
+      "issued": {
+        "date-parts": [
+          [
+            1983
+          ]
+        ]
+      },
+      "key": "SEMJZNI7",
+      "version": 7826,
+      "itemType": "document",
+      "creators": [],
+      "date": "1983",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/1Q8hlGYLDtBi3bx3Pi9Ffi-2sUPb6a1Kx/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VGNDIGZM"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T10:34:02Z",
+      "dateModified": "2023-11-20T10:40:42Z"
+    },
+    {
       "target": "X8JE697I",
       "id": "9296070/X8JE697I",
       "type": "article-journal",
@@ -10433,7 +10588,7 @@
         ]
       },
       "key": "V3AS6UR5",
-      "version": 5661,
+      "version": 7798,
       "itemType": "blogPost",
       "creators": [
         {
@@ -10467,7 +10622,25 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Loops"
+        },
+        {
           "tag": "Reviewed by SHFT - CSUCI (Joseph Moreno)"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox PARC"
+        },
+        {
+          "tag": "educational"
+        },
+        {
+          "tag": "knowledge programming"
+        },
+        {
+          "tag": "knowledge-based system"
         }
       ],
       "collections": [
@@ -10476,98 +10649,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-10-25T18:52:55Z",
-      "dateModified": "2023-10-04T05:34:07Z"
-    },
-    {
-      "target": "DM2GTMUL",
-      "id": "9296070/DM2GTMUL",
-      "type": "paper-conference",
-      "title": "Why AM and Eurisko Appear to Work",
-      "publisher": "AAAI",
-      "page": "5",
-      "event": "AAAI Conference on Artificial Intelligence, 3",
-      "abstract": "Seven years ago, the AM program was constructed as an experiment in learning by discovery. Its source of power was a large body of heuristics, rules which guided it toward fruitful topics of investigation, toward profitable experiments to perform, toward plausible hypotheses and definitions. Other heuristics evaluated those discoveries for utility and \"interestingness\", and they were added to AM's vocabulary of concepts. AM's ultimate limitation apparently was due to its inability to discover new, powerful, domain-specific heuristics for the various new fields it uncovered. At that time, it seemed straight-forward to simply add Heuretics (the study of heuristics) as one more field in which to let AM explore, observe, define, and develop. That task -- learning new heuristics by discovery -- turned out to be much more difficult than was realized initially, and we have just now achieved some successes at it. Along the way, it became clearer why AM had succeeded in the first place, and why it was so difficult to use the same paradigm to discover new heuristics. This paper discusses those recent insights. They spawn questions about \"where the meaning really resides\" in the concepts discovered by AM. This leads to an appreciation of the crucial and unique role of representation in theory formation, a role involving the relationship between Form and Content.",
-      "language": "en-US",
-      "author": [
-        {
-          "family": "Lenat",
-          "given": "Douglas B."
-        },
-        {
-          "family": "Brown",
-          "given": "John Seely"
-        }
-      ],
-      "issued": {
-        "date-parts": [
-          [
-            1983
-          ]
-        ]
-      },
-      "accessed": {
-        "date-parts": [
-          [
-            2023,
-            11,
-            26
-          ]
-        ]
-      },
-      "key": "DM2GTMUL",
-      "version": 6211,
-      "itemType": "conferencePaper",
-      "creators": [
-        {
-          "creatorType": "author",
-          "firstName": "Douglas B.",
-          "lastName": "Lenat"
-        },
-        {
-          "creatorType": "author",
-          "firstName": "John Seely",
-          "lastName": "Brown"
-        }
-      ],
-      "date": "1983",
-      "proceedingsTitle": "",
-      "conferenceName": "AAAI Conference on Artificial Intelligence, 3",
-      "place": "",
-      "volume": "",
-      "pages": "5",
-      "series": "",
-      "DOI": "",
-      "ISBN": "",
-      "shortTitle": "",
-      "url": "https://aaai.org/papers/00236-aaai83-059-why-am-and-eurisko-appear-to-work/",
-      "accessDate": "2023-11-26T21:00:44Z",
-      "archive": "",
-      "archiveLocation": "",
-      "libraryCatalog": "",
-      "callNumber": "",
-      "rights": "",
-      "extra": "",
-      "tags": [
-        {
-          "tag": "Artificial Intelligence"
-        },
-        {
-          "tag": "Heuristics"
-        },
-        {
-          "tag": "LISP (Computer program language)"
-        },
-        {
-          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
-        }
-      ],
-      "collections": [
-        "MTUXENI8",
-        "RH95QH8N"
-      ],
-      "relations": {},
-      "dateAdded": "2023-11-26T21:00:44Z",
-      "dateModified": "2024-05-29T17:24:59Z"
+      "dateModified": "2024-09-25T14:02:32Z"
     }
   ],
   "1984": [
@@ -11756,6 +11838,156 @@
       "relations": {},
       "dateAdded": "2021-06-02T18:13:23Z",
       "dateModified": "2024-07-31T16:11:29Z"
+    },
+    {
+      "target": "DI3FSLYW",
+      "id": "9296070/DI3FSLYW",
+      "type": "motion_picture",
+      "title": "Trillium: A Design Environment for Copier Interfaces: The System and Its Impact on Design, Tape 1 of 2",
+      "abstract": "Trillium: A Design Environment for Copier Interfaces: The System and Its Impact on Design, Tape 1 of 2",
+      "shortTitle": "Trillium",
+      "language": "English",
+      "author": [
+        {
+          "family": "Austin Henderson",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1984,
+            8,
+            23
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2024,
+            2,
+            18
+          ]
+        ]
+      },
+      "key": "DI3FSLYW",
+      "version": 7836,
+      "itemType": "film",
+      "creators": [
+        {
+          "creatorType": "director",
+          "name": "Austin Henderson"
+        }
+      ],
+      "distributor": "",
+      "date": "1984-08-23",
+      "genre": "",
+      "videoRecordingFormat": "",
+      "runningTime": "",
+      "url": "http://archive.org/details/xerox-parc_V-05",
+      "accessDate": "2024-02-18T21:17:10Z",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Internet Archive",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Interlisp-D",
+          "type": 1
+        },
+        {
+          "tag": "UI design",
+          "type": 1
+        },
+        {
+          "tag": "User interface design",
+          "type": 1
+        }
+      ],
+      "collections": [
+        "SUFS7ZKM"
+      ],
+      "relations": {},
+      "dateAdded": "2024-02-18T21:17:10Z",
+      "dateModified": "2024-02-18T21:17:10Z"
+    },
+    {
+      "target": "MLJCUYRS",
+      "id": "9296070/MLJCUYRS",
+      "type": "motion_picture",
+      "title": "Trillium: A Design Environment for Copier Interfaces: The System and Its Impact on Design, Tape 2 of 2",
+      "abstract": "Trillium: A Design Environment for Copier Interfaces: The System and Its Impact on Design, Tape 2 of 2",
+      "shortTitle": "Trillium",
+      "language": "English",
+      "author": [
+        {
+          "family": "Austin Henderson",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1984,
+            8,
+            23
+          ]
+        ]
+      },
+      "accessed": {
+        "date-parts": [
+          [
+            2024,
+            2,
+            18
+          ]
+        ]
+      },
+      "key": "MLJCUYRS",
+      "version": 7836,
+      "itemType": "film",
+      "creators": [
+        {
+          "creatorType": "director",
+          "name": "Austin Henderson"
+        }
+      ],
+      "distributor": "",
+      "date": "1984-08-23",
+      "genre": "",
+      "videoRecordingFormat": "",
+      "runningTime": "",
+      "url": "http://archive.org/details/xerox-parc_V-06",
+      "accessDate": "2024-02-18T21:17:19Z",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Internet Archive",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Interlisp-D",
+          "type": 1
+        },
+        {
+          "tag": "UI design",
+          "type": 1
+        },
+        {
+          "tag": "User interface design",
+          "type": 1
+        }
+      ],
+      "collections": [
+        "SUFS7ZKM"
+      ],
+      "relations": {},
+      "dateAdded": "2024-02-18T21:17:19Z",
+      "dateModified": "2024-02-18T21:17:19Z"
     },
     {
       "target": "7G8QMM8L",
@@ -13286,6 +13518,56 @@
       "dateModified": "2023-10-30T18:35:02Z"
     },
     {
+      "target": "5ZYWGR7B",
+      "id": "9296070/5ZYWGR7B",
+      "type": "article",
+      "title": "The Implementation of Device-Independent Graphics Through Imagestreams",
+      "publisher": "Xerox Corporation",
+      "abstract": "The Interlisp-D system does all image creation through a set of functions and data structures for device-independent graphics, known popularly as DIG. DIG is achieved throught the use of a special flavor of stream, known as an imagestream.\n\nAn imagestream, by convention, is any stream that has its IMAGEOPS field (described in detail below) set to a vector of meaningful graphical operations. Using imagestreams, we can write programs that draw and print on an output stream without regard to the underlying device, be it window, disk, Dover, 8044 or Diablo printers.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Jellinek, Herb",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1985",
+            2,
+            26
+          ]
+        ]
+      },
+      "key": "5ZYWGR7B",
+      "version": 7833,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Jellinek, Herb"
+        }
+      ],
+      "date": "26 February 1985",
+      "shortTitle": "",
+      "url": "",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T13:47:43Z",
+      "dateModified": "2024-09-05T00:22:28Z"
+    },
+    {
       "target": "HCV56HY7",
       "id": "9296070/HCV56HY7",
       "type": "article-journal",
@@ -13374,6 +13656,7 @@
       "page": "565-571",
       "volume": "17",
       "issue": "5",
+      "abstract": "WORDPRO, a computer program written in Interlisp-D, implements Kintsch and Greeno's (1985) theory of the comprehension and solution of simple arithmetic word problems. The program is intended to demonstrate the sufficiency of that theory, to assist in communicating it to other researchers, and to serve as a tool for exploring the theory's consequences. In this paper, I address each of these goals. I describe the behavior of WORDPRO on a set of sample problems, show how empirical predictions are derived from it, and provide enough details of its implementation to allow other researchers to understand its output and (with the internal documentation) to test and modify it to meet their needs.",
       "DOI": "10.3758/BF03207654",
       "shortTitle": "Understanding and solving arithmetic word problems",
       "journalAbbreviation": "Behavior Research Methods, Instruments, & Computers",
@@ -13401,7 +13684,7 @@
         ]
       },
       "key": "MVHYRDBF",
-      "version": 5692,
+      "version": 7804,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -13425,14 +13708,30 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "WORDPRO"
+        },
+        {
+          "tag": "knowledge structures"
+        },
+        {
+          "tag": "mathematics"
+        },
+        {
+          "tag": "research"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2022-08-04T23:58:38Z",
-      "dateModified": "2022-08-04T23:58:38Z"
+      "dateModified": "2024-09-25T14:08:45Z"
     }
   ],
   "1986": [
@@ -13603,6 +13902,44 @@
       "relations": {},
       "dateAdded": "2024-05-21T18:34:16Z",
       "dateModified": "2024-09-01T14:49:05Z"
+    },
+    {
+      "target": "NCGGAYKX",
+      "id": "9296070/NCGGAYKX",
+      "type": "article",
+      "title": "A USER’S GUIDE TO LAFITE: THE INTERLISP MAIL SYSTEM",
+      "publisher": "Xerox Corporation",
+      "abstract": "This manual is designed to help you use Lafite. It assumes you understand the basic principles of using your Xerox Lisp workstation and the Interlisp-D environment.",
+      "issued": {
+        "date-parts": [
+          [
+            "1986",
+            1
+          ]
+        ]
+      },
+      "key": "NCGGAYKX",
+      "version": 7706,
+      "itemType": "document",
+      "creators": [],
+      "date": "January 1986",
+      "language": "",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/1TBP03LKqBOJXNoilAgIEFPA5qkZCcVN1/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-18T10:58:32Z",
+      "dateModified": "2023-11-18T12:18:21Z"
     },
     {
       "target": "3VK4IB8T",
@@ -13937,6 +14274,57 @@
       "relations": {},
       "dateAdded": "2021-05-29T20:21:43Z",
       "dateModified": "2024-07-17T17:14:43Z"
+    },
+    {
+      "target": "49TBVYCE",
+      "id": "9296070/49TBVYCE",
+      "type": "article",
+      "title": "CACHEOBJECT",
+      "publisher": "Xerox Corporation",
+      "abstract": "The file CACHEOBJECT defines a Loops mixin that defines a protocol for instances that cache computed values.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Lanning, Stan",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1986",
+            9,
+            4
+          ]
+        ]
+      },
+      "key": "49TBVYCE",
+      "version": 7489,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Lanning, Stan"
+        }
+      ],
+      "date": "4 September 1986",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/1xcI0b9HgN_KHuvN7DrlAZBfJY3o2d3m8/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "H4WH7B9H",
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-29T12:07:48Z",
+      "dateModified": "2023-11-29T12:09:04Z"
     },
     {
       "target": "YR58NY6F",
@@ -14905,7 +15293,7 @@
         ]
       },
       "key": "GZU4TBQ5",
-      "version": 6477,
+      "version": 7827,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -14921,7 +15309,7 @@
       ],
       "publicationTitle": "Science",
       "pages": "8",
-      "date": "Februrary 28, 1986",
+      "date": "February 28, 1986",
       "series": "",
       "seriesTitle": "",
       "seriesText": "",
@@ -14968,7 +15356,7 @@
         "dc:replaces": "http://zotero.org/groups/2914042/items/9LHKWE3T"
       },
       "dateAdded": "2022-07-04T20:14:17Z",
-      "dateModified": "2024-06-20T05:39:29Z"
+      "dateModified": "2024-09-25T17:04:54Z"
     },
     {
       "target": "GWU6SW5W",
@@ -15464,10 +15852,20 @@
       "type": "article-journal",
       "title": "The information lens: an intelligent system for information sharing in organizations",
       "container-title": "CHI '86: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
+      "abstract": "This paper describes an intelligent system to help\npeople share and filter information\ncommunicated by computer-based messaging\nsystems. The system exploits concepts from\nartificial intelligence such as frames, production\nrules, and inheritance networks, but it avoids the\nunsolved problems of natural language\nunderstanding by providing users with a rich set\nof semi-structured message templates. A\nconsistent set of “direct manipulation” editors\nsimplifies the use of the system by individuals,\nand an incremental enhancement path simplifies\nthe adoption of the system by groups.",
+      "DOI": "10.1145/22339.22340",
       "author": [
         {
           "family": "Malone",
           "given": "Thomas"
+        },
+        {
+          "family": "Grant",
+          "given": "Kenneth R."
+        },
+        {
+          "family": "Turbak",
+          "given": "Franklyn A."
         }
       ],
       "issued": {
@@ -15479,13 +15877,23 @@
         ]
       },
       "key": "TRSK7UQK",
-      "version": 5699,
+      "version": 7775,
       "itemType": "journalArticle",
       "creators": [
         {
           "creatorType": "author",
           "firstName": "Thomas",
           "lastName": "Malone"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Kenneth R.",
+          "lastName": "Grant"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Franklyn A.",
+          "lastName": "Turbak"
         }
       ],
       "publicationTitle": "CHI '86: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
@@ -15498,7 +15906,6 @@
       "seriesText": "",
       "journalAbbreviation": "",
       "language": "",
-      "DOI": "",
       "ISSN": "",
       "shortTitle": "",
       "url": "https://dl.acm.org/doi/10.1145/22627.22340",
@@ -15509,14 +15916,24 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "information sharing"
+        },
+        {
+          "tag": "messaging systems"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2023-11-10T02:18:20Z",
-      "dateModified": "2023-11-10T02:20:48Z"
+      "dateModified": "2024-09-25T12:43:28Z"
     }
   ],
   "1987": [
@@ -15663,6 +16080,82 @@
       "relations": {},
       "dateAdded": "2023-09-15T11:29:28Z",
       "dateModified": "2024-09-01T15:04:26Z"
+    },
+    {
+      "target": "H69PBN8I",
+      "id": "9296070/H69PBN8I",
+      "type": "article",
+      "title": "A User's Guide to Sketch",
+      "publisher": "Xerox Corporation",
+      "abstract": "A user's guide that shows how to use Sketch both by drawing shapes in a window and by manipulating Sketch using the programmatic interface.",
+      "language": "English",
+      "issued": {
+        "date-parts": [
+          [
+            "1987",
+            6
+          ]
+        ]
+      },
+      "key": "H69PBN8I",
+      "version": 7708,
+      "itemType": "document",
+      "creators": [],
+      "date": "June 1987",
+      "shortTitle": "",
+      "url": "https://drive.google.com/drive/folders/1rNWFHe4ByxvdxY9ZcnL0rIJac8sjp8xe?usp=drive_link",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T10:20:43Z",
+      "dateModified": "2023-11-20T10:24:57Z"
+    },
+    {
+      "target": "575N32VI",
+      "id": "9296070/575N32VI",
+      "type": "article",
+      "title": "A User's Guide to TEdit",
+      "publisher": "Xerox Corporation",
+      "abstract": "The objective of this user's guide is to show you how to use TEdit both by typing text to a window and by manipulating TEdit using the programmatic interface.",
+      "language": "English",
+      "issued": {
+        "date-parts": [
+          [
+            "1987",
+            6
+          ]
+        ]
+      },
+      "key": "575N32VI",
+      "version": 7708,
+      "itemType": "document",
+      "creators": [],
+      "date": "June 1987",
+      "shortTitle": "",
+      "url": "https://drive.google.com/drive/folders/1ptvlX6ZEXsY6uL8qiNC4aaMpGsbqJ9RB?usp=drive_link",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T10:12:58Z",
+      "dateModified": "2023-11-20T10:20:33Z"
     },
     {
       "target": "EA3EKFV7",
@@ -17021,6 +17514,71 @@
       "dateModified": "2024-04-14T12:39:17Z"
     },
     {
+      "target": "9MDNLLV9",
+      "id": "9296070/9MDNLLV9",
+      "type": "article",
+      "title": "TKDORADO",
+      "abstract": "TKDorado makes the full range of TEditKey commands available from the Dorado keyboard.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Dixon, Mike",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            1987
+          ]
+        ]
+      },
+      "key": "9MDNLLV9",
+      "version": 7452,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Dixon, Mike"
+        }
+      ],
+      "publisher": "",
+      "date": "1987",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/lispusers/tkdorado.tedit.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "TEdit"
+        },
+        {
+          "tag": "TEdit file"
+        },
+        {
+          "tag": "documentation"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H",
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-12-04T11:43:45Z",
+      "dateModified": "2024-07-24T17:18:55Z"
+    },
+    {
       "target": "3W2WQS2B",
       "id": "9296070/3W2WQS2B",
       "type": "article-journal",
@@ -17252,7 +17810,7 @@
         ]
       },
       "key": "8CFC7VH5",
-      "version": 5703,
+      "version": 7761,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -17281,6 +17839,27 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox 1100"
+        },
+        {
+          "tag": "artifical intelligence"
+        },
+        {
+          "tag": "computational geology"
+        },
+        {
+          "tag": "expert systems"
+        },
+        {
+          "tag": "implementation"
+        },
+        {
+          "tag": "knowledge-based system"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -17290,7 +17869,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-15T23:03:04Z",
-      "dateModified": "2021-06-02T17:37:02Z"
+      "dateModified": "2024-09-25T12:08:37Z"
     },
     {
       "target": "EFHC285D",
@@ -19069,6 +19648,44 @@
       "dateModified": "2024-01-17T12:35:40Z"
     },
     {
+      "target": "YQG25VQW",
+      "id": "9296070/YQG25VQW",
+      "type": "article",
+      "title": "ROOMS",
+      "publisher": "Envos Corporation",
+      "abstract": "The purpose of this manual is to give you a comprehensive guide to using ROOMS at both the menu level and programmatically. This manual includes a Programmer's Guide that lets you take the cover off a little (well tilt it up anyway).",
+      "language": "English",
+      "issued": {
+        "date-parts": [
+          [
+            "1988",
+            9
+          ]
+        ]
+      },
+      "key": "YQG25VQW",
+      "version": 7831,
+      "itemType": "document",
+      "creators": [],
+      "date": "September 1988",
+      "shortTitle": "",
+      "url": "https://github.com/Interlisp/medley/blob/gh-pages/rooms/rooms-manual.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-18T11:06:52Z",
+      "dateModified": "2024-04-13T10:27:12Z"
+    },
+    {
       "target": "9RRR7G7F",
       "id": "9296070/9RRR7G7F",
       "type": "article-journal",
@@ -19755,6 +20372,56 @@
       "dateModified": "2021-06-03T19:14:16Z"
     },
     {
+      "target": "TX942AKS",
+      "id": "9296070/TX942AKS",
+      "type": "article",
+      "title": "Places that use hiloc/loloc and what for",
+      "publisher": "Xerox Corporation",
+      "abstract": "Email message reporting on an investigation on where functions HILOC and LOWLOC are called in Interlisp-D and what they are used for.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Snow, Will",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "date-parts": [
+          [
+            "1989",
+            1,
+            23
+          ]
+        ]
+      },
+      "key": "TX942AKS",
+      "version": 7828,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Snow, Will"
+        }
+      ],
+      "date": "23 January 1989",
+      "shortTitle": "",
+      "url": "https://github.com/Interlisp/medley/blob/gh-pages/docs/internal/ADDRESSSENSITIVEFNS.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T12:37:56Z",
+      "dateModified": "2024-04-13T10:26:32Z"
+    },
+    {
       "target": "GPMCN5XC",
       "id": "9296070/GPMCN5XC",
       "type": "paper-conference",
@@ -19797,7 +20464,7 @@
         ]
       },
       "key": "GPMCN5XC",
-      "version": 5685,
+      "version": 7779,
       "itemType": "conferencePaper",
       "creators": [
         {
@@ -19845,14 +20512,27 @@
       "callNumber": "",
       "rights": "",
       "extra": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "IBM PC"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "computational chemistry"
+        },
+        {
+          "tag": "expert systems"
+        }
+      ],
       "collections": [
         "MTUXENI8",
         "RH95QH8N"
       ],
       "relations": {},
       "dateAdded": "2022-06-29T19:34:03Z",
-      "dateModified": "2023-10-30T20:13:20Z"
+      "dateModified": "2024-09-25T12:46:04Z"
     }
   ],
   "1990": [
@@ -21050,7 +21730,7 @@
         ]
       },
       "key": "KXVS2RBT",
-      "version": 5662,
+      "version": 7811,
       "itemType": "patent",
       "creators": [
         {
@@ -21089,24 +21769,19 @@
       "extra": "",
       "tags": [
         {
-          "tag": "accessing",
-          "type": 1
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
         },
         {
-          "tag": "data",
-          "type": 1
+          "tag": "data structures"
         },
         {
-          "tag": "display",
-          "type": 1
+          "tag": "display systems"
         },
         {
-          "tag": "objects",
-          "type": 1
+          "tag": "illustration"
         },
         {
-          "tag": "workspace",
-          "type": 1
+          "tag": "user interface"
         }
       ],
       "collections": [
@@ -21115,7 +21790,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-06-01T15:46:49Z",
-      "dateModified": "2021-07-06T19:43:28Z"
+      "dateModified": "2024-09-25T14:17:18Z"
     }
   ],
   "1992": [
@@ -21855,7 +22530,7 @@
         ]
       },
       "key": "GTHVJ545",
-      "version": 5659,
+      "version": 7817,
       "itemType": "patent",
       "creators": [
         {
@@ -21884,6 +22559,18 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "User interface design"
+        },
+        {
+          "tag": "data structures"
+        },
+        {
+          "tag": "illustration"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -21893,7 +22580,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-16T21:57:07Z",
-      "dateModified": "2021-06-01T20:55:21Z"
+      "dateModified": "2024-09-25T14:19:10Z"
     }
   ],
   "1993": [
@@ -22331,6 +23018,47 @@
       "relations": {},
       "dateAdded": "2023-11-17T12:06:31Z",
       "dateModified": "2023-11-17T12:10:20Z"
+    },
+    {
+      "target": "W8WWBLYA",
+      "id": "9296070/W8WWBLYA",
+      "type": "article",
+      "title": "Medley for DOS User's Guide",
+      "publisher": "Venue Corporation",
+      "abstract": "This Guide describes Medley release 2.01 for DOS: The release contents, instructions for installing the release, and information on using it.",
+      "note": "Software Version: Medley 2.01 for MS-DOS\nSoftware Version Certainty: Stated in Preface on page v",
+      "language": "English",
+      "issued": {
+        "date-parts": [
+          [
+            "1993",
+            3
+          ]
+        ]
+      },
+      "key": "W8WWBLYA",
+      "version": 7825,
+      "itemType": "document",
+      "creators": [],
+      "date": "March 1993",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/1tYqeUOprNMfiTyPnZWLVb1WCSTn-JqSR/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "Software Version: Medley 2.01 for MS-DOS\nSoftware Version Certainty: Stated in Preface on page v",
+      "tags": [],
+      "collections": [
+        "ATGZ3WVE"
+      ],
+      "relations": {
+        "dc:relation": "http://zotero.org/groups/2914042/items/2ANNV4RG"
+      },
+      "dateAdded": "2023-11-19T17:07:47Z",
+      "dateModified": "2023-11-19T17:12:07Z"
     },
     {
       "target": "78B7IS7F",
@@ -27556,7 +28284,7 @@
         ]
       },
       "key": "4QGNIKFU",
-      "version": 5661,
+      "version": 7821,
       "itemType": "journalArticle",
       "creators": [
         {
@@ -27584,6 +28312,18 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Computational linguistics"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "history"
+        },
+        {
+          "tag": "natural language processing"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -27593,7 +28333,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-04-15T23:18:51Z",
-      "dateModified": "2021-06-01T15:39:14Z"
+      "dateModified": "2024-09-25T14:20:24Z"
     }
   ],
   "2008": [
@@ -28898,7 +29638,7 @@
         ]
       },
       "key": "MJP8UYEV",
-      "version": 5661,
+      "version": 7797,
       "itemType": "videoRecording",
       "creators": [
         {
@@ -28927,6 +29667,18 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox PARC"
+        },
+        {
+          "tag": "education"
+        },
+        {
+          "tag": "knowledge programming"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -28936,7 +29688,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-17T22:01:48Z",
-      "dateModified": "2023-10-30T19:25:18Z"
+      "dateModified": "2024-09-25T14:02:13Z"
     }
   ],
   "2012": [
@@ -31245,50 +31997,6 @@
       "dateModified": "2021-06-01T15:46:04Z"
     },
     {
-      "target": "379EU7V9",
-      "id": "9296070/379EU7V9",
-      "type": "webpage",
-      "title": "Wayback Machine",
-      "issued": {
-        "date-parts": [
-          [
-            2018,
-            7,
-            27
-          ]
-        ]
-      },
-      "accessed": {
-        "date-parts": [
-          [
-            2022,
-            8,
-            5
-          ]
-        ]
-      },
-      "key": "379EU7V9",
-      "version": 5674,
-      "itemType": "webpage",
-      "creators": [],
-      "websiteTitle": "",
-      "websiteType": "",
-      "date": "2018-07-27",
-      "shortTitle": "",
-      "url": "https://web.archive.org/web/20180727023132/https://link.springer.com/content/pdf/10.3758%2FBF03207654.pdf",
-      "accessDate": "2022-08-05T00:10:05Z",
-      "language": "",
-      "rights": "",
-      "extra": "",
-      "tags": [],
-      "collections": [
-        "MTUXENI8"
-      ],
-      "relations": {},
-      "dateAdded": "2022-08-05T00:10:05Z",
-      "dateModified": "2024-02-12T03:36:23Z"
-    },
-    {
       "target": "XYRSF7QU",
       "id": "9296070/XYRSF7QU",
       "type": "paper-conference",
@@ -33025,7 +33733,7 @@
       "publisher": "ACM SIGCHI",
       "publisher-place": "Toronto, Canada",
       "event-place": "Toronto, Canada",
-      "abstract": "An intelligent system for information sharing and coordination (subtitle from the video)\n\nPublished in two videotapes: issue 27, and issue 33-34 of ACM SIGGRAPH Video Review (issue 27 appeared in same tape as issue 26, i.e. the CHI '87 Electronic Theater).\nVideo Chair: Richard J. Beach (Xerox PARC)\nLocation: Toronto, Canada",
+      "abstract": "An intelligent system for information sharing and coordination.\n\nPublished in two videotapes: issue 27, and issue 33-34 of ACM SIGGRAPH Video Review (issue 27 appeared in same tape as issue 26, i.e. the CHI '87 Electronic Theater).\nVideo Chair: Richard J. Beach (Xerox PARC)\nLocation: Toronto, Canada",
       "author": [
         {
           "family": "Malone",
@@ -33051,7 +33759,7 @@
         ]
       },
       "key": "ITWWEVAK",
-      "version": 5699,
+      "version": 7774,
       "itemType": "videoRecording",
       "creators": [
         {
@@ -33081,6 +33789,24 @@
       "extra": "",
       "tags": [
         {
+          "tag": "Interlisp-D"
+        },
+        {
+          "tag": "LOOPS"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox 1100"
+        },
+        {
+          "tag": "messaging systems"
+        },
+        {
+          "tag": "network systems"
+        },
+        {
           "tag": "sz"
         }
       ],
@@ -33090,7 +33816,7 @@
       ],
       "relations": {},
       "dateAdded": "2021-05-02T21:24:46Z",
-      "dateModified": "2023-10-30T19:21:52Z"
+      "dateModified": "2024-09-25T12:35:47Z"
     }
   ],
   "2022": [
@@ -33925,6 +34651,36 @@
       "dateModified": "2024-09-23T16:50:08Z"
     },
     {
+      "target": "Q32AWAGR",
+      "id": "9296070/Q32AWAGR",
+      "type": "article",
+      "title": "CLOS BROWSER",
+      "abstract": "User manual of the CLOS class browser.",
+      "language": "English",
+      "key": "Q32AWAGR",
+      "version": 7739,
+      "itemType": "document",
+      "creators": [],
+      "publisher": "",
+      "date": "",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/clos/CLOS-BROWSER.TEDIT.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T12:19:35Z",
+      "dateModified": "2024-09-23T16:54:28Z"
+    },
+    {
       "target": "N8GZR74C",
       "id": "9296070/N8GZR74C",
       "type": "article",
@@ -34075,6 +34831,204 @@
       "relations": {},
       "dateAdded": "2023-08-26T16:22:27Z",
       "dateModified": "2023-08-26T16:22:27Z"
+    },
+    {
+      "target": "3CITKSHC",
+      "id": "9296070/3CITKSHC",
+      "type": "article",
+      "title": "Interlisp-D fixed allocations: conversion to Intermezzo",
+      "abstract": "Table of Interlisp-D system data structure sizes.",
+      "language": "English",
+      "key": "3CITKSHC",
+      "version": 7822,
+      "itemType": "document",
+      "creators": [],
+      "publisher": "",
+      "date": "",
+      "shortTitle": "",
+      "url": "https://github.com/Interlisp/medley/blob/gh-pages/docs/internal/32MBADDRESSSPACELAYOUT.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "VBYCUT7Y"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-20T12:25:31Z",
+      "dateModified": "2024-04-13T10:20:00Z"
+    },
+    {
+      "target": "4EXTB254",
+      "id": "9296070/4EXTB254",
+      "type": "article",
+      "title": "LISP USERS’ TEMPLATE",
+      "publisher": "Xerox Corporation",
+      "abstract": "This document provides a template and instructions for formatting the Lisp Users’ module documentation. This template applies primarily to standalone workstation users. Using the Lisp Library module TEdit, and this document, you should be able to create a standard Lisp Users’ module for the Lisp Users’ manual. This document gives you the written specifications for formatting your document. The specifications are given in the order in which you would most likely use them to format a document, with the basic text and margins described first, then the various levels of headings, then special elements such as page numbers.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Biggs, Melissa",
+          "given": ""
+        }
+      ],
+      "key": "4EXTB254",
+      "version": 7454,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Biggs, Melissa"
+        }
+      ],
+      "date": "",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/1-wFLRv7IefWAqG9iH0RZ-YokxuOi06pP/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "TEdit file"
+        },
+        {
+          "tag": "needs date"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H",
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-25T13:36:46Z",
+      "dateModified": "2024-07-24T17:17:08Z"
+    },
+    {
+      "target": "UB73FJTP",
+      "id": "9296070/UB73FJTP",
+      "type": "article",
+      "title": "LOOPS-FB",
+      "publisher": "Xerox Corporation",
+      "abstract": "LOOPS-FB adds a command to the Lisp File Browsers for opening Loops browsers on files.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Lanning, Stan",
+          "given": ""
+        }
+      ],
+      "key": "UB73FJTP",
+      "version": 7453,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Lanning, Stan"
+        }
+      ],
+      "date": "",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/1wlXlOHD1mCMezLJuHaCLnzYgoO61b0_q/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "LOOPS"
+        },
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H",
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-29T12:10:11Z",
+      "dateModified": "2024-07-24T16:04:56Z"
+    },
+    {
+      "target": "FHQDFEU2",
+      "id": "9296070/FHQDFEU2",
+      "type": "article",
+      "title": "LispNerd",
+      "publisher": "Xerox Corporation",
+      "abstract": "Documentation of a LispUsers module. The LispNerd provides a menu-based interface to the Interlisp Reference Manual.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Maxwell, John",
+          "given": ""
+        }
+      ],
+      "issued": {
+        "literal": "https://drive.google.com/file/d/128Rh2ZvCkpMKIQovru-ojnXsuw-XRCgR/view?usp=sharing"
+      },
+      "key": "FHQDFEU2",
+      "version": 7455,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Maxwell, John"
+        }
+      ],
+      "date": "https://drive.google.com/file/d/128Rh2ZvCkpMKIQovru-ojnXsuw-XRCgR/view?usp=sharing",
+      "shortTitle": "",
+      "url": "https://drive.google.com/file/d/128Rh2ZvCkpMKIQovru-ojnXsuw-XRCgR/view?usp=sharing",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "TEdit file"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "reference manual"
+        }
+      ],
+      "collections": [
+        "H4WH7B9H",
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-26T16:14:51Z",
+      "dateModified": "2024-07-24T16:50:41Z"
     },
     {
       "target": "BN67LP42",
@@ -34401,6 +35355,92 @@
       "dateModified": "2024-04-14T12:38:39Z"
     },
     {
+      "target": "ESYD2MQR",
+      "id": "9296070/ESYD2MQR",
+      "type": "article-journal",
+      "title": "Semantics of Procedures: A Cognitive Basis for Maintenance Training Competency",
+      "language": "en",
+      "author": [
+        {
+          "family": "Moran",
+          "given": "Thomas D"
+        },
+        {
+          "family": "Russell",
+          "given": "Daniel M"
+        },
+        {
+          "family": "Jordan",
+          "given": "Daniel"
+        },
+        {
+          "family": "Jensen",
+          "given": "Anne-Marie"
+        },
+        {
+          "family": "Orr",
+          "given": "Julian"
+        }
+      ],
+      "key": "ESYD2MQR",
+      "version": 7832,
+      "itemType": "journalArticle",
+      "creators": [
+        {
+          "creatorType": "author",
+          "firstName": "Thomas D",
+          "lastName": "Moran"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Daniel M",
+          "lastName": "Russell"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Daniel",
+          "lastName": "Jordan"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Anne-Marie",
+          "lastName": "Jensen"
+        },
+        {
+          "creatorType": "author",
+          "firstName": "Julian",
+          "lastName": "Orr"
+        }
+      ],
+      "publicationTitle": "",
+      "volume": "",
+      "issue": "",
+      "pages": "",
+      "date": "",
+      "series": "",
+      "seriesTitle": "",
+      "seriesText": "",
+      "journalAbbreviation": "",
+      "DOI": "",
+      "ISSN": "",
+      "shortTitle": "",
+      "url": "",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "Zotero",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [],
+      "collections": [
+        "MTUXENI8"
+      ],
+      "relations": {},
+      "dateAdded": "2024-08-06T22:17:39Z",
+      "dateModified": "2024-08-06T22:17:39Z"
+    },
+    {
       "target": "7KUMIRNC",
       "id": "9296070/7KUMIRNC",
       "type": "article",
@@ -34649,6 +35689,72 @@
       "relations": {},
       "dateAdded": "2022-07-17T17:17:24Z",
       "dateModified": "2024-02-12T03:42:05Z"
+    },
+    {
+      "target": "M2HXTN7J",
+      "id": "9296070/M2HXTN7J",
+      "type": "article",
+      "title": "UNIXMAIL",
+      "abstract": "UNIXMAIL is a new mail sending and receiving mode for Lafite. It sends mail via Unix hosts using the SMTP mail transfer protocol and can receive mail either by reading a Unix mail spool file or by calling the Berkeley mail program.",
+      "language": "English",
+      "author": [
+        {
+          "family": "Bane, Bob",
+          "given": ""
+        }
+      ],
+      "key": "M2HXTN7J",
+      "version": 7427,
+      "itemType": "document",
+      "creators": [
+        {
+          "creatorType": "author",
+          "name": "Bane, Bob"
+        }
+      ],
+      "publisher": "",
+      "date": "",
+      "shortTitle": "",
+      "url": "https://files.interlisp.org/medley/internal/envos/unixmail.tedit.pdf",
+      "accessDate": "",
+      "archive": "",
+      "archiveLocation": "",
+      "libraryCatalog": "",
+      "callNumber": "",
+      "rights": "",
+      "extra": "",
+      "tags": [
+        {
+          "tag": "Lafite"
+        },
+        {
+          "tag": "LispUsers packages"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Eleanor Young)"
+        },
+        {
+          "tag": "TEdit file"
+        },
+        {
+          "tag": "communications"
+        },
+        {
+          "tag": "documentation"
+        },
+        {
+          "tag": "emails"
+        },
+        {
+          "tag": "needs date"
+        }
+      ],
+      "collections": [
+        "MASL2F46"
+      ],
+      "relations": {},
+      "dateAdded": "2023-11-25T10:48:44Z",
+      "dateModified": "2024-07-24T17:13:19Z"
     },
     {
       "target": "A4BWUEHM",
