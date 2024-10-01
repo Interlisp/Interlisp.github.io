@@ -2,7 +2,7 @@
 
 set -e
 
-rawItemsFile=true
+rawItemsFile=false
 debugFiles=false
 tagFiles=false
 typeFiles=false
