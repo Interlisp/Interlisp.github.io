@@ -25,13 +25,26 @@ on:
   push:
     branches:
       - main  # Set a branch to deploy
+
   schedule:
     - cron: "0 3 * * *"
+
+  workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+defaults:
+    run:
+        shell: bash
 
 env:
   # ----------------------------------------------------------------------------
   # Specify the deployment environment:  staging or production
-  hugoEnvironment: production
+  HUGO_ENVIRONMENT: production
+  HUGO_VERSION: 0.133.1
 
 jobs:
   # ----------------------------------------------------------------------------
@@ -42,6 +55,7 @@ jobs:
     outputs:
       zoteroVersion: ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
       cacheHit: ${{ steps.cache-zotero-bib.outputs.cache-hit }}
+
     runs-on: ubuntu-latest
     concurrency:
       group:  ${{ github.workflow }}-${{ github.ref }}
@@ -66,15 +80,18 @@ jobs:
             ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
 
   # ----------------------------------------------------------------------------
-  # Deploy the website.  This job is conditional, we will always run it on a
+  # Build the website.  This job is conditional, we will always run it on a
   # push or if on a scheduled run the cache was determined to be out of date.
   #      
-  deploy:
+  build:
     needs: check
     runs-on: ubuntu-latest
     if:  github.event_name == 'push' || needs.check.outputs.cacheHit != 'true'
     steps:
       - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
 
       - name: Cache Zotero Bibliography
         id: cache-zotero-bib
@@ -102,13 +119,17 @@ jobs:
             ./update_bibliography.sh
             sudo cp --recursive ${GITHUB_WORKSPACE}/static/data ~/data
           fi 
-        shell: bash
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v3
-        with:
-          hugo-version: '0.127.0'
-          extended: true
+      # Install Hugo Extended
+      #    
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb 
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
       - name: Setup Node
         uses: actions/setup-node@v4
@@ -120,11 +141,25 @@ jobs:
       - run: npm install --verbose
 
       - name: Build
-        run: hugo -e $hugoEnvironment
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v4
-        if: github.ref == 'refs/heads/main'
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          TZ: America/New York
+        run: hugo --cleanDestinationDir -e $HUGO_ENVIRONMENT
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      

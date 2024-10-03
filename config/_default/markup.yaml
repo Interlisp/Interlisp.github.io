@@ -14,7 +14,7 @@ goldmark:
 # See:  https://gohugo.io/getting-started/configuration-markup/#highlight
 #       for additional information on configuration options.
 #   https://www.docsy.dev/docs/adding-content/lookandfeel/#code-highlighting-with-chroma
-#       contains Docsy specfiic code highlighting information    
+#       contains Docsy specfic code highlighting information    
 highlight:
   # See a complete list of available styles at https://xyproto.github.io/splash/docs/all.html
   #style: solarized-dark
