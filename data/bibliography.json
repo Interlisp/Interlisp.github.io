@@ -13399,11 +13399,22 @@
             }
           }
         },
+        "lastModifiedByUser": {
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
+          "links": {
+            "alternate": {
+              "href": "https://www.zotero.org/ekaltman",
+              "type": "text/html"
+            }
+          }
+        },
         "creatorSummary": "Stefik",
         "parsedDate": "1979-08",
         "numChildren": 1
       },
-      "version": 6479,
+      "version": 7865,
       "DOI": "10.5555/1623050.1623105",
       "ISBN": "0-8657-058-6",
       "abstract": "The Unit Package is an interactive knowledge representation system with representations for individuals, classes, indefinite individuals, and abstractions. Links between the nodes are structured with explicit definitional roles, types of inheritance, defaults, and various data formats. This paper presents the general ideas of the Unit Package and compares it with other current knowledge representation languages. The Unit Package was created for a hierarchical planning application, and is now in use by several Al projects.",
@@ -13418,8 +13429,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "8MSYRKQA",
-        "VGNDIGZM"
+        "8MSYRKQA"
       ],
       "conferenceName": "Sixth International Joint Conference on Artificial Intelligence",
       "container-title": "Proceedings of the Sixth International Joint Conference on Artificial Intelligence",
@@ -13432,7 +13442,7 @@
       ],
       "date": "August, 1979",
       "dateAdded": "2024-05-18T14:17:21Z",
-      "dateModified": "2024-06-20T15:04:12Z",
+      "dateModified": "2024-10-02T17:06:17Z",
       "event": "Sixth International Joint Conference on Artificial Intelligence",
       "event-place": "Tokyo, Japan",
       "extra": "",
@@ -21512,11 +21522,22 @@
             }
           }
         },
+        "lastModifiedByUser": {
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
+          "links": {
+            "alternate": {
+              "href": "https://www.zotero.org/ekaltman",
+              "type": "text/html"
+            }
+          }
+        },
         "creatorSummary": "Bobrow and Stefik",
         "parsedDate": "1982",
         "numChildren": 1
       },
-      "version": 6424,
+      "version": 7867,
       "DOI": "",
       "ISBN": "",
       "abstract": "This paper summarizes the features of LOOPS and indicate how they support different knowledge representation features. \n\nLoops is a programming system integrated into Interlisp. It includes 1) object oriented programming with non-hierarchical class structure; 2) user extendible property list descriptions of the classes, their variables, and their methods (eg. for documentation, defaults, constraints); 3) composite objects- a way for defining templates for related objects that are instantiated as a group; 4) data oriented programming using active values- a way of having a procedure invoked when the value of a vbariable is set or read; 5) a knowledge base facility providing long term storage of shared knowledge bases, support for the exchange of incremental updates (layers), and tghe representation of multiple alternatives. \n\nThis paper describes the features of LOOPS, how they facilitate implementation of a core of knowledge representation features, and our erxperience using it.",
@@ -21535,8 +21556,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "8MSYRKQA",
-        "VGNDIGZM"
+        "8MSYRKQA"
       ],
       "conferenceName": "European AI Conference",
       "creators": [
@@ -21553,7 +21573,7 @@
       ],
       "date": "1982",
       "dateAdded": "2024-05-17T19:50:15Z",
-      "dateModified": "2024-06-12T13:20:57Z",
+      "dateModified": "2024-10-02T17:06:30Z",
       "event": "European AI Conference",
       "event-place": "Orsay, France",
       "extra": "",
@@ -23026,12 +23046,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 9687466,
-          "username": "MattHeffron",
-          "name": "Matt Heffron",
+          "id": 14164908,
+          "username": "abhikhasnain",
+          "name": "",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/mattheffron",
+              "href": "https://www.zotero.org/abhikhasnain",
               "type": "text/html"
             }
           }
@@ -23040,7 +23060,7 @@
         "parsedDate": "1983",
         "numChildren": 1
       },
-      "version": 5653,
+      "version": 7856,
       "DOI": "",
       "ISSN": "",
       "abstract": "Early this year fifty people took an experimental course at Xerox PARC on knowledge programming in Loops. During the course, they extended and debugged small knowledge systems in a simulated economics domain called Truckin'. Everyone learned how to use the Loops environment, formulated the knowledge for their own program, and represented it in Loops. At the end of the course a knowledge competition was run so that the strategies used in the different systems could be compared. The punchline to this story is that almost everyone learned enough about Loops to complete a small knowledge system in only three days. Although one must exercise caution in extrapolating from small experiments, the results suggest that there is substantial power in integrating multiple programming paradigms.",
@@ -23095,7 +23115,7 @@
       ],
       "date": "1983",
       "dateAdded": "2022-06-27T03:05:03Z",
-      "dateModified": "2023-10-30T20:09:52Z",
+      "dateModified": "2024-10-02T16:15:37Z",
       "extra": "",
       "id": "9296070/A7ZZFYKB",
       "issue": "",
@@ -23119,7 +23139,26 @@
       "seriesText": "",
       "seriesTitle": "",
       "shortTitle": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "LOOPS"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "Xerox PARC"
+        },
+        {
+          "tag": "knowledge programming"
+        },
+        {
+          "tag": "knowledge-based system"
+        },
+        {
+          "tag": "programming techniques"
+        }
+      ],
       "title": "KNOWLEDGE PROGRAMMING IN LOOPS:",
       "type": "article-journal",
       "url": "https://www.markstefik.com/wp-content/uploads/2011/04/1983-AI-Mag-Stefik-LOOPS.pdf",
@@ -27735,12 +27774,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 14314728,
-          "username": "EleanorShawYoung",
-          "name": "",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/eleanorshawyoung",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -27749,7 +27788,7 @@
         "parsedDate": "1984",
         "numChildren": 1
       },
-      "version": 6214,
+      "version": 7875,
       "DOI": "10.1016/0004-3702(84)90016-X",
       "ISSN": "00043702",
       "abstract": "Seven years ago, the AM program was constructed as an experiment in learning by discovery. Its source of power was a large body of heuristics, rules which guided it toward fruitful topics of investigation, toward profitable experiments to perform, toward plausible hypotheses and definitions. Other heuristics evaluated those discoveries for utility and “interestingness”, and they were added to AM’s vocabulary of concepts. AM’s ultimate limitation apparently was due to its Inability to discover new, powerful, domain-specific heuristics for the various new fields it uncovered. At that time, it seemed straight-forward to simply add Heuretics (the study of heuristics) as one more field in which to let AM explore, observe, define, and develop. That task -- learning new heuristics by discovery -- turned out to be much more difficult than was realized initially, and we have just now achieved some successes at it. Along the way, it became clearer why AM had succeeded in the first place, and why it was so difficult to use the same paradigm to discover new heuristics. This paper discusses those recent insights. They spawn questions about “where the meaning really resides” in the concepts discovered by A?/I. This leads to an appreciation of the crucial and unique role of representation in theory fomlation, a role intolling the relationship bet\\%een Form and Content.",
@@ -27777,8 +27816,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "MTUXENI8",
-        "RH95QH8N"
+        "MTUXENI8"
       ],
       "container-title": "Artificial Intelligence",
       "creators": [
@@ -27795,7 +27833,7 @@
       ],
       "date": "08/1984",
       "dateAdded": "2023-11-26T21:01:14Z",
-      "dateModified": "2024-05-29T17:29:14Z",
+      "dateModified": "2024-10-02T17:07:59Z",
       "extra": "",
       "id": "9296070/7G8QMM8L",
       "issue": "3",
@@ -30424,12 +30462,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 9687466,
-          "username": "MattHeffron",
-          "name": "Matt Heffron",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/mattheffron",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -30438,7 +30476,7 @@
         "parsedDate": "1985-03-05",
         "numChildren": 2
       },
-      "version": 5670,
+      "version": 7876,
       "abstract": "Because NoteCards is a vehicle for current research and is still undergoing development, you may encounter occasional bugs or or be frustrated by seeming deficiencies. This manual has been written with these considerations in mind.",
       "accessDate": "",
       "archive": "",
@@ -30451,8 +30489,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "ATGZ3WVE",
-        "NAEHNSUS"
+        "ATGZ3WVE"
       ],
       "creators": [
         {
@@ -30482,7 +30519,7 @@
       ],
       "date": "5 March 1985",
       "dateAdded": "2023-11-18T13:50:40Z",
-      "dateModified": "2023-11-20T10:09:33Z",
+      "dateModified": "2024-10-02T17:08:09Z",
       "extra": "Software Version: 1.2k\nSoftware Version Certainty: Mentioned in the text",
       "id": "9296070/4NNBZQ8Z",
       "issued": {
@@ -30653,11 +30690,22 @@
             }
           }
         },
+        "lastModifiedByUser": {
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
+          "links": {
+            "alternate": {
+              "href": "https://www.zotero.org/ekaltman",
+              "type": "text/html"
+            }
+          }
+        },
         "creatorSummary": "Stefik and Bobrow",
         "parsedDate": "1985-12-15",
         "numChildren": 1
       },
-      "version": 6421,
+      "version": 7864,
       "ISSN": "2371-9621",
       "abstract": "Over the past few years object-oriented programming languages have become popular in the artifical intelligence community, often as add-ons to Lisp. This is an introduction to the concepts of object-oriented programming based on our eperience of them in Loops, and secondarily a asurvey of some of the important variations and open issues that are being explored and debated among users of different dialects.",
       "accessDate": "",
@@ -30675,8 +30723,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "8MSYRKQA",
-        "VGNDIGZM"
+        "8MSYRKQA"
       ],
       "container-title": "AI Magazine",
       "creators": [
@@ -30693,7 +30740,7 @@
       ],
       "date": "December 15, 1985",
       "dateAdded": "2024-05-18T14:46:26Z",
-      "dateModified": "2024-06-12T13:20:00Z",
+      "dateModified": "2024-10-02T17:06:08Z",
       "extra": "",
       "id": "9296070/45RYTQTD",
       "issue": "4",
@@ -32416,12 +32463,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 14164908,
-          "username": "abhikhasnain",
-          "name": "",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/abhikhasnain",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -32430,7 +32477,7 @@
         "parsedDate": "1986-12",
         "numChildren": 1
       },
-      "version": 7168,
+      "version": 7870,
       "abstract": "Summaries of research performed by the Information Sciences Institute at the University of Southern California for the areas provided in this report: Common LISP framework; Explainable Expert Systems; Formalized Software Development; Mappings; Command Graphics; Internet Concepts Research; Strategic Computing Information System; Wideband Communication; KITSERV; VLSI; Advanced VLSI; Text Generation for Strategic Computing; Computer Research Support; Exportable Workstation Systems; New Computing Environment; Strategic Computing-Development Systems; Strategic Command, Control, and Communication Experiment Support.",
       "accessDate": "2021-08-06T03:55:27Z",
       "accessed": {
@@ -32452,8 +32499,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "MTUXENI8",
-        "RH95QH8N"
+        "MTUXENI8"
       ],
       "creators": [
         {
@@ -34473,12 +34519,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 9687466,
-          "username": "MattHeffron",
-          "name": "Matt Heffron",
+          "id": 14164908,
+          "username": "abhikhasnain",
+          "name": "",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/mattheffron",
+              "href": "https://www.zotero.org/abhikhasnain",
               "type": "text/html"
             }
           }
@@ -34487,7 +34533,7 @@
         "parsedDate": "1986-02-01",
         "numChildren": 2
       },
-      "version": 5653,
+      "version": 7848,
       "DOI": "10.1109/MS.1986.232428",
       "ISSN": "",
       "abstract": "The Loops knowledge programming system integrates function-oriented, system object-oriented, rule-oriented, and—something notfound in most other systems—access-oriented programming.",
@@ -34533,7 +34579,7 @@
       ],
       "date": "1986-02-01",
       "dateAdded": "2023-06-03T13:24:45Z",
-      "dateModified": "2023-06-03T13:26:02Z",
+      "dateModified": "2024-10-02T16:12:38Z",
       "extra": "",
       "id": "9296070/BTUF3TN2",
       "issue": "",
@@ -34559,7 +34605,23 @@
       "seriesText": "",
       "seriesTitle": "",
       "shortTitle": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Loops"
+        },
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "access oriented programming"
+        },
+        {
+          "tag": "implementation"
+        },
+        {
+          "tag": "programming techniques"
+        }
+      ],
       "title": "Integrating Access-Oriented Programming into a Multiparadigm Environment",
       "type": "article-journal",
       "url": "https://www.researchgate.net/profile/Mark-Stefik-2/publication/3248853_Integrating_Access-Oriented_Programming_into_a_Multiparadigm_Environment/links/02e7e52139c2d9c03f000000/Integrating-Access-Oriented-Programming-into-a-Multiparadigm-Environment.pdf?_sg%5B0%5D=started_experiment_milestone&origin=journalDetail&_rtd=e30%3D",
@@ -35839,12 +35901,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 14164908,
-          "username": "abhikhasnain",
-          "name": "",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/abhikhasnain",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -35853,7 +35915,7 @@
         "parsedDate": "1986-01-31",
         "numChildren": 1
       },
-      "version": 7662,
+      "version": 7873,
       "abstract": "This manual describes Version 4 of Soar, an architecture for problem solving and learning based on heuristic search and chunking. Version 4 is available as of January 1986 in Common Lisp, Franz-Lisp, Interlisp, and Zeta-Lisp. An introduction to the Soar system is presented, and information is provided about the following system aspects: (1) data representation in working memory; (2) production representation; (3) decision procedure; (4) subgoals; (5) default search control; (6) chunking; (7) encoding a task; (8) operator implementation goal tests and operator parallelism; (9) top-level variables and functions; (10) errors, warnings, and recovery hints; and (11) the installation of Soar. Also provided are a performance comparison of the time required to solve a simple problem in  the Eight Puzzle on different Lisp systems in Version 4, release 1; a brief annotated Soar bibliography; and a distribution list for this report. Two appendices contain a list of search-control productions and a summary of functions and variables, and an index is provided. (KM)",
       "accessDate": "2024-01-07T10:59:59Z",
       "accessed": {
@@ -35875,8 +35937,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "MTUXENI8",
-        "RH95QH8N"
+        "MTUXENI8"
       ],
       "creators": [
         {
@@ -35887,7 +35948,7 @@
       ],
       "date": "1986/01/31",
       "dateAdded": "2024-01-07T10:59:59Z",
-      "dateModified": "2024-09-18T15:52:49Z",
+      "dateModified": "2024-10-02T17:07:43Z",
       "extra": "ERIC Number: ED275302",
       "id": "9296070/6V976HKG",
       "issued": {
@@ -36685,12 +36746,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 14164908,
-          "username": "abhikhasnain",
-          "name": "",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/abhikhasnain",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -36699,7 +36760,7 @@
         "parsedDate": "1986-04",
         "numChildren": 1
       },
-      "version": 7775,
+      "version": 7877,
       "DOI": "10.1145/22339.22340",
       "ISSN": "",
       "abstract": "This paper describes an intelligent system to help\npeople share and filter information\ncommunicated by computer-based messaging\nsystems. The system exploits concepts from\nartificial intelligence such as frames, production\nrules, and inheritance networks, but it avoids the\nunsolved problems of natural language\nunderstanding by providing users with a rich set\nof semi-structured message templates. A\nconsistent set of “direct manipulation” editors\nsimplifies the use of the system by individuals,\nand an incremental enhancement path simplifies\nthe adoption of the system by groups.",
@@ -36722,8 +36783,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "MTUXENI8",
-        "RH95QH8N"
+        "MTUXENI8"
       ],
       "container-title": "CHI '86: Proceedings of the SIGCHI Conference on Human Factors in Computing Systems",
       "creators": [
@@ -36745,7 +36805,7 @@
       ],
       "date": "April 1986",
       "dateAdded": "2023-11-10T02:18:20Z",
-      "dateModified": "2024-09-25T12:43:28Z",
+      "dateModified": "2024-10-02T17:08:20Z",
       "extra": "",
       "id": "9296070/TRSK7UQK",
       "issue": "",
@@ -38585,12 +38645,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 14314728,
-          "username": "EleanorShawYoung",
-          "name": "",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/eleanorshawyoung",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -38599,7 +38659,7 @@
         "parsedDate": "1987-08-22",
         "numChildren": 1
       },
-      "version": 6474,
+      "version": 7866,
       "abstract": "There exists the technology today to build large-scale knowledge bases haypertext system, as well as inteligent information sharing systems. As these three kinds of technologies become more widely used, the need to integrate them into generic office tools becomes more urgent for two reasons. First, each technology by itself has its limitations that will become increasingly burdensome. Second, their integration produces a synergy that can overcome their individual limitations.\n\nThe goal of this paper is to articulate the synergy that arises from systems that integrate these separate technologies and to describe an implementation of such a system called Object Lens.",
       "accessDate": "2024-01-17T12:38:46Z",
       "accessed": {
@@ -38618,8 +38678,7 @@
         }
       ],
       "collections": [
-        "8MSYRKQA",
-        "RH95QH8N"
+        "8MSYRKQA"
       ],
       "creators": [
         {
@@ -38630,7 +38689,7 @@
       ],
       "date": "August 22, 1987",
       "dateAdded": "2024-05-17T19:51:10Z",
-      "dateModified": "2024-06-14T18:00:20Z",
+      "dateModified": "2024-10-02T17:06:22Z",
       "extra": "",
       "id": "9296070/RUKCD423",
       "issued": {
@@ -38791,21 +38850,21 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 9687466,
-          "username": "MattHeffron",
-          "name": "Matt Heffron",
+          "id": 8399269,
+          "username": "herbjellinek",
+          "name": "Herb Jellinek",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/mattheffron",
+              "href": "https://www.zotero.org/herbjellinek",
               "type": "text/html"
             }
           }
         },
         "creatorSummary": "Lai, Kum-Yew",
         "parsedDate": "1987-08",
-        "numChildren": 1
+        "numChildren": 2
       },
-      "version": 5698,
+      "version": 7879,
       "abstract": "There exists the technology today to build large-scale knowledge bases, hypertext systems, as well as intelligent information sharing systems. As these three kinds of technologies become more widely used, the need to integrate them into generic office tools becomes more urgent for two reasons. First, each technology by itself has its limitations that will become increasingly burdensome. Second, their integration produces a synergy that can overcome their individual limitations.\n\nThe goal of this paper is to articulate the synergy that arises from systems that integrate these separate technologies and to describe an implementation of such a system called Object Lens.",
       "accessDate": "",
       "archive": "",
@@ -38818,9 +38877,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "8MSYRKQA",
-        "VGNDIGZM",
-        "RH95QH8N"
+        "8MSYRKQA"
       ],
       "creators": [
         {
@@ -38830,7 +38887,7 @@
       ],
       "date": "August 1987",
       "dateAdded": "2024-01-17T12:39:28Z",
-      "dateModified": "2024-01-17T12:48:59Z",
+      "dateModified": "2024-10-02T17:29:18Z",
       "extra": "",
       "id": "9296070/S7I4SN5I",
       "issued": {
@@ -38846,15 +38903,31 @@
       "libraryCatalog": "",
       "numPages": "",
       "place": "",
-      "publisher": "Massachusets Institute of Technology",
+      "publisher": "Massachusetts Institute of Technology",
       "relations": {},
       "rights": "",
       "shortTitle": "",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "hypertext"
+        },
+        {
+          "tag": "information sharing systems"
+        },
+        {
+          "tag": "knowledge base"
+        },
+        {
+          "tag": "knowledge-based system"
+        }
+      ],
       "thesisType": "",
       "title": "Essays on Object Lens, a Tool for Supporting Information-Sharing",
       "type": "thesis",
-      "university": "Massachusets Institute of Technology",
+      "university": "Massachusetts Institute of Technology",
       "url": "https://dspace.mit.edu/bitstream/handle/1721.1/14651/18252960-MIT.pdf?sequence=2",
       "children": [
         {
@@ -38910,6 +38983,68 @@
           "tags": [],
           "title": "Section IMPLEMENTATION OVERVIEW, page 31:",
           "type": "article"
+        },
+        {
+          "target": "S7I4SN5I",
+          "key": "LPFUVBST",
+          "library": {
+            "type": "group",
+            "id": 2914042,
+            "name": "Interlisp",
+            "links": {
+              "alternate": {
+                "href": "https://www.zotero.org/groups/interlisp",
+                "type": "text/html"
+              }
+            }
+          },
+          "links": {
+            "self": {
+              "href": "https://api.zotero.org/groups/2914042/items/LPFUVBST",
+              "type": "application/json"
+            },
+            "alternate": {
+              "href": "https://www.zotero.org/groups/interlisp/items/LPFUVBST",
+              "type": "text/html"
+            },
+            "up": {
+              "href": "https://api.zotero.org/groups/2914042/items/S7I4SN5I",
+              "type": "application/json"
+            }
+          },
+          "meta": {
+            "createdByUser": {
+              "id": 14164908,
+              "username": "abhikhasnain",
+              "name": "",
+              "links": {
+                "alternate": {
+                  "href": "https://www.zotero.org/abhikhasnain",
+                  "type": "text/html"
+                }
+              }
+            },
+            "numChildren": 0
+          },
+          "version": 7839,
+          "accessDate": "",
+          "charset": "",
+          "contentType": "application/pdf",
+          "dateAdded": "2024-10-02T16:06:22Z",
+          "dateModified": "2024-10-02T16:06:22Z",
+          "filename": "Lai, Kum-Yew - 1987 - Essays on Object Lens, a Tool for Supporting Information-Sharing.pdf",
+          "id": "9296070/LPFUVBST",
+          "itemType": "attachment",
+          "linkMode": "imported_file",
+          "md5": "ec9c4cf949a74589dd8dc1bb8c2ab91c",
+          "mtime": 1727885177778,
+          "note": "",
+          "parentItem": "S7I4SN5I",
+          "relations": {},
+          "tags": [],
+          "title": "PDF",
+          "type": "article",
+          "url": ""
         }
       ]
     },
@@ -44967,12 +45102,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 14314728,
-          "username": "EleanorShawYoung",
-          "name": "",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/eleanorshawyoung",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -44981,7 +45116,7 @@
         "parsedDate": "1988-03-21",
         "numChildren": 3
       },
-      "version": 6586,
+      "version": 7871,
       "DOI": "",
       "ISBN": "",
       "abstract": "A drawback of browsing through nonlinear electronic documents is the accompanying sense of disorientation often reported by users. It is difficult to ascertain the layout of the document network so people often lose their place or forget to follow up on tasks they meant to complete, while wondering if they are missing anything relevant to their interests. This paper critiques existing approaches to computerized support for browsing and describes four new types of browsers, which have been implemented in the Xerox NoteCards hypertext system. These browsers support the process of pursing and returning from digressions and facilitate the integration of diverse sets of materials that have been browsed.",
@@ -44996,8 +45131,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "QTUS8XEQ",
-        "NAEHNSUS"
+        "QTUS8XEQ"
       ],
       "conferenceName": "RIAO '88: User-Oriented Content-Based Text and Image Handling",
       "creators": [
@@ -45008,7 +45142,7 @@
       ],
       "date": "March 21, 1988",
       "dateAdded": "2024-01-17T12:27:36Z",
-      "dateModified": "2024-07-03T05:56:34Z",
+      "dateModified": "2024-10-02T17:07:30Z",
       "event": "RIAO '88: User-Oriented Content-Based Text and Image Handling",
       "event-place": "Cambridge, MA",
       "extra": "Extra URL: https://dl.acm.org/doi/10.5555/3374430.3374437",
@@ -46750,21 +46884,21 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 7851483,
-          "username": "masinter",
-          "name": "Larry M Masinter",
+          "id": 8399269,
+          "username": "herbjellinek",
+          "name": "Herb Jellinek",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/masinter",
+              "href": "https://www.zotero.org/herbjellinek",
               "type": "text/html"
             }
           }
         },
         "creatorSummary": "Lai et al.",
-        "parsedDate": "1988",
+        "parsedDate": "1988-10-01",
         "numChildren": 2
       },
-      "version": 5673,
+      "version": 7878,
       "DOI": "10.1145/58566.59298",
       "ISSN": "1046-8188",
       "abstract": "Object Lens allows unsophisticated computer users to create their own cooperative work applications using a set of simple, but powerful, building blocks. By defining and modifying templates for various semistructured objects, users can represent information about people, tasks, products, messages, and many other kinds of information in a form that can be processed intelligently by both people and their computers. By collecting these objects in customizable folders, users can create their own displays which summarize selected information from the objects in table or tree formats. Finally, by creating semiautonomous agents, users can specify rules for automatically processing this information in different ways at different times. The combination of these primitives provides a single consistent interface that integrates facilities for object-oriented databases, hypertext, electronic messaging, and rule-based intelligent agents. To illustrate the power of this combined approach, we describe several simple examples of applications (such as task tracking, intelligent message routing, and database retrieval) that we have developed in this framework.",
@@ -46796,8 +46930,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "8MSYRKQA",
-        "RH95QH8N"
+        "8MSYRKQA"
       ],
       "container-title": "ACM Transactions on Information Systems",
       "creators": [
@@ -46817,19 +46950,20 @@
           "lastName": "Yu"
         }
       ],
-      "date": "Ottobre 1, 1988",
+      "date": "October 1, 1988",
       "dateAdded": "2024-01-17T12:35:20Z",
-      "dateModified": "2024-01-17T12:35:40Z",
+      "dateModified": "2024-10-02T17:20:35Z",
       "extra": "",
       "id": "9296070/WEYXWEL3",
       "issue": "4",
       "issued": {
         "date-parts": [
           [
-            "1988"
+            "1988",
+            10,
+            1
           ]
-        ],
-        "season": "Ottobre"
+        ]
       },
       "itemType": "journalArticle",
       "journalAbbreviation": "ACM Trans. Inf. Syst.",
@@ -46844,7 +46978,26 @@
       "seriesText": "",
       "seriesTitle": "",
       "shortTitle": "Object lens",
-      "tags": [],
+      "tags": [
+        {
+          "tag": "Reviewed by SHFT - UofA (Abhik Hasnain)"
+        },
+        {
+          "tag": "artifical intelligence"
+        },
+        {
+          "tag": "database management"
+        },
+        {
+          "tag": "information retrieval system"
+        },
+        {
+          "tag": "information sharing systems"
+        },
+        {
+          "tag": "text processing"
+        }
+      ],
       "title": "Object lens: a “spreadsheet” for cooperative work",
       "type": "article-journal",
       "url": "https://dl.acm.org/doi/10.1145/58566.59298",
@@ -59351,12 +59504,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 9687466,
-          "username": "MattHeffron",
-          "name": "Matt Heffron",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/mattheffron",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -59365,7 +59518,7 @@
         "parsedDate": "1997",
         "numChildren": 2
       },
-      "version": 5656,
+      "version": 7872,
       "DOI": "10.1145/268820.268861",
       "ISBN": "978-0-89791-904-3",
       "abstract": "The global connectivity provided by the intemet has changed the way organizations do business. One such change is the use of corporate websites to advertise products and promote customer good-will. Current website design techniques are inadequate for the creation and maintenance of effective sites. A new technique is described and demonstrated by this paper. The technique uses the NoteCards hypertext software environment. Using the technique results in websites that are easier to maintain and easier to use.",
@@ -59389,8 +59542,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "QTUS8XEQ",
-        "NAEHNSUS"
+        "QTUS8XEQ"
       ],
       "conferenceName": "the 1997 ACM SIGCPR conference",
       "container-title": "Proceedings of the 1997 ACM SIGCPR conference on Computer personnel research  - SIGCPR '97",
@@ -59403,7 +59555,7 @@
       ],
       "date": "1997",
       "dateAdded": "2024-01-17T12:17:10Z",
-      "dateModified": "2024-02-09T23:33:26Z",
+      "dateModified": "2024-10-02T17:07:35Z",
       "event": "the 1997 ACM SIGCPR conference",
       "event-place": "San Francisco, California, United States",
       "extra": "",
@@ -62214,12 +62366,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 9687466,
-          "username": "MattHeffron",
-          "name": "Matt Heffron",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/mattheffron",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -62228,7 +62380,7 @@
         "parsedDate": "2001-01-01",
         "numChildren": 2
       },
-      "version": 5656,
+      "version": 7873,
       "DOI": "",
       "ISSN": "1063-519X",
       "abstract": "Corporate websites are an important component in the world-wide web. The traditional way of creating these websites leads to a variety of structural problems that reduce the effectiveness of the websites. These problems are difficult to locate and correct using the ad hoc analysis methods that currently exist. This paper introduces a new technique to analyze and document websites. The technique uses the NoteCards hypertext environment to build a visual model of the website. The model is semantically rich, dynamically extensible, and allows interactive update. The result of using this technique is a website that is easier to use, easier to update, and fully documented. The technique is described and demonstrated on a small website.",
@@ -62243,8 +62395,7 @@
       ],
       "callNumber": "",
       "collections": [
-        "QTUS8XEQ",
-        "NAEHNSUS"
+        "QTUS8XEQ"
       ],
       "container-title": "Journal of International Information Management",
       "creators": [
@@ -62256,7 +62407,7 @@
       ],
       "date": "2001-01-01",
       "dateAdded": "2024-01-17T12:11:16Z",
-      "dateModified": "2024-01-17T12:12:41Z",
+      "dateModified": "2024-10-02T17:07:40Z",
       "extra": "",
       "id": "9296070/Q7WB5VSV",
       "issue": "1",
@@ -78362,12 +78513,12 @@
           }
         },
         "lastModifiedByUser": {
-          "id": 14314728,
-          "username": "EleanorShawYoung",
-          "name": "",
+          "id": 1045238,
+          "username": "ekaltman",
+          "name": "Eric Kaltman",
           "links": {
             "alternate": {
-              "href": "https://www.zotero.org/eleanorshawyoung",
+              "href": "https://www.zotero.org/ekaltman",
               "type": "text/html"
             }
           }
@@ -78375,7 +78526,7 @@
         "parsedDate": "2024-01-02",
         "numChildren": 1
       },
-      "version": 6466,
+      "version": 7874,
       "accessDate": "2023-11-26T21:01:51Z",
       "accessed": {
         "date-parts": [
@@ -78387,13 +78538,12 @@
         ]
       },
       "collections": [
-        "MTUXENI8",
-        "RH95QH8N"
+        "MTUXENI8"
       ],
       "creators": [],
       "date": "January 2, 2024",
       "dateAdded": "2023-11-26T21:01:51Z",
-      "dateModified": "2024-06-12T06:10:33Z",
+      "dateModified": "2024-10-02T17:07:53Z",
       "extra": "",
       "id": "9296070/QB7I4CXC",
       "issued": {
