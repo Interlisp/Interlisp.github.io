@@ -86,35 +86,117 @@ reflection of the bibliographic material related to Medley and Interlisp.
 
 Building the website is driven by a GitHub workflow.  
 
-The workflow is trigger by one of two events, a `push` to main, representing updates
+The workflow is triggered by one of two events, a `push` to main, representing updates
 to the Interlisp.org website or a scheduled execution of the workflow.  The
 workflow is scheduled to run on a regular basis to ensure the bibliography remains
 consistent with the online Zotero catalog.
 
-The workflow consists of two jobs.  The first job, `check`, uses Zotero's REST
-interface to query for the latest version of the group bibliography.  The call
-made is a `GET` call to `https://api.zotero.org/groups/2914042/items`.  This call
+The GitHub Action workflow can also be initiated from the Action panel within
+the Interlisp.github.io repository.  This option allows manual execution when
+necessary.
+
+The workflow consists of three jobs.  The first job, `check`, uses Zotero's REST
+interface to query for the latest version of the group bibliography.  A `GET` call
+is made to `https://api.zotero.org/groups/2914042/items`.  It
 returns a collection of metadata and information describing the current state of
 items within the catalog.  We are interested in a specific header, `Last-Modified-Version`.
 The value returned with this header is incremented every time the Zotero Interlisp
-catalog is updated.  The value returned is used as a cache-key for a cached
-version of the json file of the bibliography we create.  The first job completes
-by providing the current Zotero version and whether the cache needs to be updated.
+catalog is updated.  We use the value returned as a cache-key for the bibliography.
+If the cache-key matches one in the current GitHub Action cache we use the saved
+bibliography information and save the overhead of building it.
 
-The second job, `deploy`, starts by determining if a deploy needs to occur.  If
-the workflow was initiated by a `push` a deploy will always be done.  However,
-if the workflow was started by a scheduled execution, if the Zotero bibliography
-cache is consistent with the online Zotero catalog, the deploy is skipped.
+The second job, `build`, starts by determining if a build and deploy need to occur.
+If the workflow was initiated by a `push` a deploy will always be done.  However,
+if the workflow was started by a scheduled execution and the Zotero bibliography
+cache is consistent with the online Zotero catalog, the build and deploy are skipped.
 
-A deploy starts by checking out the `Interlisp.github.io` repository.  Then,
-if the cache is valid, the contents are copied into the `data` file within the
+A build starts by checking out the `Interlisp.github.io` repository.  Then,
+if the Zotereo cache is valid, its contents are copied into the `data` file within the
 repository directory structure.  If the cache is invalid, the `update_bibliography.sh`
-shell script is run to download a new copy of the bibliography as a `json` file.
+shell script runs and downloads a new copy of the bibliography as a `json` file.
 Once downloaded the script does some additional processing to complete the
 formatting of the file.
 
-Once this work is completed, Hugo is setup and the website is deployed.
+After this work is completed, Hugo is setup and run to build the website. We use
+Hugo extended to build our site. The version of Hugo currently being used is
+defined by the environment variable, `HUGO_VERSION`.
 
+We run Hugo with two flags:
+
+- `-e $HUGO_ENVIRONMENT` to specify whether we are building a production or staging site.  If the website is being build to deploy to Interlisp.org,it should be built with `HUGO_ENVIRONMENT` set to production.  Deployment to any other site should set the environment flag to staging.
+- `--cleanDestinationDir` clears the destination directory, `./public` on each build.  This will ensure we do not have any unneeded artifacts in our deployment.
+
+The last part of the build activity is to save the created artifact, the information
+in the `./public` directory.  We use the GitHub composition action `upload-pages-artifact`
+for this.  It packages the contents of the directory and stores it in the appropriate
+format for deployment to GitHub pages.
+
+The last job in the tool chain is `deploy`.  This job simply takes the output
+of the build step and formally deploys it to GitHub pages using the GitHub `deploy-pages`
+action.
+
+### Deploying a Staging Site
+
+Successfully deploying a Staging Site requires you to configure your GitHub
+repository to enable GitHub Pages.  The following steps will accomplish this task:
+
+1. Clone the Interlisp.github.io repository into your GitHub site
+2. In GitHub go to the cloned repository, in my case https://github.com/stumbo/InterlispDraft.github.io and select Settings
+3. Under Settings, find Pages and select it
+4. Under **Build and deployment** set Source to Deploy *GitHub Actions*
+
+Once the repository is cloned and GitHub Pages has been setup, you can deploy a
+staging site to validate changes prior to creating a Pull Request to merge your
+changes back into the main site.
+
+When creating a staging site we want to do a couple things to ensure we do not
+interfere with the production site, first we want to disable Google Analytics
+and secondly we want to ensure the site is not crawled and indexed.
+
+#### Setup Your Repository
+
+A best practice for the updating your clone of the repository is to create a branch
+and make the following required changes on the branch you created.
+
+The appropriate settings for this are all enabled by setting the `HUGO_ENVIRONMENT`
+variable in `.github/workflows/gh-pages.yaml` to *staging*.
+
+You also need to set `baseURL` to match the GitHub site you are deploying to
+in the `config/staging/hugo.yaml` file.  The file currently looks like:
+
+```yaml
+baseURL: https://stumbo.github.io/InterlispDraft.github.io/
+
+languageCode: en-us
+
+# title
+#  Insert Staging Environment onto every page to make clear
+#  this is not the production site
+title: 'Staging Environment'
+```
+
+Make sure the `baseURL` reflects the complete path of your repository.  Failure
+to do this will either cause the deployment to fail or URLs within your built
+site may be incorrectly set.  Resulting in 404s or expected resources not found.
+
+With these changes the cloned repository is ready to be deployed to a staging site.
+
+Commit the changes you made and push the new branch to your cloned repository.
+At this point, create a Pull Request to merge the changes you made into your
+repository's main branch.  Complete the operation by merging the pull request.
+
+Once the merge occurs, the GitHub Actions should fire off and your site will be
+built and deployed.
+
+Once you have successfully completed this operation and your staging site is
+deployed and operational you can experiment with adding new content or
+functionality to the Interlisp site.
+
+#### Develop a Feature
+
+To develop new pages or functionality, create a new branch for your work.  once
+you have completed development and testing on your staging site, you can create
+a PR to merge the content into the Interlisp site.
 
 ### Running Hugo and Docsy Locally
 
@@ -233,7 +315,7 @@ that have components specific to `Interlisp.github.io` are as follows:
   - `documentation` - contains the pdf files referenced in the document section of the home page
   - `favicons` - contains `favicon.png` a small icon that browsers can use when referencing the website
   - `Resources` - contains the current `Interlisp-D` logo, used on the home page, and another instance of `favicon.png`
-  - `CNAME` - a oneline text file that provides support for using a [custom domain](https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain)
+  - `CNAME` - a one line text file that provides support for using a [custom domain](https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain)
 
 ## Search
 
@@ -256,7 +338,7 @@ layout as being `search`.
 
 ### Updating Search
 
-Modfying the websites that are searched requires updating the Google Custom
+Modifying the websites that are searched requires updating the Google Custom
 Search engine settings.  This is done via logging into Google's Programmable Search
 Engine Dashboard at:  [https://programmablesearchengine.google.com](https://programmablesearchengine.google.com)
 

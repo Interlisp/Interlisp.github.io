@@ -12,6 +12,9 @@ def unwrapDiv:
 def moveURL_to_url:
   select(nonBlankKey("URL")) | (setpath(["url"]; .URL) | del(.URL)) // .;
 
+def make_DOI_to_url($doi):
+  if ($doi | startswith("https:")) then $doi else "https://doi.org/" + ($doi | ltrimstr("/")) end ;
+
 def cleanAbstracts:
   if blankKey("abstract") and nonBlankKey("abstractNote") then
     setpath(["abstract"]; .abstractNote) | del(.abstractNote) 
@@ -70,3 +73,20 @@ def getNeededUrls:  # assumes that array of all current items is the input
         | select(($keys | all(. != $k)))   # if this key isn't already in the $keys
         | .[1]?)                          # include this url in this collected array
 ;
+
+# def intersection(x;y):
+#   if (y|length) == 0 then
+#     []
+#   else (x|unique) as $x
+#     | $x - ($x - y)
+#   end;
+  
+def semiflatten:  # assumes that only one item is the input
+    . as $item
+  | (keys - ["csljson","data"]) as $topKeys
+  | ((.csljson // {}) * .data) as $inner
+  | (($inner | keys) - ["key","version"]) as $innerKeys
+  | (  ($topKeys | map(. as $tKey | {"key": $tKey, "value": ($item | getpath([$tKey]))}))
+     + ($innerKeys | map(. as $iKey | {"key": $iKey, "value": ($inner | getpath([$iKey]))})) )
+  | from_entries;
+    

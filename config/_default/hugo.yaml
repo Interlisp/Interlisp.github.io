@@ -17,7 +17,7 @@ canonifyURLs: false
 # Default to false and set to true for production in config/production/hugo.yaml
 enableRobotsTXT: false
 
-# aasetDir:  Location where Hugo looks for assets
+# assetDir:  Location where Hugo looks for assets
 assetDir: static
 
 # Enable .GitInfo object for each page.  This will give values to .Lastmod etc.
