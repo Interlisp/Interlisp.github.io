@@ -80,4 +80,8 @@ These documents were converted from Medley's internal format into PDFs. Watch ou
   - [Medley Interlisp: Interactive Programming Environment (derived from Interlisp-D)](/documentation/20211225-interlisp-book-2.pdf)
   - [Medley Interlisp: Interactive Programming Tools (derived from Interlisp-D)](/documentation/2021-interlisp-book-3.pdf)
 - [Interlisp Reference Manual (1993)](/documentation/IRM.pdf)
+- Medley LOOPS Books (LOOPS, the Lisp Object-Oriented Programming System, is the object extension of Interlisp):
+  - [Volume I: Medley LOOPS: The Basic System](/documentation/2024-loops-book-1.pdf)
+  - Volume II: Medley LOOPS: Tools and Utilities (coming in the late fall of 2024)
+  - Volume III: Medley LOOPS: Rule-based Systems and the Truckin Game (coming in the fall of 2025)
 
