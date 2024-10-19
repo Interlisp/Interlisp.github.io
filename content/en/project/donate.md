@@ -2,8 +2,6 @@
 title: Donate
 weight: 15
 type: docs
-aliases:
- - /donate
 ---
 
 ## Why to donate
@@ -29,7 +27,7 @@ You can donate using the following methods:
   </form>
 - [GitHub Sponsors](https://github.com/sponsors/Interlisp): convenient, but they do charge a fee — 3% if done through ACH, 6% for credit card donations.
 - Contact [our donations team](mailto:finance@interlisp.org) for larger amounts.
-- Benevity: for corporate matching donations, find InterlispOrg on the Benevity portal by searching for “Interlisp” or 
+- Benevity: for corporate matching donations, find InterlispOrg on the Benevity portal by searching for “Interlisp” or
   organization number `840-872528093`.
 
 ## Tax deductibility

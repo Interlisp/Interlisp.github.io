@@ -3,10 +3,7 @@ title: Access Medley Online
 weight: 10
 type: docs
 aliases:
-  - /medley/using/running/online/	
   - /medley/using/running/online
-  - /running/online
-  - /running/online/using/online
   - /software/access-online
 ---
 
@@ -29,9 +26,9 @@ Running Medley online is good for experimenting and introducing yourself to the 
 
    * If you are already registered (created an account), log in and start a Medley Interlisp session. Sessions are preserved for users that login with their own account. However, user account sessions may be deleted after 30 days of inactivity.
 
-3. Select the Exec you want to start out with. For example, select `Interlisp`. 
+3. Select the Exec you want to start out with. For example, select `Interlisp`.
 
-4. Leave the `Fill browser window` option set. 
+4. Leave the `Fill browser window` option set.
 
 5. Select `Run Medley`.
 Your browser will open a window that represents the Interlisp Desktop and looks much like this:
@@ -43,4 +40,3 @@ Your browser will open a window that represents the Interlisp Desktop and looks 
   Guide to Using Medley<i class="fas fa-arrow-alt-circle-right ml-2"></i>
  </a>
 </div>
-

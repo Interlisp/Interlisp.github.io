@@ -3,9 +3,6 @@ title: Install and Run on MacOS
 linkTitle: MacOS
 weight: 30
 type: docs
-aliases:
-  - /running/running-on-mac
-  - /software/install-and-run/running-on-mac/
 ---
 
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>

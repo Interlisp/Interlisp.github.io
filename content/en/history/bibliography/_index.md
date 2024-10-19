@@ -2,10 +2,6 @@
 title: Bibliography
 weight: 5
 type: docs
-aliases:
- - /bibliography/
- - /medley/history/publications/
- - /medley/history/publications/table/
 
 ---
 
