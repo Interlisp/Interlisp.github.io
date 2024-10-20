@@ -2,6 +2,8 @@
 title: Bibliography
 weight: 5
 type: docs
+aliases:
+ - /bibliography/
 
 ---
 
