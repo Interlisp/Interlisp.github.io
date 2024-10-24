@@ -15,6 +15,10 @@ aliases:
 
 Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases). We advise caution as these builds are untested and may have bugs or other issues.
 
+## Medley LOOPS Volume I on Hacker News
+
+In October of 2024 the book [Medley LOOPS: The Basic System](/documentation/2024-loops-book-1.pdf) by Stephen Kaisler [made it to the front page of Hacker News](https://news.ycombinator.com/item?id=41859622), where it generated an interesting discussion on early Lisp object systems and the syntax and internals of LOOPS.
+
 ## Medley LOOPS Volume I
 
 In October of 2024 the Medley Interlisp Project published the book [Medley LOOPS: The Basic System](/documentation/2024-loops-book-1.pdf) by Stephen Kaisler. This is Volume I of the [Medley LOOPS series](/software/using-medley#interlisp-books) on the Lisp Object-Oriented Programming System, an object extension of Interlisp.
