@@ -117,8 +117,8 @@ taxonomies:
 ui:
   feedback:
     enable: true
-    yes: 'Glad to hear it! Please <a href="https://github.com/Interlisp/medley/issues/new?template=documentation.md&projects=Interlisp/medley/5">tell us how we can improve</a>.'
-    no: 'Sorry to hear that. Please <a href="https://github.com/Interlisp/medley/issues/new?template=documentation.md&projects=Interlisp/medley/5">tell us how we can improve</a>.'
+    'yes': 'Glad to hear it! Please <a href="https://github.com/Interlisp/medley/issues/new?template=documentation.md&projects=Interlisp/medley/5">tell us how we can improve</a>.'
+    'no': 'Sorry to hear that. Please <a href="https://github.com/Interlisp/medley/issues/new?template=documentation.md&projects=Interlisp/medley/5">tell us how we can improve</a>.'
 
   # Adds a reading time to the top of each doc.
   # If you want this feature, but occasionally need to remove the Reading time from a single page, 
