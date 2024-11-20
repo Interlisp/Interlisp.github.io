@@ -29,6 +29,9 @@ _Within the Artificial Intelligence and natural language research communities, L
 
 ## Blogs and Online Discussions
 
+- In a post on the [visual feedback of code changes in development environments](https://stevengharms.com/posts/2024-11-13-live-visualization-of-data-state) Steven Harms mentioned Medley and its revival.  
+_[...] its original developers ported the code to work on the X86 chipset architecture and have brought the glorious, streamlined, black-and-white IDE-as-OS environment of Medley into the public’s hands as open source._
+
 - Alex Schroeder [shared his first impressions on and goals for using Medley](https://alexschroeder.ch/view/2024-05-11-distractions).  
 _Designing Medley Interlisp such that it has this fuzzy boundary and can access a web browser and a PDF viewer outside is great;_
 
