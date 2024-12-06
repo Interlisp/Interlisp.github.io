@@ -52,7 +52,7 @@ The archives are public. The LispCore group gets much more email, and posts from
 * [Libera.Chat](https://libera.chat) has a #Interlisp IRC Channel. A place for informal chat. Connect by pointing your IRC client to `irc.libera.chat:6697` (TLS) and `/join #interlisp`. Say hello. There are also channels for #lisp (any dialect) and #common-lisp.
 * [Lisp-Romania] has a Discord Interlisp channel.
 * Mastodon: [@interlisp@fosstodon.org](https://fosstodon.org/@interlisp).
-* Bluesky: [@interlisp.bsky.social](https://bsky.app/profile/interlisp.bsky.social)
+* Bluesky: [@interlisp.org](https://bsky.app/profile/interlisp.org)
 * _Direct email:_ In addition to the email groups listed above, you can email us at [info@interlisp.org](mailto:info@interlisp.org).
 
 ## 4. Weekly meetings. We have weekly video conferencing meetings:

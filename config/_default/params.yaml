@@ -76,7 +76,7 @@ links:
     icon: "fa-brands fa-mastodon"
     desc: "Follow us on Mastodon to get the latest news!"
   - name: "Bluesky"
-    url: "https://bsky.app/profile/interlisp.bsky.social"
+    url: "https://bsky.app/profile/interlisp.org"
     icon: "fa-brands fa-bluesky"
     desc: "We're on Bluesky too!"
 # - name: "Stack Overflow"
