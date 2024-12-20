@@ -15,6 +15,10 @@ aliases:
 
 Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases). We advise caution as these builds are untested and may have bugs or other issues.
 
+## Larry Masinter at aNONradio in December 2024
+
+On December 18, 2024 Larry Masinter was a guest of the Lispy Gopher Climate radio show at [aNONradio](https://anonradio.net). The [recording of the episode](https://archives.anonradio.net/202412180000_screwtape.mp3) is available.
+
 ## Medley LOOPS Volume I on Hacker News
 
 In October of 2024 the book [Medley LOOPS: The Basic System](/documentation/2024-loops-book-1.pdf) by Stephen Kaisler [made it to the front page of Hacker News](https://news.ycombinator.com/item?id=41859622), where it generated an interesting discussion on early Lisp object systems and the syntax and internals of LOOPS.
