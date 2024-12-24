@@ -1,6 +1,9 @@
 ---
 title: Software
 type: docs
+outputs:
+ - html
+ - rss
 aliases:
 
 ---

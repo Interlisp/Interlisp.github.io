@@ -5,6 +5,9 @@
 # An overview of hugo configuration files can be found at:
 #  https://gohugo.io/getting-started/configuration/#configure-server
 #
+# title: The title that appears in the navbar of every page.  We have 
+#        edited navbar.html to not show the title in the navbar of the home page.
+title: "The Medley Interlisp Project"
 
 # relativeURLs: Enable to force all relative URLs to be relative to content root
 relativeURLs: false
@@ -35,7 +38,12 @@ enableMissingTranslationPlaceholders: true
 disableKinds: 
  - taxonomy
  - term
- - RSS
+
+outputs:
+  home:
+    - HTML
+  section:
+    - HTML
 
 # Code Highlighting configuration 
 #  Not Used.  Code highlighting is controlled using the highlighting
