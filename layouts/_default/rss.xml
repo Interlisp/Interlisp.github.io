@@ -12,6 +12,9 @@
 {{- $pctx := . }}
 {{- if .IsHome }}{{ $pctx = .Site }}{{ end }}
 
+<!-- Iterate through all sections and include both sections and
+     pages in the rss feed. The default rss.xml only includes
+     pages. -->
 {{- $pages := slice }}
 {{- $mainPages := where .Pages "Kind" "in" (slice "page" "section") }}
 {{- $pages = $pages | union $mainPages }}

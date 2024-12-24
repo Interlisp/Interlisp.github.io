@@ -24,7 +24,7 @@ enableRobotsTXT: false
 assetDir: static
 
 # Enable .GitInfo object for each page.  This will give values to .Lastmod etc.
-enableGitInfo: false
+enableGitInfo: true
 
 # Top Level Language defaults 
 #  See languages.yaml for language specific values
@@ -44,6 +44,13 @@ outputs:
     - HTML
   section:
     - HTML
+
+frontmatter:
+  date:
+    - date
+    - pubdate
+    - :git
+    - :default
 
 # Code Highlighting configuration 
 #  Not Used.  Code highlighting is controlled using the highlighting

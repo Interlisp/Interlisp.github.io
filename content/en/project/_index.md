@@ -2,9 +2,6 @@
 Title: The Medley Interlisp Project
 weight: 2
 type: docs
-outputs:
- - html
- - rss
 aliases:
  - /hugo/
  - /medley/project/
