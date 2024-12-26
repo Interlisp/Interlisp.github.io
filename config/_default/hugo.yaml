@@ -52,6 +52,10 @@ frontmatter:
     - :git
     - :default
 
+outputFormats:
+  rss:
+    baseName: rss
+
 # Code Highlighting configuration 
 #  Not Used.  Code highlighting is controlled using the highlighting
 #  section in `markup.yaml`

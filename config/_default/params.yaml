@@ -80,7 +80,7 @@ links:
     icon: "fa-brands fa-bluesky"
     desc: "We're on Bluesky too!"
   - name: "RSS Feed"
-    url: "project/status/index.xml"
+    url: "project/status/rss.xml"
     icon: "fa fa-rss"
     desc: "Subscribe to our feed for the latest updates"
 # - name: "Stack Overflow"
