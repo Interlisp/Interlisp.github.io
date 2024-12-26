@@ -2,6 +2,9 @@
 title: News and Status Reports
 type: docs
 weight: 2
+outputs:
+ - html
+ - rss
 aliases:
  - /hugo/news/
  - /medley/project/news/
