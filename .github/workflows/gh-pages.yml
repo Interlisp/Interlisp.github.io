@@ -1,27 +1,138 @@
+#*******************************************************************************
+#  gh-pages.yml
+#
+# Github Workflow to deploy Interlisp.org.
+#
+# Interlisp.org is a Hugo based static website that contains a 
+# detailed bibliography maintained using Zotero (https://www.zotero.org/groups/2914042/interlispwww.zotero.org/).
+#
+# This workflow consists of two jobs, one to ensure that we have the latest
+# version of the Zotero bibliography and a second job to deploy the website.
+#
+# The workflow is executed either on a push or via scheduled run times.  When
+# started at a scheduled run time we only do a deploy if the cached bibliography
+# is no longer current.  On a push, we always verifty the the current
+# bibliography is loaded and deploy a new version of the website.
+#
+# 2023-10-20 Bill Stumbo
+#
+# Copyright 2023 by Interlisp.org
+#
+# ******************************************************************************
 name: github pages
 
 on:
   push:
     branches:
       - main  # Set a branch to deploy
-  pull_request:
+
+  schedule:
+    - cron: "0 3 * * *"
+
+  workflow_dispatch:
+
+permissions:
+    contents: read
+    pages: write
+    id-token: write
+
+defaults:
+    run:
+        shell: bash
+
+env:
+  # ----------------------------------------------------------------------------
+  # Specify the deployment environment:  staging or production
+  HUGO_ENVIRONMENT: production
+  HUGO_VERSION: 0.133.1
 
 jobs:
-  deploy:
-    runs-on: ubuntu-22.04
+  # ----------------------------------------------------------------------------
+  # Use the Zotero REST API to get the current version of the Zotero Bibliography
+  # Compare against a cached version of the bibliography.
+  #
+  check:
+    outputs:
+      zoteroVersion: ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
+      cacheHit: ${{ steps.cache-zotero-bib.outputs.cache-hit }}
+
+    runs-on: ubuntu-latest
     concurrency:
       group:  ${{ github.workflow }}-${{ github.ref }}
     steps:
-      - uses: actions/checkout@v3
 
-      - name: Setup Hugo
-        uses: peaceiris/actions-hugo@v2
+      - name: Get Zotero Version Information
+        id: zoteroVersion
+        uses: fjogeleit/http-request-action@v1
         with:
-          hugo-version: 'latest'
-          extended: true
+          url: "https://api.zotero.org/groups/2914042/items?format=versions"
+          method: "GET"
+        
+      - name: Cache Zotero Bibliography
+        id: cache-zotero-bib
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-zotero_bib
+        with:
+          path: ~/data
+          key: ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
+          restore-keys: |
+            ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
+
+  # ----------------------------------------------------------------------------
+  # Build the website.  This job is conditional, we will always run it on a
+  # push or if on a scheduled run the cache was determined to be out of date.
+  #      
+  build:
+    needs: check
+    runs-on: ubuntu-latest
+    if:  github.event_name == 'push' || needs.check.outputs.cacheHit != 'true'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Cache Zotero Bibliography
+        id: cache-zotero-bib
+        uses: actions/cache@v4
+        env:
+          cache-name: cache-zotero_bib
+        with:
+          path: ~/data
+          key: ${{ needs.check.outputs.zoteroVersion }}
+          restore-keys: |
+            ${{ needs.check.outputs.zoteroVersion }}
+
+      - name: Install Bibliography
+        env:
+          CACHE_HIT: ${{ steps.cache-zotero-bib.outputs.cache-hit }}
+        run: |
+          if [[ "$CACHE_HIT" == 'true' ]]; then
+            echo "Use Cache"
+            sudo cp --recursive ~/data ${GITHUB_WORKSPACE}/static
+            ls -la ${GITHUB_WORKSPACE}/static/data
+          else
+            echo "Retrieve bibliography"
+            cd scripts
+            chmod +x ./update_bibliography.sh
+            ./update_bibliography.sh
+            sudo cp --recursive ${GITHUB_WORKSPACE}/static/data ~/data
+          fi 
+
+      # Install Hugo Extended
+      #    
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb 
+
+      - name: Setup Pages
+        id: pages
+        uses: actions/configure-pages@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v3
+        uses: actions/setup-node@v4
         with:
           node-version: 18
       
@@ -30,11 +141,25 @@ jobs:
       - run: npm install --verbose
 
       - name: Build
-        run: hugo
-
-      - name: Deploy
-        uses: peaceiris/actions-gh-pages@v3
-        if: github.ref == 'refs/heads/main'
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          TZ: America/New York
+        run: hugo --cleanDestinationDir -e $HUGO_ENVIRONMENT
+        
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
         with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-          publish_dir: ./public
+          path: ./public
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
+      

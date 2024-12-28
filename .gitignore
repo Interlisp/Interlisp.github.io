@@ -5,7 +5,7 @@
 # emacs detritus
 *\#
 \.\#*
-
+.emacs*
 
 .jekyll-cache/
 *.swp
@@ -17,3 +17,4 @@ node_modules/
 _gen/
 .hugo_build.lock
 .idea
+data/bibliography.json

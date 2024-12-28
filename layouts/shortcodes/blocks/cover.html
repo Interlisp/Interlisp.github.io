@@ -11,15 +11,19 @@
 
 {{ $promo_image_big := (.Fill (printf "1920x1080 %s" $image_anchor)) -}}
 {{ $promo_image_small := (.Fill (printf "960x540 %s" $image_anchor)) -}}
-<link rel="preload" as="image" href="{{ $promo_image_small.RelPermalink }}" media="(max-width: 1200px)">
-<link rel="preload" as="image" href="{{ $promo_image_big.RelPermalink }}" media="(min-width: 1200px)">
+
+{{ $promo_image_big := trim $promo_image_big "/" }}
+{{ $promo_image_small := trim $promo_image_small "/" }}
+
+<link rel="preload" as="image" href="{{ $promo_image_small }}" media="(max-width: 1200px)">
+<link rel="preload" as="image" href="{{ $promo_image_big }}" media="(min-width: 1200px)">
 <style>
 #{{ $blockID }} {
-    background-image: url({{ $promo_image_small.RelPermalink }}); 
+    background-image: url({{ $promo_image_small }}); 
 }
 @media only screen and (min-width: 1200px) {
     #{{ $blockID }} {
-        background-image: url({{ $promo_image_big.RelPermalink }}); 
+        background-image: url({{ $promo_image_big }}); 
     }
 }
 .hero-logo {
@@ -29,27 +33,81 @@
 </style>
 {{ end -}}
 
-<section id="{{ $blockID }}" class="row td-cover-block td-cover-block--height-{{ $height -}}
-  {{ if not .Site.Params.ui.navbar_translucent_over_cover_disable }} js-td-cover
-  {{- end }} td-overlay td-overlay--dark -bg-{{ $col_id }}">
-  <div class="col-12">
-    <div class="container td-overlay__inner">
-      <img id="banner-hero-logo" class="hero-logo" alt="Interlisp Medley logotype" src="Resources/logo_white_no_border_568x385.png">
-      <div class="text-center">
-        {{ with .Get "title" }}<h1 class="display-1 mt-0 mt-md-5 pb-4">{{ $title := . }}{{ with $logo_image }}{{ $logo_image_resized := (.Fit (printf "70x70 %s" $logo_anchor)) }}<img class="td-cover-logo" src="{{ $logo_image_resized.RelPermalink }}" alt="{{ $title | html }} Logo">{{ end }}{{ $title | html }}</h1>{{ end }}
-        {{ with .Get "subtitle" }}<p class="display-2 text-uppercase mb-0">{{ . | html }}</p>{{ end }}
-        <div class="pt-3 lead">
-          {{ if eq .Page.File.Ext "md" }}
-              {{ .Inner | markdownify }}
-          {{ else }}
-              {{ .Inner | htmlUnescape | safeHTML }}
-          {{ end }}
+<!-- <div class="carousel" aria-label="Gallery">
+  <ol class="carousel__viewport">
+    <li id="carousel__slide1"
+        tabindex="0"
+        class="carousel__slide"> -->
+      <section id="{{ $blockID }}" class="row td-cover-block td-cover-block--height-{{ $height -}}
+                                          {{ if not .Site.Params.ui.navbar_translucent_over_cover_disable }} js-td-cover
+                                          {{- end }} td-overlay td-overlay--dark -bg-{{ $col_id }}">
+        <div class="col-12 hero-content-column"
+             style="background-image: url(./Resources/logoWindows.svg)">
+          <div class="container td-overlay__inner">
+            <!-- <img id="banner-hero-logo" class="hero-logo" alt="Interlisp Medley logotype" src="/Resources/logoWindows.svg"> -->
+            <div class="text-center">
+              {{ with .Get "title" }}<h1 class="display-1 mt-0 mt-md-5 pb-4">{{ $title := . }}{{ with $logo_image }}{{ $logo_image_resized := (.Fit (printf "70x70 %s" $logo_anchor)) }}<img class="td-cover-logo" src="{{ $logo_image_resized.RelPermalink }}" alt="{{ $title | html }} Logo">{{ end }}{{ $title | html }}</h1>{{ end }}
+              {{ with .Get "subtitle" }}<p class="display-2 mb-0">{{ . | html }}</p>{{ end }}
+              <div class="pt-3 lead">
+                {{ if eq .Page.File.Ext "md" }}
+                {{ .Inner | markdownify }}
+                {{ else }}
+                {{ .Inner | htmlUnescape | safeHTML }}
+                {{ end }}
+              </div>
+            </div>
+          </div>
         </div>
-      </div>
-    </div>
-  </div>
-  {{ with .Get "byline" | default "" -}}
-    <div class="byline">{{ . }}</div>
-  {{- end }}
-</section>
-{{/**/ -}}
+        {{ with .Get "byline" | default "" -}}
+        <div class="byline">{{ . }}</div>
+        {{- end }}
+      </section>
+      {{/**/ -}}
+<!-- 
+    </li>
+    <li id="carousel__slide2"
+        tabindex="0"
+        class="carousel__slide">
+      <section id="{{ $blockID }}" class="row td-cover-block td-cover-block--height-{{ $height -}}
+                                          {{ if not .Site.Params.ui.navbar_translucent_over_cover_disable }} js-td-cover
+                                          {{- end }} td-overlay td-overlay--dark -bg-{{ $col_id }}">
+        <div class="col-12 hero-content-column"
+             style="background-image: url(./Resources/logoWindows.svg)">
+          <div class="container td-overlay__inner">
+            <div class="text-center">
+              {{ with .Get "title" }}<h1 class="display-1 mt-0 mt-md-5 pb-4">{{ $title := . }}{{ with $logo_image }}{{ $logo_image_resized := (.Fit (printf "70x70 %s" $logo_anchor)) }}<img class="td-cover-logo" src="{{ $logo_image_resized.RelPermalink }}" alt="{{ $title | html }} Logo">{{ end }}{{ $title | html }}</h1>{{ end }}
+              {{ with .Get "subtitle" }}<p class="display-2 mb-0">{{ . | html }}</p>{{ end }}
+              <div class="pt-3 lead">
+                {{ if eq .Page.File.Ext "md" }}
+                {{ .Inner | markdownify }}
+                {{ else }}
+                {{ .Inner | htmlUnescape | safeHTML }}
+                {{ end }}
+              </div>
+            </div>
+          </div>
+        </div>
+        {{ with .Get "byline" | default "" -}}
+        <div class="byline">{{ . }}</div>
+        {{- end }}
+      </section>
+      {{/**/ -}}
+
+    </li>
+  </ol>
+</section> -->
+
+      <!-- ><section class="carousel" aria-label="Gallery">
+          <ol class="carousel__viewport">
+            <li id="carousel__slide1"
+                tabindex="0"
+                class="carousel__slide">
+              <div class="carousel__snapper">
+                <a href="#carousel__slide4"
+                   class="carousel__prev">Go to last slide</a>
+                <a href="#carousel__slide2"
+                   class="carousel__next">Go to next slide</a>
+              </div>
+            </li>
+          </ol>
+      </section> -->

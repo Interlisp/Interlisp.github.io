@@ -12,9 +12,11 @@
 
   "dependencies": {
 
+    "jquery": "^3.7.1",
+
     "tabpanel": "^0.2.0"
 
   }
-  
+
 }
 

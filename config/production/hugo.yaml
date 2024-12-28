@@ -1,0 +1,4 @@
+baseURL: https://interlisp.org
+
+# enableRobotsTXT:  Enable generation of Robots.txt file
+enableRobotsTXT: true
