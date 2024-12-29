@@ -1,5 +1,0 @@
-{{ $gv_src := .Inner }}
-{{ if .Get "file" }}
-  {{ $gv_src = readFile (.Get "file") }}
-{{ end }}
-{{ partial "dot_card" (dict "context" . "gv_src" $gv_src "header" (.Get "header")) }}
