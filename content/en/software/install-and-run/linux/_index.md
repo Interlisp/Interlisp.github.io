@@ -2,8 +2,6 @@
 title: Install and Run on Linux
 linkTitle: Linux
 weight: 20
-aliases:
- - /software/install-and-run/running-on-linux/
 type: docs
 ---
 <style>.td-content blockquote { border-left: none; color: inherit; padding-left: 2rem;}</style>
