@@ -45,7 +45,7 @@ There are two Google groups (mailing lists):
 
 The archives are public. The LispCore group gets much more email, and posts from non-members are moderated.
 
-* Interlisp.org is a Google workspace; [let us know](mailto:info@interlisp.org) if you want an "interlisp.org" email addresses and why you want it.
+* Interlisp.org is a Google workspace; [let us know](mailto:info@interlisp.org) if you want an "interlisp.org" email address and why you want it.
 
 ### Chat
 
