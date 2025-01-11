@@ -1,6 +1,6 @@
 ---
 title: 2023 Annual Report
-weight: 1
+weight: 8
 type: docs
 aliases:
  - /news/2023medleyannualreport/
