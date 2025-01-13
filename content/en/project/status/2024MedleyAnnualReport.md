@@ -61,7 +61,7 @@ ANSI Common Lisp was standardized 30 years ago, after much of the Medley Common 
 
 ### **Medley Applications**
 
-* **TEdit**: TEdit is Medley’s WYSIWYG rich text editor with programmatic support for images.  It has been a key component of many other Medley applications.  We simplified the code for maintenance and performance, extended some capabilities, and modularized the public API as well as preparing for future packaging.  
+* **TEdit**: TEdit is Medley’s WYSIWYG rich text editor with programmatic support for images.  It has been a key component of many other Medley applications.  We simplified the code to ease maintenance and improve performance. We modularized the public API and extended some capabilities. We prepared the code to move TEdit into its own package namespace.  
 * **HTML support**: Began work to add HTML support to Medley’s device-independent graphics suite.  
 * **Lafite**: A multi-protocol, GUI email client written in Lisp using TEdit.  We [improved Lafite module loading](https://github.com/orgs/Interlisp/discussions/1551) to make it work better with Unix spool files and mail transport agents.  
 * **Source code tools**: We continue to develop and extend tools that bridge the Medley residential programming model and contemporary source control tools (git, GitHub, etc.). In 2024,  we made improvements to COMPARESOURCES, GITFNS  
