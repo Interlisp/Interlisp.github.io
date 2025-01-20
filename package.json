@@ -4,7 +4,9 @@
 
     "autoprefixer": "^10.4.8",
 
-    "postcss": "^8.4.16",
+    "braces": "^3.0.3",
+
+    "postcss": "^8.5.1",
 
     "postcss-cli": "^10.0.0"
 
