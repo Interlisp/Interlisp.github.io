@@ -14,6 +14,10 @@ aliases:
  - /medley/project/status/
 ---
 
+## 2024 Annual Report released
+
+The [2024 Medley Interlisp Annual Report](/project/status/2024medleyannualreport) has been released.  Another year of progress.
+
 ## Build Notes
 
 Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases). We advise caution as these builds are untested and may have bugs or other issues.
@@ -36,15 +40,11 @@ On May 6, 2024 Andrew Sengul gave the remote talk "The Medley Interlisp Revival"
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZBAJukF5mPE?si=nLVT7PRHd4-m0OMp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## 2023 Annual Report released!
-
-The [2023 Medley Interlisp Annual Report](/project/status/2023medleyannualreport) is ready! "Read all about it!"
-
-
 ## Annual Reports
 
 The Medley team has produced annual reports documenting their major achievements.
 
+- [2024 Annual Report](/project/status/2024medleyannualreport)
 - [2023 Annual Report](/project/status/2023medleyannualreport)
 - [2022 Annual Report](/project/status/2022medleyannualreport)
 - [2021 Annual Report](/project/status/2021medleyannualreport)
