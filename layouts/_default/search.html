@@ -1,0 +1,55 @@
+{{ define "main" -}}
+<section class="row td-search-result">
+<div class="col-12 col-md-8 offset-md-2">
+<h2 class="ms-4">{{ .Title }}</h2>
+
+
+{{ with .Site.Params.gcs_engine_id -}}
+<!-- Widget JavaScript bundle -->
+<script src="https://cloud.google.com/ai/gen-app-builder/client?hl=en_US"></script>
+
+<!-- Search widget element is not visible by default -->
+<gen-search-widget
+  configId="a55fe89a-8293-4ede-926c-538cb302861f"
+  triggerId="searchWidgetTrigger">
+</gen-search-widget>
+
+<!-- Element that opens the widget on click. It does not have to be an input -->
+<input placeholder="Search here" id="searchWidgetTrigger" />
+
+<!-- 
+
+<script>
+(function() {
+  var genAIsearch = document.createElement('script');
+  genAIsearch.type = 'text/javascript';
+  genAIsearch.async = true;
+  genAIsearch.src = new GoogleGenerativeAI("{{ . }}");
+  genAIsearch.model = genAIsearch.getGenerativeModel({ model: "gemini-1.5-flash" });
+  var result = genAIsearch.generateContent("Explain how AI works");
+  var s = document.getElementsByTagName('script')[0];
+  s.parentNode.insertBefore(genAIsearch, s);
+console.log(result.response.text());
+})();
+</script>
+-->
+{{ end -}}
+
+<!--
+<script>
+(function() {
+var cx = '{{ . }}';
+var gcse = document.createElement('script');
+gcse.type = 'text/javascript';
+gcse.async = true;
+gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+var s = document.getElementsByTagName('script')[0];
+s.parentNode.insertBefore(gcse, s);
+})();
+</script>
+
+<gcse:searchresults-only></gcse:searchresults-only>
+{{ end -}}
+<!-- End Google Custom Search Engine-->
+</div>
+</section>
