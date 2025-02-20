@@ -17,6 +17,8 @@ Once you are up and running, see "[Using Medley](using-medley)" for some basics 
 
 * [Run Medley in the browser](http://wasm.interlisp.org/medley.html)
 
-We are making an earlier version of Interlisp-D run in the browser, an example of software preservation that lets you access a technology artifact of historical significance.
+We are making an earlier version of Interlisp-D run in the browser, an experimental port based on a version of the Maiko virtual machine compiled to WebAssembly with Emscripten. To end a session just close the browser tab.
 
-This experimental port is based on a version of the Maiko virtual machine compiled to WebAssembly with Emscripten. It currently doesn't support a file system and **can't save files**. To end a session just close the browser tab.
+Although this is an example of software preservation that lets you access a technology artifact of historical significance, we don't recommend it as it doesn't support a file system, **can't save files**, and there are more functional ways of running early Interlisp-D versions.
+
+We acknowledge these limitations and are exploring alternate approaches to running Medley online or in the browser. We welcome help and feedback.
