@@ -29,7 +29,7 @@ _Within the Artificial Intelligence and natural language research communities, L
 
 ## Blogs and Online Discussions
 
-- Vindarel praised the Medley Interlisp Project in a [roundup of what happaned in Common Lisp](https://lisp-journey.gitlab.io/blog/these-years-in-common-lisp-2023-2024-in-review) and the broader Lisp world in 2023 and 2024.  
+- Vindarel praised the Medley Interlisp Project in a [roundup of what happened in Common Lisp](https://lisp-journey.gitlab.io/blog/these-years-in-common-lisp-2023-2024-in-review) and the broader Lisp world in 2023 and 2024.  
 _We can run the Medley Interlisp Lisp machine in a browser O_o The work achieved by this group is phenomenal, [...]_
 
 - In a post on the [visual feedback of code changes in development environments](https://stevengharms.com/posts/2024-11-13-live-visualization-of-data-state) Steven Harms mentioned Medley and its revival.  
