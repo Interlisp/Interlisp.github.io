@@ -25,7 +25,13 @@ We'd like to improve keyboard handling but haven't yet found a path.
 
 ## Interrupt characters
 
-These are enabled per-process. Medley maintains, for each process, a "termtable" which enables different kinds of interrupts. In general, the process (sometimes known as the "TTY" process or the process that "has the keyboard". 
+These are enabled per-process. Medley maintains, for each process, a "termtable" which enables different kinds of interrupts.
+
+Usually, the user wants interrupts to occur in the TTY process, which is the one
+currently receiving keyboard input. However, sometimes the user wants to interrupt
+the mouse process, if it is currently busy executing a menu command or waiting
+for the user to specify a region on the screen. Most of the interrupt characters
+below take place in the mouse process if it is busy, otherwise the TTY process.
 
 |character|action                                                |
 |---------|-----------------------------------------             |
