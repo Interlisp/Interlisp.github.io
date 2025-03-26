@@ -4,7 +4,7 @@
 -}}
 {{ $baseURL := urls.Parse $.Site.Params.Baseurl -}}
 
-<nav class="td-navbar js-navbar-scroll
+<nav class="td-navbar js-navbar-scroll flex-wrap
 					{{- if $cover }} td-navbar-cover {{- end }}" data-bs-theme="dark">
 <div class="container-fluid flex-column flex-md-row">
 <a class="navbar-brand" href="{{ .Site.Home.RelPermalink }}">
@@ -16,14 +16,13 @@
 			{{ end -}}
 		{{ end -}}
 	</span>
-	{{- /**/ -}}
-	<span class="navbar-brand__name">
+	<span class="navbar-brand__name d-none d-lg-inline">
 		<!-- Place the site title on every page header, except the home page -->
 		{{ if not .IsHome }}
 			{{ .Site.Title }}
 		{{ end }}
-
 	</span>
+
 	{{- /**/ -}}
 </a>
 <div class="td-navbar-nav-scroll ms-md-auto" id="main_navbar">
@@ -68,8 +67,20 @@
 		{{ end -}}
 	</ul>
 </div>
-<div class="d-none d-lg-block">
-	{{ partial "search-input.html" . }}
+<!-- Show the search bar inline at XL and larger -->
+<div class="d-none d-xl-block">
+  {{ partial "search-input.html" . }}
 </div>
+
+{{ if .IsHome }}
+  <!-- If home page, drop the search bar to a second row at smaller screens -->
+  <div class="d-block d-xl-none w-100 mt-2 text-end">
+    <div class="row justify-content-end">
+      <div class="col-auto">
+        {{ partial "search-input.html" . }}
+      </div>
+    </div>
+  </div>
+{{ end }}
 </div>
 </nav>
