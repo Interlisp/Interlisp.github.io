@@ -29,6 +29,9 @@ _Within the Artificial Intelligence and natural language research communities, L
 
 ## Blogs and Online Discussions
 
+- Steven Harms published a [blog series on setting up a distraction free FreeBSD laptop environment](https://stevengharms.com/longform/my-first-freebsd) and shared his [experience with installing and running some application programs](https://stevengharms.com/longform/my-first-freebsd/installation/part-7-apps), including Medley.  
+_I’m also pleased to report that Medley worked out of the box in Wayland + Sway through Wayland’s XWayland interface._
+
 - Vindarel praised the Medley Interlisp Project in a [roundup of what happened in Common Lisp](https://lisp-journey.gitlab.io/blog/these-years-in-common-lisp-2023-2024-in-review) and the broader Lisp world in 2023 and 2024.  
 _We can run the Medley Interlisp Lisp machine in a browser O_o The work achieved by this group is phenomenal, [...]_
 
