@@ -24,8 +24,6 @@ Each software environment had its own microcode (for each machine)  to implement
 
 When sold as a workstation of the Xerox Office Systems Division, the machines had different numbers -- the Xerox 1108 (Dandelion) was the same as the Xerox 8010. The Xerox 1186 (Daybreak) was the same as the Xerox 6085.
 
-
 ### Detailed History
 
 A more extensive history of Interlisp can be found in the [Interlisp Timeline](timeline). The [Interlisp Bibliography](bibliography) has a wealth of historical material.
-
