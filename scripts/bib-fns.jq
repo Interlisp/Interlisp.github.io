@@ -90,3 +90,7 @@ def semiflatten:  # assumes that only one item is the input
      + ($innerKeys | map(. as $iKey | {"key": $iKey, "value": ($inner | getpath([$iKey]))})) )
   | from_entries;
     
+def bibItem:  # assumes that only one item is the input
+    . as $item
+  | (keys - ["key","title","target"]) as $tailKeys
+  | {"key": .key, "title": .title, "target": .target } + ($tailKeys | map(. as $tKey | {"key": $tKey, "value": ($item | getpath([$tKey]))}) | from_entries);
