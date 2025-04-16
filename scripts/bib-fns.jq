@@ -12,6 +12,9 @@ def unwrapDiv:
 def moveURL_to_url:
   select(nonBlankKey("URL")) | (setpath(["url"]; .URL) | del(.URL)) // .;
 
+def raise_issued_date_parts:
+  if nonBlankKey("issued") and (.issued | nonBlankKey("date-parts")) then setpath(["issuedDateParts"]; .issued."date-parts"[0]) else . end;
+
 def make_DOI_to_url($doi):
   if ($doi | startswith("https:")) then $doi else "https://doi.org/" + ($doi | ltrimstr("/")) end ;
 

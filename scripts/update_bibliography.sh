@@ -2,10 +2,10 @@
 
 set -e
 
-rawItemsFile=true
+rawItemsFile=false
 debugFiles=true
 tagFiles=false
-typeFiles=false
+typeFiles=true
 curlFiles=false
 # The collection files will be created only if directly querying Zotero API.
 collectionFiles=false
@@ -147,12 +147,6 @@ if $debugFiles ; then
   echo "$items" > "$dfn"
 fi
 
-showInfo 5 "Delete items that Zotero indicated as such."
-beforeCount=$(jq '. | length' <<< "$items")
-items=$(jq 'map(select(.deleted|not))' <<< "$items")
-afterCount=$(jq '. | length' <<< "$items")
-showInfo 5 "Removed $(( $beforeCount - $afterCount )) items marked as deleted."
-
 showInfo 8 "Find duplicate .key entries"
 groupedByKey=$(jq 'group_by(.key)' <<< "$items")
 if $debugFiles ; then
@@ -173,6 +167,16 @@ if $debugFiles ; then
   dfn=$(debugFileName "noDupSorted" $dfn)
   echo "$items" > "$dfn"
 fi
+
+# Remove library, links, and meta objects; and some fields from entries
+# (These are not used any further on, so simplify.)
+items=$(jq 'map(del(.["library", "links", "meta", "accessed", "accessDate", "dateAdded", "dateModified"]))' <<< "$items")
+showInfo 8 "Remove library, links, and meta objects and some unnecessary fields"
+if $debugFiles ; then
+  dfn=$(debugFileName "noLibraryLinksMeta" $dfn)
+  echo "$items" > "$dfn"
+fi
+
 if $typeFiles ; then
   types=$(jq 'map({key, title, type, itemType}) | group_by(.type) | map({type:.[0].type, itemTypes:(group_by(.itemType)|map({itemType:.[0].itemType, items:map({title, key})}))})' <<<"$items")
   echo "$types" > titleKeyTypeInfo.json
@@ -216,6 +220,12 @@ if $debugFiles ; then
   echo "$items" > "$dfn"
 fi
 
+showInfo 5 "Delete items that Zotero indicated as such."
+beforeCount=$(jq '. | length' <<< "$items")
+items=$(jq 'map(select(.deleted|not))' <<< "$items")
+afterCount=$(jq '. | length' <<< "$items")
+showInfo 5 "Removed $(( $beforeCount - $afterCount )) items marked as deleted."
+
 showInfo 1 "Got $(jq '. | length' <<< "$items") clean, top-level items"
 items=$(jq 'include "./bib-fns";map(applyChildrenAmendments)' <<< "$items")
 showInfo 8 "Update Parent items from their Children"
@@ -254,6 +264,7 @@ if $debugFiles ; then
 fi
 finalCount=$(jq '. | length' <<< "$items")
 
+items=$(jq 'include "./bib-fns";map(raise_issued_date_parts)' <<< "$items")
 # if $removeChildrenFromFinalFile; then
 #   # Remove .children arrays, if any. Save space.
 #   items=$(jq 'map(del(.children))' <<< "$items")
@@ -264,16 +275,9 @@ finalCount=$(jq '. | length' <<< "$items")
 #   fi
 # fi
 
-# Remove library, links, and meta objects from entries
-# (These are not used any further on, so simplify.)
-items=$(jq 'map(del(.["library", "links", "meta"]))' <<< "$items")
-showInfo 8 "Remove library, links, and meta objects"
-if $debugFiles ; then
-  dfn=$(debugFileName "noLibraryLinksMeta" $dfn)
-  echo "$items" > "$dfn"
-fi
 # Do this here, instead of keeping a copy of the current value of $items, just to do this later.
 jq -c 'include "./bib-fns";.[] | bibItem' <<< "$items" > bibliography-items-by-line.json
+# jq  'include "./bib-fns";map(bibItem)' <<< "$items" > 000-bibliography-items-by-line.json
 
 # Group by year
 items=$(jq 'group_by(.issued."date-parts"[0][0])' <<< "$items")
@@ -293,6 +297,8 @@ fi
 showInfo 1 "Generating individual Bibliography entries' .md files"
 BIBLIOGRAPHY_DIR="$(dirname "$0")/../content/en/history/bibliography"
 export BIBLIOGRAPHY_DIR
+BIBITEMS_DIR="$(dirname "$0")/../static/data/bibItems"
+export BIBITEMS_DIR
 ./bibSplit.pl bibliography-items-by-line.json
 # Cleanup (uncomment once working)
 # rm bibliography-items-by-line.json

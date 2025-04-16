@@ -14,10 +14,7 @@
 .abstractContent {
   padding: 5px;
   margin: 0 5px 0 15px;
-  display: none;
-  font-size: 0.9rem;
-  overflow: hidden;
-  background-color: #e8e8ff;
+  font-size: 1.0rem;
   clear: both;
 }
 
@@ -29,12 +26,6 @@
     background-color: #88C;
     color: white;
 }
-
-.bibTitle {
-    font-weight: 700;
-}
-
-.authors { margin: 5px auto 2px 5px; }
 
 .tooltipNotes {
     position: relative;
@@ -145,58 +136,129 @@ This is because I cannot determine how to specify not to word wrap the content U
     border-color: #555 transparent transparent transparent;
 }
 
+.label {
+    font-weight: 700;
+}
+
 </style>
 
-{{ $notesIcon := "\u24C3" }}
-{{ $nonBreakingHyphen := "\u2011" }}
+{{- $notesIcon := "\u24C3" -}}
+{{- $nonBreakingHyphen := "\u2011" -}}
 <script>
 var abstractExpanderOpen = "Abstract \u25BC";
 var abstractExpanderClose = "Abstract \u25B2";
+</script>
 
-/*
-var abstractExpanderOpen = "Abstract +";
-var abstractExpanderClose = "Abstract -";
-*/</script>
-
-<table style="max-width: 100%">
-    <thead>
-      <tr>
-        <th>Reference</th>
-      </tr>
-    </thead>
-    <tbody style="overflow:auto">
-        {{ with .params.bibItem }}
-        <tr>
-          {{ $itemID := (cond (gt (len .id) 0) (replace .id `/` `_`) `_0`) }}
-          <td><div class="bibTitle">{{ if .url }}<a href="{{ .url }}">{{ .title }}</a>{{ else }}{{ .title }}{{ end }}</div>
-          {{ if or .author .editor }}<div class="authors">{{ if not .author }}<i>Edited by: </i>{{ end }}{{ range $naE, $auEd := or .author .editor }}{{ if $naE }}; {{ end }}{{ if $auEd.literal }}{{ $auEd.literal }}{{ else if and $auEd.family $auEd.given }}{{ $auEd.family }}, {{ $auEd.given }}{{ else }}{{ $auEd.family }}{{ $auEd.given }}{{ end }}{{ end }}
-          </div>{{ end }}
-          {{ if .abstract }}<button type="button" class="abstractExpander left" id="A{{$itemID}}">AAA</button>{{ end }}
-          {{ if and false .note }}
-            {{ $notes := split (plainify .note) "\n" }}
-            <div class="tooltipNotes right" id="N{{$itemID}}">Notes
-            <span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
-              {{ range $nn, $note := $notes }}
-                {{if strings.ContainsNonSpace $note }}
-                  {{ if $nn }}<br>{{ end }}
-                  {{ print (safeJS (replace (replace (htmlUnescape $note) "-" $nonBreakingHyphen) " " " ")) }}
-                {{ end }}
-              {{ end }}</span></div>
-          {{ end }}
-          {{ if .abstract }}<br><div class="abstractContent" id="A{{$itemID }}_Abs">
-            {{ range $na, $abstract := split (plainify .abstract) "\n" }}
-                {{if strings.ContainsNonSpace $abstract }}
-                  {{ if $na }}<br>{{ end }}
-                  {{ $trimmed := strings.TrimLeft " " $abstract }}{{ $indent := (sub ($abstract | len)  ($trimmed | len)) }}
-                  {{ print (safeJS (htmlUnescape (printf "%s" $trimmed | printf "%s%s" (strings.Repeat $indent " ") |  printf "%s"))) }}
-                {{ end }}
-              {{ end }}
-            </div>{{ end }}</td>
-        </tr>
-        {{ end }}
-    </tbody>
-  
-</table>
+{{ $item := dict -}}
+{{- $jsonFile := printf "data/bibItems/%s.json" (.Get "key") -}}
+{{- $bib := resources.Get $jsonFile -}}
+{{- with $bib -}}
+  {{- with . | transform.Unmarshal -}}
+    {{- $item = . -}}
+  {{- end -}}
+{{- else -}}
+  {{- $jsonFile | errorf "Unable to get item resource '%s'" -}}
+{{- end -}}
+{{- with $item -}}
+  {{- if or .author .editor -}}
+  <h3>
+    {{- if not .author -}}<i>Edited by: </i>{{- end -}}
+    {{- range $naE, $auEd := or .author .editor -}}
+      {{- if $naE -}}; {{ end -}}
+      {{- if $auEd.literal -}}
+        {{- $auEd.literal -}}
+      {{- else if and $auEd.family $auEd.given -}}
+        {{- $auEd.family -}},&nbsp;{{- $auEd.given -}}
+      {{- else -}}
+        {{- $auEd.family -}}{{- $auEd.given -}}
+      {{- end -}}
+    {{- end -}}
+  </h3>
+  {{- end -}}
+  {{- if .url }}
+  <h3><a href="{{- .url -}}">Access document</a></h3>
+  {{ end -}}
+  {{- if eq .itemType "journalArticle" -}}
+    {{- $journalTitle := or .publicationTitle .journalAbbreviation -}}
+    {{- if $journalTitle }}
+<br><span class="label">Publication:</span> {{ $journalTitle -}}
+    {{- end -}}
+    {{- if .volume }}
+<br><span class="label">Volume:</span> {{ .volume -}}
+    {{- end -}}
+    {{- if .issue }}
+<br><span class="label">Issue:</span> {{ .issue -}}
+    {{- end -}}
+    {{- $date := "" -}}
+    {{- if .issuedDateParts -}}
+      {{- $dp := .issuedDateParts -}}
+      {{- $dpl := len $dp -}}
+      {{- $dpf := "January 1, 1900" -}}
+      {{- $y := 0 -}}
+      {{- $m := 10 -}}
+      {{- $d := 18 -}}
+      {{- if ge $dpl 1 -}}
+        {{- $y := strings.TrimLeft "0" (string (index $dp 0)) | int -}}
+        {{- $dpf := "1900" -}}
+      {{- end -}}
+      {{- if ge $dpl 2 -}}
+        {{- $m := strings.TrimLeft "0" (string (index $dp 1)) | int -}}
+        {{- $dpf := "January 1900" -}}
+      {{- end -}}
+      {{- if ge $dpl 3 -}}
+        {{- $d := strings.TrimLeft "0" (string (index $dp 2)) | int -}}
+        {{- $dpf := "January 1, 1900" -}}
+      {{- end -}}
+      {{- if $y -}}
+        {{- $t := printf "%4d-%2d-%2d" $y $m $d -}}
+        {{- $dp := time.AsTime $t -}}
+        {{- $date := $dp.Format $dpf -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if and (not $date) .date -}}
+      {{- $date := .date -}}
+    {{- end -}}
+    {{- if $date }}
+<br><span class="label">Date:</span> {{ $date -}}
+    {{- end -}}
+    {{- $pages := or .pages .page -}}
+    {{- if $pages }}
+<br><span class="label">Pages:</span> {{ $pages -}}
+    {{- end -}}
+  {{- end -}}
+    {{- if .DOI }}
+<br><span class="label">DOI:</span> {{ .DOI -}}
+    {{- end -}}
+    {{- if .ISSN }}
+<br><span class="label">ISSN:</span> {{ .ISSN -}}
+    {{- end -}}
+  {{- if .abstract }}
+<br><span class="label">Abstract:</span><br><div class="abstractContent">
+    {{- range $na, $abstract := split (plainify .abstract) "\n" -}}
+      {{- if $na -}}<br>{{- end -}}
+      {{if strings.ContainsNonSpace $abstract -}}
+        {{- $trimmed := strings.TrimLeft " " $abstract -}}{{- $indent := (sub ($abstract | len)  ($trimmed | len)) -}}
+        {{- print (safeJS (htmlUnescape (printf "%s" $trimmed | printf "%s%s" (strings.Repeat $indent " ") |  printf "%s"))) -}}
+      {{- end -}}
+    {{- end -}}
+</div>
+  {{ end -}}
+  {{- if and false .note -}}
+    {{- $itemID := (cond (gt (len .id) 0) (replace .id `/` `_`) `_0`) -}}
+    {{- $notes := split (plainify .note) "\n" -}}
+    <div class="tooltipNotes right" id="N{{$itemID}}">Notes
+      <span class="tooltipNotesText tooltipNotes-left" id="N{{$itemID}}_Text">
+        {{- range $nn, $note := $notes -}}
+          {{if strings.ContainsNonSpace $note -}}
+            {{- if $nn -}}<br>{{- end -}}
+            {{- print (safeJS (replace (replace (htmlUnescape $note) "-" $nonBreakingHyphen) " " " ")) -}}
+          {{- end -}}
+        {{- end -}}
+      </span>
+    </div>
+  {{- end -}}
+{{- end -}}
+<br><hr><br>
 <script>
 function abstractExpanderClick() {
     this.classList.toggle("active");
