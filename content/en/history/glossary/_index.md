@@ -140,10 +140,10 @@ Rank Xerox
 : Xerox's European subsidiary, a joint venture of Xerox Corp. and the Rank Organization, which sold Interlisp-D workstations in Europe.
 
 Fuji Xerox
-: Xerox's Japanese subsidiary, owned jointly by Rank Xerox and Fujifilm Corp,, responsible for seilling and supporting Interlisp-D systems in Japan.
+: Xerox's Japanese subsidiary, owned jointly by Rank Xerox and Fujifilm Corp,, responsible for selling and supporting Interlisp-D systems in Japan.
 
 Envos
-: Company founded in 198x to take on the Lisp business from Xerox. Closed within 10 months and folded back to Xerox.
+: Company founded in 198x to take on the Lisp business from Xerox. Closed within 10 months and folded back into Xerox.
 
 Venue
 : Company founded by John Sybalsky, former Xerox and Envos employee, which obtained a license to create and distribute derivative works of Maiko and Medley.
