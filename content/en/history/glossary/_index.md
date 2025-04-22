@@ -90,13 +90,13 @@ Interlisp-VAX
 : Implementation of Interlisp for Digital Equipment Corporation VAX systems.
 
 Koto
-: An obsolete named releases of Interlisp-D.
+: An obsolete named release of Interlisp-D.
 
 Lcom
 : Used as a file ending, xxx.lcom, for compiled Medley files.
 
 Lyric
-: An obsolete named releases of Interlisp-D.
+: An obsolete named release of Interlisp-D.
 
 Medley
 : The final named release of Interlisp-D.  
