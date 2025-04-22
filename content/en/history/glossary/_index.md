@@ -150,7 +150,7 @@ Venue
 
 Medley Interlisp Project
 : Began late 2010’s with Nick Briggs getting Maiko to run on macOS.  The group expanded and began holding weekly online meetings in 2020.
-Subsequently ported Maiko (and therefore Medley) to Linux, Windows, and other operating system.  Maintains a mailing list for devellopers and interested users,
+Subsequently ported Maiko (and therefore Medley) to Linux, Windows, and other operating system.  Maintains a mailing list for developers and interested users,
 sponsors the maintenance of an exhaustive bibliography and the very website where you're reading this.
 
 InterlispOrg
