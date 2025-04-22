@@ -87,7 +87,7 @@ Interlisp-D
   configurations and micro-instructions.
 
 Interlisp-VAX
-: Implementation of Interlisp for Digitial Equipment Corporation VAX systems.
+: Implementation of Interlisp for Digital Equipment Corporation VAX systems.
 
 Koto
 : An obsolete named releases of Interlisp-D.
