@@ -15,6 +15,8 @@ There are two main ways of running Medley: accessing it online in a web browser 
 
 Once you are up and running, see "[Using Medley](using-medley)" for some basics and pointers to other documentation.  Our GitHub repositories are [here](https://github.com/interlisp/). 
 
-* *Coming*: [Running Medley in the browser!!](https://groups.google.com/g/lispcore/c/tiD2PUzBLCo/m/HuqWV63_AQAJ)
+* [Run Medley in the browser](http://wasm.interlisp.org/medley.html)
 
-We are working on making earlier versions of Interlisp-D run in the browser. This example of software preservation will let you access a technology artifact of historical significance.
+We are working on a build of Medley that runs in the browser, an experimental port based on the Maiko virtual machine compiled to WebAssembly with Emscripten. To end a session just close the browser tab.
+
+We don't recommend this build as it doesn't support a file system and **can't save files**. We acknowledge these limitations and are exploring alternate approaches to running Medley online or in the browser. We welcome help and feedback.

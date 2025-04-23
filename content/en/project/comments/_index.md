@@ -29,6 +29,12 @@ _Within the Artificial Intelligence and natural language research communities, L
 
 ## Blogs and Online Discussions
 
+- Steven Harms published a [blog series on setting up a distraction free FreeBSD laptop environment](https://stevengharms.com/longform/my-first-freebsd) and shared his [experience with installing and running some application programs](https://stevengharms.com/longform/my-first-freebsd/installation/part-7-apps), including Medley.  
+_I’m also pleased to report that Medley worked out of the box in Wayland + Sway through Wayland’s XWayland interface._
+
+- Vindarel praised the Medley Interlisp Project in a [roundup of what happened in Common Lisp](https://lisp-journey.gitlab.io/blog/these-years-in-common-lisp-2023-2024-in-review) and the broader Lisp world in 2023 and 2024.  
+_We can run the Medley Interlisp Lisp machine in a browser O_o The work achieved by this group is phenomenal, [...]_
+
 - In a post on the [visual feedback of code changes in development environments](https://stevengharms.com/posts/2024-11-13-live-visualization-of-data-state) Steven Harms mentioned Medley and its revival.  
 _[...] its original developers ported the code to work on the X86 chipset architecture and have brought the glorious, streamlined, black-and-white IDE-as-OS environment of Medley into the public’s hands as open source._
 
@@ -60,6 +66,8 @@ _Interlisp is one of the most fascinating could-have-been computer systems in hi
 _Interlisp was the so-called "west coast" Lisp that emphasized an interactive programming environment and in retrospect looks more like a hybrid between Smalltalk and Lisp than modern Lisp implementations. It was developed at PARC for a while. I don't know if there was cross-pollination between Interlisp and Smalltalk or if the similarity was a zeitgeist thing._
 
 ## Twitter and Mastodon
+
+{{< imgproc JoePasqua_20250117 Resize "588x176">}} <a href="https://mastodon.social/@bitsplusatoms/113844413154890867">Link to message</a> {{< /imgproc >}}
 
 {{< imgproc AlexanderShendi_20230719 Resize "1100x170">}} <a href="https://rollenspiel.social/@alexshendi/110741933293236916">Link to message</a> {{< /imgproc >}}
 

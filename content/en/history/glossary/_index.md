@@ -10,12 +10,12 @@ weight: 90
 type: docs
 ---
 
-The names “Medley”, "Interlisp-D", “Interlisp.org”, “Common Lisp”, etc. are often used in confusing ways. We’re talking about a lot of different things that evolved over decades. These are cemented in by usage in different publications over time. We hope this glossary of terms will help.
+The names “Medley,” "Interlisp-D," “Interlisp.org,” “Common Lisp,” etc. are often used in confusing ways. We’re talking about a lot of different things that evolved over decades. These are cemented in by usage in different publications over time. We hope this glossary of terms will help.
 
 ## Vocabulary and relationships
 
-Alto Lisp
-:  An (unsuccessful) attempt to build a Lisp-based OS for running Interlisp on an Alto
+AltoLisp
+:  An (unsuccessful) attempt to build a Lisp-based OS for running Interlisp on an Alto.
 
 Carol, Fugue, Harmony, Intermezzo, Koto, Lyric, Medley
 : Named releases of Interlisp-D.  All are obsolete except Medley.
@@ -31,15 +31,16 @@ Common Lisp the Language
 - CLtL2  – second edition, 1029 pages
 
 Common Lisp dpANS
-: The ANSI Standard for Common Lisp
+: The ANSI Standard for Common Lisp.
 
 Starting with the Lyric release of Interlisp-D and then the Medley release, the implementation of Medley included implementations of Common Lisp (CLtL 1) as well as the Interlisp dialect in a single development environment; this was made possible by using the (Common Lisp) “package” feature to allow both dialects to be intermixed.
 
 Dfasl
-: A compiled form of Medley Interlisp files.
+: A compiled form of Medley Interlisp files with the extension ".dfasl".
 
 DLISP
-: By Warren Teitelman: a first attempt at building a “Display” (GUI) with Interlisp running on Maxc (A PDP-10 clone) a Xerox Alto as a graphics terminal connected to it via Ethernet.`
+: By Warren Teitelman: a first attempt at building a “Display” (GUI) with Interlisp running on MAXC (a PDP-10 clone) connected by Ethernet to a Xerox Alto acting 
+as a graphics terminal.
 
 Dorado Lisp
 : The reimplementation of the AltoLisp microcode on the Dorado – a research prototype.
@@ -55,23 +56,23 @@ Intermezzo
 
 Interlisp
 : A GitHub “organization” with ~20 repositories, see <https://github.com/Interlisp>
-: Both a language and, in some cases, the implementation of that language. Usually used with some other wording or refinement
+: Both a language and, in some cases, the implementation of that language. Usually used with some other wording or refinement.
 
 Interlisp: The Language and its usage
-: A book by Steve Kaisler which describes Interlisp of the 1970s & 80s
+: A book by Steve Kaisler which describes Interlisp of the 1970s & 80s.
 
 Interlisp.org
-: A “domain name”, used for some web sites and email addresses
+: The project's Internet domain name, used for its websites and email addresses.
 
 - <https://interlisp.org>  – the address of the main web site
 - <https://online.interlisp.org> – the address of a service that lets you run Medley
-- <info@interlisp.org>             - an email address of a group that can respond to questions
+- <info@interlisp.org>             - the project's general information email address
 
 Interlisp-10
-: The first implementation of “Interlisp” for the DEC PDP-10 / Tenex
+: The first implementation of Interlisp for the Digital Equipment Corporation (DEC) PDP-10 / Tenex.
 
 Interlisp-360
-: Implemention of Interlisp for the IBM-360
+: Implemention of Interlisp for the IBM-360.
 
 Interlisp-D
 : What Dorado Lisp became.  The D stood for both “Display” and “D-machine”.  An implementation of
@@ -86,21 +87,16 @@ Interlisp-D
   configurations and micro-instructions.
 
 Interlisp-VAX
-: Implementation of Interlisp for Digitial Equipment Corporation VAX systems
-
-InterlispOrg
-: A [California-registered](https://rct.doj.ca.gov/Verification/Web/Details.aspx?result=c7aa8cb2-16ec-458a-be56-41f963365258) non-profit organization  (DBA Interlisp.org) Established
-        August 2021. 501c3  EIN 87-2528093  California registered charity CT0278267.
-        President Larry Masinter, Treasurer Ron Kaplan, Secretary Herb Jellinek.
+: Implementation of Interlisp for Digital Equipment Corporation VAX systems.
 
 Koto
-: An obsolete named releases of Interlisp-D.
+: An obsolete named release of Interlisp-D.
 
 Lcom
 : Used as a file ending, xxx.lcom, for compiled Medley files.
 
 Lyric
-: An obsolete named releases of Interlisp-D.
+: An obsolete named release of Interlisp-D.
 
 Medley
 : The final named release of Interlisp-D.  
@@ -109,48 +105,55 @@ Medley 1.0, Medley 2.01, Medley 3.5 numbered releases of Interlisp-D
 : At some point the name Interlisp-D was retired and Medley used to name the software.
 
 Maiko
-: An implementation of the functions of the microcode D-machine, but written in C for the
-      Sun Microsystems (RISC-like) SPARC processor workstation, initially developed by
+: An implementation of the functions of the D-machine microcode, but written in C for the
+      Sun Microsystems SPARC processor workstation, initially developed by
        Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.
 
 SDL
-: Structured Design Language
+: Structured Design Language.
 
 Sysout
-: A file containing the saved state of Interlisp virtual memroy
+: A file containing the saved state of Interlisp virtual memory.
 
 X11
-: The X Window System
+: The X Window System.
 
 ### Organizations
 
 BBN
-: Boston consultancy which (late 60s) implemented BBN Lisp and the Tenex operating system.
+: [Bolt, Beranek, and Newman](https://en.wikipedia.org/wiki/Raytheon_BBN), a Cambridge, Mass. consulting firm which sponsored the
+      creation of BBN Lisp, Interlisp's immediate ancestor, as well as the Tenex operating system.
 
 Xerox PARC or just PARC
 : Palo Alto Research Center, which continued in collaboration with BBN on (renamed) Interlisp. PARC developed the Alto and Dorado.  Now part of SRI International.
 
 SRI International
-: non-profit scientific R & D institute
+: A non-profit scientific R & D institute, headquertered in Menlo Park, California.
 
 Xerox Electro-Optical Systems (XEOS)
-: Xerox division supporting classified customers
+: A former Xerox division supporting government customers.
 
 Xerox Artificial Intelligence Systems (XAIS)
-: The division working to commercialize Xerox Workstations running Interlisp-D.
+: The former Xerox division working to commercialize Xerox workstations running Interlisp-D.
 
 Rank Xerox
-: Xerox affiliate in charge of delivering Interlisp-D workstations in Europe
+: Xerox's European subsidiary, a joint venture of Xerox Corp. and the Rank Organization, which sold Interlisp-D workstations in Europe.
 
 Fuji Xerox
-: Xerox affiliate – joint project of Rank Xerox and Fuji Photo Film company.
+: Xerox's Japanese subsidiary, owned jointly by Rank Xerox and Fujifilm Corp., responsible for selling and supporting Interlisp-D systems in Japan.
 
 Envos
-: Company founded in 198x to take on the Lisp business from Xerox. Closed within 10 months and folded back to Xerox.
+: Company founded in 198x to take on the Lisp business from Xerox. Closed within 10 months and folded back into Xerox.
 
 Venue
-: Smaller company, started by John Sybalsky; it had the license to create and distribute derivative works of Maiko and Medley   Venue ceased operations… … some history …. Software recovered from late 90s…. Fuji Xerox worked with John into the 90s with ports and addons and other software….
+: Company founded by John Sybalsky, former Xerox and Envos employee, which obtained a license to create and distribute derivative works of Maiko and Medley.
 
 Medley Interlisp Project
-: Began late 2010’s with Nick Briggs getting Maiko to run on MacOS.
-In earnest in 2020 with start of weekly Zoom meetings, getting it to run on Linux in a VM and getting the Interlisp and LispCore google groups and ….
+: Began late 2010’s with Nick Briggs getting Maiko to run on macOS.  The group expanded and began holding weekly online meetings in 2020.
+Subsequently ported Maiko (and therefore Medley) to Linux, Windows, and other operating system.  Maintains a mailing list for developers and interested users,
+sponsors the maintenance of an exhaustive bibliography and the very website where you're reading this.
+
+InterlispOrg
+: A [California-registered](https://rct.doj.ca.gov/Verification/Web/Details.aspx?result=c7aa8cb2-16ec-458a-be56-41f963365258) non-profit organization  (DBA Interlisp.org) Established
+        August 2021. 501c3  EIN 87-2528093  California registered charity CT0278267.
+        The Board of Directors consists of Larry Masinter, President; Ron Kaplan, Treasurer; and Herb Jellinek, Secretary.
