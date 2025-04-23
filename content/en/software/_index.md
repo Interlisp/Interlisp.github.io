@@ -13,10 +13,10 @@ There are two main ways of running Medley: accessing it online in a web browser 
 * [Access Medley Online](access-online): how to access Medley running on our servers using your web browser. 
 * [Install and Run](install-and-run): how to set Medley up on your computer, and (re)start each time.
 
-Once you are up and running, see "[Using Medley](using-medley)" for some basics and pointers to other documentation.
+Once you are up and running, see "[Using Medley](using-medley)" for some basics and pointers to other documentation.  Our GitHub repositories are [here](https://github.com/interlisp/). 
 
 * [Run Medley in the browser](http://wasm.interlisp.org/medley.html)
 
-We are making a build of Medley run in the browser, an experimental port based on the Maiko virtual machine compiled to WebAssembly with Emscripten. To end a session just close the browser tab.
+We are working on a build of Medley that runs in the browser, an experimental port based on the Maiko virtual machine compiled to WebAssembly with Emscripten. To end a session just close the browser tab.
 
 We don't recommend this build as it doesn't support a file system and **can't save files**. We acknowledge these limitations and are exploring alternate approaches to running Medley online or in the browser. We welcome help and feedback.
