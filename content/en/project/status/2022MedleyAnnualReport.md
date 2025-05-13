@@ -5,7 +5,6 @@ type: docs
 aliases:
  - /medley/project/status/2022medleyannualreport/
  - /project/news/2022medleyannualrepoort/
- - /news/2022medleyannualreport/
 ---
 
 ### Introduction

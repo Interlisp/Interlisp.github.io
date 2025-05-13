@@ -3,19 +3,15 @@ title: Documentation
 weight: 20
 type: docs
 aliases:
- - /medley/using/docs/medley/orientation/
  - /docs/
  - /medley/using/docs/medley/the-medley-interlisp-dsk-file-system/
- - /doc/info/Using.html
  - /doc/info/Using
- - /hugo/documentation
  - /using-medley/
  - /medley/using/
  - /medley/using/docs/medley/orientation/
  - /medley/using/docs/medley/
  - /docs/medley/orientation/
  - /medley/using/docs/medley/tips/
- - /docs/medley/orientation/
  - /software/using-medley/medley/
  - /software/using-medley/IRM.pdf
 ---

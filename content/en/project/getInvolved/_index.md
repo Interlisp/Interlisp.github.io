@@ -4,7 +4,6 @@ weight: 11
 type: docs
 aliases:
  - /medley/project/getinvolved/
- - /getinvolved/
 ---
 
 There several ways to get involved in the Medley Interlisp Project, depending on your background and interests. These are elaborated below:
