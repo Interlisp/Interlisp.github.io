@@ -116,6 +116,8 @@ jobs:
             echo "Retrieve bibliography"
             cd scripts
             chmod +x ./update_bibliography.sh
+            chmod +x ./bibSplit.pl
+
             ./update_bibliography.sh
             sudo cp --recursive ${GITHUB_WORKSPACE}/static/data ~/data
           fi 
