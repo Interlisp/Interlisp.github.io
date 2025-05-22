@@ -67,6 +67,8 @@ _Interlisp was the so-called "west coast" Lisp that emphasized an interactive pr
 
 ## Twitter and Mastodon
 
+{{< imgproc SimonBrooke20250521 Resize "567x277">}} <a href="https://mastodon.scot/@simon_brooke/114545233331950471">Link to message</a> {{< /imgproc >}}
+
 {{< imgproc JoePasqua_20250117 Resize "588x176">}} <a href="https://mastodon.social/@bitsplusatoms/113844413154890867">Link to message</a> {{< /imgproc >}}
 
 {{< imgproc AlexanderShendi_20230719 Resize "1100x170">}} <a href="https://rollenspiel.social/@alexshendi/110741933293236916">Link to message</a> {{< /imgproc >}}
