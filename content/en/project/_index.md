@@ -14,7 +14,7 @@ aliases:
 
 Our aim is to allow Medley to "live again": to be useable enough on modern systems that someone could develop some code and experience what it was like to use this groundbreaking system. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle. 
 
-We also hope to provide a platform for revival of systems developed using Interlisp., including 1980's work in hypertext (Notecards), desktop management (Rooms), and object-oriented programming (LOOPS).
+We also hope to provide a platform for revival of systems developed using Interlisp, including 1980's work in hypertext (Notecards), desktop management (Rooms), and object-oriented programming (LOOPS).
 
 The lessons from the Interlisp interactive environment is likely more relevant in today's "devops" environment -- managing large networks of independent microservices, with no single serialization of the components quite comprehensible. Development in this model has been called "repl-driven development": you are working in the 'live' environment (or a copy) making changes without a separate, lengthy edit-compile-load-restart.
 
