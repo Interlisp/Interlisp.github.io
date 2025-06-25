@@ -1,10 +1,7 @@
 ---
 title: Glossary
 aliases:
- - /medley/project/glossary
- - /medley/project/glossary/
  - /glossary/
- - /project/glossary
  - /medley/project/vocabulary/
 weight: 90
 type: docs
