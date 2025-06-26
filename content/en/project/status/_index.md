@@ -22,6 +22,12 @@ The [2024 Medley Interlisp Annual Report](/project/status/2024medleyannualreport
 
 Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases). We advise caution as these builds are untested and may have bugs or other issues.
 
+## May 2025 IEEE Canadian Conference on Electrical and Computer Engineering
+
+On May 28, 2025 Eleanor Young [gave the talk](https://ccece2025.ieee.ca/technical-program) "The Medley Interlisp Project: Reviving a Historical Software System" at the [2025 IEEE Canadian Conference on Electrical and Computer Engineering and Industry Summit](https://ccece2025.ieee.ca) (CCECE). The paper by Young et al. was accepted for publication.
+
+You can [download the preprint of the paper](/documentation/young-ccece2025.pdf). For questions and inquiries about the paper please post to a [communication channel we monitor](../getInvolved#3-join-in-the-discussions).
+
 ## Larry Masinter at aNONradio in December 2024
 
 On December 18, 2024 Larry Masinter was a guest of the Lispy Gopher Climate radio show at [aNONradio](https://anonradio.net). The [recording of the episode](https://archives.anonradio.net/202412180000_screwtape.mp3) is available.
