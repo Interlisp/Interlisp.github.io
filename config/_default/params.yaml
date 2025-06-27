@@ -105,6 +105,22 @@ links:
 #   desc: "Discuss development issues around the project"
 
 taxonomies:
+  publish: publish
+  tag: tags
+  category: categories
+  publication_type: publication_types
+  author: authors
+
+related:
+  threshold: 80
+  includeNewer: true
+  toLower: true
+  indices:
+    - name: tags
+      weight: 100
+    - name: categories
+      weight: 70
+      
 # Nothing defined
 
 # User Interface Configuration options
@@ -163,3 +179,18 @@ ui:
 # Identify the custom css files
 custom_css:
   - "css/custom.css"
+
+# Extensions  -- From wowchemy
+
+extensions:
+  decap_cms:
+    branch: main
+    local_backend: false
+  academicons:
+    enable: true
+
+# Citation style
+
+publications:
+  date_format: January 2006
+  citation_style: apa

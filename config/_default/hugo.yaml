@@ -36,7 +36,6 @@ enableMissingTranslationPlaceholders: true
 
 # Disable rendering of the specified page kinds 
 disableKinds: 
- - taxonomy
  - term
 
 outputs:

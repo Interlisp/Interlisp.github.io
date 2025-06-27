@@ -1,0 +1,5 @@
+rss:
+  limit: -1
+  title: "Interlisp.org RSS Feed"
+  description: "The latest news from Interlisp.org"
+  link: "https://interlisp.org"
