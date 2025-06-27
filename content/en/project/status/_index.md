@@ -24,9 +24,9 @@ Builds of Medley for several operating systems and architectures are generated a
 
 ## May 2025 IEEE Canadian Conference on Electrical and Computer Engineering
 
-On May 28, 2025 Eleanor Young [gave the talk](https://ccece2025.ieee.ca/technical-program) "The Medley Interlisp Project: Reviving a Historical Software System" at the [2025 IEEE Canadian Conference on Electrical and Computer Engineering and Industry Summit](https://ccece2025.ieee.ca) (CCECE). The paper by Young et al. was accepted for publication.
+On May 28, 2025 Eleanor Young presented "The Medley Interlisp Project: Reviving a Historical Software System" at the [2025 IEEE Canadian Conference on Electrical and Computer Engineering and Industry Summit](https://ccece2025.ieee.ca) (CCECE). The paper by Young et al. was accepted for publication.
 
-You can [download the preprint of the paper](/documentation/young-ccece2025.pdf). For questions and inquiries about the paper please post to a [communication channel we monitor](../getInvolved#3-join-in-the-discussions).
+A [preprint](/documentation/young-ccece2025.pdf) of the paper is available. Please post questions, inquiries or your thoughts on the paper to one of our [social media sites](../getInvolved#3-join-in-the-discussions).
 
 ## Larry Masinter at aNONradio in December 2024
 
