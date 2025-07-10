@@ -4,9 +4,9 @@ type: docs
 weight: 90
 --- 
 
-## Medley in use
+## Showcasing Medley in use
 
-Medley provides a rich palette for displaying information.  To highlight it's flexibility we maintain a gallery of screenshots.  It shows some of the applications implemented within Medley and provides insight into how some users have customized their user interface.  In addition you can find more whimsical drawings created within the Medley environment.
+Medley provides a rich palette for displaying information.  To highlight its flexibility we maintain a gallery of screenshots.  It shows some of the applications implemented within Medley and provides insight into how some users have customized their user interface.  In addition you can find more whimsical drawings created within the Medley environment.
 
 We invite you to browse our collection, draw inspiration from it and, if so desired, contribute your own screenshots highlighting how you use and experience Medley.
 
