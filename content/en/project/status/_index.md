@@ -14,19 +14,15 @@ aliases:
  - /medley/project/status/
 ---
 
-## 2024 Annual Report released
-
-The [2024 Medley Interlisp Annual Report](/project/status/2024medleyannualreport) has been released.  Another year of progress.
-
-## Build Notes
-
-Builds of Medley for several operating systems and architectures are generated automatically every week. You can [learn what's changed and download the latest builds](https://github.com/Interlisp/medley/releases). We advise caution as these builds are untested and may have bugs or other issues.
-
 ## May 2025 IEEE Canadian Conference on Electrical and Computer Engineering
 
 On May 28, 2025 Eleanor Young presented "The Medley Interlisp Project: Reviving a Historical Software System" at the [2025 IEEE Canadian Conference on Electrical and Computer Engineering and Industry Summit](https://ccece2025.ieee.ca) (CCECE). The paper by Young et al. was accepted for publication.
 
 A [preprint](/documentation/young-ccece2025.pdf) of the paper and the [slides](/documentation/young-ccece2025-slides.pdf) of the talk are available. Please post questions, inquiries or your thoughts on the paper to one of our [social media sites](../getInvolved#3-join-in-the-discussions).
+
+## 2024 Annual Report released
+
+The [2024 Medley Interlisp Annual Report](/project/status/2024medleyannualreport) has been released.  Another year of progress.
 
 ## Larry Masinter at aNONradio in December 2024
 
@@ -46,14 +42,9 @@ On May 6, 2024 Andrew Sengul gave the remote talk "The Medley Interlisp Revival"
 
 <iframe width="560" height="315" src="https://www.youtube-nocookie.com/embed/ZBAJukF5mPE?si=nLVT7PRHd4-m0OMp" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
 
-## Annual Reports
+## 2023 Annual Report released
 
-The Medley team has produced annual reports documenting their major achievements.
-
-- [2024 Annual Report](/project/status/2024medleyannualreport)
-- [2023 Annual Report](/project/status/2023medleyannualreport)
-- [2022 Annual Report](/project/status/2022medleyannualreport)
-- [2021 Annual Report](/project/status/2021medleyannualreport)
+The [2023 Medley Interlisp Annual Report](/project/status/2023medleyannualreport) was released.
 
 ## November 2023 Computer Conservation Society event
 
@@ -69,6 +60,10 @@ being undertaken by the Medley project.
 
 <iframe width="560" height="315" src="https://www.youtube.com/embed/N1MobfEaoWY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
 
-## Closed Issues
+## 2022 Annual Report released
 
-The [issues closed](https://github.com/Interlisp/medley/issues?q=is%3Aissue+is%3Aclosed) by the team can be found in our GitHub repository.
+The [2022 Medley Interlisp Annual Report](/project/status/2022medleyannualreport) was released.
+
+## 2021 Annual Report released
+
+We released the [2021 Medley Interlisp Annual Report](/project/status/2021medleyannualreport) on the first year of the Medley Interlisp Project.
