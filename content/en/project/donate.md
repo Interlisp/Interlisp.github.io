@@ -11,7 +11,7 @@ to assist with various tasks.
 
 See our [profile](https://www.guidestar.org/profile/shared/31fad8e3-de97-4d71-9401-b896bf085498) and rating at [GuideStar (Candid)](https://www.guidestar.org).
 
-<a href="https://www.guidestar.org/profile/shared/31fad8e3-de97-4d71-9401-b896bf085498" target="_blank"><img src="https://widgets.guidestar.org/TransparencySeal/10019973" /></a>
+<a href="https://www.guidestar.org/profile/shared/31fad8e3-de97-4d71-9401-b896bf085498" target="_blank"><img src="https://widgets.guidestar.org/prod/v1/pdp/transparency-seal//87-2528093/svg" /></a>
 
 ## How to donate
 

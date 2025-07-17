@@ -29,7 +29,7 @@ We are trying to address this conflict by also making older versions of Interlis
 We are [some of the original developers and users of Interlisp](/project/credits) 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](partners). And with you!
 
 <div class="mx-auto">
- <a class="btn btn-lg btn-danger mr-3 mb-4" href="getinvolved">
+ <a class="btn btn-lg btn-danger mr-3 mb-4" href="getinvolved/">
   How do I get involved?<i class="fas fa-arrow-alt-circle-right ml-2"></i>
 </a>
 </div>
