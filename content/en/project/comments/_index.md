@@ -86,3 +86,12 @@ _Interlisp was the so-called "west coast" Lisp that emphasized an interactive pr
 {{< imgproc SimonBrooke_20211215 Resize "550x420">}} <a href="https://twitter.com/simon_brooke/status/1471238434719154189?ref_src=twsrc">Link to tweet</a> {{< /imgproc >}}
 
 {{< imgproc RainerJoswig_20220320 Resize "550x145" >}} {{< /imgproc >}}
+
+## Books and Publications
+
+### Hypertext, 1999
+
+The Preface of the book [Hypertext: Theory into Practice](https://openlibrary.org/books/OL8651625M/Hypertext), edited by Ray McAleese (Intellect, 1999), highlighted the influence of NoteCards over hypertext research. On page *vi* McAleese wrote:
+
+> It was Andy van Dam at Brown University that developed the first useful hypertext editing system by 1967 — two years after Nelson coined the term. Much later, the Symbolics Document Editor from Janet Walker predated Frank Halaz's seminal work with NoteCards in 1985. It is NoteCards that I hold was the point of take off. NoteCards was pure vision and inspired implementation. It had the browsers and typed links. It gave an integrated operating system, LISP, with an open application layer, NoteCards. NoteCards was both metaphor and implementation for hypertext while it allowed multiple-filing of entitles in separate FileBoxes.
+
