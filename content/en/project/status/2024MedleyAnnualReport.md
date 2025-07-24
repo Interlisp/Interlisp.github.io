@@ -17,8 +17,8 @@ The Medley Interlisp project was started in 2020 by a few of the original develo
 
 For more information, see [https://interlisp.org](https://interlisp.org). There you will find:
 
-* [History](https://interlisp.org/history): The timeline of Interlisp, Medley, and applications written in or for it.  
-  * An extensive bibliography of citations, articles, videos and other online material with pointers to the literature ([https://interlisp.org/bibliography](https://interlisp.org/bibliography))  
+* [History](https://interlisp.org/history/): The timeline of Interlisp, Medley, and applications written in or for it.  
+  * An extensive bibliography of citations, articles, videos and other online material with pointers to the literature ([https://interlisp.org/bibliography](https://interlisp.org/bibliography/))  
   * A Glossary of terms used in conjunction with the software.  
 * [Project](https://interlisp.org/project/): The Medley Interlisp Project itself – how we work, how to get involved  
   * Get Involved  

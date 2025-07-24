@@ -12,7 +12,7 @@ Join [Interlisp group](https://groups.google.com/g/interlisp) or follow @[interl
 
 To “revive” something is to make it live again. Making Medley Interlisp live again means putting the system in order so that others without a previous deep background in Interlisp can use and appreciate it (if only as a virtual antique).
 
-The Medley Interlisp project started in earnest in March of 2020 (at the beginning of the pandemic). This report focuses on activities and accomplishments since the December 2020 virtual meeting of [LispNYC](http://lispnyc.org/) (recording at: [https://www.youtube.com/watch?v=x6-b\_hazcyk](https://www.youtube.com/watch?v=x6-b\_hazcyk)).
+The Medley Interlisp project started in earnest in March of 2020 (at the beginning of the pandemic). This report focuses on activities and accomplishments since the December 2020 virtual meeting of [LispNYC](https://lispnyc.org/) (recording at: [https://www.youtube.com/watch?v=x6-b\_hazcyk](https://www.youtube.com/watch?v=x6-b\_hazcyk)).
 
 In this document, work in the project is broken down into three main categories:
 
@@ -38,7 +38,7 @@ Because of the cleanup work, the code is much more portable than ever before. Sy
 * Operating systems: macOS, Linux, FreeBSD, Solaris 11.4
 * CPU architectures: i386, x86\_64, arm7, aarch64, SPARC-32 and -64
 
-This covers Raspberry Pi (linux.arm7) and Windows 10 (with [WSL2](https://docs.microsoft.com/en-us/windows/wsl/install) or Docker). and Windows 11 (includes WSL2). Performance is outstanding. A $40 Raspberry Pi completes Lisp tasks 250-1000 times faster than the Dorado (the $90k high-end Xerox 1132 Lisp machine).
+This covers Raspberry Pi (linux.arm7) and Windows 10 (with [WSL2](https://learn.microsoft.com/en-us/windows/wsl/install) or Docker). and Windows 11 (includes WSL2). Performance is outstanding. A $40 Raspberry Pi completes Lisp tasks 250-1000 times faster than the Dorado (the $90k high-end Xerox 1132 Lisp machine).
 
 #### Medley
 

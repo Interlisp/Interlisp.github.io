@@ -65,7 +65,7 @@ a) man-db
 b) wslu
 c) tigervnc
 > ***Notes:***
-> 4.1.  If *wslu* is not available via the standard package repos for your WSL distro, then see [the wslu wiki](https://wslutiliti.es/wslu/install.html).  If *wslu* is still not available, then try installing the *xdg-utils* package instead.  If *xdg-utils* is not available either, then Medley will still run well, with the exception of a few sub-systems that require opening external (to Medley) files.
+> 4.1.  If *wslu* is not available via the standard package repos for your WSL distro, then see [the wslu wiki](https://wslu.wedotstud.io/wslu/install.html).  If *wslu* is still not available, then try installing the *xdg-utils* package instead.  If *xdg-utils* is not available either, then Medley will still run well, with the exception of a few sub-systems that require opening external (to Medley) files.
 
 > 4.2. On Debian-based systems (including Ubuntu), the tigervnc package is not available.  Instead install both the *tigervnc-standalone-server package* and the *tigervnc-xorg-extension* package.
 
