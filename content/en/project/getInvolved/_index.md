@@ -28,7 +28,7 @@ Bug reports, feature requests, documentation problems, and questions are posted 
 
 * [Medley](https://github.com/Interlisp/medley): Lisp code, build scripts and GitHub automation
 * [maiko](https://github.com/Interlisp/maiko): The C-coded virtual machine
-* [this web site](https://github.com/Interlisp/Interlisp.github.io#README)
+* [the Interlisp.github.io repository](https://github.com/Interlisp/Interlisp.github.io#README) of the interlisp.org web site
 
 ## 3. Join in the discussions
 
@@ -36,32 +36,36 @@ Bug reports, feature requests, documentation problems, and questions are posted 
 
 The [discussion board on GitHub](https://github.com/orgs/Interlisp/discussions) is for general discussions and questions on the Medley environment, the Interlisp language, and Lisp development on the Medley system.
 
-### Socials
+### Social media accounts
 
-You can follow us on the Fediverse and LinkedIn.
+You can follow our official social media accounts which we monitor.
 
 * [Mastodon](https://fosstodon.org/@interlisp)
 * [Bluesky](https://bsky.app/profile/interlisp.org)
-* [LinkedIn](https://www.linkedin.com/groups/14632887)
+* [LinkedIn group](https://www.linkedin.com/groups/14632887)
+
+We no longer use or monitor our [X/Twitter account](https://x.com/interlisp8) and have no presence on Facebook.
 
 ### EMail
 
 There are two Google groups (mailing lists):
 
-* [Interlisp](mailto:interlisp@googlegroups.com), archives [here](https://groups.google.com/u/1/g/interlisp), and
-* [LispCore](mailto:lispcore@googlegroups.com), archives [here](https://groups.google.com/u/1/g/lispcore).
+* [Interlisp](mailto:interlisp@googlegroups.com), archives [here](https://groups.google.com/u/1/g/interlisp)
+* [LispCore](mailto:lispcore@googlegroups.com), archives [here](https://groups.google.com/u/1/g/lispcore)
 
 The archives are public. The LispCore group gets much more email, and posts from non-members are moderated.
 
+You can email us at [info@interlisp.org](mailto:info@interlisp.org)
+
 * Interlisp.org is a Google workspace; [let us know](mailto:info@interlisp.org) if you want an "interlisp.org" email address and why you want it.
 
-### Chat
+### Online communities
 
+We do not monitor these online communities and we are looking for volunteers who can monitor them for Interlisp discussions and keep us in the loop:
+
+* [r/lisp](reddit.com/r/lisp) on Reddit.
 * [Libera.Chat](https://libera.chat) has a #Interlisp IRC Channel. A place for informal chat. Connect by pointing your IRC client to `irc.libera.chat:6697` (TLS) and `/join #interlisp`. Say hello. There are also channels for #lisp (any dialect) and #common-lisp.
 * [Lisp-Romania] has a Discord Interlisp channel.
-* Mastodon: [@interlisp@fosstodon.org](https://fosstodon.org/@interlisp).
-* Bluesky: [@interlisp.org](https://bsky.app/profile/interlisp.org)
-* _Direct email:_ In addition to the email groups listed above, you can email us at [info@interlisp.org](mailto:info@interlisp.org).
 
 ## 4. Weekly meetings. We have weekly video conferencing meetings:
 
