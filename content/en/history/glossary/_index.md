@@ -14,13 +14,13 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 ## Vocabulary and relationships
 
 AltoLisp
-:  An (unsuccessful) attempt to build a Lisp-based OS for running Interlisp on an Alto.
+: An experimental microcoded implementation of Interlisp on an Alto personal computer.
 
 Break package
 : The Interlisp subsystem that comprises the debugger (also known as break window) and other debugging facilities. Named after the `BREAK` function and breakpoints.
 
 Briefing Blurb
-: Any one of the technical reports in a series that introduced Xerox PARC newcomers to the computing and network environment at the Computer Science Laboratory. Written in an upbeat style, their titles followed a pattern that included the expression "Briefing Blurb" such as *The Alto-Dolphin-Dorado Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard* and *The Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard*.
+: One of the several documents that introduced Xerox PARC newcomers to the computing and network environment of the Computer Science Laboratory. Written in an upbeat style, their titles followed a pattern that included the expression "Briefing Blurb" such as *The Alto-Dolphin-Dorado Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard* and *The Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard*.
 
 Carol, Fugue, Harmony, Intermezzo, Koto, Lyric, Medley
 : Named releases of Interlisp-D.  All are obsolete except Medley.
@@ -118,7 +118,10 @@ Maiko
        Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.
 
 Package
-: An Interlisp subsystem such as the break package (q.v.) or the window package (window system). Not to be confused with Common Lisp packages or packaged applications.
+: The term Package has several different meanings depending on the context:
+
+- Informally, a collection of utilities or submodule in Interlisp (the "break package", q.v.; the "file package", a facility for managing code changes; the "record package", a record data type; and so on)
+- A feature of Commmon Lisp symbol support; the package system allows the combining of Interlisp symbols (written with `IL:` prefix) and Common Lisp symbols (written with a `LISP:` prefix).
 
 SDL
 : Structured Design Language.
