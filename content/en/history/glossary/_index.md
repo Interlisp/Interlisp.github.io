@@ -9,10 +9,18 @@ type: docs
 
 The names “Medley,” "Interlisp-D," “Interlisp.org,” “Common Lisp,” etc. are often used in confusing ways. We’re talking about a lot of different things that evolved over decades. These are cemented in by usage in different publications over time. We hope this glossary of terms will help.
 
+For general computer terminology and lore see [The Hacker's Dictionary](https://www.dourish.com/goodies/jargon.html) aka Jargon File.
+
 ## Vocabulary and relationships
 
 AltoLisp
-:  An (unsuccessful) attempt to build a Lisp-based OS for running Interlisp on an Alto.
+: An experimental microcoded implementation of Interlisp on an Alto personal computer.
+
+Break package
+: The Interlisp subsystem that comprises the debugger (also known as break window) and other debugging facilities. Named after the `BREAK` function and breakpoints.
+
+Briefing Blurb
+: One of the several documents that introduced Xerox PARC newcomers to the computing and network environment of the Computer Science Laboratory. Written in an upbeat style, their titles followed a pattern that included the expression "Briefing Blurb" such as *The Alto-Dolphin-Dorado Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard* and *The Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard*.
 
 Carol, Fugue, Harmony, Intermezzo, Koto, Lyric, Medley
 : Named releases of Interlisp-D.  All are obsolete except Medley.
@@ -34,6 +42,9 @@ Starting with the Lyric release of Interlisp-D and then the Medley release, the 
 
 Dfasl
 : A compiled form of Medley Interlisp files with the extension ".dfasl".
+
+Display
+: Denotes a program or system with a Graphical User Interface or a full screen character interface, as opposed to a line oriented interface like a teletype. In expressions like "display oriented editor" or "display editor".
 
 DLISP
 : By Warren Teitelman: a first attempt at building a “Display” (GUI) with Interlisp running on MAXC (a PDP-10 clone) connected by Ethernet to a Xerox Alto acting 
@@ -105,6 +116,12 @@ Maiko
 : An implementation of the functions of the D-machine microcode, but written in C for the
       Sun Microsystems SPARC processor workstation, initially developed by
        Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.
+
+Package
+: The term Package has several different meanings depending on the context:
+
+- Informally, a collection of utilities or submodule in Interlisp (the "break package", q.v.; the "file package", a facility for managing code changes; the "record package", a record data type; and so on)
+- A feature of Commmon Lisp symbol support; the package system allows the combining of Interlisp symbols (written with `IL:` prefix) and Common Lisp symbols (written with a `LISP:` prefix).
 
 SDL
 : Structured Design Language.
