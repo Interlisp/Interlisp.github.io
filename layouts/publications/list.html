@@ -1,0 +1,13 @@
+{{ define "main" }}
+  <h1>Publications</h1>
+  <ul>
+    {{ range .Pages.ByWeight }}
+      <li>
+        <strong>{{ .Title }}</strong><br>
+        {{ .Params.authors | append ", " }}<br>
+        <em>{{ .Params.journal }}</em>, {{ .Params.year }}<br>
+        <a href="{{ .Params.link }}">Read more</a>
+      </li>
+    {{ end }}
+  </ul>
+{{ end }}
