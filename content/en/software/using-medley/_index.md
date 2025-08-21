@@ -54,6 +54,8 @@ TEdit files are scattered through the various Interlisp repositories. For the co
  
 For the searcher's conveneience, these have also been combined into searchable PDFs named All-*-PDFs.pdf.
 
+The site [files.interlisp.org/medley/](https://files.interlisp.org/medley/) is a mirror of the Medley source tree with most text files, such as Lisp sources and TEdit documents, also available in PDF format with HTML forthcoming. It holds many useful documentation files we recommend checking out.
+
 ### Medley References
 
 - [Medley Primer](/documentation/Medley-Primer.pdf)
