@@ -18,6 +18,12 @@ aliases:
 
 We published new videos to our [YouTube channel](https://www.youtube.com/@Interlisp):
 
+* [Gregg Foster discusses the Cognoter tool — Uncut Tape](https://www.youtube.com/watch?v=AD62cLch1NM)
+* [Mark Stefik discusses CoLab — Uncut Tape](https://www.youtube.com/watch?v=n2clmDuWVdA)
+* [Deborah Tartar discusses CoLab — Uncut Tape](https://www.youtube.com/watch?v=iCf49xLRJxg)
+* [Lexical Functional Grammar Demonstration — Ron Kaplan (December 1982)](https://www.youtube.com/watch?v=t6RZp2AhKyw)
+* [Linguistics Research at Xerox PARC (November 1991)](https://www.youtube.com/watch?v=h4fEIIDJgRk)
+* [Daniel Bobrow discusses CoLab — Uncut Tape](https://www.youtube.com/watch?v=c0vijiBAqM0)
 * [PARC Forum — Frank Halasz Lectures on Notecards (September 1986)](https://www.youtube.com/watch?v=4icjACQQgN8)
 * [Notecards System Overview — Robert Spinrad and Frank Halasz (June 1986)](https://www.youtube.com/watch?v=gY_p8ZIa4Kk)
 * [Introduction to Notecards — Tom Moran and Frank Halasz (January 1985)](https://www.youtube.com/watch?v=KS0yNjZE5ew)
