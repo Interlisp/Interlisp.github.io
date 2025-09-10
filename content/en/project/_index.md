@@ -30,7 +30,7 @@ We are trying to address this conflict by also making older versions of Interlis
 
 We are [some of the original developers and users of Interlisp](/project/credits) 30 years ago, joined by newcomers interested in software history and preservation, along with members of the Lisp community. We work with [organizational partners](partners). And with you!
 
-[get involved](getinvolved) by running Medley, testing and reporting bugs and anomalies, participate to our discussions, and other opportunities to contribute with or without coding skills.
+[Get involved](getinvolved) by running Medley, testing and reporting bugs and anomalies, participate to our discussions, and other opportunities to contribute with or without coding skills.
 
 ## Why?
 
