@@ -12,7 +12,7 @@ aliases:
 
 ## What are we trying to accomplish?
 
-Our aim is to allow Medley to "live again": to be useable enough on modern systems that someone could develop some code and experience what it was like to use this groundbreaking system. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle.
+Our aim is to allow Medley to "live again": to be usable enough on modern systems that someone could develop some code and experience what it was like to use this groundbreaking system. You could think of this as a kind of "*vintage software*" project, to try to capture the sense of fluidity in the development cycle.
 
 As part of this effort we explore alternate system technologies such as SDL2/SDL3 as a graphics backend and [running Medley in the browser via WebAssembly](http://wasm.interlisp.org/medley.html) (experimental, doesn't save files).
 
