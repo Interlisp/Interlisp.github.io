@@ -12,6 +12,9 @@ def unwrapDiv:
 def moveURL_to_url:
   select(nonBlankKey("URL")) | (setpath(["url"]; .URL) | del(.URL)) // .;
 
+def raise_issued_date_parts:
+  if nonBlankKey("issued") and (.issued | nonBlankKey("date-parts")) then setpath(["issuedDateParts"]; .issued."date-parts"[0]) else . end;
+
 def make_DOI_to_url($doi):
   if ($doi | startswith("https:")) then $doi else "https://doi.org/" + ($doi | ltrimstr("/")) end ;
 
@@ -90,3 +93,7 @@ def semiflatten:  # assumes that only one item is the input
      + ($innerKeys | map(. as $iKey | {"key": $iKey, "value": ($inner | getpath([$iKey]))})) )
   | from_entries;
     
+def bibItem:  # assumes that only one item is the input
+    . as $item
+  | (keys - ["key","title","target"]) as $tailKeys
+  | {"key": .key, "title": .title, "target": .target } + ($tailKeys | map(. as $tKey | {"key": $tKey, "value": ($item | getpath([$tKey]))}) | from_entries);
