@@ -1,7 +1,15 @@
+@import "publications/publications";
+
 .text-center.py-2 .text-white {
     display: none;
 }
 
 div.td-page-meta {
     display: none;
+}
+
+.article-container {
+  max-width: 760px;
+  padding: 0 20px;
+  margin: 0 auto;
 }

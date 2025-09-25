@@ -6,4 +6,9 @@
 # 
 # see: https://gohugo.io/content-management/urls/#permalinks
 #
-blog: /:section/:year/:month/:day/:slug/
+blog: '/:section/:year/:month/:day/:slug/'
+
+authors: '/author/:slug/'
+tags: '/tag/:slug/'
+categories: '/category/:slug/'
+publication_types: '/publication-type/:slug/'

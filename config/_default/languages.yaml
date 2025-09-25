@@ -5,9 +5,14 @@
 # See:  https://gohugo.io/content-management/multilingual/
 #
 en:
-  languageName: English"
+  languageName: English
+  languageCode: en-us
   # Weight used for sorting.
   weight: 1
   contentDir: content/en
   params:
     description: "Dedicated to restoring and preserving the Interlisp experience"
+
+    # Languages
+#   Create a section for each of your site's languages.
+#   Documentation: https://docs.hugoblox.com/reference/language/
