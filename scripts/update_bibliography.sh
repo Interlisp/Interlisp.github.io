@@ -3,7 +3,7 @@
 set -e
 
 rawItemsFile=false
-debugFiles=true
+debugFiles=false
 tagFiles=false
 typeFiles=true
 curlFiles=false
@@ -264,7 +264,9 @@ if $debugFiles ; then
 fi
 finalCount=$(jq '. | length' <<< "$items")
 
-items=$(jq 'include "./bib-fns";map(raise_issued_date_parts)' <<< "$items")
+items=$(jq 'include "./bib-fns";map(issued_iso_string)' <<< "$items")
+
+items=$(jq 'include "./bib-fns";map(add_author_string)' <<< "$items")
 # if $removeChildrenFromFinalFile; then
 #   # Remove .children arrays, if any. Save space.
 #   items=$(jq 'map(del(.children))' <<< "$items")
@@ -295,10 +297,14 @@ if $debugFiles ; then
 fi
 
 showInfo 1 "Generating individual Bibliography entries' .md files"
-BIBLIOGRAPHY_DIR="$(dirname "$0")/../content/en/history/bibliography"
+BIBLIOGRAPHY_DIR="./../content/en/history/bibliography"
 export BIBLIOGRAPHY_DIR
-BIBITEMS_DIR="$(dirname "$0")/../static/data/bibItems"
+BIBITEMS_DIR="./../static/data/bibItems"
 export BIBITEMS_DIR
+
+# Ensure target directories exist
+mkdir -p "$BIBLIOGRAPHY_DIR" "$BIBITEMS_DIR"
+
 ./bibSplit.pl bibliography-items-by-line.json
 # Cleanup (uncomment once working)
 # rm bibliography-items-by-line.json
