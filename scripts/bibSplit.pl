@@ -60,9 +60,6 @@ url_source:
 zotero_url: "https://www.zotero.org/groups/2914042/items/$key"
 ---
 
-
-[Read More]({{< param "zotero_url" >}})
-
 {{< bibItem key="$key" >}}
 ENDITEM
   close $handle || die "$0: close of file $itemmd failed: $!";
