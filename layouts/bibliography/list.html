@@ -76,11 +76,11 @@
           {{ $authors }}<br>
         {{- end -}}
       {{- end -}}
-        
+
         {{- $zotero_url := .Params.zotero_url -}}
 
         {{- if $zotero_url -}}
-          <a href="{{ $zotero_url }}">Read More</a> 
+          <a href="{{ $zotero_url | safeURL }}" target="_blank" rel="noopener noreferrer">View on Zotero</a>
         {{- end -}}
         <br><br>
       </li>
