@@ -76,7 +76,12 @@
           {{ $authors }}<br>
         {{- end -}}
       {{- end -}}
-        <a href="{{ .RelPermalink }}">Read more</a>
+        
+        {{- $zotero_url := .Params.zotero_url -}}
+
+        {{- if $zotero_url -}}
+          <a href="{{ $zotero_url }}">Read More</a> 
+        {{- end -}}
         <br><br>
       </li>
     {{ end }}
