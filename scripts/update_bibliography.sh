@@ -305,7 +305,7 @@ export BIBITEMS_DIR
 # Ensure target directories exist
 mkdir -p "$BIBLIOGRAPHY_DIR" "$BIBITEMS_DIR"
 
-./bibSplit.pl bibliography-items-by-line.json
+./bibSplit.pl bibliography-items-by-line.json 2>bibSplit.err
 # Cleanup (uncomment once working)
 # rm bibliography-items-by-line.json
 

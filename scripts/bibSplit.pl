@@ -5,9 +5,9 @@ BEGIN
   $bibItemsDir = $ENV{'BIBITEMS_DIR'};
 }
 my $item = $_;
-/"key"\:"([A-Za-z0-9]{8})"/ || print "Cannot find key in line: $_\n";
+/"key"\:"([A-Za-z0-9]{8})"/ || print STDERR "Cannot find key in line: $_\n";
 my $key = $1;
-/"target"\:"([A-Za-z0-9]{8})"/ || print "Cannot find target for key \"$key\" in line: $_\n";
+/"target"\:"([A-Za-z0-9]{8})"/ || print STDERR "Cannot find target for key \"$key\" in line: $_\n";
 my $target = $1;
 if ($key eq $target) {  # only top level entries
   my $handle = undef;
@@ -20,28 +20,28 @@ if ($key eq $target) {  # only top level entries
   if(/"title"\:("(?:[^"\\]++|\\.)*+")/) {
     $itemTitle = $1;
   } else {
-    print "Cannot find title for key \"$key\" in line: $_\n";
+    print STDERR "Cannot find title for key \"$key\" in line: $_\n";
   }
 
   my $itemAbstract = '""';
   if(/"abstract"\:("(?:[^"\\]++|\\.)*+")/) {
     $itemAbstract = $1;
   } else {
-    print "Cannot find abstract for key \"$key\" in line: $_\n";
+    print STDERR "Cannot find abstract for key \"$key\" in line: $_\n";
   }
 
   my $itemDate = '""';
   if(/"isoDateString"\:("(?:[^"\\]++|\\.)*+")/) {
     $itemDate = $1;
   } else {
-    print "Cannot find isoDateString for key \"$key\" in line: $_\n";
+    print STDERR "Cannot find isoDateString for key \"$key\" in line: $_\n";
   }
 
   my $itemAuthors = '""';
   if(/"authorsFormatted"\:("(?:[^"\\]++|\\.)*+")/) {
     $itemAuthors = $1;
   } else {
-    print "Cannot find authors for key \"$key\" in line: $_\n";
+    print STDERR "Cannot find authors for key \"$key\" in line: $_\n";
   }
 
   $handle = undef;

@@ -25,7 +25,7 @@
 
   {{ $pages := .RegularPages }}
 
-  {{- warnf "Pages: $s" (len $pages) -}}
+  {{- warnf "Pages: %v" (len $pages) -}}
 
   {{ if not (gt (len $pages) 0) }}
     <p>No publications found.</p>
@@ -42,33 +42,33 @@
       <li>
         {{- $rawTitle := or .Params.title .Title -}}
         {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle -}}
-        {{- $rendered = $rawTitle | markdownify -}}
-        <span><strong>{{ $rendered }}</strong></span><br>
+        {{- $rendered = $rawTitle | plainify | htmlEscape -}}
+        <span><strong>{{- $rendered | safeHTML -}}</strong></span><br>
 
-        {{- /* warnf "Parameters $s " .Params */ -}} 
+        {{- /* warnf "Parameters %v " .Params */ -}} 
 
-        {{/* Safe date: use front matter date only if non-empty & matches basic pattern */}}
-        {{ $d := .Date }}
-        {{ with .Params.date }}
-          {{ $datestr := trim . " " }}
-          {{ if and (ne $datestr "") (findRE `^\d{4}-\d{2}-\d{2}` $datestr) }}
-            {{ $d = time $datestr }}
-          {{ end }}
-        {{ end }}
+        {{- /* Safe date: use front matter date only if non-empty & matches basic pattern */ -}}
+        {{- $d := .Date -}}
+        {{- with .Params.date -}}
+          {{- $datestr := trim . " " -}}
+          {{- if and (ne $datestr "") (findRE `^\d{4}-\d{2}-\d{2}` $datestr) -}}
+            {{- $d = time $datestr -}}
+          {{- end -}}
+        {{- end }}
         <time datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "2006-01-02" }}</time><br>
 
-        {{ with .Params.abstract }}
-          {{- $plain := . | markdownify | plainify | replaceRE `\s+` " " -}}
+        {{ with .Params.abstract -}}
+          {{- $plain := . | plainify | htmlEscape | replaceRE `\s+` " " -}}
           {{- $words := split $plain " " -}}
           {{- $previewWords := cond (gt (len $words) 24) (first 24 $words) $words -}}
           {{- $preview := delimit $previewWords " " -}}
           <br>
-          <div>{{ $preview }}{{ if gt (len $words) 24 }}…{{ end }}</div>
+          <div>{{ $preview | safeHTML }}{{ if gt (len $words) 24 }}…{{ end }}</div>
           <br>
-      {{ end }}
+      {{- end -}}
 
         {{- $authors := .Params.authors -}}
-        {{- /* warnf "authors: $s" $authors */ -}}
+        {{- /* warnf "authors: %v" $authors */ -}}
       {{- if $authors -}}
         {{- if reflect.IsSlice $authors -}}
           {{ delimit $authors ", " " and " }}<br>
@@ -79,7 +79,7 @@
 
         {{- $zotero_url := .Params.zotero_url -}}
 
-        {{- if $zotero_url -}}
+        {{- if $zotero_url }}
           <a href="{{ $zotero_url | safeURL }}" target="_blank" rel="noopener noreferrer">View on Zotero</a>
         {{- end -}}
         <br><br>
