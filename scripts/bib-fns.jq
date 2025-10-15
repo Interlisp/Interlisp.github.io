@@ -1,5 +1,10 @@
 # Module of JQ functions for manipulating JSON returned from Zotero API
 
+def dbg($label; $value):
+    . as $in
+    | (($label + ": " + ($value | tojson)) | debug)    # prints to stderr
+    | $in;                                             # return original value
+
 def nonBlankKey($keyName): 
   has($keyName) and (.[$keyName] | tostring | length >= 1);
 
@@ -25,10 +30,11 @@ def issued_iso_string:
     . 
   end;
 
-# Build "Family, Given; Family2, Given2" string from .author array.
+# Build ["Family, Given", "Family2, Given2", ...] string array from .author array.
 # Falls back to other common shapes (name / firstName+lastName). Skips empty parts.
-def author_string:
-  ( .author // [] )                                     # if no authors → empty array
+def author_string_list:
+  ( .author // [] )
+  | dbg("author_string_list.count"; length)
   | map(
       if (has("family") and .family != null and (.family|tostring|length)>0) then
         .family
@@ -45,12 +51,11 @@ def author_string:
       else
         empty
       end
-    )
-  | join("; ");
+    );
 
 # If you want the field added into each item:
 def add_author_string:
-  . + { authorsFormatted: (author_string) };
+  . + { authorsFormatted: (author_string_list) };
 
 def make_DOI_to_url($doi):
   if ($doi | startswith("https:")) then $doi else "https://doi.org/" + ($doi | ltrimstr("/")) end ;

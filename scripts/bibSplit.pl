@@ -37,10 +37,25 @@ if ($key eq $target) {  # only top level entries
     print STDERR "Cannot find isoDateString for key \"$key\" in line: $_\n";
   }
 
-  my $itemAuthors = '""';
-  if(/"authorsFormatted"\:("(?:[^"\\]++|\\.)*+")/) {
-    $itemAuthors = $1;
+  my $itemAuthors = '';
+  if(/"authorsFormatted"\:\s*\[(.*?)\]/) {
+    my $authors_str = $1;
+    my @authors;
+    while ($authors_str =~ /"(.*?)"/g) {
+      push @authors, $1;
+    }
+    if (@authors) {
+      $itemAuthors = "\n";
+      foreach my $author (@authors) {
+        $itemAuthors .= "  - \"$author\"\n";
+      }
+      $itemAuthors =~ s/\n$//; # Remove trailing newline
+    } else {
+      $itemAuthors = '""';
+      print STDERR "Cannot parse authors for key \"$key\" in line: $_\n";
+    }
   } else {
+    $itemAuthors = '""';
     print STDERR "Cannot find authors for key \"$key\" in line: $_\n";
   }
 
