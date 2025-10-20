@@ -1,0 +1,39 @@
+{{ define "main" }}
+<article class="bibliography-entry">
+  <h1>{{ .Title }}</h1>
+
+  <p>
+{{- if .Params.authors -}}
+    {{- if reflect.IsSlice .Params.authors -}}
+        {{ delimit .Params.authors ", " " and " }}<br>
+    {{- else -}}
+        {{ .Params.authors }}<br>
+    {{- end -}}
+{{- end -}}
+</p>
+
+<p>
+  {{- $d := .Date -}}
+  {{- with .Params.date }}{{ $d = time . }}{{ end }}
+  <time datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "2006-01-02" }}</time>
+</p>
+<p>
+    Cite  ---   URL
+</p>
+<p>
+    <strong>Abstract</strong>
+    <br>
+    {{ with .Params.abstract }}
+      {{ . | markdownify }}
+    {{ else }}
+      No abstract available.
+    {{ end }}
+
+</p>
+
+  <p><strong>Publisher:</strong> {{ .Params.publisher }}</p>
+  <div class="summary">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

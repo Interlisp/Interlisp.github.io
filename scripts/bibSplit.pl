@@ -66,6 +66,7 @@ if ($key eq $target) {  # only top level entries
 ---
 title: $itemTitle
 date: $itemDate
+type: bibliography
 authors: $itemAuthors
 publication:
 abstract: $itemAbstract
@@ -75,7 +76,6 @@ url_source:
 zotero_url: "https://www.zotero.org/groups/2914042/items/$key"
 ---
 
-{{< bibItem key="$key" >}}
 ENDITEM
   close $handle || die "$0: close of file $itemmd failed: $!";
   
