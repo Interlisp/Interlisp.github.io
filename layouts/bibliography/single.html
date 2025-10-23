@@ -18,7 +18,13 @@
   <time datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "2006-01-02" }}</time>
 </p>
 <p>
-    Cite  ---   URL
+    <strong>URL:</strong>  {{ with .Params.url_source }}
+      <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
+    {{ else }}
+      No URL available.
+    {{ end }}
+    <br>
+    Cite:  placeholder for link to retrieve citation from Zotero 
 </p>
 <p>
     <strong>Abstract</strong>
@@ -120,6 +126,58 @@
         {{ end }}
         {{ with .Params.pages }}
             <strong>Pages:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "motion_picture" }}
+        {{ with .Params.studio }}
+            <p><strong>Studio:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.video_recording_format }}
+            <p><strong>Video Recording Format:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.series_title }}
+            <p><strong>Series Title:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.volume }}
+            <p><strong>Volume:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.number_of_volumes }}
+            <p><strong>Number of Volumes:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "chapter" }}
+        {{ with .Params.book_title }}
+            <p><strong>Book Title:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.publisher }}
+            <p><strong>Publisher:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.series }}
+            <p><strong>Series:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.series_number }}
+            <p><strong>Series Number:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.pages }}
+            <p><strong>Pages:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "personal_communication" }}
+        {{ with .Params.communication_type }}
+            <p><strong>Item Type:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "webpage" }}
+        {{ with .Params.website_title }}
+            <p><strong>Website Title:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.website_type }}
+            <p><strong>Website Type:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "entry-encyclopedia" }}
+        {{ with .Params.encyclopedia_title }}
+            <p><strong>Encyclopedia Title:</strong> {{ . }}</p>
         {{ end }}
     {{ end }}
   </p>

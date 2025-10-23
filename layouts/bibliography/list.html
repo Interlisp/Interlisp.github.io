@@ -2,7 +2,6 @@
 
   {{ .Content }}
 
-
   <style>
     /* Publication list styling */
     ul.pub-list {
@@ -39,8 +38,8 @@
       <li>
         {{- $rawTitle := or .Params.title .Title -}}
         {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle -}}
-        {{- $rendered = $rawTitle | plainify | htmlEscape -}}
-        <span><strong>{{- $rendered | safeHTML -}}</strong></span><br>
+        {{- $rendered = $rendered | plainify | htmlEscape -}}
+        <a href="{{ .RelPermalink }}"><span><strong>{{- $rendered | safeHTML -}}</strong></span></a><br>
 
         {{- /* warnf "Parameters %v " .Params */ -}} 
 
@@ -68,18 +67,11 @@
         {{- /* warnf "authors: %v" $authors */ -}}
       {{- if $authors -}}
         {{- if reflect.IsSlice $authors -}}
-          {{ delimit $authors ", " " and " }}<br>
+          {{ delimit $authors "; " " and " }}<br>
         {{- else -}}
           {{ $authors }}<br>
         {{- end -}}
       {{- end -}}
-
-        {{- $zotero_url := .Params.zotero_url -}}
-
-        {{- if $zotero_url }}
-          <a href="{{ $zotero_url | safeURL }}" target="_blank" rel="noopener noreferrer">View on Zotero</a>
-        {{- end -}}
-        <br><br>
       </li>
     {{ end }}
   </ul>
