@@ -1,5 +1,24 @@
 {{ define "main" }}
 
+{{- warnf "Bib types: %v" .Site.Taxonomies.item_type -}}
+{{ warnf "All taxonomies: %s" (.Site.Taxonomies | jsonify) }}
+{{ range $taxName, $terms := .Site.Taxonomies }}
+  {{- $pairs := slice -}}
+  {{- range $term, $pages := $terms }}
+    {{- $pairs = $pairs | append (printf "%s(%d)" $term (len $pages)) -}}
+  {{- end }}
+  {{ warnf "Taxonomy %s: %s" $taxName (delimit $pairs ", ") }}
+{{ end }}
+
+<label for="itemTypeFilter">Filter by Type:</label>
+<select id="itemTypeFilter">
+  <option value="all">All</option>
+  {{ range $key, $value := .Site.Taxonomies.item_type}}
+    <option value="{{ $key }}">{{ $key | title }}</option>
+  {{ end }}
+</select>
+
+
   {{ .Content }}
 
   <style>
@@ -33,9 +52,9 @@
 
   {{- /* Render the list of publications */ -}}
 
-  <ul class="pub-list">
+  <ul class="pub-list" id="bibliographyList">
     {{ range $pages }}
-      <li>
+      <li data-type>
         {{- $rawTitle := or .Params.title .Title -}}
         {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle -}}
         {{- $rendered = $rendered | plainify | htmlEscape -}}
@@ -53,7 +72,7 @@
         {{- end }}
         <time datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "2006-01-02" }}</time><br>
 
-        {{ with .Params.abstract -}}
+        {{ with .Params.abstract -}}config/_default
           {{- $plain := . | plainify | htmlEscape | replaceRE `\s+` " " -}}
           {{- $words := split $plain " " -}}
           {{- $previewWords := cond (gt (len $words) 24) (first 24 $words) $words -}}
@@ -76,3 +95,5 @@
     {{ end }}
   </ul>
 {{ end }}
+
+
