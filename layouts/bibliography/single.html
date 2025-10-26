@@ -2,26 +2,53 @@
 <article class="bibliography-entry">
   <h1>{{ .Title }}</h1>
 
+{{- $authors := .Params.authors -}}
+{{- $editors := .Params.editors -}}
+{{- $isPatent := eq .Params.item_type "patent" -}}
+{{- if or $authors $editors -}} {{- /* no empty <p> if neither */ -}}
   <p>
-{{- if .Params.authors -}}
-    {{- if reflect.IsSlice .Params.authors -}}
-        {{ delimit .Params.authors ", " " and " }}<br>
+  {{- if $authors -}}
+    {{- if reflect.IsSlice $authors -}}
+      {{- if $isPatent }}
+        <strong>Inventors:</strong> 
+      {{ end }}
+      {{ delimit $authors "; " "; and " }}
     {{- else -}}
-        {{ .Params.authors }}<br>
+      {{- if $isPatent }}
+        <strong>Inventor:</strong> 
+      {{ end }}
+        {{ $authors }}
     {{- end -}}
+  {{- else -}}
+    <strong>Edited by:</strong> 
+    {{ if reflect.IsSlice $editors }}
+       {{ delimit $editors "; " "; and " }}
+    {{- else }}
+        {{ $editors }}
+    {{- end -}}
+  {{- end -}}
+  <br></p>
 {{- end -}}
-</p>
 
 <p>
   {{- $d := .Date -}}
-  {{- with .Params.date }}{{ $d = time . }}{{ end }}
-  <time datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "2006-01-02" }}</time>
+  {{- with .Params.date -}}
+    {{- $datestr := trim . " " -}}
+    {{- if and (ne $datestr "") (findRE `^\d{4}-\d{2}-\d{2}` $datestr) -}}
+      {{- $d = time $datestr -}}
+    {{- end -}}
+  {{- end }}
+  {{- $d = $d.Format "2006-01-02" -}}
+  {{- /* Don't display bogus date */ -}}
+  {{- if (ne $d "0001-01-01") }}
+    <time datetime="{{ $d }}">{{ $d }}</time>
+  {{ end -}}
 </p>
 <p>
-    <strong>URL:</strong>  {{ with .Params.url_source }}
+    <strong>View document:</strong>  {{ with .Params.url_source }}
       <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
     {{ else }}
-      No URL available.
+      No URL to the document is available.
     {{ end }}
     <br>
     Cite:  placeholder for link to retrieve citation from Zotero 

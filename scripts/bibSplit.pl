@@ -58,6 +58,9 @@ if ($key eq $target) {  # only top level entries
   # Abstracts can be multi-line and  contain multiple paragraphs.  Place YAML keyword on
   # one line and follow it with the abstract indented on subsequent lines.
   my $abs = sanitize_text($obj->{abstract} // '');
+  # a hack for bulleted lists in the abstracts (use markdown there)
+  # won't work for nested lists.
+  $abs =~ s/\n?\n\N{U+2022}/\n*/g;
   my $indented = join('', map { "  $_\n" } split(/\n/, $abs));
   my $abstract = $indented eq '' ? "abstract: ''" : "abstract: |\n$indented";
 
@@ -72,6 +75,17 @@ if ($key eq $target) {  # only top level entries
     }
     $itemAuthors =~ s/\n$//;  # strip trailing newline
   }
+
+  my $itemEditors = '';
+  if (ref($obj->{editorsFormatted}) eq 'ARRAY' && @{$obj->{editorsFormatted}}) {
+    $itemEditors = "\n";
+    for my $a (@{$obj->{editorsFormatted}}) {
+      my $quoted = encode_json($a // '');
+      $itemEditors .= "  - $quoted\n";
+    }
+    $itemEditors =~ s/\n$//;  # strip trailing newline
+  }
+  
   my $urlSource = defined $obj->{url} ? $obj->{url} : '';
 
   # optional fields - ones used vary by value of type
@@ -147,6 +161,7 @@ date: $itemDate
 type: bibliography
 item_type: $type
 authors: $itemAuthors
+editors: $itemEditors
 $abstract
 
 $extraFields
