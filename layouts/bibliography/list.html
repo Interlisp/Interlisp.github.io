@@ -1,89 +1,83 @@
+{{ define "sidebar" }}{{ end }}
 {{ define "main" }}
 
-{{- warnf "Bib types: %v" .Site.Taxonomies.item_type -}}
-{{ warnf "All taxonomies: %s" (.Site.Taxonomies | jsonify) }}
-{{ range $taxName, $terms := .Site.Taxonomies }}
-  {{- $pairs := slice -}}
-  {{- range $term, $pages := $terms }}
-    {{- $pairs = $pairs | append (printf "%s(%d)" $term (len $pages)) -}}
-  {{- end }}
-  {{ warnf "Taxonomy %s: %s" $taxName (delimit $pairs ", ") }}
-{{ end }}
+<header class="bib-header">
+  <h1 class="bib-title">{{ or .Params.heading .Title }}</h1>
 
-<label for="itemTypeFilter">Filter by Type:</label>
-<select id="itemTypeFilter">
-  <option value="all">All</option>
-  {{ range $key, $value := .Site.Taxonomies.item_type}}
-    <option value="{{ $key }}">{{ $key | title }}</option>
-  {{ end }}
-</select>
+  <div class="bib-filter">
+    <label for="itemTypeFilter">Filter by Type:</label>
+    <select id="itemTypeFilter">
+      <option value="all">All</option>
+      {{ range $key, $value := .Site.Taxonomies.item_type }}
+        <option value="{{ $key }}">{{ $key | title }}</option>
+      {{ end }}
+    </select>
+  </div>
+</header>
 
+{{ .Content }}
 
-  {{ .Content }}
-
-  <style>
-    /* Publication list styling */
-    ul.pub-list {
-      list-style: none;
-      margin: 0;
-      padding: 0;
-    }
-    ul.pub-list > li {
-      margin: 0;
-      padding: .75rem 0;
-      border-bottom: 1px solid #e2e2e2;
-    }
-    ul.pub-list > li:last-child {
-      border-bottom: none;
-    }
-  </style>
+<style>
+    .bib-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .bib-title { margin: 0; }
+  ul.pub-list { list-style: none; margin: 0; padding: 0; }
+  ul.pub-list > li { margin: 0; padding: .75rem 0; border-bottom: 1px solid #e2e2e2; }
+  ul.pub-list > li:last-child { border-bottom: none; }
+</style>
 
   {{ $pages := .RegularPages }}
-
-  {{- warnf "Pages: %v" (len $pages) -}}
-
-  {{ if not (gt (len $pages) 0) }}
-    <p>No publications found.</p>
-  {{ end }}
-
   {{- /* Sort by date descending, then title ascending */ -}}
   {{- $pages = sort $pages "Date" "desc" -}}
   {{- $pages = sort $pages "Title" "asc" -}}
 
   {{- /* Render the list of publications */ -}}
 
-  <ul class="pub-list" id="bibliographyList">
-    {{ range $pages }}
-      <li data-type>
-        {{- $rawTitle := or .Params.title .Title -}}
-        {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle -}}
-        {{- $rendered = $rendered | plainify | htmlEscape -}}
-        <a href="{{ .RelPermalink }}"><span><strong>{{- $rendered | safeHTML -}}</strong></span></a><br>
+<ul class="pub-list" id="bibliographyList">
+  {{ range $pages }}
+    {{- /* Collect item_type terms as a comma-separated, lowercased string */ -}}
+    {{- $types := "" -}}
+    {{- with .Params.item_type -}}
+      {{- if reflect.IsSlice . -}}
+        {{- $types = delimit (apply . "lower" ".") "," -}}
+      {{- else -}}
+        {{- $types = (lower .) -}}
+      {{- end -}}
+    {{- end -}}
 
-        {{- /* warnf "Parameters %v " .Params */ -}} 
+    <li class="pub-item" data-type="{{ $types }}">
+      {{- $rawTitle := or .Params.title .Title -}}
+      {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle -}}
+      {{- $rendered = $rendered | plainify | htmlEscape -}}
+      <a href="{{ .RelPermalink }}"><span><strong>{{- $rendered | safeHTML -}}</strong></span></a><br>
 
-        {{- /* Safe date: use front matter date only if non-empty & matches basic pattern */ -}}
-        {{- $d := .Date -}}
-        {{- with .Params.date -}}
-          {{- $datestr := trim . " " -}}
-          {{- if and (ne $datestr "") (findRE `^\d{4}-\d{2}-\d{2}` $datestr) -}}
-            {{- $d = time $datestr -}}
-          {{- end -}}
-        {{- end }}
-        <time datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "2006-01-02" }}</time><br>
+      {{- /* Safe date: use front matter date only if non-empty & matches basic pattern */ -}}
+      {{- $d := .Date -}}
+      {{- with .Params.date -}}
+        {{- $datestr := trim . " " -}}
+        {{- if and (ne $datestr "") (findRE `^\d{4}-\d{2}-\d{2}` $datestr) -}}
+          {{- $d = time $datestr -}}
+        {{- end -}}
+      {{- end -}}
+      <time datetime="{{ $d.Format "2006-01-02" }}">{{ $d.Format "2006-01-02" }}</time><br>
 
-        {{ with .Params.abstract -}}config/_default
-          {{- $plain := . | plainify | htmlEscape | replaceRE `\s+` " " -}}
-          {{- $words := split $plain " " -}}
-          {{- $previewWords := cond (gt (len $words) 24) (first 24 $words) $words -}}
-          {{- $preview := delimit $previewWords " " -}}
-          <br>
-          <div>{{ $preview | safeHTML }}{{ if gt (len $words) 24 }}…{{ end }}</div>
-          <br>
+      {{ with .Params.abstract -}}
+        {{- $plain := . | plainify | htmlEscape | replaceRE `\s+` " " -}}
+        {{- $words := split $plain " " -}}
+        {{- $previewWords := cond (gt (len $words) 24) (first 24 $words) $words -}}
+        {{- $preview := delimit $previewWords " " -}}
+        <br>
+        <div>{{ $preview | safeHTML }}{{ if gt (len $words) 24 }}…{{ end }}</div>
+        <br>
       {{- end -}}
 
-        {{- $authors := .Params.authors -}}
-        {{- /* warnf "authors: %v" $authors */ -}}
+      {{- $authors := .Params.authors -}}
       {{- if $authors -}}
         {{- if reflect.IsSlice $authors -}}
           {{ delimit $authors "; " " and " }}<br>
@@ -91,9 +85,36 @@
           {{ $authors }}<br>
         {{- end -}}
       {{- end -}}
-      </li>
-    {{ end }}
-  </ul>
-{{ end }}
+    </li>
+  {{ end }}
+</ul>
 
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const sel = document.getElementById('itemTypeFilter');
+  const items = Array.from(document.querySelectorAll('#bibliographyList > li'));
+
+  function applyFilter() {
+    const val = sel.value; // taxonomy term key (lowercase)
+    items.forEach(li => {
+      const raw = (li.dataset.type || '').trim();
+      const types = raw ? raw.split(',').map(s => s.trim()) : [];
+      const show = (val === 'all') || types.includes(val);
+      li.style.display = show ? '' : 'none';
+    });
+  }
+
+  // Preselect from URL (?item_type=term)
+  const params = new URLSearchParams(window.location.search);
+  const q = (params.get('item_type') || '').toLowerCase();
+  if (q && sel.querySelector(`option[value="${q}"]`)) {
+    sel.value = q;
+  }
+
+  sel.addEventListener('change', applyFilter);
+  applyFilter();
+});
+</script>
+
+{{ end }}
 

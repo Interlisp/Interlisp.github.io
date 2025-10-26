@@ -35,8 +35,9 @@ defaultContentLanguageInSubdir: false
 enableMissingTranslationPlaceholders: true
 
 # Disable rendering of the specified page kinds 
-disableKinds: 
- - term
+#disableKinds: 
+# - term
+# Note terms are needed for taxonomies to work
 
 outputs:
   home:
