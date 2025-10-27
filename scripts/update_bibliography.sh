@@ -2,10 +2,10 @@
 
 set -e
 
-rawItemsFile=false
+rawItemsFile=true
 debugFiles=false
-tagFiles=false
-typeFiles=true
+tagFiles=true
+typeFiles=false
 curlFiles=false
 # The collection files will be created only if directly querying Zotero API.
 collectionFiles=false
@@ -204,6 +204,7 @@ if $debugFiles ; then
 fi
 
 items=$(jq 'include "./bib-fns";map(getTargetInfo)' <<< "$items")
+items=$(jq 'include "./bib-fns";map(removeEmptyKeys)' <<< "$items")
 
 # now use children items to amend the info for the parentItem
 childrenGroupedByParent=$(jq 'group_by(.target)|map(sort_by(.parentItem))' <<< "$items")
@@ -267,6 +268,8 @@ finalCount=$(jq '. | length' <<< "$items")
 items=$(jq 'include "./bib-fns";map(issued_iso_string)' <<< "$items")
 
 items=$(jq 'include "./bib-fns";map(add_author_string)' <<< "$items")
+
+items=$(jq 'include "./bib-fns";map(add_editor_string)' <<< "$items")
 # if $removeChildrenFromFinalFile; then
 #   # Remove .children arrays, if any. Save space.
 #   items=$(jq 'map(del(.children))' <<< "$items")
@@ -279,7 +282,6 @@ items=$(jq 'include "./bib-fns";map(add_author_string)' <<< "$items")
 
 # Do this here, instead of keeping a copy of the current value of $items, just to do this later.
 jq -c 'include "./bib-fns";.[] | bibItem' <<< "$items" > bibliography-items-by-line.json
-# jq  'include "./bib-fns";map(bibItem)' <<< "$items" > 000-bibliography-items-by-line.json
 
 # Group by year
 items=$(jq 'group_by(.issued."date-parts"[0][0])' <<< "$items")
