@@ -2,9 +2,9 @@
 
 set -e
 
-rawItemsFile=true
+rawItemsFile=false
 debugFiles=false
-tagFiles=true
+tagFiles=false
 typeFiles=false
 curlFiles=false
 # The collection files will be created only if directly querying Zotero API.
