@@ -2,17 +2,48 @@
 
 set -e
 
-rawItemsFile=false
-debugFiles=false
-tagFiles=false
-typeFiles=false
-curlFiles=false
-# The collection files will be created only if directly querying Zotero API.
-collectionFiles=false
+function usage () {
+  echo -e "\nUpdate Bibliography for interlisp.org from Zotero\n"
+  echo -e "Usage: $0 [ options ] [ input_items_file ]\n"
+  echo -e "Options:"
+  echo -e "  -h | --help               \tDisplay this message and exit."
+  echo -e "  -r | --rawitems           \tSave the complete downloaded JSON as '00-rawItems.json' (See 'input_items_file' below.)."
+  echo -e "  -g | --tagsfile           \tGenerate 'tags.json' containing all tags on the 'cleaned-up' set of entries."
+  echo -e "  -y | --typefiles          \tGenerate item type information JSON files. (See below.)"
+  echo -e "  -c | --collectionsfiles   \tGenerate two JSON files containing info about each of the Zotero collections."
+  echo -e "  -u | --curlfiles          \tGenerate files in the 'curl/' directory with the output of each call to curl. Very low level debugging."
+  echo -e "  -d | --debugfiles         \tGenerate numbered files with the intermediate processing step output JASON."
+  echo -e "  -i N | --infolevel N      \tSet the level of display of informational messages. N is 0-10 (Default = 2.). (See below.)"
+  echo -e "\n typefiles: These 3 files contain the type and itemType information for the entries with different level of details."
+  echo -e "\n infolevel: The infolevel controls how much detail is presented during processing."
+  echo -e "   0: NO info messages."
+  echo -e "   1: high level general info messages."
+  echo -e "   2: warning-type messages."
+#  echo -e "   3:"
+#  echo -e "   4:"
+  echo -e "   5: detailed general info messages."
+#  echo -e "   6:"
+#  echo -e "   7:"
+  echo -e "   8: individual processing steps (most of which may generate a debug File. See --debugfiles)"
+  echo -e "   9: very detailed general info messages."
+  echo -e "  10: extremely detailed messages (e.g., calls to curl, etc.)"
+  echo -e " Values include all messages designated at a lower level. The value isn't checked and is used as given.\n"
+  echo -e "\ninput_items_file:"
+  echo -e "  Providing this is optional. This a JSON file as saved by previously using the -r option."
+  echo -e "  If provided, this bypasses getting any data from Zotero, and the -r, -c, and -u options are ignored.\n"
+}
+
+rawItemsFile=false      # --rawitems/-r
+debugFiles=false        # --debugfiles/-d
+tagsFile=false          # --tagsfile/-g
+typeFiles=false         # --typefiles/-y
+curlFiles=false         # --curlfiles/-u
+# The collections files will be created only if directly querying Zotero API.
+collectionsFiles=false  # --collectionsfiles/-c
 
 # removeChildrenFromFinalFile=false
 
-showInfoLevel=2     
+showInfoLevel=2         # --infolevel/-i
 #  0: NO showInfo messages.
 #  1: high level general info messages.
 #  2: warning-type messages.
@@ -100,12 +131,90 @@ function add_items_from_collection () {
     fi
 }
 
+
+# option --infolevel/-i requires 1 argument
+LONGOPTS=help,rawitems,debugfiles,tagsfile,typefiles,curlfiles,collectionsfiles,infolevel:
+OPTIONS=hrdgyuci:
+
+# -temporarily store output to be able to check for errors
+# -activate quoting/enhanced mode (e.g. by writing out “--options”)
+# -pass arguments only via   -- "$@"   to separate them correctly
+# -if getopt fails, it complains itself to stderr
+PARSED=$(getopt --options=$OPTIONS --longoptions=$LONGOPTS --name "$0" -- "$@") || exit 2
+# read getopt’s output this way to handle the quoting right:
+eval set -- "$PARSED"
+
+# now enjoy the options in order and nicely split until we see --
+while true; do
+    case "$1" in
+        -h|--help)
+            usage
+            exit
+            ;;
+        -r|--rawitems)
+            rawItemsFile=true
+            shift
+            ;;
+        -d|--debug)
+            debugFiles=true
+            shift
+            ;;
+        -g|--tagsfile)
+            tagsFile=true
+            shift
+            ;;
+        -y|--typefiles)
+            typeFiles=true
+            shift
+            ;;
+        -u|--curlfiles)
+            curlFiles=true
+            shift
+            ;;
+        -c|--collectionsfiles)
+            collectionsFiles=true
+            shift
+            ;;
+        -i|--infolevel)
+            showInfoLevel="$2"
+            shift 2
+            ;;
+        --)
+            shift
+            break
+            ;;
+        *)
+            echo "Programming error" >&2
+            exit 3
+            ;;
+    esac
+done
+
+
+# handle non-option arguments
+if [[ $# -gt 1 ]]; then
+    echo "$0: A single input file is required." >&2
+    exit 4
+fi
+
+# echo "rawItemsFile: $rawItemsFile"
+# echo "debugFiles: $debugFiles"
+# echo "tagsFile: $tagsFile"
+# echo "typeFiles: $typeFiles"
+# echo "curlFiles: $curlFiles"
+# echo "collectionsFiles: $collectionsFiles"
+# echo "showInfoLevel: $showInfoLevel"
+# echo 'Remaining arguments:'
+# for arg; do
+# 	echo "--> '$arg'"
+# done
+
 root_collection="FSK5IX4F"
 if [[ $# -eq 0 ]] ; then
   # Initialize with the root collection.
   collections=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$root_collection" | jq -s -r 'map(.data+.meta)')
   add_items_from_collection $root_collection
-  if $collectionFiles ; then
+  if $collectionsFiles ; then
     echo "$collections" > collections.json
   fi
   showInfo 1 "$(jq '. | length' <<< "$collections") collections"
@@ -118,7 +227,7 @@ if [[ $# -eq 0 ]] ; then
     showInfo 10 "items updated"
   done < <(jq -r 'include "./bib-fns";getNeededUrls|.[]' <<< "$items")
 
-  if $collectionFiles ; then
+  if $collectionsFiles ; then
   grouped_collections=$(jq 'group_by(.parentCollection)' <<< "$collections")
   # This is not yet fully hierarchically nested.
     echo "$grouped_collections" > grouped_collections.json
@@ -183,7 +292,7 @@ if $typeFiles ; then
   types=$(jq 'group_by(.type) | map({type:.[0].type, itemTypes:(group_by(.itemType)|map({itemType:.[0].itemType, items:.}))})' <<<"$items")
   echo "$types" > fullTypeInfo.json
 fi
-if $tagFiles ; then
+if $tagsFile ; then
   tags=$(jq 'map(.tags) | flatten | map(.tag) | unique' <<<"$items")
   echo "$tags" > tags.json
 fi
