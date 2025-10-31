@@ -422,4 +422,4 @@ mkdir -p "$BIBLIOGRAPHY_DIR" "$BIBITEMS_DIR"
 
 showInfo 1 "Outputting CSL JSON"
 showInfo 1 "$finalCount entries"
-echo "$items" > "$(dirname "$0")/../static/data/bibliography.json"
+#echo "$items" > "$(dirname "$0")/../static/data/bibliography.json"

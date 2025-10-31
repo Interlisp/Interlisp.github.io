@@ -184,17 +184,3 @@ ui:
 custom_css:
   - "css/custom.css"
 
-# Extensions  -- From wowchemy
-
-extensions:
-  decap_cms:
-    branch: main
-    local_backend: false
-  academicons:
-    enable: true
-
-# Citation style
-
-publications:
-  date_format: January 2006
-  citation_style: apa

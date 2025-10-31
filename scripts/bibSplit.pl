@@ -38,12 +38,11 @@ my $key = $json->{key};
 my $target = $json->{target} || print STDERR "Cannot find target for key \"$key\" in line: $_\n";
 
 if ($key eq $target) {  # only top level entries
-  my $handle = undef;
-  my $itemjson = "$bibItemsDir/$key.json";
-  open($handle, ">:encoding(UTF-8)", $itemjson) || die "$0: cannot open $itemjson in write-open mode: $!";
-  print $handle $item;
-  close $handle || die "$0: close of file $itemjson failed: $!";
-
+  #my $handle = undef;
+  #my $itemjson = "$bibItemsDir/$key.json";
+  #open($handle, ">:encoding(UTF-8)", $itemjson) || die "$0: cannot open $itemjson in write-open mode: $!";
+  #print $handle $item;
+  #close $handle || die "$0: close of file $itemjson failed: $!";
 
   my $obj = eval { decode_json($item) } or do { warn "Bad JSON for $key\n"; next; };
   delete $obj->{children};
