@@ -2,7 +2,7 @@
 {{ $taxo := .taxo -}}
 {{ $title := .title -}}
 
-{{ if eq $context.Type "bibliography" }}
+{{ if or (eq $context.Type "bibliography") (in (slice "taxonomy" "term") $context.Kind) }}
   {{ if isset $context.Site.Taxonomies (lower $taxo) -}}
     {{ $taxonomy := index $context.Site.Taxonomies (lower $taxo) -}}
     {{ if (gt (len $taxonomy) 0) -}}
