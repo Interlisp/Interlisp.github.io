@@ -1,3 +1,6 @@
+<!-- Print XML declaration -->
+{{- printf "<?xml version=\"1.0\" encoding=\"utf-8\" standalone=\"yes\"?>" | safeHTML }}
+
 {{- $authorName := "" }}
 {{- with .Site.Params.author }}
   {{- if reflect.IsMap . }}
@@ -9,33 +12,42 @@
   {{- end }}
 {{- end }}
 
-{{- $pctx := . }}
-{{- if .IsHome }}{{ $pctx = .Site }}{{ end }}
-
 <!-- Iterate through all sections and include both sections and
      pages in the rss feed. The default rss.xml only includes
      pages. -->
 {{- $pages := slice }}
-{{- $mainPages := where .Pages "Kind" "in" (slice "page" "section") }}
+
+<!-- Include the current list page (_index.md) if we're on home or a section -->
+{{- $pages = $pages | union (slice .) }}
+{{- $mainPages := where .Pages "Kind" "in" (slice "page" ) }}
 {{- $pages = $pages | union $mainPages }}
 
+
+<!-- Loop through each section and add it's _index.md and child pages -->
 {{- range .Sections }}
-  {{- $sectionPages := where .Pages "Kind" "in" (slice "page" "section") }}
+  {{- $sectionPages := where .Pages "Kind" "in" (slice "page") }}
+  {{- $pages = $pages | union (slice .) }}
   {{- $pages = $pages | union $sectionPages }}
+  <!-- Loop through any subsections adding their _index.md and child pages -->
   {{- range .Sections }}
-    {{- $subSectionPages := where .Pages "Kind" "in" (slice "page" "section") }}
+    {{- $subSectionPages := where .Pages "Kind" "in" (slice "page") }}
+    {{- $pages = $pages | union (slice .) }}
     {{- $pages = $pages | union $subSectionPages }}
   {{- end }}
 {{- end }}
+
+<!-- order entries by PublishDate-->
+{{- $pages = sort $pages "PublishDate" "desc" }}
 
 {{- $limit := .Site.Config.Services.RSS.Limit }}
 {{- if ge $limit 1 }}
   {{- $pages = $pages | first $limit }}
 {{- end }}
 
+<!-- Build the actual feed using the page list-->
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
   <channel>
-    <title>Updates from the Medley Interlisp Project</title>
+    <title>Updates from the new Medley Interlisp Project</title>
     <link>{{ .Permalink }}</link>
     <description>Updates from the Medley Interlisp Project</description>
     <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}

@@ -67,10 +67,10 @@ gcs_engine_id: 33ef4cbe0703b4f3a
 #   icon:  icon to display
 links:
   user:
-  - name: "User mailing list"
-    url: "mailto:Interlisp@googlegroups.com"
+  - name: "Email"
+    url: "mailto:info@interlisp.org"
     icon: "fa fa-envelope"
-    desc:  "Discussion and help from your fellow users"
+    desc:  "Contact us for general information or inquiries"
   - name: "Mastodon"
     url: "https://fosstodon.org/@interlisp"
     icon: "fa-brands fa-mastodon"
@@ -79,6 +79,10 @@ links:
     url: "https://bsky.app/profile/interlisp.org"
     icon: "fa-brands fa-bluesky"
     desc: "We're on Bluesky too!"
+  - name: "YouTube"
+    url: "https://www.youtube.com/@Interlisp"
+    icon: "fa-brands fa-youtube"
+    desc: "Subscribe to our YouTube channel"
   - name: "RSS Feed"
     url: "project/status/rss.xml"
     icon: "fa fa-rss"
