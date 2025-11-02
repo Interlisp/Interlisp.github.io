@@ -108,7 +108,27 @@ links:
 #   icon: "fa fa-envelope"
 #   desc: "Discuss development issues around the project"
 
-taxonomies:
+taxonomy:
+  taxonomyCloud:
+    - authors
+  taxonomyCloudTitle:
+    - Authors
+  taxonomyPageHeader:
+    - authors
+    - item_type
+
+#related:
+#  threshold: 80
+#  includeNewer: true
+#  toLower: true
+#  indices:
+#    - name: item_type
+#      weight: 5
+#    - name: tags
+#      weight: 100
+#    - name: categories
+#      weight: 70
+      
 # Nothing defined
 
 # User Interface Configuration options
@@ -154,7 +174,7 @@ ui:
   sidebar_cache_limit: 100
 
   # We have almost 200 attributes; don't truncate the sidebar to max 50 contents.
-  sidebar_menu_truncate:  1000
+  sidebar_menu_truncate:  0
 
   #  Set to true to disable breadcrumb navigation.
   breadcrumb_disable: false
@@ -167,3 +187,4 @@ ui:
 # Identify the custom css files
 custom_css:
   - "css/custom.css"
+

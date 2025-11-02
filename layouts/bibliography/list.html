@@ -1,0 +1,156 @@
+{{ define "sidebar" }}{{ end }}
+{{ define "main" }}
+
+<header class="bib-header">
+  <h1 class="bib-title">{{ or .Params.heading .Title }}</h1>
+
+  <div class="bib-filter">
+    <label for="itemTypeFilter">Filter by Type:</label>
+    <select id="itemTypeFilter">
+      <option value="all">All</option>
+      {{ range $key, $value := .Site.Taxonomies.item_type }}
+        <option value="{{ $key }}">{{ $key | title }}</option>
+      {{ end }}
+    </select>
+  </div>
+</header>
+
+{{ .Content }}
+
+<style>
+    .bib-header {
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+  }
+  .bib-title { margin: 0; }
+  ul.pub-list { list-style: none; margin: 0; padding: 0; }
+  ul.pub-list > li { margin: 0; padding: .75rem 0; border-bottom: 1px solid #e2e2e2; }
+  ul.pub-list > li:last-child { border-bottom: none; }
+</style>
+
+  {{- $previewWordLimit := 24 -}}
+  
+  {{- /* Get all regular pages in this section */ -}}
+  {{ $pages := .RegularPages }}
+  {{- /* Sort by date descending, then title ascending */ -}}
+  {{- $pages = sort $pages "Date" "desc" -}}
+  {{- $pages = sort $pages "Title" "asc" -}}
+
+  {{- /* Render the list of publications */ -}}
+
+<ul class="pub-list" id="bibliographyList">
+  {{ range $pages }}
+    {{- /* Collect item_type terms as a comma-separated, lowercased string */ -}}
+    {{- $types := "" -}}
+    {{- with .Params.item_type -}}
+      {{- if reflect.IsSlice . -}}
+        {{- $types = delimit (apply . "lower" ".") "," -}}
+      {{- else -}}
+        {{- $types = (lower .) -}}
+      {{- end -}}
+    {{- end -}}
+
+    <li class="pub-item" data-type="{{ $types }}">
+      {{- $rawTitle := or .Params.title .Title -}}
+      {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle -}}
+      {{- /* The plainify corrupts values that look like HTML but aren't: "Special files on <Test>ARs>" */ -}}
+      {{- /* $rendered = $rendered | plainify | htmlEscape */ -}}
+      {{- $rendered = $rendered | htmlEscape -}}
+      <a href="{{ .RelPermalink }}"><span><strong>{{- $rendered | safeHTML -}}</strong></span></a><br>
+
+      {{- /* Safe date: use front matter date only if non-empty & matches basic pattern */ -}}
+            {{- $authors := .Params.authors -}}
+      {{- $editors := .Params.editors -}}
+      {{- $isPatent := eq .Params.item_type "patent" -}}
+      {{- /* warnf "authors: %v" $authors */ -}}
+      {{- if or $authors $editors -}}
+        {{- if $authors -}}
+          {{- if reflect.IsSlice $authors -}}
+            {{- if $isPatent }}
+              Inventors: 
+            {{ end }}
+              {{ delimit $authors "; " "; and " }}
+          {{- else -}}
+            {{- if $isPatent }}
+              Inventor: 
+            {{ end }}
+              {{ $authors }}
+          {{- end -}}
+        {{- else -}}
+          Edited by: 
+          {{ if reflect.IsSlice $editors -}}
+             {{ delimit $editors "; " "; and " }}
+          {{- else -}}
+              {{ $editors }}
+          {{- end -}}
+        {{- end -}}
+      <br>
+      {{- end -}}
+
+      {{- $d := .Date -}}
+      {{- with .Params.date -}}
+        {{- $datestr := trim . " " -}}
+        {{- if and (ne $datestr "") (findRE `^\d{4}-\d{2}-\d{2}` $datestr) -}}
+          {{- $d = time $datestr -}}
+        {{- end -}}
+      {{- end -}}
+      {{- $d = $d.Format "2006-01-02" -}}
+      {{- /* Don't display bogus date */ -}}
+      {{- if (ne $d "0001-01-01") }}
+        <time datetime="{{ $d }}">{{ $d }}</time><br>
+      {{ end -}}
+
+      {{ with .Params.abstract -}}
+        {{- /* can't plainify, as above */ -}}
+        {{- /* $plain := . | plainify | htmlEscape | replaceRE `\s+` " " */ -}}
+        {{- $plain := . | htmlEscape | replaceRE `\s+` " " -}}
+        {{- $previewing := gt (countwords $plain) $previewWordLimit -}}
+        {{- $preview := "" -}}
+        {{- if $previewing -}}
+          {{- $previewWords := split $plain " " | first $previewWordLimit -}}
+          {{- $preview = delimit $previewWords " " -}}
+        {{- else -}}
+          {{- $preview = replace . "\n" "<br>" -}}
+        {{- end -}}
+        <br>
+        <div>{{ $preview | safeHTML }}{{ if $previewing }}…{{ end }}</div>
+        <br>
+      {{- end -}}
+
+    </li>
+  {{ end }}
+</ul>
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const sel = document.getElementById('itemTypeFilter');
+  const items = Array.from(document.querySelectorAll('#bibliographyList > li'));
+
+  function applyFilter() {
+    const val = sel.value; // taxonomy term key (lowercase)
+    items.forEach(li => {
+      const raw = (li.dataset.type || '').trim();
+      const types = raw ? raw.split(',').map(s => s.trim()) : [];
+      const show = (val === 'all') || types.includes(val);
+      li.style.display = show ? '' : 'none';
+    });
+  }
+
+  // Preselect from URL (?item_type=term)
+  const params = new URLSearchParams(window.location.search);
+  const q = (params.get('item_type') || '').toLowerCase();
+  if (q && sel.querySelector(`option[value="${q}"]`)) {
+    sel.value = q;
+  }
+
+  sel.addEventListener('change', applyFilter);
+  applyFilter();
+});
+</script>
+
+{{ end }}
+

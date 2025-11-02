@@ -1,0 +1,220 @@
+{{ define "main" }}
+<article class="bibliography-entry">
+  <h1>{{ .Title }}</h1>
+
+{{- $authors := .Params.authors -}}
+{{- $editors := .Params.editors -}}
+{{- $isPatent := eq .Params.item_type "patent" -}}
+{{- if or $authors $editors -}} {{- /* no empty <p> if neither */ -}}
+  <p>
+  {{- if $authors -}}
+    {{- if reflect.IsSlice $authors -}}
+      {{- if $isPatent }}
+        <strong>Inventors:</strong> 
+      {{ end }}
+      {{ delimit $authors "; " "; and " }}
+    {{- else -}}
+      {{- if $isPatent }}
+        <strong>Inventor:</strong> 
+      {{ end }}
+        {{ $authors }}
+    {{- end -}}
+  {{- else -}}
+    <strong>Edited by:</strong> 
+    {{ if reflect.IsSlice $editors }}
+       {{ delimit $editors "; " "; and " }}
+    {{- else }}
+        {{ $editors }}
+    {{- end -}}
+  {{- end -}}
+  <br></p>
+{{- end -}}
+
+<p>
+  {{- $d := .Date -}}
+  {{- with .Params.date -}}
+    {{- $datestr := trim . " " -}}
+    {{- if and (ne $datestr "") (findRE `^\d{4}-\d{2}-\d{2}` $datestr) -}}
+      {{- $d = time $datestr -}}
+    {{- end -}}
+  {{- end }}
+  {{- $d = $d.Format "2006-01-02" -}}
+  {{- /* Don't display bogus date */ -}}
+  {{- if (ne $d "0001-01-01") }}
+    <time datetime="{{ $d }}">{{ $d }}</time>
+  {{ end -}}
+</p>
+<p>
+    <strong>View document:</strong>  {{ with .Params.url_source }}
+      <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
+    {{ else }}
+      No URL to the document is available.
+    {{ end }}
+    <br>
+</p>
+<p>
+    <strong>Abstract</strong>
+    <br>
+    {{ with .Params.abstract }}
+      {{ . | markdownify }}
+    {{ else }}
+      No abstract available.
+    {{ end }}
+
+</p>
+
+  <p>
+    {{ if eq .Params.item_type "book" }}
+        {{ with .Params.publisher }}
+            <p><strong>Publisher:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.place }}
+            <p>{{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "paper-conference" }}
+        {{ with .Params.proceedings_title }}
+            <p><strong>Proceedings:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.publisher }}
+            <p><strong>Journal:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "article" }}
+        {{ with .Params.publisher }}
+            <p><strong>Publisher:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "article-journal" }}
+        {{ with .Params.publication_title }}
+            <p><strong>Journal:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.volume }}
+            <p><strong>Volume:</strong> {{ . }}
+        {{ end }}
+        {{ with .Params.issue }}
+            <strong>Issue:</strong> {{ . }}
+        {{ end }}
+        {{ with .Params.pages }}
+            <strong>Pages:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "report" }}
+        {{ with .Params.publication_title }}
+            <p><strong>Publisher:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.reportType }}
+            <p><strong>Report Type:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.reportNumber }}
+            <p><strong>Report Number:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "thesis" }}
+        {{ with .Params.university }}
+            <p><strong>University:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.place }}
+            <p><strong>Place:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "patent" }}
+        {{ with .Params.assignee }}
+            <p><strong>Assignee:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.application_number }}
+            <p><strong>Application Number:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.filing_date }}
+            <p><strong>Filing Date:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.issuing_authority }}
+            <p><strong>Issuing Authority:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.patent_number }}
+            <p><strong>Patent Number:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "post-weblog" }}
+        {{ with .Params.blog_title }}
+            <p><strong>Blog Title:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "article-magazine" }}
+        {{ with .Params.publication_title }}
+            <p><strong>Magazine:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.volume }}
+            <p><strong>Volume:</strong> {{ . }}
+        {{ end }}
+        {{ with .Params.issue }}
+            <strong>Issue:</strong> {{ . }}
+        {{ end }}
+        {{ with .Params.pages }}
+            <strong>Pages:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "motion_picture" }}
+        {{ with .Params.studio }}
+            <p><strong>Studio:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.video_recording_format }}
+            <p><strong>Video Recording Format:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.series_title }}
+            <p><strong>Series Title:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.volume }}
+            <p><strong>Volume:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.number_of_volumes }}
+            <p><strong>Number of Volumes:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "chapter" }}
+        {{ with .Params.book_title }}
+            <p><strong>Book Title:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.publisher }}
+            <p><strong>Publisher:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.series }}
+            <p><strong>Series:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.series_number }}
+            <p><strong>Series Number:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.pages }}
+            <p><strong>Pages:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "personal_communication" }}
+        {{ with .Params.communication_type }}
+            <p><strong>Item Type:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "webpage" }}
+        {{ with .Params.website_title }}
+            <p><strong>Website Title:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.website_type }}
+            <p><strong>Website Type:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+    {{ if eq .Params.item_type "entry-encyclopedia" }}
+        {{ with .Params.encyclopedia_title }}
+            <p><strong>Encyclopedia Title:</strong> {{ . }}</p>
+        {{ end }}
+    {{ end }}
+  </p>
+  <p>
+    {{- if .Params.zotero_url }}
+        <a href="{{ .Params.zotero_url | safeURL }}" target="_blank" rel="noopener noreferrer">View on Zotero</a>
+    {{- end -}}
+  </p>
+    
+  <div class="summary">
+    {{ .Content }}
+  </div>
+</article>
+{{ end }}

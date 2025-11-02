@@ -57,27 +57,25 @@ jobs:
       cacheHit: ${{ steps.cache-zotero-bib.outputs.cache-hit }}
 
     runs-on: ubuntu-latest
-    concurrency:
-      group:  ${{ github.workflow }}-${{ github.ref }}
     steps:
 
       - name: Get Zotero Version Information
         id: zoteroVersion
         uses: fjogeleit/http-request-action@v1
         with:
-          url: "https://api.zotero.org/groups/2914042/items?format=versions"
-          method: "GET"
+          url: https://api.zotero.org/groups/2914042/items?format=versions
+          method: GET
         
       - name: Cache Zotero Bibliography
-        id: cache-zotero-bib
-        uses: actions/cache@v4
-        env:
-          cache-name: cache-zotero_bib
+        id: cache-zotero
+        uses: actions/cache/restore@v4
         with:
-          path: ~/data
-          key: ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
-          restore-keys: |
-            ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
+          lookup-only: true
+          path: |
+            static/data/bibliography.json
+            static/data/bibItems
+            content/en/history/bibliography
+          key: bib-${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
 
   # ----------------------------------------------------------------------------
   # Build the website.  This job is conditional, we will always run it on a
@@ -94,31 +92,23 @@ jobs:
           fetch-depth: 0
 
       - name: Cache Zotero Bibliography
-        id: cache-zotero-bib
+        id: cache-bib
         uses: actions/cache@v4
-        env:
-          cache-name: cache-zotero_bib
         with:
-          path: ~/data
-          key: ${{ needs.check.outputs.zoteroVersion }}
-          restore-keys: |
-            ${{ needs.check.outputs.zoteroVersion }}
+          path: |
+            static/data/bibliography.json
+            static/data/bibItems
+            content/en/history/bibliography
+          key: bib-${{ needs.check.outputs.zoteroVersion }}
 
       - name: Install Bibliography
-        env:
-          CACHE_HIT: ${{ steps.cache-zotero-bib.outputs.cache-hit }}
+        if: steps.cache-bib.outputs.cache-hit != 'true'
         run: |
-          if [[ "$CACHE_HIT" == 'true' ]]; then
-            echo "Use Cache"
-            sudo cp --recursive ~/data ${GITHUB_WORKSPACE}/static
-            ls -la ${GITHUB_WORKSPACE}/static/data
-          else
             echo "Retrieve bibliography"
             cd scripts
             chmod +x ./update_bibliography.sh
+            chmod +x ./bibSplit.pl
             ./update_bibliography.sh
-            sudo cp --recursive ${GITHUB_WORKSPACE}/static/data ~/data
-          fi 
 
       # Install Hugo Extended
       #    

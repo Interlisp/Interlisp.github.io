@@ -2,12 +2,67 @@
 
 set -e
 
-rawItemsFile=false
-debugFiles=false
-tagFiles=false
-typeFiles=false
-# The collection files will be created only if directly querying Zotero API.
-collectionFiles=false
+function usage () {
+  echo -e "\nUpdate Bibliography for interlisp.org from Zotero\n"
+  echo -e "Usage: $0 [ options ] [ input_items_file ]\n"
+  echo -e "Options:"
+  echo -e "  -h | --help               \tDisplay this message and exit."
+  echo -e "  -r | --rawitems           \tSave the complete downloaded JSON as '00-rawItems.json' (See 'input_items_file' below.)."
+  echo -e "  -g | --tagsfile           \tGenerate 'tags.json' containing all tags on the 'cleaned-up' set of entries."
+  echo -e "  -y | --typefiles          \tGenerate item type information JSON files. (See below.)"
+  echo -e "  -c | --collectionsfiles   \tGenerate two JSON files containing info about each of the Zotero collections."
+  echo -e "  -u | --curlfiles          \tGenerate files in the 'curl/' directory with the output of each call to curl. Very low level debugging."
+  echo -e "  -d | --debugfiles         \tGenerate numbered files with the intermediate processing step output JASON."
+  echo -e "  -i N | --infolevel N      \tSet the level of display of informational messages. N is 0-10 (Default = 2.). (See below.)"
+  echo -e "\n typefiles: These 3 files contain the type and itemType information for the entries with different level of details."
+  echo -e "\n infolevel: The infolevel controls how much detail is presented during processing."
+  echo -e "   0: NO info messages."
+  echo -e "   1: high level general info messages."
+  echo -e "   2: warning-type messages."
+#  echo -e "   3:"
+#  echo -e "   4:"
+  echo -e "   5: detailed general info messages."
+#  echo -e "   6:"
+#  echo -e "   7:"
+  echo -e "   8: individual processing steps (most of which may generate a debug File. See --debugfiles)"
+  echo -e "   9: very detailed general info messages."
+  echo -e "  10: extremely detailed messages (e.g., calls to curl, etc.)"
+  echo -e " Values include all messages designated at a lower level. The value isn't checked and is used as given.\n"
+  echo -e "\ninput_items_file:"
+  echo -e "  Providing this is optional. This a JSON file as saved by previously using the -r option."
+  echo -e "  If provided, this bypasses getting any data from Zotero, and the -r, -c, and -u options are ignored.\n"
+}
+
+rawItemsFile=false      # --rawitems/-r
+debugFiles=false        # --debugfiles/-d
+tagsFile=false          # --tagsfile/-g
+typeFiles=false         # --typefiles/-y
+curlFiles=false         # --curlfiles/-u
+# The collections files will be created only if directly querying Zotero API.
+collectionsFiles=false  # --collectionsfiles/-c
+
+# removeChildrenFromFinalFile=false
+
+showInfoLevel=2         # --infolevel/-i
+#  0: NO showInfo messages.
+#  1: high level general info messages.
+#  2: warning-type messages.
+#  3: 
+#  4: 
+#  5: detailed general info messages.
+#  6: 
+#  7: 
+#  8: individual processing steps (most of which may generate a debug File -- see $debugFiles)
+#  9: very detailed general info messages.
+# 10: extremely detailed messages (e.g., calls to curl, etc.)
+
+function showInfo() {
+    # The $1 is the level for this message ($showInfoLevel must be >= this)
+    # The $2 is the message string
+    if [[ $showInfoLevel -ge $1 ]] ; then
+      echo "$2"
+    fi
+}
 
 dfn="00"
 function debugFileName() {
@@ -27,45 +82,154 @@ collections=""
 
 function add_items_from_collection () {
     local collection_key="$1"
-    echo "Getting collection $collection_key"
+    local collection_item=$(jq -r "map(select(.key==\"$collection_key\"))|.[0]" <<< "$collections")
+    showInfo 5 "====================================="
+    showInfo 5 "collection_item: $collection_item"
+    local collection_name=$(jq -r '.name' <<< "$collection_item")
+    local deleted=$(jq -r '.deleted // false' <<< "$collection_item")
+    showInfo 5 "collection.deleted: $deleted"
+    local numItems=$(jq -r '.numItems' <<< "$collection_item")
+    if [[ $deleted = "true" ]] ; then
+      showInfo 2 "Skipping deleted collection $collection_key: $collection_name"
+      return
+    elif [[ numItems -eq 0 ]] ; then
+      showInfo 2 "Empty collection $collection_key: $collection_name"
+    else
+      showInfo 1 "Getting collection $collection_key: $collection_name"
     local start=0
     local limit=100
     while :; do
+          showInfo 10 "curl of $collection_key at start $start"
         local this_page=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$collection_key/items?include=data,csljson&start=$start&limit=$limit&v=3")
+          local item_count=$(jq '. | length' <<< "$this_page")
+          showInfo 10 "curl returned $item_count items"
+          if [[ $item_count > 0 ]] ; then
+            if $curlFiles ; then
+              local pageFile=$( printf "curl/%s-%02d.json" $collection_key $(( $start / $limit )) )
+              echo "$this_page" > "$pageFile"
+            fi
         items=$(jq -s 'add' <<< "$this_page$items")
-        start=$(($start + $limit))
-
-        # Break when we don't get any more items
-        [[ $(jq '. | length' <<< "$this_page") > 0 ]] || break
+            showInfo 10 "items updated"
+            start=$(($start + $item_count))
+          fi
+          # Break when we don't get the full $limit of items
+          # (it's still possible to do one redundant curl if collection has exact multiple of $limit items)
+          [[ $item_count -ge $limit ]] || break
     done
+    fi
 
-    local subcollections=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$collection_key/collections" | jq -r '.[].data|{key, name, parentCollection}' | jq -s '.')
-    collections=$(jq -s 'add' <<< "$subcollections$collections")
+    local numCollections=$(jq -r '.numCollections' <<< "$collection_item")
+    if [[ $numCollections -gt 0 ]] ; then
+      showInfo 5 "Getting subcollections of $collection_key: $collection_name"
+      local subcollections=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$collection_key/collections" | jq -r 'map(.data+.meta)')
+      collections=$(jq -s 'add' <<< "$collections$subcollections")
 
     # Recurse into subcollections
     while read subcollection_key; do
         add_items_from_collection $subcollection_key
     done < <(jq -r '.[].key' <<< "$subcollections")
+    fi
 }
+
+
+# option --infolevel/-i requires 1 argument
+LONGOPTS=help,rawitems,debugfiles,tagsfile,typefiles,curlfiles,collectionsfiles,infolevel:
+OPTIONS=hrdgyuci:
+
+# -temporarily store output to be able to check for errors
+# -activate quoting/enhanced mode (e.g. by writing out “--options”)
+# -pass arguments only via   -- "$@"   to separate them correctly
+# -if getopt fails, it complains itself to stderr
+PARSED=$(getopt --options=$OPTIONS --longoptions=$LONGOPTS --name "$0" -- "$@") || exit 2
+# read getopt’s output this way to handle the quoting right:
+eval set -- "$PARSED"
+
+# now enjoy the options in order and nicely split until we see --
+while true; do
+    case "$1" in
+        -h|--help)
+            usage
+            exit
+            ;;
+        -r|--rawitems)
+            rawItemsFile=true
+            shift
+            ;;
+        -d|--debug)
+            debugFiles=true
+            shift
+            ;;
+        -g|--tagsfile)
+            tagsFile=true
+            shift
+            ;;
+        -y|--typefiles)
+            typeFiles=true
+            shift
+            ;;
+        -u|--curlfiles)
+            curlFiles=true
+            shift
+            ;;
+        -c|--collectionsfiles)
+            collectionsFiles=true
+            shift
+            ;;
+        -i|--infolevel)
+            showInfoLevel="$2"
+            shift 2
+            ;;
+        --)
+            shift
+            break
+            ;;
+        *)
+            echo "Programming error" >&2
+            exit 3
+            ;;
+    esac
+done
+
+
+# handle non-option arguments
+if [[ $# -gt 1 ]]; then
+    echo "$0: A single input file is required." >&2
+    exit 4
+fi
+
+# echo "rawItemsFile: $rawItemsFile"
+# echo "debugFiles: $debugFiles"
+# echo "tagsFile: $tagsFile"
+# echo "typeFiles: $typeFiles"
+# echo "curlFiles: $curlFiles"
+# echo "collectionsFiles: $collectionsFiles"
+# echo "showInfoLevel: $showInfoLevel"
+# echo 'Remaining arguments:'
+# for arg; do
+# 	echo "--> '$arg'"
+# done
 
 root_collection="FSK5IX4F"
 if [[ $# -eq 0 ]] ; then
   # Initialize with the root collection.
-  collections=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/top" | jq -r '.[].data|{key, name, parentCollection}' | jq -s '.' | jq "map(select(.key==\"$root_collection\"))")
+  collections=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$root_collection" | jq -s -r 'map(.data+.meta)')
   add_items_from_collection $root_collection
-  if $collectionFiles ; then
+  if $collectionsFiles ; then
     echo "$collections" > collections.json
   fi
-  echo "$(jq '. | length' <<< "$collections") collections"
+  showInfo 1 "$(jq '. | length' <<< "$collections") collections"
 
   while read neededUrl; do
+    showInfo 10 "curl of $neededUrl"
     item=$(curl -s "$neededUrl?include=data,csljson&v=3")
+    showInfo 10 "curl returned"
 	items=$(jq -s 'add' <<< "[$item]$items")
+    showInfo 10 "items updated"
   done < <(jq -r 'include "./bib-fns";getNeededUrls|.[]' <<< "$items")
 
+  if $collectionsFiles ; then
   grouped_collections=$(jq 'group_by(.parentCollection)' <<< "$collections")
   # This is not yet fully hierarchically nested.
-  if $collectionFiles ; then
     echo "$grouped_collections" > grouped_collections.json
   fi
   # Only if we got the raw items from the Zotero API
@@ -76,89 +240,125 @@ else
   items=$(<$1)
 fi
 
-echo "Got $(jq '. | length' <<< "$items") items"
+showInfo 1 "Got $(jq '. | length' <<< "$items") items"
 
 # Piece-wise processing for debugging:
 items=$(jq 'include "./bib-fns";map(semiflatten)' <<< "$items")
+showInfo 8 "Elevate fields in .csljson and .data to the item level."
 if $debugFiles ; then
   dfn=$(debugFileName "semiflattened" $dfn)
   echo "$items" > "$dfn"
 fi
 items=$(jq 'include "./bib-fns";map(if has("note") then .note |= unwrapDiv else . end)' <<< "$items")
+showInfo 8 "Clean up note field (extract from HTML div)."
 if $debugFiles ; then
   dfn=$(debugFileName "cleanDiv" $dfn)
   echo "$items" > "$dfn"
 fi
-#find and eliminate duplicate .key entries
+
+showInfo 8 "Find duplicate .key entries"
 groupedByKey=$(jq 'group_by(.key)' <<< "$items")
 if $debugFiles ; then
   dupIDs=$(jq 'map(select(length>1) | {key: .[0].key, items: .})' <<< "$groupedByKey")
+  numDupKeys=$(jq '. | length' <<< "$dupIDs")
+  if [[ "$numDupKeys" -ne 0 ]] ; then
+    numDupEntries=$(jq 'map(.items | length) | add' <<< "$dupIDs")
+    showInfo 2 "$numDupKeys keys have multiple occurrences totalling $numDupEntries entries"
+  fi
   dfn=$(debugFileName "dupIDs" $dfn)
   echo "$dupIDs" > "$dfn"
 fi
 
 #remove duplicates
 items=$(jq 'map(.[0]) | sort_by(.date)' <<< "$groupedByKey")
+showInfo 8 "Remove Duplicates"
 if $debugFiles ; then
   dfn=$(debugFileName "noDupSorted" $dfn)
   echo "$items" > "$dfn"
 fi
+
+# Remove library, links, and meta objects; and some fields from entries
+# (These are not used any further on, so simplify.)
+items=$(jq 'map(del(.["library", "links", "meta", "accessed", "accessDate", "dateAdded", "dateModified"]))' <<< "$items")
+showInfo 8 "Remove library, links, and meta objects and some unnecessary fields"
+if $debugFiles ; then
+  dfn=$(debugFileName "noLibraryLinksMeta" $dfn)
+  echo "$items" > "$dfn"
+fi
+
 if $typeFiles ; then
   types=$(jq 'map({key, title, type, itemType}) | group_by(.type) | map({type:.[0].type, itemTypes:(group_by(.itemType)|map({itemType:.[0].itemType, items:map({title, key})}))})' <<<"$items")
   echo "$types" > titleKeyTypeInfo.json
   types=$(jq 'group_by(.type) | map({type:.[0].type, itemTypes:(group_by(.itemType)|map({itemType:.[0].itemType, items:.}))})' <<<"$items")
   echo "$types" > fullTypeInfo.json
 fi
-if $tagFiles ; then
+if $tagsFile ; then
   tags=$(jq 'map(.tags) | flatten | map(.tag) | unique' <<<"$items")
   echo "$tags" > tags.json
 fi
 # consolidate URL into url field
 items=$(jq 'include "./bib-fns";map(if nonBlankKey("URL") then setpath(["url"]; .URL) | del(.URL) else . end)' <<< "$items")
+showInfo 8 "Consolidate URL to url (upper vs. lower case)"
 if $debugFiles ; then
-  dfn=$(debugFileName "consolidated" $dfn)
+  dfn=$(debugFileName "urlConsolidated" $dfn)
   echo "$items" > "$dfn"
 fi
 
 # Use DOI to create url where needed and available
 items=$(jq 'include "./bib-fns";map(if (blankKey("url") and nonBlankKey("DOI")) then setpath(["url"]; make_DOI_to_url(.DOI)) else . end)' <<< "$items")
+showInfo 8 "Use DOI to construct URL if needed"
 if $debugFiles ; then
   dfn=$(debugFileName "DOI-url" $dfn)
   echo "$items" > "$dfn"
 fi
 
 items=$(jq 'include "./bib-fns";map(getTargetInfo)' <<< "$items")
-if $debugFiles ; then
-  dfn=$(debugFileName "withTargetInfo" $dfn)
-  echo "$items" > "$dfn"
-fi
+items=$(jq 'include "./bib-fns";map(removeEmptyKeys)' <<< "$items")
 
 # now use children items to amend the info for the parentItem
-allFixupInfo=$(jq 'group_by(.target)|map(sort_by(.parentItem))' <<< "$items")
+childrenGroupedByParent=$(jq 'group_by(.target)|map(sort_by(.parentItem))' <<< "$items")
+showInfo 8 "Collect children grouped by parent"
 if $debugFiles ; then
-  dfn=$(debugFileName "allFixupInfo" $dfn)
-  echo "$allFixupInfo" > "$dfn"
+  dfn=$(debugFileName "childrenGroupedByParent" $dfn)
+  echo "$childrenGroupedByParent" > "$dfn"
 fi
-# embed children into their parentItem (children field). Then delete items that Zotero indicated as such.
-items=$(jq 'map(if has(1) then (first + {children: .[1:]}) else first end)|map(select(.deleted|not))' <<< "$allFixupInfo")
+
+showInfo 8 "Embed Children into their parentItem (children field)."
+items=$(jq 'map(if has(1) then (first + {children: .[1:]}) else first end)' <<< "$childrenGroupedByParent")
 if $debugFiles ; then
-  dfn=$(debugFileName "itemsNestedChildren" $dfn)
+  dfn=$(debugFileName "itemsWithNestedChildren" $dfn)
   echo "$items" > "$dfn"
 fi
 
-echo "Got $(jq '. | length' <<< "$items") clean, top-level items"
+showInfo 5 "Delete items that Zotero indicated as such."
+beforeCount=$(jq '. | length' <<< "$items")
+items=$(jq 'map(select(.deleted|not))' <<< "$items")
+afterCount=$(jq '. | length' <<< "$items")
+showInfo 5 "Removed $(( $beforeCount - $afterCount )) items marked as deleted."
+
+showInfo 1 "Got $(jq '. | length' <<< "$items") clean, top-level items"
 items=$(jq 'include "./bib-fns";map(applyChildrenAmendments)' <<< "$items")
+showInfo 8 "Update Parent items from their Children"
 if $debugFiles ; then
-  dfn=$(debugFileName "updatedItems" $dfn)
+  dfn=$(debugFileName "updatedItemsFromChildren" $dfn)
   echo "$items" > "$dfn"
 fi
 absNote=$(jq 'include "./bib-fns";map(select((nonBlankKey("abstract") or nonBlankKey("abstractNote")) and (.abstract != .abstractNote)) | {key: .key, title: .title, abstract: .abstract, abstractNote: .abstractNote})' <<< "$items")
+showInfo 8 "Check abstract vs. abstractNote mismatch"
 if $debugFiles ; then
   dfn=$(debugFileName "absNoteMismatch" $dfn)
   echo "$absNote" > "$dfn"
 fi
+absNoteMismatchCount=$(jq '. | length' <<< "$absNote")
+if [[ "$absNoteMismatchCount" -eq 1 ]] ; then
+  showInfo 2 "Warn: 1 entry with mismatch between abstract and abstractNote fields"
+elif [[ "$absNoteMismatchCount" -ne 0 ]] ; then
+  showInfo 2 "Warn: $absNoteMismatchCount entries with mismatch between abstract and abstractNote fields"
+fi
+
 # remove redundant .abstractNote fields
 items=$(jq 'include "./bib-fns";map(cleanAbstracts)' <<< "$items")
+showInfo 8 "Remove redundant abstractNote fields"
 if $debugFiles ; then
   dfn=$(debugFileName "abstractsCleaned" $dfn)
   echo "$items" > "$dfn"
@@ -167,51 +367,59 @@ if $typeFiles ; then
   types=$(jq 'map({key, title, type, itemType}) | group_by(.type) | map({type:.[0].type, itemTypes:(group_by(.itemType)|map({itemType:.[0].itemType, items:map({title, key})}))})' <<<"$items")
   echo "$types" > finalTitleKeyTypeInfo.json
 fi
-noURL=$(jq 'include "./bib-fns";map(select(blankKey("url")))' <<< "$items")
 if $debugFiles ; then
+  noURL=$(jq 'include "./bib-fns";map(select(blankKey("url")))' <<< "$items")
   dfn=$(debugFileName "noURL" $dfn)
   echo "$noURL" > "$dfn"
 fi
 finalCount=$(jq '. | length' <<< "$items")
-# # Remove .children arrays, if any. Save space.
-# items=$(jq 'map(del(.children))' <<< "$items")
-# if $debugFiles ; then
-    # dfn=$(debugFileName "withoutChildrenArray")
-    # echo "$items" > "$dfn"
+
+items=$(jq 'include "./bib-fns";map(issued_iso_string)' <<< "$items")
+
+items=$(jq 'include "./bib-fns";map(add_author_string)' <<< "$items")
+
+items=$(jq 'include "./bib-fns";map(add_editor_string)' <<< "$items")
+# if $removeChildrenFromFinalFile; then
+#   # Remove .children arrays, if any. Save space.
+#   items=$(jq 'map(del(.children))' <<< "$items")
+#   showInfo 8 "Remove .children arrays from final items"
+#   if $debugFiles ; then
+#     dfn=$(debugFileName "withoutChildrenArray" $dfn)
+#     echo "$items" > "$dfn"
+#   fi
 # fi
+
+# Do this here, instead of keeping a copy of the current value of $items, just to do this later.
+jq -c 'include "./bib-fns";.[] | bibItem' <<< "$items" > bibliography-items-by-line.json
+
 # Group by year
 items=$(jq 'group_by(.issued."date-parts"[0][0])' <<< "$items")
-if $debugFiles ; then
-  dfn=$(debugFileName "grouped" $dfn)
-  echo "$items" > "$dfn"
-fi
 items=$(jq 'map({ (.[0].issued."date-parts"[0][0] // "Undated" | tostring): . })' <<< "$items")
+showInfo 8 "Group by year"
 if $debugFiles ; then
-  dfn=$(debugFileName "Undated" $dfn)
+  dfn=$(debugFileName "groupedByYear" $dfn)
   echo "$items" > "$dfn"
 fi
-items=$(jq 'map(to_entries)' <<< "$items")
-if $debugFiles ; then
-  dfn=$(debugFileName "entries" $dfn)
-  echo "$items" > "$dfn"
-fi
-items=$(jq 'flatten(1)' <<< "$items")
-if $debugFiles ; then
-  dfn=$(debugFileName "flattened" $dfn)
-  echo "$items" > "$dfn"
-fi
-items=$(jq 'group_by(.key)' <<< "$items")
-if $debugFiles ; then
-  dfn=$(debugFileName "groupedByKey" $dfn)
-  echo "$items" > "$dfn"
-fi
-items=$(jq 'include "./bib-fns";map(reconstituteGroupedEntries) | from_entries' <<< "$items")
+
+items=$(jq 'include "./bib-fns";map(to_entries) | flatten(1) | group_by(.key) | map(reconstituteGroupedEntries) | from_entries' <<< "$items")
 if $debugFiles ; then
   dfn=$(debugFileName "final" $dfn)
   echo "$items" > "$dfn"
 fi
 
+showInfo 1 "Generating individual Bibliography entries' .md files"
+BIBLIOGRAPHY_DIR="./../content/en/history/bibliography"
+export BIBLIOGRAPHY_DIR
+BIBITEMS_DIR="./../static/data/bibItems"
+export BIBITEMS_DIR
 
-echo "Outputting CSL JSON"
-echo "$finalCount entries"
-echo "$items" > "$(dirname "$0")/../static/data/bibliography.json"
+# Ensure target directories exist
+mkdir -p "$BIBLIOGRAPHY_DIR" "$BIBITEMS_DIR"
+
+./bibSplit.pl bibliography-items-by-line.json 2>bibSplit.err
+# Cleanup (uncomment once working)
+# rm bibliography-items-by-line.json
+
+showInfo 1 "Outputting CSL JSON"
+showInfo 1 "$finalCount entries"
+#echo "$items" > "$(dirname "$0")/../static/data/bibliography.json"

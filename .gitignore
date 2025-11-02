@@ -18,3 +18,9 @@ _gen/
 .hugo_build.lock
 .idea
 data/bibliography.json
+static/data/bibliography.json
+static/data/bibItems/
+/docs
+/scripts/*.json
+/content/en/history/bibliography/**
+!/content/en/history/bibliography/_index.md
