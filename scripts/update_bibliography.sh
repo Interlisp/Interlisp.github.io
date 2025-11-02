@@ -7,13 +7,16 @@ function usage () {
   echo -e "Usage: $0 [ options ] [ input_items_file ]\n"
   echo -e "Options:"
   echo -e "  -h | --help               \tDisplay this message and exit."
-  echo -e "  -r | --rawitems           \tSave the complete downloaded JSON as '00-rawItems.json' (See 'input_items_file' below.)."
+  echo -e "  -r | --rawitems           \tSave the complete downloaded JSON as '00-rawItems.json'"
+  echo -e "                            \t(See 'input_items_file' below.)."
   echo -e "  -g | --tagsfile           \tGenerate 'tags.json' containing all tags on the 'cleaned-up' set of entries."
   echo -e "  -y | --typefiles          \tGenerate item type information JSON files. (See below.)"
   echo -e "  -c | --collectionsfiles   \tGenerate two JSON files containing info about each of the Zotero collections."
-  echo -e "  -u | --curlfiles          \tGenerate files in the 'curl/' directory with the output of each call to curl. Very low level debugging."
+  echo -e "  -u | --curlfiles          \tGenerate files in the 'curl/' directory with the output of each call to curl."
+  echo -e "                            \t(Very low level debugging.)"
   echo -e "  -d | --debugfiles         \tGenerate numbered files with the intermediate processing step output JASON."
-  echo -e "  -i N | --infolevel N      \tSet the level of display of informational messages. N is 0-10 (Default = 2.). (See below.)"
+  echo -e "  -i N | --infolevel N      \tSet the level of display of informational messages. N is 0-10 (Default = 2.)."
+  echo -e "                            \t(See below.)"
   echo -e "\n typefiles: These 3 files contain the type and itemType information for the entries with different level of details."
   echo -e "\n infolevel: The infolevel controls how much detail is presented during processing."
   echo -e "   0: NO info messages."
@@ -374,11 +377,11 @@ if $debugFiles ; then
 fi
 finalCount=$(jq '. | length' <<< "$items")
 
-items=$(jq 'include "./bib-fns";map(issued_iso_string)' <<< "$items")
+items=$(jq 'include "./bib-fns";map(issued_iso_string | issued_date_readable | add_author_string | add_editor_string)' <<< "$items")
 
-items=$(jq 'include "./bib-fns";map(add_author_string)' <<< "$items")
+#items=$(jq 'include "./bib-fns";map(add_author_string)' <<< "$items")
 
-items=$(jq 'include "./bib-fns";map(add_editor_string)' <<< "$items")
+#items=$(jq 'include "./bib-fns";map(add_editor_string)' <<< "$items")
 # if $removeChildrenFromFinalFile; then
 #   # Remove .children arrays, if any. Save space.
 #   items=$(jq 'map(del(.children))' <<< "$items")

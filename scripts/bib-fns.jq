@@ -30,6 +30,14 @@ def issued_iso_string:
     . 
   end;
 
+def issued_date_readable:
+  if nonBlankKey("issued") and (.issued | nonBlankKey("date-parts")) then 
+    setpath(["readableDateString"]; 
+    (.issued["date-parts"][0]) as $p | $p | map(pad2) | join("-"))
+  else 
+    . 
+  end;
+  
 def format_person_name:
       if (has("family") and .family != null and (.family|tostring|length)>0) then
         .family
