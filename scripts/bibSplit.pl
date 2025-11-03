@@ -2,6 +2,18 @@
 use JSON::PP qw(decode_json encode_json);
 use Encode qw(decode encode is_utf8);  
 use Unicode::Normalize qw(NFC);
+use utf8;
+BEGIN 
+{ 
+  $bibDir = $ENV{'BIBLIOGRAPHY_DIR'};
+  $bibItemsDir = $ENV{'BIBITEMS_DIR'};
+}
+
+# Handy when using the perl debugger...
+# sub is8 {
+#     my ($s) = @_;
+#     return is_utf8($s) ? "is UTF8" : "is not UTF8";
+# }
 
 # Cleanup text fields
 sub sanitize_text {
@@ -9,6 +21,7 @@ sub sanitize_text {
   return '' unless defined $s;
 
   # Ensure decoded characters
+  # NOTE: It SEEMS is_utf8() checking may not correctly indicate the correct state of the content!!
   $s = decode('UTF-8', $s, Encode::WARN) unless is_utf8($s);
 
   # Repair mojibake (e.g., "â" -> "’") if available
@@ -19,32 +32,28 @@ sub sanitize_text {
 
   # Normalize and clean
   $s = NFC($s);                       # normalize accents/combining marks
-  $s =~ s/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F\x{80}-\x{9F}]//g;  # drop C0/C1 controls
-  $s =~ s/\x{00A0}/ /g;               # NBSP -> space
-  $s =~ s/\r\n?/ /g;                 # normalize newlines
+  $s =~ s/[\x00-\x08\x0B\x0C\x0E-\x1F\x7F\x{80}-\x{9F}]//gu;  # drop C0/C1 controls
+  $s =~ s/\x{00A0}/ /gu;              # NBSP -> space
+  $s =~ s/\r\n?/ /gu;                 # normalize newlines
 
   return $s;
 }
 
-BEGIN 
-{ 
-  $bibDir = $ENV{'BIBLIOGRAPHY_DIR'};
-  $bibItemsDir = $ENV{'BIBITEMS_DIR'};
-}
 my $item = $_;
-my $json = eval { decode_json($item) } or do { warn "Bad JSON line: $_\n"; next; };
+my $obj = eval { decode_json($item) } or do { warn "Bad JSON line: $_\n"; next; };
 
-my $key = $json->{key};
-my $target = $json->{target} || print STDERR "Cannot find target for key \"$key\" in line: $_\n";
+my $key = $obj->{key};
+my $target = $obj->{target} || print STDERR "Cannot find target for key \"$key\" in line: $_\n";
 
 if ($key eq $target) {  # only top level entries
   #my $handle = undef;
   #my $itemjson = "$bibItemsDir/$key.json";
   #open($handle, ">:encoding(UTF-8)", $itemjson) || die "$0: cannot open $itemjson in write-open mode: $!";
-  #print $handle $item;
+  #print $handle (is_utf8($item) ? $item : decode('UTF-8', $item, Encode::WARN));
   #close $handle || die "$0: close of file $itemjson failed: $!";
 
-  my $obj = eval { decode_json($item) } or do { warn "Bad JSON for $key\n"; next; };
+  # No need to decode the $item a second time. Just changed the $json above to be $obj.
+  #my $obj = eval { decode_json($item) } or do { warn "Bad JSON for $key\n"; next; };
   delete $obj->{children};
 
   my $type = $obj->{type} // '';
@@ -59,34 +68,42 @@ if ($key eq $target) {  # only top level entries
   my $abs = sanitize_text($obj->{abstract} // '');
   # a hack for bulleted lists in the abstracts (use markdown there)
   # won't work for nested lists.
-  $abs =~ s/\n?\n\N{U+2022}/\n*/g;
+  $abs =~ s/\n?\n\N{U+2022}/\n*/gu;
   my $indented = join('', map { "  $_\n" } split(/\n/, $abs));
   my $abstract = $indented eq '' ? "abstract: ''" : "abstract: |\n$indented";
 
   my $itemDate = defined $obj->{isoDateString} ? $obj->{isoDateString} : '';
+  my $itemReadableDate = defined $obj->{readableDateString} ? $obj->{readableDateString} : '';
 
   my $itemAuthors = '';
   if (ref($obj->{authorsFormatted}) eq 'ARRAY' && @{$obj->{authorsFormatted}}) {
     $itemAuthors = "\n";
     for my $a (@{$obj->{authorsFormatted}}) {
-      my $quoted = encode_json($a // '');
-      $itemAuthors .= "  - $quoted\n";
+      # The encode_json is where extended unicode chars get corrupted, e.g., "Emanuelson, Pär"
+      # There may be other things that now don't work!!
+      # my $quoted = encode_json($a // '');
+      # sanitize_text seems to handle them correctly
+      my $san = sanitize_text($a // '');
+      $itemAuthors .= "  - \"$san\"\n";
     }
-    $itemAuthors =~ s/\n$//;  # strip trailing newline
+    $itemAuthors =~ s/\n$//u;  # strip trailing newline
   }
 
   my $itemEditors = '';
   if (ref($obj->{editorsFormatted}) eq 'ARRAY' && @{$obj->{editorsFormatted}}) {
     $itemEditors = "\n";
     for my $a (@{$obj->{editorsFormatted}}) {
-      my $quoted = encode_json($a // '');
-      $itemEditors .= "  - $quoted\n";
+      # as above...
+      # my $quoted = encode_json($a // '');
+      my $san = sanitize_text($a // '');
+      $itemEditors .= "  - \"$san\"\n";
     }
-    $itemEditors =~ s/\n$//;  # strip trailing newline
+    $itemEditors =~ s/\n$//u;  # strip trailing newline
   }
   
   my $urlSource = defined $obj->{url} ? $obj->{url} : '';
 
+  # Some/most/all of these *may* need sanitize_text
   # optional fields - ones used vary by value of type
   my $applicationNumber = defined $obj->{applicationNumber} ? qq{"$obj->{applicationNumber}"} : '""';
   my $assignee = defined $obj->{assignee} ? qq{"$obj->{assignees}"} : '""';
@@ -157,6 +174,7 @@ if ($key eq $target) {  # only top level entries
 ---
 $title
 date: $itemDate
+readabledate: $itemReadableDate
 type: bibliography
 item_type: $type
 authors: $itemAuthors

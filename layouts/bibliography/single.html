@@ -32,16 +32,17 @@
 
 <p>
   {{- $d := .Date -}}
+      {{- $fmtDate := .Params.readabledate -}}
   {{- with .Params.date -}}
-    {{- $datestr := trim . " " -}}
-    {{- if and (ne $datestr "") (findRE `^\d{4}-\d{2}-\d{2}` $datestr) -}}
-      {{- $d = time $datestr -}}
+    {{- $isoDate := trim . " " -}}
+    {{- if and (ne $isoDate "") (findRE `^\d{4}-\d{2}-\d{2}` $isoDate) -}}
+      {{- $d = time $isoDate -}}
     {{- end -}}
   {{- end }}
   {{- $d = $d.Format "2006-01-02" -}}
   {{- /* Don't display bogus date */ -}}
   {{- if (ne $d "0001-01-01") }}
-    <time datetime="{{ $d }}">{{ $d }}</time>
+    <time datetime="{{ $d }}">{{ $fmtDate }}</time>
   {{ end -}}
 </p>
 <p>
@@ -56,7 +57,7 @@
     <strong>Abstract</strong>
     <br>
     {{ with .Params.abstract }}
-      {{ . | markdownify }}
+      {{ . | htmlEscape | markdownify }}
     {{ else }}
       No abstract available.
     {{ end }}

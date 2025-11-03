@@ -62,8 +62,7 @@
       {{- $rendered = $rendered | htmlEscape -}}
       <a href="{{ .RelPermalink }}"><span><strong>{{- $rendered | safeHTML -}}</strong></span></a><br>
 
-      {{- /* Safe date: use front matter date only if non-empty & matches basic pattern */ -}}
-            {{- $authors := .Params.authors -}}
+      {{- $authors := .Params.authors -}}
       {{- $editors := .Params.editors -}}
       {{- $isPatent := eq .Params.item_type "patent" -}}
       {{- /* warnf "authors: %v" $authors */ -}}
@@ -91,17 +90,19 @@
       <br>
       {{- end -}}
 
+      {{- /* Safe date: use front matter date only if non-empty & matches basic pattern */ -}}
       {{- $d := .Date -}}
+      {{- $fmtDate := .Params.readabledate -}}
       {{- with .Params.date -}}
-        {{- $datestr := trim . " " -}}
-        {{- if and (ne $datestr "") (findRE `^\d{4}-\d{2}-\d{2}` $datestr) -}}
-          {{- $d = time $datestr -}}
+        {{- $isoDate := trim . " " -}}
+        {{- if and (ne $isoDate "") (findRE `^\d{4}-\d{2}-\d{2}` $isoDate) -}}
+          {{- $d = time $isoDate -}}
         {{- end -}}
-      {{- end -}}
+      {{- end }}
       {{- $d = $d.Format "2006-01-02" -}}
       {{- /* Don't display bogus date */ -}}
       {{- if (ne $d "0001-01-01") }}
-        <time datetime="{{ $d }}">{{ $d }}</time><br>
+        <time datetime="{{ $d }}">{{ $fmtDate }}</time>
       {{ end -}}
 
       {{ with .Params.abstract -}}
@@ -114,7 +115,7 @@
           {{- $previewWords := split $plain " " | first $previewWordLimit -}}
           {{- $preview = delimit $previewWords " " -}}
         {{- else -}}
-          {{- $preview = replace . "\n" "<br>" -}}
+          {{- $preview = replace (. | htmlEscape) "\n" "<br>" -}}
         {{- end -}}
         <br>
         <div>{{ $preview | safeHTML }}{{ if $previewing }}…{{ end }}</div>
