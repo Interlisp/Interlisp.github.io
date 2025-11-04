@@ -103,7 +103,9 @@ if ($key eq $target) {  # only top level entries
   
   my $urlSource = defined $obj->{url} ? $obj->{url} : '';
 
-  # Some/most/all of these *may* need sanitize_text
+  # Modified date
+  my $dateModified = defined $obj->{dateModified} ? $obj->{dateModified} : '';
+
   # optional fields - ones used vary by value of type
   my $applicationNumber = defined $obj->{applicationNumber} ? qq{"$obj->{applicationNumber}"} : '""';
   my $assignee = defined $obj->{assignee} ? qq{"$obj->{assignees}"} : '""';
@@ -185,6 +187,9 @@ $extraFields
 tags:
 url_source: $urlSource
 zotero_url: "https://www.zotero.org/groups/2914042/items/$key"
+
+# Timestamp of last modification to bibliographic item
+lastmod: $dateModified
 ---
 
 ENDITEM

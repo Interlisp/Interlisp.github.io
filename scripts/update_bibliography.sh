@@ -282,7 +282,7 @@ fi
 
 # Remove library, links, and meta objects; and some fields from entries
 # (These are not used any further on, so simplify.)
-items=$(jq 'map(del(.["library", "links", "meta", "accessed", "accessDate", "dateAdded", "dateModified"]))' <<< "$items")
+items=$(jq 'map(del(.["library", "links", "meta", "accessed", "accessDate", "dateAdded"]))' <<< "$items")
 showInfo 8 "Remove library, links, and meta objects and some unnecessary fields"
 if $debugFiles ; then
   dfn=$(debugFileName "noLibraryLinksMeta" $dfn)
