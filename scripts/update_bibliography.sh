@@ -44,7 +44,7 @@ curlFiles=false         # --curlfiles/-u
 # The collections files will be created only if directly querying Zotero API.
 collectionsFiles=false  # --collectionsfiles/-c
 
-# removeChildrenFromFinalFile=false
+removeChildrenFromFinalFiles=true    # Set to false for debugging, or if later needed.
 
 showInfoLevel=2         # --infolevel/-i
 #  0: NO showInfo messages.
@@ -379,22 +379,21 @@ finalCount=$(jq '. | length' <<< "$items")
 
 items=$(jq 'include "./bib-fns";map(issued_iso_string | issued_date_readable | add_author_string | add_editor_string)' <<< "$items")
 
-#items=$(jq 'include "./bib-fns";map(add_author_string)' <<< "$items")
-
-#items=$(jq 'include "./bib-fns";map(add_editor_string)' <<< "$items")
-# if $removeChildrenFromFinalFile; then
-#   # Remove .children arrays, if any. Save space.
-#   items=$(jq 'map(del(.children))' <<< "$items")
-#   showInfo 8 "Remove .children arrays from final items"
-#   if $debugFiles ; then
-#     dfn=$(debugFileName "withoutChildrenArray" $dfn)
-#     echo "$items" > "$dfn"
-#   fi
-# fi
+if $removeChildrenFromFinalFiles; then
+  # Remove .children arrays, if any. Save space.
+  items=$(jq 'map(del(.children))' <<< "$items")
+  showInfo 8 "Remove .children arrays from final items"
+  if $debugFiles ; then
+    dfn=$(debugFileName "withoutChildrenArray" $dfn)
+    echo "$items" > "$dfn"
+  fi
+fi
 
 # Do this here, instead of keeping a copy of the current value of $items, just to do this later.
 jq -c 'include "./bib-fns";.[] | bibItem' <<< "$items" > bibliography-items-by-line.json
 
+if false ; then
+# This is now irrelevant!!
 # Group by year
 items=$(jq 'group_by(.issued."date-parts"[0][0])' <<< "$items")
 items=$(jq 'map({ (.[0].issued."date-parts"[0][0] // "Undated" | tostring): . })' <<< "$items")
@@ -409,6 +408,7 @@ if $debugFiles ; then
   dfn=$(debugFileName "final" $dfn)
   echo "$items" > "$dfn"
 fi
+fi  # end of "irrelevant" block!
 
 showInfo 1 "Generating individual Bibliography entries' .md files"
 BIBLIOGRAPHY_DIR="./../content/en/history/bibliography"
@@ -423,6 +423,6 @@ mkdir -p "$BIBLIOGRAPHY_DIR" "$BIBITEMS_DIR"
 # Cleanup (uncomment once working)
 # rm bibliography-items-by-line.json
 
-showInfo 1 "Outputting CSL JSON"
+# showInfo 1 "Outputting CSL JSON"
 showInfo 1 "$finalCount entries"
 #echo "$items" > "$(dirname "$0")/../static/data/bibliography.json"
