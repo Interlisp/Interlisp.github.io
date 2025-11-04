@@ -126,7 +126,7 @@ Bob Sproull came up with the idea for what would turn out to be the first client
 
 In 1979, PARC began the design of the Dorado, a high performance personal workstation. The availability of the Dorado also made possible building a Lisp with a native display capability, which led to the Interlisp-D project.
 
-### 1980s
+## 1980s
 
 - Teitelman & Masinter, IEEE Computer, “[The Interlisp Programming Environment](https://larrymasinter.net/interlisp-ieee.pdf)” April 1981.
 - [1983 Stanford University Medical Experiment Computer](https://github.com/Interlisp/history/tree/master/1980s/1983-sumex-lisp)
@@ -177,7 +177,7 @@ In 1979, PARC began the design of the Dorado, a high performance personal workst
 
 ### 1993
 
-## 2000
+## 2000s
 
 The ADVISE/advice idea and names carried through to the Aspect/J system, and on into contemporary, mainstream Java frameworks.
 
