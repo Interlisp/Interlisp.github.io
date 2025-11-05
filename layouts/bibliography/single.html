@@ -52,6 +52,23 @@
       No URL to the document is available.
     {{ end }}
     <br>
+
+    <!-- Citation -->
+    {{/* Build Zotero API params (group id + item key + style) */}}
+      {{ $gid := "2914042" }}
+
+      {{ $key := .File.TranslationBaseName }}
+
+      {{ $style := or site.Params.zotero.style "apa" }}
+
+      {{ if and $gid $key }}
+        <br>
+        <a href="#" id="citeBtn"
+           data-gid="{{ $gid }}"
+           data-key="{{ $key }}"
+           data-style="{{ $style }}"
+        >Citation</a>
+      {{ end }}
 </p>
 <p>
     <strong>Abstract</strong>
@@ -218,4 +235,101 @@
     {{ .Content }}
   </div>
 </article>
+  <!-- Citation modal -->
+  <div id="citationModal" class="citation-modal" hidden>
+    <div class="citation-dialog">
+      <div class="citation-header">
+        <strong>Citation</strong>
+        <button type="button" class="citation-close" aria-label="Close">×</button>
+      </div>
+      <div class="citation-body">
+        <div id="citationContent">Loading…</div>
+      </div>
+      <div class="citation-actions">
+        <button type="button" id="copyCitation">Copy</button>
+        <button type="button" class="citation-close">Close</button>
+      </div>
+    </div>
+    <div class="citation-backdrop"></div>
+  </div>
+
+  <style>
+    .citation-modal[hidden] { display: none; }
+    .citation-modal { position: fixed; inset: 0; z-index: 1050; }
+    .citation-dialog {
+      position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
+      max-width: 720px; width: calc(100% - 2rem);
+      background: #fff; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.2);
+      overflow: hidden;
+    }
+    .citation-header { display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; border-bottom:1px solid #eee; }
+    .citation-close { background:none; border:0; font-size:1.25rem; line-height:1; cursor:pointer; }
+    .citation-body { padding:1rem; max-height:50vh; overflow:auto; }
+    #citationContent { font-size:1rem; line-height:1.4; }
+    .citation-actions { display:flex; gap:.5rem; justify-content:flex-end; padding:.75rem 1rem; border-top:1px solid #eee; }
+  </style>
+
+  <script>
+  (function () {
+    function openModal() { document.getElementById('citationModal').hidden = false; }
+    function closeModal() { document.getElementById('citationModal').hidden = true; }
+
+    document.addEventListener('click', function (e) {
+      if (e.target.matches('#citeBtn')) {
+        e.preventDefault();
+        const btn = e.target;
+        const gid = btn.dataset.gid;
+        const key = btn.dataset.key;
+        const style = btn.dataset.style || 'apa';
+        const url = `https://api.zotero.org/groups/${encodeURIComponent(gid)}/items/${encodeURIComponent(key)}?format=bib&style=${encodeURIComponent(style)}&linkwrap=1`;
+
+        const box = document.getElementById('citationContent');
+        box.textContent = 'Loading…';
+        openModal();
+
+        fetch(url, { headers: { 'Accept': 'text/html' }})
+          .then(r => {
+            if (!r.ok) throw new Error(`HTTP ${r.status}`);
+            return r.text();
+          })
+          .then(html => {
+            // API returns HTML (span with formatted citation)
+            box.innerHTML = html;
+          })
+          .catch(err => {
+            box.textContent = `Failed to load citation (${err})`;
+          });
+      }
+      if (e.target.matches('.citation-close')) {
+        e.preventDefault();
+        closeModal();
+      }
+      if (e.target.matches('#copyCitation')) {
+        e.preventDefault();
+        const el = document.getElementById('citationContent');
+        const text = el.innerText.trim();
+        if (navigator.clipboard && window.isSecureContext) {
+          navigator.clipboard.writeText(text).then(() => {
+            e.target.textContent = 'Copied';
+            setTimeout(() => e.target.textContent = 'Copy', 1200);
+          });
+        } else {
+          const ta = document.createElement('textarea');
+          ta.value = text; document.body.appendChild(ta);
+          ta.select(); try { document.execCommand('copy'); } catch(e){}
+          document.body.removeChild(ta);
+        }
+      }
+    });
+
+    // Close when clicking backdrop or pressing Escape
+    document.getElementById('citationModal').addEventListener('click', function (e) {
+      if (e.target.classList.contains('citation-backdrop')) closeModal();
+    });
+    document.addEventListener('keydown', function (e) {
+      if (e.key === 'Escape') closeModal();
+    });
+  })();
+  </script>
+
 {{ end }}
