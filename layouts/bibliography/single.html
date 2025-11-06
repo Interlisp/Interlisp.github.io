@@ -236,100 +236,185 @@
   </div>
 </article>
   <!-- Citation modal -->
-  <div id="citationModal" class="citation-modal" hidden>
-    <div class="citation-dialog">
-      <div class="citation-header">
-        <strong>Citation</strong>
-        <button type="button" class="citation-close" aria-label="Close">×</button>
-      </div>
-      <div class="citation-body">
+<div id="citationModal" class="citation-modal" hidden>
+  <div class="citation-dialog">
+    <div class="citation-header">
+      <strong>Citation</strong>
+      <button type="button" class="citation-close" aria-label="Close">×</button>
+    </div>
+
+    <!-- Tabs -->
+    <div class="citation-tabs" role="tablist" aria-label="Citation views">
+      <button type="button" class="tab-btn is-active" data-tab="formatted" role="tab" aria-selected="true" aria-controls="tab-formatted">Formatted</button>
+      <button type="button" class="tab-btn" data-tab="raw" role="tab" aria-selected="false" aria-controls="tab-raw">HTML</button>
+    </div>
+
+    <div class="citation-body">
+      <!-- Formatted view -->
+      <div id="tab-formatted" class="tab-panel is-active" role="tabpanel" aria-labelledby="tabbtn-formatted">
         <div id="citationContent">Loading…</div>
       </div>
-      <div class="citation-actions">
-        <button type="button" id="copyCitation">Copy</button>
-        <button type="button" class="citation-close">Close</button>
+
+      <!-- Raw HTML view -->
+      <div id="tab-raw" class="tab-panel" role="tabpanel" aria-labelledby="tabbtn-raw">
+        <pre class="codebox"><code id="citationRaw" class="language-html"></code></pre>
       </div>
     </div>
-    <div class="citation-backdrop"></div>
+
+    <div class="citation-actions">
+      <button type="button" id="copyCitation">Copy Text</button>
+      <button type="button" id="copyCitationHtml">Copy HTML</button>
+      <button type="button" class="citation-close">Close</button>
+    </div>
   </div>
+  <div class="citation-backdrop"></div>
+</div>
+
 
   <style>
-    .citation-modal[hidden] { display: none; }
-    .citation-modal { position: fixed; inset: 0; z-index: 1050; }
-    .citation-dialog {
-      position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
-      max-width: 720px; width: calc(100% - 2rem);
-      background: #fff; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.2);
-      overflow: hidden;
+  .citation-modal[hidden] { display: none; }
+  .citation-modal { position: fixed; inset: 0; z-index: 1050; }
+  .citation-dialog {
+    position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
+    max-width: 720px; width: calc(100% - 2rem);
+    background: #fff; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.2);
+    overflow: hidden;
+  }
+  .citation-header { display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; border-bottom:1px solid #eee; }
+  .citation-close { background:none; border:0; font-size:1.25rem; line-height:1; cursor:pointer; }
+  .citation-tabs { display:flex; gap:.25rem; padding:.5rem 1rem; border-bottom:1px solid #eee; }
+  .tab-btn {
+    border: 1px solid #ddd; background:#f8f9fa; border-radius:4px; padding:.35rem .6rem; cursor:pointer;
+  }
+  .tab-btn.is-active { background:#fff; border-color:#bbb; }
+  .citation-body { padding:1rem; max-height:50vh; overflow:auto; }
+  #citationContent { font-size:1rem; line-height:1.4; }
+  .codebox {
+    background:#f6f8fa; border:1px solid #e1e4e8; border-radius:6px;
+    padding:.75rem; font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    font-size:.9rem; line-height:1.4; white-space:pre-wrap; word-break:break-word;
+  }
+  .tab-panel { display:none; }
+  .tab-panel.is-active { display:block; }
+  .citation-actions { display:flex; gap:.5rem; justify-content:flex-end; padding:.75rem 1rem; border-top:1px solid #eee; }
+</style>
+
+<script src="/js/vendor/prettier/standalone.js" defer></script>
+<script src="/js/vendor/prettier/plugins/html.js" defer></script>
+
+<script>
+(function () {
+  const modal = document.getElementById('citationModal');
+  const contentBox = document.getElementById('citationContent');
+  const rawBox = document.getElementById('citationRaw');
+
+  function openModal() { modal.hidden = false; }
+  function closeModal() { modal.hidden = true; }
+
+  function setActiveTab(name) {
+    document.querySelectorAll('.tab-btn').forEach(btn => {
+      const isActive = btn.dataset.tab === name;
+      btn.classList.toggle('is-active', isActive);
+      btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
+    });
+    document.querySelectorAll('.tab-panel').forEach(panel => {
+      const isActive = panel.id === ('tab-' + name);
+      panel.classList.toggle('is-active', isActive);
+    });
+  }
+
+  function copyTextToClipboard(text, button) {
+    const done = () => {
+      if (button) {
+        const original = button.textContent;
+        button.textContent = 'Copied';
+        setTimeout(() => (button.textContent = original), 1200);
+      }
+    };
+    if (navigator.clipboard && window.isSecureContext) {
+      navigator.clipboard.writeText(text).then(done).catch(done);
+    } else {
+      const ta = document.createElement('textarea');
+      ta.value = text; document.body.appendChild(ta);
+      ta.select(); try { document.execCommand('copy'); } catch(e) {}
+      document.body.removeChild(ta); done();
     }
-    .citation-header { display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; border-bottom:1px solid #eee; }
-    .citation-close { background:none; border:0; font-size:1.25rem; line-height:1; cursor:pointer; }
-    .citation-body { padding:1rem; max-height:50vh; overflow:auto; }
-    #citationContent { font-size:1rem; line-height:1.4; }
-    .citation-actions { display:flex; gap:.5rem; justify-content:flex-end; padding:.75rem 1rem; border-top:1px solid #eee; }
-  </style>
+  }
 
-  <script>
-  (function () {
-    function openModal() { document.getElementById('citationModal').hidden = false; }
-    function closeModal() { document.getElementById('citationModal').hidden = true; }
+  document.addEventListener('click', function (e) {
+    // Open + fetch
+    if (e.target.matches('#citeBtn')) {
+      e.preventDefault();
+      const btn = e.target;
+      const gid = btn.dataset.gid;
+      const key = btn.dataset.key;
+      const style = btn.dataset.style || 'apa';
+      // Use Zotero API; format=bib returns HTML bibliography item(s)
+      const url = `https://api.zotero.org/groups/${encodeURIComponent(gid)}/items/${encodeURIComponent(key)}?format=bib&style=${encodeURIComponent(style)}&linkwrap=1`;
 
-    document.addEventListener('click', function (e) {
-      if (e.target.matches('#citeBtn')) {
-        e.preventDefault();
-        const btn = e.target;
-        const gid = btn.dataset.gid;
-        const key = btn.dataset.key;
-        const style = btn.dataset.style || 'apa';
-        const url = `https://api.zotero.org/groups/${encodeURIComponent(gid)}/items/${encodeURIComponent(key)}?format=bib&style=${encodeURIComponent(style)}&linkwrap=1`;
+      contentBox.textContent = 'Loading…';
+      rawBox.textContent = '';
+      setActiveTab('formatted');
+      openModal();
 
-        const box = document.getElementById('citationContent');
-        box.textContent = 'Loading…';
-        openModal();
+      fetch(url, { headers: { 'Accept': 'text/html' }})
+        .then(r => {
+          if (!r.ok) throw new Error(`HTTP ${r.status}`);
+          return r.text();
+        })
+        .then(html => {
+          contentBox.innerHTML = html;
+          try {
+            const formatted = window.prettier.format(html, { parser: "html", plugins: window.prettierPlugins, tabWidth: 2 });
+            // prettier.format may return a string or a Promise depending on plugin loading; normalize to a Promise
+            return Promise.resolve(formatted).then(pretty => {
+              rawBox.textContent = pretty;
+              return html;
+            });
+          } catch (err) {
+            // synchronous error formatting
+            rawBox.textContent = String(err);
+            return html;
+          }
+        })
+        .catch(err => {
+          const msg = `Failed to load citation (${err})`;
+          contentBox.textContent = msg;
+          rawBox.textContent = msg;
+        });
+    }
 
-        fetch(url, { headers: { 'Accept': 'text/html' }})
-          .then(r => {
-            if (!r.ok) throw new Error(`HTTP ${r.status}`);
-            return r.text();
-          })
-          .then(html => {
-            // API returns HTML (span with formatted citation)
-            box.innerHTML = html;
-          })
-          .catch(err => {
-            box.textContent = `Failed to load citation (${err})`;
-          });
-      }
-      if (e.target.matches('.citation-close')) {
-        e.preventDefault();
-        closeModal();
-      }
-      if (e.target.matches('#copyCitation')) {
-        e.preventDefault();
-        const el = document.getElementById('citationContent');
-        const text = el.innerText.trim();
-        if (navigator.clipboard && window.isSecureContext) {
-          navigator.clipboard.writeText(text).then(() => {
-            e.target.textContent = 'Copied';
-            setTimeout(() => e.target.textContent = 'Copy', 1200);
-          });
-        } else {
-          const ta = document.createElement('textarea');
-          ta.value = text; document.body.appendChild(ta);
-          ta.select(); try { document.execCommand('copy'); } catch(e){}
-          document.body.removeChild(ta);
-        }
-      }
-    });
+    // Close
+    if (e.target.matches('.citation-close')) {
+      e.preventDefault();
+      closeModal();
+    }
 
-    // Close when clicking backdrop or pressing Escape
-    document.getElementById('citationModal').addEventListener('click', function (e) {
-      if (e.target.classList.contains('citation-backdrop')) closeModal();
-    });
-    document.addEventListener('keydown', function (e) {
-      if (e.key === 'Escape') closeModal();
-    });
-  })();
-  </script>
+    // Copy buttons
+    if (e.target.matches('#copyCitation')) {
+      e.preventDefault();
+      copyTextToClipboard(contentBox.innerText.trim(), e.target);
+    }
+    if (e.target.matches('#copyCitationHtml')) {
+      e.preventDefault();
+      copyTextToClipboard(rawBox.textContent.trim(), e.target);
+    }
+
+    // Tabs
+    if (e.target.matches('.tab-btn')) {
+      e.preventDefault();
+      setActiveTab(e.target.dataset.tab);
+    }
+  });
+
+  // Close when clicking backdrop or pressing Escape
+  modal.addEventListener('click', function (e) {
+    if (e.target.classList.contains('citation-backdrop')) closeModal();
+  });
+  document.addEventListener('keydown', function (e) {
+    if (e.key === 'Escape') closeModal();
+  });
+})();
+</script>
 
 {{ end }}
