@@ -52,24 +52,8 @@
       No URL to the document is available.
     {{ end }}
     <br>
-
-    <!-- Citation -->
-    {{/* Build Zotero API params (group id + item key + style) */}}
-      {{ $gid := "2914042" }}
-
-      {{ $key := .File.TranslationBaseName }}
-
-      {{ $style := or site.Params.zotero.style "apa" }}
-
-      {{ if and $gid $key }}
-        <br>
-        <a href="#" id="citeBtn"
-           data-gid="{{ $gid }}"
-           data-key="{{ $key }}"
-           data-style="{{ $style }}"
-        >Citation</a>
-      {{ end }}
 </p>
+
 <p>
     <strong>Abstract</strong>
     <br>
@@ -226,9 +210,29 @@
     {{ end }}
   </p>
   <p>
-    {{- if .Params.zotero_url }}
-        <a href="{{ .Params.zotero_url | safeURL }}" target="_blank" rel="noopener noreferrer">View on Zotero</a>
-    {{- end -}}
+  {{- if .Params.zotero_url }}
+    <a class="btn btn-primary btn-sm"
+       href="{{ .Params.zotero_url | safeURL }}"
+       target="_blank" rel="noopener noreferrer">View on Zotero</a>
+  {{- end -}}
+
+        <!-- Citation -->
+    {{/* Build Zotero API params (group id + item key + style) */}}
+      {{ $gid := "2914042" }}
+
+      {{ $key := .File.TranslationBaseName }}
+
+      {{ $style := or site.Params.zotero.style "apa" }}
+
+      {{ if and $gid $key }}
+    <button type="button" id="citeBtn"
+            class="btn btn-primary btn-sm"
+            data-gid="{{ $gid }}"
+            data-key="{{ $key }}"
+            data-style="{{ $style }}">
+      Citation
+    </button>
+      {{ end }}
   </p>
     
   <div class="summary">
