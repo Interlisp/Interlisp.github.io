@@ -218,7 +218,7 @@
 
         <!-- Citation -->
     {{/* Build Zotero API params (group id + item key + style) */}}
-      {{ $gid := "2914042" }}
+      {{ $gid := site.Params.zotero_group_id }}
 
       {{ $key := .File.TranslationBaseName }}
 
