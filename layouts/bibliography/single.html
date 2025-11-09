@@ -1,4 +1,4 @@
-{{ define "main" }}
+{{- define "main" -}}
 <article class="bibliography-entry">
   <h1>{{ .Title }}</h1>
 
@@ -27,9 +27,9 @@
         {{ $editors }}
     {{- end -}}
   {{- end -}}
-  <br></p>
+  <br>
+  </p>
 {{- end -}}
-
 <p>
   {{- $d := .Date -}}
       {{- $fmtDate := .Params.readabledate -}}
@@ -43,66 +43,70 @@
   {{- /* Don't display bogus date */ -}}
   {{- if (ne $d "0001-01-01") }}
     <time datetime="{{ $d }}">{{ $fmtDate }}</time>
-  {{ end -}}
+  {{- end -}}
 </p>
 <p>
     <strong>View document:</strong>  {{ with .Params.url_source }}
       <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
-    {{ else }}
+    {{- else -}}
       No URL to the document is available.
-    {{ end }}
+    {{- end -}}
     <br>
 </p>
-
 <p>
-    <strong>Abstract</strong>
+    <strong>Abstract:</strong>
     <br>
-    {{ with .Params.abstract }}
-      {{ . | htmlEscape | markdownify }}
-    {{ else }}
+    {{- with .Params.abstract -}}
+      {{- . | htmlEscape | markdownify -}}
+    {{- else -}}
       No abstract available.
-    {{ end }}
-
+    {{- end -}}
 </p>
-
   <p>
-    {{ if eq .Params.item_type "book" }}
+    {{- if eq .Params.item_type "book" -}}
         {{ with .Params.publisher }}
             <p><strong>Publisher:</strong> {{ . }}</p>
         {{ end }}
         {{ with .Params.place }}
             <p>{{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "paper-conference" }}
+    {{- end -}}
+    {{- if eq .Params.item_type "paper-conference" -}}
         {{ with .Params.proceedings_title }}
             <p><strong>Proceedings:</strong> {{ . }}</p>
         {{ end }}
         {{ with .Params.publisher }}
             <p><strong>Journal:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "article" }}
+    {{- end -}}
+    {{- if eq .Params.item_type "article" -}}
         {{ with .Params.publisher }}
             <p><strong>Publisher:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "article-journal" }}
-        {{ with .Params.publication_title }}
-            <p><strong>Journal:</strong> {{ . }}</p>
-        {{ end }}
-        {{ with .Params.volume }}
-            <p><strong>Volume:</strong> {{ . }}
-        {{ end }}
-        {{ with .Params.issue }}
-            <strong>Issue:</strong> {{ . }}
-        {{ end }}
-        {{ with .Params.pages }}
-            <strong>Pages:</strong> {{ . }}</p>
-        {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "report" }}
-        {{ with .Params.publication_title }}
+    {{- end -}}
+    {{- if or (eq .Params.item_type "article-journal") (eq .Params.item_type "article-magazine") -}}
+      {{ if eq .Params.item_type "article-journal" }}
+        <strong>Journal:</strong>
+      {{ else }}
+        <strong>Magazine:</strong>
+      {{ end }}
+      {{- with .Params.publication_title -}}
+        {{ . }}
+      {{- end -}}
+      <p>
+      {{ with .Params.volume }}
+        <strong>Volume:</strong> {{ . }}
+      {{ end }}
+      {{ with .Params.issue }}
+        <strong>Issue:</strong> {{ . }}
+      {{ end }}
+      {{ with .Params.pages }}
+        <strong>Pages:</strong> {{ . }}
+      {{ end }}
+      </p>
+    {{- end -}}
+    {{- if eq .Params.item_type "report" -}}
+        {{ with .Params.publisher }}
             <p><strong>Publisher:</strong> {{ . }}</p>
         {{ end }}
         {{ with .Params.reportType }}
@@ -111,16 +115,16 @@
         {{ with .Params.reportNumber }}
             <p><strong>Report Number:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "thesis" }}
+    {{- end -}}
+    {{- if eq .Params.item_type "thesis" -}}
         {{ with .Params.university }}
             <p><strong>University:</strong> {{ . }}</p>
         {{ end }}
         {{ with .Params.place }}
             <p><strong>Place:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "patent" }}
+    {{- end -}}
+    {{- if eq .Params.item_type "patent" -}}
         {{ with .Params.assignee }}
             <p><strong>Assignee:</strong> {{ . }}</p>
         {{ end }}
@@ -136,27 +140,13 @@
         {{ with .Params.patent_number }}
             <p><strong>Patent Number:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "post-weblog" }}
+    {{- end -}}
+    {{- if eq .Params.item_type "post-weblog" -}}
         {{ with .Params.blog_title }}
             <p><strong>Blog Title:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "article-magazine" }}
-        {{ with .Params.publication_title }}
-            <p><strong>Magazine:</strong> {{ . }}</p>
-        {{ end }}
-        {{ with .Params.volume }}
-            <p><strong>Volume:</strong> {{ . }}
-        {{ end }}
-        {{ with .Params.issue }}
-            <strong>Issue:</strong> {{ . }}
-        {{ end }}
-        {{ with .Params.pages }}
-            <strong>Pages:</strong> {{ . }}</p>
-        {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "motion_picture" }}
+    {{- end -}}
+    {{- if eq .Params.item_type "motion_picture" -}}
         {{ with .Params.studio }}
             <p><strong>Studio:</strong> {{ . }}</p>
         {{ end }}
@@ -172,57 +162,57 @@
         {{ with .Params.number_of_volumes }}
             <p><strong>Number of Volumes:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "chapter" }}
+    {{- end -}}
+    {{- if eq .Params.item_type "chapter" -}}
         {{ with .Params.book_title }}
             <p><strong>Book Title:</strong> {{ . }}</p>
         {{ end }}
         {{ with .Params.publisher }}
             <p><strong>Publisher:</strong> {{ . }}</p>
         {{ end }}
+        <p>
         {{ with .Params.series }}
-            <p><strong>Series:</strong> {{ . }}</p>
+            <strong>Series:</strong> {{ . }}
         {{ end }}
         {{ with .Params.series_number }}
-            <p><strong>Series Number:</strong> {{ . }}</p>
+            <strong>Series Number:</strong> {{ . }}
         {{ end }}
         {{ with .Params.pages }}
-            <p><strong>Pages:</strong> {{ . }}</p>
+            <strong>Pages:</strong> {{ . }}
+        </p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "personal_communication" }}
+    {{- end -}}
+    {{- if eq .Params.item_type "personal_communication" -}}
         {{ with .Params.communication_type }}
             <p><strong>Item Type:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "webpage" }}
-        {{ with .Params.website_title }}
+    {{- end -}}
+    {{- if eq .Params.item_type "webpage" }}
+        {{ with .Params.website_title -}}
             <p><strong>Website Title:</strong> {{ . }}</p>
         {{ end }}
         {{ with .Params.website_type }}
             <p><strong>Website Type:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
-    {{ if eq .Params.item_type "entry-encyclopedia" }}
+    {{- end -}}
+    {{- if eq .Params.item_type "entry-encyclopedia" }}
         {{ with .Params.encyclopedia_title }}
             <p><strong>Encyclopedia Title:</strong> {{ . }}</p>
         {{ end }}
-    {{ end }}
+    {{- end -}}
   </p>
   <p>
-  {{- if .Params.zotero_url }}
+  {{- if .Params.zotero_url -}}
     <a class="btn btn-primary btn-sm"
        href="{{ .Params.zotero_url | safeURL }}"
        target="_blank" rel="noopener noreferrer">View on Zotero</a>
   {{- end -}}
+    {{- /* Build Zotero API params (group id + item key + style) */ -}}
+      {{- $gid := site.Params.zotero_group_id -}}
 
-        <!-- Citation -->
-    {{/* Build Zotero API params (group id + item key + style) */}}
-      {{ $gid := site.Params.zotero_group_id }}
+      {{- $key := .File.TranslationBaseName -}}
 
-      {{ $key := .File.TranslationBaseName }}
-
-      {{ $style := or site.Params.zotero.style "apa" }}
+      {{- $style := or site.Params.zotero.style "apa" -}}
 
       {{ if and $gid $key }}
     <button type="button" id="citeBtn"
@@ -234,7 +224,6 @@
     </button>
       {{ end }}
   </p>
-    
   <div class="summary">
     {{ .Content }}
   </div>
@@ -244,27 +233,20 @@
   <div class="citation-dialog">
     <div class="citation-header">
       <strong>Citation</strong>
-      <button type="button" class="citation-close" aria-label="Close">×</button>
+      <button type="button" class="citation-dismiss" aria-label="Close">×</button>
     </div>
-
-    <!-- Tabs -->
     <div class="citation-tabs" role="tablist" aria-label="Citation views">
       <button type="button" class="tab-btn is-active" data-tab="formatted" role="tab" aria-selected="true" aria-controls="tab-formatted">Formatted</button>
       <button type="button" class="tab-btn" data-tab="raw" role="tab" aria-selected="false" aria-controls="tab-raw">HTML</button>
     </div>
-
     <div class="citation-body">
-      <!-- Formatted view -->
       <div id="tab-formatted" class="tab-panel is-active" role="tabpanel" aria-labelledby="tabbtn-formatted">
         <div id="citationContent">Loading…</div>
       </div>
-
-      <!-- Raw HTML view -->
       <div id="tab-raw" class="tab-panel" role="tabpanel" aria-labelledby="tabbtn-raw">
         <pre class="codebox"><code id="citationRaw" class="language-html"></code></pre>
       </div>
     </div>
-
     <div class="citation-actions">
       <button type="button" id="copyCitation">Copy Text</button>
       <button type="button" id="copyCitationHtml">Copy HTML</button>
@@ -273,7 +255,6 @@
   </div>
   <div class="citation-backdrop"></div>
 </div>
-
 
   <style>
   .citation-modal[hidden] { display: none; }
@@ -285,7 +266,8 @@
     overflow: hidden;
   }
   .citation-header { display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; border-bottom:1px solid #eee; }
-  .citation-close { background:none; border:0; font-size:1.25rem; line-height:1; cursor:pointer; }
+  .citation-dismiss{ background:none; border:0; font-size:1.25rem; line-height:1; cursor:pointer; }
+  .citation-close  
   .citation-tabs { display:flex; gap:.25rem; padding:.5rem 1rem; border-bottom:1px solid #eee; }
   .tab-btn {
     border: 1px solid #ddd; background:#f8f9fa; border-radius:4px; padding:.35rem .6rem; cursor:pointer;
@@ -389,7 +371,7 @@
     }
 
     // Close
-    if (e.target.matches('.citation-close')) {
+    if (e.target.matches('.citation-close, .citation-dismiss')) {
       e.preventDefault();
       closeModal();
     }
