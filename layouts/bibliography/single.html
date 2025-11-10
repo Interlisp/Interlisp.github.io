@@ -46,14 +46,6 @@
   {{ end -}}
 </p>
 <p>
-    <strong>View document:</strong>  {{ with .Params.url_source }}
-      <a href="{{ . | safeURL }}" target="_blank" rel="noopener noreferrer">{{ . }}</a>
-    {{ else }}
-      No URL to the document is available.
-    {{ end }}
-    <br>
-</p>
-<p>
     <strong>Abstract</strong>
     <br>
     {{ with .Params.abstract }}
@@ -209,9 +201,20 @@
     {{ end }}
   </p>
   <p>
-    {{- if .Params.zotero_url }}
-        <a href="{{ .Params.zotero_url | safeURL }}" target="_blank" rel="noopener noreferrer">View on Zotero</a>
-    {{- end -}}
+  {{- if .Params.url_source -}}
+    <a class="btn btn-primary btn-sm"
+       href="{{ .Params.url_source | safeURL }}"
+       target="_blank" rel="noopener noreferrer">View</a>
+  {{ else }}
+      No URL to the document is available.
+  {{ end }}
+  </p>
+  <p>
+  {{- if .Params.zotero_url -}}
+    <a class="btn btn-primary btn-sm"
+       href="{{ .Params.zotero_url | safeURL }}"
+       target="_blank" rel="noopener noreferrer">Zotero Record</a>
+  {{- end -}}
   </p>
     
   <div class="summary">
