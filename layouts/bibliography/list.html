@@ -12,13 +12,23 @@
         <option value="{{ $key }}">{{ $key | title }}</option>
       {{ end }}
     </select>
+
+    <!-- New: Year filter -->
+    <label for="yearFilter" style="margin-left:.75rem;">Year:</label>
+    <select id="yearFilter">
+      <option value="all">All</option>
+      {{- /* options injected below after computing distinct years */ -}}
+      {{- $noop := "" -}}
+      {{- range $ := slice -}}{{ end -}}
+      {{- /* placeholder; real options are rendered after we build $years */ -}}
+    </select>
   </div>
 </header>
 
 {{ .Content }}
 
 <style>
-    .bib-header {
+  .bib-header {
     display: flex;
     align-items: baseline;
     justify-content: space-between;
@@ -32,19 +42,55 @@
   ul.pub-list > li:last-child { border-bottom: none; }
 </style>
 
-  {{- $previewWordLimit := 24 -}}
-  
-  {{- /* Get all regular pages in this section */ -}}
-  {{ $pages := .RegularPages }}
-  {{- /* Sort by date descending, then title ascending */ -}}
-  {{- $pages = sort $pages "Date" "desc" -}}
-  {{- $pages = sort $pages "Title" "asc" -}}
+{{- $previewWordLimit := 24 -}}
 
-  {{- /* Render the list of publications */ -}}
+{{- /* Get and sort pages */ -}}
+{{ $pages := .RegularPages }}
+{{- $pages = sort $pages "Date" "desc" -}}
+{{- $pages = sort $pages "Title" "asc" -}}
+
+{{- /* Build distinct list of years present (desc), track if any are undated */ -}}
+{{- $years := slice -}}
+{{- $seen := dict -}}
+{{- $hasUndated := false -}}
+{{- range $pages -}}
+  {{- $d := .Date -}}
+  {{- with .Params.date -}}
+    {{- $iso := trim . " " -}}
+    {{- if and (ne $iso "") (findRE `^\d{4}-\d{2}-\d{2}` $iso) -}}
+      {{- $d = time $iso -}}
+    {{- end -}}
+  {{- end -}}
+  {{- $y := $d.Format "2006" -}}
+  {{- if eq $y "0001" -}}
+    {{- $hasUndated = true -}}
+  {{- else -}}
+    {{- if not (isset $seen $y) -}}
+      {{- $seen = merge $seen (dict $y true) -}}
+      {{- $years = $years | append $y -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- warnf "Distinct years: %v (undated: %v)" $years $hasUndated -}}
+{{- $years = sort $years -}}
+{{- $years = $years | collections.Reverse -}}
+
+<script>
+document.addEventListener('DOMContentLoaded', function () {
+  const yearSel = document.getElementById('yearFilter');
+  const years = {{ $years | jsonify | safeJS }};
+  (Array.isArray(years) ? years : Object.values(years)).forEach(y => {
+    const opt = document.createElement('option');
+    opt.value = y;
+    opt.textContent = y;
+    yearSel.appendChild(opt);
+  });
+});
+</script>
 
 <ul class="pub-list" id="bibliographyList">
   {{ range $pages }}
-    {{- /* Collect item_type terms as a comma-separated, lowercased string */ -}}
+    {{- /* item_type for type filter */ -}}
     {{- $types := "" -}}
     {{- with .Params.item_type -}}
       {{- if reflect.IsSlice . -}}
@@ -54,60 +100,46 @@
       {{- end -}}
     {{- end -}}
 
-    <li class="pub-item" data-type="{{ $types }}">
+    {{- /* compute a year key for data-year */ -}}
+    {{- $d := .Date -}}
+    {{- $fmtDate := .Params.readabledate -}}
+    {{- with .Params.date -}}
+      {{- $iso := trim . " " -}}
+      {{- if and (ne $iso "") (findRE `^\d{4}-\d{2}-\d{2}` $iso) -}}
+        {{- $d = time $iso -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $year := $d.Format "2006" -}}
+    {{- if eq $year "0001" -}}{{- $year = "undated" -}}{{- end -}}
+
+    <li class="pub-item" data-type="{{ $types }}" data-year="{{ $year }}">
       {{- $rawTitle := or .Params.title .Title -}}
-      {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle -}}
-      {{- /* The plainify corrupts values that look like HTML but aren't: "Special files on <Test>ARs>" */ -}}
-      {{- /* $rendered = $rendered | plainify | htmlEscape */ -}}
-      {{- $rendered = $rendered | htmlEscape -}}
+      {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle | htmlEscape -}}
       <a href="{{ .RelPermalink }}"><span><strong>{{- $rendered | safeHTML -}}</strong></span></a><br>
 
       {{- $authors := .Params.authors -}}
       {{- $editors := .Params.editors -}}
       {{- $isPatent := eq .Params.item_type "patent" -}}
-      {{- /* warnf "authors: %v" $authors */ -}}
       {{- if or $authors $editors -}}
         {{- if $authors -}}
           {{- if reflect.IsSlice $authors -}}
-            {{- if $isPatent }}
-              Inventors: 
-            {{ end }}
-              {{ delimit $authors "; " "; and " }}
+            {{- if $isPatent }}Inventors: {{ end }}{{ delimit $authors "; " "; and " }}
           {{- else -}}
-            {{- if $isPatent }}
-              Inventor: 
-            {{ end }}
-              {{ $authors }}
+            {{- if $isPatent }}Inventor: {{ end }}{{ $authors }}
           {{- end -}}
         {{- else -}}
-          Edited by: 
-          {{ if reflect.IsSlice $editors -}}
-             {{ delimit $editors "; " "; and " }}
-          {{- else -}}
-              {{ $editors }}
-          {{- end -}}
+          Edited by: {{ if reflect.IsSlice $editors }}{{ delimit $editors "; " "; and " }}{{ else }}{{ $editors }}{{ end }}
         {{- end -}}
-      <br>
+        <br>
       {{- end -}}
 
-      {{- /* Safe date: use front matter date only if non-empty & matches basic pattern */ -}}
-      {{- $d := .Date -}}
-      {{- $fmtDate := .Params.readabledate -}}
-      {{- with .Params.date -}}
-        {{- $isoDate := trim . " " -}}
-        {{- if and (ne $isoDate "") (findRE `^\d{4}-\d{2}-\d{2}` $isoDate) -}}
-          {{- $d = time $isoDate -}}
-        {{- end -}}
-      {{- end }}
-      {{- $d = $d.Format "2006-01-02" -}}
-      {{- /* Don't display bogus date */ -}}
-      {{- if (ne $d "0001-01-01") }}
-        <time datetime="{{ $d }}">{{ $fmtDate }}</time>
+      {{- /* format date string for display; don't show bogus */ -}}
+      {{- $dstr := $d.Format "2006-01-02" -}}
+      {{- if (ne $dstr "0001-01-01") }}
+        <time datetime="{{ $dstr }}">{{ $fmtDate }}</time>
       {{ end -}}
 
       {{ with .Params.abstract -}}
-        {{- /* can't plainify, as above */ -}}
-        {{- /* $plain := . | plainify | htmlEscape | replaceRE `\s+` " " */ -}}
         {{- $plain := . | htmlEscape | replaceRE `\s+` " " -}}
         {{- $previewing := gt (countwords $plain) $previewWordLimit -}}
         {{- $preview := "" -}}
@@ -121,37 +153,93 @@
         <div>{{ $preview | safeHTML }}{{ if $previewing }}…{{ end }}</div>
         <br>
       {{- end -}}
-
     </li>
   {{ end }}
 </ul>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const sel = document.getElementById('itemTypeFilter');
+  const typeSel = document.getElementById('itemTypeFilter');
+  const yearSel = document.getElementById('yearFilter');
   const items = Array.from(document.querySelectorAll('#bibliographyList > li'));
 
-  function applyFilter() {
-    const val = sel.value; // taxonomy term key (lowercase)
-    items.forEach(li => {
-      const raw = (li.dataset.type || '').trim();
-      const types = raw ? raw.split(',').map(s => s.trim()) : [];
-      const show = (val === 'all') || types.includes(val);
-      li.style.display = show ? '' : 'none';
+  const getTypes = li => (li.dataset.type || '')
+    .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  const getYear = li => (li.dataset.year || '').toLowerCase();
+
+  function computeSets(t, y) {
+    const cand = items.filter(li =>
+      (t === 'all' || getTypes(li).includes(t)) &&
+      (y === 'all' || getYear(li) === y)
+    );
+    const years = new Set();
+    const types = new Set();
+    cand.forEach(li => {
+      years.add(getYear(li));
+      getTypes(li).forEach(v => types.add(v));
+    });
+    years.delete(''); // clean up
+    types.delete('');
+    return { years, types };
+  }
+
+  function updateOptionLists(yearsSet, typesSet) {
+    // Year options
+    Array.from(yearSel.options).forEach(opt => {
+      if (opt.value === 'all') { opt.disabled = false; opt.hidden = false; return; }
+      const ok = yearsSet.has(opt.value.toLowerCase());
+      opt.disabled = !ok;
+      opt.hidden = !ok;
+    });
+    // Type options
+    Array.from(typeSel.options).forEach(opt => {
+      if (opt.value === 'all') { opt.disabled = false; opt.hidden = false; return; }
+      const ok = typesSet.has(opt.value.toLowerCase());
+      opt.disabled = !ok;
+      opt.hidden = !ok;
     });
   }
 
-  // Preselect from URL (?item_type=term)
-  const params = new URLSearchParams(window.location.search);
-  const q = (params.get('item_type') || '').toLowerCase();
-  if (q && sel.querySelector(`option[value="${q}"]`)) {
-    sel.value = q;
+  function showHideItems(t, y) {
+    items.forEach(li => {
+      const types = getTypes(li);
+      const yr = getYear(li);
+      const typeOK = (t === 'all') || types.includes(t);
+      const yearOK = (y === 'all') || (yr === y);
+      li.style.display = (typeOK && yearOK) ? '' : 'none';
+    });
   }
 
-  sel.addEventListener('change', applyFilter);
-  applyFilter();
+  function refresh() {
+    let t = (typeSel.value || 'all').toLowerCase();
+    let y = (yearSel.value || 'all').toLowerCase();
+
+    // Compute valid sets for current selections
+    let sets = computeSets(t, y);
+
+    // If current selection is invalid under the other filter, reset it
+    if (y !== 'all' && !sets.years.has(y)) { y = 'all'; yearSel.value = 'all'; }
+    if (t !== 'all' && !sets.types.has(t)) { t = 'all'; typeSel.value = 'all'; }
+
+    // Recompute with possibly reset values and update dropdowns
+    sets = computeSets(t, y);
+    updateOptionLists(sets.years, sets.types);
+
+    // Apply to list
+    showHideItems(t, y);
+  }
+
+  // Preselect from URL (?item_type=...&year=YYYY|undated)
+  const params = new URLSearchParams(window.location.search);
+  const qType = (params.get('item_type') || '').toLowerCase();
+  if (qType && typeSel.querySelector(`option[value="${qType}"]`)) typeSel.value = qType;
+  const qYear = (params.get('year') || '').toLowerCase();
+  if (qYear && (qYear === 'undated' || yearSel.querySelector(`option[value="${qYear}"]`))) yearSel.value = qYear;
+
+  typeSel.addEventListener('change', refresh);
+  yearSel.addEventListener('change', refresh);
+  refresh();
 });
 </script>
 
 {{ end }}
-
