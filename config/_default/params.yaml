@@ -57,6 +57,9 @@ github_project_repo: https://github.com/interlisp/medley
 #  gcs_engine_id:  search engine 
 gcs_engine_id: 33ef4cbe0703b4f3a
 
+# Zotero Group ID for bibliography management
+zotero_group_id:  2914042
+
 # Footer Links
 # 
 # user:  End user relevant links. These will show up on 
