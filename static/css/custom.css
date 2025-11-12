@@ -71,11 +71,11 @@
   background: transparent;
   border: none;
 }
-  */
 
 * {
   -ms-overflow-style: none;
 }
+  */
 
 .carousel ol, .carousel li {
   list-style: none;
