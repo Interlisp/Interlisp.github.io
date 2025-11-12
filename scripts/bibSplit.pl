@@ -108,7 +108,7 @@ if ($key eq $target) {  # only top level entries
 
   # optional fields - ones used vary by value of type
   my $applicationNumber = defined $obj->{applicationNumber} ? qq{"$obj->{applicationNumber}"} : '""';
-  my $assignee = defined $obj->{assignee} ? qq{"$obj->{assignees}"} : '""';
+  my $assignee = defined $obj->{assignee} ? qq{"$obj->{assignee}"} : '""';
   my $blogTitle = defined $obj->{blogTitle} ? qq{"$obj->{blogTitle}"} : '""';
   my $bookTitle = defined $obj->{bookTitle} ? qq{"$obj->{bookTitle}"} : '""';
   my $conferenceName = defined $obj->{conferenceName} ? qq{"$obj->{conferenceName}"} : '""';
