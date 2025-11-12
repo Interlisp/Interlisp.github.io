@@ -206,7 +206,7 @@
   {{- if .Params.zotero_url -}}
     <a class="btn btn-primary btn-sm"
        href="{{ .Params.zotero_url | safeURL }}"
-       target="_blank" rel="noopener noreferrer">View on Zotero</a>
+       target="_blank" rel="noopener noreferrer">Zotero Record</a>
   {{- end -}}
     {{- /* Build Zotero API params (group id + item key + style) */ -}}
       {{- $gid := site.Params.zotero_group_id -}}
