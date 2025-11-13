@@ -14,6 +14,20 @@ aliases:
  - /medley/project/status/
 ---
 
+## Autumn Lisp Game Jam 2025
+
+On November 10, 2025 Ryan Burnside entered the [Autumn Lisp Game Jam 2025](https://itch.io/jam/autumn-lisp-game-jam-2025) with the [Interlisp Hungarian Rings](https://itch.io/jam/autumn-lisp-game-jam-2025/rate/4015363) puzzle written in Interlisp.
+
+## September 2025 videos
+
+We published the following videos to our [YouTube channel](https://www.youtube.com/@Interlisp):
+
+* [Daniel G Bobrow — Languages for Artificial Intelligence (October 1973) (Incomplete)](https://www.youtube.com/watch?v=T6Krmzhv7jA)
+* [Daniel G. Bobrow — PARC Forum — Dimensions of Interaction Lecture (October 1990)](https://www.youtube.com/watch?v=4THp3CQ8U3Y)
+* [Chuck Thacker — The D0 Computer (Dolphin) (January 1978)](https://www.youtube.com/watch?v=-KyklYC_ITc)
+* [The Rooms System — PARC Forum with Austin Henderson and Stuart Card (August 1987)](https://www.youtube.com/watch?v=_WL9IRPOZ8c)
+* [Martin Kay — PARC Forum Lecture on Machine Translation (March 1990)](https://www.youtube.com/watch?v=-M99C-xSjww)
+
 ## June-August 2025 videos
 
 We published new videos to our [YouTube channel](https://www.youtube.com/@Interlisp):
