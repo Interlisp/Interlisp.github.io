@@ -58,6 +58,7 @@
   scrollbar-width: 0px;
 }*/
 
+/* Remove scrollbar css interfering with bibliography pages
 *::-webkit-scrollbar {
   width: 0;
 }
@@ -74,6 +75,7 @@
 * {
   -ms-overflow-style: none;
 }
+  */
 
 .carousel ol, .carousel li {
   list-style: none;
