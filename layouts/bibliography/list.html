@@ -13,15 +13,17 @@
       {{ end }}
     </select>
 
-    <!-- New: Year filter -->
-    <label for="yearFilter" style="margin-left:.75rem;">Year:</label>
-    <select id="yearFilter">
+ <!-- New: Year comparator + value -->
+    <label for="yearCmp" style="margin-left:.75rem;">Year:</label>
+    <select id="yearCmp">
       <option value="all">All</option>
-      {{- /* options injected below after computing distinct years */ -}}
-      {{- $noop := "" -}}
-      {{- range $ := slice -}}{{ end -}}
-      {{- /* placeholder; real options are rendered after we build $years */ -}}
+      <option value="=">=</option>
+      <option value=">">&gt;</option>
+      <option value="<">&lt;</option>
+      <option value=">=">&ge;</option>
+      <option value="<=">&le;</option>
     </select>
+    <input id="yearValue" type="number" min="0" step="1" style="width:6rem;" placeholder="YYYY">
   </div>
 </header>
 
@@ -75,16 +77,65 @@
 {{- $years = sort $years -}}
 {{- $years = $years | collections.Reverse -}}
 
+
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const yearSel = document.getElementById('yearFilter');
-  const years = {{ $years | jsonify | safeJS }};
-  (Array.isArray(years) ? years : Object.values(years)).forEach(y => {
-    const opt = document.createElement('option');
-    opt.value = y;
-    opt.textContent = y;
-    yearSel.appendChild(opt);
-  });
+  const typeSel   = document.getElementById('itemTypeFilter');
+  const yearCmp   = document.getElementById('yearCmp');
+  const yearInput = document.getElementById('yearValue');
+  const items     = Array.from(document.querySelectorAll('#bibliographyList > li'));
+
+  const getTypes = li => (li.dataset.type || '')
+    .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+  const getYear = li => {
+    const y = (li.dataset.year || '').toLowerCase();
+    if (!y || y === 'undated') return null;
+    const n = parseInt(y, 10);
+    return Number.isNaN(n) ? null : n;
+  };
+
+  function matchYear(yearNum, cmp, valNum) {
+    if (cmp === 'all') return true;
+    if (yearNum === null || valNum === null) return false;
+    switch (cmp) {
+      case '=':  return yearNum === valNum;
+      case '>':  return yearNum >  valNum;
+      case '<':  return yearNum <  valNum;
+      case '>=': return yearNum >= valNum;
+      case '<=': return yearNum <= valNum;
+      default: return true;
+    }
+  }
+
+  function showHideItems() {
+    const t = (typeSel.value || 'all').toLowerCase();
+    const cmp = yearCmp.value;
+    const valStr = yearInput.value.trim();
+    const valNum = (/^\d{4}$/.test(valStr)) ? parseInt(valStr,10) : null;
+
+    items.forEach(li => {
+      const types = getTypes(li);
+      const yrNum = getYear(li);
+      const typeOK = (t === 'all') || types.includes(t);
+      const yearOK = matchYear(yrNum, cmp, valNum);
+      li.style.display = (typeOK && yearOK) ? '' : 'none';
+    });
+  }
+
+  // Allow deep link (?item_type=foo&yearCmp=>=&year=1980)
+  const params = new URLSearchParams(window.location.search);
+  const qType = (params.get('item_type') || '').toLowerCase();
+  if (qType && typeSel.querySelector(`option[value="${qType}"]`)) typeSel.value = qType;
+  const qCmp  = params.get('yearCmp');
+  if (qCmp && yearCmp.querySelector(`option[value="${qCmp}"]`)) yearCmp.value = qCmp;
+  const qYear = params.get('year');
+  if (qYear && /^\d{4}$/.test(qYear)) yearInput.value = qYear;
+
+  typeSel.addEventListener('change', showHideItems);
+  yearCmp.addEventListener('change', showHideItems);
+  yearInput.addEventListener('input', showHideItems);
+
+  showHideItems();
 });
 </script>
 
