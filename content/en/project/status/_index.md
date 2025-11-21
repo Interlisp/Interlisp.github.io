@@ -16,7 +16,7 @@ aliases:
 
 ## New Medley Primer
 
-In november of 2025 we published [Medley Interlisp for the Newcomer](https://primer.interlisp.org) by Abhik Hasnain, an introductory guide to Interlisp and the Medley environment.
+In November of 2025 we published [Medley Interlisp for the Newcomer](https://primer.interlisp.org) by Abhik Hasnain, an introductory guide to Interlisp and the Medley environment.
 
 ## Autumn Lisp Game Jam 2025
 
