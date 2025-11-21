@@ -13,17 +13,10 @@
       {{ end }}
     </select>
 
- <!-- New: Year comparator + value -->
-    <label for="yearCmp" style="margin-left:.75rem;">Year:</label>
-    <select id="yearCmp">
-      <option value="all">All</option>
-      <option value="=">=</option>
-      <option value=">">&gt;</option>
-      <option value="<">&lt;</option>
-      <option value=">=">&ge;</option>
-      <option value="<=">&le;</option>
-    </select>
-    <input id="yearValue" type="number" min="0" step="1" style="width:6rem;" placeholder="YYYY">
+    <!-- Date expression filter -->
+    <label for="dateExpr" style="margin-left:.75rem;">Date:</label>
+    <input id="dateExpr" type="text" placeholder="e.g. 1980, >=1980-01-01, 1970 between 1980"
+           style="width:15rem;" />
   </div>
 </header>
 
@@ -45,129 +38,43 @@
 </style>
 
 {{- $previewWordLimit := 24 -}}
-
-{{- /* Get and sort pages */ -}}
-{{ $pages := .RegularPages }}
+{{- $pages := .RegularPages -}}
 {{- $pages = sort $pages "Date" "desc" -}}
 {{- $pages = sort $pages "Title" "asc" -}}
 
-{{- /* Build distinct list of years present (desc), track if any are undated */ -}}
-{{- $years := slice -}}
-{{- $seen := dict -}}
-{{- $hasUndated := false -}}
-{{- range $pages -}}
-  {{- $d := .Date -}}
-  {{- with .Params.date -}}
-    {{- $iso := trim . " " -}}
-    {{- if and (ne $iso "") (findRE `^\d{4}-\d{2}-\d{2}` $iso) -}}
-      {{- $d = time $iso -}}
-    {{- end -}}
-  {{- end -}}
-  {{- $y := $d.Format "2006" -}}
-  {{- if eq $y "0001" -}}
-    {{- $hasUndated = true -}}
-  {{- else -}}
-    {{- if not (isset $seen $y) -}}
-      {{- $seen = merge $seen (dict $y true) -}}
-      {{- $years = $years | append $y -}}
-    {{- end -}}
-  {{- end -}}
-{{- end -}}
-{{- warnf "Distinct years: %v (undated: %v)" $years $hasUndated -}}
-{{- $years = sort $years -}}
-{{- $years = $years | collections.Reverse -}}
-
-
-<script>
-document.addEventListener('DOMContentLoaded', function () {
-  const typeSel   = document.getElementById('itemTypeFilter');
-  const yearCmp   = document.getElementById('yearCmp');
-  const yearInput = document.getElementById('yearValue');
-  const items     = Array.from(document.querySelectorAll('#bibliographyList > li'));
-
-  const getTypes = li => (li.dataset.type || '')
-    .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
-  const getYear = li => {
-    const y = (li.dataset.year || '').toLowerCase();
-    if (!y || y === 'undated') return null;
-    const n = parseInt(y, 10);
-    return Number.isNaN(n) ? null : n;
-  };
-
-  function matchYear(yearNum, cmp, valNum) {
-    if (cmp === 'all') return true;
-    if (yearNum === null || valNum === null) return false;
-    switch (cmp) {
-      case '=':  return yearNum === valNum;
-      case '>':  return yearNum >  valNum;
-      case '<':  return yearNum <  valNum;
-      case '>=': return yearNum >= valNum;
-      case '<=': return yearNum <= valNum;
-      default: return true;
-    }
-  }
-
-  function showHideItems() {
-    const t = (typeSel.value || 'all').toLowerCase();
-    const cmp = yearCmp.value;
-    const valStr = yearInput.value.trim();
-    const valNum = (/^\d{4}$/.test(valStr)) ? parseInt(valStr,10) : null;
-
-    items.forEach(li => {
-      const types = getTypes(li);
-      const yrNum = getYear(li);
-      const typeOK = (t === 'all') || types.includes(t);
-      const yearOK = matchYear(yrNum, cmp, valNum);
-      li.style.display = (typeOK && yearOK) ? '' : 'none';
-    });
-  }
-
-  // Allow deep link (?item_type=foo&yearCmp=>=&year=1980)
-  const params = new URLSearchParams(window.location.search);
-  const qType = (params.get('item_type') || '').toLowerCase();
-  if (qType && typeSel.querySelector(`option[value="${qType}"]`)) typeSel.value = qType;
-  const qCmp  = params.get('yearCmp');
-  if (qCmp && yearCmp.querySelector(`option[value="${qCmp}"]`)) yearCmp.value = qCmp;
-  const qYear = params.get('year');
-  if (qYear && /^\d{4}$/.test(qYear)) yearInput.value = qYear;
-
-  typeSel.addEventListener('change', showHideItems);
-  yearCmp.addEventListener('change', showHideItems);
-  yearInput.addEventListener('input', showHideItems);
-
-  showHideItems();
-});
-</script>
-
 <ul class="pub-list" id="bibliographyList">
   {{ range $pages }}
-    {{- /* item_type for type filter */ -}}
+    {{- /* Derive date */ -}}
+    {{- $d := .Date -}}
+    {{- with .Params.date -}}
+      {{- $iso := trim . " " -}}
+      {{- if and (ne $iso "") (findRE `^\d{4}-\d{2}-\d{2}$` $iso) -}}
+        {{- $d = time $iso -}}
+      {{- end -}}
+    {{- end -}}
+    {{- $fullDate := $d.Format "2006-01-02" -}}
+    {{- $year := $d.Format "2006" -}}
+    {{- if eq $year "0001" -}}{{- $year = "undated" -}}{{- end -}}
+
+    {{- /* item_type terms */ -}}
     {{- $types := "" -}}
     {{- with .Params.item_type -}}
       {{- if reflect.IsSlice . -}}
         {{- $types = delimit (apply . "lower" ".") "," -}}
       {{- else -}}
-        {{- $types = (lower .) -}}
+        {{- $types = lower . -}}
       {{- end -}}
     {{- end -}}
 
-    {{- /* compute a year key for data-year */ -}}
-    {{- $d := .Date -}}
-    {{- $fmtDate := .Params.readabledate -}}
-    {{- with .Params.date -}}
-      {{- $iso := trim . " " -}}
-      {{- if and (ne $iso "") (findRE `^\d{4}-\d{2}-\d{2}` $iso) -}}
-        {{- $d = time $iso -}}
-      {{- end -}}
-    {{- end -}}
-    {{- $year := $d.Format "2006" -}}
-    {{- if eq $year "0001" -}}{{- $year = "undated" -}}{{- end -}}
-
-    <li class="pub-item" data-type="{{ $types }}" data-year="{{ $year }}">
+    <li class="pub-item"
+        data-type="{{ $types }}"
+        data-year="{{ $year }}"
+        data-date="{{ if ne $fullDate "0001-01-01" }}{{ $fullDate }}{{ end }}">
       {{- $rawTitle := or .Params.title .Title -}}
       {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle | htmlEscape -}}
-      <a href="{{ .RelPermalink }}"><span><strong>{{- $rendered | safeHTML -}}</strong></span></a><br>
+      <a href="{{ .RelPermalink }}"><strong>{{ $rendered | safeHTML }}</strong></a><br>
 
+      {{- /* Authors / editors */ -}}
       {{- $authors := .Params.authors -}}
       {{- $editors := .Params.editors -}}
       {{- $isPatent := eq .Params.item_type "patent" -}}
@@ -184,25 +91,20 @@ document.addEventListener('DOMContentLoaded', function () {
         <br>
       {{- end -}}
 
-      {{- /* format date string for display; don't show bogus */ -}}
-      {{- $dstr := $d.Format "2006-01-02" -}}
-      {{- if (ne $dstr "0001-01-01") }}
-        <time datetime="{{ $dstr }}">{{ $fmtDate }}</time>
-      {{ end -}}
+      {{- if ne $fullDate "0001-01-01" -}}
+        <time datetime="{{ $fullDate }}">{{ .Params.readabledate }}</time><br>
+      {{- end -}}
 
       {{ with .Params.abstract -}}
         {{- $plain := . | htmlEscape | replaceRE `\s+` " " -}}
         {{- $previewing := gt (countwords $plain) $previewWordLimit -}}
-        {{- $preview := "" -}}
         {{- if $previewing -}}
           {{- $previewWords := split $plain " " | first $previewWordLimit -}}
-          {{- $preview = delimit $previewWords " " -}}
+          {{- $preview := delimit $previewWords " " -}}
+          <div>{{ $preview | safeHTML }}…</div><br>
         {{- else -}}
-          {{- $preview = replace (. | htmlEscape) "\n" "<br>" -}}
+          <div>{{ replace (. | htmlEscape) "\n" "<br>" | safeHTML }}</div><br>
         {{- end -}}
-        <br>
-        <div>{{ $preview | safeHTML }}{{ if $previewing }}…{{ end }}</div>
-        <br>
       {{- end -}}
     </li>
   {{ end }}
@@ -210,86 +112,93 @@ document.addEventListener('DOMContentLoaded', function () {
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  const typeSel = document.getElementById('itemTypeFilter');
-  const yearSel = document.getElementById('yearFilter');
-  const items = Array.from(document.querySelectorAll('#bibliographyList > li'));
+  const typeSel  = document.getElementById('itemTypeFilter');
+  const dateExpr = document.getElementById('dateExpr');
+  const items    = Array.from(document.querySelectorAll('#bibliographyList > li'));
 
-  const getTypes = li => (li.dataset.type || '')
-    .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
-  const getYear = li => (li.dataset.year || '').toLowerCase();
-
-  function computeSets(t, y) {
-    const cand = items.filter(li =>
-      (t === 'all' || getTypes(li).includes(t)) &&
-      (y === 'all' || getYear(li) === y)
-    );
-    const years = new Set();
-    const types = new Set();
-    cand.forEach(li => {
-      years.add(getYear(li));
-      getTypes(li).forEach(v => types.add(v));
-    });
-    years.delete(''); // clean up
-    types.delete('');
-    return { years, types };
+  function parseDate(s, isEnd=false) {
+    if (!s) return null;
+    // YYYY or YYYY-MM or YYYY-MM-DD
+    const m = s.match(/^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/);
+    if (!m) return null;
+    let [ , Y, M, D ] = m;
+    M = M || (isEnd ? '12' : '01');
+    D = D || (isEnd ? '31' : '01');
+    // Basic clipping
+    if (parseInt(M,10) > 12) M = '12';
+    if (parseInt(D,10) > 31) D = '31';
+    return new Date(`${Y}-${M}-${D}T00:00:00Z`);
   }
 
-  function updateOptionLists(yearsSet, typesSet) {
-    // Year options
-    Array.from(yearSel.options).forEach(opt => {
-      if (opt.value === 'all') { opt.disabled = false; opt.hidden = false; return; }
-      const ok = yearsSet.has(opt.value.toLowerCase());
-      opt.disabled = !ok;
-      opt.hidden = !ok;
-    });
-    // Type options
-    Array.from(typeSel.options).forEach(opt => {
-      if (opt.value === 'all') { opt.disabled = false; opt.hidden = false; return; }
-      const ok = typesSet.has(opt.value.toLowerCase());
-      opt.disabled = !ok;
-      opt.hidden = !ok;
-    });
+  function buildPredicate(expr) {
+    expr = (expr || '').trim();
+    if (!expr) return () => true;
+
+    // Range: A between B
+    let m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)\s+between\s+(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/i);
+    if (m) {
+      const start = parseDate(m[1], false);
+      const end   = parseDate(m[2], true);
+      if (!start || !end) return () => true;
+      return d => d && d >= start && d <= end;
+    }
+
+    // Comparison: op date
+    m = expr.match(/^([<>]=?|=)\s*(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
+    if (m) {
+      const op = m[1];
+      const dt = parseDate(m[2], op.startsWith('<')); // end-of-period for <
+      if (!dt) return () => true;
+      return d => {
+        if (!d) return false;
+        switch (op) {
+          case '=':  return d.getTime() === dt.getTime();
+          case '>':  return d > dt;
+          case '>=': return d >= dt;
+          case '<':  return d < dt;
+          case '<=': return d <= dt;
+          default: return true;
+        }
+      };
+    }
+
+    // Single date/year
+    m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
+    if (m) {
+      const start = parseDate(m[1], false);
+      const end   = parseDate(m[1], true);
+      if (!start || !end) return () => true;
+      return d => d && d >= start && d <= end;
+    }
+
+    // Fallback -> no filtering
+    return () => true;
   }
 
-  function showHideItems(t, y) {
+  function showHide() {
+    const typeVal = (typeSel.value || 'all').toLowerCase();
+    const pred = buildPredicate(dateExpr.value);
     items.forEach(li => {
-      const types = getTypes(li);
-      const yr = getYear(li);
-      const typeOK = (t === 'all') || types.includes(t);
-      const yearOK = (y === 'all') || (yr === y);
-      li.style.display = (typeOK && yearOK) ? '' : 'none';
+      const types = (li.dataset.type || '')
+        .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
+      const dateStr = li.dataset.date;
+      const dateObj = dateStr ? new Date(dateStr + 'T00:00:00Z') : null;
+      const typeOK = (typeVal === 'all') || types.includes(typeVal);
+      const dateOK = pred(dateObj);
+      li.style.display = (typeOK && dateOK) ? '' : 'none';
     });
   }
 
-  function refresh() {
-    let t = (typeSel.value || 'all').toLowerCase();
-    let y = (yearSel.value || 'all').toLowerCase();
-
-    // Compute valid sets for current selections
-    let sets = computeSets(t, y);
-
-    // If current selection is invalid under the other filter, reset it
-    if (y !== 'all' && !sets.years.has(y)) { y = 'all'; yearSel.value = 'all'; }
-    if (t !== 'all' && !sets.types.has(t)) { t = 'all'; typeSel.value = 'all'; }
-
-    // Recompute with possibly reset values and update dropdowns
-    sets = computeSets(t, y);
-    updateOptionLists(sets.years, sets.types);
-
-    // Apply to list
-    showHideItems(t, y);
-  }
-
-  // Preselect from URL (?item_type=...&year=YYYY|undated)
+  // Deep link (?item_type=book&date=1970%20between%201980)
   const params = new URLSearchParams(window.location.search);
   const qType = (params.get('item_type') || '').toLowerCase();
   if (qType && typeSel.querySelector(`option[value="${qType}"]`)) typeSel.value = qType;
-  const qYear = (params.get('year') || '').toLowerCase();
-  if (qYear && (qYear === 'undated' || yearSel.querySelector(`option[value="${qYear}"]`))) yearSel.value = qYear;
+  const qDate = params.get('date');
+  if (qDate) dateExpr.value = qDate;
 
-  typeSel.addEventListener('change', refresh);
-  yearSel.addEventListener('change', refresh);
-  refresh();
+  typeSel.addEventListener('change', showHide);
+  dateExpr.addEventListener('input', showHide);
+  showHide();
 });
 </script>
 
