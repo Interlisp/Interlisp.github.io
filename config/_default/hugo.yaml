@@ -42,6 +42,7 @@ enableMissingTranslationPlaceholders: true
 outputs:
   home:
     - HTML
+    - JSON
   section:
     - HTML
 
