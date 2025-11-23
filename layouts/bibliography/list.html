@@ -15,7 +15,7 @@
 
     <!-- Date expression filter -->
     <label for="dateExpr" style="margin-left:.75rem;">Date:</label>
-    <input id="dateExpr" type="text" placeholder="e.g. 1980, >=1980-01-01, 1970 between 1980"
+    <input id="dateExpr" type="text" placeholder="e.g. 1980, >=1980-01-01, 1970 to 1980"
            style="width:15rem;" />
   </div>
 </header>
@@ -122,8 +122,8 @@ document.addEventListener('DOMContentLoaded', function () {
     const m = s.match(/^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/);
     if (!m) return null;
     let [ , Y, M, D ] = m;
-    M = M || (isEnd ? '12' : '01');
-    D = D || (isEnd ? '31' : '01');
+    M = M || (isEnd ? '01' : '12');
+    D = D || (isEnd ? '01' : '31');
     // Basic clipping
     if (parseInt(M,10) > 12) M = '12';
     if (parseInt(D,10) > 31) D = '31';
@@ -134,8 +134,8 @@ document.addEventListener('DOMContentLoaded', function () {
     expr = (expr || '').trim();
     if (!expr) return () => true;
 
-    // Range: A between B
-    let m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)\s+between\s+(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/i);
+    // Range: A to B
+    let m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)\s+to\s+(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/i);
     if (m) {
       const start = parseDate(m[1], false);
       const end   = parseDate(m[2], true);
