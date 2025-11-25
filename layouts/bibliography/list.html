@@ -137,8 +137,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Range: A to B
     let m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)\s+to\s+(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/i);
     if (m) {
-      const start = parseDate(m[1], false);
-      const end   = parseDate(m[2], true);
+      const start = parseDate(m[1], true);
+      const end   = parseDate(m[2], false);
       if (!start || !end) return () => true;
       return d => d && d >= start && d <= end;
     }
@@ -147,21 +147,18 @@ document.addEventListener('DOMContentLoaded', function () {
     m = expr.match(/^([<>]=?|=)\s*(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
     if (m) {
       const op = m[1];
-      const dt = parseDate(m[2], op.startsWith('<')); // start-of-period for <
-      if (!dt) return () => true;
+      const dtStart = parseDate(m[2], true); // start-of-period for <
+      const dtEnd = parseDate(m[2], false); // start-of-period for <
+      if (!dtStart || !dtEnd) return () => true;
       return d => {
         if (!d) return false;
         switch (op) {
           // fix = comparison.  Use single dat/year as guide
-          case '=':  
-                     const end = parseDate(m[2], false);
-                     const start  = parseDate(m[2], true);
-                     if (!start || !end) return () => true;
-                     return d >= start && d <= end;
-          case '>':  return d > dt;
-          case '>=': return d >= dt;
-          case '<':  return d < dt;
-          case '<=': return d <= dt;
+          case '=':  return d >= dtStart && d <= dtEnd;
+          case '>':  return d > dtEnd;
+          case '>=': return d >= dtEnd;
+          case '<':  return d < dtStart;
+          case '<=': return d <= dtStart;
           default: return true;
         }
       };
