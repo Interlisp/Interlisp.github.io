@@ -147,12 +147,17 @@ document.addEventListener('DOMContentLoaded', function () {
     m = expr.match(/^([<>]=?|=)\s*(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
     if (m) {
       const op = m[1];
-      const dt = parseDate(m[2], op.startsWith('<')); // end-of-period for <
+      const dt = parseDate(m[2], op.startsWith('<')); // start-of-period for <
       if (!dt) return () => true;
       return d => {
         if (!d) return false;
         switch (op) {
-          case '=':  return d.getTime() === dt.getTime();
+          // fix = comparison.  Use single dat/year as guide
+          case '=':  
+                     const end = parseDate(m[2], false);
+                     const start  = parseDate(m[2], true);
+                     if (!start || !end) return () => true;
+                     return d >= start && d <= end;
           case '>':  return d > dt;
           case '>=': return d >= dt;
           case '<':  return d < dt;
@@ -165,8 +170,8 @@ document.addEventListener('DOMContentLoaded', function () {
     // Single date/year
     m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
     if (m) {
-      const start = parseDate(m[1], false);
-      const end   = parseDate(m[1], true);
+      const end = parseDate(m[1], false);
+      const start   = parseDate(m[1], true);
       if (!start || !end) return () => true;
       return d => d && d >= start && d <= end;
     }
