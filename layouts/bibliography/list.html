@@ -1,132 +1,155 @@
 {{ define "sidebar" }}{{ end }}
 {{ define "main" }}
 
-<header class="bib-header">
-  <h1 class="bib-title">{{ or .Params.heading .Title }}</h1>
-
-  <div class="bib-filter">
-    <label for="itemTypeFilter">Filter by Type:</label>
-    <select id="itemTypeFilter">
-      <option value="all">All</option>
-      {{ range $key, $value := .Site.Taxonomies.item_type }}
-        <option value="{{ $key }}">{{ $key | title }}</option>
-      {{ end }}
-    </select>
-
-    <!-- Date expression filter -->
-    <label for="dateExpr" style="margin-left:.75rem;">Date:</label>
-    <input id="dateExpr" type="text" placeholder="e.g. 1980, >=1980-01-01, 1970 to 1980"
-           style="width:15rem;" />
+<header class="container-fluid mb-3">
+  <div class="row align-items-end g-3">
+    <div class="col-lg">
+      <h1 class="h3 m-0">{{ or .Params.heading .Title }}</h1>
+    </div>
+    <div class="col-lg-auto">
+      <form class="row row-cols-auto g-2 align-items-center">
+        <div class="col">
+          <label class="form-label mb-0 small" for="itemTypeFilter">Type</label>
+          <select id="itemTypeFilter" class="form-select form-select-sm">
+            <option value="all">All</option>
+            {{ range $key, $value := .Site.Taxonomies.item_type }}
+              <option value="{{ $key }}">{{ $key | title }}</option>
+            {{ end }}
+          </select>
+        </div>
+        <div class="col">
+          <label class="form-label mb-0 small" for="dateExpr">Date</label>
+          <input id="dateExpr"
+                 type="text"
+                 class="form-control form-control-sm"
+                 placeholder="1980, >=1980-01-01, 1970 to 1980"
+                 data-bs-toggle="tooltip"
+                 data-bs-trigger="focus"
+                 data-bs-animation="true"
+                 data-bs-html="true"
+                 title="<strong>Formats</strong><br>1980<br>1980-05<br>1980-05-12<br>&gt;=1980  &lt;1990  =1980-05<br>1970 to 1980" />
+        </div>
+      </form>
+    </div>
   </div>
 </header>
 
-{{ .Content }}
-
-<style>
-  .bib-header {
-    display: flex;
-    align-items: baseline;
-    justify-content: space-between;
-    gap: 1rem;
-    flex-wrap: wrap;
-    margin-bottom: 1rem;
-  }
-  .bib-title { margin: 0; }
-  ul.pub-list { list-style: none; margin: 0; padding: 0; }
-  ul.pub-list > li { margin: 0; padding: .75rem 0; border-bottom: 1px solid #e2e2e2; }
-  ul.pub-list > li:last-child { border-bottom: none; }
-</style>
-
-{{- $previewWordLimit := 24 -}}
-{{- $pages := .RegularPages -}}
-{{- $pages = sort $pages "Date" "desc" -}}
-{{- $pages = sort $pages "Title" "asc" -}}
-
-<ul class="pub-list" id="bibliographyList">
-  {{ range $pages }}
-    {{- /* Derive date */ -}}
-    {{- $d := .Date -}}
-    {{- with .Params.date -}}
-      {{- $iso := trim . " " -}}
-      {{- if and (ne $iso "") (findRE `^\d{4}-\d{2}-\d{2}$` $iso) -}}
-        {{- $d = time $iso -}}
-      {{- end -}}
-    {{- end -}}
-    {{- $fullDate := $d.Format "2006-01-02" -}}
-    {{- $year := $d.Format "2006" -}}
-    {{- if eq $year "0001" -}}{{- $year = "undated" -}}{{- end -}}
-
-    {{- /* item_type terms */ -}}
-    {{- $types := "" -}}
-    {{- with .Params.item_type -}}
-      {{- if reflect.IsSlice . -}}
-        {{- $types = delimit (apply . "lower" ".") "," -}}
-      {{- else -}}
-        {{- $types = lower . -}}
-      {{- end -}}
-    {{- end -}}
-
-    <li class="pub-item"
-        data-type="{{ $types }}"
-        data-year="{{ $year }}"
-        data-date="{{ if ne $fullDate "0001-01-01" }}{{ $fullDate }}{{ end }}">
-      {{- $rawTitle := or .Params.title .Title -}}
-      {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle | htmlEscape -}}
-      <a href="{{ .RelPermalink }}"><strong>{{ $rendered | safeHTML }}</strong></a><br>
-
-      {{- /* Authors / editors */ -}}
-      {{- $authors := .Params.authors -}}
-      {{- $editors := .Params.editors -}}
-      {{- $isPatent := eq .Params.item_type "patent" -}}
-      {{- if or $authors $editors -}}
-        {{- if $authors -}}
-          {{- if reflect.IsSlice $authors -}}
-            {{- if $isPatent }}Inventors: {{ end }}{{ delimit $authors "; " "; and " }}
-          {{- else -}}
-            {{- if $isPatent }}Inventor: {{ end }}{{ $authors }}
-          {{- end -}}
-        {{- else -}}
-          Edited by: {{ if reflect.IsSlice $editors }}{{ delimit $editors "; " "; and " }}{{ else }}{{ $editors }}{{ end }}
-        {{- end -}}
-        <br>
-      {{- end -}}
-
-      {{- if ne $fullDate "0001-01-01" -}}
-        <time datetime="{{ $fullDate }}">{{ .Params.readabledate }}</time><br>
-      {{- end -}}
-
-      {{ with .Params.abstract -}}
-        {{- $plain := . | htmlEscape | replaceRE `\s+` " " -}}
-        {{- $previewing := gt (countwords $plain) $previewWordLimit -}}
-        {{- if $previewing -}}
-          {{- $previewWords := split $plain " " | first $previewWordLimit -}}
-          {{- $preview := delimit $previewWords " " -}}
-          <div>{{ $preview | safeHTML }}…</div><br>
-        {{- else -}}
-          <div>{{ replace (. | htmlEscape) "\n" "<br>" | safeHTML }}</div><br>
+<div class="container-fluid">
+  {{ .Content }}
+  <ul class="list-unstyled" id="bibliographyList">
+    {{- $previewWordLimit := 24 -}}
+    {{- $pages := .RegularPages -}}
+    {{- $pages = sort $pages "Date" "desc" -}}
+    {{- $pages = sort $pages "Title" "asc" -}}
+    {{ range $pages }}
+      {{- $d := .Date -}}
+      {{- with .Params.date }}
+        {{- $iso := trim . " " -}}
+        {{- if and (ne $iso "") (findRE `^\d{4}-\d{2}-\d{2}$` $iso) }}
+          {{- $d = time $iso -}}
         {{- end -}}
       {{- end -}}
-    </li>
-  {{ end }}
-</ul>
+      {{- $fullDate := $d.Format "2006-01-02" -}}
+      {{- $year := $d.Format "2006" -}}
+      {{- if eq $year "0001" }}{{- $year = "undated" -}}{{ end -}}
+
+      {{- $types := "" -}}
+      {{- with .Params.item_type }}
+        {{- if reflect.IsSlice . }}
+          {{- $types = delimit (apply . "lower" ".") "," -}}
+        {{- else }}
+          {{- $types = lower . -}}
+        {{- end -}}
+      {{- end -}}
+
+      <li class="py-3 border-bottom pub-item"
+          data-type="{{ $types }}"
+          data-year="{{ $year }}"
+          data-date="{{ if ne $fullDate "0001-01-01" }}{{ $fullDate }}{{ end }}">
+        <div class="fw-semibold">
+          {{- $rawTitle := or .Params.title .Title -}}
+          {{- $rendered := replaceRE "^<p>(.*)</p>$" "$1" $rawTitle | htmlEscape -}}
+          <a href="{{ .RelPermalink }}" class="text-decoration-none">{{ $rendered | safeHTML }}</a>
+        </div>
+
+        {{- $authors := .Params.authors -}}
+        {{- $editors := .Params.editors -}}
+        {{- $isPatent := eq .Params.item_type "patent" -}}
+        {{- if or $authors $editors }}
+          <div class="small text-muted">
+            {{- if $authors }}
+              {{- if reflect.IsSlice $authors }}
+                {{- if $isPatent }}Inventors: {{ end }}{{ delimit $authors "; " "; and " }}
+              {{- else }}
+                {{- if $isPatent }}Inventor: {{ end }}{{ $authors }}
+              {{- end }}
+            {{- else }}
+              Edited by: {{ if reflect.IsSlice $editors }}{{ delimit $editors "; " "; and " }}{{ else }}{{ $editors }}{{ end }}
+            {{- end }}
+          </div>
+        {{- end }}
+
+        {{- if ne $fullDate "0001-01-01" }}
+          <div class="small">
+            <time datetime="{{ $fullDate }}">{{ .Params.readabledate }}</time>
+          </div>
+        {{- end }}
+
+        {{ with .Params.abstract }}
+          {{- $plain := . | htmlEscape | replaceRE `\s+` " " -}}
+          {{- $previewing := gt (countwords $plain) $previewWordLimit -}}
+          {{- if $previewing }}
+            {{- $previewWords := split $plain " " | first $previewWordLimit -}}
+            <div class="mt-2 small">{{ delimit $previewWords " " | safeHTML }}…</div>
+          {{- else }}
+            <div class="mt-2 small">{{ replace (. | htmlEscape) "\n" "<br>" | safeHTML }}</div>
+          {{- end }}
+        {{ end }}
+      </li>
+    {{ end }}
+  </ul>
+</div>
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
+  // Bootstrap tooltip init
+  if (window.bootstrap) {
+    Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
+      .forEach(el => new bootstrap.Tooltip(el));
+  }
+
+  const dateInput = document.getElementById('dateExpr');
+  const tip = bootstrap.Tooltip.getInstance(dateInput);
+
+  function dismissTooltip() {
+    if (!dateInput.dataset.tipDismissed && tip) {
+      tip.hide();
+      // Dispose after fade so it never reappears
+      setTimeout(() => tip.dispose(), 200);
+      dateInput.dataset.tipDismissed = '1';
+    }
+  }
+
+  // Hide on first input, paste, or keypress
+  ['input','paste','keydown'].forEach(evt =>
+    dateInput.addEventListener(evt, dismissTooltip, { once:false })
+  );
+
+  dateInput.addEventListener('blur', dismissTooltip);
+
   const typeSel  = document.getElementById('itemTypeFilter');
   const dateExpr = document.getElementById('dateExpr');
   const items    = Array.from(document.querySelectorAll('#bibliographyList > li'));
 
   function parseDate(s, isEnd=false) {
     if (!s) return null;
-    // YYYY or YYYY-MM or YYYY-MM-DD
     const m = s.match(/^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/);
     if (!m) return null;
     let [ , Y, M, D ] = m;
-    M = M || (isEnd ? '01' : '12');
-    D = D || (isEnd ? '01' : '31');
-    // Basic clipping
-    if (parseInt(M,10) > 12) M = '12';
-    if (parseInt(D,10) > 31) D = '31';
+    M = M || (isEnd ? '12' : '01');
+    D = D || (isEnd ? '31' : '01');
+    if (+M > 12) M = '12';
+    if (+D > 31) D = '31';
     return new Date(`${Y}-${M}-${D}T00:00:00Z`);
   }
 
@@ -134,46 +157,41 @@ document.addEventListener('DOMContentLoaded', function () {
     expr = (expr || '').trim();
     if (!expr) return () => true;
 
-    // Range: A to B
     let m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)\s+to\s+(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/i);
     if (m) {
-      const start = parseDate(m[1], true);
-      const end   = parseDate(m[2], false);
+      const start = parseDate(m[1], false);
+      const end   = parseDate(m[2], true);
       if (!start || !end) return () => true;
       return d => d && d >= start && d <= end;
     }
 
-    // Comparison: op date
     m = expr.match(/^([<>]=?|=)\s*(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
     if (m) {
       const op = m[1];
-      const dtStart = parseDate(m[2], true); // start-of-period for <
-      const dtEnd = parseDate(m[2], false); // start-of-period for <
+      const dtStart = parseDate(m[2], false);
+      const dtEnd = parseDate(m[2], true);
       if (!dtStart || !dtEnd) return () => true;
       return d => {
         if (!d) return false;
         switch (op) {
-          // fix = comparison.  Use single dat/year as guide
           case '=':  return d >= dtStart && d <= dtEnd;
           case '>':  return d > dtEnd;
-          case '>=': return d >= dtEnd;
+          case '>=': return d >= dtStart;
           case '<':  return d < dtStart;
-          case '<=': return d <= dtStart;
+          case '<=': return d <= dtEnd;
           default: return true;
         }
       };
     }
 
-    // Single date/year
     m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
     if (m) {
-      const end = parseDate(m[1], false);
-      const start   = parseDate(m[1], true);
-      if (!start || !end) return () => true;
-      return d => d && d >= start && d <= end;
+      const s = parseDate(m[1], false);
+      const e = parseDate(m[1], true);
+      if (!s || !e) return () => true;
+      return d => d && d >= s && d <= e;
     }
 
-    // Fallback -> no filtering
     return () => true;
   }
 
@@ -191,7 +209,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // Deep link (?item_type=book&date=1970%20between%201980)
   const params = new URLSearchParams(window.location.search);
   const qType = (params.get('item_type') || '').toLowerCase();
   if (qType && typeSel.querySelector(`option[value="${qType}"]`)) typeSel.value = qType;
