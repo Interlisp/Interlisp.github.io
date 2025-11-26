@@ -1,6 +1,8 @@
 {{ define "sidebar" }}{{ end }}
 {{ define "main" }}
 
+{{- $tooltip := `<strong>Formats</strong><br>1980<br>&gt;=1980<br>&lt;1990<br>=1980<br>1970 to 1980` -}}
+
 <header class="container-fluid mb-3">
   <div class="row align-items-end g-3">
     <div class="col-lg">
@@ -18,16 +20,20 @@
           </select>
         </div>
         <div class="col">
-          <label class="form-label mb-0 small" for="dateExpr">Date</label>
+          <label class="form-label mb-0 small" for="dateExpr">Filter by Year</label>
           <input id="dateExpr"
-                 type="text"
-                 class="form-control form-control-sm"
-                 placeholder="1980, >=1980-01-01, 1970 to 1980"
-                 data-bs-toggle="tooltip"
-                 data-bs-trigger="focus"
-                 data-bs-animation="true"
-                 data-bs-html="true"
-                 title="<strong>Formats</strong><br>1980<br>1980-05<br>1980-05-12<br>&gt;=1980  &lt;1990  =1980-05<br>1970 to 1980" />
+            type="text"
+            class="form-control form-control-sm"
+            placeholder="1980, >=1980, 1970 to 1980"
+            inputmode="numeric"
+            maxlength="12"
+            pattern="^\s*(?:[<>]=?|=)?\s*\d{4}(?:\s+(?:to|between)\s+\d{4})?\s*$"
+            aria-invalid="false"
+            data-bs-toggle="tooltip"
+            data-bs-trigger="focus"
+            data-bs-animation="true"
+            data-bs-html="true"
+            data-bs-title="{{ $tooltip | safeHTMLAttr }}" /> 
         </div>
       </form>
     </div>
@@ -112,112 +118,166 @@
 
 <script>
 document.addEventListener('DOMContentLoaded', function () {
-  // Bootstrap tooltip init
-  if (window.bootstrap) {
-    Array.from(document.querySelectorAll('[data-bs-toggle="tooltip"]'))
-      .forEach(el => new bootstrap.Tooltip(el));
-  }
-
-  const dateInput = document.getElementById('dateExpr');
-  const tip = bootstrap.Tooltip.getInstance(dateInput);
-
-  function dismissTooltip() {
-    if (!dateInput.dataset.tipDismissed && tip) {
-      tip.hide();
-      // Dispose after fade so it never reappears
-      setTimeout(() => tip.dispose(), 200);
-      dateInput.dataset.tipDismissed = '1';
-    }
-  }
-
-  // Hide on first input, paste, or keypress
-  ['input','paste','keydown'].forEach(evt =>
-    dateInput.addEventListener(evt, dismissTooltip, { once:false })
-  );
-
-  dateInput.addEventListener('blur', dismissTooltip);
+  // ...existing tooltip init & dismissTooltip...
 
   const typeSel  = document.getElementById('itemTypeFilter');
   const dateExpr = document.getElementById('dateExpr');
   const items    = Array.from(document.querySelectorAll('#bibliographyList > li'));
 
-  function parseDate(s, isEnd=false) {
-    if (!s) return null;
-    const m = s.match(/^(\d{4})(?:-(\d{2})(?:-(\d{2}))?)?$/);
-    if (!m) return null;
-    let [ , Y, M, D ] = m;
-    M = M || (isEnd ? '12' : '01');
-    D = D || (isEnd ? '31' : '01');
-    if (+M > 12) M = '12';
-    if (+D > 31) D = '31';
-    return new Date(`${Y}-${M}-${D}T00:00:00Z`);
+  // Init Bootstrap tooltip (uses data-bs-animation="true" for fade)
+  let dateTip = null;
+  if (window.bootstrap && dateExpr) {
+    dateTip = bootstrap.Tooltip.getOrCreateInstance(dateExpr);
   }
 
-  function buildPredicate(expr) {
-    expr = (expr || '').trim();
-    if (!expr) return () => true;
+  // Fade and permanently hide the tooltip (first time only)
+  function fadeTooltipAway() {
+    if (!dateExpr || dateExpr.dataset.tipHidden === '1') return;
+    if (dateTip) {
+      dateTip.hide(); // triggers fade
+      setTimeout(() => {
+        try { dateTip.dispose(); } catch (_) {}
+        // Avoid native tooltip with raw HTML
+        dateExpr.removeAttribute('title');
+        dateExpr.removeAttribute('data-bs-original-title');
+        dateExpr.setAttribute('data-bs-title', '');
+      }, 200);
+    }
+    dateExpr.dataset.tipHidden = '1';
+  }
 
-    let m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)\s+to\s+(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/i);
+  // Clear invalid UI once user edits (no validation yet)
+  function clearInvalidUI() {
+    if (dateExpr.classList.contains('is-invalid')) {
+      dateExpr.classList.remove('is-invalid');
+      dateExpr.setAttribute('aria-invalid', 'false');
+    }
+  }
+
+
+  // Validate input: allow only year expressions
+  function isValidYearExpr(expr) {
+    const s = (expr || '').trim();
+    if (!s) return true; // empty is OK
+    return (
+      /^(\d{4})$/.test(s) ||                              // 1980
+      /^([<>]=?|=)\s*\d{4}$/.test(s) ||                   // >=1980, <1990, =1980
+      /^(\d{4})\s+(?:to|between)\s+(\d{4})$/i.test(s)     // 1970 to 1980 / 1970 between 1980
+    );
+  }
+
+  // Build a predicate that compares only years
+  function buildPredicate(expr) {
+    const s = (expr || '').trim();
+    if (!s) return () => true;
+
+    let m = s.match(/^(\d{4})\s+(?:to|between)\s+(\d{4})$/i);
     if (m) {
-      const start = parseDate(m[1], false);
-      const end   = parseDate(m[2], true);
-      if (!start || !end) return () => true;
-      return d => d && d >= start && d <= end;
+      const y1 = parseInt(m[1], 10), y2 = parseInt(m[2], 10);
+      if (Number.isNaN(y1) || Number.isNaN(y2)) return () => true;
+      const lo = Math.min(y1, y2), hi = Math.max(y1, y2);
+      return y => y != null && y >= lo && y <= hi;
     }
 
-    m = expr.match(/^([<>]=?|=)\s*(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
+    m = s.match(/^([<>]=?|=)\s*(\d{4})$/);
     if (m) {
-      const op = m[1];
-      const dtStart = parseDate(m[2], false);
-      const dtEnd = parseDate(m[2], true);
-      if (!dtStart || !dtEnd) return () => true;
-      return d => {
-        if (!d) return false;
+      const op = m[1], y = parseInt(m[2], 10);
+      if (Number.isNaN(y)) return () => true;
+      return yr => {
+        if (yr == null) return false;
         switch (op) {
-          case '=':  return d >= dtStart && d <= dtEnd;
-          case '>':  return d > dtEnd;
-          case '>=': return d >= dtStart;
-          case '<':  return d < dtStart;
-          case '<=': return d <= dtEnd;
-          default: return true;
+          case '=':  return yr === y;
+          case '>':  return yr >  y;
+          case '>=': return yr >= y;
+          case '<':  return yr <  y;
+          case '<=': return yr <= y;
+          default:   return true;
         }
       };
     }
 
-    m = expr.match(/^(\d{4}(?:-\d{2}(?:-\d{2})?)?)$/);
+    m = s.match(/^(\d{4})$/);
     if (m) {
-      const s = parseDate(m[1], false);
-      const e = parseDate(m[1], true);
-      if (!s || !e) return () => true;
-      return d => d && d >= s && d <= e;
+      const y = parseInt(m[1], 10);
+      return yr => yr != null && yr === y;
     }
 
+    // Invalid -> no date filtering
     return () => true;
   }
 
-  function showHide() {
+    function applyValidation() {
+    const valid = isValidYearExpr(dateExpr.value);
+    dateExpr.classList.toggle('is-invalid', !valid);
+    dateExpr.setAttribute('aria-invalid', valid ? 'false' : 'true');
+    return valid;
+  }
+
+  // Update: showHide can skip changing validation UI unless triggered by Enter
+  function showHide(validateNow = true) {
     const typeVal = (typeSel.value || 'all').toLowerCase();
-    const pred = buildPredicate(dateExpr.value);
+    const valid = validateNow ? applyValidation() : isValidYearExpr(dateExpr.value);
+    const pred = valid ? buildPredicate(dateExpr.value) : (() => true);
+
     items.forEach(li => {
       const types = (li.dataset.type || '')
         .split(',').map(s => s.trim().toLowerCase()).filter(Boolean);
-      const dateStr = li.dataset.date;
-      const dateObj = dateStr ? new Date(dateStr + 'T00:00:00Z') : null;
+      const yearAttr = (li.dataset.year || '').toLowerCase();
+      const yr = /^\d{4}$/.test(yearAttr) ? parseInt(yearAttr, 10) : null;
+
       const typeOK = (typeVal === 'all') || types.includes(typeVal);
-      const dateOK = pred(dateObj);
-      li.style.display = (typeOK && dateOK) ? '' : 'none';
+      const yearOK = pred(yr);
+      li.style.display = (typeOK && yearOK) ? '' : 'none';
     });
   }
 
+  // Deep-link support
   const params = new URLSearchParams(window.location.search);
   const qType = (params.get('item_type') || '').toLowerCase();
   if (qType && typeSel.querySelector(`option[value="${qType}"]`)) typeSel.value = qType;
   const qDate = params.get('date');
   if (qDate) dateExpr.value = qDate;
 
-  typeSel.addEventListener('change', showHide);
-  dateExpr.addEventListener('input', showHide);
-  showHide();
+  // Only filter-by-type on change; do not validate date here
+  typeSel.addEventListener('change', () => showHide(false));
+
+  // Remove live validation; validate/filter only on Enter (CR)
+  // ...remove: dateExpr.addEventListener('input', showHide);
+  dateExpr.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      showHide(true); // validate and apply
+    }
+  });
+  function clearInvalidUI() {
+    if (dateExpr.classList.contains('is-invalid')) {
+      dateExpr.classList.remove('is-invalid');
+      dateExpr.setAttribute('aria-invalid', 'false');
+    }
+  }
+
+  // Only filter-by-type on change; do not validate date here
+  typeSel.addEventListener('change', () => showHide(false));
+
+  dateExpr.addEventListener('input', () => {
+    fadeTooltipAway();
+    clearInvalidUI();
+  });
+  dateExpr.addEventListener('paste', () => setTimeout(() => {
+    fadeTooltipAway();
+    clearInvalidUI();
+  }, 0));
+
+  // Validate/filter on Enter and also fade tooltip if still visible
+  dateExpr.addEventListener('keydown', e => {
+    if (e.key === 'Enter') {
+      e.preventDefault();
+      fadeTooltipAway();
+      showHide(true);
+    }
+  });
+
+  showHide(true);
 });
 </script>
 
