@@ -14,6 +14,10 @@ aliases:
  - /medley/project/status/
 ---
 
+## New Medley Primer
+
+In November of 2025 we published [Medley Interlisp for the Newcomer](https://primer.interlisp.org) by Abhik Hasnain, an introductory guide to Interlisp and the Medley environment.
+
 ## Autumn Lisp Game Jam 2025
 
 On November 10, 2025 Ryan Burnside entered the [Autumn Lisp Game Jam 2025](https://itch.io/jam/autumn-lisp-game-jam-2025) with the [Interlisp Hungarian Rings](https://itch.io/jam/autumn-lisp-game-jam-2025/rate/4015363) puzzle written in Interlisp.
