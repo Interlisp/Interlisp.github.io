@@ -14,6 +14,10 @@ aliases:
  - /medley/project/status/
 ---
 
+## Netstack.FM interviews Larry Masinter
+
+[Episode 17 of the Netstack.FM podcast](https://netstack.fm/#episode-17) (also [available on YouTube](https://www.youtube.com/watch?v=JZ7E0B68TRo)) featured an interview with Larry Masinter on Interlisp, the Xerox PARC environment, the history of the early web, and more.
+
 ## New Medley Primer
 
 In November of 2025 we published [Medley Interlisp for the Newcomer](https://primer.interlisp.org) by Abhik Hasnain, an introductory guide to Interlisp and the Medley environment.
