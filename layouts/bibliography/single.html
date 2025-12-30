@@ -239,6 +239,7 @@
     <div class="citation-tabs" role="tablist" aria-label="Citation views">
       <button type="button" class="tab-btn is-active" data-tab="formatted" role="tab" aria-selected="true" aria-controls="tab-formatted">Formatted</button>
       <button type="button" class="tab-btn" data-tab="raw" role="tab" aria-selected="false" aria-controls="tab-raw">HTML</button>
+      <button type="button" class="tab-btn" data-tab="json" role="tab" aria-selected="false" aria-controls="tab-json">JSON</button>
     </div>
     <div class="citation-body">
       <div id="tab-formatted" class="tab-panel is-active" role="tabpanel" aria-labelledby="tabbtn-formatted">
@@ -247,10 +248,12 @@
       <div id="tab-raw" class="tab-panel" role="tabpanel" aria-labelledby="tabbtn-raw">
         <pre class="codebox"><code id="citationRaw" class="language-html"></code></pre>
       </div>
+      <div id="tab-json" class="tab-panel" role="tabpanel" aria-labelledby="tabbtn-json">
+        <pre class="codebox"><code id="citationJson" class="language-json"></code></pre>
+      </div>
     </div>
     <div class="citation-actions">
-      <button type="button" id="copyCitation">Copy Text</button>
-      <button type="button" id="copyCitationHtml">Copy HTML</button>
+      <button type="button" id="copyCitation">Copy</button>
       <button type="button" class="citation-close">Close</button>
     </div>
   </div>
@@ -294,6 +297,7 @@
   const modal = document.getElementById('citationModal');
   const contentBox = document.getElementById('citationContent');
   const rawBox = document.getElementById('citationRaw');
+  const jsonBox = document.getElementById('citationJson');
 
   function openModal() { modal.hidden = false; }
   function closeModal() { modal.hidden = true; }
@@ -341,6 +345,10 @@
 
       contentBox.textContent = 'Loading…';
       rawBox.textContent = '';
+      if (jsonBox) jsonBox.textContent = '';
+      // store identifiers for later JSON fetch
+      modal.dataset.gid = gid;
+      modal.dataset.key = key;
       setActiveTab('formatted');
       openModal();
 
@@ -352,7 +360,7 @@
         .then(html => {
           contentBox.innerHTML = html;
           try {
-            const formatted = window.prettier.format(html, { parser: "html", plugins: window.prettierPlugins, tabWidth: 2 });
+            const formatted = window.prettier.format(html, { parser: "html", plugins: window.prettierPlugins, tabWidth: 2, bracketSameLine: true, singleAttributePerLine: false, printWidth: 80, htmlWhitespaceSensitivity: "ignore" });
             // prettier.format may return a string or a Promise depending on plugin loading; normalize to a Promise
             return Promise.resolve(formatted).then(pretty => {
               rawBox.textContent = pretty;
@@ -377,20 +385,49 @@
       closeModal();
     }
 
-    // Copy buttons
+    // Copy button: copy content for the currently active tab (formatted/raw/json)
     if (e.target.matches('#copyCitation')) {
       e.preventDefault();
-      copyTextToClipboard(contentBox.innerText.trim(), e.target);
-    }
-    if (e.target.matches('#copyCitationHtml')) {
-      e.preventDefault();
-      copyTextToClipboard(rawBox.textContent.trim(), e.target);
+      const activeBtn = document.querySelector('.tab-btn.is-active');
+      const tab = activeBtn ? activeBtn.dataset.tab : 'formatted';
+      let text = '';
+      if (tab === 'formatted') text = contentBox.innerText.trim();
+      else if (tab === 'raw') text = rawBox.textContent.trim();
+      else if (tab === 'json' && jsonBox) text = jsonBox.textContent.trim();
+      copyTextToClipboard(text, e.target);
     }
 
     // Tabs
     if (e.target.matches('.tab-btn')) {
       e.preventDefault();
-      setActiveTab(e.target.dataset.tab);
+      const tab = e.target.dataset.tab;
+      setActiveTab(tab);
+      // If JSON tab selected, lazily fetch CSL JSON from Zotero API
+      if (tab === 'json' && jsonBox && jsonBox.textContent.trim() === '') {
+        const gid = modal.dataset.gid;
+        const key = modal.dataset.key;
+        if (gid && key) {
+          const url = `https://api.zotero.org/groups/${encodeURIComponent(gid)}/items/${encodeURIComponent(key)}?format=csljson`;
+          jsonBox.textContent = 'Loading…';
+          fetch(url, { headers: { 'Accept': 'application/json' }})
+            .then(r => {
+              if (!r.ok) throw new Error(`HTTP ${r.status}`);
+              return r.json();
+            })
+            .then(obj => {
+              try {
+                jsonBox.textContent = JSON.stringify(obj, null, 2);
+              } catch (err) {
+                jsonBox.textContent = String(err);
+              }
+            })
+            .catch(err => {
+              jsonBox.textContent = `Failed to load JSON (${err})`;
+            });
+        } else {
+          jsonBox.textContent = 'No Zotero identifiers available.';
+        }
+      }
     }
   });
 
