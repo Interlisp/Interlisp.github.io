@@ -237,9 +237,9 @@
       <button type="button" class="citation-dismiss" aria-label="Close">×</button>
     </div>
     <div class="citation-tabs" role="tablist" aria-label="Citation views">
-      <button type="button" class="tab-btn is-active" data-tab="formatted" role="tab" aria-selected="true" aria-controls="tab-formatted">Formatted</button>
-      <button type="button" class="tab-btn" data-tab="raw" role="tab" aria-selected="false" aria-controls="tab-raw">HTML</button>
-      <button type="button" class="tab-btn" data-tab="json" role="tab" aria-selected="false" aria-controls="tab-json">JSON</button>
+      <button type="button" class="tab-btn is-active" id="tabbtn-formatted" data-tab="formatted" role="tab" aria-selected="true" aria-controls="tab-formatted">Formatted</button>
+      <button type="button" class="tab-btn" id="tabbtn-raw" data-tab="raw" role="tab" aria-selected="false" aria-controls="tab-raw">HTML</button>
+      <button type="button" class="tab-btn" id="tabbtn-json" data-tab="json" role="tab" aria-selected="false" aria-controls="tab-json">JSON</button>
     </div>
     <div class="citation-body">
       <div id="tab-formatted" class="tab-panel is-active" role="tabpanel" aria-labelledby="tabbtn-formatted">
@@ -394,6 +394,16 @@
       if (tab === 'formatted') text = contentBox.innerText.trim();
       else if (tab === 'raw') text = rawBox.textContent.trim();
       else if (tab === 'json' && jsonBox) text = jsonBox.textContent.trim();
+      if (!text || /^Loading/i.test(text)) return;
+      if (tab === 'json') {
+        if (
+          text.startsWith('Failed to load JSON') ||
+          text.startsWith('No Zotero identifiers available.') ||
+          text === 'Loading…'
+        ) {
+          return;
+        }
+      }  
       copyTextToClipboard(text, e.target);
     }
 
