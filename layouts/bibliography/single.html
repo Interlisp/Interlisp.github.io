@@ -27,22 +27,21 @@
         {{ $editors }}
     {{- end -}}
   {{- end -}}
-  <br>
   </p>
 {{- end -}}
 <p>
-  {{- $d := .Date -}}
-      {{- $fmtDate := .Params.readabledate -}}
+  {{- $dateTime := .Date -}}
   {{- with .Params.date -}}
     {{- $isoDate := trim . " " -}}
     {{- if and (ne $isoDate "") (findRE `^\d{4}-\d{2}-\d{2}` $isoDate) -}}
-      {{- $d = time $isoDate -}}
+      {{- $dateTime = time $isoDate -}}
     {{- end -}}
-  {{- end }}
-  {{- $d = $d.Format "2006-01-02" -}}
+  {{- end -}}
+  {{- $dateISO := $dateTime.Format "2006-01-02" -}}
+  {{- $dateLabel := or .Params.readabledate $dateISO -}}
   {{- /* Don't display bogus date */ -}}
-  {{- if (ne $d "0001-01-01") }}
-    <time datetime="{{ $d }}">{{ $fmtDate }}</time>
+  {{- if ne $dateISO "0001-01-01" -}}
+    <time datetime="{{ $dateISO }}">{{ $dateLabel }}</time>
   {{- end -}}
 </p>
 <p>
@@ -54,7 +53,7 @@
       No abstract available.
     {{- end -}}
 </p>
-  <p>
+    <div class="bibliography-meta">
     {{- if eq .Params.item_type "book" -}}
         {{ with .Params.publisher }}
             <p><strong>Publisher:</strong> {{ . }}</p>
@@ -77,14 +76,15 @@
         {{ end }}
     {{- end -}}
     {{- if or (eq .Params.item_type "article-journal") (eq .Params.item_type "article-magazine") -}}
-      {{ if eq .Params.item_type "article-journal" }}
+      <p>
+      {{ if eq .Params.item_type "article-journal" -}}
         <strong>Journal:</strong>
-      {{ else }}
+      {{- else -}}
         <strong>Magazine:</strong>
-      {{ end }}
-      {{- with .Params.publication_title -}}
-        {{ . }}
-      {{- end -}}
+      {{- end }}
+      {{- with .Params.publication_title }} {{ . }}{{ end -}}
+      </p>
+      {{- if or .Params.volume .Params.issue .Params.pages }}
       <p>
       {{ with .Params.volume }}
         <strong>Volume:</strong> {{ . }}
@@ -96,6 +96,7 @@
         <strong>Pages:</strong> {{ . }}
       {{ end }}
       </p>
+      {{- end }}
     {{- end -}}
     {{- if eq .Params.item_type "report" -}}
         {{ with .Params.publisher }}
@@ -162,17 +163,19 @@
         {{ with .Params.publisher }}
             <p><strong>Publisher:</strong> {{ . }}</p>
         {{ end }}
-        <p>
-        {{ with .Params.series }}
-            <strong>Series:</strong> {{ . }}
-        {{ end }}
-        {{ with .Params.series_number }}
-            <strong>Series Number:</strong> {{ . }}
-        {{ end }}
-        {{ with .Params.pages }}
-            <strong>Pages:</strong> {{ . }}
-        </p>
-        {{ end }}
+      {{- if or .Params.series .Params.series_number .Params.pages -}}
+      <p>
+      {{ with .Params.series }}
+        <strong>Series:</strong> {{ . }}
+      {{ end }}
+      {{ with .Params.series_number }}
+        <strong>Series Number:</strong> {{ . }}
+      {{ end }}
+      {{ with .Params.pages }}
+        <strong>Pages:</strong> {{ . }}
+      {{ end }}
+      </p>
+      {{- end -}}
     {{- end -}}
     {{- if eq .Params.item_type "personal_communication" -}}
         {{ with .Params.communication_type }}
@@ -192,7 +195,7 @@
             <p><strong>Encyclopedia Title:</strong> {{ . }}</p>
         {{ end }}
     {{- end -}}
-  </p>
+  </div>
   <p>
     {{- if .Params.url_source -}}
       <a class="btn btn-primary btn-sm"
@@ -208,14 +211,11 @@
        href="{{ .Params.zotero_url | safeURL }}"
        target="_blank" rel="noopener noreferrer">Zotero Record</a>
   {{- end -}}
-    {{- /* Build Zotero API params (group id + item key + style) */ -}}
-      {{- $gid := site.Params.zotero_group_id -}}
-
-      {{- $key := .File.TranslationBaseName -}}
-
-      {{- $style := or site.Params.zotero.style "apa" -}}
-
-      {{ if and $gid $key }}
+  {{- /* Build Zotero API params (group id + item key + style) */ -}}
+  {{- $gid := site.Params.zotero_group_id -}}
+  {{- $key := .File.TranslationBaseName -}}
+  {{- $style := or site.Params.zotero.style "apa" -}}
+  {{ if and $gid $key }}
     <button type="button" id="citeBtn"
             class="btn btn-primary btn-sm"
             data-gid="{{ $gid }}"
@@ -230,10 +230,10 @@
   </div>
 </article>
   <!-- Citation modal -->
-<div id="citationModal" class="citation-modal" hidden>
+<div id="citationModal" class="citation-modal" hidden role="dialog" aria-modal="true" aria-labelledby="citationModalTitle">
   <div class="citation-dialog">
     <div class="citation-header">
-      <strong>Citation</strong>
+      <strong id="citationModalTitle">Citation</strong>
       <button type="button" class="citation-dismiss" aria-label="Close">×</button>
     </div>
     <div class="citation-tabs" role="tablist" aria-label="Citation views">
@@ -242,13 +242,13 @@
       <button type="button" class="tab-btn" id="tabbtn-json" data-tab="json" role="tab" aria-selected="false" aria-controls="tab-json">JSON</button>
     </div>
     <div class="citation-body">
-      <div id="tab-formatted" class="tab-panel is-active" role="tabpanel" aria-labelledby="tabbtn-formatted">
-        <div id="citationContent">Loading…</div>
+      <div id="tab-formatted" class="tab-panel is-active" role="tabpanel" tabindex="0" aria-labelledby="tabbtn-formatted">
+        <div id="citationContent" role="status" aria-live="polite" aria-atomic="true">Loading…</div>
       </div>
-      <div id="tab-raw" class="tab-panel" role="tabpanel" aria-labelledby="tabbtn-raw">
+      <div id="tab-raw" class="tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tabbtn-raw">
         <pre class="codebox"><code id="citationRaw" class="language-html"></code></pre>
       </div>
-      <div id="tab-json" class="tab-panel" role="tabpanel" aria-labelledby="tabbtn-json">
+      <div id="tab-json" class="tab-panel" role="tabpanel" tabindex="0" aria-labelledby="tabbtn-json">
         <pre class="codebox"><code id="citationJson" class="language-json"></code></pre>
       </div>
     </div>
@@ -262,16 +262,25 @@
 
   <style>
   .citation-modal[hidden] { display: none; }
-  .citation-modal { position: fixed; inset: 0; z-index: 1050; }
+  .citation-modal { position: fixed; inset: 0; z-index: 1050; pointer-events: auto; }
   .citation-dialog {
     position: absolute; top: 10%; left: 50%; transform: translateX(-50%);
     max-width: 720px; width: calc(100% - 2rem);
     background: #fff; border-radius: 6px; box-shadow: 0 10px 30px rgba(0,0,0,.2);
     overflow: hidden;
+    z-index: 1;
+  }
+  .citation-backdrop {
+    position: fixed;
+    inset: 0;
+    background: rgba(0,0,0,.4);
+    pointer-events: auto;
+    z-index: 0;
   }
   .citation-header { display:flex; justify-content:space-between; align-items:center; padding:.75rem 1rem; border-bottom:1px solid #eee; }
-  .citation-dismiss{ background:none; border:0; font-size:1.25rem; line-height:1; cursor:pointer; }
-  .citation-close
+  .citation-dismiss { background:none; border:0; font-size:1.25rem; line-height:1; cursor:pointer; }
+  .citation-close { background:#f8f9fa; border:1px solid #ddd; border-radius:4px; padding:.35rem .75rem; cursor:pointer; }
+  .citation-close:hover { background:#e9ecef; }
   .citation-tabs { display:flex; gap:.25rem; padding:.5rem 1rem; border-bottom:1px solid #eee; }
   .tab-btn {
     border: 1px solid #ddd; background:#f8f9fa; border-radius:4px; padding:.35rem .6rem; cursor:pointer;
@@ -289,26 +298,86 @@
   .citation-actions { display:flex; gap:.5rem; justify-content:flex-end; padding:.75rem 1rem; border-top:1px solid #eee; }
 </style>
 
+<script src="{{ "js/vendor/dompurify/purify.min.js" | relURL }}" defer></script>
 <script src="{{ "js/vendor/prettier/standalone.js" | relURL }}" defer></script>
 <script src="{{ "js/vendor/prettier/plugins/html.js" | relURL }}" defer></script>
 
 <script>
 (function () {
   const modal = document.getElementById('citationModal');
+  if (!modal) return;
+  const dialog = modal.querySelector('.citation-dialog');
   const contentBox = document.getElementById('citationContent');
   const rawBox = document.getElementById('citationRaw');
   const jsonBox = document.getElementById('citationJson');
 
-  function openModal() { modal.hidden = false; }
-  function closeModal() { modal.hidden = true; }
+  let lastActiveElement = null;
+
+  // Make background content inert while modal is open.
+  // Skip elements that contain the modal so modal buttons remain interactive.
+  function setPageInert(inert) {
+    const selectors = ['header', 'footer', 'nav', '.td-sidebar'];
+    selectors.forEach(sel => {
+      document.querySelectorAll(sel).forEach(el => {
+        if (el && !el.contains(modal)) {
+          if (inert) el.setAttribute('inert', '');
+          else el.removeAttribute('inert');
+        }
+      });
+    });
+    // Make article content inert but not the modal
+    const article = document.querySelector('article.bibliography-entry');
+    if (article) {
+      if (inert) article.setAttribute('inert', '');
+      else article.removeAttribute('inert');
+    }
+  }
+
+  function getFocusableElements() {
+    const selector = [
+      'a[href]',
+      'button:not([disabled])',
+      'textarea:not([disabled])',
+      'input:not([disabled])',
+      'select:not([disabled])',
+      '[tabindex]:not([tabindex="-1"])'
+    ].join(',');
+    return Array.from(modal.querySelectorAll(selector)).filter(el => {
+      const style = window.getComputedStyle(el);
+      return style.visibility !== 'hidden' && style.display !== 'none';
+    });
+  }
+
+  function openModal(triggerEl) {
+    lastActiveElement = triggerEl || document.activeElement;
+    modal.hidden = false;
+    setPageInert(true);
+    // Focus the first close control for predictable keyboard UX.
+    const preferred = modal.querySelector('.citation-dismiss') || modal.querySelector('.citation-close');
+    if (preferred && typeof preferred.focus === 'function') preferred.focus();
+    else if (dialog && typeof dialog.focus === 'function') dialog.focus();
+  }
+
+  function closeModal() {
+    modal.hidden = true;
+    setPageInert(false);
+    if (lastActiveElement && typeof lastActiveElement.focus === 'function') {
+      try {
+        lastActiveElement.focus();
+      } catch (e) {
+        // Element may have been removed from DOM; ignore.
+      }
+    }
+    lastActiveElement = null;
+  }
 
   function setActiveTab(name) {
-    document.querySelectorAll('.tab-btn').forEach(btn => {
+    modal.querySelectorAll('.tab-btn').forEach(btn => {
       const isActive = btn.dataset.tab === name;
       btn.classList.toggle('is-active', isActive);
       btn.setAttribute('aria-selected', isActive ? 'true' : 'false');
     });
-    document.querySelectorAll('.tab-panel').forEach(panel => {
+    modal.querySelectorAll('.tab-panel').forEach(panel => {
       const isActive = panel.id === ('tab-' + name);
       panel.classList.toggle('is-active', isActive);
     });
@@ -345,12 +414,12 @@
 
       contentBox.textContent = 'Loading…';
       rawBox.textContent = '';
-      if (jsonBox) jsonBox.textContent = '';
+      jsonBox.textContent = '';
       // store identifiers for later JSON fetch
       modal.dataset.gid = gid;
       modal.dataset.key = key;
       setActiveTab('formatted');
-      openModal();
+      openModal(btn);
 
       fetch(url, { headers: { 'Accept': 'text/html' }})
         .then(r => {
@@ -358,19 +427,25 @@
           return r.text();
         })
         .then(html => {
-          contentBox.innerHTML = html;
-          try {
-            const formatted = window.prettier.format(html, { parser: "html", plugins: window.prettierPlugins, tabWidth: 2, bracketSameLine: true, singleAttributePerLine: false, printWidth: 80, htmlWhitespaceSensitivity: "ignore" });
-            // prettier.format may return a string or a Promise depending on plugin loading; normalize to a Promise
-            return Promise.resolve(formatted).then(pretty => {
-              rawBox.textContent = pretty;
+          // Sanitize HTML to prevent XSS before rendering
+          const cleanHtml = typeof DOMPurify !== 'undefined' ? DOMPurify.sanitize(html) : html;
+          contentBox.innerHTML = cleanHtml;
+          if (window.prettier && window.prettierPlugins) {
+            try {
+              const formatted = window.prettier.format(html, { parser: "html", plugins: window.prettierPlugins, tabWidth: 2, bracketSameLine: true, singleAttributePerLine: false, printWidth: 80, htmlWhitespaceSensitivity: "ignore" });
+              // prettier.format may return a string or a Promise depending on plugin loading; normalize to a Promise
+              return Promise.resolve(formatted).then(pretty => {
+                rawBox.textContent = pretty;
+                return html;
+              });
+            } catch (err) {
+              // synchronous error formatting
+              rawBox.textContent = String(err);
               return html;
-            });
-          } catch (err) {
-            // synchronous error formatting
-            rawBox.textContent = String(err);
-            return html;
+            }
           }
+          rawBox.textContent = html;
+          return html;
         })
         .catch(err => {
           const msg = `Failed to load citation (${err})`;
@@ -388,32 +463,25 @@
     // Copy button: copy content for the currently active tab (formatted/raw/json)
     if (e.target.matches('#copyCitation')) {
       e.preventDefault();
-      const activeBtn = document.querySelector('.tab-btn.is-active');
+      const activeBtn = modal.querySelector('.tab-btn.is-active');
       const tab = activeBtn ? activeBtn.dataset.tab : 'formatted';
       let text = '';
-      if (tab === 'formatted') text = contentBox.innerText.trim();
+      if (tab === 'formatted') text = contentBox.textContent.trim();
       else if (tab === 'raw') text = rawBox.textContent.trim();
-      else if (tab === 'json' && jsonBox) text = jsonBox.textContent.trim();
-      if (!text || /^Loading/i.test(text)) return;
-      if (tab === 'json') {
-        if (
-          text.startsWith('Failed to load JSON') ||
-          text.startsWith('No Zotero identifiers available.') ||
-          text === 'Loading…'
-        ) {
-          return;
-        }
-      }  
+      else if (tab === 'json') text = jsonBox.textContent.trim();
+      // Don't copy loading or error states
+      if (!text || /^(Loading|Failed|No Zotero)/i.test(text)) return;
       copyTextToClipboard(text, e.target);
     }
 
     // Tabs
     if (e.target.matches('.tab-btn')) {
+      if (!modal.contains(e.target)) return;
       e.preventDefault();
       const tab = e.target.dataset.tab;
       setActiveTab(tab);
       // If JSON tab selected, lazily fetch CSL JSON from Zotero API
-      if (tab === 'json' && jsonBox && jsonBox.textContent.trim() === '') {
+      if (tab === 'json' && jsonBox.textContent.trim() === '') {
         const gid = modal.dataset.gid;
         const key = modal.dataset.key;
         if (gid && key) {
@@ -446,7 +514,32 @@
     if (e.target.classList.contains('citation-backdrop')) closeModal();
   });
   document.addEventListener('keydown', function (e) {
-    if (e.key === 'Escape') closeModal();
+    if (modal.hidden) return;
+    if (e.key === 'Escape') {
+      closeModal();
+      return;
+    }
+    if (e.key === 'Tab') {
+      const focusable = getFocusableElements();
+      if (focusable.length === 0) {
+        e.preventDefault();
+        return;
+      }
+      const first = focusable[0];
+      const last = focusable[focusable.length - 1];
+      const active = document.activeElement;
+      if (e.shiftKey) {
+        if (active === first || !modal.contains(active)) {
+          e.preventDefault();
+          last.focus();
+        }
+      } else {
+        if (active === last) {
+          e.preventDefault();
+          first.focus();
+        }
+      }
+    }
   });
 })();
 </script>
