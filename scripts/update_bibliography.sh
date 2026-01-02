@@ -246,6 +246,13 @@ fi
 showInfo 1 "Got $(jq '. | length' <<< "$items") items"
 
 # Piece-wise processing for debugging:
+items=$(jq 'include "./bib-fns";walk(if type == "object" then removeEmptyKeys end)' <<< $items)
+showInfo 8 "Remove all empty fields and the keys."
+if $debugFiles ; then
+  dfn=$(debugFileName "removeEmptyKeys" $dfn)
+  echo "$items" > "$dfn"
+fi
+
 items=$(jq 'include "./bib-fns";map(semiflatten)' <<< "$items")
 showInfo 8 "Elevate fields in .csljson and .data to the item level."
 if $debugFiles ; then
