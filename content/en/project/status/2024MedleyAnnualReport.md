@@ -1,6 +1,6 @@
 ---
 title: 2024 Medley Interlisp Annual Report
-weight: 1
+weight: 7
 type: docs
 aliases:
  - /news/2024medleyannualreport/

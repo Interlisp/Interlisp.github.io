@@ -14,6 +14,10 @@ aliases:
  - /medley/project/status/
 ---
 
+## 2025 Annual Report released
+
+We released the [2025 Medley Interlisp Annual Report](/project/status/2025medleyannualreport) which covers the 5th year of the Medley Interlisp project.
+
 ## Netstack.FM interviews Larry Masinter
 
 [Episode 17 of the Netstack.FM podcast](https://netstack.fm/#episode-17) (also [available on YouTube](https://www.youtube.com/watch?v=JZ7E0B68TRo)) featured an interview with Larry Masinter on Interlisp, the Xerox PARC environment, the history of the early web, and more.
