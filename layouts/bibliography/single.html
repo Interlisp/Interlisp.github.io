@@ -1,5 +1,5 @@
 {{- define "main" -}}
-<article class="bibliography-entry">
+<article class="bibliography-entry" id="{{ .File.BaseFileName }}">
   <h1>{{ .Title }}</h1>
 
 {{- $authors := .Params.authors -}}

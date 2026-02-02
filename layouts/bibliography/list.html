@@ -69,6 +69,7 @@
       {{- end -}}
 
       <li class="py-3 border-bottom pub-item"
+          id="{{ .File.BaseFileName }}"
           data-type="{{ $types }}"
           data-year="{{ $year }}"
           data-date="{{ if ne $fullDate "0001-01-01" }}{{ $fullDate }}{{ end }}">
