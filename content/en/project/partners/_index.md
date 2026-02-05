@@ -35,6 +35,13 @@ University of Alberta
 * Hosts Smalltalk Zoo
 * Offered to record history interview
 
+### [Interim Computer Museum](https://icm.museum)
+
+In 2025 we started a collaboration with the Interim Computer Museum for an Interlisp exhibition.
+
+* The museum set up a space to demonstrate the running Medley system and let visitor try it out
+* We developed ["Museum Mode"](status/2025medleyannualreport#community-outreach) for Medley Online, a facility to support guided demonstrations in museums or other settings
+
 ### Internet Archive
 
 We have no formal relationship with IA, but we would be happy to have one.
