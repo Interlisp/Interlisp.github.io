@@ -9,6 +9,11 @@
 #        edited navbar.html to not show the title in the navbar of the home page.
 title: "The Medley Interlisp Project"
 
+# Hugo by default converts page titles to title case (first letter or each word capitalized).
+# Since we have instances where this is incorrect, we disable it and rely on the content 
+# authors to use the correct case in the title field of the front matter.
+titleCaseStyle: none
+
 # relativeURLs: Enable to force all relative URLs to be relative to content root
 relativeURLs: false
 
