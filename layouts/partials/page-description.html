@@ -1,0 +1,35 @@
+{{- /* 
+  Custom page description for meta tags.
+  For bibliography pages, include the title in the description.
+  Falls back to Docsy's default behavior for other pages.
+*/ -}}
+{{- if eq .Type "bibliography" -}}
+  {{- /* Bibliography page: construct description with title */ -}}
+  {{- $title := .Title | plainify | htmlUnescape | replaceRE "\\s+" " " | strings.TrimSpace -}}
+  {{- $desc := "" -}}
+  {{- with .Params.abstract -}}
+    {{- $desc = . | plainify | htmlUnescape | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 -}}
+  {{- end -}}
+  {{- if $desc -}}
+    {{- printf "%s - %s" $title $desc -}}
+  {{- else -}}
+    {{- $authors := "" -}}
+    {{- with .Params.authors -}}
+      {{- if reflect.IsSlice . -}}
+        {{- $authors = delimit . ", " -}}
+      {{- else -}}
+        {{- $authors = . -}}
+      {{- end -}}
+    {{- end -}}
+    {{- if $authors -}}
+      {{- printf "%s by %s" $title $authors -}}
+    {{- else -}}
+      {{- $title -}}
+    {{- end -}}
+  {{- end -}}
+{{- else -}}
+  {{- /* Default Docsy behavior for other pages */ -}}
+  {{- with or .Description .Summary site.Params.description | plainify | htmlUnescape -}}
+    {{- trim . "\n\r\t " -}}
+  {{- end -}}
+{{- end -}}
