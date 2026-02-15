@@ -44,7 +44,7 @@ env:
   # ----------------------------------------------------------------------------
   # Specify the deployment environment:  staging or production
   HUGO_ENVIRONMENT: ${{ vars.HUGO_ENVIRONMENT || 'staging' }}
-  HUGO_VERSION: 0.144.2
+  HUGO_VERSION: 0.155.2
 
 jobs:
   # ----------------------------------------------------------------------------
