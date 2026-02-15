@@ -4,7 +4,7 @@
 
     "autoprefixer": "^10.4.8",
 
-    "hugo-extended": "0.147.5",
+    "hugo-extended": "^0.155.3",
 
     "postcss": "^8.4.16",
 
