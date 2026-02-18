@@ -194,7 +194,7 @@ ui:
   ul_show: 3
 
   # Disable dark mode menu
-  #showLightDarkModeMenu: false
+  showLightDarkModeMenu: true
 
 # Identify the custom css files
 custom_css:
