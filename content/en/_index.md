@@ -21,13 +21,13 @@ The Medley system was created at Xerox's Palo Alto Research Center (PARC). PARC 
 
 Interlisp had its beginnings as a DARPA sponsored Lisp environment for researchers. Interlisp was then ported and expanded into Interlisp-D, first released by Xerox and distributed commercially until its development tapered off in the 1990s. Now this classic software system is running again on your favorite operating system. The project is more than a trip down memory lane: our mission is to expand the scope of what Medley can do, fulfilling its promise of software tools limited only by the user's imagination. Dive in and explore the language, the tools, and the myriad applications, experiments, and playful creations that were crafted in and for Interlisp.
 
-The <a href="project/status/2025medleyannualreport/">2025 Medley Interlisp Annual Report</a> describes our recent activities.
+The [2025 Medley Interlisp Annual Report](project/status/2025medleyannualreport/) describes our recent activities.
 
-We encourage you to read the <a href="https://primer.interlisp.org">Medley primer</a> and try out the Interlisp environment. The primer, designed for modern users, assumes no prior knowledge of Lisp and will ease you into the system.
+We encourage you to read the [Medley primer](https://primer.interlisp.org) and try out the Interlisp environment. The primer, designed for modern users, assumes no prior knowledge of Lisp and will ease you into the system.
 
-Feeling confused by the jargon? Don't worry, we've got you covered. <a href="history/glossary/">Check out our glossary</a> to learn the terms associated with our project.
+Feeling confused by the jargon? Don't worry, we've got you covered. [Check out our glossary](history/glossary/) to learn the terms associated with our project.
 
-Most software in this project is licensed under the terms of the <a href="https://github.com/Interlisp/medley/blob/master/LICENSE">MIT license</a>.
+Most software in this project is licensed under the terms of the [MIT license](https://github.com/Interlisp/medley/blob/master/LICENSE).
 
   
 {{% /blocks/section %}}
