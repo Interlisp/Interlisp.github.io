@@ -41,7 +41,7 @@ Most software in this project is licensed under the terms of the [MIT license](h
  </p>
 
 <div class="mx-auto">
-   <a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "history" >}}">
+   <a class="btn btn-lg  btn-secondary mr-3 mb-4" href="{{< relref "history" >}}">
      History <i class="fas fa-arrow-alt-circle-right ml-2"></i>
    </a>
  </div>
@@ -54,7 +54,7 @@ Most software in this project is licensed under the terms of the [MIT license](h
   get involved.
 </p>
 <div class="mx-auto">
-	<a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "project" >}}">
+	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="{{< relref "project" >}}">
 		Get Involved <i class="fas fa-arrow-alt-circle-right ml-2"></i>
 	</a>
 </div>
@@ -66,7 +66,7 @@ How to run Medley "in the cloud" (on our servers), install
 it on popular platforms or build it for new ones.
 
 <div class="mx-auto">
-	<a class="btn btn-lg btn-danger mr-3 mb-4" href="{{< relref "software/install-and-run" >}}">
+	<a class="btn btn-lg btn-secondary mr-3 mb-4" href="{{< relref "software/install-and-run" >}}">
 		Running Medley <i class="fas fa-arrow-alt-circle-right ml-2"></i>
 	</a>
 </div>

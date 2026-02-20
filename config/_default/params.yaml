@@ -193,7 +193,10 @@ ui:
 
   ul_show: 3
 
-  # Disable dark mode menu
+  # Set the navbar to dark mode, This keeps the fonts white, which works better with the blue background.
+  navbar_theme: dark
+
+  # Set to false to disable dark mode menu
   showLightDarkModeMenu: true
 
 # Identify the custom css files
