@@ -1,11 +1,10 @@
 {{ $dir := string (.Get "gallery_dir") }}
 <ul class="image-gallery">
-{{ range (readDir (print "/assets" $dir)) }}
-{{- $image := resources.Get (printf "%s/%s" $dir .Name) -}}
-{{- $imagetitle := index (split .Name ".") 0 -}}
+{{ range .Page.Resources.Match (printf "%s/*.jpg" $dir) }}
+{{- $imagetitle := path.Base .Name -}}
 	<li>
-		<a href="{{ ($image.Fit "1600x1600 q50").Permalink }}" title="{{ $imagetitle }}" class="lightbox-image">
-			<img src="{{ ($image.Fill "200x200 q50").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
+		<a href="{{ (.Fit "1600x1600 q50").Permalink }}" title="{{ $imagetitle }}" class="lightbox-image">
+			<img src="{{ (.Fill "200x200 q50").Permalink }}" alt="{{ $imagetitle }}" title="{{ $imagetitle }}">
 			<span>{{ $imagetitle }}</span>
 		</a>
 	</li>
