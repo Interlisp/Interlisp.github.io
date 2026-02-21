@@ -198,8 +198,3 @@ ui:
 
   # Set to false to disable dark mode menu
   showLightDarkModeMenu: true
-
-# Identify the custom css files
-custom_css:
-  - "css/custom.css"
-
