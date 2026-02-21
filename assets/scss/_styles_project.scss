@@ -60,3 +60,17 @@
         border-radius: 11px;
     }
 }
+
+// Keep search visible on mobile, wrap to second row
+@media (max-width: 991.98px) {
+    .td-navbar-container {
+        flex-wrap: wrap;
+    }
+    // Override Bootstrap d-none with higher specificity
+    nav.td-navbar .td-navbar__search.d-none.d-lg-block {
+        display: block !important;
+        width: 100%;
+        order: 99;
+        padding: 0.5rem 0;
+    }
+}
