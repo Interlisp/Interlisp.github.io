@@ -49,8 +49,13 @@
     background-size: 26em 28em;
     
     .text-center {
-        h0, p {
+        h1, p {
             text-shadow: 2px 3px 0 #333;
+        }
+        
+        .display-1,
+        .display-3 {
+            font-weight: 700;
         }
     }
     
