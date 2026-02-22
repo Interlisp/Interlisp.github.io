@@ -3,7 +3,7 @@
   # replacements = "github.com/google/docsy -> ../../docsy"
   hugoVersion:
     extended: true
-    min: "0.73.0"
+    min: "0.155.2"
   imports:
     - path: "github.com/google/docsy"
       disable: false
