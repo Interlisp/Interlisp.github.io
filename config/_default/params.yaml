@@ -178,4 +178,4 @@ ui:
   navbar_theme: dark
 
   # Set to false to disable dark mode menu
-  showLightDarkModeMenu: true
+  showLightDarkModeMenu: false
