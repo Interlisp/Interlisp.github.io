@@ -5,3 +5,78 @@
 .td-page-meta {
     display: none;
 }
+
+// Hide site title in navbar on home page only
+.td-home .td-navbar .navbar-brand__name {
+    display: none;
+}
+
+// Image gallery shortcode styles
+.image-gallery {
+    overflow: auto;
+    margin-left: -1% !important;
+    
+    li {
+        float: left;
+        display: block;
+        margin: 0 0 1% 1%;
+        width: 19%;
+        
+        a {
+            text-align: center;
+            text-decoration: none !important;
+            color: #777;
+            
+            span {
+                display: block;
+                text-overflow: ellipsis;
+                overflow: hidden;
+                white-space: nowrap;
+                padding: 3px 0;
+            }
+            
+            img {
+                width: 100%;
+                display: block;
+            }
+        }
+    }
+}
+
+// Custom styles used by home page
+.hero-content-column {
+    background-position: -2px 0;
+    background-repeat: no-repeat;
+    background-size: 26em 28em;
+    
+    .text-center {
+        h1, p {
+            text-shadow: 2px 3px 0 #333;
+        }
+        
+        .display-1,
+        .display-3 {
+            font-weight: 700;
+        }
+    }
+    
+    .top-summary {
+        background: rgba(0, 0, 0, 0.3);
+        padding: 7px;
+        border-radius: 11px;
+    }
+}
+
+// Keep search visible on mobile, wrap to second row
+@media (max-width: 991.98px) {
+    .td-navbar-container {
+        flex-wrap: wrap;
+    }
+    // Override Bootstrap d-none with higher specificity
+    nav.td-navbar .td-navbar__search.d-none.d-lg-block {
+        display: block !important;
+        width: 100%;
+        order: 99;
+        padding: 0.5rem 0;
+    }
+}

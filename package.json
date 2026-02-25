@@ -4,6 +4,8 @@
 
     "autoprefixer": "^10.4.8",
 
+    "hugo-extended": "^0.155.3",
+
     "postcss": "^8.4.16",
 
     "postcss-cli": "^10.0.0"

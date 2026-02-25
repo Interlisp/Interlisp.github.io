@@ -1,0 +1,4 @@
+{{/* static-img: Image shortcode that works with subpath baseURLs */}}
+{{- $src := .Get "src" -}}
+{{- $baseURL := .Site.BaseURL -}}
+<img src="{{ $baseURL }}{{ $src }}"{{ with .Get "width" }} width="{{ . }}"{{ end }}{{ with .Get "height" }} height="{{ . }}"{{ end }}{{ with .Get "alt" }} alt="{{ . }}"{{ end }}{{ with .Get "class" }} class="{{ . }}"{{ end }}>

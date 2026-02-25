@@ -1,0 +1,6 @@
+{{/* Modern favicon setup using SVG + fallbacks */}}
+{{ $baseURL := .Site.BaseURL -}}
+<link rel="icon" href="{{ $baseURL }}favicons/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="{{ $baseURL }}favicons/favicon-96x96.png" type="image/png" sizes="96x96">
+<link rel="shortcut icon" href="{{ $baseURL }}favicons/favicon.ico">
+<link rel="apple-touch-icon" href="{{ $baseURL }}favicons/apple-touch-icon.png" sizes="180x180">

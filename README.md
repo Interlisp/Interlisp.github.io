@@ -1,40 +1,108 @@
 # Interlisp.org Home Page
 
+[![GitHub Pages Deploy](https://github.com/Interlisp/Interlisp.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/Interlisp/Interlisp.github.io/actions/workflows/gh-pages.yml)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+[![Hugo](https://img.shields.io/badge/Hugo-0.155.3-ff4088?logo=hugo)](https://gohugo.io/)
+[![Docsy](https://img.shields.io/badge/Theme-Docsy-blue)](https://www.docsy.dev/)
+
 The documentation repository for <https://interlisp.org>, the restoration
 project for the Interlisp ecosystem.
 
 The collection of pages provides information on the restoration effort, Medley,
 Interlisp and how to access and use the restored Medley system.
 
-## Maintaining the website
+## Table of Contents
 
-The website is build using the [Hugo](https://gohugo.io/) static
-site generator and the [Docsy](https://www.docsy.dev/) technical documentation
-theme. Both of these sites contain a wealth of information on how to setup and
-maintain a Hugo based website.
+- [Getting Started](#getting-started)
+  - [Quick Start](#quick-start)
+  - [Prerequisites](#prerequisites)
+- [Content Authoring](#content-authoring)
+  - [Editing Existing Pages](#editing-existing-pages)
+  - [Adding New Pages](#adding-new-pages)
+  - [Adding or Updating the Comments Page](#adding-or-updating-the-comments-page)
+  - [Bibliography Data](#bibliography-data)
+- [Local Development](#local-development)
+  - [Installing Hugo](#installing-hugo)
+  - [Running the Development Server](#running-the-development-server)
+- [CI/CD and Deployment](#cicd-and-deployment)
+  - [gh-pages GitHub Workflow](#gh-pages-github-workflow)
+  - [Environment Variables](#environment-variables)
+  - [Deploying a Staging Site](#deploying-a-staging-site)
+- [Reference](#reference)
+  - [Repository Layout](#repository-layout)
+  - [Dependencies](#dependencies)
+  - [Search Configuration](#search-configuration)
+- [Contact and Support](#contact-and-support)
+- [License](#license)
 
-The process can be summarized as follows:
+---
+
+## Getting Started
+
+The website is built using the [Hugo](https://gohugo.io/) static site generator and the [Docsy](https://www.docsy.dev/) technical documentation theme. Both sites contain extensive documentation on setup and maintenance.
+
+### Quick Start
+
+For experienced users who want to get started quickly:
+
+```bash
+# Clone the repository
+git clone https://github.com/Interlisp/Interlisp.github.io.git
+cd Interlisp.github.io
+
+# Fetch bibliography data (required for build)
+./scripts/update_bibliography.sh
+
+# Start local development server
+hugo server -e development
+```
+
+Then open <http://localhost:1313> in your browser.
+
+### Prerequisites
+
+Before working with this repository, ensure you have the following installed:
+
+| Tool | Version | Purpose |
+|------|---------|--------|
+| [Hugo Extended](https://gohugo.io/installation/) | v0.145.0+ | Static site generator |
+| [Go](https://go.dev/doc/install) | 1.24+ | Required for Hugo modules |
+| [Node.js & npm](https://nodejs.org/) | Latest LTS | PostCSS and autoprefixer |
+| [jq](https://jqlang.github.io/jq/) | Latest | Bibliography JSON processing |
+| curl, wget | System default | Script downloads |
+
+**Verify installations:**
+
+```bash
+hugo version      # Should show "extended" and v0.145.0+
+go version        # Should show 1.24+
+node --version    # Should show v18+ or later
+jq --version      # Any recent version
+```
+
+---
+
+## Content Authoring
+
+This section covers how to add and edit content on the Interlisp.org website.
+
+**General workflow:**
 
 1. Clone the [Interlisp.github.io](https://github.com/Interlisp/Interlisp.github.io) repository
-2. Edit or Add new pages
-3. Validate the changes running Hugo locally
-4. Add, Commit and Push the updates back to the Interlisp.github.io repository
-5. Once the changes are merged into the `main` branch, `github actions` will rebuild and update the website
+2. Edit or add new pages
+3. Validate the changes by running Hugo locally
+4. Add, commit and push the updates back to the repository
+5. Once merged into `main`, GitHub Actions will rebuild and update the website
 
 ### Editing Existing Pages
 
-Content is located in the `content/en` directory.  At present, English is the only language
-supported by the web site.  If in the future, that changes, a new subdirectory can easily
-be added to the `content` directory`.
+Content is located in the `content/en` directory. At present, English is the only language supported. If that changes in the future, additional language subdirectories can be added to the `content` directory.
 
-Existing pages are written using [Markdown](https://www.markdownguide.org/tools/hugo/) and
-can easily be edited.  Updates to pages can be submitted as a pull request and upon approval
-will be merged in to the `main` branch to be deployed to the website.
+Existing pages are written using [Markdown](https://www.markdownguide.org/tools/hugo/) and can easily be edited. Updates can be submitted as a pull request and, upon approval, will be merged into the `main` branch and deployed to the website.
 
 ### Adding New Pages
 
-Each page must have a preamble section that provides metadata for the `Hugo` engine.  The format
-is as follows:
+Each page must have a preamble section that provides metadata for the Hugo engine:
 
 ```markdown
 ---
@@ -44,168 +112,55 @@ type: docs
 ---
 ```
 
-- Title: The displayed title for the page.
-- Weight:  Specifies the positioning of the page.  Lower number pages are higher in the page order.  `Hugo` allows for multiple pages to be assigned the same weight.  
-- Type: Identifies the type of the page.  Currently all pages are of type `docs`
+| Field | Description |
+|-------|-------------|
+| `title` | The displayed title for the page |
+| `weight` | Positioning of the page (lower numbers appear first). Multiple pages can share the same weight. |
+| `type` | Page type. Currently all pages are of type `docs` |
 
-The content to display on the page follows the preamble.  Content is written using [Markdown](https://www.markdownguide.org/tools/hugo/).  
+The content follows the preamble and is written using [Markdown](https://www.markdownguide.org/tools/hugo/).
 
-Once authored the updated page can be submitted as a pull request and upon approval will be integrated
-into the `main` branch and deployed to the website.
+### Adding or Updating the Comments Page
 
-#### Adding or Updating the comments page
+The *comments* page ("What people are saying") collects quotes and screenshots that discuss Medley Interlisp. We preserve Twitter and Mastodon posts as images along with links to the post to protect against content being deleted from social platforms.
 
-We've moved from 'Twitter' to a more general 'What people are saying' with quotes from social media.
-
-For Twitter, the *comments* page uses images of Tweets of interest.  While `Hugo` has implemented a shortcode that will load the actual tweet, it
-fails when the tweet no longer exists.  We believe there is value in keeping a record of conversations about Medley Interlisp and
-to protect against losing portions of it, we have developed the practice of capturing an image of the tweet, using that on our page
-and linking to the actual tweet.  
-
-Tweets that are no longer accessible will have their links removed but the content will be preserved.  
-
-The structure for new twitter entries on the *comments* page, the `_index.md` file in the `comments` directory is
+To add a new entry to the comments page (`content/en/project/comments/_index.md`):
 
 ```markdown
-{{< imgproc PaulFord_20211214 Resize "550x803">}} <a href="https://twitter.com/ftrain/status/1470968024756895744?ref_src=twsrc">Link to tweet</a> {{< /imgproc >}}
+{{< imgproc AuthorName_YYYYMMDD Resize "550x803">}} <a href="https://example.com/post-url">Link to post</a> {{< /imgproc >}}
 ```
 
-We use the `imgproc` shortcode to render the image and size it.  The label for the image is a bit of html to link to the original tweet.  Lastly, the images
-are titled with the author and the date of the tweet.  Ideally this will allow for easy identification of `jpeg` files.  The files are stored in the same
-directory as the `_index.md` file, so everything needed for the page is packaged together.
+- Use the `imgproc` shortcode to render and size the image
+- Name images with the author and date (e.g., `PaulFord_20211214.jpg`)
+- Store image files in the same directory as `_index.md`
+- Posts that are no longer accessible will have their links removed but the content will be preserved
 
-### Bibliography.json
+### Bibliography Data
 
-The web page maintains an extensive bibliography.  The information displayed on
-the webpage is a snapshot of the data stored in our online [Zotero Group Library](https://www.zotero.org/groups/2914042/interlisp).
+The website maintains an extensive bibliography. The information displayed on the webpage is a snapshot of the data stored in our online [Zotero Group Library](https://www.zotero.org/groups/2914042/interlisp). The Zotero library is our source of truth.
 
-The webpage data is updated daily to help ensure it is an accurate
-reflection of the bibliographic material related to Medley and Interlisp.
+A GitHub Action runs daily to check if the Zotero library has changed. If so, a [script](https://github.com/Interlisp/Interlisp.github.io/blob/main/scripts/update_bibliography.sh) downloads and rebuilds the bibliography pages.
 
-### gh-pages GitHub Workflow
+To fetch the bibliography locally:
 
-Building the website is driven by a GitHub workflow.  
-
-The workflow is triggered by one of two events, a `push` to main, representing updates
-to the Interlisp.org website or a scheduled execution of the workflow.  The
-workflow is scheduled to run on a regular basis to ensure the bibliography remains
-consistent with the online Zotero catalog.
-
-The GitHub Action workflow can also be initiated from the Action panel within
-the Interlisp.github.io repository.  This option allows manual execution when
-necessary.
-
-The workflow consists of three jobs.  The first job, `check`, uses Zotero's REST
-interface to query for the latest version of the group bibliography.  A `GET` call
-is made to `https://api.zotero.org/groups/2914042/items`.  It
-returns a collection of metadata and information describing the current state of
-items within the catalog.  We are interested in a specific header, `Last-Modified-Version`.
-The value returned with this header is incremented every time the Zotero Interlisp
-catalog is updated.  We use the value returned as a cache-key for the bibliography.
-If the cache-key matches one in the current GitHub Action cache we use the saved
-bibliography information and save the overhead of building it.
-
-The second job, `build`, starts by determining if a build and deploy need to occur.
-If the workflow was initiated by a `push` a deploy will always be done.  However,
-if the workflow was started by a scheduled execution and the Zotero bibliography
-cache is consistent with the online Zotero catalog, the build and deploy are skipped.
-
-A build starts by checking out the `Interlisp.github.io` repository.  Then,
-if the Zotereo cache is valid, its contents are copied into the `data` file within the
-repository directory structure.  If the cache is invalid, the `update_bibliography.sh`
-shell script runs and downloads a new copy of the bibliography as a `json` file.
-Once downloaded the script does some additional processing to complete the
-formatting of the file.
-
-After this work is completed, Hugo is setup and run to build the website. We use
-Hugo extended to build our site. The version of Hugo currently being used is
-defined by the environment variable, `HUGO_VERSION`.
-
-We run Hugo with two flags:
-
-- `-e $HUGO_ENVIRONMENT` to specify whether we are building a production or staging site.  If the website is being build to deploy to Interlisp.org,it should be built with `HUGO_ENVIRONMENT` set to production.  Deployment to any other site should set the environment flag to staging.
-- `--cleanDestinationDir` clears the destination directory, `./public` on each build.  This will ensure we do not have any unneeded artifacts in our deployment.
-
-The last part of the build activity is to save the created artifact, the information
-in the `./public` directory.  We use the GitHub composition action `upload-pages-artifact`
-for this.  It packages the contents of the directory and stores it in the appropriate
-format for deployment to GitHub pages.
-
-The last job in the tool chain is `deploy`.  This job simply takes the output
-of the build step and formally deploys it to GitHub pages using the GitHub `deploy-pages`
-action.
-
-### Deploying a Staging Site
-
-Successfully deploying a Staging Site requires you to configure your GitHub
-repository to enable GitHub Pages.  The following steps will accomplish this task:
-
-1. Clone the Interlisp.github.io repository into your GitHub site
-2. In GitHub go to the cloned repository, in my case https://github.com/stumbo/InterlispDraft.github.io and select Settings
-3. Under Settings, find Pages and select it
-4. Under **Build and deployment** set Source to Deploy *GitHub Actions*
-
-Once the repository is cloned and GitHub Pages has been setup, you can deploy a
-staging site to validate changes prior to creating a Pull Request to merge your
-changes back into the main site.
-
-When creating a staging site we want to do a couple things to ensure we do not
-interfere with the production site, first we want to disable Google Analytics
-and secondly we want to ensure the site is not crawled and indexed.
-
-#### Setup Your Repository
-
-A best practice for the updating your clone of the repository is to create a branch
-and make the following required changes on the branch you created.
-
-The appropriate settings for this are all enabled by setting the `HUGO_ENVIRONMENT`
-variable in `.github/workflows/gh-pages.yaml` to *staging*.
-
-You also need to set `baseURL` to match the GitHub site you are deploying to
-in the `config/staging/hugo.yaml` file.  The file currently looks like:
-
-```yaml
-baseURL: https://stumbo.github.io/InterlispDraft.github.io/
-
-languageCode: en-us
-
-# title
-#  Insert Staging Environment onto every page to make clear
-#  this is not the production site
-title: 'Staging Environment'
+```bash
+cd scripts
+./update_bibliography.sh
 ```
 
-Make sure the `baseURL` reflects the complete path of your repository.  Failure
-to do this will either cause the deployment to fail or URLs within your built
-site may be incorrectly set.  Resulting in 404s or expected resources not found.
+This script retrieves the bibliography from Zotero, formats it appropriately, and places the individual JSON files in `static/data/bibItems/`.
 
-With these changes the cloned repository is ready to be deployed to a staging site.
+---
 
-Commit the changes you made and push the new branch to your cloned repository.
-At this point, create a Pull Request to merge the changes you made into your
-repository's main branch.  Complete the operation by merging the pull request.
+## Local Development
 
-Once the merge occurs, the GitHub Actions should fire off and your site will be
-built and deployed.
+Local testing of updates requires running Hugo locally.
 
-Once you have successfully completed this operation and your staging site is
-deployed and operational you can experiment with adding new content or
-functionality to the Interlisp site.
+### Installing Hugo
 
-#### Develop a Feature
+Instructions for installing Hugo on various operating systems are at: [Installing Hugo](https://gohugo.io/getting-started/installing). **Interlisp uses the extended version of Hugo.**
 
-To develop new pages or functionality, create a new branch for your work.  once
-you have completed development and testing on your staging site, you can create
-a PR to merge the content into the Interlisp site.
-
-### Running Hugo and Docsy Locally
-
-Local testing of updates to the Interlisp.org website requires running `Hugo` locally.
-
-To do this `Hugo` needs to be installed. Instructions for installing `Hugo` on a variety of operating systems can be
-found at:  [Installing Hugo](https://gohugo.io/getting-started/installing).  Interlisp uses the extended version of Hugo.
-
-For Ubuntu the following command works:
+For Ubuntu:
 
 ```bash
 curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
@@ -215,132 +170,276 @@ curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
  | cut -d '"' -f 4 \
  | wget -i -
 
- sudo dpkg -i hugo_extended*linux-amd64.deb
+sudo dpkg -i hugo_extended*linux-amd64.deb
 ```
 
-The command can be adjusted for different architectures.
-
-You can verify that `Hugo` is installed and working by running the following command:
+Verify installation:
 
 ```bash
 hugo version
+# Expected output (version should be v0.145.0 or later):
+hugo v0.155.2-d8c0dfccf72ab43db2b2bca1483a61c8660021d9+extended+withdeploy linux/amd64 BuildDate=2026-02-02T10:04:51Z VendorInfo=gohugoio
 ```
 
-The response will be something along the lines of:
+### Running the Development Server
+
+1. Ensure bibliography data is available (see [Bibliography Data](#bibliography-data))
+
+2. Start the Hugo development server:
 
 ```bash
-hugo v0.126.1-3d40aba512931031921463dafc172c0d124437b8+extended linux/amd64 BuildDate=2024-05-15T10:42:34Z VendorInfo=gohugoio
+ hugo server --cleanDestinationDir  --disableFastRender --renderToMemory
 ```
 
-Be sure your version is at least `v0.122.0`. Older versions of `hugo` may fail to load correctly.
-
-Secondly, there is one data file that is required to successfully build and run the `Interlisp.org` website locally, `static/data/bibliography.json`.
-The production version of the website uses a GitHub Action to retrieve this file.
-We can mimic that functionality by going to the `scripts` directory in your clone of the `Intelisp.github.io` repository.
-Once in the directory, run the following command:
+Hugo will automatically download the Docsy theme and its dependencies as Hugo modules. Expected output:
 
 ```bash
-./update_bibliography.sh
-```
+Watching for changes in /home/wstumbo/development/Interlisp.github.io/archetypes, /home/wstumbo/development/Interlisp.github.io/assets/{css,icons,js,scss}, /home/wstumbo/development/Interlisp.github.io/content/en/{history,project,software}, /home/wstumbo/development/Interlisp.github.io/layouts/{_default,_partials,_shortcodes,bibliography,redirect}, /home/wstumbo/development/Interlisp.github.io/package.json, /home/wstumbo/development/Interlisp.github.io/static/{Resources,data,docs,documentation,favicons}
+Watching for config changes in /home/wstumbo/development/Interlisp.github.io/config/_default, /home/wstumbo/development/Interlisp.github.io/config/development, /home/wstumbo/development/Interlisp.github.io/go.mod
+Start building sites … 
+hugo v0.155.2-d8c0dfccf72ab43db2b2bca1483a61c8660021d9+extended+withdeploy linux/amd64 BuildDate=2026-02-02T10:04:51Z VendorInfo=gohugoio
 
-This script will retrieve the bibliography from our Zotero library, format it appropriately and place the created file
-in the appropriate location, the `static/data` directory.
+WARN  WARNING: 298 sidebar entries have been truncated. To avoid this, increase `params.ui.sidebar_menu_truncate` to at least 398 (from 100) in your config file. Section: /history/bibliography
 
-This completes all the setup required for `Hugo`.
+                  │  EN  
+──────────────────┼──────
+ Pages            │ 1165 
+ Paginator pages  │    0 
+ Non-page files   │   66 
+ Static files     │   79 
+ Processed images │   50 
+ Aliases          │   51 
+ Cleaned          │    0 
 
-To run `Hugo` go to the root directory of your repository clone and run the following command:
-
-```bash
-hugo server --logLevel debug -v --renderToMemory -e development
-```
-
-`Hugo` will start and automatically download the Docsy theme and its dependencies as hugo modules.  You should see output along the lines of:
-
-```bash
-Watching for changes in /home/wstumbo/development/stumbo.github.io/{archetypes,content,layouts,package.json,static}
-Watching for config changes in /home/wstumbo/development/stumbo.github.io/config/_default, /home/wstumbo/development/stumbo.github.io/config/development, /home/wstumbo/development/stumbo.github.io/go.mod
-Start building sites …
-hugo v0.126.1-3d40aba512931031921463dafc172c0d124437b8+extended linux/amd64 BuildDate=2024-05-15T10:42:34Z VendorInfo=gohugoio
-
-
-                   | EN
--------------------+-----
-  Pages            | 52
-  Paginator pages  |  0
-  Non-page files   | 46
-  Static files     | 97
-  Processed images | 47
-  Aliases          | 66
-  Cleaned          |  0
-
-Built in 3230 ms
+Built in 1169 ms
 Environment: "development"
 Serving pages from memory
-Running in Fast Render Mode. For full rebuilds on change: hugo server --disableFastRender
-Web Server is available at //localhost:1313/ (bind address 127.0.0.1)
+Web Server is available at //localhost:1313/ (bind address 127.0.0.1) 
 Press Ctrl+C to stop
 ```
 
-`Hugo` is now running.  You can go to [http://localhost:1313](http://localhost:1313) to review the locally running version of the website.  
-For most changes you should be able to review the text and layout to validate the effects are as expected.
+3. Open <http://localhost:1313> to review the locally running website
 
-You can get additional debugging information by adding the following two options
-to your `hugo` command `--logLevel debug -v`.  
+4. For additional debugging information, use `--logLevel debug`
 
-Once you have validated your changes, create a pull request to merge your changes into the `main` branch.
+Once validated, create a pull request to merge your changes into the `main` branch.
 
-## Layout of the `Interlisp.github.io` repository
+---
 
-The layout of the `Interlisp.github.io` repository follows the standard [`Hugo` directory structure](https://gohugo.io/getting-started/directory-structure/).  Directories
-that have components specific to `Interlisp.github.io` are as follows:
+## CI/CD and Deployment
 
-- `.github\workflows`  - home to the github actions `gh-pages.yml` that specifies how to build and release the Interlisp home page
-- `assets` - customization of the `Docsy` theme for Interlisp.
-  - `icons` - holds and `svg` version of `Interlisp-D' logo.  This logo is used in the page header
-  - `scss` - contains some custom `scss`
-    - `_styles_project.scss` sets the size of the `svg` file in the header and disables the edit page functionality
-    - `main.scss` - links in the `scss` updates
-- `config` - contains all the site specific configuration information
-  - `_default` - configuration information shared across different supported environments [development, staging, production]
-  - `development` - configuration information specific to the development environment
-  - `production` - configuration information specific to the production environment
-  - `staging` - configuration information specific to the staging environment
-- `content\en` - home of all the content for the web page.  We currently only support the English language.  `Hugo` supports multiple languages and we have not disabled that feature. However there are no plans at present to transcribe the web pages and documentation into another language.
-- `layout`
-  - `shortcodes` - a simple snippet inside a content file that Hugo will render using a predefined template
-    - `bibTable.html` - a shortcode used to format the [bibliography table](https://interlisp.org/bibliography/)
-- `static` - the data in this folder is copied directly into the folder structure of the home page 
-  - `css` - custom css files 
-  - `data`  - holds `bibliography.json` used to create the [bibliography table](https://interlisp.org/bibliography/)
-  - `documentation` - contains the pdf files referenced in the document section of the home page
-  - `favicons` - contains `favicon.png` a small icon that browsers can use when referencing the website
-  - `Resources` - contains the current `Interlisp-D` logo, used on the home page, and another instance of `favicon.png`
-  - `CNAME` - a one line text file that provides support for using a [custom domain](https://gohugo.io/hosting-and-deployment/hosting-on-github/#use-a-custom-domain)
+This section covers automated builds and deployment processes.
 
-## Search
+### gh-pages GitHub Workflow
 
-`Interlisp.org` uses Google Custom Search to provide search results encompassing
-the `Interlisp.org` website, our GitHub sites used for continued development of
-Medley Interlisp, and the discussions groups associated with both the Medley project and
-Interlisp.
+Building the website is driven by a GitHub workflow (`.github/workflows/gh-pages.yml`).
 
-The search engine is identified in the `config/params.yaml` file:
+**Triggers:**
+
+- `push` to main — updates to the Interlisp.org website
+- Scheduled execution — ensures the bibliography remains consistent with Zotero
+- Manual execution — via the Actions panel in GitHub
+
+**Workflow Jobs:**
+
+The workflow consists of three jobs:
+
+**1. `check` — Verify Bibliography is Current**
+
+Uses Zotero's REST interface to query for the latest version of the group bibliography. A `GET` call is made to:
+
+```
+https://api.zotero.org/groups/2914042/items
+```
+
+This returns metadata including the `Last-Modified-Version` header, which is incremented every time the Zotero Interlisp catalog is updated. This value is used as a cache key for the bibliography. If the cache key matches one in the current GitHub Action cache, we reuse the saved bibliography and skip rebuilding.
+
+**2. `build` — Build the Website**
+
+- Determines if a build is needed:
+  - On `push`: Always builds and deploys
+  - On schedule: Skips build if Zotero cache is current
+- Checks out the repository
+- If the Zotero cache is valid, copies its contents into the `content/en/history/bibliography` directory
+- If the cache is invalid, runs `update_bibliography.sh` to download and process a new copy
+- Runs Hugo Extended (version defined by `HUGO_VERSION` environment variable) with flags:
+  - `-e $HUGO_ENVIRONMENT` — specifies production or staging build
+  - `--cleanDestinationDir` — clears `./public` directory to avoid stale artifacts
+- Uses the GitHub `upload-pages-artifact` action to package and store the `./public` directory contents for deployment
+
+**3. `deploy` — Deploy to GitHub Pages**
+
+Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action.
+
+### Environment Variables
+
+The following environment variables control the build and deployment process:
+
+| Variable | Description | Values | Default |
+|----------|-------------|--------|---------|
+| `HUGO_ENVIRONMENT` | Specifies the build environment | `development`, `staging`, `production` | `staging` |
+| `HUGO_VERSION` | Hugo version used in CI/CD | Semantic version (e.g., `0.155.3`) | Set in workflow |
+
+**Environment-specific behavior:**
+
+| Environment | Analytics | Crawlers | Use Case |
+|-------------|-----------|----------|----------|
+| `production` | Enabled | Allowed | Live interlisp.org site |
+| `staging` | Disabled | Blocked | PR previews and testing |
+| `development` | Disabled | N/A | Local development |
+
+These variables are set in `.github/workflows/gh-pages.yml` and can be overridden via GitHub repository variables.
+
+### Deploying a Staging Site
+
+To deploy a personal staging site for testing:
+
+**1. Initial Setup:**
+
+1. Fork/clone the Interlisp.github.io repository to your GitHub account
+2. In your repository, go to **Settings → Pages**
+3. Under **Build and deployment**, set Source to **Deploy from GitHub Actions**
+
+**2. Configure Your Fork:**
+
+Create a branch and make these required changes:
+
+1. Update `baseURL` in `config/staging/hugo.yaml` to match your repository:
 
 ```yaml
-# Google custom seach engine configuration
-#  gcs_engine_id:  search engine 
+baseURL: https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
+
+languageCode: en-us
+title: 'Staging Environment'
+```
+
+> **Important:** The `baseURL` must reflect the complete path of your repository. Incorrect URLs will cause deployment failures or broken links.
+
+**3. Deploy:**
+
+1. Commit and push your branch
+2. Create a Pull Request to merge into your repository's main branch
+3. Merge the PR — GitHub Actions will build and deploy your staging site
+
+**4. Develop Features:**
+
+Create feature branches for new work. Once tested on your staging site, create a PR to merge content into the main Interlisp repository.
+
+---
+
+## Reference
+
+### Repository Layout
+
+The repository follows the standard [Hugo directory structure](https://gohugo.io/getting-started/directory-structure/):
+
+| Directory | Purpose |
+|-----------|---------|
+| `.github/workflows` | GitHub Actions workflow (`gh-pages.yml`) |
+| `assets/` | Custom global resources (CSS, JS, icons, SCSS) |
+| `config/` | Site configuration for different environments |
+| `content/en/` | All website content (English only) |
+| `layouts/` | Hugo layout templates and overrides |
+| `static/` | Files copied directly to the built site |
+
+**Key subdirectories:**
+
+<details>
+<summary><strong>assets/</strong> — Custom resources</summary>
+
+- `css/` — Third-party CSS files
+- `icons/` — SVG Interlisp-D logo (`logo.svg`)
+- `js/` — Custom and third-party JavaScript
+- `scss/` — Custom SCSS files
+  - `_styles_project.scss` — Project-specific styles
+  - `_variables_project.scss` — Docsy theme variable overrides
+
+</details>
+
+<details>
+<summary><strong>config/</strong> — Environment configurations</summary>
+
+- `_default/` — Shared settings across all environments
+- `development/` — Local development settings
+- `staging/` — Staging site settings
+- `production/` — Production site settings
+
+</details>
+
+<details>
+<summary><strong>layouts/</strong> — Template overrides</summary>
+
+- `_partials/` — Partial templates (favicons, footer, head, meta descriptions)
+- `_shortcodes/` — Hugo shortcodes (cover block, image gallery)
+- `bibliography/` — Bibliography section templates
+- `redirect/` — Redirect page template
+
+</details>
+
+<details>
+<summary><strong>static/</strong> — Static files</summary>
+
+- `data/bibItems/` — Bibliography JSON files (generated, not in Git)
+- `documentation/` — PDF files referenced in the website
+- `favicons/` — Favicon files (SVG, ICO, PNG)
+- `Resources/` — Site resources including watermark logo
+- `CNAME` — Custom domain configuration
+
+</details>
+
+### Dependencies
+
+**Hugo Modules (go.mod):**
+
+| Module | Version | Purpose |
+|--------|---------|---------|
+| [google/docsy](https://github.com/google/docsy) | v0.14.3 | Technical documentation theme |
+| docsy/dependencies | v0.7.2 | Docsy's required dependencies |
+
+Hugo modules are automatically downloaded when you run `hugo server` or `hugo build`.
+
+**npm Packages (package.json):**
+
+| Package | Purpose |
+|---------|---------|
+| autoprefixer | Adds vendor prefixes to CSS for browser compatibility |
+| hugo-extended | Hugo binary for npm-based workflows |
+| postcss / postcss-cli | CSS transformation pipeline |
+| jquery | JavaScript library used by some Docsy components |
+| tabpanel | Accessible tab panel widget |
+
+Install npm dependencies with `npm install` (optional for local development).
+
+### Search Configuration
+
+The site uses Google Custom Search to provide search results encompassing:
+- The Interlisp.org website
+- Interlisp GitHub repositories
+- Discussion groups for Medley and Interlisp
+
+The search engine is configured in `config/params.yaml`:
+
+```yaml
 gcs_engine_id: 33ef4cbe0703b4f3ax
 ```
 
-Search results are returned and presented using the page template, `search.md`.
-The page template currently contains only a `yaml` header specifying the
-layout as being `search`.
+Search results are rendered using the `search.html` layout template.
 
-### Updating Search
+**Updating Search:**
 
-Modifying the websites that are searched requires updating the Google Custom
-Search engine settings.  This is done via logging into Google's Programmable Search
-Engine Dashboard at:  [https://programmablesearchengine.google.com](https://programmablesearchengine.google.com)
+Modifying search scope requires updating the Google Custom Search engine settings via the [Programmable Search Engine Dashboard](https://programmablesearchengine.google.com). Access is restricted. To suggest changes, open an issue: [Search Engine Issue](https://github.com/interlisp/medley/issues/new?template=bug_report.md&title=Search_Engine_Issue)
 
-Access to the Programmable Search Engine Dashboard is restricted.  To suggest updates or changes
-open an issue:  [Search Engine Issue](https://github.com/interlisp/medley/issues/new?template=bug_report.md&title=Search_Engine_Issue)
+---
+
+## Contact and Support
+
+- **Report Issues**: [GitHub Issues](https://github.com/Interlisp/medley/issues/new?template=documentation.md&projects=Interlisp/medley/5) — Report bugs or request features for the website
+- **Medley Interlisp Issues**: [Medley Repository](https://github.com/Interlisp/medley/issues) — For issues related to Medley itself
+- **Discussions**: [Interlisp Discussions](https://github.com/orgs/Interlisp/discussions) — Community discussions and questions
+- **Mailing List**: [interlisp@googlegroups.com](https://groups.google.com/g/interlisp) — General Interlisp community discussion
+
+## License
+
+This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
+
+Copyright (c) 2026 Interlisp.org

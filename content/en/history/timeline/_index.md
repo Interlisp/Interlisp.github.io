@@ -135,7 +135,7 @@ In 1979, PARC began the design of the Dorado, a high performance personal workst
 
 - AAAI launch of 1108 (Dandelion) and 1132 (Dorado)
 
-{{< image-gallery gallery_dir="/photos/AAAI82" >}}
+{{< image-gallery gallery_dir="photos/AAAI82" >}}
 
 ### 1983
 

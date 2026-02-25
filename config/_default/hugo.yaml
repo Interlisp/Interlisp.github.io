@@ -26,7 +26,7 @@ canonifyURLs: false
 enableRobotsTXT: false
 
 # assetDir:  Location where Hugo looks for assets
-assetDir: static
+#assetDir: static
 
 # Enable .GitInfo object for each page.  This will give values to .Lastmod etc.
 enableGitInfo: true
