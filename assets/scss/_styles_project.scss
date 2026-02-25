@@ -6,7 +6,8 @@
     display: none;
 }
 
-.td-navbar .navbar-brand__name {
+// Hide site title in navbar on home page only
+.td-home .td-navbar .navbar-brand__name {
     display: none;
 }
 
