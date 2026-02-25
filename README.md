@@ -178,7 +178,7 @@ Verify installation:
 ```bash
 hugo version
 # Expected output (version should be v0.145.0 or later):
-# hugo v0.126.1-3d40aba512931031921463dafc172c0d124437b8+extended linux/amd64 ...
+hugo v0.155.2-d8c0dfccf72ab43db2b2bca1483a61c8660021d9+extended+withdeploy linux/amd64 BuildDate=2026-02-02T10:04:51Z VendorInfo=gohugoio
 ```
 
 ### Running the Development Server
@@ -244,7 +244,7 @@ Building the website is driven by a GitHub workflow (`.github/workflows/gh-pages
 
 The workflow consists of three jobs:
 
-**1. `check` — Verify Bibliography Currency**
+**1. `check` — Verify Bibliography is Current**
 
 Uses Zotero's REST interface to query for the latest version of the group bibliography. A `GET` call is made to:
 
@@ -260,7 +260,7 @@ This returns metadata including the `Last-Modified-Version` header, which is inc
   - On `push`: Always builds and deploys
   - On schedule: Skips build if Zotero cache is current
 - Checks out the repository
-- If the Zotero cache is valid, copies its contents into the `data` directory
+- If the Zotero cache is valid, copies its contents into the `content/en/history/bibliography` directory
 - If the cache is invalid, runs `update_bibliography.sh` to download and process a new copy
 - Runs Hugo Extended (version defined by `HUGO_VERSION` environment variable) with flags:
   - `-e $HUGO_ENVIRONMENT` — specifies production or staging build
@@ -304,9 +304,7 @@ To deploy a personal staging site for testing:
 
 Create a branch and make these required changes:
 
-1. Set `HUGO_ENVIRONMENT` to `staging` in `.github/workflows/gh-pages.yaml`
-
-2. Update `baseURL` in `config/staging/hugo.yaml` to match your repository:
+1. Update `baseURL` in `config/staging/hugo.yaml` to match your repository:
 
 ```yaml
 baseURL: https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
@@ -435,7 +433,7 @@ Modifying search scope requires updating the Google Custom Search engine setting
 
 ## Contact and Support
 
-- **Report Issues**: [GitHub Issues](https://github.com/Interlisp/Interlisp.github.io/issues) — Report bugs or request features for the website
+- **Report Issues**: [GitHub Issues](https://github.com/Interlisp/medley/issues/new?template=documentation.md&projects=Interlisp/medley/5) — Report bugs or request features for the website
 - **Medley Interlisp Issues**: [Medley Repository](https://github.com/Interlisp/medley/issues) — For issues related to Medley itself
 - **Discussions**: [Interlisp Discussions](https://github.com/orgs/Interlisp/discussions) — Community discussions and questions
 - **Mailing List**: [interlisp@googlegroups.com](https://groups.google.com/g/interlisp) — General Interlisp community discussion

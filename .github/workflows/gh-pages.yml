@@ -72,8 +72,6 @@ jobs:
         with:
           lookup-only: true
           path: |
-            static/data/bibliography.json
-            static/data/bibItems
             content/en/history/bibliography
           key: bib-${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
 
