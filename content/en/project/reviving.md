@@ -14,13 +14,15 @@ We started with the most recent working files from Venue sources. This was not a
 
 Among other improvements, Medley 3.5 increased the address space by a factor of 16.  But the changes to the address space affects some highly optimized code which took advantage of short-cuts.
 
+Our goal is to maintain compatibility with old code and not introduce breaking changes at the source level or subtle semantic changes.
+
 ## Common Lisp and Interlisp file manager
 
 While Medley 3.5 has a Common Lisp implementation, it is compatible with the Common Lisp of its time -- the first edition of Common Lisp the Language (aka CLtL1).  There are files that purport to implement CLtL2, but they have not yet been merged. 
 
 In addition, the integration of Common Lisp and Interlisp is extensive, there are still some rough edges -- along the way of integrating the two, the result is not quite seamless.
 
-While Interlisp and Medley implement international character processing and hardcopy through use of 16-bit characters, the character coding system used is XCCS (the Xerox Character Code Standard). 
+While Interlisp and Medley implement international character processing and hardcopy through use of 16-bit characters, the character coding system initially used for the external format was XCCS (the Xerox Character Code Standard). The system can now read and write files in a number of formats, including UTF-8, and we are aspiring towards UTF-8 and Unicode for external file representation.
 
 ### CPU and operating system
 * originally: 32 bit systems, big endian
@@ -49,22 +51,23 @@ Scroll wheel implementation, middle button menu commands are awkward.
 
 We have yet to gain mastery over the complex way that Medley handles the keyboard.
 
-### Character encoding
+### Character encoding for external file representation
 * originally: XCCS (Xerox Character Code Standard)
-* Now: Unicode
+* Transitioning to: UTF-8 and Unicode
 
 ### Display
 * originally: 768x808 one bit per pixel
 * now: larger, color displays
 
-Color support seems like it might have been a Medley feature that was taken out, for reasons that are unclear.  Running on a large 4K display at full-screen isn't possible. We have yet to integrate modern fonts.
+Color support seems like it might have been a Medley feature that was taken out, for reasons that are unclear.  Running on a large 4K display at full-screen isn't possible. We are integrating modern fonts.
 
 ### Available compilers
 * Originally:  "K&R" book of standard C
-* now: gcc, cmake and Posix standards
+* now: Clang, gcc, Make, CMake and Posix standards
 
 ### Version Management
 * Originally: versioned file system
 * now: path names via "pseudo hosts"; GITFNS, structure comparison
 
-
+### Modernization
+We are introducing new features to make the Medley environment more accessible and familiar to modern users. We implemented scrolling with a mouse wheel, access to the clipboard of the host system, and mouse gestures for window management such as clicking and dragging the title bar to move a window, or clicking and dragging a corner to resize it.
