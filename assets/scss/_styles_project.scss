@@ -80,3 +80,16 @@
         padding: 0.5rem 0;
     }
 }
+
+// Obit card styling - minimum 3.0in width, wrap to new row rather than shrink
+.obit-card {
+    min-width: 3.0in;
+    flex: 1 0 3.0in; // grow to fill space, don't shrink below basis, 3.0in basis
+}
+
+// Small gray dividing line between subtitle and content in obit cards
+.obit-divider {
+    border: none;
+    border-top: 1px solid #ccc;
+    margin: 0.5rem 0;
+}
