@@ -17,7 +17,7 @@
 {{ $lang := default "" (.Get "lang") -}}
 {{ $highlight := default "" (.Get "highlight") -}}
 
-<div class="td-card card border me-4">
+<div class="td-card obit-card card border me-4">
 {{ with $.Get "header" -}}
     <div class="card-header{{- cond $code " code" "" -}}">
       {{ . | markdownify }}
@@ -30,9 +30,10 @@
       </h5>
     {{ end -}}
     {{ with $.Get "subtitle" -}}
-      <h6 class="card-title ms-2 text-body-secondary">
+      <h6 class="card-subtitle ms-2 text-body-secondary">
         {{ . | markdownify -}}
       </h6>
+      <hr class="obit-divider">
     {{ end -}}
     {{ with $.Inner -}}
       {{ if $code -}}
