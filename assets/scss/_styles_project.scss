@@ -67,6 +67,19 @@
     }
 }
 
+// 404 page sidebar styling
+.td-404 .td-sidebar-nav h5 {
+    font-size: 16px;
+    padding-left: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 1px solid #dee2e6;
+    margin-left: 0;
+}
+
+.td-404 .td-sidebar-nav__section {
+    padding-left: 1rem;
+}
+
 // Keep search visible on mobile, wrap to second row
 @media (max-width: 991.98px) {
     .td-navbar-container {
