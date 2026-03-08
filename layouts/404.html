@@ -1,27 +1,7 @@
 {{ define "main" }}
-<style>
-  /* 404-specific alignment: keep sidebar search aligned with page title */
-  .td-404 .td-sidebar,
-  .td-404 .td-sidebar .td-sidebar__inner,
-  .td-404 .td-sidebar-toc {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  .td-404 .td-sidebar .td-sidebar__search {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-
-  .td-404 .td-content,
-  .td-404 .td-content > h1 {
-    padding-top: 0 !important;
-    margin-top: 0 !important;
-  }
-</style>
 <div class="row flex-xl-nowrap">
   <aside class="col-12 col-md-3 col-xl-2 td-sidebar d-print-none pt-0 mt-0">
-    {{ partial "sidebar-tree.html" (dict "context" . "sidebarRoot" nil "sidebarRootID" "" "cacheSidebar" false) }}
+    {{ partial "sidebar-main-menu.html" . }}
   </aside>
   <main class="col-12 col-md-9 col-xl-8 ps-md-5 pt-0" role="main">
     <div class="td-content mt-0 pt-0">
@@ -39,63 +19,4 @@
     </div>
   </aside>
 </div>
-<script>
-  document.addEventListener('DOMContentLoaded', function () {
-    const nav = document.getElementById('td-section-nav');
-    if (!nav) return;
-
-    // Hide Search and Privacy entries on the 404 sidebar only.
-    const links = nav.querySelectorAll('a[href]');
-    links.forEach((a) => {
-      const href = (a.getAttribute('href') || '').toLowerCase();
-      if (href.includes('/search/') || href.endsWith('/search') || href.includes('/privacy/') || href.endsWith('/privacy')) {
-        const item = a.closest('li.td-sidebar-nav__section-title, li.td-sidebar-nav__section');
-        if (item) item.style.display = 'none';
-      }
-    });
-
-    // Rename the site-root entry to "Project", set its URL, and place it after History.
-    const historyLink = Array.from(nav.querySelectorAll('a[href]')).find((a) => {
-      const text = (a.textContent || '').trim().toLowerCase();
-      return text === 'history' || (a.getAttribute('href') || '').toLowerCase().includes('/history/');
-    });
-
-    const projectRootLink = Array.from(nav.querySelectorAll('a[href]')).find((a) => {
-      const text = (a.textContent || '').trim().toLowerCase();
-      const href = (a.getAttribute('href') || '').toLowerCase();
-      return text === 'the medley interlisp project' || href === '/' || href === '';
-    });
-
-    if (projectRootLink) {
-      projectRootLink.textContent = 'Project';
-      projectRootLink.setAttribute('href', '{{ "/project/" | relURL }}');
-
-      const projectItem = projectRootLink.closest('li.td-sidebar-nav__section-title, li.td-sidebar-nav__section');
-      const historyItem = historyLink ? historyLink.closest('li.td-sidebar-nav__section-title, li.td-sidebar-nav__section') : null;
-      if (projectItem && historyItem && historyItem.parentNode) {
-        historyItem.parentNode.insertBefore(projectItem, historyItem.nextSibling);
-      }
-    }
-
-    // Reorder entries to match the top navbar sequence.
-    const topList = nav.querySelector('ul.td-sidebar-nav__section');
-    if (topList) {
-      const desiredOrder = ['history', 'project', 'software', 'get involved', 'github'];
-      const itemByKey = new Map();
-
-      Array.from(topList.children).forEach((li) => {
-        const link = li.querySelector(':scope > a.td-sidebar-link, :scope > label > a.td-sidebar-link');
-        if (!link) return;
-        const text = (link.textContent || '').trim().toLowerCase();
-        itemByKey.set(text, li);
-      });
-
-      // Append in desired order if present; existing order is kept for anything else.
-      desiredOrder.forEach((key) => {
-        const li = itemByKey.get(key);
-        if (li) topList.appendChild(li);
-      });
-    }
-  });
-</script>
 {{ end }}
