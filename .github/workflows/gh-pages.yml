@@ -118,7 +118,7 @@ jobs:
   #      
   build:
     needs: [check, validate-docs]
-    if: always() && (github.event_name == 'push' || github.event_name == 'pull_request' || needs.check.outputs.cacheHit != 'true') && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped')
+    if: always() && (github.event_name == 'push' || github.event_name == 'pull_request' || needs.check.outputs.cacheHit != 'true') && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.check.result == 'success' || needs.check.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v4
