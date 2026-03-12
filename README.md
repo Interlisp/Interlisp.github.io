@@ -163,22 +163,17 @@ Instructions for installing Hugo on various operating systems are at: [Installin
 For Ubuntu:
 
 ```bash
-curl -s https://api.github.com/repos/gohugoio/hugo/releases/latest \
- | grep  browser_download_url \
- | grep linux-amd64.deb \
- | grep extended \
- | cut -d '"' -f 4 \
- | wget -i -
+wget https://github.com/gohugoio/hugo/releases/download/v0.155.3/hugo_extended_0.155.3_linux-amd64.deb
 
-sudo dpkg -i hugo_extended*linux-amd64.deb
+sudo dpkg -i hugo_extended_0.155.3_linux-amd64.deb
 ```
 
 Verify installation:
 
 ```bash
 hugo version
-# Expected output (version should be v0.145.0 or later):
-hugo v0.155.2-d8c0dfccf72ab43db2b2bca1483a61c8660021d9+extended+withdeploy linux/amd64 BuildDate=2026-02-02T10:04:51Z VendorInfo=gohugoio
+hugo v0.155.3-8a858213b73907e823e2be2b5640a0ce4c04d295+extended linux/amd64 BuildDate=2026-02-08T16:40:42Z VendorInfo=gohugoio
+
 ```
 
 ### Running the Development Server
@@ -188,16 +183,16 @@ hugo v0.155.2-d8c0dfccf72ab43db2b2bca1483a61c8660021d9+extended+withdeploy linux
 2. Start the Hugo development server:
 
 ```bash
- hugo server --cleanDestinationDir  --disableFastRender --renderToMemory
+hugo server --cleanDestinationDir  --disableFastRender --renderToMemory
 ```
 
 Hugo will automatically download the Docsy theme and its dependencies as Hugo modules. Expected output:
 
 ```bash
-Watching for changes in /home/wstumbo/development/Interlisp.github.io/archetypes, /home/wstumbo/development/Interlisp.github.io/assets/{css,icons,js,scss}, /home/wstumbo/development/Interlisp.github.io/content/en/{history,project,software}, /home/wstumbo/development/Interlisp.github.io/layouts/{_default,_partials,_shortcodes,bibliography,redirect}, /home/wstumbo/development/Interlisp.github.io/package.json, /home/wstumbo/development/Interlisp.github.io/static/{Resources,data,docs,documentation,favicons}
-Watching for config changes in /home/wstumbo/development/Interlisp.github.io/config/_default, /home/wstumbo/development/Interlisp.github.io/config/development, /home/wstumbo/development/Interlisp.github.io/go.mod
+Watching for changes in <project-root>/archetypes, <project-root>/assets/{css,icons,js,scss}, <project-root>/content/en/{history,project,software}, <project-root>/layouts/{_default,_partials,_shortcodes,bibliography,redirect}, <project-root>/package.json, <project-root>/static/{Resources,data,docs,documentation,favicons}
+Watching for config changes in <project-root>/config/_default, <project-root>/config/development, <project-root>/go.mod
 Start building sites … 
-hugo v0.155.2-d8c0dfccf72ab43db2b2bca1483a61c8660021d9+extended+withdeploy linux/amd64 BuildDate=2026-02-02T10:04:51Z VendorInfo=gohugoio
+hugo v0.155.3-8a858213b73907e823e2be2b5640a0ce4c04d295+extended linux/amd64 BuildDate=2026-02-08T16:40:42Z VendorInfo=gohugoio
 
 WARN  WARNING: 298 sidebar entries have been truncated. To avoid this, increase `params.ui.sidebar_menu_truncate` to at least 398 (from 100) in your config file. Section: /history/bibliography
 
@@ -237,12 +232,13 @@ Building the website is driven by a GitHub workflow (`.github/workflows/gh-pages
 **Triggers:**
 
 - `push` to main — updates to the Interlisp.org website
+- `pull_request` to main — validates changes before merge (builds but does not deploy)
 - Scheduled execution — ensures the bibliography remains consistent with Zotero
 - Manual execution — via the Actions panel in GitHub
 
 **Workflow Jobs:**
 
-The workflow consists of three jobs:
+The workflow consists of four jobs:
 
 **1. `check` — Verify Bibliography is Current**
 
@@ -254,10 +250,18 @@ https://api.zotero.org/groups/2914042/items
 
 This returns metadata including the `Last-Modified-Version` header, which is incremented every time the Zotero Interlisp catalog is updated. This value is used as a cache key for the bibliography. If the cache key matches one in the current GitHub Action cache, we reuse the saved bibliography and skip rebuilding.
 
-**2. `build` — Build the Website**
+**2. `validate-docs` — Verify Documentation Consistency**
+
+Runs on `push` and `pull_request` events to ensure that README.md references the correct Hugo version. Checks that:
+- The Hugo badge displays the version defined in `HUGO_VERSION`
+- The README.md installation instructions use the correct version
+
+This job prevents documentation drift from the actual build configuration.
+
+**3. `build` — Build the Website**
 
 - Determines if a build is needed:
-  - On `push`: Always builds and deploys
+  - On `push` or `pull_request`: Always builds
   - On schedule: Skips build if Zotero cache is current
 - Checks out the repository
 - If the Zotero cache is valid, copies its contents into the `content/en/history/bibliography` directory
@@ -267,9 +271,9 @@ This returns metadata including the `Last-Modified-Version` header, which is inc
   - `--cleanDestinationDir` — clears `./public` directory to avoid stale artifacts
 - Uses the GitHub `upload-pages-artifact` action to package and store the `./public` directory contents for deployment
 
-**3. `deploy` — Deploy to GitHub Pages**
+**4. `deploy` — Deploy to GitHub Pages**
 
-Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action.
+Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action. Skipped on pull requests.
 
 ### Environment Variables
 
@@ -417,10 +421,10 @@ The site uses Google Custom Search to provide search results encompassing:
 - Interlisp GitHub repositories
 - Discussion groups for Medley and Interlisp
 
-The search engine is configured in `config/params.yaml`:
+The search engine is configured in `config/_default/params.yaml`:
 
 ```yaml
-gcs_engine_id: 33ef4cbe0703b4f3ax
+gcs_engine_id: 33ef4cbe0703b4f3a
 ```
 
 Search results are rendered using the `search.html` layout template.

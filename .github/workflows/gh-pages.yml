@@ -26,6 +26,10 @@ on:
     branches:
       - main  # Set a branch to deploy
 
+  pull_request:
+    branches:
+      - main
+
   schedule:
     - cron: "0 3 * * *"
 
@@ -76,13 +80,46 @@ jobs:
           key: bib-${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
 
   # ----------------------------------------------------------------------------
+  # Validate that README.md references the correct Hugo version.
+  # Only runs on push/pull_request, not scheduled runs.
+  #
+  validate-docs:
+    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - name: Check Hugo version consistency
+        run: |
+          echo "Checking README.md for Hugo version $HUGO_VERSION"
+          
+          # Check badge
+          if ! grep -q "badge/Hugo-${HUGO_VERSION}" README.md; then
+            echo "::error::README.md badge does not reference Hugo version $HUGO_VERSION"
+            FAILED=1
+          fi
+          
+          # Check download URL
+          if ! grep -q "hugo_extended_${HUGO_VERSION}_linux-amd64.deb" README.md; then
+            echo "::error::README.md download URL does not reference Hugo version $HUGO_VERSION"
+            FAILED=1
+          fi
+          
+          if [ "$FAILED" = "1" ]; then
+            echo "Update README.md to use Hugo version $HUGO_VERSION"
+            exit 1
+          fi
+          
+          echo "README.md Hugo version references are consistent"
+
+  # ----------------------------------------------------------------------------
   # Build the website.  This job is conditional, we will always run it on a
   # push or if on a scheduled run the cache was determined to be out of date.
   #      
   build:
-    needs: check
+    needs: [check, validate-docs]
+    if: always() && (github.event_name == 'push' || github.event_name == 'pull_request' || needs.check.outputs.cacheHit != 'true') && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped')
     runs-on: ubuntu-latest
-    if:  github.event_name == 'push' || needs.check.outputs.cacheHit != 'true'
     steps:
       - uses: actions/checkout@v4
         with:
@@ -140,6 +177,7 @@ jobs:
           path: ./public
 
   deploy:
+    if: github.event_name != 'pull_request'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
