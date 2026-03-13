@@ -177,8 +177,7 @@ jobs:
 
       - name: Install dependencies
         run: |
-          npm install -g autoprefixer postcss-cli
-          npm install
+          npm ci
 
       - name: Build
         env:
