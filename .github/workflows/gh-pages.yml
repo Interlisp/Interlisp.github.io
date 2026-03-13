@@ -59,7 +59,7 @@ jobs:
   #
   check:
     outputs:
-      zoteroVersion: ${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
+      zoteroVersion: ${{ steps.zoteroVersion.outputs.version }}
       cacheHit: ${{ steps.cache-zotero-bib.outputs.cache-hit }}
 
     runs-on: ubuntu-latest
@@ -67,11 +67,13 @@ jobs:
 
       - name: Get Zotero Version Information
         id: zoteroVersion
-        uses: fjogeleit/http-request-action@v2
-        with:
-          url: https://api.zotero.org/groups/2914042/items?format=versions
-          method: GET
-        
+        run: |
+          VERSION=$(curl -sI "https://api.zotero.org/groups/2914042/items?format=versions" \
+            | grep -i "last-modified-version" \
+            | cut -d: -f2 \
+            | tr -d '\r ' )
+          echo "version=$VERSION" >> $GITHUB_OUTPUT
+
       - name: Cache Zotero Bibliography
         id: cache-zotero
         uses: actions/cache/restore@v5.0.3
