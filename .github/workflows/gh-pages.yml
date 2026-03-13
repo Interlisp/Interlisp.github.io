@@ -72,11 +72,16 @@ jobs:
       - name: Get Zotero Version Information
         id: zoteroVersion
         run: |
-          VERSION=$(curl -sI "https://api.zotero.org/groups/2914042/items?format=versions" \
+          set -euo pipefail
+          VERSION=$(curl -fsSLI "https://api.zotero.org/groups/2914042/items?format=versions" \
             | grep -i "last-modified-version" \
             | cut -d: -f2 \
-            | tr -d '\r ' )
-          echo "version=$VERSION" >> $GITHUB_OUTPUT
+            | tr -d $'\r ' )
+          if [[ -z "${VERSION:-}" ]]; then
+            echo "Error: Failed to determine Zotero Last-Modified-Version from API response." >&2
+            exit 1
+          fi
+          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
 
       - name: Cache Zotero Bibliography
         id: cache-zotero
