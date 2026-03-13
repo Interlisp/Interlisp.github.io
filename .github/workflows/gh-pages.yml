@@ -81,7 +81,7 @@ jobs:
           lookup-only: true
           path: |
             content/en/history/bibliography
-          key: bib-${{ fromJson(steps.zoteroVersion.outputs.headers).last-modified-version }}
+          key: bib-${{ steps.zoteroVersion.outputs.version }}
 
   # ----------------------------------------------------------------------------
   # Validate that README.md references the correct Hugo version.
