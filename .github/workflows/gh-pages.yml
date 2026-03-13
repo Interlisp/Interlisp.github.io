@@ -49,6 +49,8 @@ env:
   # Specify the deployment environment:  staging or production
   HUGO_ENVIRONMENT: ${{ vars.HUGO_ENVIRONMENT || 'staging' }}
   HUGO_VERSION: 0.155.3
+  # Temporary to validate Node.js 24 works correctly
+  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
 
 jobs:
   # ----------------------------------------------------------------------------
@@ -65,14 +67,14 @@ jobs:
 
       - name: Get Zotero Version Information
         id: zoteroVersion
-        uses: fjogeleit/http-request-action@v1
+        uses: fjogeleit/http-request-action@v2
         with:
           url: https://api.zotero.org/groups/2914042/items?format=versions
           method: GET
         
       - name: Cache Zotero Bibliography
         id: cache-zotero
-        uses: actions/cache/restore@v4
+        uses: actions/cache/restore@v5.0.3
         with:
           lookup-only: true
           path: |
@@ -87,7 +89,7 @@ jobs:
     if: github.event_name == 'push' || github.event_name == 'pull_request'
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
 
       - name: Check Hugo version consistency
         run: |
@@ -121,14 +123,14 @@ jobs:
     if: always() && (github.event_name == 'push' || github.event_name == 'pull_request' || needs.check.outputs.cacheHit != 'true') && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.check.result == 'success' || needs.check.result == 'skipped')
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v4
+      - uses: actions/checkout@v6
         with:
           submodules: recursive
           fetch-depth: 0
 
       - name: Cache Zotero Bibliography
         id: cache-bib
-        uses: actions/cache@v4
+        uses: actions/cache@v5.0.3
         with:
           path: |
             static/data/bibliography.json
@@ -157,9 +159,9 @@ jobs:
         uses: actions/configure-pages@v5
 
       - name: Setup Node
-        uses: actions/setup-node@v4
+        uses: actions/setup-node@v6
         with:
-          node-version: 18
+          node-version: 24
       
       - run: npm install -g autoprefixer --save-dev  
       - run: npm install -g postcss-cli --save-dev
@@ -172,7 +174,7 @@ jobs:
         run: hugo --cleanDestinationDir -e $HUGO_ENVIRONMENT
         
       - name: Upload artifact
-        uses: actions/upload-pages-artifact@v3
+        uses: actions/upload-pages-artifact@v4
         with:
           path: ./public
 
