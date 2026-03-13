@@ -54,7 +54,7 @@ env:
   HUGO_ENVIRONMENT: ${{ vars.HUGO_ENVIRONMENT || 'staging' }}
   HUGO_VERSION: 0.155.3
   # Temporary to validate Node.js 24 works correctly
-  FORCE_JAVASCRIPT_ACTIONS_TO_NODE24: true
+
 
 jobs:
   # ----------------------------------------------------------------------------
