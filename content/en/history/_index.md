@@ -27,3 +27,6 @@ When sold as a workstation of the Xerox Office Systems Division, the machines ha
 ### Detailed History
 
 A more extensive history of Interlisp can be found in the [Interlisp Timeline](timeline). The [Interlisp Bibliography](bibliography) has a wealth of historical material.
+
+The Computer History Museum makes available the [Xerox PARC Archive](https://info.computerhistory.org/xerox-parc-archive), a snapshot of files originally stored on servers at Xerox PARC. This collection comprises source code, documents, images, and other files related to projects from the 1980s to 1994, including Interlisp (see section "Interlisp software" on the walkthrough page).
+
