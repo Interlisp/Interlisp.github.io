@@ -6,6 +6,8 @@ type: docs
 
 Some projects and organizations maintain collections of files, documents, and media on the history of computing that also contain material relevant to Interlisp.
 
+The Medley team uses these sites to reconstruct the history of Interlisp and find artifacts that further define the body of work created by the original teams working on or with Interlisp. If in your exploration you come across material that we may have missed, please make us aware. Also, if you know of other sites that provide historical material related to Interlisp, we would be interested in adding them to our list, so others may take advantage of them.
+
 * [Bitsavers](https://www.bitsavers.org/pdf/xerox/interlisp-d): documentation, publications, and files on Interlisp-D and other [Xerox technologies](https://bitsavers.org/bits/Xerox).
 * [Xerox PARC Archive](https://info.computerhistory.org/xerox-parc-archive): the Computer History Museum makes available a snapshot of files originally stored on servers at Xerox PARC. This collection comprises source code, documents, images, and other files related to projects from the 1980s to 1994, including Interlisp (see section "Interlisp software" on the walkthrough page).
 * [SAILDART](https://www.saildart.org): an archive of the first Stanford Artificial Intelligence Laboratory, see the [BBN Lisp and Interlisp files by Larry Masinter](https://www.saildart.org/LMM) and the [Lisp files by John McCarthy](https://www.saildart.org/JMC).
