@@ -18,6 +18,8 @@ aliases:
 
 Whether you're just getting started or refreshing your knowledge of Interlisp, we have a variety of documentation to help you along.
 
+These manuals and publications are valuable resources but, since most have not been changed in a long time, the information they provide may be out of date or incorrect. To address this we do intend to [revise](https://github.com/Interlisp/medley/issues/1080) and [organize the documentation](https://github.com/Interlisp/medley/issues/2102).
+
 ### Getting started
 
 To learn Medley we recommend that you go over the following reading lists and pursue the resources in the indicated order.
