@@ -18,17 +18,16 @@ aliases:
 
 Whether you're just getting started or refreshing your knowledge of Interlisp, we have a variety of documentation to help you along.
 
-These manuals and publications are valuable resources but, since most have not been changed in a long time, the information they provide may be out of date or incorrect. To address this we do intend to [revise](https://github.com/Interlisp/medley/issues/1080) and [organize the documentation](https://github.com/Interlisp/medley/issues/2102).
+> [!note]
+> These manuals and publications are valuable resources but the information provided may be out of date or incorrect. The Medley team will [revise](https://github.com/Interlisp/medley/issues/1080) and [organize the documentation](https://github.com/Interlisp/medley/issues/2102) over time.
+>
+> The location of documents is likely to change over time as they are updated and organized.  This page will be updated as needed.  Bookmarking this page will help you find the documents you are interested in.
 
 ### Getting started
 
 To learn Medley we recommend that you go over the following reading lists and pursue the resources in the indicated order.
 
 The introductory list gets you started using Medley. The advanced list builds from there and covers programming the system and mastering its tools.
-
-Many of these resources were created decades ago when Medley was a research system and a commercial product, so they may be incomplete or out of date. We will eventually update them.
-
-Note: locations of documents are likely to change. Best to bookmark this page, which we'll update as the documentation settles down.
 
 #### Introductory material
 
