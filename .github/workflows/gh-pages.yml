@@ -71,7 +71,7 @@ jobs:
         id: zoteroVersion
         run: |
           set -euo pipefail
-          VERSION=$(curl -fsSLI "https://api.zotero.org/groups/2914042/items?format=versions" \
+            VERSION=$(curl -fsSLI "https://api.zotero.org/groups/2914042/items?format=versions" \
             | grep -i "last-modified-version" \
             | cut -d: -f2 \
             | tr -d $'\r ' )
