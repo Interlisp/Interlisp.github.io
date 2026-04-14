@@ -72,9 +72,9 @@ jobs:
         run: |
           set -euo pipefail
             VERSION=$(curl -fsSLI "https://api.zotero.org/groups/2914042/items?format=versions" \
-            | grep -i "last-modified-version" \
-            | cut -d: -f2 \
-            | tr -d $'\r ' )
+            | { grep -i "last-modified-version" \
+                | cut -d: -f2 \
+                | tr -d $'\r ' || true; })
           if [[ -z "${VERSION:-}" ]]; then
             echo "Error: Failed to determine Zotero Last-Modified-Version from API response." >&2
             exit 1
