@@ -1,0 +1,33 @@
+{{ define "main" }}
+<section class="row td-search-result">
+  <div class="col-12 col-md-8 offset-md-2">
+    <h2 class="ms-4">Search Results</h2>
+
+    <div id="vertex-search-container" class="ms-4 mt-4">
+
+      {{/* Pass the function URL to JS */}}
+      <div id="vertex-search-config"
+        data-search-url="{{ .Site.Params.vertex_search_url }}"
+        data-query="{{ .Params.q | default "" }}"
+        style="display:none">
+      </div>
+
+      <div id="vertex-search-summary" style="display:none">
+        <div class="ai-summary mb-4">
+          <span class="ai-badge">
+            <i class="fas fa-robot"></i> AI Summary
+          </span>
+          <p id="summary-text" class="mt-2 mb-0"></p>
+        </div>
+      </div>
+
+      <div id="vertex-search-status" class="text-muted">
+        <i class="fas fa-spinner fa-spin"></i> Searching...
+      </div>
+
+      <div id="vertex-search-hits"></div>
+
+    </div>
+  </div>
+</section>
+{{ end }}
