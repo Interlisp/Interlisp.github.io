@@ -104,8 +104,8 @@ exports.search = async (req, res) => {
     
       const url = derived.link || null;
       const snippet = derived.snippets?.[0]?.snippet || null;
-      // Strip HTML tags from snippet for clean display
-      const stripHtml = (str) => str ? str.replace(/<[^>]*>/g, '') : null;
+      // Strip angle brackets to prevent HTML/script tag injection in display text
+      const stripHtml = (str) => str ? str.replace(/[<>]/g, '') : null;
       
       return {
         id:      result.document?.id,
