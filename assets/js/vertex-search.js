@@ -1,5 +1,13 @@
+import { marked } from 'marked';
+import DOMPurify from 'dompurify';
+
 (function () {
   'use strict';
+
+  marked.setOptions({
+    gfm: true,
+    breaks: true
+  });
 
   // Only run on the search results page
   const config = document.getElementById('vertex-search-config');
@@ -27,6 +35,23 @@
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
       .replace(/"/g, '&quot;');
+  }
+
+  function renderSummaryMarkdown(summaryText, citationCount) {
+    const linkedMarkdown = (summaryText || '').replace(/\[(\d+)\]/g, (_, num) => {
+      const index = Number(num);
+      if (!Number.isInteger(index) || index < 1 || index > citationCount) return `[${num}]`;
+      return `[${num}](#source-row-${index})`;
+    });
+
+    const html = marked.parse(linkedMarkdown);
+    return DOMPurify.sanitize(html, {
+      ALLOWED_TAGS: [
+        'a', 'p', 'ul', 'ol', 'li', 'strong', 'em', 'code', 'pre',
+        'blockquote', 'h1', 'h2', 'h3', 'h4', 'h5', 'h6', 'br'
+      ],
+      ALLOWED_ATTR: ['href', 'title', 'target', 'rel', 'id', 'class']
+    });
   }
 
   async function doSearch(q) {
@@ -62,16 +87,26 @@
 
       // Show AI summary if available
       if (data.summary?.summaryText) {
-        summaryTxt.textContent = data.summary.summaryText;
-        summaryEl.style.display = 'block';
-      
-        // Render numbered citation list
         const refs = data.summary?.citations || [];
         const validRefs = refs.filter(r => r.title || r.uri);
-      
+
+        summaryTxt.innerHTML = renderSummaryMarkdown(data.summary.summaryText, validRefs.length);
+
+        const inlineRefs = summaryTxt.querySelectorAll('a[href^="#source-row-"]');
+        inlineRefs.forEach((el) => {
+          el.classList.add('summary-inline-citation');
+          el.setAttribute('aria-label', `Jump to source ${el.textContent}`);
+        });
+
+        summaryEl.style.display = 'block';
+
+        // Remove stale source rows before rendering the latest list.
+        const previousCitations = summaryEl.querySelector('.search-citations');
+        if (previousCitations) previousCitations.remove();
+
         if (validRefs.length > 0) {
           const citationHtml = validRefs.map((ref, i) => `
-            <div class="search-citation">
+            <div id="source-row-${i + 1}" class="search-citation">
               <span class="citation-number">[${i + 1}]</span>
               ${ref.uri
                 ? `<a href="${escapeHtml(ref.uri)}" target="_blank" rel="noopener">${escapeHtml(ref.title || ref.uri)}</a>`
@@ -79,12 +114,15 @@
               }
             </div>
           `).join('');
-      
+
           const citationsDiv = document.createElement('div');
           citationsDiv.className = 'search-citations mt-3';
           citationsDiv.innerHTML = '<p class="citations-label">Sources</p>' + citationHtml;
           summaryEl.querySelector('.ai-summary').appendChild(citationsDiv);
         }
+      } else {
+        summaryTxt.innerHTML = '';
+        summaryEl.style.display = 'none';
       }
 
       // Show results

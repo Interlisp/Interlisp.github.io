@@ -112,7 +112,51 @@
     margin-bottom: 0.5rem;
   }
 
-  p { margin: 0; }
+  p { margin: 0 0 0.75rem; }
+
+  p:last-child {
+    margin-bottom: 0;
+  }
+
+  ul,
+  ol {
+    margin: 0.5rem 0 0.75rem 1.25rem;
+  }
+
+  li {
+    margin-bottom: 0.35rem;
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    margin: 0.9rem 0 0.5rem;
+    font-size: 1rem;
+    font-weight: 700;
+    color: #124fa8;
+  }
+
+  code {
+    color: #0b4aa2;
+    background: rgba(26, 115, 232, 0.1);
+    border-radius: 3px;
+    padding: 0 0.2rem;
+  }
+}
+
+.summary-inline-citation {
+  margin-left: 0.1rem;
+  text-decoration: none;
+  font-weight: 600;
+  color: #1a73e8;
+
+  &:hover,
+  &:focus {
+    text-decoration: underline;
+  }
 }
 
 .td-search-hit {

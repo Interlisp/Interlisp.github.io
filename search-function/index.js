@@ -153,8 +153,14 @@ exports.search = async (req, res) => {
 
 function buildPreamble(context) {
   const base = `You are a search assistant for the Interlisp documentation site.
-Answer questions clearly and concisely. Always cite the sources you used.
-If no relevant results exist, say so directly rather than guessing.`;
+Answer in strict Markdown only.
+Use this structure exactly when applicable:
+- One short opening paragraph.
+- "## Key Points" followed by bullet points.
+- "## Details" for additional context.
+- "## Caveats" only when needed.
+Always cite the sources you used using numeric markers like [1], [2], [3].
+Do not emit HTML. If no relevant results exist, say so directly rather than guessing.`;
 
   if (context) {
     return `${base}\nThe user is currently browsing the "${context}" section — prioritize results from that section where relevant.`;
