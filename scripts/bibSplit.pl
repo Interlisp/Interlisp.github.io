@@ -2,6 +2,7 @@
 use JSON::PP qw(decode_json encode_json);
 use Encode qw(decode encode is_utf8);  
 use Unicode::Normalize qw(NFC);
+# use LWP::Simple;
 use utf8;
 BEGIN 
 { 
@@ -63,6 +64,16 @@ if ($key eq $target) {  # only top level entries
   my $itemTitle = sanitize_text($obj->{title} // '');
   my $title = $itemTitle eq '' ? "title: ''" : "title: |\n  $itemTitle\n";
 
+  my $urlSource = defined $obj->{url} ? $obj->{url} : '';
+
+  # test if the URL is accessible
+  # head() returns a true value (list of headers) if the page exists
+  if ($urlSource ne '') {
+      if (system(qq{curl --output /dev/null --silent --head --fail --location "$urlSource"}) != 0) {
+          print STDERR qq{URL: $urlSource is broken or unreachable on "$itemTitle".\n};
+      }
+  }
+
   # Abstracts can be multi-line and  contain multiple paragraphs.  Place YAML keyword on
   # one line and follow it with the abstract indented on subsequent lines.
   my $abs = sanitize_text($obj->{abstract} // '');
@@ -101,8 +112,6 @@ if ($key eq $target) {  # only top level entries
     $itemEditors =~ s/\n$//u;  # strip trailing newline
   }
   
-  my $urlSource = defined $obj->{url} ? $obj->{url} : '';
-
   # Modified date
   my $dateModified = defined $obj->{dateModified} ? $obj->{dateModified} : '';
 
@@ -165,7 +174,7 @@ if ($key eq $target) {  # only top level entries
   } elsif ($type eq 'entry-encyclopedia') {
     $extraFields = "encyclopedia_title: $encyclopediaTitle\n";
   } else {
-    print STDERR "Warning: unhandled type \"$type\" for key \"$key\"\n";
+    # print STDERR "Warning: unhandled type \"$type\" for key \"$key\"\n";
   }
 
   # Todo: Remove writing the json file once we're happy with the markdown files
