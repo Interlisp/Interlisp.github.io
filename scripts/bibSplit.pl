@@ -2,7 +2,6 @@
 use JSON::PP qw(decode_json encode_json);
 use Encode qw(decode encode is_utf8);  
 use Unicode::Normalize qw(NFC);
-# use LWP::Simple;
 use utf8;
 BEGIN 
 { 
@@ -66,11 +65,15 @@ if ($key eq $target) {  # only top level entries
 
   my $urlSource = defined $obj->{url} ? $obj->{url} : '';
 
+  print STDERR qq{$key --> "$urlSource" on "$itemTitle".\n};
   # test if the URL is accessible
-  # head() returns a true value (list of headers) if the page exists
   if ($urlSource ne '') {
-      if (system(qq{curl --output /dev/null --silent --head --fail --location "$urlSource"}) != 0) {
-          print STDERR qq{URL: $urlSource is broken or unreachable on "$itemTitle".\n};
+      if (system(qq{curl --output /dev/null --silent --show-error --head --fail --dump-header "$key.hdr" --location --referer "https://interlisp.org/history/bibliography;auto" "$urlSource"}) != 0) {
+          print STDERR qq{URL is broken or unreachable.\n};
+      }
+      else
+      {
+          unlink("$key.hdr");
       }
   }
 
