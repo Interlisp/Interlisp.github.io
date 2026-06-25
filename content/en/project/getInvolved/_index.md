@@ -20,7 +20,7 @@ There several ways to get involved in the Medley Interlisp Project, depending on
 
 We're actively trying to improve the new user experience, but don't expect a polished commercial product--we're still in the middle of restoration. But things are pretty stable. Reading the [Medley primer](https://primer.interlisp.org) and checking out the system at [online.interlisp.org](https://online.interlisp.org) should get you started. This is an opportunity to [let us know how the primer helps you](https://github.com/Interlisp/medley/issues/new?template=primer.yml) learn the basics of Medley.
 
-To report problems or suggest new features [open an issue against the GitHub repository of Medley](https://github.com/Interlisp/medley/issues/new/choose), even if it's about Maiko or other Medley subsystems or repositories.
+To report problems or suggest new features [open an issue](https://github.com/Interlisp/medley/issues/new/choose) in the Medley GitHub repository. We track all issues against the project from this repository.
 
 ## 2. GitHub
 
