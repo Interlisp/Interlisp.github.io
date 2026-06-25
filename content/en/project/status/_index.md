@@ -14,6 +14,10 @@ aliases:
  - /medley/project/status/
 ---
 
+## Near FM interview with Larry Masinter and Frank Halasz
+
+In June of 2026 Patrick Domanico published a [writeup on his interview with Larry Masinter and Frank Halasz](https://www.patrickdomanico.com/bpm/2026/06/16/inventing-the-future-one-lisp-machine-at-a-time). Domanico hosted the interview in the March 10, 2025 episode of his show *Do You Speak Tech?* at Near FM community radio in Dublin.
+
 ## 2025 Annual Report released
 
 We released the [2025 Medley Interlisp Annual Report](/project/status/2025medleyannualreport) which covers the 5th year of the Medley Interlisp project.
