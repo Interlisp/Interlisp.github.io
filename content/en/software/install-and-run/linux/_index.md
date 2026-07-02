@@ -49,10 +49,22 @@ Standard installations are ideal for users who want to explore Medley (including
    ```
    ubuntu@oio:~$ tar -xz -C <install_dir> -f <tgz_filepath>
    ```
-4.  Using the package manager for your distro (e.g., apt for Debian and Ubuntu distros), install the following packages:
-a) man-db
-b) xdg-utils
-c) tigervnc
+4. Using the package manager for your distro (e.g., apt for Debian and Ubuntu distros), install the required packages (`man-db`, `xdg-utils`, and `tigervnc`) by running the appropriate command below:
+
+    **For Ubuntu / Debian / Mint / MX Linux:**
+    ```bash
+    sudo apt update && sudo apt install -y man-db xdg-utils tigervnc-standalone-server tigervnc-xorg-extension
+    ```
+
+    **For Fedora / RHEL:**
+    ```bash
+    sudo dnf install -y man-db xdg-utils tigervnc-server
+    ```
+
+    **For Arch Linux:**
+    ```bash
+    sudo pacman -Syu --noconfirm man-db xdg-utils tigervnc
+    ```
 > ***Notes:***
 
 > 4.1.  If *xdg-utils* is not available for your Linux distro, then Medley will still run well, with the exception of a few sub-systems that require opening external (to Medley) files.
