@@ -63,6 +63,20 @@ if ($key eq $target) {  # only top level entries
   my $itemTitle = sanitize_text($obj->{title} // '');
   my $title = $itemTitle eq '' ? "title: ''" : "title: |\n  $itemTitle\n";
 
+  my $urlSource = defined $obj->{url} ? $obj->{url} : '';
+
+  print STDERR qq{$key --> "$urlSource" on "$itemTitle".\n};
+  # test if the URL is accessible
+  if ($urlSource ne '') {
+      if (system(qq{curl --output /dev/null --silent --show-error --head --fail --dump-header "$key.hdr" --location --referer "https://interlisp.org/history/bibliography;auto" "$urlSource"}) != 0) {
+          print STDERR qq{URL is broken or unreachable.\n};
+      }
+      else
+      {
+          unlink("$key.hdr");
+      }
+  }
+
   # Abstracts can be multi-line and  contain multiple paragraphs.  Place YAML keyword on
   # one line and follow it with the abstract indented on subsequent lines.
   my $abs = sanitize_text($obj->{abstract} // '');
@@ -101,8 +115,6 @@ if ($key eq $target) {  # only top level entries
     $itemEditors =~ s/\n$//u;  # strip trailing newline
   }
   
-  my $urlSource = defined $obj->{url} ? $obj->{url} : '';
-
   # Modified date
   my $dateModified = defined $obj->{dateModified} ? $obj->{dateModified} : '';
 
@@ -165,7 +177,7 @@ if ($key eq $target) {  # only top level entries
   } elsif ($type eq 'entry-encyclopedia') {
     $extraFields = "encyclopedia_title: $encyclopediaTitle\n";
   } else {
-    print STDERR "Warning: unhandled type \"$type\" for key \"$key\"\n";
+    # print STDERR "Warning: unhandled type \"$type\" for key \"$key\"\n";
   }
 
   # Todo: Remove writing the json file once we're happy with the markdown files
