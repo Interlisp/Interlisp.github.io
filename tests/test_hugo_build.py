@@ -20,12 +20,37 @@ Usage
     PYTEST_FORCE_HUGO_BUILD=1 pytest tests/test_hugo_build.py -v
 """
 
+import os
 import re
 import xml.etree.ElementTree as ET
+from pathlib import Path
+from urllib.parse import urlparse
 
 import pytest
+import yaml
 
 from conftest import PROD_PUBLIC, REPO_ROOT
+
+
+def _get_baseurl_path() -> str:
+    """Return the path component of the Hugo baseURL for the active environment.
+
+    When ``baseURL`` contains a path prefix (e.g.
+    ``https://stumbo.github.io/InterlispDraft.github.io/``), Hugo prepends
+    that path (``/InterlispDraft.github.io``) to every site-root-relative
+    ``href``.  This helper extracts just the path component so link checks
+    can strip it before resolving to the filesystem.
+    """
+    env = os.environ.get("HUGO_ENVIRONMENT", "production")
+    env_config = REPO_ROOT / "config" / env / "hugo.yaml"
+    if not env_config.exists():
+        env_config = REPO_ROOT / "config" / "_default" / "hugo.yaml"
+    if env_config.exists():
+        with open(env_config) as f:
+            cfg = yaml.safe_load(f)
+            if cfg and "baseURL" in cfg:
+                return urlparse(cfg["baseURL"]).path.rstrip("/") or ""
+    return ""
 
 
 # ---------------------------------------------------------------------------
@@ -142,13 +167,20 @@ class TestInternalLinks:
         if not PROD_PUBLIC.exists():
             pytest.skip("public/ not built — run hugo first")
 
+        prefix = _get_baseurl_path()
         broken: list[tuple[str, str]] = []
 
         for html_file in PROD_PUBLIC.rglob("*.html"):
             content = html_file.read_text(encoding="utf-8", errors="ignore")
             # Match href values that start with / (site-root-relative)
             for href in re.findall(r'href="(/[^"#?]*?)"', content):
-                target = PROD_PUBLIC / href.lstrip("/")
+                # If baseURL has a path component (e.g., /InterlispDraft.github.io),
+                # Hugo prepends it to site-root-relative links. Strip it before
+                # resolving to the filesystem.
+                resolved = href
+                if prefix and href.startswith(prefix + "/"):
+                    resolved = href[len(prefix):]
+                target = PROD_PUBLIC / resolved.lstrip("/")
                 if not target.exists() and not (target / "index.html").exists():
                     broken.append((str(html_file.relative_to(PROD_PUBLIC)), href))
 
