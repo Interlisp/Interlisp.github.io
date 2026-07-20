@@ -65,11 +65,11 @@ now type `OK` and _enter_ (or middle click in the debugger then choose Ok). It w
 
 ## I have a large display.  Medley is so tiny it's hard to read.
 
-(This information is specific to macOS.  We need someone who runs Medley under Windows or Linux
-to expand this section.)
+To make Medley larger and more legible you can run it with pixel scaling or increase the size of text. To fit more and larger windows on the screen, which helps with larger text, you may also make the Medley screen fill up more of the display.
 
+On macOS and Linux pixel scaling is supported only by the SDL graphics layer of Maiko.
 There are two ways to build and run the Maiko virtual machine/host interface layer
-that underlies Medley: running under X Windows ([XQuartz](https://www.xquartz.org/)) and running in a native window
+that underlies Medley: running under X Windows ([XQuartz](https://www.xquartz.org/) on macOS) and running in a native window
 using [SDL](https://www.libsdl.org/).  Full instructions for building Maiko for X Windows are [here](https://github.com/Interlisp/maiko).
 
 To make the Medley window larger on a large display, we first build and run Maiko for SDL.
@@ -91,5 +91,23 @@ _n_*_n_ screen pixels.
 To double each pixel, set _n_ to 2:
 
 ```
-$ /path/to/my/medley.sh -ps 2
+$ /path/to/my/medley -ps 2
 ```
+
+Windows supports pixel scaling for individual applications, including Medley. Refer to the Windows documentation for how to change this setting.
+
+To make text bigger in most windows, from Medley call the Lisp function `FONTSET` with an appropriate size specification. For example, at an Interlisp Exec evaluate
+```
+(FONTSET ’BIG)
+```
+Or
+```
+(FONTSET ’HUGE)
+```
+
+Finally, for running Medley with a larger screen, launch the system with the option `-s` _W_`x`_H_ of the `medley` command where _W_ and _H_ are the desired width and height in pixels. Because of frame buffer limitations _W_*_H_ must be less than 2^21 pixels, i.e. 2097152. For example
+
+```
+$ medley -s 1920x1080
+```
+Sets to FullHD the size of the virtual display as seen from Medley’s point of  view, which is effectively the maximum you can achieve.
