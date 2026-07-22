@@ -54,7 +54,7 @@
     <title>Updates from the new Medley Interlisp Project</title>
     <link>{{ .Permalink }}</link>
     <description>Updates from the Medley Interlisp Project</description>
-    <generator>Hugo -- gohugo.io</generator>{{ with .Site.LanguageCode }}
+    <generator>Hugo -- gohugo.io</generator>{{ with .Site.Language.Locale }}
     <language>{{.}}</language>{{end}}{{ with $authorEmail }}
     <managingEditor>{{.}}{{ with $authorName }} ({{.}}){{end}}</managingEditor>{{end}}{{ with $authorEmail }}
     <webMaster>{{.}}{{ with $authorName }} ({{.}}){{end}}</webMaster>{{end}}{{ with .Site.Copyright }}

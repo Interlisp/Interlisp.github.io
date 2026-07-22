@@ -1,6 +1,6 @@
 baseURL: https://interlisp.github.io/Interlisp.staging/
 
-languageCode: en-us
+locale: en-us
 
 # title
 #  Insert Staging Environment onto every page to make clear

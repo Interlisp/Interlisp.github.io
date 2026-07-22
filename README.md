@@ -2,7 +2,7 @@
 
 [![GitHub Pages Deploy](https://github.com/Interlisp/Interlisp.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/Interlisp/Interlisp.github.io/actions/workflows/gh-pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Hugo](https://img.shields.io/badge/Hugo-0.157.0-ff4088?logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-0.158.0-ff4088?logo=hugo)](https://gohugo.io/)
 [![Docsy](https://img.shields.io/badge/Theme-Docsy-blue)](https://www.docsy.dev/)
 
 The documentation repository for <https://interlisp.org>, the restoration
@@ -163,9 +163,9 @@ Instructions for installing Hugo on various operating systems are at: [Installin
 For Ubuntu:
 
 ```bash
-wget https://github.com/gohugoio/hugo/releases/download/v0.157.0/hugo_extended_0.157.0_linux-amd64.deb
+wget https://github.com/gohugoio/hugo/releases/download/v0.158.0/hugo_extended_0.158.0_linux-amd64.deb
 
-sudo dpkg -i hugo_extended_0.157.0_linux-amd64.deb
+sudo dpkg -i hugo_extended_0.158.0_linux-amd64.deb
 ```
 
 Verify installation:
@@ -173,7 +173,7 @@ Verify installation:
 ```bash
 hugo version
 # Expected output:
-hugo v0.157.0+extended linux/amd64 BuildDate=...
+hugo v0.158.0+extended linux/amd64 BuildDate=...
 
 ```
 
@@ -193,7 +193,7 @@ Hugo will automatically download the Docsy theme and its dependencies as Hugo mo
 Watching for changes in <project-root>/archetypes, <project-root>/assets/{css,icons,js,scss}, <project-root>/content/en/{history,project,software}, <project-root>/layouts/{_default,_partials,_shortcodes,bibliography,redirect}, <project-root>/package.json, <project-root>/static/{Resources,data,docs,documentation,favicons}
 Watching for config changes in <project-root>/config/_default, <project-root>/config/development, <project-root>/go.mod
 Start building sites … 
-hugo v0.157.0+extended linux/amd64 BuildDate=...
+hugo v0.158.0+extended linux/amd64 BuildDate=...
 
 WARN  WARNING: 298 sidebar entries have been truncated. To avoid this, increase `params.ui.sidebar_menu_truncate` to at least 398 (from 100) in your config file. Section: /history/bibliography
 
@@ -286,7 +286,7 @@ The following repository variables control the build and deployment process:
 | Variable | Description | Values | Default |
 |----------|-------------|--------|---------|
 | `HUGO_ENVIRONMENT` | Build environment used by the production workflow | `development`, `staging`, `production` | `production` |
-| `HUGO_VERSION` | Hugo version used in CI/CD | Semantic version (e.g., `0.157.0`) | Set in workflow |
+| `HUGO_VERSION` | Hugo version used in CI/CD | Semantic version (e.g., `0.158.0`) | Set in workflow |
 
 `HUGO_ENVIRONMENT` is resolved in `.github/workflows/gh-pages.yml` and passed
 as the `hugo-environment` input to the shared build workflow.  The staging
