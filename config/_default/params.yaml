@@ -163,9 +163,6 @@ ui:
   # Sidebar generation is slow otherwise
   sidebar_cache_limit: 100
 
-  # We have almost 200 attributes; don't truncate the sidebar to max 50 contents.
-  sidebar_menu_truncate:  0
-
   #  Set to true to disable breadcrumb navigation.
   breadcrumb_disable: false
   

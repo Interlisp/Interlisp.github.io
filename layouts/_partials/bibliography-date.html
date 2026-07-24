@@ -1,0 +1,27 @@
+{{- /*
+  bibliography-date.html
+  Resolves a bibliography page's publication date.
+
+  The front-matter `date` param is a plain YYYY-MM-DD string produced by
+  bibSplit.pl. Hugo's built-in .Date can be a full datetime parsed from git
+  history; this partial prefers the explicit param when it is well-formed.
+
+  Accepts: page context (.)
+  Returns: dict
+    dateISO   – YYYY-MM-DD string; "0001-01-01" when no date is known
+    hasDate   – true when dateISO is not the zero value
+    dateLabel – .Params.readabledate when present, otherwise dateISO
+*/ -}}
+{{- $dateTime := .Date -}}
+{{- with .Params.date -}}
+  {{- $iso := trim . " " -}}
+  {{- if and (ne $iso "") (findRE `^\d{4}-\d{2}-\d{2}$` $iso) -}}
+    {{- $dateTime = time $iso -}}
+  {{- end -}}
+{{- end -}}
+{{- $dateISO := $dateTime.Format "2006-01-02" -}}
+{{- return dict
+  "dateISO"   $dateISO
+  "hasDate"   (ne $dateISO "0001-01-01")
+  "dateLabel" (or .Params.readabledate $dateISO)
+-}}

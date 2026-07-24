@@ -58,10 +58,12 @@ if ($key eq $target) {  # only top level entries
 
   my $type = $obj->{type} // '';
 
-  # Titles can have colons and other special characters.  Place YAML keyword on one line
-  # and follow it with the title indented on subsequent line
+  # Titles can have colons and other special characters.  Use a YAML double-quoted scalar
+  # so the decoded value has no trailing newline (the literal-block `|` style would add one).
   my $itemTitle = sanitize_text($obj->{title} // '');
-  my $title = $itemTitle eq '' ? "title: ''" : "title: |\n  $itemTitle\n";
+  (my $escapedTitle = $itemTitle) =~ s/\\/\\\\/g;
+  $escapedTitle =~ s/"/\\"/g;
+  my $title = $itemTitle eq '' ? "title: ''" : "title: \"$escapedTitle\"";
 
   # Abstracts can be multi-line and  contain multiple paragraphs.  Place YAML keyword on
   # one line and follow it with the abstract indented on subsequent lines.
@@ -78,13 +80,13 @@ if ($key eq $target) {  # only top level entries
   my $itemAuthors = '';
   if (ref($obj->{authorsFormatted}) eq 'ARRAY' && @{$obj->{authorsFormatted}}) {
     $itemAuthors = "\n";
-    for my $a (@{$obj->{authorsFormatted}}) {
+    for my $author (@{$obj->{authorsFormatted}}) {
       # The encode_json is where extended unicode chars get corrupted, e.g., "Emanuelson, Pär"
       # There may be other things that now don't work!!
       # my $quoted = encode_json($a // '');
       # sanitize_text seems to handle them correctly
-      my $san = sanitize_text($a // '');
-      $itemAuthors .= "  - \"$san\"\n";
+      my $san_author = sanitize_text($author // '');
+      $itemAuthors .= "  - \"$san_author\"\n";
     }
     $itemAuthors =~ s/\n$//u;  # strip trailing newline
   }
@@ -92,11 +94,11 @@ if ($key eq $target) {  # only top level entries
   my $itemEditors = '';
   if (ref($obj->{editorsFormatted}) eq 'ARRAY' && @{$obj->{editorsFormatted}}) {
     $itemEditors = "\n";
-    for my $a (@{$obj->{editorsFormatted}}) {
+    for my $editor (@{$obj->{editorsFormatted}}) {
       # as above...
-      # my $quoted = encode_json($a // '');
-      my $san = sanitize_text($a // '');
-      $itemEditors .= "  - \"$san\"\n";
+      # my $quoted = encode_json($editor // '');
+      my $san_editor = sanitize_text($editor // '');
+      $itemEditors .= "  - \"$san_editor\"\n";
     }
     $itemEditors =~ s/\n$//u;  # strip trailing newline
   }

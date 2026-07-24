@@ -1,0 +1,50 @@
+# Hugo testing environment configuration
+#
+# Used exclusively when running the bibliography JSON-LD test suite:
+#
+#   hugo --environment testing --destination tests/public_test
+#
+# This environment mounts the test fixtures from tests/fixtures/bibliography/
+# alongside the real bibliography content, so the JSON-LD template is exercised
+# against controlled data without those pages ever appearing in a production build.
+#
+# The module.mounts block must re-declare all standard project-level mounts
+# because adding any mount replaces Hugo's defaults for the project.
+# Theme (Docsy) mounts defined within that module are unaffected.
+
+baseURL: "http://localhost/"
+
+publishDir: tests/public_test
+
+# Broken refs in unrelated content files must not block the test build.
+refLinksErrorLevel: WARNING
+
+# Explicit mounts (see module section below) require this to be re-stated
+# so that English content URLs do not gain an /en/ prefix.
+defaultContentLanguageInSubdir: false
+
+module:
+  mounts:
+    # ── Standard project mounts (preserve defaults) ──────────────────────────
+    # Mount content/en/ directly as the English language content root so that
+    # URLs are generated without an /en/ prefix (matching production behavior).
+    - source: content/en
+      target: content
+      lang: en
+    - source: static
+      target: static
+    - source: layouts
+      target: layouts
+    - source: data
+      target: data
+    - source: assets
+      target: assets
+    - source: i18n
+      target: i18n
+    - source: archetypes
+      target: archetypes
+    # ── Test fixtures ─────────────────────────────────────────────────────────
+    # Mount alongside the real bibliography content for the English language.
+    - source: tests/fixtures/bibliography
+      target: content/history/bibliography
+      lang: en

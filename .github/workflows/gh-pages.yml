@@ -124,12 +124,75 @@ jobs:
           echo "README.md Hugo version references are consistent"
 
   # ----------------------------------------------------------------------------
+  # Run the bibliography JSON-LD test suite against a test-environment Hugo
+  # build that mounts tests/fixtures/bibliography/ alongside the real content.
+  # This job must pass before changes can be merged or deployed.
+  #
+  test:
+    needs: [check, validate-docs]
+    if: always() && (github.event_name == 'push' || github.event_name == 'pull_request' || needs.check.outputs.cacheHit != 'true') && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.check.result == 'success' || needs.check.result == 'skipped')
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          submodules: recursive
+          fetch-depth: 0
+
+      - name: Cache Zotero Bibliography
+        id: cache-bib
+        uses: actions/cache@v5
+        with:
+          path: |
+            static/data/bibliography.json
+            static/data/bibItems
+            content/en/history/bibliography
+          key: bib-${{ needs.check.outputs.zoteroVersion }}
+
+      - name: Install Bibliography
+        if: steps.cache-bib.outputs.cache-hit != 'true'
+        run: |
+          echo "Retrieve bibliography"
+          cd scripts
+          chmod +x ./update_bibliography.sh
+          chmod +x ./bibSplit.pl
+          ./update_bibliography.sh
+
+      - name: Install Hugo CLI
+        run: |
+          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
+          && sudo dpkg -i ${{ runner.temp }}/hugo.deb
+
+      - name: Setup Node
+        uses: actions/setup-node@v6
+        with:
+          node-version: 24
+          cache: 'npm'
+
+      - name: Install Node dependencies
+        run: npm ci
+
+      - name: Build test site
+        env:
+          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
+          TZ: America/New_York
+        run: hugo --environment testing --destination tests/public_test
+
+      - name: Install pytest
+        run: pip install pytest pyyaml pytest-cov
+
+      - name: Run content-integrity tests
+        run: pytest tests/test_content_integrity.py -v --cov-report=term-missing
+
+      - name: Run JSON-LD tests
+        run: pytest tests/test_bibliography_jsonld.py -v
+
+  # ----------------------------------------------------------------------------
   # Build the website.  This job is conditional, we will always run it on a
   # push or if on a scheduled run the cache was determined to be out of date.
   #      
   build:
-    needs: [check, validate-docs]
-    if: always() && (github.event_name == 'push' || github.event_name == 'pull_request' || needs.check.outputs.cacheHit != 'true') && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.check.result == 'success' || needs.check.result == 'skipped')
+    needs: [check, validate-docs, test]
+    if: always() && (github.event_name == 'push' || github.event_name == 'pull_request' || needs.check.outputs.cacheHit != 'true') && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.check.result == 'success' || needs.check.result == 'skipped') && (needs.test.result == 'success')
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -183,6 +246,12 @@ jobs:
           TZ: America/New_York
         run: hugo --cleanDestinationDir -e $HUGO_ENVIRONMENT
         
+      - name: Install pytest
+        run: pip install pytest pytest-cov
+
+      - name: Run build-integrity tests
+        run: pytest tests/test_hugo_build.py -v
+
       - name: Upload artifact
         uses: actions/upload-pages-artifact@v5.0.0
         with:
@@ -194,7 +263,7 @@ jobs:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build, test]
 
     steps:
       - name: Deploy to GitHub Pages
