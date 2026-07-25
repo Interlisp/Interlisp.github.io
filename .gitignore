@@ -26,3 +26,5 @@ static/data/bibItems/
 /scripts/*.err
 /content/en/history/bibliography/**
 !/content/en/history/bibliography/_index.md
+!/content/en/history/bibliography/intake/
+!/content/en/history/bibliography/intake/**

@@ -10,4 +10,13 @@ aliases:
  - /bibliography/
 
 ---
-We generate this from our [Zotero collection library](https://www.zotero.org/groups/2914042/interlisp/library).
+
+#### Resources
+
+Bibliographic entries are generated from our [Zotero collection library](https://www.zotero.org/groups/2914042/interlisp/library).  
+
+The [Interlisp Bibliography Intake Guide](intake) explains how to recommend new bibliography items.  
+
+---
+
+#### Bibliographic Entries

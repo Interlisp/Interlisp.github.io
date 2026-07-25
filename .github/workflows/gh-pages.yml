@@ -67,6 +67,8 @@ jobs:
     runs-on: ubuntu-latest
     steps:
 
+      - uses: actions/checkout@v6
+
       - name: Get Zotero Version Information
         id: zoteroVersion
         run: |
@@ -88,7 +90,7 @@ jobs:
           lookup-only: true
           path: |
             content/en/history/bibliography
-          key: bib-${{ steps.zoteroVersion.outputs.version }}
+          key: bib-${{ steps.zoteroVersion.outputs.version }}-${{ hashFiles('content/en/history/bibliography/_index.md', 'content/en/history/bibliography/intake/**') }}
 
   # ----------------------------------------------------------------------------
   # Validate that README.md references the correct Hugo version.
@@ -205,10 +207,8 @@ jobs:
         uses: actions/cache@v5
         with:
           path: |
-            static/data/bibliography.json
-            static/data/bibItems
             content/en/history/bibliography
-          key: bib-${{ needs.check.outputs.zoteroVersion }}
+          key: bib-${{ needs.check.outputs.zoteroVersion }}-${{ hashFiles('content/en/history/bibliography/_index.md', 'content/en/history/bibliography/intake/**') }}
 
       - name: Install Bibliography
         if: steps.cache-bib.outputs.cache-hit != 'true'
