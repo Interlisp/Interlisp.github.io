@@ -17,6 +17,5 @@ Bibliographic entries are generated from our [Zotero collection library](https:/
 The [Interlisp Bibliography Intake Guide](intake) explains how to recommend new bibliography items.  
 
 ---
----
 
 #### Bibliographic Entries
