@@ -14,7 +14,10 @@
 #                      org-level reusable workflow; also checks the Zotero
 #                      bibliography version (skipping the build on scheduled
 #                      runs when it is unchanged)
-#                      (Interlisp/.github/.github/workflows/build-site.yml)
+#                      (Interlisp/shared-workflows/.github/workflows/build-site.yml)
+#     preview        - trigger a per-PR staging preview in
+#                      Interlisp/Interlisp.staging (skips on fork PRs or when
+#                      the STAGING_APP_ID secret is unset)
 #     deploy         - deploy the built site to GitHub Pages
 #
 #  The workflow is executed either on a push or via scheduled run times.  When
@@ -119,11 +122,48 @@ jobs:
   build:
     needs: [validate-docs, hugo-version]
     if: always() && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.hugo-version.result == 'success')
-    uses: Interlisp/.github/.github/workflows/build-site.yml@bs1_staging_prep
+    uses: Interlisp/shared-workflows/.github/workflows/build-site.yml@main
     with:
       hugo-version: ${{ needs.hugo-version.outputs.version }}
       hugo-environment: ${{ vars.HUGO_ENVIRONMENT || 'production' }}
       skip-if-fresh: ${{ github.event_name == 'schedule' }}
+
+  # ----------------------------------------------------------------------------
+  # Trigger a per-PR staging preview in Interlisp/Interlisp.staging.  Skips on
+  # fork pull requests and when the GitHub App credentials are not configured,
+  # so the workflow remains green during rollout.  The Hugo version is passed
+  # as a dispatch input (a step can read the env context, unlike a reusable
+  # workflow call), keeping gh-pages.yml's env the single source of truth.
+  #
+  preview:
+    if: github.event_name == 'pull_request' &&
+        github.event.pull_request.head.repo.full_name == github.repository &&
+        secrets.STAGING_APP_ID != ''
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Mint GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ secrets.STAGING_APP_ID }}
+          private-key: ${{ secrets.STAGING_APP_PRIVATE_KEY }}
+          owner: Interlisp
+          repositories: |
+            Interlisp.staging
+
+      - name: Trigger staging preview
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: deploy-preview.yml
+          repo: Interlisp/Interlisp.staging
+          ref: main
+          token: ${{ steps.app-token.outputs.token }}
+          inputs: '{
+            "pr_number": "${{ github.event.pull_request.number }}",
+            "pr_sha": "${{ github.event.pull_request.head.sha }}",
+            "hugo_version": "${{ env.HUGO_VERSION }}"
+          }'
 
   # ----------------------------------------------------------------------------
   # Deploy the built site to GitHub Pages.

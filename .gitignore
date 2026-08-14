@@ -17,6 +17,9 @@ tests/public_test/
 node_modules/
 _gen/
 .hugo_build.lock
+.coverage
+tests/__pycache__/
+_vendor/
 .idea
 data/bibliography.json
 static/data/bibliography.json
