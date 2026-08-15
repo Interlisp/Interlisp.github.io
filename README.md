@@ -260,7 +260,7 @@ requests.
 **3. `build` — Build the Website and Run the Tests**
 
 Delegates to the org-level reusable workflow
-(`Interlisp/.github/.github/workflows/build-site.yml`), which:
+(`Interlisp/shared-workflows/.github/workflows/build-site.yml`), which:
 - Queries the Zotero REST API for the bibliography version and caches the
   bibliography, running `update_bibliography.sh` to download and process a
   new copy whenever the version has changed (a cache miss)
@@ -303,21 +303,21 @@ repository always builds with the `staging` environment.
 ### Deploying a Staging Site
 
 Every pull request to `main` is automatically deployed to a per-PR staging
-preview.  A dedicated repository, `Interlisp/interlisp.staging`, acts as the
+preview.  A dedicated repository, `Interlisp/Interlisp.staging`, acts as the
 deployment target.  Each PR is served from a unique subdirectory of that
 repository's GitHub Pages site:
 
 | Deployment | URL |
 |------------|-----|
-| Staging root | `https://interlisp.github.io/interlisp.staging/` |
-| PR #123 preview | `https://interlisp.github.io/interlisp.staging/pr-123/` |
+| Staging root | `https://interlisp.github.io/Interlisp.staging/` |
+| PR #123 preview | `https://interlisp.github.io/Interlisp.staging/pr-123/` |
 
 When a PR is opened or updated, the production workflow (`gh-pages.yml`)
 triggers the `deploy-preview` workflow in the staging repository, which:
 
 1. Checks out the PR's head commit
 2. Builds the site using the shared org-level workflow
-   (`Interlisp/.github/.github/workflows/build-site.yml`)
+   (`Interlisp/shared-workflows/.github/workflows/build-site.yml`)
 3. Deploys the result to the `pr-<N>/` subdirectory
 4. Posts the preview URL as a comment on the PR
 

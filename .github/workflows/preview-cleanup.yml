@@ -21,14 +21,14 @@ on:
 
 jobs:
   remove-preview:
-    if: secrets.STAGING_APP_ID != ''
+    if: vars.STAGING_APP_ID != ''
     runs-on: ubuntu-latest
     steps:
       - name: Mint GitHub App token
         id: app-token
         uses: actions/create-github-app-token@v3
         with:
-          client-id: ${{ secrets.STAGING_APP_ID }}
+          client-id: ${{ vars.STAGING_APP_ID }}
           private-key: ${{ secrets.STAGING_APP_PRIVATE_KEY }}
           owner: Interlisp
           repositories: |
