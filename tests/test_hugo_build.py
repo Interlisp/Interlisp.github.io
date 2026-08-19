@@ -36,8 +36,8 @@ def _get_baseurl_path() -> str:
     """Return the path component of the Hugo baseURL for the active environment.
 
     When ``baseURL`` contains a path prefix (e.g.
-    ``https://stumbo.github.io/InterlispDraft.github.io/``), Hugo prepends
-    that path (``/InterlispDraft.github.io``) to every site-root-relative
+    ``https://interlisp.github.io/interlisp-staging/``), Hugo prepends
+    that path (``/interlisp-staging``) to every site-root-relative
     ``href``.  This helper extracts just the path component so link checks
     can strip it before resolving to the filesystem.
     """
@@ -174,7 +174,7 @@ class TestInternalLinks:
             content = html_file.read_text(encoding="utf-8", errors="ignore")
             # Match href values that start with / (site-root-relative)
             for href in re.findall(r'href="(/[^"#?]*?)"', content):
-                # If baseURL has a path component (e.g., /InterlispDraft.github.io),
+                # If baseURL has a path component (e.g., /interlisp-staging),
                 # Hugo prepends it to site-root-relative links. Strip it before
                 # resolving to the filesystem.
                 resolved = href
