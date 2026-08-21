@@ -4,6 +4,7 @@ heading: Interlisp Bibliography
 type: bibliography
 cascade:
     type: bibliography
+    toc_hide: true
 weight: 5
 aliases:
  - /bibliography/

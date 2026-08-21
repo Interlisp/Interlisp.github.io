@@ -1,0 +1,280 @@
+{{- /*
+  bibliography-json-ld.html
+  Emits a <script type="application/ld+json"> block for bibliography pages.
+
+  • Single pages  → type-specific Schema.org type (ScholarlyArticle, Book, etc.)
+  • Section/list  → CollectionPage + ItemList
+
+  Only activates when .Type == "bibliography"; safe to call from head-end.html.
+  Note: Hugo's `return` does NOT terminate template execution; a top-level `if`
+  guard is used instead.
+*/ -}}
+{{- if eq .Type "bibliography" -}}
+
+{{- /* ── Date (resolved once, used by the IsPage branch below) ───────────── */ -}}
+{{- $date := partial "bibliography-date.html" . -}}
+
+{{- if .IsPage -}}
+
+{{- $dateISO := $date.dateISO -}}
+{{- $hasDate := $date.hasDate -}}
+
+{{- /* ── Map item_type → Schema.org @type ──────────────────────────────── */ -}}
+{{- $itemType   := .Params.item_type | default "document" -}}
+{{- $schemaType := "CreativeWork" -}}
+{{- if      eq $itemType "article-journal"        -}}{{- $schemaType = "ScholarlyArticle"   -}}
+{{- else if eq $itemType "article-magazine"       -}}{{- $schemaType = "Article"            -}}
+{{- else if eq $itemType "paper-conference"       -}}{{- $schemaType = "ScholarlyArticle"   -}}
+{{- else if eq $itemType "book"                   -}}{{- $schemaType = "Book"               -}}
+{{- else if eq $itemType "chapter"                -}}{{- $schemaType = "Chapter"            -}}
+{{- else if eq $itemType "report"                 -}}{{- $schemaType = "Report"             -}}
+{{- else if eq $itemType "thesis"                 -}}{{- $schemaType = "Thesis"             -}}
+{{- else if eq $itemType "patent"                 -}}{{- $schemaType = "CreativeWork"       -}}
+{{- else if eq $itemType "webpage"                -}}{{- $schemaType = "WebPage"            -}}
+{{- else if eq $itemType "post-weblog"            -}}{{- $schemaType = "BlogPosting"        -}}
+{{- else if eq $itemType "motion_picture"         -}}{{- $schemaType = "VideoObject"        -}}
+{{- else if eq $itemType "entry-encyclopedia"     -}}{{- $schemaType = "Article"            -}}
+{{- else if eq $itemType "personal_communication" -}}{{- $schemaType = "Message"            -}}
+{{- else if eq $itemType "software"               -}}{{- $schemaType = "SoftwareSourceCode" -}}
+{{- end -}}
+
+{{- /* ── Helper: build []Person from a raw authors/editors field ─────────
+     Handles both slice and single-string values.
+     Names are stored as "Last, First [Middle]"; we split on the first comma
+     to get familyName / givenName and recombine as "First Last" for name.
+*/ -}}
+{{- $authorObjs := slice -}}
+{{- $rawAuthors  := .Params.authors -}}
+{{- $authorList  := slice -}}
+{{- if reflect.IsSlice $rawAuthors -}}
+  {{- $authorList = $rawAuthors -}}
+{{- else if $rawAuthors -}}
+  {{- $authorList = slice $rawAuthors -}}
+{{- end -}}
+{{- range $authorList -}}
+  {{- $parts := split . ", " -}}
+  {{- if gt (len $parts) 1 -}}
+    {{- $family := index $parts 0 -}}
+    {{- $given  := index $parts 1 -}}
+    {{- $authorObjs = append (dict "@type" "Person" "name" (printf "%s %s" $given $family) "familyName" $family "givenName" $given) $authorObjs -}}
+  {{- else -}}
+    {{- $authorObjs = append (dict "@type" "Person" "name" .) $authorObjs -}}
+  {{- end -}}
+{{- end -}}
+
+{{- $editorObjs := slice -}}
+{{- $rawEditors  := .Params.editors -}}
+{{- $editorList  := slice -}}
+{{- if reflect.IsSlice $rawEditors -}}
+  {{- $editorList = $rawEditors -}}
+{{- else if $rawEditors -}}
+  {{- $editorList = slice $rawEditors -}}
+{{- end -}}
+{{- range $editorList -}}
+  {{- $parts := split . ", " -}}
+  {{- if gt (len $parts) 1 -}}
+    {{- $family := index $parts 0 -}}
+    {{- $given  := index $parts 1 -}}
+    {{- $editorObjs = append (dict "@type" "Person" "name" (printf "%s %s" $given $family) "familyName" $family "givenName" $given) $editorObjs -}}
+  {{- else -}}
+    {{- $editorObjs = append (dict "@type" "Person" "name" .) $editorObjs -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── sameAs: source URL + Zotero record URL ───────────────────────── */ -}}
+{{- $sameAs := slice -}}
+{{- with .Params.url_source -}}{{- $sameAs = append (trim . " ") $sameAs -}}{{- end -}}
+{{- with .Params.zotero_url -}}{{- $sameAs = append (trim . " ") $sameAs -}}{{- end -}}
+
+{{- /* ── Base JSON-LD object (properties common to all types) ─────────── */ -}}
+{{- $ld := dict
+  "@context"   "https://schema.org"
+  "@type"      $schemaType
+  "name"       (.Title | strings.TrimRight "\n ")
+  "url"        .Permalink
+  "inLanguage" "en-US"
+-}}
+
+{{- with .Params.abstract -}}
+  {{- $ld = merge $ld (dict "description" .) -}}
+{{- end -}}
+
+{{- if $hasDate -}}
+  {{- $ld = merge $ld (dict "datePublished" $dateISO) -}}
+{{- end -}}
+
+{{- with .Params.lastmod -}}
+  {{- $ld = merge $ld (dict "dateModified" .) -}}
+{{- end -}}
+
+{{- if gt (len $authorObjs) 0 -}}
+  {{- $ld = merge $ld (dict "author" $authorObjs) -}}
+{{- end -}}
+
+{{- if gt (len $editorObjs) 0 -}}
+  {{- $ld = merge $ld (dict "editor" $editorObjs) -}}
+{{- end -}}
+
+{{- if gt (len $sameAs) 0 -}}
+  {{- $ld = merge $ld (dict "sameAs" $sameAs) -}}
+{{- end -}}
+
+{{- /* ── Patent: additionalType + structured identifiers ──────────────── */ -}}
+{{- if eq $itemType "patent" -}}
+  {{- $ld = merge $ld (dict "additionalType" "Patent") -}}
+
+  {{- $identifiers := slice -}}
+  {{- with .Params.patent_number -}}
+    {{- $identifiers = append (dict "@type" "PropertyValue" "propertyID" "patent-number" "value" .) $identifiers -}}
+  {{- end -}}
+  {{- with .Params.application_number -}}
+    {{- $identifiers = append (dict "@type" "PropertyValue" "propertyID" "application-number" "value" .) $identifiers -}}
+  {{- end -}}
+  {{- if gt (len $identifiers) 0 -}}
+    {{- $ld = merge $ld (dict "identifier" $identifiers) -}}
+  {{- end -}}
+
+  {{- with .Params.assignee -}}
+    {{- $ld = merge $ld (dict "copyrightHolder" (dict "@type" "Organization" "name" .)) -}}
+  {{- end -}}
+  {{- with .Params.issuing_authority -}}
+    {{- $ld = merge $ld (dict "validIn" (dict "@type" "DefinedRegion" "name" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── Journal / Magazine article ────────────────────────────────────── */ -}}
+{{- if or (eq $itemType "article-journal") (eq $itemType "article-magazine") -}}
+  {{- with .Params.publication_title -}}
+    {{- $ld = merge $ld (dict "isPartOf" (dict "@type" "Periodical" "name" .)) -}}
+  {{- end -}}
+  {{- with .Params.volume -}}{{- $ld = merge $ld (dict "volumeNumber" .) -}}{{- end -}}
+  {{- with .Params.issue  -}}{{- $ld = merge $ld (dict "issueNumber"  .) -}}{{- end -}}
+  {{- with .Params.pages  -}}{{- $ld = merge $ld (dict "pagination"   .) -}}{{- end -}}
+{{- end -}}
+
+{{- /* ── Conference paper ─────────────────────────────────────────────── */ -}}
+{{- if eq $itemType "paper-conference" -}}
+  {{- with .Params.proceedings_title -}}
+    {{- $ld = merge $ld (dict "isPartOf" (dict "@type" "Book" "name" .)) -}}
+  {{- end -}}
+  {{- with .Params.publisher -}}
+    {{- $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) -}}
+  {{- end -}}
+  {{- with .Params.place -}}
+    {{- $ld = merge $ld (dict "locationCreated" (dict "@type" "Place" "name" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── Book ─────────────────────────────────────────────────────────── */ -}}
+{{- if eq $itemType "book" -}}
+  {{- with .Params.publisher -}}
+    {{- $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── Chapter ──────────────────────────────────────────────────────── */ -}}
+{{- if eq $itemType "chapter" -}}
+  {{- with .Params.book_title -}}
+    {{- $bookDict := dict "@type" "Book" "name" . -}}
+    {{- with $.Params.publisher -}}
+      {{- $bookDict = merge $bookDict (dict "publisher" (dict "@type" "Organization" "name" .)) -}}
+    {{- end -}}
+    {{- $ld = merge $ld (dict "isPartOf" $bookDict) -}}
+  {{- end -}}
+  {{- with .Params.pages -}}{{- $ld = merge $ld (dict "pagination" .) -}}{{- end -}}
+{{- end -}}
+
+{{- /* ── Report ───────────────────────────────────────────────────────── */ -}}
+{{- if eq $itemType "report" -}}
+  {{- with .Params.publisher -}}
+    {{- $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) -}}
+  {{- end -}}
+  {{- with .Params.report_type -}}
+    {{- $ld = merge $ld (dict "additionalType" .) -}}
+  {{- end -}}
+  {{- with .Params.report_number -}}
+    {{- $ld = merge $ld (dict "identifier" (dict "@type" "PropertyValue" "propertyID" "report-number" "value" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── Thesis ───────────────────────────────────────────────────────── */ -}}
+{{- if eq $itemType "thesis" -}}
+  {{- with .Params.university -}}
+    {{- $ld = merge $ld (dict "sourceOrganization" (dict "@type" "CollegeOrUniversity" "name" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── Blog post ─────────────────────────────────────────────────────── */ -}}
+{{- if eq $itemType "post-weblog" -}}
+  {{- with .Params.blog_title -}}
+    {{- $ld = merge $ld (dict "isPartOf" (dict "@type" "Blog" "name" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── Motion picture / video ──────────────────────────────────────── */ -}}
+{{- if eq $itemType "motion_picture" -}}
+  {{- with .Params.studio -}}
+    {{- $ld = merge $ld (dict "productionCompany" (dict "@type" "Organization" "name" .)) -}}
+  {{- end -}}
+  {{- with .Params.video_recording_format -}}
+    {{- $ld = merge $ld (dict "encodingFormat" .) -}}
+  {{- end -}}
+  {{- with .Params.series_title -}}
+    {{- $ld = merge $ld (dict "partOfSeries" (dict "@type" "CreativeWorkSeries" "name" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── Encyclopedia entry ──────────────────────────────────────────── */ -}}
+{{- if eq $itemType "entry-encyclopedia" -}}
+  {{- with .Params.encyclopedia_title -}}
+    {{- $ld = merge $ld (dict "isPartOf" (dict "@type" "Book" "name" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── Webpage ──────────────────────────────────────────────────────── */ -}}
+{{- if eq $itemType "webpage" -}}
+  {{- with .Params.website_title -}}
+    {{- $ld = merge $ld (dict "isPartOf" (dict "@type" "WebSite" "name" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($ld | jsonify (dict "indent" "  ")) | safeHTML -}}
+
+{{- else if .IsSection -}}
+
+{{- /* ── COLLECTION PAGE (bibliography index) ──────────────────────────── */ -}}
+{{- $pages := .RegularPages -}}
+{{- $pages  = sort $pages "Title" "asc" -}}
+
+{{- $itemList := slice -}}
+{{- range $i, $p := $pages -}}
+  {{- $itemList = append (dict
+    "@type"    "ListItem"
+    "position" (add $i 1)
+    "name"     $p.Title
+    "url"      $p.Permalink
+  ) $itemList -}}
+{{- end -}}
+
+{{- $desc := .Description | default "A bibliography of publications, patents, reports, and other artifacts related to the Interlisp programming environment." -}}
+
+{{- $ld := dict
+  "@context"    "https://schema.org"
+  "@type"       "CollectionPage"
+  "name"        .Title
+  "url"         .Permalink
+  "description" $desc
+  "inLanguage"  "en-US"
+  "mainEntity"  (dict
+    "@type"           "ItemList"
+    "name"            .Title
+    "numberOfItems"   (len $pages)
+    "itemListElement" $itemList
+  )
+-}}
+
+{{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($ld | jsonify (dict "indent" "  ")) | safeHTML -}}
+
+{{- end -}}
+
+{{- end -}}

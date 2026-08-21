@@ -30,18 +30,10 @@
   </p>
 {{- end -}}
 <p>
-  {{- $dateTime := .Date -}}
-  {{- with .Params.date -}}
-    {{- $isoDate := trim . " " -}}
-    {{- if and (ne $isoDate "") (findRE `^\d{4}-\d{2}-\d{2}` $isoDate) -}}
-      {{- $dateTime = time $isoDate -}}
-    {{- end -}}
-  {{- end -}}
-  {{- $dateISO := $dateTime.Format "2006-01-02" -}}
-  {{- $dateLabel := or .Params.readabledate $dateISO -}}
+  {{- $date := partial "bibliography-date.html" . -}}
   {{- /* Don't display bogus date */ -}}
-  {{- if ne $dateISO "0001-01-01" -}}
-    <time datetime="{{ $dateISO }}">{{ $dateLabel }}</time>
+  {{- if $date.hasDate -}}
+    <time datetime="{{ $date.dateISO }}">{{ $date.dateLabel }}</time>
   {{- end -}}
 </p>
 <p>

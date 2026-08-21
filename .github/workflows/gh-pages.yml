@@ -1,20 +1,31 @@
 #*******************************************************************************
 #  gh-pages.yml
 #
-# Github Workflow to deploy Interlisp.org.
+#  Github Workflow to deploy Interlisp.org.
 #
-# Interlisp.org is a Hugo based static website that contains a 
-# detailed bibliography maintained using Zotero (https://www.zotero.org/groups/2914042/interlispwww.zotero.org/).
+#  Interlisp.org is a Hugo based static website that contains a 
+#  detailed bibliography maintained using Zotero (https://www.zotero.org/groups/2914042/interlispwww.zotero.org/).
 #
-# This workflow consists of two jobs, one to ensure that we have the latest
-# version of the Zotero bibliography and a second job to deploy the website.
+#  This workflow consists of several jobs:
 #
-# The workflow is executed either on a push or via scheduled run times.  When
-# started at a scheduled run time we only do a deploy if the cached bibliography
-# is no longer current.  On a push, we always verifty the the current
-# bibliography is loaded and deploy a new version of the website.
+#     validate-docs  - ensure README.md references the correct Hugo version
+#     hugo-version   - expose the Hugo version as a job output
+#     build          - build the website and run the full test suite using the
+#                      org-level reusable workflow; also checks the Zotero
+#                      bibliography version (skipping the build on scheduled
+#                      runs when it is unchanged)
+#                      (Interlisp/shared-workflows/.github/workflows/build-site.yml)
+#     preview        - trigger a per-PR staging preview in
+#                      Interlisp/Interlisp.staging (skips on fork PRs or when
+#                      the STAGING_APP_ID variable is unset)
+#     deploy         - deploy the built site to GitHub Pages
 #
-# 2023-10-20 Bill Stumbo
+#  The workflow is executed either on a push or via scheduled run times.  When
+#  started at a scheduled run time we only do a deploy if the cached bibliography
+#  is no longer current.  On a push, we always verify the the current
+#  bibliography is loaded and deploy a new version of the website.
+#
+#  2023-10-20 Bill Stumbo
 #
 # Copyright 2023 by Interlisp.org
 #
@@ -49,47 +60,9 @@ defaults:
         shell: bash
 
 env:
-  # ----------------------------------------------------------------------------
-  # Specify the deployment environment:  staging or production
-  HUGO_ENVIRONMENT: ${{ vars.HUGO_ENVIRONMENT || 'staging' }}
   HUGO_VERSION: 0.155.3
 
 jobs:
-  # ----------------------------------------------------------------------------
-  # Use the Zotero REST API to get the current version of the Zotero Bibliography
-  # Compare against a cached version of the bibliography.
-  #
-  check:
-    outputs:
-      zoteroVersion: ${{ steps.zoteroVersion.outputs.version }}
-      cacheHit: ${{ steps.cache-zotero.outputs.cache-hit }}
-
-    runs-on: ubuntu-latest
-    steps:
-
-      - name: Get Zotero Version Information
-        id: zoteroVersion
-        run: |
-          set -euo pipefail
-            VERSION=$(curl -fsSLI "https://api.zotero.org/groups/2914042/items?format=versions" \
-            | { grep -i "last-modified-version" \
-                | cut -d: -f2 \
-                | tr -d $'\r ' || true; })
-          if [[ -z "${VERSION:-}" ]]; then
-            echo "Error: Failed to determine Zotero Last-Modified-Version from API response." >&2
-            exit 1
-          fi
-          echo "version=$VERSION" >> "$GITHUB_OUTPUT"
-
-      - name: Cache Zotero Bibliography
-        id: cache-zotero
-        uses: actions/cache/restore@v5
-        with:
-          lookup-only: true
-          path: |
-            content/en/history/bibliography
-          key: bib-${{ steps.zoteroVersion.outputs.version }}
-
   # ----------------------------------------------------------------------------
   # Validate that README.md references the correct Hugo version.
   # Only runs on push/pull_request, not scheduled runs.
@@ -124,80 +97,88 @@ jobs:
           echo "README.md Hugo version references are consistent"
 
   # ----------------------------------------------------------------------------
-  # Build the website.  This job is conditional, we will always run it on a
-  # push or if on a scheduled run the cache was determined to be out of date.
-  #      
-  build:
-    needs: [check, validate-docs]
-    if: always() && (github.event_name == 'push' || github.event_name == 'pull_request' || needs.check.outputs.cacheHit != 'true') && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.check.result == 'success' || needs.check.result == 'skipped')
+  # Expose the Hugo version from the workflow environment as a job output.
+  # The env context is not available in a reusable workflow's `with:` block,
+  # so the version is surfaced here instead.  Keeping it in the workflow `env`
+  # means version bumps are ordinary, reviewed pull requests.
+  #
+  hugo-version:
     runs-on: ubuntu-latest
+    outputs:
+      version: ${{ env.HUGO_VERSION }}
     steps:
-      - uses: actions/checkout@v6
-        with:
-          submodules: recursive
-          fetch-depth: 0
-
-      - name: Cache Zotero Bibliography
-        id: cache-bib
-        uses: actions/cache@v5
-        with:
-          path: |
-            static/data/bibliography.json
-            static/data/bibItems
-            content/en/history/bibliography
-          key: bib-${{ needs.check.outputs.zoteroVersion }}
-
-      - name: Install Bibliography
-        if: steps.cache-bib.outputs.cache-hit != 'true'
-        run: |
-            echo "Retrieve bibliography"
-            cd scripts
-            chmod +x ./update_bibliography.sh
-            chmod +x ./bibSplit.pl
-            ./update_bibliography.sh
-
-      # Install Hugo Extended
-      #    
-      - name: Install Hugo CLI
-        run: |
-          wget -O ${{ runner.temp }}/hugo.deb https://github.com/gohugoio/hugo/releases/download/v${HUGO_VERSION}/hugo_extended_${HUGO_VERSION}_linux-amd64.deb \
-          && sudo dpkg -i ${{ runner.temp }}/hugo.deb 
-
-      - name: Setup Pages
-        id: pages
-        uses: actions/configure-pages@v6.0.0
-
-      - name: Setup Node
-        uses: actions/setup-node@v6
-        with:
-          node-version: 24
-          cache: 'npm'
-
-      - name: Install dependencies
-        run: |
-          npm ci
-
-      - name: Build
+      - name: Verify Hugo version is set
         env:
-          HUGO_CACHEDIR: ${{ runner.temp }}/hugo_cache
-          TZ: America/New_York
-        run: hugo --cleanDestinationDir -e $HUGO_ENVIRONMENT
-        
-      - name: Upload artifact
-        uses: actions/upload-pages-artifact@v5.0.0
-        with:
-          path: ./public
+          VERSION: ${{ env.HUGO_VERSION }}
+        run: |
+          [[ -n "$VERSION" ]] || { echo "::error::HUGO_VERSION is empty"; exit 1; }
+          echo "Hugo version: $VERSION"
 
+  # ----------------------------------------------------------------------------
+  # Build the website using the org-level reusable workflow.  This job is
+  # conditional, we will always run it on a push or if on a scheduled run the
+  # cache was determined to be out of date.
+  #
+  build:
+    needs: [validate-docs, hugo-version]
+    if: always() && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.hugo-version.result == 'success')
+    uses: Interlisp/shared-workflows/.github/workflows/build-site.yml@main
+    with:
+      hugo-version: ${{ needs.hugo-version.outputs.version }}
+      hugo-environment: ${{ vars.HUGO_ENVIRONMENT || 'production' }}
+      skip-if-fresh: ${{ github.event_name == 'schedule' }}
+
+  # ----------------------------------------------------------------------------
+  # Trigger a per-PR staging preview in Interlisp/Interlisp.staging.  Skips on
+  # fork pull requests and when the GitHub App credentials are not configured,
+  # so the workflow remains green during rollout.  The Hugo version is passed
+  # as a dispatch input (a step can read the env context, unlike a reusable
+  # workflow call), keeping gh-pages.yml's env the single source of truth.
+  #
+  preview:
+    if: github.event_name == 'pull_request' &&
+        github.event.pull_request.head.repo.full_name == github.repository &&
+        vars.STAGING_APP_ID != ''
+    runs-on: ubuntu-latest
+    needs: [build]
+    steps:
+      - name: Mint GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.STAGING_APP_ID }}
+          private-key: ${{ secrets.STAGING_APP_PRIVATE_KEY }}
+          owner: Interlisp
+          repositories: |
+            Interlisp.staging
+
+      - name: Trigger staging preview
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: deploy-preview.yml
+          repo: Interlisp/Interlisp.staging
+          ref: main
+          token: ${{ steps.app-token.outputs.token }}
+          inputs: '{
+            "pr_number": "${{ github.event.pull_request.number }}",
+            "pr_sha": "${{ github.event.pull_request.head.sha }}",
+            "hugo_version": "${{ env.HUGO_VERSION }}"
+          }'
+
+  # ----------------------------------------------------------------------------
+  # Deploy the built site to GitHub Pages.
+  # Only runs on push or scheduled runs, never on pull requests, and never
+  # when the build was skipped because the bibliography was already current.
+  #
   deploy:
-    if: github.event_name != 'pull_request'
+    if: github.event_name != 'pull_request' && needs.build.outputs.skipped != 'true'
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
     runs-on: ubuntu-latest
-    needs: build
+    needs: [build]
 
     steps:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
-      
