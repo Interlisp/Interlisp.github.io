@@ -1,3 +1,6 @@
 <link rel="canonical" href="{{ .Permalink }}">
 <link rel="me" href="https://fosstodon.org/@interlisp">
+
+{{ $searchJS := resources.Get "js/vertex-search.js" | js.Build | fingerprint }}
+<script src="{{ $searchJS.RelPermalink }}" defer></script>
 {{ partial "bibliography-json-ld.html" . }}
