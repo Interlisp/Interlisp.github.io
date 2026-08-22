@@ -2,6 +2,7 @@
 title: Bibliography
 heading: Interlisp Bibliography
 type: bibliography
+robots: "noindex, follow"
 cascade:
     type: bibliography
     toc_hide: true
