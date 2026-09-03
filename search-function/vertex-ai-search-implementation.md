@@ -469,7 +469,7 @@ gcloud functions deploy search \
   --trigger-http \
   --allow-unauthenticated \
   --service-account=vertex-search-sa@interlispsearch.iam.gserviceaccount.com \
-  --set-env-vars PROJECT_ID=interlispsearch,ENGINE_ID=interlisp-site-search-v3,ALLOWED_ORIGIN=https://interlisp.org \
+  --set-env-vars PROJECT_ID=interlispsearch,ENGINE_ID=interlisp-org-search_1768860477660,ALLOWED_ORIGIN=https://interlisp.org \
   --memory=256Mi \
   --timeout=30s \
   --project=interlispsearch

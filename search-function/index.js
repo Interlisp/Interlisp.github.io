@@ -1,7 +1,11 @@
-const { GoogleAuth } = require('google-auth-library');
+'use strict';
+
+const { GoogleAuth }    = require('google-auth-library');
+const { isRateLimited } = require('./rateLimiter');
 
 const PROJECT_ID = process.env.PROJECT_ID;
-const ENGINE_ID  = process.env.ENGINE_ID;
+const WEBSITE_ENGINE_ID = process.env.WEBSITE_ENGINE_ID || process.env.ENGINE_ID;
+const GITHUB_ENGINE_ID = process.env.GITHUB_ENGINE_ID || null;
 const LOCATION   = 'global';
 
 const auth = new GoogleAuth({
@@ -15,22 +19,36 @@ exports.search = async (req, res) => {
     'https://www.interlisp.org',
   ];
 
-  const origin = req.headers.origin || '';
-  const allowedOrigin = allowedOrigins.includes(origin) ? origin : 'https://interlisp.org';
+  const origin        = req.headers.origin || '';
+  const allowedOrigin = allowedOrigins.includes(origin)
+    ? origin
+    : 'https://interlisp.org';
 
-  res.set('Access-Control-Allow-Origin', allowedOrigin);
+  res.set('Access-Control-Allow-Origin',  allowedOrigin);
   res.set('Access-Control-Allow-Methods', 'GET, OPTIONS');
   res.set('Access-Control-Allow-Headers', 'Content-Type');
-  res.set('Access-Control-Max-Age', '3600');
+  res.set('Access-Control-Max-Age',       '3600');
 
   if (req.method === 'OPTIONS') {
     res.status(204).send('');
     return;
   }
 
+  // Rate limiting
+  const rateLimitResult = await isRateLimited(req);
+  if (rateLimitResult.limited) {
+    res.set('Retry-After', String(rateLimitResult.retryAfter));
+    res.status(429).json({
+      error:      'Rate limit exceeded',
+      message:    rateLimitResult.reason,
+      retryAfter: rateLimitResult.retryAfter
+    });
+    return;
+  }
+
   const query    = req.query.q || req.body?.q || '';
   const context  = req.query.context || req.body?.context || '';
-  const pageSize = parseInt(req.query.pageSize) || 10;
+  const pageSize = parseInt(req.query.pageSize, 10) || 10;
 
   if (!query.trim()) {
     res.status(400).json({ error: 'Missing query parameter q' });
@@ -38,118 +56,158 @@ exports.search = async (req, res) => {
   }
 
   try {
-    // Use raw REST API to avoid SDK auto-pagination swallowing the summary
     const client = await auth.getClient();
-    const token = await client.getAccessToken();
+    const token  = await client.getAccessToken();
 
-    const endpoint = `https://discoveryengine.googleapis.com/v1/projects/${PROJECT_ID}/locations/${LOCATION}/collections/default_collection/engines/${ENGINE_ID}/servingConfigs/default_config:search`;
+    const stripHtml = str => str ? str.replace(/<[^>]*>/g, '') : null;
 
-    const requestBody = {
-      query,
-      pageSize,
-      contentSearchSpec: {
-        summarySpec: {
+    const getSource = (url) => {
+      if (!url) return 'unknown';
+      try {
+        const u = new URL(url);
+        const host = u.hostname.toLowerCase();
+        if (host === 'www.interlisp.org' || host === 'interlisp.org') return 'website-primary';
+        if (host.endsWith('.interlisp.org')) return 'website-secondary';
+        if (host.includes('github.com') || url.includes('github.com')) return 'github';
+        return 'other';
+      } catch (_) {
+        if (url.includes('github.com')) return 'github';
+        if (url.includes('interlisp.org')) return 'website-secondary';
+        return 'other';
+      }
+    };
+
+    const sourcePriorityMap = {
+      'website-primary': 1,
+      'website-secondary': 2,
+      'github': 3,
+      'other': 4,
+      'unknown': 999
+    };
+
+    const fetchPageSize = 20;
+
+    const searchEngine = async (engineId, withSummary) => {
+      const endpoint = `https://discoveryengine.googleapis.com/v1/projects/${PROJECT_ID}/locations/${LOCATION}/collections/default_collection/engines/${engineId}/servingConfigs/default_config:search`;
+      const body = {
+        query,
+        pageSize: fetchPageSize,
+        contentSearchSpec: {
+          snippetSpec: { returnSnippet: true },
+          extractiveContentSpec: { maxExtractiveAnswerCount: 3 }
+        }
+      };
+      if (withSummary) {
+        body.contentSearchSpec.summarySpec = {
           summaryResultCount: 5,
           includeCitations: true,
           useSemanticChunks: true,
           languageCode: 'en-US',
-          modelPromptSpec: {
-            preamble: buildPreamble(context)
-          },
-          modelSpec: {
-            version: 'stable'
-          }
-        },
-        snippetSpec: {
-          returnSnippet: true
-        },
-        extractiveContentSpec: {
-          maxExtractiveAnswerCount: 3
-        }
+          modelPromptSpec: { preamble: buildPreamble(context) },
+          modelSpec: { version: 'stable' }
+        };
       }
+      const resp = await fetch(endpoint, {
+        method: 'POST',
+        headers: {
+          'Authorization': `Bearer ${token.token}`,
+          'Content-Type': 'application/json',
+          'x-goog-user-project': PROJECT_ID
+        },
+        body: JSON.stringify(body)
+      });
+      if (!resp.ok) {
+        const errText = await resp.text();
+        throw new Error(`Vertex API error ${resp.status} on ${engineId}: ${errText}`);
+      }
+      return resp.json();
     };
 
-    const response = await fetch(endpoint, {
-      method: 'POST',
-      headers: {
-        'Authorization': `Bearer ${token.token}`,
-        'Content-Type': 'application/json',
-        'x-goog-user-project': PROJECT_ID
-      },
-      body: JSON.stringify(requestBody)
-    });
-
-    if (!response.ok) {
-      const errText = await response.text();
-      throw new Error(`Vertex API error ${response.status}: ${errText}`);
+    let websiteData;
+    let githubData;
+    if (GITHUB_ENGINE_ID) {
+      [websiteData, githubData] = await Promise.all([
+        searchEngine(WEBSITE_ENGINE_ID, true),
+        searchEngine(GITHUB_ENGINE_ID, false)
+      ]);
+    } else {
+      websiteData = await searchEngine(WEBSITE_ENGINE_ID, true);
+      githubData = null;
     }
 
-    const data = await response.json();
+    // Blended merge: guarantee GitHub despite website priority (70/30, 50/50 for GitHub queries)
+    const isGithubQuery = /github|issue|pull\s*request|\bpr\b|discussion/i.test(query);
+    const websiteTake = isGithubQuery ? Math.ceil(pageSize * 0.5) : Math.ceil(pageSize * 0.7);
+    const githubTake = pageSize - websiteTake;
 
-    // Add this right after const data = await response.json();
-    console.log('FIRST RESULT:', JSON.stringify(data.results?.[0], null, 2));
-    console.log('SUMMARY FULL:', JSON.stringify(data.summary, null, 2));
-    console.log('CITATIONS:', JSON.stringify(data.summary?.summaryWithMetadata?.references?.[0]));
-
-    console.log('RESPONSE KEYS:', Object.keys(data));
-    console.log('SUMMARY:', JSON.stringify(data.summary));
-    console.log('RESULT COUNT:', (data.results || []).length);
-
-    const results = (data.results || []).map(result => {
-      const derived = result.document?.derivedStructData;
-      const struct  = result.document?.structData;
-
-      // Some documents expose URL as derivedStructData.link, others as derivedStructData.url.
-      // Support both so GitHub issues/PRs/discussions are surfaced as clickable results.
-      const url = derived?.link || derived?.url || struct?.url || null;
-
-      // title: website crawl uses derivedStructData.title; structured docs use keyPropertyMapping:"title"
-      // which also maps to derivedStructData.title — fall back to structData.title if missing.
-      const title = derived?.title || struct?.title || null;
-
-      // snippets: generated from content field when keyPropertyMapping:"body" is set in the schema.
-      // Falls back to structData.content substring for structured docs without body mapping.
-      const rawSnippet = derived?.snippets?.[0]?.snippet || struct?.content?.slice(0, 300) || null;
-
+    const toItems = (data, hint) => (data?.results || []).map(r => {
+      const d = r.document?.derivedStructData;
+      const s = r.document?.structData;
+      const url = d?.link || d?.url || s?.url || s?.link || null;
+      const src = hint || getSource(url);
       return {
-        id:      result.document?.id,
-        title,
+        raw: r,
         url,
-        snippet: rawSnippet,
-        type: struct?.type || null,
-        repo: struct?.repo || null,
-        state: struct?.state || null,
-        section: url?.replace('https://interlisp.org/', '')?.split('/')?.[0] || '',
+        source: src,
+        priority: sourcePriorityMap[src] || 999,
+        derived: d,
+        structData: s,
+        score: r.retrievalSignals?.semanticRelevanceScore || 0
       };
-    }).filter(r => r?.url);
+    }).filter(i => i.url);
 
-    // Build a map of document ID to URL from search results
+    let websiteItems = toItems(websiteData, null).sort((a, b) => a.priority - b.priority || b.score - a.score);
+    let githubItems = toItems(githubData, 'github').sort((a, b) => b.score - a.score);
+
+    // Dedup by URL
+    const seen = new Set();
+    websiteItems = websiteItems.filter(i => !seen.has(i.url) && seen.add(i.url));
+    githubItems = githubItems.filter(i => !seen.has(i.url) && seen.add(i.url));
+
+    let allResults = [...websiteItems.slice(0, websiteTake), ...githubItems.slice(0, githubTake)];
+    if (allResults.length < pageSize) {
+      const rem = [...websiteItems.slice(websiteTake), ...githubItems.slice(githubTake)].sort((a, b) => a.priority - b.priority || b.score - a.score);
+      allResults = [...allResults, ...rem].slice(0, pageSize);
+    }
+    allResults.sort((a, b) => a.priority - b.priority || b.score - a.score);
+
+    // docId → URL map for citations (from both engines)
     const docIdToUrl = {};
-    (data.results || []).forEach(result => {
-      const id  = result.document?.id;
-      const derived = result.document?.derivedStructData;
-      const url = derived?.link || derived?.url || result.document?.structData?.url;
-      if (id && url) docIdToUrl[id] = url;
+    [...websiteItems, ...githubItems].forEach(i => {
+      if (i.raw.document?.id) docIdToUrl[i.raw.document.id] = i.url;
     });
-    
-    // Enrich references with URLs by matching document IDs
-    const references = (data.summary?.summaryWithMetadata?.references || []).map(ref => {
-      // Extract document ID from the full document path
+
+    let references = (websiteData?.summary?.summaryWithMetadata?.references || []).map(ref => {
       const docId = ref.document?.split('/').pop();
+      const uri = docIdToUrl[docId] || null;
+      const src = getSource(uri);
       return {
         title: ref.title,
-        uri:   docIdToUrl[docId] || null,
-        docId
+        uri,
+        docId,
+        source: src,
+        priority: sourcePriorityMap[src] || 999
       };
-    });
-    
-    const summaryText = data.summary?.summaryText || null;
-    
+    }).sort((a, b) => a.priority - b.priority);
+
+    const results = allResults.map(i => ({
+      id: i.raw.document?.id,
+      title: i.derived?.title || i.structData?.title || null,
+      url: i.url,
+      snippet: stripHtml(i.derived?.snippets?.[0]?.snippet || i.structData?.content?.slice(0, 300) || null),
+      source: i.source,
+      priority: i.priority,
+      section: i.url.replace(/^https:\/\/[^/]+\//, '').split('/')?.[0] || '',
+      type: i.structData?.type || null,
+      repo: i.structData?.repo || null,
+      state: i.structData?.state || null
+    })).slice(0, pageSize);
+
     res.json({
-      summary: summaryText ? {
-        summaryText,
+      summary: (websiteData?.summary?.summaryText ? {
+        summaryText: websiteData.summary.summaryText,
         citations: references
-      } : null,
+      } : null),
       results
     });
 
@@ -158,6 +216,14 @@ exports.search = async (req, res) => {
     res.status(500).json({ error: 'Search failed', detail: err.message });
   }
 };
+
+// Re-export for github-reimport Cloud Function (shares same source dir but different entry-point)
+try {
+  exports.reimportGithub = require('./github-reimport').reimportGithub;
+} catch (e) {
+  // ignore if github-reimport not available during search deploy
+  void e;
+}
 
 function buildPreamble(context) {
   const base = `You are a search assistant for Interlisp.org. You answer questions about the Interlisp project using indexed documentation, code examples, historical information, and GitHub content (issues, PRs, discussions).
