@@ -2,8 +2,10 @@
 title: Bibliography
 heading: Interlisp Bibliography
 type: bibliography
+robots: "noindex, follow"
 cascade:
     type: bibliography
+    toc_hide: true
 weight: 5
 aliases:
  - /bibliography/

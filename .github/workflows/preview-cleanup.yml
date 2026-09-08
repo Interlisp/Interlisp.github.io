@@ -1,0 +1,46 @@
+#*******************************************************************************
+#  preview-cleanup.yml
+#
+#  GitHub Workflow that removes the staging preview for a pull request once
+#  the pull request is closed or merged.
+#
+#  Triggers the remove-preview workflow in the Interlisp/Interlisp.staging
+#  repository, which deletes the pr-<N>/ subdirectory from the staging
+#  Pages site.
+#
+#  Copyright 2026 by Interlisp.org
+#
+# ******************************************************************************
+name: Preview Cleanup
+
+on:
+  pull_request:
+    branches:
+      - main
+    types: [closed]
+
+jobs:
+  remove-preview:
+    if: vars.STAGING_APP_ID != ''
+    runs-on: ubuntu-latest
+    steps:
+      - name: Mint GitHub App token
+        id: app-token
+        uses: actions/create-github-app-token@v3
+        with:
+          client-id: ${{ vars.STAGING_APP_ID }}
+          private-key: ${{ secrets.STAGING_APP_PRIVATE_KEY }}
+          owner: Interlisp
+          repositories: |
+            Interlisp.staging
+
+      - name: Trigger staging preview removal
+        uses: benc-uk/workflow-dispatch@v1
+        with:
+          workflow: remove-preview.yml
+          repo: Interlisp/Interlisp.staging
+          ref: main
+          token: ${{ steps.app-token.outputs.token }}
+          inputs: '{
+            "pr_number": "${{ github.event.pull_request.number }}"
+          }'

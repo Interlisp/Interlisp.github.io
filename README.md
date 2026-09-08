@@ -241,17 +241,7 @@ Building the website is driven by a GitHub workflow (`.github/workflows/gh-pages
 
 The workflow consists of four jobs:
 
-**1. `check` — Verify Bibliography is Current**
-
-Uses Zotero's REST interface to query for the latest version of the group bibliography. A `GET` call is made to:
-
-```
-https://api.zotero.org/groups/2914042/items
-```
-
-This returns metadata including the `Last-Modified-Version` header, which is incremented every time the Zotero Interlisp catalog is updated. This value is used as a cache key for the bibliography. If the cache key matches one in the current GitHub Action cache, we reuse the saved bibliography and skip rebuilding.
-
-**2. `validate-docs` — Verify Documentation Consistency**
+**1. `validate-docs` — Verify Documentation Consistency**
 
 Runs on `push` and `pull_request` events to ensure that README.md references the correct Hugo version. Checks that:
 - The Hugo badge displays the version defined in `HUGO_VERSION`
@@ -259,31 +249,48 @@ Runs on `push` and `pull_request` events to ensure that README.md references the
 
 This job prevents documentation drift from the actual build configuration.
 
-**3. `build` — Build the Website**
+**2. `hugo-version` — Expose the Hugo Version**
 
-- Determines if a build is needed:
-  - On `push` or `pull_request`: Always builds
-  - On schedule: Skips build if Zotero cache is current
-- Checks out the repository
-- If the Zotero cache is valid, copies its contents into the `content/en/history/bibliography` directory
-- If the cache is invalid, runs `update_bibliography.sh` to download and process a new copy
-- Runs Hugo Extended (version defined by `HUGO_VERSION` environment variable) with flags:
-  - `-e $HUGO_ENVIRONMENT` — specifies production or staging build
-  - `--cleanDestinationDir` — clears `./public` directory to avoid stale artifacts
+Reads the `HUGO_VERSION` environment variable and exposes it as a job
+output.  The `env` context is not available in a reusable workflow's
+`with:` block, so the version is surfaced here instead.  Keeping it in
+the workflow `env` means version bumps are ordinary, reviewed pull
+requests.
+
+**3. `build` — Build the Website and Run the Tests**
+
+Delegates to the org-level reusable workflow
+(`Interlisp/shared-workflows/.github/workflows/build-site.yml`), which:
+- Queries the Zotero REST API for the bibliography version and caches the
+  bibliography, running `update_bibliography.sh` to download and process a
+  new copy whenever the version has changed (a cache miss)
+- On scheduled runs, skips the build when the bibliography is unchanged
+  (exposed via the workflow's `skipped` output)
+- Runs Hugo Extended with the build environment passed as an input
+  (`-e production` for this repository)
+- Runs the full test suite:
+  - Content-integrity and bibliography JSON-LD suites against a
+    `testing`-environment build (which mounts bibliography test fixtures)
+  - Build-integrity tests (`test_hugo_build.py`) against the production
+    output
 - Uses the GitHub `upload-pages-artifact` action to package and store the `./public` directory contents for deployment
 
 **4. `deploy` — Deploy to GitHub Pages**
 
-Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action. Skipped on pull requests.
+Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action. Skipped on pull requests and when the build was skipped because the bibliography was already current.
 
 ### Environment Variables
 
-The following environment variables control the build and deployment process:
+The following repository variables control the build and deployment process:
 
 | Variable | Description | Values | Default |
 |----------|-------------|--------|---------|
-| `HUGO_ENVIRONMENT` | Specifies the build environment | `development`, `staging`, `production` | `staging` |
+| `HUGO_ENVIRONMENT` | Build environment used by the production workflow | `development`, `staging`, `production` | `production` |
 | `HUGO_VERSION` | Hugo version used in CI/CD | Semantic version (e.g., `0.155.3`) | Set in workflow |
+
+`HUGO_ENVIRONMENT` is resolved in `.github/workflows/gh-pages.yml` and passed
+as the `hugo-environment` input to the shared build workflow.  The staging
+repository always builds with the `staging` environment.
 
 **Environment-specific behavior:**
 
@@ -293,42 +300,35 @@ The following environment variables control the build and deployment process:
 | `staging` | Disabled | Blocked | PR previews and testing |
 | `development` | Disabled | N/A | Local development |
 
-These variables are set in `.github/workflows/gh-pages.yml` and can be overridden via GitHub repository variables.
-
 ### Deploying a Staging Site
 
-To deploy a personal staging site for testing:
+Every pull request to `main` is automatically deployed to a per-PR staging
+preview.  A dedicated repository, `Interlisp/Interlisp.staging`, acts as the
+deployment target.  Each PR is served from a unique subdirectory of that
+repository's GitHub Pages site:
 
-**1. Initial Setup:**
+| Deployment | URL |
+|------------|-----|
+| Staging root | `https://interlisp.github.io/Interlisp.staging/` |
+| PR #123 preview | `https://interlisp.github.io/Interlisp.staging/pr-123/` |
 
-1. Fork/clone the Interlisp.github.io repository to your GitHub account
-2. In your repository, go to **Settings → Pages**
-3. Under **Build and deployment**, set Source to **Deploy from GitHub Actions**
+When a PR is opened or updated, the production workflow (`gh-pages.yml`)
+triggers the `deploy-preview` workflow in the staging repository, which:
 
-**2. Configure Your Fork:**
+1. Checks out the PR's head commit
+2. Builds the site using the shared org-level workflow
+   (`Interlisp/shared-workflows/.github/workflows/build-site.yml`)
+3. Deploys the result to the `pr-<N>/` subdirectory
+4. Posts the preview URL as a comment on the PR
 
-Create a branch and make these required changes:
+When a PR is closed or merged, `preview-cleanup.yml` triggers the
+`remove-preview` workflow in the staging repository to delete the
+subdirectory.
 
-1. Update `baseURL` in `config/staging/hugo.yaml` to match your repository:
-
-```yaml
-baseURL: https://YOUR_USERNAME.github.io/YOUR_REPO_NAME/
-
-languageCode: en-us
-title: 'Staging Environment'
-```
-
-> **Important:** The `baseURL` must reflect the complete path of your repository. Incorrect URLs will cause deployment failures or broken links.
-
-**3. Deploy:**
-
-1. Commit and push your branch
-2. Create a Pull Request to merge into your repository's main branch
-3. Merge the PR — GitHub Actions will build and deploy your staging site
-
-**4. Develop Features:**
-
-Create feature branches for new work. Once tested on your staging site, create a PR to merge content into the main Interlisp repository.
+Because the build logic lives in the org-level reusable workflow, production
+and staging are always built the same way.  The staging environment uses
+`config/staging/hugo.yaml`, which sets a `baseURL` for the staging site and
+disables production-only behavior such as search-engine crawling.
 
 ---
 

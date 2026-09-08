@@ -64,7 +64,7 @@ You can email us at [info@interlisp.org](mailto:info@interlisp.org)
 
 We do not monitor these online communities but are looking for volunteers to monitor them for Interlisp discussions:
 
-* [r/lisp](reddit.com/r/lisp) on Reddit.
+* [r/lisp](https://www.reddit.com/r/lisp) on Reddit.
 * [Libera.Chat](https://libera.chat) has a #Interlisp IRC Channel. A place for informal chat. Connect by pointing your IRC client to `irc.libera.chat:6697` (TLS) and `/join #interlisp`. Say hello. There are also channels for #lisp (any dialect) and #common-lisp.
 * [Lisp-Romania] has a Discord Interlisp channel.
 
