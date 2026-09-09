@@ -5,7 +5,7 @@ type: bibliography
 robots: "noindex, follow"
 cascade:
     type: bibliography
-    toc_hide: true
+    toc_hide: false
 weight: 5
 aliases:
  - /bibliography/
