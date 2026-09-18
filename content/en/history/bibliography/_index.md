@@ -3,9 +3,12 @@ title: Bibliography
 heading: Interlisp Bibliography
 type: bibliography
 robots: "noindex, follow"
+# Keep this section visible in the sidebar. Hugo merges a section's own
+# cascade into its own Params, so cascade.toc_hide alone would hide it.
+toc_hide: false
 cascade:
     type: bibliography
-    toc_hide: false
+    toc_hide: true
 weight: 5
 aliases:
  - /bibliography/

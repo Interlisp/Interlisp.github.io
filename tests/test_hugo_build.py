@@ -160,6 +160,56 @@ class TestSitemapIntegrity:
         )
 
 
+class TestHistorySidebarNavigation:
+    """The Bibliography section must be reachable from History navigation.
+
+    Regression tests for PR #347: setting only ``cascade.toc_hide`` hid the
+    Bibliography entry itself from the History sidebar (Hugo merges a
+    section's own cascade into its own Params), and the empty
+    ``layouts/_partials/section-index.html`` override removed the subpage
+    cards.  Either failure must break the build tests.
+    """
+
+    @pytest.fixture(autouse=True)
+    def history_page(self, production_build):
+        self.build_result = production_build
+        path = PROD_PUBLIC / "history" / "index.html"
+        if not path.exists():
+            pytest.skip("history/index.html not found — run a production build first")
+        self.content = path.read_text(encoding="utf-8", errors="ignore")
+
+    def test_bibliography_in_sidebar_nav(self) -> None:
+        """The sidebar nav on /history/ must link to /history/bibliography/."""
+        nav = re.search(
+            r'<nav[^>]*id="td-section-nav".*?</nav>',
+            self.content,
+            re.DOTALL,
+        )
+        assert nav, "sidebar nav #td-section-nav not found on history page"
+        assert "/history/bibliography/" in nav.group(0), (
+            "Bibliography entry missing from the History sidebar navigation"
+        )
+
+    def test_bibliography_subpage_card_present(self) -> None:
+        """The History page must render subpage cards including Bibliography."""
+        marker = '<div class="section-index">'
+        assert marker in self.content, (
+            "section-index subpage list missing from the History page body"
+        )
+        tail = self.content.split(marker, 1)[1]
+        assert "/history/bibliography/" in tail, (
+            "Bibliography subpage card missing from the History page body"
+        )
+
+    def test_no_sidebar_truncation_warning(self) -> None:
+        """Hugo must not truncate sidebar entries — a flood of unhidden
+        bibliography entries (e.g. from a stale Zotero cache without
+        ``toc_hide``) would trigger this Docsy warning."""
+        assert "sidebar entries have been truncated" not in (
+            self.build_result.stderr or ""
+        ), "Sidebar entries were truncated — bibliography entries may be leaking into navigation"
+
+
 class TestInternalLinks:
     """All internal href links in the built HTML must resolve to existing pages."""
 
