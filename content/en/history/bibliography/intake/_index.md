@@ -2,6 +2,10 @@
 title: Interlisp Bibliography Intake Guide
 weight: 1
 type: docs
+# Explicitly visible in the sidebar: the parent bibliography section's
+# cascade sets toc_hide:true (to keep generated entries out of the nav),
+# and Hugo merges cascade into children's Params too.
+toc_hide: false
 ---
 
 ## I have something I think belongs in the Interlisp Bibliography!

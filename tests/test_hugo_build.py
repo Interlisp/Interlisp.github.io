@@ -190,6 +190,27 @@ class TestHistorySidebarNavigation:
             "Bibliography entry missing from the History sidebar navigation"
         )
 
+    def test_intake_guide_in_sidebar_nav(self) -> None:
+        """The Intake Guide must be listed under Bibliography, while the
+        hundreds of generated entries must stay out of the nav."""
+        nav = re.search(
+            r'<nav[^>]*id="td-section-nav".*?</nav>',
+            self.content,
+            re.DOTALL,
+        )
+        assert nav, "sidebar nav #td-section-nav not found on history page"
+        nav_html = nav.group(0)
+        assert "/history/bibliography/intake/" in nav_html, (
+            "Intake Guide entry missing from the sidebar navigation"
+        )
+        stray_entries = re.findall(
+            r'href="/history/bibliography/(?!intake/)[a-z0-9]+/"', nav_html
+        )
+        assert not stray_entries, (
+            "Generated bibliography entries leaking into sidebar navigation:\n"
+            + "\n".join(stray_entries[:10])
+        )
+
     def test_bibliography_subpage_card_present(self) -> None:
         """The History page must render subpage cards including Bibliography."""
         marker = '<div class="section-index">'
