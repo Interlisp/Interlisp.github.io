@@ -165,9 +165,10 @@ class TestHistorySidebarNavigation:
 
     Regression tests for PR #347: setting only ``cascade.toc_hide`` hid the
     Bibliography entry itself from the History sidebar (Hugo merges a
-    section's own cascade into its own Params), and the empty
-    ``layouts/_partials/section-index.html`` override removed the subpage
-    cards.  Either failure must break the build tests.
+    section's own cascade into its own Params). The empty
+    ``layouts/_partials/section-index.html`` override is intentional and
+    must keep suppressing the subpage cards. Either deviation must break
+    the build tests.
     """
 
     @pytest.fixture(autouse=True)
@@ -211,15 +212,12 @@ class TestHistorySidebarNavigation:
             + "\n".join(stray_entries[:10])
         )
 
-    def test_bibliography_subpage_card_present(self) -> None:
-        """The History page must render subpage cards including Bibliography."""
-        marker = '<div class="section-index">'
-        assert marker in self.content, (
-            "section-index subpage list missing from the History page body"
-        )
-        tail = self.content.split(marker, 1)[1]
-        assert "/history/bibliography/" in tail, (
-            "Bibliography subpage card missing from the History page body"
+    def test_no_subpage_cards(self) -> None:
+        """The History page must not render section-index subpage cards;
+        subpage navigation lives in the sidebar. The empty
+        ``layouts/_partials/section-index.html`` override suppresses them."""
+        assert '<div class="section-index">' not in self.content, (
+            "section-index subpage list should be suppressed on the History page"
         )
 
     def test_no_sidebar_truncation_warning(self) -> None:
