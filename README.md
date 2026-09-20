@@ -243,7 +243,7 @@ The workflow consists of four jobs:
 
 **1. `validate-docs` — Verify Documentation Consistency**
 
-Runs on `push` and `pull_request` events to ensure that README.md references the correct Hugo version. Checks that:
+Runs on `push`, `pull_request`, and `workflow_dispatch` events to ensure that README.md references the correct Hugo version. Checks that:
 - The Hugo badge displays the version defined in `HUGO_VERSION`
 - The README.md installation instructions use the correct version
 
@@ -277,7 +277,7 @@ Delegates to the org-level reusable workflow
 
 **4. `deploy` — Deploy to GitHub Pages**
 
-Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action. Skipped on pull requests and when the build was skipped because the bibliography was already current.
+Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action. Runs on `push` and manual `workflow_dispatch` from `main`, and on scheduled runs only when the build was not skipped because the bibliography was already current. Never runs on pull requests.
 
 ### Environment Variables
 

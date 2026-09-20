@@ -20,10 +20,11 @@
 #                      the STAGING_APP_ID variable is unset)
 #     deploy         - deploy the built site to GitHub Pages
 #
-#  The workflow is executed either on a push or via scheduled run times.  When
-#  started at a scheduled run time we only do a deploy if the cached bibliography
-#  is no longer current.  On a push, we always verify the the current
-#  bibliography is loaded and deploy a new version of the website.
+#  The workflow is executed on a push, on pull requests (build only, never
+#  deployed), via scheduled runs, or via manual workflow_dispatch.  On a
+#  scheduled run we only deploy if the cached bibliography is no longer
+#  current.  On a push or manual dispatch from main, we always verify the
+#  current bibliography is loaded and deploy a new version of the website.
 #
 #  2023-10-20 Bill Stumbo
 #
@@ -65,10 +66,10 @@ env:
 jobs:
   # ----------------------------------------------------------------------------
   # Validate that README.md references the correct Hugo version.
-  # Only runs on push/pull_request, not scheduled runs.
+  # Runs on push/pull_request/workflow_dispatch, not scheduled runs.
   #
   validate-docs:
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    if: github.event_name == 'push' || github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -115,9 +116,9 @@ jobs:
           echo "Hugo version: $VERSION"
 
   # ----------------------------------------------------------------------------
-  # Build the website using the org-level reusable workflow.  This job is
-  # conditional, we will always run it on a push or if on a scheduled run the
-  # cache was determined to be out of date.
+  # Build the website using the org-level reusable workflow.  This job runs on
+  # push, pull_request, and workflow_dispatch (always a full build), and on
+  # scheduled runs (skipping the build when the bibliography cache is fresh).
   #
   build:
     needs: [validate-docs, hugo-version]
@@ -167,11 +168,22 @@ jobs:
 
   # ----------------------------------------------------------------------------
   # Deploy the built site to GitHub Pages.
-  # Only runs on push or scheduled runs, never on pull requests, and never
-  # when the build was skipped because the bibliography was already current.
+  # Only runs on push/workflow_dispatch from main, or on scheduled runs when
+  # the build was not skipped; never on pull requests.  The `skipped` output
+  # is only consulted for scheduled runs (manual dispatches always do a full
+  # rebuild with `skip-if-fresh: false`, so a fresh Pages artifact is
+  # guaranteed when the build succeeds), and deploys are restricted to the
+  # main branch so a dispatch from any other ref cannot publish to production.
   #
   deploy:
-    if: github.event_name != 'pull_request' && needs.build.outputs.skipped != 'true'
+    if: >-
+      needs.build.result == 'success' && 
+      github.ref == 'refs/heads/main' && 
+      (
+        github.event_name == 'push' || 
+        github.event_name == 'workflow_dispatch' || 
+        (github.event_name == 'schedule' && needs.build.outputs.skipped != 'true')
+      )
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}
