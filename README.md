@@ -279,7 +279,7 @@ Delegates to the org-level reusable workflow
 
 **4. `deploy` — Deploy to GitHub Pages**
 
-Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action. Runs only from the `main` branch when the build succeeded and was not skipped (`skipped != 'true'`, checked for every event including manual dispatch as a safety net so `deploy-pages` always has a fresh artifact). Never runs on pull requests or from non-`main` refs.
+Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action. Runs only from the `main` branch when the build succeeded and was not skipped (`skipped != 'true'`, checked for every event including manual dispatch as a safety net so `deploy-pages` always has a newly built artifact). Never runs on pull requests or from non-`main` refs.
 
 **Deploy test matrix** (every row also requires `build` result `success`):
 
@@ -289,7 +289,7 @@ Takes the output of the build step and deploys it to GitHub Pages using the GitH
 | `workflow_dispatch` | `main` | `false` | deploy |
 | `workflow_dispatch` | `main` | `true` | skip — no artifact; signals a reusable-workflow bug |
 | `schedule` | `main` | `false` (bib changed) | deploy |
-| `schedule` | `main` | `true` (bib fresh) | skip |
+| `schedule` | `main` | `true` (cache hit — cached bibliography matches Zotero) | skip |
 | `pull_request` | any | any | skip |
 | any | not `main` | any | skip |
 

@@ -12,8 +12,9 @@
 #     hugo-version   - expose the Hugo version as a job output
 #     build          - build the website and run the full test suite using the
 #                      org-level reusable workflow; also checks the Zotero
-#                      bibliography version (skipping the build on scheduled
-#                      runs when it is unchanged)
+  #                      bibliography version (skipping the build on scheduled
+  #                      runs on a cache hit, i.e. the cached bibliography
+  #                      already matches Zotero's current version)
 #                      (Interlisp/shared-workflows/.github/workflows/build-site.yml)
 #     preview        - trigger a per-PR staging preview in
 #                      Interlisp/Interlisp.staging (skips on fork PRs or when
@@ -24,10 +25,11 @@
 #  deployed), via scheduled runs, or via manual workflow_dispatch.  Deploys
 #  run only from main when the build succeeded and was not skipped
 #  (`needs.build.outputs.skipped != 'true'`).  On a scheduled run the build
-#  is skipped when the cached bibliography is fresh, so those runs usually
-#  do not deploy.  Push and manual dispatch pass `skip-if-fresh: false` and
+#  is skipped when the cached bibliography is already current (cache hit:
+#  it matches Zotero's current version), so those runs usually do not
+#  deploy.  Push and manual dispatch pass `skip-if-fresh: false` and
 #  therefore rebuild every time; the `skipped` check is kept for dispatch as
-#  a safety net so deploy-pages never runs without a fresh Pages artifact.
+#  a safety net so deploy-pages never runs without a newly built Pages artifact.
 #
 #  2023-10-20 Bill Stumbo
 #
@@ -182,10 +184,11 @@ jobs:
   # Deploy the built site to GitHub Pages.
   # Only runs from the main branch on push/workflow_dispatch/schedule, never
   # on pull requests, and never when the build was skipped because the
-  # bibliography was already current.  The `skipped` output is checked for
+  # cached bibliography was already current (cache hit).  The `skipped`
+  # output is checked for
   # all events: manual dispatches pass `skip-if-fresh: false`, so a healthy
   # dispatch rebuilds and `skipped` is 'false'; keeping the check guarantees
-  # deploy-pages always has a fresh Pages artifact.  Deploys are restricted
+  # deploy-pages always has a newly built Pages artifact.  Deploys are restricted
   # to `main` so a dispatch from any other ref cannot publish to production.
   #
   # Expected matrix (all rows also require build == success, ref == main):
@@ -194,7 +197,7 @@ jobs:
   #   workflow_dispatch @ main, skipped=true  -> skip (no artifact; signals
   #     a reusable-workflow bug instead of publishing stale output)
   #   schedule, skipped=false (bib changed)   -> deploy
-  #   schedule, skipped=true (bib fresh)      -> skip
+  #   schedule, skipped=true (cache hit)      -> skip
   #   pull_request (any ref)                  -> skip
   #   any event, ref != main                  -> skip
   #
