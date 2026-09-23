@@ -19,14 +19,54 @@ import DOMPurify from 'dompurify';
     return;
   }
 
-  // Get query from URL params (?q=...)
-  const urlParams = new URLSearchParams(window.location.search);
-  const query = urlParams.get('q') || '';
-
   const statusEl  = document.getElementById('vertex-search-status');
   const hitsEl    = document.getElementById('vertex-search-hits');
   const summaryEl = document.getElementById('vertex-search-summary');
   const summaryTxt = document.getElementById('summary-text');
+
+  // Dual-mode search: Standard (Google CSE, default) vs AI-assisted (Vertex).
+  const googleContainer = document.getElementById('google-search-container');
+  const vertexContainer = document.getElementById('vertex-search-container');
+  const standardRadio = document.getElementById('search-mode-standard');
+  const aiRadio = document.getElementById('search-mode-ai');
+
+  const aiAvailable = Boolean(FUNCTION_URL) && aiRadio && !aiRadio.disabled;
+  const standardAvailable = standardRadio && !standardRadio.disabled;
+
+  let lastAiQuery = null;
+
+  function currentQuery() {
+    return new URLSearchParams(window.location.search).get('q') || '';
+  }
+
+  function setMode(mode, options) {
+    const updateUrl = !options || options.updateUrl !== false;
+    const useAi = mode === 'ai' && aiAvailable;
+
+    if (vertexContainer) vertexContainer.hidden = !useAi;
+    if (googleContainer) googleContainer.hidden = useAi;
+    if (aiRadio && standardRadio) {
+      (useAi ? aiRadio : standardRadio).checked = true;
+    }
+
+    if (updateUrl) {
+      const params = new URLSearchParams(window.location.search);
+      if (useAi) {
+        params.set('mode', 'ai');
+      } else {
+        params.delete('mode');
+      }
+      const next = `${window.location.pathname}?${params.toString()}`;
+      window.history.replaceState(null, '', next);
+    }
+
+    if (useAi) {
+      const q = currentQuery();
+      if (q !== lastAiQuery) {
+        doSearch(q);
+      }
+    }
+  }
 
   function escapeHtml(str) {
     if (!str) return '';
@@ -135,13 +175,16 @@ import DOMPurify from 'dompurify';
   }
 
   async function doSearch(q) {
+    lastAiQuery = q;
     if (!q) {
       statusEl.textContent = 'Enter a search query above.';
+      statusEl.style.display = '';
       return;
     }
 
     // Update page title to reflect query
     document.title = `Search: ${q}`;
+    statusEl.style.display = '';
     statusEl.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Searching for <strong>' +
       escapeHtml(q) + '</strong>…';
 
@@ -237,11 +280,38 @@ import DOMPurify from 'dompurify';
     }
   }
 
+  // Standard search is the default; AI search only runs when toggled on
+  // (or when the URL carries ?mode=ai). This avoids Vertex cost/latency
+  // for users who never opt in.
+  function initMode() {
+    const params = new URLSearchParams(window.location.search);
+    const wantsAi = params.get('mode') === 'ai';
+
+    if (!aiAvailable || !standardAvailable) {
+      // Only one backend configured: lock to it.
+      setMode(aiAvailable ? 'ai' : 'standard', { updateUrl: false });
+      return;
+    }
+
+    setMode(wantsAi ? 'ai' : 'standard', { updateUrl: false });
+  }
+
+  if (standardRadio) {
+    standardRadio.addEventListener('change', () => {
+      if (standardRadio.checked) setMode('standard');
+    });
+  }
+  if (aiRadio) {
+    aiRadio.addEventListener('change', () => {
+      if (aiRadio.checked) setMode('ai');
+    });
+  }
+
   // Run search on page load
   if (document.readyState === 'loading') {
-    document.addEventListener('DOMContentLoaded', () => doSearch(query));
+    document.addEventListener('DOMContentLoaded', initMode);
   } else {
-    doSearch(query);
+    initMode();
   }
 
 })();
