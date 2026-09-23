@@ -3,7 +3,7 @@
 #
 #  Github Workflow to deploy Interlisp.org.
 #
-#  Interlisp.org is a Hugo based static website that contains a 
+#  Interlisp.org is a Hugo based static website that contains a
 #  detailed bibliography maintained using Zotero (https://www.zotero.org/groups/2914042/interlispwww.zotero.org/).
 #
 #  This workflow consists of several jobs:
@@ -12,18 +12,24 @@
 #     hugo-version   - expose the Hugo version as a job output
 #     build          - build the website and run the full test suite using the
 #                      org-level reusable workflow; also checks the Zotero
-#                      bibliography version (skipping the build on scheduled
-#                      runs when it is unchanged)
+  #                      bibliography version (skipping the build on scheduled
+  #                      runs on a cache hit, i.e. the cached bibliography
+  #                      already matches Zotero's current version)
 #                      (Interlisp/shared-workflows/.github/workflows/build-site.yml)
 #     preview        - trigger a per-PR staging preview in
 #                      Interlisp/Interlisp.staging (skips on fork PRs or when
 #                      the STAGING_APP_ID variable is unset)
 #     deploy         - deploy the built site to GitHub Pages
 #
-#  The workflow is executed either on a push or via scheduled run times.  When
-#  started at a scheduled run time we only do a deploy if the cached bibliography
-#  is no longer current.  On a push, we always verify the the current
-#  bibliography is loaded and deploy a new version of the website.
+#  The workflow is executed on a push, on pull requests (build only, never
+#  deployed), via scheduled runs, or via manual workflow_dispatch.  Deploys
+#  run only from main when the build succeeded and was not skipped
+#  (`needs.build.outputs.skipped != 'true'`).  On a scheduled run the build
+#  is skipped when the cached bibliography is already current (cache hit:
+#  it matches Zotero's current version), so those runs usually do not
+#  deploy.  Push and manual dispatch pass `skip-if-fresh: false` and
+#  therefore rebuild every time; the `skipped` check is kept for dispatch as
+#  a safety net so deploy-pages never runs without a newly built Pages artifact.
 #
 #  2023-10-20 Bill Stumbo
 #
@@ -65,10 +71,10 @@ env:
 jobs:
   # ----------------------------------------------------------------------------
   # Validate that README.md references the correct Hugo version.
-  # Only runs on push/pull_request, not scheduled runs.
+  # Runs on push/pull_request/workflow_dispatch, not scheduled runs.
   #
   validate-docs:
-    if: github.event_name == 'push' || github.event_name == 'pull_request'
+    if: github.event_name == 'push' || github.event_name == 'pull_request' || github.event_name == 'workflow_dispatch'
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v6
@@ -76,24 +82,24 @@ jobs:
       - name: Check Hugo version consistency
         run: |
           echo "Checking README.md for Hugo version $HUGO_VERSION"
-          
+
           # Check badge
           if ! grep -q "badge/Hugo-${HUGO_VERSION}" README.md; then
             echo "::error::README.md badge does not reference Hugo version $HUGO_VERSION"
             FAILED=1
           fi
-          
+
           # Check download URL
           if ! grep -q "hugo_extended_${HUGO_VERSION}_linux-amd64.deb" README.md; then
             echo "::error::README.md download URL does not reference Hugo version $HUGO_VERSION"
             FAILED=1
           fi
-          
+
           if [ "$FAILED" = "1" ]; then
             echo "Update README.md to use Hugo version $HUGO_VERSION"
             exit 1
           fi
-          
+
           echo "README.md Hugo version references are consistent"
 
   # ----------------------------------------------------------------------------
@@ -115,13 +121,20 @@ jobs:
           echo "Hugo version: $VERSION"
 
   # ----------------------------------------------------------------------------
-  # Build the website using the org-level reusable workflow.  This job is
-  # conditional, we will always run it on a push or if on a scheduled run the
-  # cache was determined to be out of date.
+  # Build the website using the org-level reusable workflow.  This job runs on
+  # push, pull_request, and workflow_dispatch (always a full build), and on
+  # scheduled runs (skipping the build when the bibliography cache is fresh).
   #
   build:
     needs: [validate-docs, hugo-version]
-    if: always() && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.hugo-version.result == 'success')
+    if: >-
+      always() &&
+      (
+        needs.validate-docs.result == 'success' ||
+        needs.validate-docs.result == 'skipped'
+      ) &&
+      needs.hugo-version.result == 'success'
+
     uses: Interlisp/shared-workflows/.github/workflows/build-site.yml@main
     with:
       hugo-version: ${{ needs.hugo-version.outputs.version }}
@@ -136,9 +149,10 @@ jobs:
   # workflow call), keeping gh-pages.yml's env the single source of truth.
   #
   preview:
-    if: github.event_name == 'pull_request' &&
-        github.event.pull_request.head.repo.full_name == github.repository &&
-        vars.STAGING_APP_ID != ''
+    if: >-
+      github.event_name == 'pull_request' &&
+      github.event.pull_request.head.repo.full_name == github.repository &&
+      vars.STAGING_APP_ID != ''
     runs-on: ubuntu-latest
     needs: [build]
     steps:
@@ -159,19 +173,44 @@ jobs:
           repo: Interlisp/Interlisp.staging
           ref: main
           token: ${{ steps.app-token.outputs.token }}
-          inputs: '{
-            "pr_number": "${{ github.event.pull_request.number }}",
-            "pr_sha": "${{ github.event.pull_request.head.sha }}",
-            "hugo_version": "${{ env.HUGO_VERSION }}"
-          }'
+          inputs: >-
+            {
+              "pr_number": "${{ github.event.pull_request.number }}",
+              "pr_sha": "${{ github.event.pull_request.head.sha }}",
+              "hugo_version": "${{ env.HUGO_VERSION }}"
+            }
 
   # ----------------------------------------------------------------------------
   # Deploy the built site to GitHub Pages.
-  # Only runs on push or scheduled runs, never on pull requests, and never
-  # when the build was skipped because the bibliography was already current.
+  # Only runs from the main branch on push/workflow_dispatch/schedule, never
+  # on pull requests, and never when the build was skipped because the
+  # cached bibliography was already current (cache hit).  The `skipped`
+  # output is checked for
+  # all events: manual dispatches pass `skip-if-fresh: false`, so a healthy
+  # dispatch rebuilds and `skipped` is 'false'; keeping the check guarantees
+  # deploy-pages always has a newly built Pages artifact.  Deploys are restricted
+  # to `main` so a dispatch from any other ref cannot publish to production.
+  #
+  # Expected matrix (all rows also require build == success, ref == main):
+  #   push @ main, skipped=false              -> deploy
+  #   workflow_dispatch @ main, skipped=false -> deploy
+  #   workflow_dispatch @ main, skipped=true  -> skip (no artifact; signals
+  #     a reusable-workflow bug instead of publishing stale output)
+  #   schedule, skipped=false (bib changed)   -> deploy
+  #   schedule, skipped=true (cache hit)      -> skip
+  #   pull_request (any ref)                  -> skip
+  #   any event, ref != main                  -> skip
   #
   deploy:
-    if: github.event_name != 'pull_request' && needs.build.outputs.skipped != 'true'
+    if: >-
+      needs.build.result == 'success' &&
+      github.ref == 'refs/heads/main' &&
+      needs.build.outputs.skipped != 'true' &&
+      (
+        github.event_name == 'push' ||
+        github.event_name == 'workflow_dispatch' ||
+        github.event_name == 'schedule'
+      )
     environment:
       name: github-pages
       url: ${{ steps.deployment.outputs.page_url }}

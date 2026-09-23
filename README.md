@@ -239,11 +239,12 @@ Building the website is driven by a GitHub workflow (`.github/workflows/gh-pages
 
 **Workflow Jobs:**
 
-The workflow consists of four jobs:
+The workflow consists of five jobs:
 
 **1. `validate-docs` — Verify Documentation Consistency**
 
-Runs on `push` and `pull_request` events to ensure that README.md references the correct Hugo version. Checks that:
+Runs on `push`, `pull_request`, and `workflow_dispatch` events to ensure that README.md references the correct Hugo version. Checks that:
+
 - The Hugo badge displays the version defined in `HUGO_VERSION`
 - The README.md installation instructions use the correct version
 
@@ -261,6 +262,7 @@ requests.
 
 Delegates to the org-level reusable workflow
 (`Interlisp/shared-workflows/.github/workflows/build-site.yml`), which:
+
 - Queries the Zotero REST API for the bibliography version and caches the
   bibliography, running `update_bibliography.sh` to download and process a
   new copy whenever the version has changed (a cache miss)
@@ -277,7 +279,21 @@ Delegates to the org-level reusable workflow
 
 **4. `deploy` — Deploy to GitHub Pages**
 
-Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action. Skipped on pull requests and when the build was skipped because the bibliography was already current.
+Takes the output of the build step and deploys it to GitHub Pages using the GitHub `deploy-pages` action. Runs only from the `main` branch when the build succeeded and was not skipped (`skipped != 'true'`, checked for every event including manual dispatch as a safety net so `deploy-pages` always has a newly built artifact). Never runs on pull requests or from non-`main` refs.
+
+**Deploy test matrix** (every row also requires `build` result `success`):
+
+| Event | Ref | `skipped` | Result |
+|-------|-----|-----------|--------|
+| `push` | `main` | `false` | deploy |
+| `workflow_dispatch` | `main` | `false` | deploy |
+| `workflow_dispatch` | `main` | `true` | skip — no artifact; signals a reusable-workflow bug |
+| `schedule` | `main` | `false` (bib changed) | deploy |
+| `schedule` | `main` | `true` (cache hit — cached bibliography matches Zotero) | skip |
+| `pull_request` | any | any | skip |
+| any | not `main` | any | skip |
+
+Verify with: `gh run view <run-id> --json jobs -q '.jobs[].conclusion'` — `deploy` should be `success` only for the deploy rows above, `skipped` otherwise; and confirm no line in `gh-pages.yml` ends with trailing whitespace.
 
 ### Environment Variables
 
