@@ -35,6 +35,54 @@ import DOMPurify from 'dompurify';
 
   let lastAiQuery = null;
 
+  // Shared preference with the pre-search picker (assets/js/search.js).
+  // The explicit ?mode= URL param always wins; the stored value is only a
+  // fallback so a remembered choice applies to fresh searches.
+  const STORAGE_KEY = 'interlisp-search-mode';
+
+  function getStoredMode() {
+    if (window.interlispSearchMode) return window.interlispSearchMode.get();
+    try {
+      return window.localStorage.getItem(STORAGE_KEY) === 'ai' ? 'ai' : 'standard';
+    } catch (_) {
+      return 'standard';
+    }
+  }
+
+  function syncEntryPickers(mode) {
+    const useAi = mode === 'ai';
+    const pickers = document.querySelectorAll('input.td-search-mode');
+    for (let i = 0; i < pickers.length; i++) {
+      pickers[i].checked = useAi;
+      const group = pickers[i].closest('.td-search-mode-switch');
+      if (group) {
+        const labels = group.querySelectorAll('.td-search-mode-label');
+        for (let j = 0; j < labels.length; j++) {
+          const active = labels[j].getAttribute('data-search-mode') === mode;
+          if (active) {
+            labels[j].classList.add('is-active');
+          } else {
+            labels[j].classList.remove('is-active');
+          }
+        }
+      }
+    }
+  }
+
+  function publishMode(mode) {
+    // Store the user's explicit choice and reflect it in the navbar /
+    // sidebar pickers. skipEvent=true: this change originates here, so
+    // don't bounce the change event back.
+    if (window.interlispSearchMode) {
+      window.interlispSearchMode.set(mode, true);
+    } else {
+      try {
+        window.localStorage.setItem(STORAGE_KEY, mode);
+      } catch (_) {}
+      syncEntryPickers(mode);
+    }
+  }
+
   function currentQuery() {
     return new URLSearchParams(window.location.search).get('q') || '';
   }
@@ -58,6 +106,9 @@ import DOMPurify from 'dompurify';
       }
       const next = `${window.location.pathname}?${params.toString()}`;
       window.history.replaceState(null, '', next);
+      publishMode(useAi ? 'ai' : 'standard');
+    } else {
+      syncEntryPickers(useAi ? 'ai' : 'standard');
     }
 
     if (useAi) {
@@ -285,7 +336,10 @@ import DOMPurify from 'dompurify';
   // for users who never opt in.
   function initMode() {
     const params = new URLSearchParams(window.location.search);
-    const wantsAi = params.get('mode') === 'ai';
+    const modeParam = params.get('mode');
+    // Explicit ?mode= wins; otherwise fall back to the remembered
+    // pre-search choice, defaulting to Standard.
+    const wantsAi = modeParam === 'ai' || (modeParam === null && getStoredMode() === 'ai');
 
     if (!aiAvailable || !standardAvailable) {
       // Only one backend configured: lock to it.
@@ -295,6 +349,14 @@ import DOMPurify from 'dompurify';
 
     setMode(wantsAi ? 'ai' : 'standard', { updateUrl: false });
   }
+
+  // Follow pre-search picker changes made elsewhere on this page
+  // (navbar / sidebar), e.g. while viewing the results page.
+  window.addEventListener('interlisp:search-mode-change', (e) => {
+    if (e && e.detail && (e.detail.mode === 'ai' || e.detail.mode === 'standard')) {
+      setMode(e.detail.mode);
+    }
+  });
 
   if (standardRadio) {
     standardRadio.addEventListener('change', () => {
