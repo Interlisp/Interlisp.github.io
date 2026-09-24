@@ -3,4 +3,12 @@
 
 {{ $searchJS := resources.Get "js/vertex-search.js" | js.Build | fingerprint }}
 <script src="{{ $searchJS.RelPermalink }}" defer></script>
+{{- /* Emit a page-level robots directive when front matter sets `robots`.
+       Docsy's head.html already emits "index, follow" for production pages;
+       when both tags are present, search engines apply the most restrictive
+       rule, so a `noindex` value here wins. See the bibliography section's
+       _index.md. */ -}}
+{{ with .Params.robots }}
+<meta name="robots" content="{{ . | htmlEscape }}">
+{{ end }}
 {{ partial "bibliography-json-ld.html" . }}

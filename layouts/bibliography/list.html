@@ -107,9 +107,9 @@
           {{- $previewing := gt (countwords $plain) $previewWordLimit -}}
           {{- if $previewing }}
             {{- $previewWords := split $plain " " | first $previewWordLimit -}}
-            <div class="mt-2 small">{{ delimit $previewWords " " | safeHTML }}…</div>
+            <div class="mt-2 small" data-nosnippet>{{ delimit $previewWords " " | safeHTML }}…</div>
           {{- else }}
-            <div class="mt-2 small">{{ replace (. | htmlEscape) "\n" "<br>" | safeHTML }}</div>
+            <div class="mt-2 small" data-nosnippet>{{ replace (. | htmlEscape) "\n" "<br>" | safeHTML }}</div>
           {{- end }}
         {{ end }}
       </li>
