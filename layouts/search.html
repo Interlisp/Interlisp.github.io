@@ -1,0 +1,74 @@
+{{ define "main" }}
+<section class="row td-search-result">
+  <div class="col-12 col-md-8 offset-md-2">
+    <h2 class="ms-4">{{ .Title }}</h2>
+
+    {{ $gcsID := .Site.Params.gcs_engine_id }}
+    {{ $vertexURL := .Site.Params.vertex_search_url }}
+
+    <div class="ms-4 mt-3 mb-2" role="radiogroup" aria-label="Search mode">
+      <div class="btn-group search-mode-toggle" role="radiogroup" aria-label="Choose search mode">
+        <input type="radio" class="btn-check" name="search-mode" id="search-mode-standard"
+          autocomplete="off" checked {{ if not $gcsID }}disabled{{ end }}>
+        <label class="btn btn-outline-primary" for="search-mode-standard">Standard</label>
+
+        <input type="radio" class="btn-check" name="search-mode" id="search-mode-ai"
+          autocomplete="off" {{ if not $vertexURL }}disabled{{ end }}>
+        <label class="btn btn-outline-primary" for="search-mode-ai">
+          <i class="fas fa-robot"></i> AI-assisted
+        </label>
+      </div>
+      <div id="search-mode-note" class="form-text mt-1">
+        Standard search uses Google. Turn on AI-assisted search for an AI summary with cited sources.
+      </div>
+    </div>
+
+    {{/* Standard Google Custom Search (currently deployed behavior, default) */}}
+    <div id="google-search-container" class="ms-4 mt-2">
+      {{ with $gcsID -}}
+      <script>
+      (function() {
+      var cx = '{{ . }}';
+      var gcse = document.createElement('script');
+      gcse.type = 'text/javascript';
+      gcse.async = true;
+      gcse.src = 'https://cse.google.com/cse.js?cx=' + cx;
+      var s = document.getElementsByTagName('script')[0];
+      s.parentNode.insertBefore(gcse, s);
+      })();
+      </script>
+      <gcse:searchresults-only></gcse:searchresults-only>
+      {{ else -}}
+      <p class="text-muted">Standard search is not configured.</p>
+      {{ end -}}
+    </div>
+
+    {{/* AI-assisted Vertex search (only active when toggled on) */}}
+    <div id="vertex-search-container" class="ms-4 mt-2" hidden>
+
+      {{/* Pass the function URL to JS */}}
+      <div id="vertex-search-config"
+        data-search-url="{{ $vertexURL }}"
+        data-query="{{ .Params.q | default "" }}"
+        style="display:none">
+      </div>
+
+      <div id="vertex-search-summary" style="display:none">
+        <div class="ai-summary mb-4">
+          <span class="ai-badge">
+            <i class="fas fa-robot"></i> AI Summary
+          </span>
+          <div id="summary-text" class="mt-2 mb-0"></div>
+        </div>
+      </div>
+
+      <div id="vertex-search-status" class="text-muted">
+        <i class="fas fa-spinner fa-spin"></i> Searching...
+      </div>
+
+      <div id="vertex-search-hits"></div>
+
+    </div>
+  </div>
+</section>
+{{ end }}
