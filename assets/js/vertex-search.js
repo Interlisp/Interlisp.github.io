@@ -125,7 +125,19 @@ import DOMPurify from 'dompurify';
       .replace(/&/g, '&amp;')
       .replace(/</g, '&lt;')
       .replace(/>/g, '&gt;')
-      .replace(/"/g, '&quot;');
+      .replace(/"/g, '&quot;')
+      .replace(/'/g, '&#39;');
+  }
+
+  // Allowlist http(s) URLs only. Prevents `javascript:` / `data:` payloads
+  // from backend or index content becoming clickable links.
+  function safeHttpUrl(raw) {
+    try {
+      const u = new URL(raw, window.location.origin);
+      return (u.protocol === 'http:' || u.protocol === 'https:') ? u.toString() : null;
+    } catch (_) {
+      return null;
+    }
   }
 
   function renderSummaryMarkdown(summaryText, citationCount) {
@@ -168,12 +180,14 @@ import DOMPurify from 'dompurify';
     output = output.replace(/(^|[\s(\[{])b([^\n]{1,120}?)\/b(?=[\s)\]}.,;:!?]|$)/gi,
       (match, prefix, value) => `${prefix}<strong>${value.trim()}</strong>`);
 
-    // Repair malformed URLs where emphasis markers leak into the URL text.
+    // Repair specific backend artifact where stripped <b> highlight markers
+    // leak into URLs (e.g. "https://bgithub/b.com/Interlisp/bmedley/b/...").
+    // Intentionally narrow: generic "/b" rewrites corrupt legitimate URLs
+    // like https://blog.example.com, so only fix the known corrupted domain
+    // here. GitHub issue links are fully reconstructed in
+    // normalizeGithubIssueMentions() below.
     output = output
-      .replace(/https?:\/\/b/gi, 'https://')
-      .replace(/\bb([a-z0-9.-]+)\/b/gi, '$1')
-      .replace(/\/(b)([a-z0-9._-]+)/gi, '/$2')
-      .replace(/([a-z0-9._-]+)\/b(?=\/|\b)/gi, '$1')
+      .replace(/https:\/\/bgithub\/b\.com/gi, 'https://github.com')
       .replace(/\s*\.\.\.\s*/g, ' ');
 
     output = normalizeGithubIssueMentions(output, result);
@@ -279,15 +293,19 @@ import DOMPurify from 'dompurify';
         if (previousCitations) previousCitations.remove();
 
         if (validRefs.length > 0) {
-          const citationHtml = validRefs.map((ref, i) => `
+          const citationHtml = validRefs.map((ref, i) => {
+            const safeUri = ref.uri ? safeHttpUrl(ref.uri) : null;
+            const label = escapeHtml(ref.title || ref.uri || 'Unknown source');
+            const linkOrText = safeUri
+              ? `<a href="${escapeHtml(safeUri)}" target="_blank" rel="noopener">${label}</a>`
+              : `<span>${label}</span>`;
+            return `
             <div id="source-row-${i + 1}" class="search-citation">
               <span class="citation-number">[${i + 1}]</span>
-              ${ref.uri
-                ? `<a href="${escapeHtml(ref.uri)}" target="_blank" rel="noopener">${escapeHtml(ref.title || ref.uri)}</a>`
-                : `<span>${escapeHtml(ref.title || 'Unknown source')}</span>`
-              }
+              ${linkOrText}
             </div>
-          `).join('');
+          `;
+          }).join('');
 
           const citationsDiv = document.createElement('div');
           citationsDiv.className = 'search-citations mt-3';
@@ -308,10 +326,16 @@ import DOMPurify from 'dompurify';
       // Show result count
       hitsEl.innerHTML =
       `<p class="text-muted mb-3">${data.results.length} results for <strong>${escapeHtml(q)}</strong></p>` +
-      data.results.map(r => `
+      data.results.map(r => {
+        const safeUrl = r.url ? safeHttpUrl(r.url) : null;
+        const title = escapeHtml(r.title || 'Untitled');
+        const titleHtml = safeUrl
+          ? `<a href="${escapeHtml(safeUrl)}">${title}</a>`
+          : `<span>${title}</span>`;
+        return `
         <div class="td-search-hit mb-4">
           <h5 class="td-search-hit__title mb-1">
-            <a href="${escapeHtml(r.url)}">${escapeHtml(r.title || 'Untitled')}</a>
+            ${titleHtml}
           </h5>
           <p class="td-search-hit__url mb-1"><small>${escapeHtml(formatDisplayUrl(r.url))}</small></p>
           ${r.snippet ? `<div class="td-search-hit__snippet mb-1 text-muted small">${renderResultSnippet(r.snippet, r)}</div>` : ''}
@@ -323,7 +347,8 @@ import DOMPurify from 'dompurify';
               </p>`
             : ''}
         </div>
-      `).join('');
+      `;
+      }).join('');
 
     } catch (err) {
       statusEl.textContent = 'Search error: ' + err.message;
