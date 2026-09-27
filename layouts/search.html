@@ -6,8 +6,8 @@
     {{ $gcsID := .Site.Params.gcs_engine_id }}
     {{ $vertexURL := .Site.Params.vertex_search_url }}
 
-    <div class="ms-4 mt-3 mb-2" role="radiogroup" aria-label="Search mode">
-      <div class="btn-group search-mode-toggle" role="radiogroup" aria-label="Choose search mode">
+    <div class="ms-4 mt-3 mb-2">
+      <div class="btn-group search-mode-toggle" role="radiogroup" aria-label="Search mode" aria-describedby="search-mode-note">
         <input type="radio" class="btn-check" name="search-mode" id="search-mode-standard"
           autocomplete="off" checked {{ if not $gcsID }}disabled{{ end }}>
         <label class="btn btn-outline-primary" for="search-mode-standard">Standard</label>

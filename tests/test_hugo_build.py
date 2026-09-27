@@ -229,6 +229,107 @@ class TestHistorySidebarNavigation:
         ), "Sidebar entries were truncated — bibliography entries may be leaking into navigation"
 
 
+class TestSearchModeToggle:
+    """The Standard / AI-assisted search controls must reach the built site.
+
+    Regression test: ``layouts/_partials/search-input.html`` — the Docsy
+    override that renders the pre-search "Standard [switch] AI" picker below
+    the search box — was left untracked when the toggle feature was
+    committed.  Its JavaScript (``assets/js/search.js``), styles
+    (``assets/scss/_styles_project.scss``) and results-page controls
+    (``layouts/search.html``) were all committed, so local ``hugo server``
+    runs showed the picker while every build from a clean checkout fell back
+    to Docsy's ``search-input`` partial, which has none.  The control was
+    thus missing from CI builds and the deployed site with its handlers and
+    styles still shipping.  These tests assert on rendered markup, because
+    the JavaScript and CSS are inert without it.
+    """
+
+    @pytest.fixture(autouse=True)
+    def dual_mode(self, production_build):
+        self.build_result = production_build
+
+        params_file = REPO_ROOT / "config" / "_default" / "params.yaml"
+        if not params_file.exists():
+            pytest.skip("config/_default/params.yaml not found")
+        with open(params_file) as f:
+            params = yaml.safe_load(f) or {}
+
+        # Both backends must be configured for either control to render.
+        if not (params.get("gcs_engine_id") and params.get("vertex_search_url")):
+            pytest.skip(
+                "dual search mode not configured — both gcs_engine_id and "
+                "vertex_search_url are required"
+            )
+
+        index = PROD_PUBLIC / "index.html"
+        search = PROD_PUBLIC / "search" / "index.html"
+        if not (index.exists() and search.exists()):
+            pytest.skip("index.html or search/index.html not built")
+
+        self.index_html = index.read_text(encoding="utf-8", errors="ignore")
+        self.search_html = search.read_text(encoding="utf-8", errors="ignore")
+
+    def test_presearch_picker_rendered(self) -> None:
+        """The "Standard [switch] AI" picker must render under the search box.
+
+        Its presence proves the local ``search-input.html`` override is part
+        of the repository; without it Hugo silently falls back to Docsy's
+        version and the picker disappears.
+        """
+        assert 'class="td-search-mode-switch"' in self.index_html, (
+            "Pre-search mode picker missing from index.html — "
+            "layouts/_partials/search-input.html is not being used"
+        )
+        for selector in ('data-search-mode="standard"', 'data-search-mode="ai"'):
+            assert selector in self.index_html, (
+                f"Picker label {selector} missing from index.html"
+            )
+        assert 'class="form-check-input td-search-mode"' in self.index_html, (
+            "Picker switch input missing from index.html"
+        )
+
+    def test_picker_script_shipped(self) -> None:
+        """A bundled script must reference the picker selectors, so the
+        control is wired to localStorage and the ``?mode=ai`` redirect."""
+        js_dir = PROD_PUBLIC / "js"
+        if not js_dir.is_dir():
+            pytest.skip("public/js not built")
+        wired = any(
+            "td-search-mode-switch" in path.read_text(encoding="utf-8", errors="ignore")
+            for path in js_dir.rglob("*.js")
+        )
+        assert wired, (
+            "No bundled script references td-search-mode-switch — "
+            "assets/js/search.js was not built into the site"
+        )
+
+    def test_results_page_toggle_rendered(self) -> None:
+        """The results page must render both mode radios and the container
+        that assets/js/vertex-search.js binds to before doing anything."""
+        for fragment in (
+            'id="search-mode-standard"',
+            'id="search-mode-ai"',
+            'id="vertex-search-container"',
+        ):
+            assert fragment in self.search_html, (
+                f"{fragment} missing from search/index.html"
+            )
+
+    def test_results_page_toggle_has_one_radiogroup(self) -> None:
+        """The mode radios must sit in a single ``role="radiogroup"``.
+
+        The toggle was originally wrapped in a radiogroup nested inside a
+        second one, which exposes the radios to assistive technology as a
+        group within a group.
+        """
+        groups = self.search_html.count('role="radiogroup"')
+        assert groups == 1, (
+            f"Expected exactly 1 role=\"radiogroup\" on search/index.html, "
+            f"found {groups} — the mode toggle radiogroups are nested"
+        )
+
+
 class TestInternalLinks:
     """All internal href links in the built HTML must resolve to existing pages."""
 
