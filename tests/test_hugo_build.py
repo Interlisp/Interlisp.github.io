@@ -304,6 +304,40 @@ class TestSearchModeToggle:
             "assets/js/search.js was not built into the site"
         )
 
+    def test_picker_defaults_to_standard(self) -> None:
+        """Both controls must be server-rendered in the Standard position.
+
+        The user's selection is persisted in localStorage, so the markup is
+        the *initial* state a first-time visitor gets before any script runs;
+        assets/js/search.js only moves the pickers off Standard once a
+        selection has been stored. A pre-checked switch, an active "AI"
+        label, or a checked AI radio in the rendered markup would hand every
+        new visitor a non-default mode.
+        """
+        assert (
+            'class="td-search-mode-label is-active" data-search-mode="standard"'
+            in self.index_html
+        ), "Standard is not the active picker label on index.html"
+        assert 'class="td-search-mode-label" data-search-mode="ai"' in self.index_html, (
+            "AI picker label is not in its inactive state on index.html"
+        )
+        switches = re.findall(r"<input[^>]*td-search-mode[^>]*>", self.index_html)
+        assert switches, "picker switch input not found on index.html"
+        checked = [s for s in switches if re.search(r"\bchecked\b", s)]
+        assert not checked, (
+            "picker switch renders checked; Standard must be the initial default:\n"
+            + "\n".join(checked)
+        )
+
+        # The results-page radios must agree: Standard selected, AI not.
+        radios = re.findall(r'<input[^>]*id="search-mode-[^"]*"[^>]*>', self.search_html)
+        assert len(radios) == 2, (
+            f"expected 2 mode radios on search/index.html, found {len(radios)}"
+        )
+        assert not any(
+            re.search(r'id="search-mode-ai"[^>]*\bchecked\b', r) for r in radios
+        ), "AI mode radio renders checked; Standard must be the initial default"
+
     def test_results_page_toggle_rendered(self) -> None:
         """The results page must render both mode radios and the container
         that assets/js/vertex-search.js binds to before doing anything."""
