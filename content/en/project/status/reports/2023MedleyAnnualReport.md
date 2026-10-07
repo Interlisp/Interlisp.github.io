@@ -3,8 +3,9 @@ title: 2023 Annual Report
 weight: 8
 type: docs
 aliases:
- - /news/2023medleyannualreport/
- - /project/news/2023medleyannualreport/
+  - /project/status/2023medleyannualreport/
+  - /news/2023medleyannualreport/
+  - /project/news/2023medleyannualreport/
 ---
 
 {{< static-img src="Resources/logo_red_no_border_568x385.png" width="284" height="194" >}}
