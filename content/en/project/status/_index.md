@@ -14,13 +14,17 @@ aliases:
  - /medley/project/status/
 ---
 
+## Annual Reports
+
+Each year we publish a Medley Interlisp Annual Report summarizing the project's accomplishments and ongoing work. Find them all under [Annual Reports](reports/), including the most current report.
+
 ## Near FM interview with Larry Masinter and Frank Halasz
 
 In June of 2026 Patrick Domanico published a [writeup on his interview with Larry Masinter and Frank Halasz](https://www.patrickdomanico.com/bpm/2026/06/16/inventing-the-future-one-lisp-machine-at-a-time). Domanico hosted the interview in the March 10, 2025 episode of his show *Do You Speak Tech?* at Near FM community radio in Dublin.
 
 ## 2025 Annual Report released
 
-We released the [2025 Medley Interlisp Annual Report](/project/status/2025medleyannualreport) which covers the 5th year of the Medley Interlisp project.
+We released the [2025 Medley Interlisp Annual Report](/project/status/reports/2025medleyannualreport) which covers the 5th year of the Medley Interlisp project.
 
 ## Netstack.FM interviews Larry Masinter
 
@@ -73,7 +77,7 @@ A [preprint](/documentation/young-ccece2025.pdf) of the paper and the [slides](/
 
 ## 2024 Annual Report released
 
-The [2024 Medley Interlisp Annual Report](/project/status/2024medleyannualreport) has been released.  Another year of progress.
+The [2024 Medley Interlisp Annual Report](/project/status/reports/2024medleyannualreport) has been released.  Another year of progress.
 
 ## Larry Masinter at aNONradio in December 2024
 
@@ -95,7 +99,7 @@ On May 6, 2024 Andrew Sengul gave the remote talk "The Medley Interlisp Revival"
 
 ## 2023 Annual Report released
 
-The [2023 Medley Interlisp Annual Report](/project/status/2023medleyannualreport) was released.
+The [2023 Medley Interlisp Annual Report](/project/status/reports/2023medleyannualreport) was released.
 
 ## November 2023 Computer Conservation Society event
 
@@ -113,8 +117,8 @@ being undertaken by the Medley project.
 
 ## 2022 Annual Report released
 
-The [2022 Medley Interlisp Annual Report](/project/status/2022medleyannualreport) was released.
+The [2022 Medley Interlisp Annual Report](/project/status/reports/2022medleyannualreport) was released.
 
 ## 2021 Annual Report released
 
-We released the [2021 Medley Interlisp Annual Report](/project/status/2021medleyannualreport) on the first year of the Medley Interlisp Project.
+We released the [2021 Medley Interlisp Annual Report](/project/status/reports/2021medleyannualreport) on the first year of the Medley Interlisp Project.
