@@ -3,8 +3,9 @@ title: 2025 Medley Interlisp Annual Report
 weight: 1
 type: docs
 aliases:
- - /news/2025medleyannualreport/
- - /project/news/2025medleyannualreport/
+  - /project/status/2025medleyannualreport/
+  - /news/2025medleyannualreport/
+  - /project/news/2025medleyannualreport/
 ---
 
 {{< static-img src="Resources/logo_red_no_border_568x385.png" width="284" height="194" >}}
