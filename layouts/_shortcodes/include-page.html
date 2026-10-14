@@ -1,0 +1,9 @@
+{{/* include-page: transclude another page's rendered content without duplicating source.
+  Usage: {{< include-page "project/status/reports/2025MedleyAnnualReport" >}}
+  Single string path looked up via .Site.GetPage. Warns (build log) when missing. */}}
+{{- $path := .Get 0 -}}
+{{- with .Site.GetPage $path -}}
+  {{ .Content }}
+{{- else -}}
+  {{ warnf "include-page: page not found: %q (referenced from %s)" $path $.Page.Path }}
+{{- end -}}

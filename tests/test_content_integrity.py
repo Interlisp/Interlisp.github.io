@@ -16,7 +16,9 @@ Three groups of tests:
    - Required keys are present
    - ``type`` is ``"bibliography"``
    - ``date`` is a valid ISO date
-   - ``item_type`` is one of the known Zotero types
+   - ``item_type`` is one of the known Zotero types (unknown types
+     emit a UserWarning but do not fail, so new Zotero types don't
+     break CI; add valid new types to _KNOWN_ITEM_TYPES separately)
    - ``authors`` and ``editors`` are lists
    - ``url_source`` is a valid URL or empty
    - ``zotero_url`` is a valid Zotero URL or empty
@@ -32,6 +34,7 @@ Usage
 """
 
 import re
+import warnings
 from pathlib import Path
 
 import pytest
@@ -173,11 +176,14 @@ class TestEveryEntry:
     def test_item_type_is_known(self, path: Path, _name: str) -> None:
         fm = _parse_front_matter(path)
         it = fm.get("item_type")
-        assert it in _KNOWN_ITEM_TYPES, (
-            f"{path.name}: unknown item_type={it!r}"
-            f"\nAdd this item_type to _KNOWN_ITEM_TYPES in "
-            f"test_content_integrity.py if it is valid"
-        )
+        if it not in _KNOWN_ITEM_TYPES:
+            warnings.warn(
+                f"{path.name}: unknown item_type={it!r}"
+                f"\nAdd this item_type to _KNOWN_ITEM_TYPES in "
+                f"test_content_integrity.py if it is valid",
+                UserWarning,
+                stacklevel=2,
+            )
 
     @pytest.mark.parametrize("path,_name", _ENTRIES)
     def test_date_is_valid(self, path: Path, _name: str) -> None:

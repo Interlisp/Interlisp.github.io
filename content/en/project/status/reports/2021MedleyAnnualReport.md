@@ -2,6 +2,8 @@
 title: 2021 Medley Interlisp Annual Report
 weight: 10
 type: docs
+aliases:
+  - /project/status/2021medleyannualreport/
 
 ---
 November 15, 2021

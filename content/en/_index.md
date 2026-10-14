@@ -21,7 +21,7 @@ The Medley system was created at Xerox's Palo Alto Research Center (PARC). PARC 
 
 Interlisp had its beginnings as a DARPA sponsored Lisp environment for researchers. Interlisp was then ported and expanded into Interlisp-D, first released by Xerox and distributed commercially until its development tapered off in the 1990s. Now this classic software system is running again on your favorite operating system. The project is more than a trip down memory lane: our mission is to expand the scope of what Medley can do, fulfilling its promise of software tools limited only by the user's imagination. Dive in and explore the language, the tools, and the myriad applications, experiments, and playful creations that were crafted in and for Interlisp.
 
-The [2025 Medley Interlisp Annual Report](project/status/2025medleyannualreport/) describes our recent activities.
+The [2025 Medley Interlisp Annual Report](project/status/reports/2025medleyannualreport/) describes our recent activities.
 
 We encourage you to read the [Medley primer](https://primer.interlisp.org) and try out the Interlisp environment. The primer, designed for modern users, assumes no prior knowledge of Lisp and will ease you into the system.
 

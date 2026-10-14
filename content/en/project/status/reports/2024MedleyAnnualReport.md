@@ -3,8 +3,9 @@ title: 2024 Medley Interlisp Annual Report
 weight: 7
 type: docs
 aliases:
- - /news/2024medleyannualreport/
- - /project/news/2023medleyannualreport/
+  - /project/status/2024medleyannualreport/
+  - /news/2024medleyannualreport/
+  - /project/news/2023medleyannualreport/
 ---
 
 {{< static-img src="Resources/logo_red_no_border_568x385.png" width="284" height="194" >}}

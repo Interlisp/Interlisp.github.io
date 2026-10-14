@@ -3,8 +3,9 @@ title: 2022 Medley Interlisp Annual Report
 weight: 9
 type: docs
 aliases:
- - /medley/project/status/2022medleyannualreport/
- - /project/news/2022medleyannualrepoort/
+  - /project/status/2022medleyannualreport/
+  - /medley/project/status/2022medleyannualreport/
+  - /project/news/2022medleyannualrepoort/
 ---
 
 ### Introduction
