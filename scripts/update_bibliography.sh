@@ -1,6 +1,11 @@
 #!/usr/bin/env bash
 
-set -e
+# Fail fast and loudly so CI does not pass silently on errors.
+# -e: exit on any command failure
+# -u: exit on use of an unset variable
+# -o pipefail: a failed curl/jq in a pipeline fails the whole pipeline
+#   (without pipefail, e.g. `curl ... | jq ...` hides curl failures)
+set -euo pipefail
 
 function usage () {
   echo -e "\nUpdate Bibliography for interlisp.org from Zotero\n"
@@ -63,7 +68,16 @@ function showInfo() {
     # The $1 is the level for this message ($showInfoLevel must be >= this)
     # The $2 is the message string
     if [[ $showInfoLevel -ge $1 ]] ; then
-      echo "$2"
+      # Level 2 messages are warnings.  When running under GitHub Actions,
+      # also emit them as ::warning:: annotations so they are visible in
+      # the workflow UI (and can trigger the ci_failures@interlisp.org
+      # notification) instead of hiding in the log.  Warnings are
+      # notify-only: they never fail the build.
+      if [[ "$1" -eq 2 && "${GITHUB_ACTIONS:-}" == "true" ]] ; then
+        echo "::warning::$2"
+      else
+        echo "$2"
+      fi
     fi
 }
 
@@ -103,7 +117,7 @@ function add_items_from_collection () {
     local limit=100
     while :; do
           showInfo 10 "curl of $collection_key at start $start"
-        local this_page=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$collection_key/items?include=data,csljson&start=$start&limit=$limit&v=3")
+          local this_page=$(curl -fsSL "https://api.zotero.org/groups/$GROUP_ID/collections/$collection_key/items?include=data,csljson&start=$start&limit=$limit&v=3")
           local item_count=$(jq '. | length' <<< "$this_page")
           showInfo 10 "curl returned $item_count items"
           if [[ $item_count > 0 ]] ; then
@@ -124,7 +138,7 @@ function add_items_from_collection () {
     local numCollections=$(jq -r '.numCollections' <<< "$collection_item")
     if [[ $numCollections -gt 0 ]] ; then
       showInfo 5 "Getting subcollections of $collection_key: $collection_name"
-      local subcollections=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$collection_key/collections" | jq -r 'map(.data+.meta)')
+      local subcollections=$(curl -fsSL "https://api.zotero.org/groups/$GROUP_ID/collections/$collection_key/collections" | jq -r 'map(.data+.meta)')
       collections=$(jq -s 'add' <<< "$collections$subcollections")
 
     # Recurse into subcollections
@@ -215,7 +229,7 @@ fi
 root_collection="FSK5IX4F"
 if [[ $# -eq 0 ]] ; then
   # Initialize with the root collection.
-  collections=$(curl -s "https://api.zotero.org/groups/$GROUP_ID/collections/$root_collection" | jq -s -r 'map(.data+.meta)')
+  collections=$(curl -fsSL "https://api.zotero.org/groups/$GROUP_ID/collections/$root_collection" | jq -s -r 'map(.data+.meta)')
   add_items_from_collection $root_collection
   if $collectionsFiles ; then
     echo "$collections" > collections.json
@@ -224,7 +238,7 @@ if [[ $# -eq 0 ]] ; then
 
   while read neededUrl; do
     showInfo 10 "curl of $neededUrl"
-    item=$(curl -s "$neededUrl?include=data,csljson&v=3")
+    item=$(curl -fsSL "$neededUrl?include=data,csljson&v=3")
     showInfo 10 "curl returned"
 	items=$(jq -s 'add' <<< "[$item]$items")
     showInfo 10 "items updated"
@@ -246,7 +260,7 @@ fi
 showInfo 1 "Got $(jq '. | length' <<< "$items") items"
 
 # Piece-wise processing for debugging:
-items=$(jq 'include "./bib-fns";walk(if type == "object" then removeEmptyKeys end)' <<< $items)
+items=$(jq 'include "./bib-fns";walk(if type == "object" then removeEmptyKeys end)' <<< "$items")
 showInfo 8 "Remove all empty fields and the keys."
 if $debugFiles ; then
   dfn=$(debugFileName "removeEmptyKeys" $dfn)
@@ -426,7 +440,48 @@ export BIBITEMS_DIR
 # Ensure target directories exist
 mkdir -p "$BIBLIOGRAPHY_DIR" "$BIBITEMS_DIR"
 
+# Run bibSplit.pl, capturing its stderr.  bibSplit.pl emits
+# `Warning: unhandled type ...` lines for Zotero types it does not know how
+# to render.  Those warnings previously sat silently in bibSplit.err while
+# CI stayed green.  Now:
+#   - a non-zero bibSplit.pl exit is a hard ERROR (fails the build, which
+#     triggers the ci_failures@interlisp.org failure email), and
+#   - a non-empty bibSplit.err is surfaced as ::warning:: annotations (and
+#     in the job summary) but does NOT fail the build (notify-only).
+: > bibSplit.err
+set +e
 ./bibSplit.pl bibliography-items-by-line.json 2>bibSplit.err
+bibSplitStatus=$?
+set -e
+if [[ $bibSplitStatus -ne 0 ]]; then
+  echo "::error::bibSplit.pl failed with exit code $bibSplitStatus" >&2
+  cat bibSplit.err >&2 || true
+  exit $bibSplitStatus
+fi
+if [[ -s bibSplit.err ]]; then
+  bibWarnCount=$(wc -l < bibSplit.err | tr -d ' ')
+  bibWarnSummary=$(sort bibSplit.err | uniq -c | sort -rn | head -n 10)
+  if [[ "${GITHUB_ACTIONS:-}" == "true" ]]; then
+    echo "::warning::$bibWarnCount bibSplit.pl warnings (see bibSplit.err; first occurrence per message):"
+    # Emit one annotation per distinct warning to avoid flooding the log
+    # with hundreds of duplicate lines, then dump the full file.
+    echo "$bibWarnSummary" | while IFS= read -r line; do
+      echo "::warning::bibSplit: $line"
+    done
+    if [[ -n "${GITHUB_STEP_SUMMARY:-}" ]]; then
+      {
+        echo "### Bibliography warnings"
+        echo ""
+        echo "$bibWarnCount warnings from bibSplit.pl:"
+        echo '```'
+        echo "$bibWarnSummary"
+        echo '```'
+      } >> "$GITHUB_STEP_SUMMARY"
+    fi
+  else
+    echo "Warn: $bibWarnCount bibSplit.pl warnings (see bibSplit.err)" >&2
+  fi
+fi
 # Cleanup (uncomment once working)
 # rm bibliography-items-by-line.json
 

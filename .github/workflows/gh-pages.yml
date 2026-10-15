@@ -19,6 +19,8 @@
 #                      Interlisp/Interlisp.staging (skips on fork PRs or when
 #                      the STAGING_APP_ID variable is unset)
 #     deploy         - deploy the built site to GitHub Pages
+#     notify         - email ci_failures@interlisp.org on any failure or
+#                      build warnings (notify-only; warnings still deploy)
 #
 #  The workflow is executed either on a push or via scheduled run times.  When
 #  started at a scheduled run time we only do a deploy if the cached bibliography
@@ -159,11 +161,12 @@ jobs:
           repo: Interlisp/Interlisp.staging
           ref: main
           token: ${{ steps.app-token.outputs.token }}
-          inputs: '{
-            "pr_number": "${{ github.event.pull_request.number }}",
-            "pr_sha": "${{ github.event.pull_request.head.sha }}",
-            "hugo_version": "${{ env.HUGO_VERSION }}"
-          }'
+          inputs: >-
+            {
+              "pr_number": "${{ github.event.pull_request.number }}",
+              "pr_sha": "${{ github.event.pull_request.head.sha }}",
+              "hugo_version": "${{ env.HUGO_VERSION }}"
+            }
 
   # ----------------------------------------------------------------------------
   # Deploy the built site to GitHub Pages.
@@ -182,3 +185,111 @@ jobs:
       - name: Deploy to GitHub Pages
         id: deployment
         uses: actions/deploy-pages@v5
+
+  # ----------------------------------------------------------------------------
+  # Notify ci_failures@interlisp.org when the workflow fails or produces
+  # warnings.  GitHub does not notify on workflow failure by default, so
+  # without this job a broken nightly build can go undetected for days.
+  #
+  # Triggers on:
+  #   - any job failure (validate-docs, hugo-version, build, preview, deploy)
+  #   - warnings surfaced by the shared build workflow
+  #     (needs.build.outputs.has-warnings == 'true'; see
+  #     Interlisp/shared-workflows build-site.yml proposal)
+  #
+  # Warnings are notify-only: the build still passes and deploys.
+  #
+  # Required secrets (set in repo or org Settings > Secrets > Actions):
+  #   MAIL_SERVER    e.g. smtp.gmail.com
+  #   MAIL_USERNAME  SMTP login (also used as default From address)
+  #   MAIL_PASSWORD  SMTP password (Gmail: use an App password)
+  # Optional vars (Settings > Variables > Actions):
+  #   MAIL_PORT      default 587 (STARTTLS)
+  #   MAIL_FROM      default is MAIL_USERNAME
+  #                  e.g. "Interlisp CI <ci@interlisp.org>"
+  #   MAIL_TO        default ci_failures@interlisp.org
+  #
+  notify:
+    if: always() && (needs.validate-docs.result == 'failure' || needs.hugo-version.result == 'failure' || needs.build.result == 'failure' || needs.preview.result == 'failure' || needs.deploy.result == 'failure' || needs.build.outputs.has-warnings == 'true')
+    runs-on: ubuntu-latest
+    needs: [validate-docs, hugo-version, build, preview, deploy]
+    steps:
+      - name: Check mail secrets configured
+        id: mail-check
+        env:
+          MAIL_SERVER: ${{ secrets.MAIL_SERVER }}
+          MAIL_USERNAME: ${{ secrets.MAIL_USERNAME }}
+          MAIL_PASSWORD: ${{ secrets.MAIL_PASSWORD }}
+        run: |
+          if [[ -z "$MAIL_SERVER" || -z "$MAIL_USERNAME" || -z "$MAIL_PASSWORD" ]]; then
+            echo "::warning::Mail secrets (MAIL_SERVER/MAIL_USERNAME/MAIL_PASSWORD) not configured; skipping email to ci_failures@interlisp.org"
+            echo "configured=false" >> "$GITHUB_OUTPUT"
+          else
+            echo "configured=true" >> "$GITHUB_OUTPUT"
+          fi
+
+      - name: Send failure email
+        if: steps.mail-check.outputs.configured == 'true' && (needs.validate-docs.result == 'failure' || needs.hugo-version.result == 'failure' || needs.build.result == 'failure' || needs.preview.result == 'failure' || needs.deploy.result == 'failure')
+        uses: dawidd6/action-send-mail@v22
+        with:
+          server_address: ${{ secrets.MAIL_SERVER }}
+          server_port: ${{ vars.MAIL_PORT || '587' }}
+          secure: false
+          require_tls: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "[${{ github.repository }} CI] FAILED: ${{ github.workflow }} run ${{ github.run_number }} (${{ github.event_name }}, ${{ github.ref_name }})"
+          to: ${{ vars.MAIL_TO || 'ci_failures@interlisp.org' }}
+          from: ${{ vars.MAIL_FROM || secrets.MAIL_USERNAME }}
+          body: |
+            CI workflow FAILED for ${{ github.repository }}.
+
+            Workflow: ${{ github.workflow }}
+            Event: ${{ github.event_name }}
+            Ref: ${{ github.ref }} (${{ github.ref_name }})
+            SHA: ${{ github.sha }}
+            Actor: ${{ github.actor }}
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Job results:
+              validate-docs: ${{ needs.validate-docs.result }}
+              hugo-version: ${{ needs.hugo-version.result }}
+              build: ${{ needs.build.result }} (skipped=${{ needs.build.outputs.skipped }}, has-warnings=${{ needs.build.outputs.has-warnings }})
+              preview: ${{ needs.preview.result }}
+              deploy: ${{ needs.deploy.result }}
+
+            Please review the failed run logs at the URL above.
+
+      - name: Send warnings email
+        if: steps.mail-check.outputs.configured == 'true' && needs.validate-docs.result != 'failure' && needs.hugo-version.result != 'failure' && needs.build.result != 'failure' && needs.preview.result != 'failure' && needs.deploy.result != 'failure' && needs.build.outputs.has-warnings == 'true'
+        uses: dawidd6/action-send-mail@v3
+        with:
+          server_address: ${{ secrets.MAIL_SERVER }}
+          server_port: ${{ vars.MAIL_PORT || '587' }}
+          secure: false
+          require_tls: true
+          username: ${{ secrets.MAIL_USERNAME }}
+          password: ${{ secrets.MAIL_PASSWORD }}
+          subject: "[${{ github.repository }} CI] WARNINGS: ${{ github.workflow }} run ${{ github.run_number }} (${{ github.event_name }}, ${{ github.ref_name }})"
+          to: ${{ vars.MAIL_TO || 'ci_failures@interlisp.org' }}
+          from: ${{ vars.MAIL_FROM || secrets.MAIL_USERNAME }}
+          body: |
+            CI workflow completed with WARNINGS for ${{ github.repository }} (build passed, deploy continued).
+
+            Workflow: ${{ github.workflow }}
+            Event: ${{ github.event_name }}
+            Ref: ${{ github.ref }} (${{ github.ref_name }})
+            SHA: ${{ github.sha }}
+            Actor: ${{ github.actor }}
+            Run: https://github.com/${{ github.repository }}/actions/runs/${{ github.run_id }}
+
+            Warnings summary: ${{ needs.build.outputs.warnings-summary }}
+
+            Job results:
+              validate-docs: ${{ needs.validate-docs.result }}
+              hugo-version: ${{ needs.hugo-version.result }}
+              build: ${{ needs.build.result }} (skipped=${{ needs.build.outputs.skipped }}, has-warnings=${{ needs.build.outputs.has-warnings }})
+              preview: ${{ needs.preview.result }}
+              deploy: ${{ needs.deploy.result }}
+
+            Please review the warnings in the run logs at the URL above.
