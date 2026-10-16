@@ -17,6 +17,8 @@ tests/public_test/
 node_modules/
 _gen/
 .hugo_build.lock
+# Locally downloaded Hugo Debian packages (see README "Installing Hugo")
+*.deb
 .coverage
 tests/__pycache__/
 _vendor/

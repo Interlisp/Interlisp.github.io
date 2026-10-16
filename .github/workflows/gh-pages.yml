@@ -69,7 +69,8 @@ env:
 
 jobs:
   # ----------------------------------------------------------------------------
-  # Validate that README.md references the correct Hugo version.
+  # Validate that pinned Hugo version references stay in sync
+  # (README.md, package.json, config/_default/module.yaml).
   # Only runs on push/pull_request, not scheduled runs.
   #
   validate-docs:
@@ -80,26 +81,44 @@ jobs:
 
       - name: Check Hugo version consistency
         run: |
-          echo "Checking README.md for Hugo version $HUGO_VERSION"
-          
+          echo "Checking Hugo version consistency for $HUGO_VERSION"
+
           # Check badge
           if ! grep -q "badge/Hugo-${HUGO_VERSION}" README.md; then
             echo "::error::README.md badge does not reference Hugo version $HUGO_VERSION"
             FAILED=1
           fi
           
-          # Check download URL
-          if ! grep -q "hugo_extended_${HUGO_VERSION}_linux-amd64.deb" README.md; then
-            echo "::error::README.md download URL does not reference Hugo version $HUGO_VERSION"
+          # Check install instructions reference the pinned version.
+          # Accepts either a literal URL (hugo_extended_0.158.0_...)
+          # or the parameterized form (VER=0.158.0 + hugo_extended_${VER}_...).
+          if grep -q "hugo_extended_${HUGO_VERSION}_linux-amd64.deb" README.md; then
+            :
+          elif grep -q "VER=${HUGO_VERSION}" README.md && grep -q 'hugo_extended_${VER}_linux-amd64.deb' README.md; then
+            :
+          else
+            echo "::error::README.md install instructions do not reference Hugo version $HUGO_VERSION"
+            FAILED=1
+          fi
+
+          # Check npm wrapper stays on the pinned version (strict pin)
+          if ! grep -q "\"hugo-extended\": \"\\^${HUGO_VERSION}\"" package.json; then
+            echo "::error::package.json hugo-extended does not reference Hugo version $HUGO_VERSION (expected \"^$HUGO_VERSION\")"
+            FAILED=1
+          fi
+
+          # Check Hugo module minimum matches the pinned version
+          if ! grep -q "min: \"${HUGO_VERSION}\"" config/_default/module.yaml; then
+            echo "::error::config/_default/module.yaml hugoVersion.min does not reference Hugo version $HUGO_VERSION"
             FAILED=1
           fi
           
           if [ "$FAILED" = "1" ]; then
-            echo "Update README.md to use Hugo version $HUGO_VERSION"
+            echo "Update README.md, package.json, and config/_default/module.yaml to use Hugo version $HUGO_VERSION"
             exit 1
           fi
           
-          echo "README.md Hugo version references are consistent"
+          echo "Hugo version references are consistent"
 
   # ----------------------------------------------------------------------------
   # Expose the Hugo version from the workflow environment as a job output.

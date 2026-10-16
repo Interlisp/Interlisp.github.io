@@ -160,12 +160,18 @@ Local testing of updates requires running Hugo locally.
 
 Instructions for installing Hugo on various operating systems are at: [Installing Hugo](https://gohugo.io/getting-started/installing). **Interlisp uses the extended version of Hugo.**
 
-For Ubuntu:
+For Ubuntu (pinned extended edition, matches CI `HUGO_VERSION`):
 
 ```bash
-wget https://github.com/gohugoio/hugo/releases/download/v0.158.0/hugo_extended_0.158.0_linux-amd64.deb
-
-sudo dpkg -i hugo_extended_0.158.0_linux-amd64.deb
+VER=0.158.0
+DEB="hugo_extended_${VER}_linux-amd64.deb"
+wget --retry-connrefused --waitretry=5 --read-timeout=30 --timeout=30 --tries=5 \
+  -O "/tmp/${DEB}" "https://github.com/gohugoio/hugo/releases/download/v${VER}/${DEB}"
+wget --retry-connrefused --waitretry=5 --read-timeout=30 --timeout=30 --tries=5 \
+  -O "/tmp/hugo_${VER}_checksums.txt" "https://github.com/gohugoio/hugo/releases/download/v${VER}/hugo_${VER}_checksums.txt"
+( cd /tmp && grep -F " ${DEB}" "hugo_${VER}_checksums.txt" | sha256sum -c - )
+sudo dpkg -i "/tmp/${DEB}"
+rm -f "/tmp/${DEB}" "/tmp/hugo_${VER}_checksums.txt"
 ```
 
 Verify installation:

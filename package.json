@@ -1,24 +1,24 @@
 {
-
-  "devDependencies": {
-
-    "autoprefixer": "^10.4.8",
-
-    "hugo-extended": "^0.157.0",
-
-    "postcss": "^8.4.16",
-
-    "postcss-cli": "^10.0.0"
-
+  "comments": {
+    "dependencies": {
+      "jquery": "project",
+      "tabpanel": "project"
+    },
+    "devDependencies": {
+      "autoprefixer": "project",
+      "hugo-extended": "project",
+      "postcss": "project",
+      "postcss-cli": "project"
+    }
   },
-
   "dependencies": {
-
     "jquery": "^3.7.1",
-
     "tabpanel": "^0.2.0"
-
+  },
+  "devDependencies": {
+    "autoprefixer": "^10.4.8",
+    "hugo-extended": "^0.158.0",
+    "postcss": "^8.4.16",
+    "postcss-cli": "^10.0.0"
   }
-
 }
-
