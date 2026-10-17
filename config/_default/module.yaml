@@ -5,5 +5,7 @@
     extended: true
     min: "0.158.0"
   imports:
-    - path: "github.com/docsy/docsy/theme"
+    - path: "github.com/google/docsy"
+      disable: false
+    - path: "github.com/google/docsy/dependencies"
       disable: false
