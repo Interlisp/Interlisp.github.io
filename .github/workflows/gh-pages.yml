@@ -65,7 +65,7 @@ env:
   # ----------------------------------------------------------------------------
   # Specify the deployment environment:  staging or production
   HUGO_ENVIRONMENT: ${{ vars.HUGO_ENVIRONMENT || 'staging' }}
-  HUGO_VERSION: 0.158.0
+  HUGO_VERSION: 0.164.0
 
 jobs:
   # ----------------------------------------------------------------------------
@@ -90,8 +90,8 @@ jobs:
           fi
           
           # Check install instructions reference the pinned version.
-          # Accepts either a literal URL (hugo_extended_0.158.0_...)
-          # or the parameterized form (VER=0.158.0 + hugo_extended_${VER}_...).
+          # Accepts either a literal URL (hugo_extended_0.164.0_...)
+          # or the parameterized form (VER=0.164.0 + hugo_extended_${VER}_...).
           if grep -q "hugo_extended_${HUGO_VERSION}_linux-amd64.deb" README.md; then
             :
           elif grep -q "VER=${HUGO_VERSION}" README.md && grep -q 'hugo_extended_${VER}_linux-amd64.deb' README.md; then

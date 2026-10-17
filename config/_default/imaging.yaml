@@ -4,6 +4,10 @@
 #
 # Configuration information available at:
 # https://gohugo.io/content-management/image-processing/#resampling-filter
+#
+# NOTE: The global `quality` setting was deprecated in Hugo 0.163.0 in favor
+# of per-format settings. It was removed here because its previous value (75)
+# matches Hugo's default. Set per-format `quality` under `imaging.<format>`
+# (e.g. `jpeg`, `webp`) if a non-default value is ever needed.
 resampleFilter: CatmullRom
-quality: 75
 anchor: smart

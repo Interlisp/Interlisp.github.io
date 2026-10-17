@@ -5,20 +5,20 @@
       "tabpanel": "project"
     },
     "devDependencies": {
-      "autoprefixer": "project",
-      "hugo-extended": "project",
-      "postcss": "project",
-      "postcss-cli": "project"
+      "hugo-extended": "project"
     }
+  },
+  "scripts": {
+    "postinstall": "hugo mod npm pack && npm install --ignore-scripts"
   },
   "dependencies": {
     "jquery": "^3.7.1",
     "tabpanel": "^0.2.0"
   },
   "devDependencies": {
-    "autoprefixer": "^10.4.8",
-    "hugo-extended": "^0.158.0",
-    "postcss": "^8.4.16",
-    "postcss-cli": "^12.0.0"
-  }
+    "hugo-extended": "^0.164.0"
+  },
+  "workspaces": [
+    "packages/hugoautogen"
+  ]
 }

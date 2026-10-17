@@ -2,7 +2,7 @@
 
 [![GitHub Pages Deploy](https://github.com/Interlisp/Interlisp.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/Interlisp/Interlisp.github.io/actions/workflows/gh-pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Hugo](https://img.shields.io/badge/Hugo-0.158.0-ff4088?logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-0.164.0-ff4088?logo=hugo)](https://gohugo.io/)
 [![Docsy](https://img.shields.io/badge/Theme-Docsy-blue)](https://www.docsy.dev/)
 
 The documentation repository for <https://interlisp.org>, the restoration
@@ -65,18 +65,18 @@ Before working with this repository, ensure you have the following installed:
 
 | Tool | Version | Purpose |
 |------|---------|--------|
-| [Hugo Extended](https://gohugo.io/installation/) | v0.145.0+ | Static site generator |
+| [Hugo Extended](https://gohugo.io/installation/) | v0.160.1+ (CI pins v0.164.0) | Static site generator |
 | [Go](https://go.dev/doc/install) | 1.24+ | Required for Hugo modules |
-| [Node.js & npm](https://nodejs.org/) | Latest LTS | PostCSS and autoprefixer |
+| [Node.js & npm](https://nodejs.org/) | v22+ (LTS 24) | Theme npm dependencies (Bootstrap, Font Awesome) |
 | [jq](https://jqlang.github.io/jq/) | Latest | Bibliography JSON processing |
 | curl, wget | System default | Script downloads |
 
 **Verify installations:**
 
 ```bash
-hugo version      # Should show "extended" and v0.145.0+
+hugo version      # Should show "extended" and v0.160.1+
 go version        # Should show 1.24+
-node --version    # Should show v18+ or later
+node --version    # Should show v22+ or later
 jq --version      # Any recent version
 ```
 
@@ -163,7 +163,7 @@ Instructions for installing Hugo on various operating systems are at: [Installin
 For Ubuntu (pinned extended edition, matches CI `HUGO_VERSION`):
 
 ```bash
-VER=0.158.0
+VER=0.164.0
 DEB="hugo_extended_${VER}_linux-amd64.deb"
 wget --retry-connrefused --waitretry=5 --read-timeout=30 --timeout=30 --tries=5 \
   -O "/tmp/${DEB}" "https://github.com/gohugoio/hugo/releases/download/v${VER}/${DEB}"
@@ -179,7 +179,7 @@ Verify installation:
 ```bash
 hugo version
 # Expected output:
-hugo v0.158.0+extended linux/amd64 BuildDate=...
+hugo v0.164.0+extended linux/amd64 BuildDate=...
 
 ```
 
@@ -187,21 +187,29 @@ hugo v0.158.0+extended linux/amd64 BuildDate=...
 
 1. Ensure bibliography data is available (see [Bibliography Data](#bibliography-data))
 
-2. Start the Hugo development server:
+2. Install the theme's npm dependencies (Bootstrap, Font Awesome). Required — a
+   Docsy 0.16 module build reads them from `node_modules/`. `npm install` also
+   auto-generates the gitignored `packages/hugoautogen` workspace via a
+   `postinstall` hook, so there is no separate step:
+
+```bash
+npm install
+```
+
+3. Start the Hugo development server:
 
 ```bash
 hugo server --cleanDestinationDir  --disableFastRender --renderToMemory
 ```
 
-Hugo will automatically download the Docsy theme and its dependencies as Hugo modules. Expected output:
+Hugo will automatically download the Docsy theme as a Hugo module, and reads
+Bootstrap and Font Awesome from `node_modules/` (installed above). Expected output:
 
 ```bash
 Watching for changes in <project-root>/archetypes, <project-root>/assets/{css,icons,js,scss}, <project-root>/content/en/{history,project,software}, <project-root>/layouts/{_default,_partials,_shortcodes,bibliography,redirect}, <project-root>/package.json, <project-root>/static/{Resources,data,docs,documentation,favicons}
 Watching for config changes in <project-root>/config/_default, <project-root>/config/development, <project-root>/go.mod
 Start building sites … 
-hugo v0.158.0+extended linux/amd64 BuildDate=...
-
-WARN  WARNING: 298 sidebar entries have been truncated. To avoid this, increase `params.ui.sidebar_menu_truncate` to at least 398 (from 100) in your config file. Section: /history/bibliography
+hugo v0.164.0+extended linux/amd64 BuildDate=...
 
                   │  EN  
 ──────────────────┼──────
@@ -292,7 +300,7 @@ The following repository variables control the build and deployment process:
 | Variable | Description | Values | Default |
 |----------|-------------|--------|---------|
 | `HUGO_ENVIRONMENT` | Build environment used by the production workflow | `development`, `staging`, `production` | `production` |
-| `HUGO_VERSION` | Hugo version used in CI/CD | Semantic version (e.g., `0.158.0`) | Set in workflow |
+| `HUGO_VERSION` | Hugo version used in CI/CD | Semantic version (e.g., `0.164.0`) | Set in workflow |
 
 `HUGO_ENVIRONMENT` is resolved in `.github/workflows/gh-pages.yml` and passed
 as the `hugo-environment` input to the shared build workflow.  The staging
@@ -404,7 +412,7 @@ The repository follows the standard [Hugo directory structure](https://gohugo.io
 
 | Module | Version | Purpose |
 |--------|---------|---------|
-| [google/docsy](https://github.com/google/docsy) | v0.15.0 | Technical documentation theme |
+| [google/docsy/theme](https://github.com/google/docsy) | v0.16.0 | Technical documentation theme |
 
 Hugo modules are automatically downloaded when you run `hugo server` or `hugo build`.
 
@@ -412,13 +420,21 @@ Hugo modules are automatically downloaded when you run `hugo server` or `hugo bu
 
 | Package | Purpose |
 |---------|---------|
-| autoprefixer | Adds vendor prefixes to CSS for browser compatibility |
 | hugo-extended | Hugo binary for npm-based workflows |
-| postcss / postcss-cli | CSS transformation pipeline |
 | jquery | JavaScript library used by some Docsy components |
 | tabpanel | Accessible tab panel widget |
 
-Install npm dependencies with `npm install` (optional for local development).
+The Docsy theme's own npm dependencies (Bootstrap and Font Awesome) are declared
+in `packages/hugoautogen/package.json`, which is **auto-generated and gitignored**.
+A `postinstall` hook runs `hugo mod npm pack` on every `npm install`/`npm ci`, so this
+file — and the Bootstrap/Font Awesome install — is kept up to date automatically; there
+is no need to run the pack step by hand or commit anything under `packages/`. When you
+update Docsy, just run `npm install` and commit the updated `package.json` and
+`package-lock.json`.
+
+Install npm dependencies with `npm install` (or `npm ci`). Since Docsy 0.16 sources Bootstrap
+and Font Awesome from npm, this is **required** (not optional) for both local
+development and CI builds.
 
 ### Search Configuration
 
