@@ -3,7 +3,7 @@
   # replacements = "github.com/docsy/docsy/theme -> ../../docsy/theme"
   hugoVersion:
     extended: true
-    min: "0.166.0"
+    min: "0.168.0"
   imports:
     - path: "github.com/docsy/docsy/theme"
       disable: false

@@ -2,7 +2,7 @@
 
 [![GitHub Pages Deploy](https://github.com/Interlisp/Interlisp.github.io/actions/workflows/gh-pages.yml/badge.svg)](https://github.com/Interlisp/Interlisp.github.io/actions/workflows/gh-pages.yml)
 [![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
-[![Hugo](https://img.shields.io/badge/Hugo-0.166.0-ff4088?logo=hugo)](https://gohugo.io/)
+[![Hugo](https://img.shields.io/badge/Hugo-0.168.0-ff4088?logo=hugo)](https://gohugo.io/)
 [![Docsy](https://img.shields.io/badge/Theme-Docsy-blue)](https://www.docsy.dev/)
 
 The documentation repository for <https://interlisp.org>, the restoration
@@ -65,7 +65,7 @@ Before working with this repository, ensure you have the following installed:
 
 | Tool | Version | Purpose |
 |------|---------|--------|
-| [Hugo Extended](https://gohugo.io/installation/) | v0.166.0 (CI pins v0.166.0) | Static site generator |
+| [Hugo Extended](https://gohugo.io/installation/) | v0.168.0 (CI pins v0.168.0) | Static site generator |
 | [Go](https://go.dev/doc/install) | 1.24+ | Required for Hugo modules |
 | [Node.js & npm](https://nodejs.org/) | v22+ (LTS 24) | Theme npm dependencies (Bootstrap, Font Awesome) |
 | [jq](https://jqlang.github.io/jq/) | Latest | Bibliography JSON processing |
@@ -74,7 +74,7 @@ Before working with this repository, ensure you have the following installed:
 **Verify installations:**
 
 ```bash
-hugo version      # Should show "extended" and v0.166.0
+hugo version      # Should show "extended" and v0.168.0
 go version        # Should show 1.24+
 node --version    # Should show v22+ or later
 jq --version      # Any recent version
@@ -163,7 +163,7 @@ Instructions for installing Hugo on various operating systems are at: [Installin
 For Ubuntu (pinned extended edition, matches CI `HUGO_VERSION`):
 
 ```bash
-VER=0.166.0
+VER=0.168.0
 DEB="hugo_extended_${VER}_linux-amd64.deb"
 wget --retry-connrefused --waitretry=5 --read-timeout=30 --timeout=30 --tries=5 \
   -O "/tmp/${DEB}" "https://github.com/gohugoio/hugo/releases/download/v${VER}/${DEB}"
@@ -179,7 +179,7 @@ Verify installation:
 ```bash
 hugo version
 # Expected output:
-hugo v0.166.0+extended linux/amd64 BuildDate=...
+hugo v0.168.0+extended linux/amd64 BuildDate=...
 
 ```
 
@@ -209,7 +209,7 @@ Bootstrap and Font Awesome from `node_modules/` (installed above). Expected outp
 Watching for changes in <project-root>/archetypes, <project-root>/assets/{css,icons,js,scss}, <project-root>/content/en/{history,project,software}, <project-root>/layouts/{_default,_partials,_shortcodes,bibliography,redirect}, <project-root>/package.json, <project-root>/static/{Resources,data,docs,documentation,favicons}
 Watching for config changes in <project-root>/config/_default, <project-root>/config/development, <project-root>/go.mod
 Start building sites … 
-hugo v0.166.0+extended linux/amd64 BuildDate=...
+hugo v0.168.0+extended linux/amd64 BuildDate=...
 
                   │  EN  
 ──────────────────┼──────
@@ -300,7 +300,7 @@ The following repository variables control the build and deployment process:
 | Variable | Description | Values | Default |
 |----------|-------------|--------|---------|
 | `HUGO_ENVIRONMENT` | Build environment used by the production workflow | `development`, `staging`, `production` | `production` |
-| `HUGO_VERSION` | Hugo version used in CI/CD | Semantic version (e.g., `0.166.0`) | Set in workflow |
+| `HUGO_VERSION` | Hugo version used in CI/CD | Semantic version (e.g., `0.168.0`) | Set in workflow |
 
 `HUGO_ENVIRONMENT` is resolved in `.github/workflows/gh-pages.yml` and passed
 as the `hugo-environment` input to the shared build workflow.  The staging
