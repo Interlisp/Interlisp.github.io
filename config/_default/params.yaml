@@ -183,3 +183,11 @@ ui:
 
   # Set to false to disable dark mode menu
   showLightDarkModeMenu: false
+
+# Docsy plugins configuration (0.18.0)
+docsy:
+  plugins:
+    mermaid:
+      enable: false
+    markmap:
+      enable: false

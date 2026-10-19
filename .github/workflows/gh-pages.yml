@@ -65,7 +65,7 @@ env:
   # ----------------------------------------------------------------------------
   # Specify the deployment environment:  staging or production
   HUGO_ENVIRONMENT: ${{ vars.HUGO_ENVIRONMENT || 'staging' }}
-  HUGO_VERSION: 0.164.0
+  HUGO_VERSION: 0.166.0
 
 jobs:
   # ----------------------------------------------------------------------------
@@ -146,7 +146,7 @@ jobs:
   build:
     needs: [validate-docs, hugo-version]
     if: always() && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.hugo-version.result == 'success')
-    uses: Interlisp/shared-workflows/.github/workflows/build-site.yml@main
+    uses: Interlisp/shared-workflows/.github/workflows/build-site.yml@sass-on-path
     with:
       hugo-version: ${{ needs.hugo-version.outputs.version }}
       hugo-environment: ${{ vars.HUGO_ENVIRONMENT || 'production' }}

@@ -1,22 +1,22 @@
 {
   "comments": {
-    "dependencies": {
-      "jquery": "project",
-      "tabpanel": "project"
-    },
+    "dependencies": {},
     "devDependencies": {
-      "hugo-extended": "project"
+      "hugo-extended": "project",
+      "sass-embedded": "project"
     }
   },
-  "scripts": {
-    "postinstall": "hugo mod npm pack && npm install --ignore-scripts"
-  },
-  "dependencies": {
-    "jquery": "^3.7.1",
-    "tabpanel": "^0.2.0"
-  },
+  "dependencies": {},
   "devDependencies": {
-    "hugo-extended": "^0.164.0"
+    "hugo-extended": "^0.166.0",
+    "sass-embedded": "1.105.0"
+  },
+  "overrides": {
+    "sass": "npm:sass-embedded@1.105.0"
+  },
+  "scripts": {
+    "hugo": "hugo",
+    "postinstall": "hugo mod npm pack && npm install --ignore-scripts"
   },
   "workspaces": [
     "packages/hugoautogen"

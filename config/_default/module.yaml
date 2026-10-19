@@ -1,9 +1,9 @@
   proxy: "direct"
   # uncomment line below for temporary local development of module
-  # replacements = "github.com/google/docsy/theme -> ../../docsy/theme"
+  # replacements = "github.com/docsy/docsy/theme -> ../../docsy/theme"
   hugoVersion:
     extended: true
-    min: "0.164.0"
+    min: "0.166.0"
   imports:
-    - path: "github.com/google/docsy/theme"
+    - path: "github.com/docsy/docsy/theme"
       disable: false
