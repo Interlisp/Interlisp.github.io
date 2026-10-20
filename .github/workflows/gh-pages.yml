@@ -146,7 +146,7 @@ jobs:
   build:
     needs: [validate-docs, hugo-version]
     if: always() && (needs.validate-docs.result == 'success' || needs.validate-docs.result == 'skipped') && (needs.hugo-version.result == 'success')
-    uses: Interlisp/shared-workflows/.github/workflows/build-site.yml@sass_on_path
+    uses: Interlisp/shared-workflows/.github/workflows/build-site.yml@main
     with:
       hugo-version: ${{ needs.hugo-version.outputs.version }}
       hugo-environment: ${{ vars.HUGO_ENVIRONMENT || 'production' }}
