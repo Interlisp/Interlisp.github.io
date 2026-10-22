@@ -63,6 +63,7 @@ _KNOWN_ITEM_TYPES: frozenset[str] = frozenset({
     "entry-encyclopedia",
     "personal_communication",
     "document",
+    "standard",
     "manuscript",
     "hearing",
     "artwork",
@@ -73,7 +74,6 @@ _KNOWN_ITEM_TYPES: frozenset[str] = frozenset({
     "legal_case",
     "newspaper-article",
     "dictionary-entry",
-    "Xerox System Integration Standard",
 })
 
 
