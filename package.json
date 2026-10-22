@@ -1,24 +1,24 @@
 {
-
-  "devDependencies": {
-
-    "autoprefixer": "^10.4.8",
-
-    "hugo-extended": "^0.155.3",
-
-    "postcss": "^8.4.16",
-
-    "postcss-cli": "^10.0.0"
-
+  "comments": {
+    "dependencies": {},
+    "devDependencies": {
+      "hugo-extended": "project",
+      "sass-embedded": "project"
+    }
   },
-
-  "dependencies": {
-
-    "jquery": "^3.7.1",
-
-    "tabpanel": "^0.2.0"
-
-  }
-
+  "dependencies": {},
+  "devDependencies": {
+    "hugo-extended": "^0.168.0",
+    "sass-embedded": "1.105.0"
+  },
+  "overrides": {
+    "sass": "npm:sass-embedded@1.105.0"
+  },
+  "scripts": {
+    "hugo": "hugo",
+    "postinstall": "hugo mod npm pack && npm install --ignore-scripts"
+  },
+  "workspaces": [
+    "packages/hugoautogen"
+  ]
 }
-

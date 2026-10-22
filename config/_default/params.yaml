@@ -32,6 +32,12 @@ url_latest_version: https://example.com
 # in `markup.yaml`
 prism_syntax_highlighting: false
 
+#  author: site author information (used in RSS feed, etc.)
+#
+author:
+  name: Interlisp.org
+  email: info@interlisp.org
+
 #  copyright:  site copyright information
 #    authors:  text list of authors
 #    from_year:  year in copyright statement
@@ -177,3 +183,11 @@ ui:
 
   # Set to false to disable dark mode menu
   showLightDarkModeMenu: false
+
+# Docsy plugins configuration (0.18.0)
+docsy:
+  plugins:
+    mermaid:
+      enable: false
+    markmap:
+      enable: false
