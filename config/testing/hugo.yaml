@@ -11,6 +11,10 @@
 # The module.mounts block must re-declare all standard project-level mounts
 # because adding any mount replaces Hugo's defaults for the project.
 # Theme (Docsy) mounts defined within that module are unaffected.
+#
+# Note: the mounts below do not set `lang` — that option was deprecated in Hugo
+# 0.153.0. This is a single-language site, so mounts apply to the default
+# (English) language without it.
 
 baseURL: "http://localhost/"
 
@@ -30,7 +34,6 @@ module:
     # URLs are generated without an /en/ prefix (matching production behavior).
     - source: content/en
       target: content
-      lang: en
     - source: static
       target: static
     - source: layouts
@@ -47,4 +50,3 @@ module:
     # Mount alongside the real bibliography content for the English language.
     - source: tests/fixtures/bibliography
       target: content/history/bibliography
-      lang: en

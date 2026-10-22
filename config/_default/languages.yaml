@@ -5,11 +5,12 @@
 # See:  https://gohugo.io/content-management/multilingual/
 #
 en:
-  languageName: English
-  languageCode: en-us
+  label: English
+  locale: en-US
   # Weight used for sorting.
   weight: 1
   contentDir: content/en
+  direction: ltr
   params:
     description: "Dedicated to restoring and preserving the Interlisp experience"
 

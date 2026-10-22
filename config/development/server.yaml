@@ -1,7 +1,7 @@
 headers:
 - for: /**
   values:
-    Content-Security-Policy: script-src 'unsafe-inline' 'unsafe-eval' localhost:1313 https://code.jquery.com https://*.google.com http://*.google.com https://partner.googleadservices.com
+    Content-Security-Policy: script-src 'unsafe-inline' 'unsafe-eval' localhost:1313 https://*.google.com http://*.google.com https://partner.googleadservices.com
     Referrer-Policy: strict-origin-when-cross-origin
     X-Content-Type-Options: nosniff
     X-Frame-Options: DENY
