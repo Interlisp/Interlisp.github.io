@@ -11,6 +11,8 @@ editors:
 abstract: |
   A test abstract for a software entry used by automated test fixtures.
 
+genre: "TestLang"
+
 tags:
 url_source: "https://github.com/example/test-software"
 zotero_url: "https://www.zotero.org/groups/test/items/ZTESTSOFT"

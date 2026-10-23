@@ -172,7 +172,7 @@ while true; do
             rawItemsFile=true
             shift
             ;;
-        -d|--debug)
+        -d|--debugfiles)
             debugFiles=true
             shift
             ;;

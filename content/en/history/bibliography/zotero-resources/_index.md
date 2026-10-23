@@ -31,31 +31,30 @@ A Zotero item type maps to exactly one CSL JSON type. The CSL JSON type is what 
 
 ## Type Reference Table
 
-| Zotero Item Type | CSL Type | Schema.org @type | additionalType | genre | Status | Notes |
-|---|---|---|---|---|---|---|
-| **Journal Article** | `article-journal` | `ScholarlyArticle` | — | — | ✅ Implemented | Peer-reviewed journal articles, conference proceedings in journals |
-| **Magazine Article** | `article-magazine` | `Article` | — | — | ✅ Implemented | Magazine and trade publication articles |
-| **Newspaper Article** | `article` | `Article` | — | — | ✅ Implemented | Newspaper articles and news items |
-| **Book** | `book` | `Book` | — | — | ✅ Implemented | Books and monographs |
-| **Book Section** | `chapter` | `Chapter` | — | — | ✅ Implemented | Chapters or sections within books |
-| **Conference Paper** | `paper-conference` | `ScholarlyArticle` | — | — | ✅ Implemented | Papers presented at conferences (when not in proceedings) |
-| **Report** | `report` | `Report` | the entry's report type | — | ✅ Implemented | Technical reports, working papers, government documents |
-| **Thesis** | `thesis` | `Thesis` | — | — | ✅ Implemented | Master's theses, dissertations, doctoral theses |
-| **Patent** | `patent` | `CreativeWork` | `"Patent"` | — | ✅ Implemented | Patents and patent applications |
-| **Blog Post** | `post-weblog` | `BlogPosting` | — | — | ✅ Implemented | Blog posts and web log entries |
-| **Webpage** | `webpage` | `WebPage` | — | — | ✅ Implemented | General web pages and websites |
-| **Encyclopedia Entry** | `entry-encyclopedia` | `Article` | — | — | ✅ Implemented | Encyclopedia and reference work entries |
-| **Film** | `motion_picture` | `VideoObject` | — | — | ✅ Implemented | Films, videos, and visual media |
-| **Email** | `personal_communication` | `Message` | — | — | ✅ Implemented | Personal communications, emails, letters |
-| **Computer Program** | `software` | `SoftwareSourceCode` | — | — | 📋 Planned | Software, source code repositories, applications, tools. The Type field names the programming language. |
-| **Document** | `document` | `CreativeWork` | `"TechnicalDocumentation"` | — | 📋 Planned | Technical manuals, guides, user documentation, software docs, specifications |
-| **Document** with Type `Transcript` | `document` | `CreativeWork` | `"Transcript"` | `"Transcript"` | 📋 Planned | Oral history interviews, recorded interviews, media transcripts |
-| **Standard** | `standard` | `CreativeWork` | `"Standard"` | — | 📋 Planned | Technical standards, specifications, protocols, standards documents. The Type field names the standard's series or designation. |
+| Zotero Item Type | CSL Type | Schema.org @type | additionalType | genre | Notes |
+|---|---|---|---|---|---|
+| **Journal Article** | `article-journal` | `ScholarlyArticle` | — | — | Peer-reviewed journal articles, conference proceedings in journals |
+| **Magazine Article** | `article-magazine` | `Article` | — | — | Magazine and trade publication articles |
+| **Newspaper Article** | `article` | `Article` | — | — | Newspaper articles and news items |
+| **Book** | `book` | `Book` | — | — | Books and monographs |
+| **Book Section** | `chapter` | `Chapter` | — | — | Chapters or sections within books |
+| **Conference Paper** | `paper-conference` | `ScholarlyArticle` | — | — | Papers presented at conferences (when not in proceedings) |
+| **Report** | `report` | `Report` | the entry's report type | — | Technical reports, working papers, government documents |
+| **Thesis** | `thesis` | `Thesis` | — | — | Master's theses, dissertations, doctoral theses |
+| **Patent** | `patent` | `CreativeWork` | `"Patent"` | — | Patents and patent applications |
+| **Blog Post** | `post-weblog` | `BlogPosting` | — | — | Blog posts and web log entries |
+| **Webpage** | `webpage` | `WebPage` | — | — | General web pages and websites |
+| **Encyclopedia Entry** | `entry-encyclopedia` | `Article` | — | — | Encyclopedia and reference work entries |
+| **Film** | `motion_picture` | `VideoObject` | — | — | Films, videos, and visual media |
+| **Email** | `personal_communication` | `Message` | — | — | Personal communications, emails, letters |
+| **Computer Program** | `software` | `SoftwareSourceCode` | — | — | Software, source code repositories, applications, tools. The Type field names the programming language and maps to `programmingLanguage`; publisher, when present, maps to `publisher`. |
+| **Document** | `document` | `CreativeWork` | `"TechnicalDocumentation"` | the entry's Type, if set | Technical manuals, guides, user documentation, software docs, specifications. Publisher, when present, maps to `publisher`. |
+| **Document** with Type `Transcript` | `document` | `CreativeWork` | `"Transcript"` | `"Transcript"` | Oral history interviews, recorded interviews, media transcripts |
+| **Document** with Type `Newsletter` | `document` | `CreativeWork` | `"TechnicalDocumentation"` | `"Newsletter"` | Newsletters, bulletins, and serial publications stored as documents |
+| **Standard** | `standard` | `CreativeWork` | `"Standard"` | — (Type → `isPartOf`) | Technical standards, specifications, protocols, standards documents. The Type field names the standard's series (`isPartOf` → `CreativeWorkSeries`); the standard number maps to an `identifier`. |
 
 ### Legend
 
-- **✅ Implemented**: The type is fully supported. The processing pipeline emits it and the generated JSON-LD carries the Schema.org mapping shown.
-- **📋 Planned**: The type is recognised and has a defined Schema.org mapping, but the processing pipeline does not yet emit it. Entries of this type are published without the Schema.org markup described above.
 - **Zotero Item Type**: The classification used in Zotero's item type selector
 - **CSL Type**: The type value in CSL JSON output from Zotero API
 - **Schema.org @type**: The `@type` field in generated JSON-LD
@@ -90,7 +89,7 @@ These types are for published, citable research and writing:
 - **Document** (`document`): Broad category for technical documentation, user guides, specifications, manuals
   - The Zotero **Type** field distinguishes subcategories within this item type. For an oral-history interview — a written document recording a conversation between an interviewer and an interviewee — set the Type field to `Transcript`. Its schema.org mapping is `additionalType: "Transcript"` with `genre: "Transcript"`.
   - Other Type values are carried through to the Schema.org `genre` property. For example, a document with a Type of `Newsletter` maps to `genre: "Newsletter"`.
-- **Standard** (`standard`): The Zotero **Type** field names the standard's series or designation (for example, `Xerox System Integration Standard`). Its schema.org mapping is `isPartOf` → `CreativeWorkSeries`.
+- **Standard** (`standard`): The Zotero **Type** field names the standard's series or designation (for example, `Xerox System Integration Standard`), which maps to `isPartOf` → `CreativeWorkSeries`. The entry's `@type` is `CreativeWork` with `additionalType: "Standard"`, and the standard number is emitted as a `PropertyValue` identifier.
 
 ### Digital and Media Types
 
@@ -165,9 +164,9 @@ See `layouts/_partials/bibliography-json-ld.html` for the active type mappings:
 
 To add a type:
 
-1. Add a type handler in `scripts/bibSplit.pl` (line ~143) so the pipeline emits it
+1. Add a type handler in `scripts/bibSplit.pl` (the `$type` branch chain, line ~146) so the pipeline emits it
 2. Add the @type mapping in `layouts/_partials/bibliography-json-ld.html` (line ~25)
-3. Add an `additionalType` assignment if the type needs further refinement (line ~122)
+3. Add an `additionalType` assignment if the type needs further refinement (line ~124)
 4. Add a test fixture under `tests/fixtures/bibliography/` and register its slug in `tests/conftest.py`
 5. Add a test class in `tests/test_bibliography_jsonld.py`
 6. Update this reference table and `docs/bibliography-schema.md`
@@ -209,12 +208,12 @@ The Zotero **Type** field is generic, so its meaning depends on the item type, a
 
 | Zotero item type | Type field contains | Expressed in schema.org as |
 |---|---|---|
-| `Document` | the kind of document, e.g. `Transcript` | `genre`, plus `additionalType` |
+| `Document` | the kind of document, e.g. `Transcript` | `genre`; `additionalType` is always set (`TechnicalDocumentation`, or `Transcript`) |
 | `Standard` | the standard's series or designation | `isPartOf` → `CreativeWorkSeries` |
 | `Computer Program` | the programming language | `programmingLanguage` |
 | `Report` | the report type | `additionalType` |
-| `Thesis` | the degree type | `genre` |
-| `Webpage` | the kind of site, e.g. `Blog` | `genre` |
+| `Thesis` | the degree type | not currently mapped |
+| `Webpage` | the kind of site, e.g. `Blog` | not currently mapped (`website_type` is frontmatter only) |
 
 ---
 
@@ -224,7 +223,7 @@ The Zotero **Type** field is generic, so its meaning depends on the item type, a
 
 1. **Check CSL JSON output**: Run `scripts/update_bibliography.sh` and examine the raw JSON for your entry's `type` field
 2. **Verify mapping**: Check that the CSL type appears in the table above
-3. **Check the Type field**: If the entry's `type` value looks like a genre word (for example `Transcript` or `Newsletter`) rather than a CSL type, the Zotero Type field has been populated and has overridden the entry's CSL type
+3. **Check the Type field**: The CSL type is authoritative. A `type` value that looks like a genre word (for example `Transcript` or `Newsletter`) rather than a CSL type means the merge-precedence defect in `bib-fns.jq` (`semiflatten`) has regressed — the Zotero **Type** field must never overwrite the CSL type
 4. **Report missing type**: If type is in CSL JSON but not in table, file an issue
 
 ### JSON-LD Validation Errors
