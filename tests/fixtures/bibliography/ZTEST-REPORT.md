@@ -11,6 +11,8 @@ abstract: |
   A test abstract for a technical report used by automated test fixtures.
 
 publisher: "Test Research Lab"
+report_type: "Test Report Type"
+report_number: "TR-2005-001"
 
 tags:
 url_source: "https://example.com/report"

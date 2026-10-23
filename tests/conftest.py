@@ -49,6 +49,9 @@ FIXTURE_SLUGS: tuple[str, ...] = (
     "ztest-software",
     "ztest-encyclopedia",
     "ztest-message",
+    "ztest-document",
+    "ztest-transcript",
+    "ztest-standard",
     "ztest-no-urls",
 )
 

@@ -35,6 +35,8 @@
 {{- else if eq $itemType "motion_picture"         -}}{{- $schemaType = "VideoObject"        -}}
 {{- else if eq $itemType "entry-encyclopedia"     -}}{{- $schemaType = "Article"            -}}
 {{- else if eq $itemType "personal_communication" -}}{{- $schemaType = "Message"            -}}
+{{- else if eq $itemType "document"               -}}{{- $schemaType = "CreativeWork"       -}}
+{{- else if eq $itemType "standard"               -}}{{- $schemaType = "CreativeWork"       -}}
 {{- else if eq $itemType "software"               -}}{{- $schemaType = "SoftwareSourceCode" -}}
 {{- end -}}
 
@@ -139,6 +141,39 @@
   {{- end -}}
   {{- with .Params.issuing_authority -}}
     {{- $ld = merge $ld (dict "validIn" (dict "@type" "DefinedRegion" "name" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- /* ── Document / Standard / Software: genre-driven refinement ─────── */ -}}
+{{- $genre := .Params.genre | default "" | strings.TrimSpace | lower -}}
+
+{{- if eq $itemType "document" -}}
+  {{- if eq $genre "transcript" -}}
+    {{- $ld = merge $ld (dict "additionalType" "Transcript" "genre" "Transcript") -}}
+  {{- else -}}
+    {{- $ld = merge $ld (dict "additionalType" "TechnicalDocumentation") -}}
+    {{- with .Params.genre -}}{{- $ld = merge $ld (dict "genre" .) -}}{{- end -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $itemType "standard" -}}
+  {{- $ld = merge $ld (dict "additionalType" "Standard") -}}
+  {{- with .Params.genre -}}
+    {{- $ld = merge $ld (dict "isPartOf" (dict "@type" "CreativeWorkSeries" "name" .)) -}}
+  {{- end -}}
+  {{- with .Params.standard_number -}}
+    {{- $ld = merge $ld (dict "identifier" (dict "@type" "PropertyValue" "propertyID" "standard-number" "value" .)) -}}
+  {{- end -}}
+{{- end -}}
+
+{{- if eq $itemType "software" -}}
+  {{- with .Params.genre -}}{{- $ld = merge $ld (dict "programmingLanguage" .) -}}{{- end -}}
+{{- end -}}
+
+{{- /* ── Publisher for types that carry it ───────────────────────────── */ -}}
+{{- if or (eq $itemType "document") (eq $itemType "standard") (eq $itemType "software") -}}
+  {{- with .Params.publisher -}}
+    {{- $ld = merge $ld (dict "publisher" (dict "@type" "Organization" "name" .)) -}}
   {{- end -}}
 {{- end -}}
 

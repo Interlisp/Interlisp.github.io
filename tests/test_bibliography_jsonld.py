@@ -39,6 +39,9 @@ Fixture → Schema.org type map
     ZTEST-SOFTWARE.md     software              → SoftwareSourceCode
     ZTEST-ENCYCLOPEDIA.md entry-encyclopedia    → Article
     ZTEST-MESSAGE.md      personal_communication → Message
+    ZTEST-DOCUMENT.md     document              → CreativeWork (+TechnicalDocumentation)
+    ZTEST-TRANSCRIPT.md   document (Transcript) → CreativeWork (+Transcript)
+    ZTEST-STANDARD.md     standard              → CreativeWork (+Standard)
     ZTEST-NO-URLS.md      report (no URLs)      → edge-case fixture
 
 Usage
@@ -416,6 +419,15 @@ class TestReport:
     def test_publisher(self):
         _assert_org(self.ld["publisher"], "Test Research Lab")
 
+    def test_report_type_additional_type(self):
+        assert self.ld["additionalType"] == "Test Report Type"
+
+    def test_report_number_identifier(self):
+        ident = self.ld["identifier"]
+        assert ident["@type"] == "PropertyValue"
+        assert ident["propertyID"] == "report-number"
+        assert ident["value"] == "TR-2005-001"
+
     def test_author(self):
         authors = self.ld["author"]
         assert len(authors) == 1
@@ -557,7 +569,8 @@ class TestSoftwareSourceCode:
     """software → SoftwareSourceCode.  Fixture: ZTEST-SOFTWARE.md
 
     Also exercises the single-name (no comma) author edge case via the
-    "Singularity" entry, which must produce only a ``name`` key.
+    "Singularity" entry, which must produce only a ``name`` key, and the
+    Zotero "Type" field (``genre``) surfacing as ``programmingLanguage``.
     """
 
     @pytest.fixture(autouse=True)
@@ -566,6 +579,10 @@ class TestSoftwareSourceCode:
 
     def test_base_fields(self):
         _assert_base(self.ld, "SoftwareSourceCode", "Test Software")
+
+    def test_programming_language_from_genre(self):
+        """Zotero's Type field (genre) becomes programmingLanguage."""
+        assert self.ld["programmingLanguage"] == "TestLang"
 
     def test_author_count(self):
         assert len(self.ld["author"]) == 2
@@ -614,6 +631,98 @@ class TestPersonalCommunication:
         authors = self.ld["author"]
         assert len(authors) == 1
         _assert_person(authors[0], "Test Sender", family="Sender", given="Test")
+
+
+class TestDocument:
+    """document (no genre) → CreativeWork + additionalType TechnicalDocumentation.
+    Fixture: ZTEST-DOCUMENT.md
+    """
+
+    @pytest.fixture(autouse=True)
+    def ld(self):
+        self.ld = _load_jsonld("ztest-document")
+
+    def test_base_fields(self):
+        _assert_base(self.ld, "CreativeWork", "Test Document")
+
+    def test_additional_type_is_technical_documentation(self):
+        assert self.ld["additionalType"] == "TechnicalDocumentation"
+
+    def test_no_genre(self):
+        """An empty genre must not emit a genre key."""
+        assert "genre" not in self.ld
+
+    def test_publisher(self):
+        _assert_org(self.ld["publisher"], "Test Documentation Office")
+
+    def test_author(self):
+        authors = self.ld["author"]
+        assert len(authors) == 1
+        _assert_person(authors[0], "Test Writer", family="Writer", given="Test")
+
+
+class TestTranscript:
+    """document + genre Transcript → CreativeWork + additionalType Transcript.
+    Fixture: ZTEST-TRANSCRIPT.md
+    """
+
+    @pytest.fixture(autouse=True)
+    def ld(self):
+        self.ld = _load_jsonld("ztest-transcript")
+
+    def test_base_fields(self):
+        _assert_base(self.ld, "CreativeWork", "Test Oral History Transcript")
+
+    def test_additional_type_is_transcript(self):
+        assert self.ld["additionalType"] == "Transcript"
+
+    def test_genre_is_transcript(self):
+        assert self.ld["genre"] == "Transcript"
+
+    def test_publisher(self):
+        _assert_org(self.ld["publisher"], "Test Oral History Institute")
+
+    def test_not_technical_documentation(self):
+        """The transcript refinement must replace, not duplicate, the default."""
+        assert self.ld["additionalType"] != "TechnicalDocumentation"
+
+
+class TestStandard:
+    """standard → CreativeWork + additionalType Standard.
+    Fixture: ZTEST-STANDARD.md
+
+    The Zotero Type field (genre) names the standard's series and maps to
+    isPartOf → CreativeWorkSeries; the standard number becomes a PropertyValue
+    identifier.
+    """
+
+    @pytest.fixture(autouse=True)
+    def ld(self):
+        self.ld = _load_jsonld("ztest-standard")
+
+    def test_base_fields(self):
+        _assert_base(self.ld, "CreativeWork", "Test Character Code Standard")
+
+    def test_additional_type_is_standard(self):
+        assert self.ld["additionalType"] == "Standard"
+
+    def test_is_part_of_creative_work_series(self):
+        series = self.ld["isPartOf"]
+        assert series["@type"] == "CreativeWorkSeries"
+        assert series["name"] == "Test System Integration Standard"
+
+    def test_standard_number_identifier(self):
+        ident = self.ld["identifier"]
+        assert ident["@type"] == "PropertyValue"
+        assert ident["propertyID"] == "standard-number"
+        assert ident["value"] == "TSTD 059003"
+
+    def test_publisher(self):
+        _assert_org(self.ld["publisher"], "Test Standards Institute")
+
+    def test_genre_is_not_top_level(self):
+        """For standards the genre becomes isPartOf, not a top-level genre."""
+        assert "genre" not in self.ld
 
 
 class TestCollectionPage:
