@@ -5,11 +5,36 @@
   </aside>
   <main class="col-12 col-md-9 col-xl-8 ps-md-5 pt-0" role="main">
     <div class="td-content mt-0 pt-0">
-      <h1 class="mt-0">Page Not Found</h1>
-      <header class="article-meta"></header>
-      <p>The page you were looking for does not exist. It may have been moved or removed.</p>
-      <p>You can use the search box or browse the site sections on the left to find what you are looking for.</p>
-      <p>Or <a href="{{ "" | relURL }}">return to the homepage</a>.</p>
+      <div id="not-found-generic">
+        <h1 class="mt-0">Page Not Found</h1>
+        <header class="article-meta"></header>
+        <p>The page you were looking for does not exist. It may have been moved or removed.</p>
+        <p>You can use the search box or browse the site sections on the left to find what you are looking for.</p>
+        <p>Or <a href="{{ "" | relURL }}">return to the homepage</a>.</p>
+      </div>
+
+      <div id="not-found-bibliography" class="d-none">
+        <h1 class="mt-0">Bibliography Entry Not Found</h1>
+        <header class="article-meta"></header>
+        <p>
+          The bibliography entry <code id="not-found-bib-key"></code><span id="not-found-bib-title-wrap"> &mdash; <cite id="not-found-bib-title"></cite></span>
+          is no longer available.
+        </p>
+        <p>
+          The Interlisp bibliography is generated from our
+          <a href="https://www.zotero.org/groups/2914042/interlisp">Zotero group library</a>.
+          Entries may be removed or reclassified when the library changes, which removes
+          the corresponding page from this site. If you followed a link from another
+          site, that link may be out of date.
+        </p>
+        <p>You can:</p>
+        <ul>
+          <li><a href="{{ "history/bibliography/" | relURL }}">Browse the bibliography</a></li>
+          <li><a id="not-found-bib-zotero" href="https://www.zotero.org/groups/2914042/interlisp" rel="noopener">View the item in Zotero</a> (the record may still be available)</li>
+          <li><a href="{{ "history/bibliography/intake/" | relURL }}">Report a missing or incorrect entry</a></li>
+        </ul>
+        <p>Or <a href="{{ "" | relURL }}">return to the homepage</a>.</p>
+      </div>
     </div>
   </main>
   <aside class="d-none d-xl-block col-xl-2 td-sidebar-toc d-print-none pt-0 mt-0">
@@ -19,4 +44,54 @@
     </div>
   </aside>
 </div>
+
+{{- $bibData := index hugo.Data "bibliography" -}}
+{{- $removed := slice -}}
+{{- with $bibData -}}
+  {{- $removed = .removed | default (slice) -}}
+{{- end -}}
+<script type="application/json" id="bibliography-removed-data">{{ $removed | jsonify | safeJS }}</script>
+<script>
+  (function () {
+    const bibRoot = {{ "history/bibliography/" | relURL | jsonify | safeJS }};
+    const path = window.location.pathname;
+    if (!path.startsWith(bibRoot)) return;
+
+    const key = path.slice(bibRoot.length).replace(/\/+$/, "");
+    if (!/^[A-Za-z0-9]{8}$/.test(key)) return;
+
+    const generic = document.getElementById("not-found-generic");
+    const bib = document.getElementById("not-found-bibliography");
+    if (!generic || !bib) return;
+
+    generic.classList.add("d-none");
+    bib.classList.remove("d-none");
+
+    const displayKey = key.toUpperCase();
+    document.getElementById("not-found-bib-key").textContent = displayKey;
+    document.title = "Bibliography entry not found | The Medley Interlisp Project";
+
+    let removed = [];
+    const data = document.getElementById("bibliography-removed-data");
+    if (data) {
+      try {
+        removed = JSON.parse(data.textContent) || [];
+      } catch (e) {
+        removed = [];
+      }
+    }
+
+    const entry = removed.find(function (item) {
+      return String(item.key || "").toUpperCase() === displayKey;
+    });
+    if (entry && entry.title) {
+      document.getElementById("not-found-bib-title").textContent = entry.title;
+    } else {
+      document.getElementById("not-found-bib-title-wrap").classList.add("d-none");
+    }
+
+    document.getElementById("not-found-bib-zotero").href =
+      "https://www.zotero.org/groups/2914042/items/" + encodeURIComponent(displayKey);
+  })();
+</script>
 {{ end }}

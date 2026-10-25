@@ -20,6 +20,7 @@ Usage
     PYTEST_FORCE_HUGO_BUILD=1 pytest tests/test_hugo_build.py -v
 """
 
+import json
 import os
 import re
 import xml.etree.ElementTree as ET
@@ -116,6 +117,70 @@ class TestCriticalPagesExist:
     def test_page_exists(self, path: str) -> None:
         assert (PROD_PUBLIC / path).exists(), (
             f"Required output file missing: public/{path}"
+        )
+
+
+class TestNotFoundPage:
+    """The custom 404 page must handle removed bibliography entries."""
+
+    @pytest.fixture(autouse=True)
+    def page(self):
+        path = PROD_PUBLIC / "404.html"
+        if not path.exists():
+            pytest.skip("404.html not found — run a production build first")
+        self.content = path.read_text(encoding="utf-8", errors="ignore")
+
+    def test_has_bibliography_fallback(self) -> None:
+        assert 'id="not-found-bibliography"' in self.content
+        assert "/history/bibliography/" in self.content
+        assert "bibliography-removed-data" in self.content
+
+    def test_embeds_removed_entries_as_json(self) -> None:
+        match = re.search(
+            r'<script type="application/json" id="bibliography-removed-data">(.*?)</script>',
+            self.content,
+            re.DOTALL,
+        )
+        assert match, "Removed-bibliography data block not found in 404.html"
+        removed = json.loads(match.group(1))
+        assert isinstance(removed, list)
+        for entry in removed:
+            assert isinstance(entry.get("key"), str) and entry["key"]
+            assert isinstance(entry.get("title"), str)
+
+    def test_is_noindex(self) -> None:
+        assert re.search(
+            r'<meta name="robots" content="[^"]*noindex',
+            self.content,
+        ), "404 page must be marked noindex"
+
+
+class TestLegacyRedirects:
+    """Aliases and static redirects must exist for known legacy URLs."""
+
+    REDIRECTS = (
+        ("doc/info/history.html", "/history/"),
+        ("about/partners/index.html", "/project/partners/"),
+        ("running/running-with-docker/index.html", "/software/install-and-run/"),
+        (
+            "running/online/usingonline/index.html",
+            "/software/using-medley/online-using/",
+        ),
+        (
+            "medley/using/running/runnning-on-win/index.html",
+            "/software/install-and-run/windows/",
+        ),
+        ("IRM_files/content.htm", "/documentation/IRM.pdf"),
+    )
+
+    @pytest.mark.parametrize(("path", "target"), REDIRECTS)
+    def test_redirect_exists(self, path: str, target: str) -> None:
+        redirect = PROD_PUBLIC / path
+        if not redirect.exists():
+            pytest.skip("public/ not built — run hugo first")
+        content = redirect.read_text(encoding="utf-8", errors="ignore")
+        assert target in content, (
+            f"Redirect {path} does not point at {target}:\n{content[:200]}"
         )
 
 

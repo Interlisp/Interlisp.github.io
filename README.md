@@ -150,6 +150,8 @@ cd scripts
 
 This script retrieves the bibliography from Zotero, formats it appropriately, and places the individual JSON files in `static/data/bibItems/`.
 
+Entries marked as deleted in Zotero are recorded in `data/bibliography/removed.json`. The custom 404 page uses that list to recognize former bibliography URLs and show the removed entry's title. The file is merged, not replaced, so entries that Zotero has already purged are retained.
+
 ---
 
 ## Local Development
@@ -358,6 +360,7 @@ The repository follows the standard [Hugo directory structure](https://gohugo.io
 | `assets/` | Custom global resources (CSS, JS, icons, SCSS) |
 | `config/` | Site configuration for different environments |
 | `content/en/` | All website content (English only) |
+| `data/` | Build-time data files |
 | `layouts/` | Hugo layout templates and overrides |
 | `static/` | Files copied directly to the built site |
 
@@ -392,6 +395,13 @@ The repository follows the standard [Hugo directory structure](https://gohugo.io
 - `_shortcodes/` — Hugo shortcodes (cover block, image gallery)
 - `bibliography/` — Bibliography section templates
 - `redirect/` — Redirect page template
+
+</details>
+
+<details>
+<summary><strong>data/</strong> — Build-time data</summary>
+
+- `bibliography/removed.json` — Keys and titles of bibliography entries removed from Zotero (read by the 404 page)
 
 </details>
 

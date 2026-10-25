@@ -355,6 +355,24 @@ if $debugFiles ; then
 fi
 
 showInfo 5 "Delete items that Zotero indicated as such."
+# Save the deleted entries before filtering them out.  The custom 404 page uses
+# this list to identify bibliography URLs that were removed and show their
+# titles.  Keep only keys and titles; the list is embedded in 404.html at build
+# time.  Merge with the existing file instead of replacing it: once Zotero
+# purges an item, the API no longer reports it as deleted, but its old URL can
+# still be requested by search engines and external links.
+REMOVED_DATA_FILE="./../data/bibliography/removed.json"
+mkdir -p "$(dirname "$REMOVED_DATA_FILE")"
+deletedItems=$(jq 'map(select(.deleted)) | map({key: .key, title: (.title // "")})' <<< "$items")
+if [[ -f "$REMOVED_DATA_FILE" ]]; then
+  # Newly deleted entries override older records with the same key.
+  jq --argjson deleted "$deletedItems" \
+    '(INDEX(.key) + ($deleted | INDEX(.key))) | [.[]] | sort_by(.key)' \
+    "$REMOVED_DATA_FILE" > "$REMOVED_DATA_FILE.tmp"
+else
+  printf '%s\n' "$deletedItems" > "$REMOVED_DATA_FILE.tmp"
+fi
+mv "$REMOVED_DATA_FILE.tmp" "$REMOVED_DATA_FILE"
 beforeCount=$(jq '. | length' <<< "$items")
 items=$(jq 'map(select(.deleted|not))' <<< "$items")
 afterCount=$(jq '. | length' <<< "$items")
