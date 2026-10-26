@@ -54,6 +54,7 @@
 <script id="not-found-script">
   (function () {
     const path = window.location.pathname;
+    console.log("[404 Script] Pathname:", path);
 
     // Match the end of the path so this also works when the 404 page is
     // served for a staging preview, e.g.
@@ -62,18 +63,29 @@
     // served by the domain-level 404 page, so the build-time baseURL cannot be
     // used to decide what kind of URL this is.
     const match = path.match(/\/history\/bibliography\/([A-Za-z0-9]{8})\/?$/);
-    if (!match) return;
+    console.log("[404 Script] Regex match result:", match);
+    if (!match) {
+      console.log("[404 Script] No bibliography entry match - showing generic 404");
+      return;
+    }
 
     const key = match[1];
     // Everything before "history/", including any staging/PR prefix.
     const siteRoot = path.slice(0, match.index + 1);
 
+    console.log("[404 Script] Found bibliography entry - key:", key, "siteRoot:", siteRoot);
+
     const generic = document.getElementById("not-found-generic");
     const bib = document.getElementById("not-found-bibliography");
-    if (!generic || !bib) return;
+    console.log("[404 Script] Found elements - generic:", !!generic, "bib:", !!bib);
+    if (!generic || !bib) {
+      console.log("[404 Script] ERROR: Missing DOM elements");
+      return;
+    }
 
     generic.classList.add("d-none");
     bib.classList.remove("d-none");
+    console.log("[404 Script] Toggled visibility - generic hidden, bib shown");
 
     // Keep the links inside the same preview when the page is served from a
     // staging path.
@@ -86,13 +98,17 @@
     const displayKey = key.toUpperCase();
     document.getElementById("not-found-bib-key").textContent = displayKey;
     document.title = "Bibliography entry not found | The Medley Interlisp Project";
+    console.log("[404 Script] Set key and title - key display:", displayKey);
 
     let removed = [];
     const data = document.getElementById("bibliography-removed-data");
+    console.log("[404 Script] Found removed data element:", !!data);
     if (data) {
       try {
         removed = JSON.parse(data.textContent) || [];
+        console.log("[404 Script] Loaded removed entries count:", removed.length);
       } catch (e) {
+        console.error("[404 Script] Failed to parse removed data:", e);
         removed = [];
       }
     }
@@ -101,13 +117,16 @@
       return String(item.key || "").toUpperCase() === displayKey;
     });
     if (entry && entry.title) {
+      console.log("[404 Script] Found entry in removed list:", entry.title);
       document.getElementById("not-found-bib-title").textContent = entry.title;
     } else {
+      console.log("[404 Script] Entry not in removed list - hiding title wrap");
       document.getElementById("not-found-bib-title-wrap").classList.add("d-none");
     }
 
     document.getElementById("not-found-bib-zotero").href =
       "https://www.zotero.org/groups/2914042/items/" + encodeURIComponent(displayKey);
+    console.log("[404 Script] Completed successfully");
   })();
 </script>
 {{ end }}
