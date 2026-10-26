@@ -29,11 +29,11 @@
         </p>
         <p>You can:</p>
         <ul>
-          <li><a href="{{ "history/bibliography/" | relURL }}">Browse the bibliography</a></li>
+          <li><a id="not-found-bib-browse" href="{{ "history/bibliography/" | relURL }}">Browse the bibliography</a></li>
           <li><a id="not-found-bib-zotero" href="https://www.zotero.org/groups/2914042/interlisp" rel="noopener">View the item in Zotero</a> (the record may still be available)</li>
-          <li><a href="{{ "history/bibliography/intake/" | relURL }}">Report a missing or incorrect entry</a></li>
+          <li><a id="not-found-bib-intake" href="{{ "history/bibliography/intake/" | relURL }}">Report a missing or incorrect entry</a></li>
         </ul>
-        <p>Or <a href="{{ "" | relURL }}">return to the homepage</a>.</p>
+        <p>Or <a id="not-found-bib-home" href="{{ "" | relURL }}">return to the homepage</a>.</p>
       </div>
     </div>
   </main>
@@ -51,14 +51,22 @@
   {{- $removed = .removed | default (slice) -}}
 {{- end -}}
 <script type="application/json" id="bibliography-removed-data">{{ $removed | jsonify | safeJS }}</script>
-<script>
+<script id="not-found-script">
   (function () {
-    const bibRoot = {{ "history/bibliography/" | relURL | jsonify | safeJS }};
     const path = window.location.pathname;
-    if (!path.startsWith(bibRoot)) return;
 
-    const key = path.slice(bibRoot.length).replace(/\/+$/, "");
-    if (!/^[A-Za-z0-9]{8}$/.test(key)) return;
+    // Match the end of the path so this also works when the 404 page is
+    // served for a staging preview, e.g.
+    // /Interlisp.staging/pr-355/history/bibliography/<key>/.
+    // GitHub Pages supports only one custom 404 per site, and a preview can be
+    // served by the domain-level 404 page, so the build-time baseURL cannot be
+    // used to decide what kind of URL this is.
+    const match = path.match(/\/history\/bibliography\/([A-Za-z0-9]{8})\/?$/);
+    if (!match) return;
+
+    const key = match[1];
+    // Everything before "history/", including any staging/PR prefix.
+    const siteRoot = path.slice(0, match.index + 1);
 
     const generic = document.getElementById("not-found-generic");
     const bib = document.getElementById("not-found-bibliography");
@@ -66,6 +74,14 @@
 
     generic.classList.add("d-none");
     bib.classList.remove("d-none");
+
+    // Keep the links inside the same preview when the page is served from a
+    // staging path.
+    document.getElementById("not-found-bib-browse").href =
+      siteRoot + "history/bibliography/";
+    document.getElementById("not-found-bib-intake").href =
+      siteRoot + "history/bibliography/intake/";
+    document.getElementById("not-found-bib-home").href = siteRoot;
 
     const displayKey = key.toUpperCase();
     document.getElementById("not-found-bib-key").textContent = displayKey;

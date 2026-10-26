@@ -325,8 +325,8 @@ repository's GitHub Pages site:
 
 | Deployment | URL |
 |------------|-----|
-| Staging root | `https://interlisp.github.io/Interlisp.staging/` |
-| PR #123 preview | `https://interlisp.github.io/Interlisp.staging/pr-123/` |
+| Staging root | `https://interlisp.org/Interlisp.staging/` |
+| PR #123 preview | `https://interlisp.org/Interlisp.staging/pr-123/` |
 
 When a PR is opened or updated, the production workflow (`gh-pages.yml`)
 triggers the `deploy-preview` workflow in the staging repository, which:
