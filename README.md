@@ -478,3 +478,4 @@ Modifying search scope requires updating the Google Custom Search engine setting
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 Copyright (c) 2026 Interlisp.org
+
