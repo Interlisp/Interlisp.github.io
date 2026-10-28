@@ -240,7 +240,7 @@ class TestNotFoundPage:
         """Staging previews live under /Interlisp.staging/pr-<N>/ and are
         served by the domain-level 404 page, so detection must match the end
         of the path rather than a build-time baseURL prefix."""
-        assert r"/\/history\/bibliography\/([A-Za-z0-9]{8})\/?$/" in self.content
+        assert r"/\/history\/bibliography\/([^/?#]+(?:\/[^/?#]+)*)\/?(?:[?#]|$)/" in self.content
         assert "startsWith(bibRoot)" not in self.content
         for element_id in (
             "not-found-bib-browse",
