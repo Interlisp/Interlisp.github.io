@@ -6,7 +6,7 @@ aliases:
  - /medley/history/timeline/
 ---
 
-This timeline started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf). The [Bibliography](/bibliography/) has a wealth of additional historical information. 
+This timeline started with Teitelman’s [History of Interlisp](/history/bibliography/DVGRZ62H/). The [Bibliography](/bibliography/) has a wealth of additional historical information. 
 
 ## 1960s
 
@@ -32,7 +32,7 @@ In 1965, there were very few tools for developing Lisp programs, and those that 
 
 ### 1966
 
-- MIT EE Dept PDP-36 [LISP manual](http://bitsavers.org/pdf/mit/rle_pdp1/memos/pdp36_lisp_may66.pdf)
+- MIT EE Dept PDP-36 [LISP manual](/history/bibliography/6M8ISEUL/)
 
 Teitelman started at Bolt, Beranek and Newman in Cambridge. At the time, BBN’s computer was a DEC PDP-1, and Daniel Murphy had written a version of Lisp 1.5 for it using ideas from Deutch’s work. This Lisp was really just a toy – single user, slow, small address space, but Teitelman started with Break and Prettyprint from MIT on his pursuit of a Lisp programming environment.  
 
@@ -42,11 +42,11 @@ Teitelman started at Bolt, Beranek and Newman in Cambridge. At the time, BBN’s
 
 In 1967, BBN purchased an SDS 940 computer from Scientific Data Systems and began work building a time-sharing system on it. The SDS 940 had a larger address space and the ability to support a paging system. BBN was awarded an ARPA contract to provide a LISP system that could be distributed to other ARPA sites for doing A.I. research. (ARPA = Advanced Research Projects Administration of the Department of Defense.)  
 
-- [Improvements to the 940 LISP Library](http://www.bitsavers.org/pdf/sds/9xx/940/ucbProjectGenie/940_LISP_Memo_2_Apr67.pdf)  
+- [Improvements to the 940 LISP Library](/history/bibliography/6M8ISEUL/)  
 
 Advising was a means of allowing the user to treat a particular function as a black box without knowing what was inside the box, wrap “advice” around it that could operate before the function ran, potentially changing its input parameters, after it ran, possibly changing its value, or { PrettyPrint which printed out a nicely formatted representation of Lisp programs, using indentation to indicate depth of structure. A Trace facility was also available which modified specified functions to print on the terminal their input parameters on entry and their value on exit. You could think of this as a special case of Advising. There was also a Break package which enabled the user to cause program execution to halt at the entry point to specific functions. The user could then examine the value of the function’s input parameters, and even change them, then cause the function to run, and again gain control so as to examine the value that the function returned or side effects of the function’s operation. The user could change input parameters and re-execute the function, or manually specify the desired value and have it be returned to the caller as though it had been the value produced by that function.  
 
-Teitelman memo to [SDS 940 LISP Users](http://www.bitsavers.org/pdf/sds/9xx/940/ucbProjectGenie/940_LISP_Memo_2_Apr67.pdf).
+Teitelman memo to [SDS 940 LISP Users](/history/bibliography/6M8ISEUL/).
 
 ### 1968
 
@@ -98,7 +98,7 @@ Around the ARPAnet, Interlisp continued to use the DEC PDP-10 as its principal p
 
 ### 1973
 
-- "[Interlisp Reference Manual, Acknowledgements and Background](http://bitsavers.trailing-edge.com/pdf/xerox/interlisp/Interlisp_Reference_Manual_1974.pdf)" (PDF). 1973.
+- "[Interlisp Reference Manual, Acknowledgements and Background](/history/bibliography/SYGUERKE/)" (PDF). 1973.
 
 ### 1974
 
@@ -128,7 +128,7 @@ In 1979, PARC began the design of the Dorado, a high performance personal workst
 
 ## 1980s
 
-- Teitelman & Masinter, IEEE Computer, “[The Interlisp Programming Environment](https://larrymasinter.net/interlisp-ieee.pdf)” April 1981.
+- Teitelman & Masinter, IEEE Computer, “[The Interlisp Programming Environment](/history/bibliography/7T3AV4PM/)” April 1981.
 - [1983 Stanford University Medical Experiment Computer](https://github.com/Interlisp/history/tree/master/1980s/1983-sumex-lisp)
 
 ### 1982
