@@ -61,7 +61,7 @@
     // GitHub Pages supports only one custom 404 per site, and a preview can be
     // served by the domain-level 404 page, so the build-time baseURL cannot be
     // used to decide what kind of URL this is.
-    const match = path.match(/\/history\/bibliography\/([A-Za-z0-9]{8})\/?$/);
+    const match = path.match(/\/history\/bibliography\/([^?#]+)\/?(?:[?#]|$)/);
     if (!match) return;
 
     const key = match[1];
