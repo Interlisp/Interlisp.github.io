@@ -4,6 +4,7 @@ weight: 18
 type: docs
 aliases:
  - /medley/project/partners
+ - /about/partners/
 ---
 
 ### [Software Preservation Network](https://www.softwarepreservationnetwork.org/about/)

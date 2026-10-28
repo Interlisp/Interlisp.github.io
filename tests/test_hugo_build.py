@@ -20,8 +20,11 @@ Usage
     PYTEST_FORCE_HUGO_BUILD=1 pytest tests/test_hugo_build.py -v
 """
 
+import json
 import os
 import re
+import shutil
+import subprocess
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import urlparse
@@ -51,6 +54,86 @@ def _get_baseurl_path() -> str:
             if cfg and "baseURL" in cfg:
                 return urlparse(cfg["baseURL"]).path.rstrip("/") or ""
     return ""
+
+
+def _run_404_script(content: str, path: str, tmp_path: Path) -> dict:
+    """Execute the built 404 page script in Node with a minimal fake DOM.
+
+    Returns the visible state and rewritten links for ``path``.
+    """
+    node = shutil.which("node")
+    if not node:
+        pytest.skip("Node.js is required to exercise the 404 page script")
+
+    script_match = re.search(
+        r'<script id="not-found-script">(.*?)</script>', content, re.DOTALL
+    )
+    assert script_match, "not-found-script block not found in 404.html"
+
+    data_match = re.search(
+        r'<script type="application/json" id="bibliography-removed-data">(.*?)</script>',
+        content,
+        re.DOTALL,
+    )
+    assert data_match, "bibliography removed data not found in 404.html"
+
+    harness = "\n".join(
+        [
+            "function makeElement(id) {",
+            "  const classes = new Set();",
+            "  return {",
+            "    id,",
+            '    textContent: "",',
+            '    href: "",',
+            "    classes,",
+            "    classList: {",
+            "      add: (c) => classes.add(c),",
+            "      remove: (c) => classes.delete(c),",
+            "      contains: (c) => classes.has(c),",
+            "    },",
+            "  };",
+            "}",
+            "const ids = [",
+            '  "not-found-generic", "not-found-bibliography",',
+            '  "not-found-bib-key", "not-found-bib-title",',
+            '  "not-found-bib-title-wrap", "not-found-bib-zotero",',
+            '  "not-found-bib-browse", "not-found-bib-intake",',
+            '  "not-found-bib-home",',
+            "];",
+            "const elements = Object.fromEntries(ids.map((id) => [id, makeElement(id)]));",
+            'elements["not-found-bibliography"].classList.add("d-none");',
+            'elements["not-found-bib-title-wrap"].classList.add("d-none");',
+            "const removedData = { textContent: "
+            + json.dumps(data_match.group(1))
+            + " };",
+            "const byId = Object.assign({}, elements, {",
+            '  "bibliography-removed-data": removedData,',
+            "});",
+            "const window = { location: { pathname: "
+            + json.dumps(path)
+            + " } };",
+            'const document = { title: "", getElementById: (id) => byId[id] || null };',
+            script_match.group(1),
+            "console.log(JSON.stringify({",
+            '  visible: !elements["not-found-bibliography"].classes.has("d-none"),',
+            '  key: elements["not-found-bib-key"].textContent,',
+            '  browse: elements["not-found-bib-browse"].href,',
+            '  intake: elements["not-found-bib-intake"].href,',
+            '  home: elements["not-found-bib-home"].href,',
+            '  title: document.title,',
+            "}));",
+        ]
+    )
+
+    script_file = tmp_path / "check-404.js"
+    script_file.write_text(harness, encoding="utf-8")
+    result = subprocess.run(
+        [node, str(script_file)],
+        capture_output=True,
+        text=True,
+        check=True,
+    )
+    return json.loads(result.stdout.strip().splitlines()[-1])
 
 
 # ---------------------------------------------------------------------------
@@ -116,6 +199,116 @@ class TestCriticalPagesExist:
     def test_page_exists(self, path: str) -> None:
         assert (PROD_PUBLIC / path).exists(), (
             f"Required output file missing: public/{path}"
+        )
+
+
+class TestNotFoundPage:
+    """The custom 404 page must handle removed bibliography entries."""
+
+    @pytest.fixture(autouse=True)
+    def page(self):
+        path = PROD_PUBLIC / "404.html"
+        if not path.exists():
+            pytest.skip("404.html not found — run a production build first")
+        self.content = path.read_text(encoding="utf-8", errors="ignore")
+
+    def test_has_bibliography_fallback(self) -> None:
+        assert 'id="not-found-bibliography"' in self.content
+        assert "/history/bibliography/" in self.content
+        assert "bibliography-removed-data" in self.content
+
+    def test_embeds_removed_entries_as_json(self) -> None:
+        match = re.search(
+            r'<script type="application/json" id="bibliography-removed-data">(.*?)</script>',
+            self.content,
+            re.DOTALL,
+        )
+        assert match, "Removed-bibliography data block not found in 404.html"
+        removed = json.loads(match.group(1))
+        assert isinstance(removed, list)
+        for entry in removed:
+            assert isinstance(entry.get("key"), str) and entry["key"]
+            assert isinstance(entry.get("title"), str)
+
+    def test_is_noindex(self) -> None:
+        assert re.search(
+            r'<meta name="robots" content="[^"]*noindex',
+            self.content,
+        ), "404 page must be marked noindex"
+
+    def test_bibliography_match_ignores_site_prefix(self) -> None:
+        """Staging previews live under /Interlisp.staging/pr-<N>/ and are
+        served by the domain-level 404 page, so detection must match the end
+        of the path rather than a build-time baseURL prefix."""
+        assert r"/\/history\/bibliography\/([^/?#]+(?:\/[^/?#]+)*)\/?(?:[?#]|$)/" in self.content
+        assert "startsWith(bibRoot)" not in self.content
+        for element_id in (
+            "not-found-bib-browse",
+            "not-found-bib-intake",
+            "not-found-bib-home",
+        ):
+            assert f'id="{element_id}"' in self.content
+
+    @pytest.mark.parametrize(
+        ("path", "expected_root"),
+        (
+            ("/history/bibliography/wxmqhqnz/", "/"),
+            ("/history/bibliography/WXMQHQNZ", "/"),
+            (
+                "/Interlisp.staging/pr-355/history/bibliography/wxmqhqnz/",
+                "/Interlisp.staging/pr-355/",
+            ),
+        ),
+    )
+    def test_bibliography_links_follow_site_prefix(
+        self, path: str, expected_root: str, tmp_path: Path
+    ) -> None:
+        result = _run_404_script(self.content, path, tmp_path)
+        assert result["visible"] is True
+        assert result["key"] == "WXMQHQNZ"
+        assert result["browse"] == expected_root + "history/bibliography/"
+        assert result["intake"] == expected_root + "history/bibliography/intake/"
+        assert result["home"] == expected_root
+
+    @pytest.mark.parametrize(
+        "path",
+        (
+            "/history/bibliography/",
+            "/some/other/page/",
+            "/Interlisp.staging/pr-355/history/bibliography/",
+        ),
+    )
+    def test_non_entry_paths_stay_generic(self, path: str, tmp_path: Path) -> None:
+        result = _run_404_script(self.content, path, tmp_path)
+        assert result["visible"] is False
+
+
+class TestLegacyRedirects:
+    """Aliases and static redirects must exist for known legacy URLs."""
+
+    REDIRECTS = (
+        ("doc/info/history.html", "/history/"),
+        ("about/partners/index.html", "/project/partners/"),
+        ("running/running-with-docker/index.html", "/software/install-and-run/"),
+        (
+            "running/online/usingonline/index.html",
+            "/software/using-medley/online-using/",
+        ),
+        (
+            "medley/using/running/runnning-on-win/index.html",
+            "/software/install-and-run/windows/",
+        ),
+        ("IRM_files/content.htm", "/documentation/IRM.pdf"),
+    )
+
+    @pytest.mark.parametrize(("path", "target"), REDIRECTS)
+    def test_redirect_exists(self, path: str, target: str) -> None:
+        redirect = PROD_PUBLIC / path
+        if not redirect.exists():
+            pytest.skip("public/ not built — run hugo first")
+        content = redirect.read_text(encoding="utf-8", errors="ignore")
+        assert target in content, (
+            f"Redirect {path} does not point at {target}:\n{content[:200]}"
         )
 
 

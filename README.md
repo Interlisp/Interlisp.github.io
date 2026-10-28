@@ -150,6 +150,8 @@ cd scripts
 
 This script retrieves the bibliography from Zotero, formats it appropriately, and places the individual JSON files in `static/data/bibItems/`.
 
+Entries marked as deleted in Zotero are recorded in `data/bibliography/removed.json`. The custom 404 page uses that list to recognize former bibliography URLs and show the removed entry's title. The file is merged, not replaced, so entries that Zotero has already purged are retained.
+
 ---
 
 ## Local Development
@@ -323,8 +325,8 @@ repository's GitHub Pages site:
 
 | Deployment | URL |
 |------------|-----|
-| Staging root | `https://interlisp.github.io/Interlisp.staging/` |
-| PR #123 preview | `https://interlisp.github.io/Interlisp.staging/pr-123/` |
+| Staging root | `https://interlisp.org/Interlisp.staging/` |
+| PR #123 preview | `https://interlisp.org/Interlisp.staging/pr-123/` |
 
 When a PR is opened or updated, the production workflow (`gh-pages.yml`)
 triggers the `deploy-preview` workflow in the staging repository, which:
@@ -358,6 +360,7 @@ The repository follows the standard [Hugo directory structure](https://gohugo.io
 | `assets/` | Custom global resources (CSS, JS, icons, SCSS) |
 | `config/` | Site configuration for different environments |
 | `content/en/` | All website content (English only) |
+| `data/` | Build-time data files |
 | `layouts/` | Hugo layout templates and overrides |
 | `static/` | Files copied directly to the built site |
 
@@ -392,6 +395,13 @@ The repository follows the standard [Hugo directory structure](https://gohugo.io
 - `_shortcodes/` — Hugo shortcodes (cover block, image gallery)
 - `bibliography/` — Bibliography section templates
 - `redirect/` — Redirect page template
+
+</details>
+
+<details>
+<summary><strong>data/</strong> — Build-time data</summary>
+
+- `bibliography/removed.json` — Keys and titles of bibliography entries removed from Zotero (read by the 404 page)
 
 </details>
 
@@ -468,3 +478,4 @@ Modifying search scope requires updating the Google Custom Search engine setting
 This project is licensed under the MIT License — see the [LICENSE](LICENSE) file for details.
 
 Copyright (c) 2026 Interlisp.org
+
