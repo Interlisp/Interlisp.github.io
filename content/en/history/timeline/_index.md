@@ -8,6 +8,8 @@ aliases:
 
 This timeline started with Teitelman’s [History of Interlisp](/documentation/History_of_Interlisp.pdf). The [Bibliography](/bibliography/) has a wealth of additional historical information. 
 
+Terms linked to the [Glossary](/history/glossary/) are defined there.
+
 ## 1960s
 
 Through the 1960s, the languages of programming were primarily Fortran and assembly. Lisp enabled expressing recursion simply. Lisp also provided the ability to modify a program as it was running, since Lisp programs were themselves data—the same as other list structures used to represent program data. This made Lisp an ideal language for writing programs that themselves constructed programs or proved things about programs. As an area of Artificial Intelligence, programs writing programs was something of great interest to those working on applying AI to programming.  
