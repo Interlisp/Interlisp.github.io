@@ -63,8 +63,8 @@ as a graphics terminal.
 : An obsolete named release of Interlisp-D.
 
 <span id="interlisp"></span>Interlisp
-: A GitHub “organization” with ~20 repositories, see <https://github.com/Interlisp>
 : Both a language and, in some cases, the implementation of that language. Usually used with some other wording or refinement.
+: A GitHub “organization” with ~20 repositories, see <https://github.com/Interlisp>
 
 <span id="interlisp-the-language-and-its-usage"></span>Interlisp: The Language and its usage
 : A book by Steve Kaisler which describes Interlisp of the 1970s & 80s.
