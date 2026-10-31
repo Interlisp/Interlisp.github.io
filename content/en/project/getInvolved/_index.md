@@ -80,4 +80,6 @@ If you would like to join our weekly meetings, [let us know](mailto:info@interli
 
 ## 5. Medley Projects
 
-Check out our [Project List](https://docs.google.com/document/d/1ceXj7VzPeLSM0sBwEnYQqArKsXg0VKCWLTF0zv10LRg/edit?usp=sharing) for ideas. Find something that matches your interests, or propose a different project. Funding is available to help support a limited number of projects.
+Check out our [Project List](https://docs.google.com/document/d/1ceXj7VzPeLSM0sBwEnYQqArKsXg0VKCWLTF0zv10LRg/edit?usp=sharing) for ideas. Find something that matches your interests, propose a different project, or ask us for guidance. Funding is available to help support a limited number of projects.
+
+If you start working on something please let us know so that we can avoid duplication and overlap, and encourage collaboration. You may self assign a GitHub issue if relevant.
