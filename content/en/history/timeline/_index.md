@@ -8,6 +8,8 @@ aliases:
 
 This timeline started with Teitelman’s [History of Interlisp](/history/bibliography/DVGRZ62H/). The [Bibliography](/bibliography/) has a wealth of additional historical information. 
 
+Terms linked to the [Glossary](/history/glossary/) are defined there.
+
 ## 1960s
 
 Through the 1960s, the languages of programming were primarily Fortran and assembly. Lisp enabled expressing recursion simply. Lisp also provided the ability to modify a program as it was running, since Lisp programs were themselves data—the same as other list structures used to represent program data. This made Lisp an ideal language for writing programs that themselves constructed programs or proved things about programs. As an area of Artificial Intelligence, programs writing programs was something of great interest to those working on applying AI to programming.  
@@ -34,7 +36,7 @@ In 1965, there were very few tools for developing Lisp programs, and those that 
 
 - MIT EE Dept PDP-36 [LISP manual](/history/bibliography/6M8ISEUL/)
 
-Teitelman started at Bolt, Beranek and Newman in Cambridge. At the time, BBN’s computer was a DEC PDP-1, and Daniel Murphy had written a version of Lisp 1.5 for it using ideas from Deutch’s work. This Lisp was really just a toy – single user, slow, small address space, but Teitelman started with Break and Prettyprint from MIT on his pursuit of a Lisp programming environment.  
+Teitelman started at Bolt, Beranek and Newman in Cambridge. At the time, [BBN](/history/glossary/#bbn)’s computer was a DEC PDP-1, and Daniel Murphy had written a version of Lisp 1.5 for it using ideas from Deutch’s work. This Lisp was really just a toy – single user, slow, small address space, but Teitelman started with Break and Prettyprint from MIT on his pursuit of a Lisp programming environment.  
 
 - http://www.softwarepreservation.org/projects/LISP/bbnlisp/BBN-LISP-System_Feb1966.pdf#page=49 
 
@@ -44,7 +46,7 @@ In 1967, BBN purchased an SDS 940 computer from Scientific Data Systems and bega
 
 - [Improvements to the 940 LISP Library](/history/bibliography/6M8ISEUL/)  
 
-Advising was a means of allowing the user to treat a particular function as a black box without knowing what was inside the box, wrap “advice” around it that could operate before the function ran, potentially changing its input parameters, after it ran, possibly changing its value, or { PrettyPrint which printed out a nicely formatted representation of Lisp programs, using indentation to indicate depth of structure. A Trace facility was also available which modified specified functions to print on the terminal their input parameters on entry and their value on exit. You could think of this as a special case of Advising. There was also a Break package which enabled the user to cause program execution to halt at the entry point to specific functions. The user could then examine the value of the function’s input parameters, and even change them, then cause the function to run, and again gain control so as to examine the value that the function returned or side effects of the function’s operation. The user could change input parameters and re-execute the function, or manually specify the desired value and have it be returned to the caller as though it had been the value produced by that function.  
+Advising was a means of allowing the user to treat a particular function as a black box without knowing what was inside the box, wrap “advice” around it that could operate before the function ran, potentially changing its input parameters, after it ran, possibly changing its value, or call PrettyPrint, which printed out a nicely formatted representation of Lisp programs, using indentation to indicate depth of structure. A Trace facility was also available which modified specified functions to print on the terminal their input parameters on entry and their value on exit. You could think of this as a special case of Advising. There was also a [Break package](/history/glossary/#break-package) which enabled the user to cause program execution to halt at the entry point to specific functions. The user could then examine the value of the function’s input parameters, and even change them, then cause the function to run, and again gain control so as to examine the value that the function returned or side effects of the function’s operation. The user could change input parameters and re-execute the function, or manually specify the desired value and have it be returned to the caller as though it had been the value produced by that function.  
 
 Teitelman memo to [SDS 940 LISP Users](/history/bibliography/6M8ISEUL/).
 
@@ -92,7 +94,7 @@ The **File Package** was added in 1971. This was essentially a “make” for Li
 
 ### 1972
 
-In 1972, Danny Bobrow and Warren Teitelman left BBN and went to the newly formed Xerox Palo Alto Research Center – PARC. BBN continued to provide the low-level support for the Lisp system, i.e., compiler, garbage collector, and all of the operating system interface, while the Lisp-based center of activity for the various packages and utilities moved to PARC. Both sites continued to be supported by ARPA, and to indicate this partnership and shared responsibility, BBN-LISP was renamed to be **Interlisp**.  
+In 1972, Danny Bobrow and Warren Teitelman left BBN and went to the newly formed Xerox Palo Alto Research Center – [PARC](/history/glossary/#parc). BBN continued to provide the low-level support for the Lisp system, i.e., compiler, garbage collector, and all of the operating system interface, while the Lisp-based center of activity for the various packages and utilities moved to PARC. Both sites continued to be supported by ARPA, and to indicate this partnership and shared responsibility, BBN-LISP was renamed to be **[Interlisp](/history/glossary/#interlisp)**.  
 
 Around the ARPAnet, Interlisp continued to use the DEC PDP-10 as its principal platform.
 
@@ -104,7 +106,7 @@ Around the ARPAnet, Interlisp continued to use the DEC PDP-10 as its principal p
 
 By 1974 a number of impressive extensions to Interlisp had been developed by Larry Masinter. These included a much more sophisticated version of Interlisp’s **iterative statement**, as well as a **Record** package that enabled a user to label various components of a list structure and refer to them by name, thereby eliminating the CADADRs and CDADDRs that made Lisp programs so difficult to read. The Record package also had the advantage that the user could change a record definition, and the program would automatically adopt the new structure. For example, if PERSON were defined as (RECORD PERSON (FIRSTNAME LASTNAME TITLE)), the expression (X:TITLE) would translate to (CADDR X). If the user later changed the definition of PERSON to (RECORD PERSON (FIRSTNAME INITIAL LASTNAME TITLE)), all expressions involving TITLE would automatically be retranslated to use CADDDR.  
 
-- [Interlisp-10 sources from 1974](https://github.com/Interlisp/history/tree/master/1970s/1974-sources)
+- [Interlisp-10](/history/glossary/#interlisp-10) sources from 1974 ([GitHub](https://github.com/Interlisp/history/tree/master/1970s/1974-sources))
 
 **Masterscope** would analyze a large program and build a database of relationships between the various components that could then be queried using a natural language front end. For example, WHO CALLS FOO AND USES MUMBLE, EDIT WHERE X IS USED FREELY AND Y IS BOUND, etc. As LISP programs became larger and more complex and were being built by teams of programmers, rather than a single programmer, functionality such as that provided by Masterscope was invaluable in understanding, maintaining, and extending programs.
 
@@ -120,11 +122,11 @@ The fact that the manual was machine readable, and heavily indexed, meant Interl
 
 In 1976, Dan Ingalls gave a presentation at PARC in which he demonstrated the first window system. Written in and for Smalltalk, the user interface and paradigm it provided for enabling the user to manage and work with multiple contexts was very compelling, and immediately inspired work to provide such a mechanism for Interlisp. At the time, although Peter Deutsch had developed a byte-coded instruction set for the Alto, it was under-powered for Lisp development.  
 
-Bob Sproull came up with the idea for what would turn out to be the first client-server window system: use the Alto as the window server and Interlisp running on the time-shared PDP-10 clone as the client. and develop a protocol for having Interlisp tell the Alto what to display, and for the Alto to tell Interlisp about mouse clicks. Bob developed the **ADIS** (for Alto Display) package and Teitelman wrote **DLISP** in Interlisp. DLISP included a window manager and windowing system that enabled overlapping windows, cut and paste, etc. J Moore implemented a text package that would support display and editing of text in windows. Teitelman demonstrated this functionality at IJCAI in 1977, and presented a paper, a Display Oriented Programmer’s Assistant.
+Bob Sproull came up with the idea for what would turn out to be the first client-server window system: use the Alto as the window server and Interlisp running on the time-shared PDP-10 clone as the client. and develop a protocol for having Interlisp tell the Alto what to display, and for the Alto to tell Interlisp about mouse clicks. Bob developed the **ADIS** (for Alto Display) package and Teitelman wrote **[DLISP](/history/glossary/#dlisp)** in Interlisp. DLISP included a window manager and windowing system that enabled overlapping windows, cut and paste, etc. J Moore implemented a text package that would support display and editing of text in windows. Teitelman demonstrated this functionality at IJCAI in 1977, and presented a paper, a Display Oriented Programmer’s Assistant.
 
 ### 1979
 
-In 1979, PARC began the design of the Dorado, a high performance personal workstation. The availability of the Dorado also made possible building a Lisp with a native display capability, which led to the Interlisp-D project.
+In 1979, PARC began the design of the Dorado, a high performance personal workstation. The availability of the Dorado also made possible building a Lisp with a native [display](/history/glossary/#display) capability, which led to the [Interlisp-D](/history/glossary/#interlisp-d) project.
 
 ## 1980s
 
@@ -139,7 +141,7 @@ In 1979, PARC began the design of the Dorado, a high performance personal workst
 
 ### 1983
 
-- Chorus and Fugue Releases of Interlisp-D
+- Chorus and [Fugue](/history/glossary/#fugue) Releases of Interlisp-D
 
 ### 1984
 
@@ -147,27 +149,27 @@ In 1979, PARC began the design of the Dorado, a high performance personal workst
 
 ### 1985
 
-- Harmony and Intermezzo releases
-- Koto release (for Xerox 1186), some bits of Common Lisp
+- [Harmony](/history/glossary/#harmony) and [Intermezzo](/history/glossary/#intermezzo) releases
+- [Koto](/history/glossary/#koto) release (for Xerox 1186), some bits of [Common Lisp](/history/glossary/#common-lisp)
 
 ### 1987
 
-- Lyric release
+- [Lyric](/history/glossary/#lyric) release
 
 ### 1988
 
-- Medley 1.0 release. Medley supported all Sun's running on SunOS, plus IRIX, AIX, HPUX, Ultrix, (i.e., BSD Unix)
+- [Medley](/history/glossary/#medley) 1.0 release. Medley supported all Sun's running on SunOS, plus IRIX, AIX, HPUX, Ultrix, (i.e., BSD Unix)
 
 ### 1989
 
-- Envos formed from XAIS
+- [Envos](/history/glossary/#envos) formed from [XAIS](/history/glossary/#xais)
 - April 10, Envos closes
 
 ## 1990s
 
 ### 1991
 
-- August: Venue moves to new offices [Arun Welch email]
+- August: [Venue](/history/glossary/#venue) moves to new offices [Arun Welch email]
 - 3-byte atoms
 
 ### 1992
@@ -222,4 +224,4 @@ The classes and objects you create are the same blocks LOOPS is built out of. So
 
 ### 2020
 
-[Medley Interlisp project](https://interlisp.org/) begins
+[Medley Interlisp project](/history/glossary/#medley-interlisp-project) begins ([interlisp.org](https://interlisp.org/))
