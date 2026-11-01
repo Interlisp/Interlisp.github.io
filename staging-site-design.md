@@ -107,7 +107,7 @@ In the staging repo, `deploy-preview.yml`:
 
 1. The `build` job calls the same shared reusable workflow against the PR head
    commit with `hugo-environment: staging`, the per-PR baseURL
-   (`https://interlisp.github.io/Interlisp.staging/pr-<N>/`), and
+   (`https://interlisp.org/Interlisp.staging/pr-<N>/`), and
    `run-build-tests: false`.
 2. The `deploy` job downloads the `github-pages` artifact, extracts
    `artifact.tar`, and deploys the contents to the `pr-<N>/` subdirectory of
@@ -191,8 +191,8 @@ the staging repo.
 - **Pages:** staging repo serves from the `gh-pages` branch ("Deploy from a
   branch", not "GitHub Actions").
 - **Staging config:** `config/staging/hugo.yaml` sets
-  `baseURL: https://interlisp.github.io/Interlisp.staging/` and titles pages
-  "Staging Environment".
+  `baseURL: https://interlisp.org/Interlisp.staging/` and titles pages
+  "Staging Environment". Per-PR previews override the baseURL at build time.
 - **Repo pins:** both callers pin the shared workflow at `@main` of
   `Interlisp/shared-workflows`.
 - **`Interlisp/shared-workflows` `main`:** protected — all updates land via PR
