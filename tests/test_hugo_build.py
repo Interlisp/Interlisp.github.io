@@ -20,8 +20,11 @@ Usage
     PYTEST_FORCE_HUGO_BUILD=1 pytest tests/test_hugo_build.py -v
 """
 
+import html
 import os
 import re
+import subprocess
+import uuid
 import xml.etree.ElementTree as ET
 from pathlib import Path
 from urllib.parse import urlparse
@@ -256,4 +259,187 @@ class TestInternalLinks:
         assert not broken, (
             f"{len(broken)} broken internal links found:\n"
             + "\n".join(f"  {page} → {link}" for page, link in broken[:20])
+        )
+
+
+class TestGlossaryTooltips:
+    """Timeline glossary links must expose a non-empty Bootstrap tooltip and
+    resolve to a rendered glossary anchor."""
+
+    @pytest.fixture(autouse=True)
+    def pages(self, production_build):
+        timeline_path = PROD_PUBLIC / "history" / "timeline" / "index.html"
+        glossary_path = PROD_PUBLIC / "history" / "glossary" / "index.html"
+        if not timeline_path.exists() or not glossary_path.exists():
+            pytest.skip("built timeline/glossary pages not found — run hugo first")
+        self.timeline = timeline_path.read_text(encoding="utf-8", errors="ignore")
+        self.glossary = glossary_path.read_text(encoding="utf-8", errors="ignore")
+        self.glossary_ids = set(
+            re.findall(r'<span id="([^"]+)"[^>]*></span>', self.glossary)
+        )
+
+    def _glossary_links(self) -> list[str]:
+        return re.findall(
+            r'<a\b[^>]*href="/history/glossary/#[^"]+"[^>]*>',
+            self.timeline,
+        )
+
+    def test_glossary_links_have_tooltips(self) -> None:
+        links = self._glossary_links()
+        assert links, "No glossary links found in the built timeline"
+
+        missing_toggle: list[str] = []
+        missing_title: list[str] = []
+        empty_title: list[str] = []
+
+        for tag in links:
+            href = re.search(r'href="([^"]+)"', tag).group(1)
+            if 'data-bs-toggle="tooltip"' not in tag:
+                missing_toggle.append(href)
+            title = re.search(r'data-bs-title="([^"]*)"', tag)
+            if title is None:
+                missing_title.append(href)
+            elif not html.unescape(title.group(1)).strip():
+                empty_title.append(href)
+
+        assert not missing_toggle, (
+            "Glossary links missing data-bs-toggle=\"tooltip\":\n"
+            + "\n".join(missing_toggle)
+        )
+        assert not missing_title, (
+            "Glossary links missing data-bs-title:\n" + "\n".join(missing_title)
+        )
+        assert not empty_title, (
+            "Glossary links with empty tooltip text:\n" + "\n".join(empty_title)
+        )
+
+    def test_glossary_tooltip_targets_resolve(self) -> None:
+        anchors = set(
+            re.findall(r'href="/history/glossary/#([^"]+)"', self.timeline)
+        )
+        missing = sorted(anchors - self.glossary_ids)
+        assert not missing, (
+            "Glossary tooltip targets not found in the built glossary:\n"
+            + "\n".join(missing)
+        )
+
+    def test_tooltip_max_chars_config(self) -> None:
+        config_path = REPO_ROOT / "config" / "_default" / "params.yaml"
+        config = yaml.safe_load(config_path.read_text(encoding="utf-8"))
+        max_chars = config.get("glossary", {}).get("tooltip_max_chars")
+        assert isinstance(max_chars, int) and max_chars > 0, (
+            "params.yaml must define a positive glossary.tooltip_max_chars"
+        )
+
+    def test_interlisp_d_uses_custom_tooltip(self) -> None:
+        match = re.search(
+            r'<a\b[^>]*href="/history/glossary/#interlisp-d"[^>]*>',
+            self.timeline,
+        )
+        assert match is not None, (
+            "Timeline does not link to /history/glossary/#interlisp-d"
+        )
+        title = re.search(r'data-bs-title="([^"]*)"', match.group(0))
+        assert title is not None, (
+            "Interlisp-D glossary link is missing data-bs-title"
+        )
+        text = html.unescape(title.group(1))
+        assert "D stood for both" in text, (
+            "Interlisp-D should use its custom data-tooltip text"
+        )
+        assert not text.endswith("An implementation of"), (
+            "Interlisp-D tooltip still ends with the truncated first <dd>"
+        )
+
+    def test_glossary_source_anchors_are_unique(self) -> None:
+        source_path = (
+            REPO_ROOT / "content" / "en" / "history" / "glossary" / "_index.md"
+        )
+        source = source_path.read_text(encoding="utf-8")
+        spans = re.findall(r'<span id="[^"]+"[^>]*></span>', source)
+        ids = [
+            re.search(r'id="([^"]+)"', span).group(1)
+            for span in spans
+        ]
+        assert len(ids) == len(set(ids)), "Glossary source anchor IDs are not unique"
+        assert set(ids) == self.glossary_ids, (
+            "Glossary source anchors do not match the built glossary anchors"
+        )
+        for span in spans:
+            tooltip = re.search(r'data-tooltip="([^"]*)"', span)
+            if tooltip is not None:
+                assert tooltip.group(1).strip(), (
+                    f"Empty data-tooltip in glossary source: {span}"
+                )
+
+    def test_all_glossary_anchors_have_tooltips(self, tmp_path: Path) -> None:
+        probe_name = f"tooltip-probe-{uuid.uuid4().hex}"
+        probe_path = (
+            REPO_ROOT / "content" / "en" / "history" / f"{probe_name}.md"
+        )
+        links = "\n".join(
+            f"- [{anchor}](/history/glossary/#{anchor})"
+            for anchor in sorted(self.glossary_ids)
+        )
+        probe_path.write_text(
+            "---\n"
+            'title: "Glossary tooltip probe"\n'
+            "type: docs\n"
+            "weight: 9999\n"
+            "---\n\n"
+            f"{links}\n",
+            encoding="utf-8",
+        )
+        try:
+            destination = tmp_path / "public"
+            result = subprocess.run(
+                ["hugo", "--destination", str(destination), "--logLevel", "warn"],
+                cwd=str(REPO_ROOT),
+                capture_output=True,
+                text=True,
+            )
+            assert result.returncode == 0, (
+                f"Hugo probe build failed (exit {result.returncode}):\n"
+                f"--- stdout ---\n{result.stdout}\n"
+                f"--- stderr ---\n{result.stderr}"
+            )
+            probe_html = (
+                destination / "history" / probe_name / "index.html"
+            ).read_text(encoding="utf-8", errors="ignore")
+        finally:
+            probe_path.unlink(missing_ok=True)
+
+        links_html = re.findall(
+            r'<a\b[^>]*href="/history/glossary/#[^"]+"[^>]*>',
+            probe_html,
+        )
+        assert len(links_html) == len(self.glossary_ids), (
+            f"Expected {len(self.glossary_ids)} glossary links in the probe "
+            f"page, found {len(links_html)}"
+        )
+
+        missing_toggle: list[str] = []
+        missing_title: list[str] = []
+        empty_title: list[str] = []
+        for tag in links_html:
+            href = re.search(r'href="([^"]+)"', tag).group(1)
+            if 'data-bs-toggle="tooltip"' not in tag:
+                missing_toggle.append(href)
+            title = re.search(r'data-bs-title="([^"]*)"', tag)
+            if title is None:
+                missing_title.append(href)
+            elif not html.unescape(title.group(1)).strip():
+                empty_title.append(href)
+
+        assert not missing_toggle, (
+            "Glossary probe links missing data-bs-toggle=\"tooltip\":\n"
+            + "\n".join(missing_toggle)
+        )
+        assert not missing_title, (
+            "Glossary probe links missing data-bs-title:\n"
+            + "\n".join(missing_title)
+        )
+        assert not empty_title, (
+            "Glossary probe links with empty tooltip text:\n"
+            + "\n".join(empty_title)
         )

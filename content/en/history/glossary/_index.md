@@ -82,7 +82,7 @@ as a graphics terminal.
 <span id="interlisp-360"></span>Interlisp-360
 : Implemention of Interlisp for the IBM-360.
 
-<span id="interlisp-d"></span>Interlisp-D
+<span id="interlisp-d" data-tooltip="What Dorado Lisp became. The D stood for both “Display” and “D-machine”; an implementation of Interlisp, its programming tools, and a Lisp-based operating system for D-machines."></span>Interlisp-D
 : What Dorado Lisp became.  The D stood for both “Display” and “D-machine”.  An implementation of
 
 - Interlisp the language
