@@ -4,6 +4,10 @@
 
   Skip the glossary page itself to avoid recursively rendering its content
   while the glossary-definitions partial is parsing that same content.
+
+  For site-root-relative links (starting with /), convert to relative paths
+  and apply relURL to ensure they work correctly with baseURL path prefixes
+  in staging/PR deployments.
 */ -}}
 {{- $dest := .Destination -}}
 {{- $attrs := "" -}}
@@ -23,4 +27,8 @@
     {{- warnf "Glossary link to #%s has no extracted tooltip definition" $anchor -}}
   {{- end -}}
 {{- end -}}
-<a href="{{ $dest | relURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ $attrs | safeHTMLAttr }}>{{ .Text | safeHTML }}</a>
+{{- $link := $dest -}}
+{{- if strings.HasPrefix $dest "/" -}}
+  {{- $link = (strings.TrimPrefix "/" $dest) | relURL -}}
+{{- end -}}
+<a href="{{ $link }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ $attrs | safeHTMLAttr }}>{{ .Text | safeHTML }}</a>
