@@ -23,4 +23,4 @@
     {{- warnf "Glossary link to #%s has no extracted tooltip definition" $anchor -}}
   {{- end -}}
 {{- end -}}
-<a href="{{ $dest | safeURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ $attrs | safeHTMLAttr }}>{{ .Text | safeHTML }}</a>
+<a href="{{ $dest | relURL }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ $attrs | safeHTMLAttr }}>{{ .Text | safeHTML }}</a>
