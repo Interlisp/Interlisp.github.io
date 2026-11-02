@@ -8,4 +8,9 @@
 {{ with .Params.robots }}
 <meta name="robots" content="{{ . | htmlEscape }}">
 {{ end }}
+{{- /* The 404 page is served with an HTTP 404 status.  Tell crawlers not to
+       index it even if they ignore the status code. */ -}}
+{{ if eq .Kind "404" }}
+<meta name="robots" content="noindex, follow">
+{{ end }}
 {{ partial "bibliography-json-ld.html" . }}

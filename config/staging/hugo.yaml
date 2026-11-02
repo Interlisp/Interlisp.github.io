@@ -1,4 +1,7 @@
-baseURL: https://interlisp.github.io/Interlisp.staging/
+baseURL: https://interlisp.org/Interlisp.staging/
+
+# Per-PR previews override this at build time so that links stay inside the
+# preview, e.g. https://interlisp.org/Interlisp.staging/pr-<N>/
 
 locale: en-us
 

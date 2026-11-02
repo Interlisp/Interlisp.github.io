@@ -2,6 +2,8 @@
 title: Using Medley Online
 weight: 40
 type: docs
+aliases:
+ - /running/online/usingonline
 ---
 
 

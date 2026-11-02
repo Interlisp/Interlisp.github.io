@@ -7,6 +7,7 @@ aliases:
  - /developing/
  - /software/emu-compat/
  - /using/running/
+ - /running/running-with-docker
 weight: 10
 type: docs
 ---
