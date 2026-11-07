@@ -13,10 +13,13 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 
 ## Vocabulary and relationships
 
+<span id="advising"></span>Advice (Advising)
+: A facility for modifying an existing function without editing its definition by wrapping it with code that runs before or after the function and can inspect or change its arguments or return value. Also called advising.
+
 <span id="altolisp"></span>AltoLisp
 : An experimental microcoded implementation of Interlisp on an Alto personal computer.
 
-<span id="break-package"></span>Break package
+Break package
 : The Interlisp subsystem that comprises the debugger (also known as break window) and other debugging facilities. Named after the `BREAK` function and breakpoints.
 
 <span id="briefing-blurb"></span>Briefing Blurb
@@ -53,11 +56,17 @@ as a graphics terminal.
 <span id="dorado-lisp"></span>Dorado Lisp
 : The reimplementation of the AltoLisp microcode on the Dorado – a research prototype.
 
+<span id="dwim"></span>DWIM
+: Do-What-I-Mean. An Interlisp error-recovery facility that intercepts errors such as undefined functions, unset variables, and misspellings, using heuristics and context-sensitive spelling lists to suggest or apply corrections and continue execution.
+
 <span id="fugue"></span>Fugue
 : An obsolete named release of Interlisp-D.
 
 <span id="harmony"></span>Harmony
 : An obsolete named release of Interlisp-D.
+
+<span id="history-package"></span>History package
+: An Interlisp facility that records the commands and expressions entered during a session, together with messages displayed during their execution, so they can be reviewed, replayed with substitutions, or undone.
 
 <span id="intermezzo"></span>Intermezzo
 : An obsolete named release of Interlisp-D.
@@ -123,11 +132,26 @@ as a graphics terminal.
 - Informally, a collection of utilities or submodule in Interlisp (the "break package", q.v.; the "file package", a facility for managing code changes; the "record package", a record data type; and so on)
 - A feature of Commmon Lisp symbol support; the package system allows the combining of Interlisp symbols (written with `IL:` prefix) and Common Lisp symbols (written with a `LISP:` prefix).
 
+<span id="prettyprint"></span>Prettyprint
+: A Lisp utility that prints programs with indentation and line breaks that reflect their list structure, making code easier to read and debug.
+
 <span id="sdl"></span>SDL
 : Structured Design Language.
 
+<span id="spaghetti-stack"></span>Spaghetti stack
+: An Interlisp execution stack that remains available as a structured list, allowing programs and debugging tools to search frames, inspect values in caller contexts, and perform non-local returns.
+
+<span id="structure-editor"></span>Structure editor
+: An editor that operates directly on a program's list structure rather than its printed text. Because Lisp programs are lists, commands can move through and modify a function's tree in place without leaving Lisp.
+
 <span id="sysout"></span>Sysout
 : A file containing the saved state of Interlisp virtual memory.
+
+<span id="trace" data-tooltip="A Lisp debugging facility that prints selected information when a function is entered and its value when it returns. Tracing remains until the function is untraced."></span>Trace
+: A Lisp debugging facility that redefines a function so that selected information, by default its arguments and return value, is printed when the function is entered and exited. Tracing remains in effect until the function is untraced.
+
+<span id="undo"></span>UNDO
+: A command in the Interlisp Programmer’s Assistant that reverses the side effects of operations recorded on its history list. It supports selective undo—reversing an earlier operation without undoing later ones—as well as undoing assignments and whole edit sessions. Undoing an operation can itself be undone.
 
 <span id="x11"></span>X11
 : The X Window System.
