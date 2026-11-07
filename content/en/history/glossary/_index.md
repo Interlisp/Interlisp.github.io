@@ -19,7 +19,7 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 <span id="altolisp"></span>AltoLisp
 : An experimental microcoded implementation of Interlisp on an Alto personal computer.
 
-Break package
+<span id="break-package"></span>Break package
 : The Interlisp subsystem that comprises the debugger (also known as break window) and other debugging facilities. Named after the `BREAK` function and breakpoints.
 
 <span id="briefing-blurb"></span>Briefing Blurb
