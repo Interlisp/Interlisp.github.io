@@ -21,14 +21,26 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 <span id="altolisp"></span>AltoLisp
 : An experimental microcoded implementation of Interlisp on an Alto personal computer.
 
+<span id="block-compiling"></span>Block compiling
+: A compilation technique that combines several functions into a single compiled block. Calls between the component functions can avoid normal function-call overhead, and their names can be hidden from the rest of the program. A block has designated entry functions through which other code calls into it. Block compiling is useful for tightly coupled or recursive functions, where the savings from avoiding internal calls can be significant.
+
 <span id="break-package"></span>Break package
 : The Interlisp subsystem that comprises the debugger (also known as break window) and other debugging facilities. Named after the `BREAK` function and breakpoints.
 
 <span id="briefing-blurb"></span>Briefing Blurb
 : One of the several documents that introduced Xerox PARC newcomers to the computing and network environment of the Computer Science Laboratory. Written in an upbeat style, their titles followed a pattern that included the expression "Briefing Blurb" such as *The Alto-Dolphin-Dorado Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard* and *The Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard*.
 
+<span id="byte-coded-instruction-set"></span>Byte-coded instruction set
+: A compact virtual-machine instruction set in which operations are encoded as byte-sized opcodes and executed by an interpreter or microcode rather than directly by the host processor. Byte codes are more compact than native machine instructions and are easier to generate, but they normally run more slowly. In a Lisp implementation, the byte-code interpreter provides a portable execution layer between compiled Lisp code and the underlying hardware.
+
+<span id="car-cdr-accessors"></span>CAR/CDR accessors
+: Functions that select parts of a Lisp list cell: CAR returns the first element and CDR returns the rest of the list. Combinations such as CADR and CDDR abbreviate nested CAR/CDR calls, so CADR means the first element of the rest of the list. These accessors are fundamental to Lisp programming because lists are built from chains of cells, and more complex combinations can select deeply nested elements.
+
 <span id="named-releases"></span>Carol, Fugue, Harmony, Intermezzo, Koto, Lyric, Medley
 : Named releases of Interlisp-D.  All are obsolete except Medley.
+
+<span id="clos"></span>CLOS
+: The Common Lisp Object System, the standard object-oriented extension to Common Lisp. It provides classes, instances, generic functions, methods, multiple inheritance, and method combination. Generic functions dispatch on the classes of their arguments, so behavior can be defined per class without changing the calling code. CLOS also supports a metaobject protocol that lets programs customize the object system itself.
 
 <span id="common-lisp"></span>Common Lisp
 : The subject of a 10-year standards process to converge multiple dialects of the
@@ -65,6 +77,9 @@ as a graphics terminal.
 
 <span id="fugue"></span>Fugue
 : An obsolete named release of Interlisp-D.
+
+<span id="garbage-collector"></span>Garbage collector
+: The part of a Lisp implementation that automatically reclaims storage occupied by objects that are no longer referenced, making the space available for new objects. It lets programs allocate lists and other structures freely without explicitly freeing them. A garbage collection may pause or slow the program while it traces reachable objects, so Lisp implementations use different strategies to balance throughput and responsiveness.
 
 <span id="harmony"></span>Harmony
 : An obsolete named release of Interlisp-D.
@@ -112,6 +127,9 @@ as a graphics terminal.
 <span id="interlisp-vax"></span>Interlisp-VAX
 : Implementation of Interlisp for Digital Equipment Corporation VAX systems.
 
+<span id="iterative-statement"></span>Iterative statement
+: A looping construct in Interlisp written with operators such as FOR, DO, WHILE, COLLECT, and IN, used to express complex loops without writing PROG or mapping functions. The operators can be combined and appear in flexible order, and the statement can collect results, count matches, or iterate over lists and other structures. Iterative statements can be extended with user-defined operators. Often abbreviated i.s.
+
 <span id="koto"></span>Koto
 : An obsolete named release of Interlisp-D.
 
@@ -131,6 +149,9 @@ as a graphics terminal.
 : An implementation of the functions of the D-machine microcode, but written in C for the
       Sun Microsystems SPARC processor workstation, initially developed by
        Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.
+
+<span id="mop"></span>MOP
+: Metaobject Protocol, the part of CLOS that lets programs customize the object system itself, including how classes are represented, how generic functions select methods, and how instances are created. It exposes the classes, methods, and other objects that make up the object system, so a program can extend or adapt CLOS behavior rather than only using it. This makes CLOS itself programmable.
 
 <span id="package"></span>Package
 : The term Package has several different meanings depending on the context:
@@ -159,6 +180,9 @@ as a graphics terminal.
 <span id="sysout"></span>Sysout
 : A file containing the saved state of Interlisp virtual memory.
 
+<span id="time-sharing"></span>Time-sharing
+: A computing arrangement in which multiple users or tasks share one computer concurrently, each receiving brief slices of processor time so that each appears to have the machine to itself. Time-sharing supported interactive work: users could edit, run, and debug programs from terminals while the machine served other users. Interlisp was designed for and used in time-sharing environments, and its interactive development style depends on that model.
+
 <span id="trace" data-tooltip="A debugging facility that prints selected information when a function is entered and its value when it returns."></span>Trace
 : Trace is a Lisp debugging facility that prints information about selected function calls as a program runs. It modifies a function's definition so that specified expressions are evaluated and printed when the function is entered, and its value is printed when the call returns; by default, the arguments and return value are shown. Several functions can be traced at once, and the user can choose particular forms to print rather than the full argument list. Bobrow et al. describe the system’s tracing and conditional breakpoint facilities in [*The BBN 940 LISP System*](/history/bibliography/lqaa78hi/) (1967).
 
@@ -175,6 +199,9 @@ as a graphics terminal.
 ### Organizations
 
 The following organizations shaped Interlisp's development, distribution, and continuing legacy.
+
+<span id="arpa"></span>ARPA
+: Advanced Research Projects Agency, the U.S. Department of Defense agency that funded BBN-LISP (later Interlisp) and its distribution to ARPA research sites. That support made the system available to a community of research laboratories and helped Interlisp develop as a shared programming environment rather than a single-site project.
 
 <span id="bbn"></span>BBN
 : [Bolt, Beranek, and Newman](https://en.wikipedia.org/wiki/Raytheon_BBN), a Cambridge, Mass. consulting firm which sponsored the

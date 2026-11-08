@@ -22,7 +22,7 @@ L. Peter Deutsch (high school student) developed PDP-1 Lisp at MIT.
 - L. Peter Deutsch, quoted in [lisp_doc.txt](/documentation/lisp_doc.txt) accompanying Bob Supnik's Software Kit
 - L. Peter Deutsch and Edmund C. Berkeley. The LISP Implementation for the PDP-1 Computer. March 1964, pages 326-375 in Berkeley and Bobrow. [PDF](https://www.softwarepreservation.org/projects/LISP/book/III_LispBook_Apr66.pdf#page=336): Describes Basic PDP-1 LISP in detail, including full PDP-1 assembly language source code.
 
-The introduction of time-sharing in the mid-60s changed the paradigm of software development. Instead of the developer doing their debugging offline, users could now interact directly with their program online. Time-sharing was originally developed as a way of making more efficient and economic use of a very expensive computer, but it also had the surprising side-effect of drastically reducing the amount of time it took to get a program working. Users experiencing this phenomenon reported that it was because they did not have to lose and then reestablish context so frequently, but could get very deep into their programs and the problems they presented, and stay there. The situation is analogous to trying to resolve an issue between two people via a conversation rather than sending letters back and forth. Regardless of how short the cycle of iteration is, e.g., if email is used instead of letters, if the process involves discovery and a lot of back-and-forth, it is much easier to do via a conversation. You could establish a context and stay focused until the problem was solved.
+The introduction of [time-sharing](/history/glossary/#time-sharing) in the mid-60s changed the paradigm of software development. Instead of the developer doing their debugging offline, users could now interact directly with their program online. Time-sharing was originally developed as a way of making more efficient and economic use of a very expensive computer, but it also had the surprising side-effect of drastically reducing the amount of time it took to get a program working. Users experiencing this phenomenon reported that it was because they did not have to lose and then reestablish context so frequently, but could get very deep into their programs and the problems they presented, and stay there. The situation is analogous to trying to resolve an issue between two people via a conversation rather than sending letters back and forth. Regardless of how short the cycle of iteration is, e.g., if email is used instead of letters, if the process involves discovery and a lot of back-and-forth, it is much easier to do via a conversation. You could establish a context and stay focused until the problem was solved.
 
 ### 1965
 
@@ -42,7 +42,7 @@ Teitelman started at Bolt, Beranek and Newman in Cambridge. At the time, [BBN](/
 
 ### 1967
 
-In 1967, BBN purchased an SDS 940 computer from Scientific Data Systems and began work building a time-sharing system on it. The SDS 940 had a larger address space and the ability to support a paging system. BBN was awarded an ARPA contract to provide a LISP system that could be distributed to other ARPA sites for doing A.I. research. (ARPA = Advanced Research Projects Administration of the Department of Defense.)  
+In 1967, BBN purchased an SDS 940 computer from Scientific Data Systems and began work building a time-sharing system on it. The SDS 940 had a larger address space and the ability to support a paging system. BBN was awarded an [ARPA](/history/glossary/#arpa) contract to provide a LISP system that could be distributed to other ARPA sites for doing A.I. research. (ARPA = Advanced Research Projects Agency of the Department of Defense.)
 
 - [Improvements to the 940 LISP Library](/history/bibliography/6m8iseul/)  
 
@@ -70,6 +70,8 @@ Alice K. Hartley took over Dan Murphy’s role in BBN-LISP. A number of new data
 
 As Lisp users began to write larger and larger programs, performance began to be an issue. A compiler had been available for Lisp programs since the early sixties.  
 
+To reduce the overhead of function calls, Danny Bobrow devised the **[Block Compiler](/history/glossary/#block-compiling)**, which compiled a collection of the programmer’s functions into a single block so that calls between them did not require an external function call. BBN-Lisp tools such as Prettyprint and the compiler itself were later block compiled for speed.
+
 In 1970, Danny Bobrow and Alice Hartley designed and implemented the “[spaghetti stack](/history/glossary/#spaghetti-stack)”. This enabled running programs to search the current execution stack, e.g., find the second occurrence up the stack of the function FOO, and return the name of the function that called FOO, to alter the normal flow of control, e.g., return from a specified stack pointer a specified value (very useful when debugging programs in order to manually bypass a known problem), and to evaluate an expression or variable in a specified context, e.g., what is the value of x as of six function calls back up the stack.
 
 **[DWIM](/history/glossary/#dwim)**, the most well known, and in some cases reviled, feature of BBN-LISP was introduced in 1970. DWIM stands for Do-What-I-Mean and embodies Teitelman’s view that people's time was more valuable/expensive than computer time. (This was a radical idea at the time.) When Teitelman first started programming in FORTRAN in 1960, he was appalled at receiving the error message, “on line 70, DIMENSION is misspelled”. If the FORTRAN compiler knew this to be the case, why didn’t it accept this and go on and compile his program?
@@ -88,7 +90,7 @@ Another innovation introduced to BBN-LISP in 1970 was the [History package](/his
 
 Perhaps the most important piece of information stored in each history event was the information required to [UNDO](/history/glossary/#undo) that operation. This was especially valuable in the context of editing. UNDO is functionality that every user now expects in an editor, but it was first introduced in BBN-LISP in 1970. The UNDO functionality provided in BBN-LISP still surpasses that available in today’s editors in that the user could UNDO operations out of order. For example, after performing a series of four or five editing operations, the user could realize that the information deleted in the first operation is needed, and would be able to UNDO just that operation by explicitly referring to that operation using the history package, without affecting the intervening operations.
 
-In addition to being able to UNDO edit operations, the user could also UNDO operations that were typed in at the top level or in a Break. This was most frequently used to undo assignments. It could also be used to undo an entire edit session, rather than undoing one command at a time, sort of a revert operation for S-expressions. The user could also arrange to have functions that they defined to be undoable by storing information on the history list.
+In addition to being able to UNDO edit operations, the user could also UNDO operations that were typed in at the top level or in a Break. This was most frequently used to undo assignments. It could also be used to undo an entire edit session, rather than undoing one command at a time, sort of a revert operation for [S-expressions](/history/glossary/#s-expression). The user could also arrange to have functions that they defined to be undoable by storing information on the history list.
 
 The history list stored each event’s input, value, side effects, messages, and errors, discarding the oldest events as new ones arrived. UNDO could itself be undone; the related commands REDO and USE re-ran recorded events. The July 1971 BBN-LISP TENEX Reference Manual documents UNDO.
 
@@ -102,7 +104,7 @@ The **File Package** was added in 1971. This was essentially a “make” for Li
 
 ### 1972
 
-In 1972, Danny Bobrow and Warren Teitelman left BBN and went to the newly formed Xerox Palo Alto Research Center – [PARC](/history/glossary/#parc). BBN continued to provide the low-level support for the Lisp system, i.e., compiler, garbage collector, and all of the operating system interface, while the Lisp-based center of activity for the various packages and utilities moved to PARC. Both sites continued to be supported by ARPA, and to indicate this partnership and shared responsibility, BBN-LISP was renamed to be **[Interlisp](/history/glossary/#interlisp)**.  
+In 1972, Danny Bobrow and Warren Teitelman left BBN and went to the newly formed Xerox Palo Alto Research Center – [PARC](/history/glossary/#parc). BBN continued to provide the low-level support for the Lisp system, i.e., compiler, [garbage collector](/history/glossary/#garbage-collector), and all of the operating system interface, while the Lisp-based center of activity for the various packages and utilities moved to PARC. Both sites continued to be supported by ARPA, and to indicate this partnership and shared responsibility, BBN-LISP was renamed to be **[Interlisp](/history/glossary/#interlisp)**.
 
 Around the ARPAnet, Interlisp continued to use the DEC PDP-10 as its principal platform.
 
@@ -112,7 +114,7 @@ Around the ARPAnet, Interlisp continued to use the DEC PDP-10 as its principal p
 
 ### 1974
 
-By 1974 a number of impressive extensions to Interlisp had been developed by Larry Masinter. These included a much more sophisticated version of Interlisp’s **iterative statement**, as well as a **Record** package that enabled a user to label various components of a list structure and refer to them by name, thereby eliminating the CADADRs and CDADDRs that made Lisp programs so difficult to read. The Record package also had the advantage that the user could change a record definition, and the program would automatically adopt the new structure. For example, if PERSON were defined as (RECORD PERSON (FIRSTNAME LASTNAME TITLE)), the expression (X:TITLE) would translate to (CADDR X). If the user later changed the definition of PERSON to (RECORD PERSON (FIRSTNAME INITIAL LASTNAME TITLE)), all expressions involving TITLE would automatically be retranslated to use CADDDR.  
+By 1974 a number of impressive extensions to Interlisp had been developed by Larry Masinter. These included a much more sophisticated version of Interlisp’s **[iterative statement](/history/glossary/#iterative-statement)**, as well as a **Record** package that enabled a user to label various components of a list structure and refer to them by name, thereby eliminating the [CADADRs and CDADDRs](/history/glossary/#car-cdr-accessors) that made Lisp programs so difficult to read. The Record package also had the advantage that the user could change a record definition, and the program would automatically adopt the new structure. For example, if PERSON were defined as (RECORD PERSON (FIRSTNAME LASTNAME TITLE)), the expression (X:TITLE) would translate to (CADDR X). If the user later changed the definition of PERSON to (RECORD PERSON (FIRSTNAME INITIAL LASTNAME TITLE)), all expressions involving TITLE would automatically be retranslated to use CADDDR.
 
 - [Interlisp-10](/history/glossary/#interlisp-10) sources from 1974 ([GitHub](https://github.com/Interlisp/history/tree/master/1970s/1974-sources))
 
@@ -128,7 +130,7 @@ The fact that the manual was machine readable, and heavily indexed, meant Interl
 
 ### 1976
 
-In 1976, Dan Ingalls gave a presentation at PARC in which he demonstrated the first window system. Written in and for Smalltalk, the user interface and paradigm it provided for enabling the user to manage and work with multiple contexts was very compelling, and immediately inspired work to provide such a mechanism for Interlisp. At the time, although Peter Deutsch had developed a byte-coded instruction set for the Alto, it was under-powered for Lisp development.  
+In 1976, Dan Ingalls gave a presentation at PARC in which he demonstrated the first window system. Written in and for Smalltalk, the user interface and paradigm it provided for enabling the user to manage and work with multiple contexts was very compelling, and immediately inspired work to provide such a mechanism for Interlisp. At the time, although Peter Deutsch had developed a [byte-coded instruction set](/history/glossary/#byte-coded-instruction-set) for the Alto, it was under-powered for Lisp development.
 
 Bob Sproull came up with the idea for what would turn out to be the first client-server window system: use the Alto as the window server and Interlisp running on the time-shared PDP-10 clone as the client. and develop a protocol for having Interlisp tell the Alto what to display, and for the Alto to tell Interlisp about mouse clicks. Bob developed the **ADIS** (for Alto Display) package and Teitelman wrote **[DLISP](/history/glossary/#dlisp)** in Interlisp. DLISP included a window manager and windowing system that enabled overlapping windows, cut and paste, etc. J Moore implemented a text package that would support display and editing of text in windows. Teitelman demonstrated this functionality at IJCAI in 1977, and presented a paper, a Display Oriented Programmer’s Assistant.
 
@@ -182,7 +184,7 @@ In 1979, PARC began the design of the Dorado, a high performance personal workst
 
 ### 1992
 
-- Medley 2.0 with CLOS, MOP, for Dos 4.0 and Xerox 1186
+- Medley 2.0 with [CLOS](/history/glossary/#clos), [MOP](/history/glossary/#mop), for Dos 4.0 and Xerox 1186
 - ACM Software Systems award was given to the Interlisp team: “For their pioneering work in programming environments that integrated source-language debuggers, fully compatible integrated interpreter/compiler, automatic change management, structure-based editing, logging facilities, interactive graphics, and analysis/profiling tools in the Interlisp system.”
 
 ### 1993
