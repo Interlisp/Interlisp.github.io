@@ -14,7 +14,7 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 ## Vocabulary and relationships
 
 <span id="advising"></span>Advice (Advising)
-: A facility for modifying an existing function without editing its definition by wrapping it with code that runs before or after the function and can inspect or change its arguments or return value. Also called advising.
+: A facility for modifying an existing function without editing its definition by wrapping it with code that runs before or after the function and can inspect or change its arguments or return value. Advice can be added to and removed from a function independently, so a programmer can instrument or adapt code temporarily and leave the original definition intact. Also called advising.
 
 <span id="altolisp"></span>AltoLisp
 : An experimental microcoded implementation of Interlisp on an Alto personal computer.
@@ -57,7 +57,7 @@ as a graphics terminal.
 : The reimplementation of the AltoLisp microcode on the Dorado – a research prototype.
 
 <span id="dwim"></span>DWIM
-: Do-What-I-Mean. An Interlisp error-recovery facility that intercepts errors such as undefined functions, unset variables, and misspellings, using heuristics and context-sensitive spelling lists to suggest or apply corrections and continue execution.
+: Do-What-I-Mean. An Interlisp error-recovery facility that intercepts errors such as undefined functions, unset variables, and misspellings, using heuristics and context-sensitive spelling lists to suggest or apply corrections and continue execution. When a correction is uncertain, DWIM can ask the user to approve it; when the user is away, it can apply a default after a delay. DWIM can also repair some structural errors, such as a number typed in place of a parenthesis, so the computation can proceed without restarting.
 
 <span id="fugue"></span>Fugue
 : An obsolete named release of Interlisp-D.
@@ -66,7 +66,7 @@ as a graphics terminal.
 : An obsolete named release of Interlisp-D.
 
 <span id="history-package"></span>History package
-: An Interlisp facility that records the commands and expressions entered during a session, together with messages displayed during their execution, so they can be reviewed, replayed with substitutions, or undone.
+: An Interlisp facility that records the commands and expressions entered during a session, together with messages displayed during their execution, so they can be reviewed, replayed with substitutions, or undone. Each recorded event also keeps the information needed to reverse its side effects, which makes the history list the basis for UNDO. The history can be searched and selectively replayed, so a user can reuse or correct an earlier operation without retyping it.
 
 <span id="intermezzo"></span>Intermezzo
 : An obsolete named release of Interlisp-D.
@@ -133,25 +133,25 @@ as a graphics terminal.
 - A feature of Commmon Lisp symbol support; the package system allows the combining of Interlisp symbols (written with `IL:` prefix) and Common Lisp symbols (written with a `LISP:` prefix).
 
 <span id="prettyprint"></span>Prettyprint
-: A Lisp utility that prints programs with indentation and line breaks that reflect their list structure, making code easier to read and debug.
+: A Lisp utility that prints programs with indentation and line breaks that reflect their list structure, making code easier to read and debug. Because Lisp programs are lists, a prettyprinter can lay out nested expressions according to their depth and width instead of printing them as one long line. It is used both to display code and to produce readable listings or files.
 
 <span id="sdl"></span>SDL
 : Structured Design Language.
 
 <span id="spaghetti-stack"></span>Spaghetti stack
-: An Interlisp execution stack that remains available as a structured list, allowing programs and debugging tools to search frames, inspect values in caller contexts, and perform non-local returns.
+: An Interlisp execution stack that remains available as a structured list rather than a contiguous array, so each frame can still be reached through the list structure. This lets programs and debugging tools search frames, inspect values in caller contexts, and perform non-local returns. Because the stack can be traversed and its frames examined, it supports debugging, error recovery, and control operations that would be difficult with a conventional call stack.
 
 <span id="structure-editor"></span>Structure editor
-: An editor that operates directly on a program's list structure rather than its printed text. Because Lisp programs are lists, commands can move through and modify a function's tree in place without leaving Lisp.
+: An editor that operates directly on a program's list structure rather than its printed text. Because Lisp programs are lists, commands can move through and modify a function's tree in place without leaving Lisp. Editing commands select list elements, descend into sublists, and insert, delete, or replace structures, so the edit changes the program itself rather than a separate text file. This allows a running program to be inspected, modified, and re-evaluated in the same environment.
 
 <span id="sysout"></span>Sysout
 : A file containing the saved state of Interlisp virtual memory.
 
-<span id="trace" data-tooltip="A Lisp debugging facility that prints selected information when a function is entered and its value when it returns. Tracing remains until the function is untraced."></span>Trace
-: A Lisp debugging facility that redefines a function so that selected information, by default its arguments and return value, is printed when the function is entered and exited. Tracing remains in effect until the function is untraced.
+<span id="trace" data-tooltip="A Lisp debugging facility that prints selected information when a function is entered and its value when it returns. Tracing can cover one or more functions and remains until they are untraced."></span>Trace
+: A Lisp debugging facility that redefines a function so that selected information, by default its arguments and return value, is printed when the function is entered and exited. Tracing can be applied to one function or several and remains in effect until the function is untraced. It gives a running account of calls and results without requiring the programmer to stop the program or insert print statements by hand.
 
 <span id="undo"></span>UNDO
-: A command in the Interlisp Programmer’s Assistant that reverses the side effects of operations recorded on its history list. It supports selective undo—reversing an earlier operation without undoing later ones—as well as undoing assignments and whole edit sessions. Undoing an operation can itself be undone.
+: A command in the Interlisp Programmer’s Assistant that reverses the side effects of operations recorded on its history list. It supports selective undo—reversing an earlier operation without undoing later ones—as well as undoing assignments and whole edit sessions. A user can also make a user-defined function undoable by recording the information needed to reverse its effects. Undoing an operation can itself be undone, and related commands can redo or reuse recorded events.
 
 <span id="x11"></span>X11
 : The X Window System.
