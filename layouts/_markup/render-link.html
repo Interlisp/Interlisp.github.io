@@ -1,0 +1,34 @@
+{{- /*
+  Preserve Goldmark's default link output and add a Bootstrap tooltip to
+  glossary links. Docsy initializes [data-bs-toggle="tooltip"] in base.js.
+
+  Skip the glossary page itself to avoid recursively rendering its content
+  while the glossary-definitions partial is parsing that same content.
+
+  For site-root-relative links (starting with /), convert to relative paths
+  and apply relURL to ensure they work correctly with baseURL path prefixes
+  in staging/PR deployments.
+*/ -}}
+{{- $dest := .Destination -}}
+{{- $attrs := "" -}}
+{{- $isGlossaryLink := or (strings.HasPrefix $dest "/history/glossary/#") (strings.HasPrefix $dest "history/glossary/#") -}}
+{{- $isGlossaryPage := or (eq .Page.RelPermalink "/history/glossary/") (eq .Page.Path "/history/glossary") -}}
+{{- if and $isGlossaryLink (not $isGlossaryPage) -}}
+  {{- $anchor := "" -}}
+  {{- if strings.HasPrefix $dest "/history/glossary/#" -}}
+    {{- $anchor = strings.TrimPrefix "/history/glossary/#" $dest -}}
+  {{- else -}}
+    {{- $anchor = strings.TrimPrefix "history/glossary/#" $dest -}}
+  {{- end -}}
+  {{- $definitions := partialCached "glossary-definitions.html" . "glossary-definitions" -}}
+  {{- with index $definitions $anchor -}}
+    {{- $attrs = printf ` data-bs-toggle="tooltip" data-bs-title="%s"` (htmlEscape .) -}}
+  {{- else -}}
+    {{- warnf "Glossary link to #%s has no extracted tooltip definition" $anchor -}}
+  {{- end -}}
+{{- end -}}
+{{- $link := $dest -}}
+{{- if strings.HasPrefix $dest "/" -}}
+  {{- $link = (strings.TrimPrefix "/" $dest) | relURL -}}
+{{- end -}}
+<a href="{{ $link }}"{{ with .Title }} title="{{ . }}"{{ end }}{{ $attrs | safeHTMLAttr }}>{{ .Text | safeHTML }}</a>

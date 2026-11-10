@@ -4,6 +4,7 @@ weight: 500
 type: docs
 aliases:
  - /medley/history/
+ - /doc/info/history.html
 ---
 
 ## The Short History

@@ -184,6 +184,12 @@ ui:
   # Set to false to disable dark mode menu
   showLightDarkModeMenu: false
 
+# Glossary tooltip configuration
+glossary:
+  # Maximum length of automatically extracted tooltip text.
+  # Custom data-tooltip overrides are used verbatim after normalization.
+  tooltip_max_chars: 200
+
 # Docsy plugins configuration (0.18.0)
 docsy:
   plugins:

@@ -1,0 +1,47 @@
+{{- /*
+  Build a map of glossary anchor IDs to short, plain-text definitions.
+
+  The glossary uses definition-list syntax:
+
+      <span id="bbn"></span>BBN
+      : Bolt, Beranek, and Newman...
+
+  Hugo renders that as:
+
+      <dt><span id="bbn"></span>BBN</dt>
+      <dd>Bolt, Beranek, and Newman...</dd>
+
+  An entry may provide a custom tooltip instead of using its first <dd>:
+
+      <span id="interlisp-d" data-tooltip="Short custom text."></span>Interlisp-D
+
+  The rendered content is parsed once per build by partialCached in the
+  render-link hook. Only the first <dd> for each term is used, unless the
+  entry has a data-tooltip attribute.
+*/ -}}
+{{- $defs := dict -}}
+{{- $maxChars := 200 -}}
+{{- with site.Params.glossary -}}
+  {{- $maxChars = .tooltip_max_chars | default 200 -}}
+{{- end -}}
+{{- with site.GetPage "/history/glossary" -}}
+  {{- $entries := findRE `(?s)<dt><span id="[^"]+"[^>]*></span>.*?</dd>` .Content -}}
+  {{- range $entries -}}
+    {{- $entry := . -}}
+    {{- $id := replaceRE `(?s)^<dt><span id="([^"]+)"[^>]*>.*$` "$1" $entry -}}
+    {{- $text := "" -}}
+    {{- if strings.Contains $entry "data-tooltip=" -}}
+      {{- $custom := replaceRE `(?s)^<dt><span id="[^"]+"[^>]*\sdata-tooltip="([^"]*)"[^>]*>.*$` "$1" $entry -}}
+      {{- $text = $custom | plainify | htmlUnescape | replaceRE `\s+` " " | replaceRE `\s+([,.;:!?])` "$1" | chomp -}}
+    {{- else -}}
+      {{- $definition := replaceRE `(?s)^.*?<dd>(.*)</dd>$` "$1" $entry -}}
+      {{- $text = $definition | plainify | htmlUnescape | replaceRE `\s+` " " | replaceRE `\s+([,.;:!?])` "$1" | chomp | truncate $maxChars -}}
+    {{- end -}}
+    {{- if $text -}}
+      {{- $defs = merge $defs (dict $id $text) -}}
+    {{- else -}}
+      {{- warnf "Glossary entry #%s produced empty tooltip text" $id -}}
+    {{- end -}}
+  {{- end -}}
+{{- end -}}
+{{- return $defs -}}
