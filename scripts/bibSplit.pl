@@ -116,6 +116,7 @@ if ($key eq $target) {  # only top level entries
   my $conferenceName = defined $obj->{conferenceName} ? qq{"$obj->{conferenceName}"} : '""';
   my $encyclopediaTitle = defined $obj->{encyclopediaTitle} ? qq{"$obj->{encyclopediaTitle}"} : '""';
   my $filingDate = defined $obj->{filingDate} ? qq{"$obj->{filingDate}"} : '""';
+  my $genre = defined $obj->{genre} ? qq{"$obj->{genre}"} : '""';
   my $issue = defined $obj->{issue} ? qq{"$obj->{issue}"} : '""';
   my $issueDate = defined $obj->{issueDate} ? qq{"$obj->{issueDate}"} : '""';
   my $issuingAuthority = defined $obj->{issuingAuthority} ? qq{"$obj->{issuingAuthority}"} : '""';
@@ -132,6 +133,8 @@ if ($key eq $target) {  # only top level entries
   my $series = defined $obj->{series} ? qq{"$obj->{series}"} : '""';
   my $seriesNumber = defined $obj->{seriesNumber} ? qq{"$obj->{seriesNumber}"} : '""';
   my $seriesTitle = defined $obj->{seriesTitle} ? qq{"$obj->{seriesTitle}"} : '""';
+  my $standardNumber = defined $obj->{number} ? qq{"$obj->{number}"} : '""';
+  my $standardVersion = defined $obj->{version} ? qq{"$obj->{version}"} : '""';
   my $studio = defined $obj->{studio} ? qq{"$obj->{studio}"} : '""';
   my $university = defined $obj->{university} ? qq{"$obj->{university}"} : '""';
   my $videoRecordingFormat = defined $obj->{videoRecordingFormat} ? qq{"$obj->{videoRecordingFormat}"} : '""';
@@ -166,6 +169,12 @@ if ($key eq $target) {  # only top level entries
   $extraFields = "website_title: $websiteTitle\nwebsite_type: $websiteType\n";
   } elsif ($type eq 'entry-encyclopedia') {
     $extraFields = "encyclopedia_title: $encyclopediaTitle\n";
+  } elsif ($type eq 'document') {
+    $extraFields = "genre: $genre\npublisher: $publisher\nplace: $place\n";
+  } elsif ($type eq 'standard') {
+    $extraFields = "genre: $genre\npublisher: $publisher\nplace: $place\nstandard_number: $standardNumber\nstandard_version: $standardVersion\n";
+  } elsif ($type eq 'software') {
+    $extraFields = "genre: $genre\npublisher: $publisher\n";
   } else {
     print STDERR "Warning: unhandled type \"$type\" for key \"$key\"\n";
   }

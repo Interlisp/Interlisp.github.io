@@ -145,11 +145,25 @@ def getNeededUrls:  # assumes that array of all current items is the input
 #     | $x - ($x - y)
 #   end;
   
+# The CSL JSON block is the authoritative citation record; the Zotero `data`
+# block is metadata.  Merging with `.data` on the right let a populated Zotero
+# field silently overwrite the CSL one:
+#
+#   * data.type    -> Zotero's generic "Type" field (UI label "Type"), which
+#                     Zotero's CSL export maps to `genre`.  It is NOT the CSL
+#                     type, and it overwrote `csljson.type`.
+#   * data.version -> Zotero's *record revision counter*, not citation data.
+#                     It overwrote `csljson.version` (edition / standard
+#                     version) and leaked into all 380 records.
+#
+# Merge so CSL JSON wins, and drop the record revision entirely.
 def semiflatten:  # assumes that only one item is the input
     . as $item
-  | (keys - ["csljson","data"]) as $topKeys
-  | ((.csljson // {}) * .data) as $inner
-  | (($inner | keys) - ["key","version"]) as $innerKeys
+  | (.csljson // {}) as $csl
+  | (.data // {} | del(.version)) as $data
+  | (keys - ["csljson","data","version"]) as $topKeys
+  | ($data * $csl) as $inner
+  | (($inner | keys) - ["key"]) as $innerKeys
   | (  ($topKeys | map(. as $tKey | {"key": $tKey, "value": ($item | getpath([$tKey]))}))
      + ($innerKeys | map(. as $iKey | {"key": $iKey, "value": ($inner | getpath([$iKey]))})) )
   | from_entries;

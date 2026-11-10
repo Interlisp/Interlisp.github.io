@@ -94,10 +94,10 @@
         {{ with .Params.publisher }}
             <p><strong>Publisher:</strong> {{ . }}</p>
         {{ end }}
-        {{ with .Params.reportType }}
+        {{ with .Params.report_type }}
             <p><strong>Report Type:</strong> {{ . }}</p>
         {{ end }}
-        {{ with .Params.reportNumber }}
+        {{ with .Params.report_number }}
             <p><strong>Report Number:</strong> {{ . }}</p>
         {{ end }}
     {{- end -}}
@@ -185,6 +185,42 @@
     {{- if eq .Params.item_type "entry-encyclopedia" }}
         {{ with .Params.encyclopedia_title }}
             <p><strong>Encyclopedia Title:</strong> {{ . }}</p>
+        {{ end }}
+    {{- end -}}
+    {{- if eq .Params.item_type "document" }}
+        {{ with .Params.genre }}
+            <p><strong>Document Type:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.publisher }}
+            <p><strong>Publisher:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.place }}
+            <p><strong>Place:</strong> {{ . }}</p>
+        {{ end }}
+    {{- end -}}
+    {{- if eq .Params.item_type "standard" }}
+        {{ with .Params.genre }}
+            <p><strong>Series:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.standard_number }}
+            <p><strong>Standard Number:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.standard_version }}
+            <p><strong>Version:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.publisher }}
+            <p><strong>Publisher:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.place }}
+            <p><strong>Place:</strong> {{ . }}</p>
+        {{ end }}
+    {{- end -}}
+    {{- if eq .Params.item_type "software" }}
+        {{ with .Params.genre }}
+            <p><strong>Programming Language:</strong> {{ . }}</p>
+        {{ end }}
+        {{ with .Params.publisher }}
+            <p><strong>Publisher:</strong> {{ . }}</p>
         {{ end }}
     {{- end -}}
   </div>
