@@ -9,9 +9,11 @@ toc_hide: false
 
 This page documents how bibliography entry types are classified and mapped through the processing pipeline. It serves as a reference for:
 
-- **Content creators** contributing to the Interlisp Zotero group who want to understand how their entries will be categorized
+- **Metadata creators** contributing to the Interlisp Zotero group who want to understand how their entries will be categorized
 - **Developers** working on the bibliography processing system who need to know current type support
 - **Data consumers** using the JSON-LD output who need to understand what schema.org types represent Interlisp bibliography entries
+
+To recommend a new title for inclusion in the bibliography, please see the [Interlisp Bibliography Intake Guide](history/bibliography/intake).  It explains how to recommend new bibliography items and provides a link to the appropriate form.
 
 The mapping chain flows through three formats:
 
