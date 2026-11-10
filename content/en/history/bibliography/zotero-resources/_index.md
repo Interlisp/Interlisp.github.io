@@ -106,7 +106,7 @@ These types are for published, citable research and writing:
 
 ---
 
-## For Content Creators
+## For Metadata Creators
 
 ### Choosing the Right Type
 
