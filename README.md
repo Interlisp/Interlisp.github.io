@@ -19,6 +19,7 @@ Interlisp and how to access and use the restored Medley system.
 - [Content Authoring](#content-authoring)
   - [Editing Existing Pages](#editing-existing-pages)
   - [Adding New Pages](#adding-new-pages)
+  - [Social Share Images and Metadata](#social-share-images-and-metadata)
   - [Adding or Updating the Comments Page](#adding-or-updating-the-comments-page)
   - [Bibliography Data](#bibliography-data)
 - [Local Development](#local-development)
@@ -119,6 +120,27 @@ type: docs
 | `type` | Page type. Currently all pages are of type `docs` |
 
 The content follows the preamble and is written using [Markdown](https://www.markdownguide.org/tools/hugo/).
+
+### Social Share Images and Metadata
+
+When a page is shared on social platforms (Bluesky, Mastodon, Facebook, LinkedIn, Slack, etc.), the preview card is built from the page's Open Graph metadata. Docsy generates these tags automatically, so authors normally don't need to do anything.
+
+- **Default image:** `config/_default/params.yaml` sets `images: [images/og-default.png]`, which is used for every page that does not specify its own. The image lives at `static/images/og-default.png` and is 1200x630 px.
+- **Per-page override:** add an `images` list to the page front matter. Place a 1200x630 px image under `static/` and reference it site-relative:
+
+  ```markdown
+  ---
+  title: Medley Goals
+  weight: 10
+  type: docs
+  images: ["images/medley-goals-share.png"]
+  ---
+  ```
+
+- **Alt text:** the `og:image:alt` and `twitter:image:alt` values are generated from the page title automatically (see `layouts/_partials/hooks/head-end.html`).
+- **Mastodon attribution:** `config/_default/params.yaml` sets `fediverse_creator: "@interlisp@fosstodon.org"`, which is emitted as a `fediverse:creator` meta tag so Mastodon (4.3+) credits the project account on shared links. Override per page with a `fediverse_creator` front matter value if needed.
+
+Bluesky and Mastodon build their previews from Open Graph tags only (they ignore `twitter:*`). Mastodon caches a card per status, so edit or repost to refresh it. Bluesky generates the card when a post is composed, so metadata changes only affect new posts.
 
 ### Adding or Updating the Comments Page
 
