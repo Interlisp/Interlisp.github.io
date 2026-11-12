@@ -1,5 +1,6 @@
 ---
 title: Interlisp Basics for Common Lisp users
+description: "Bring your Common Lisp habits to Medley. See where the two dialects diverge and get practical advice for translating code and avoiding common pitfalls."
 url: /software/using-medley/cl-using/
 type: docs
 weight: 30

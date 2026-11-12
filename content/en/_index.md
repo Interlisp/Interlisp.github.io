@@ -1,5 +1,6 @@
 ---
 title: Medley Interlisp Project
+description: "Reviving Interlisp-D, the pioneering Lisp software environment created at Xerox PARC. Explore Medley's history, documentation, and how to run it today."
 aliases:
  - /hugo
 ---

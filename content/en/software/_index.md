@@ -1,5 +1,6 @@
 ---
 title: Software
+description: "Everything you need to start using Medley: choose between running it in your browser or installing it locally, then dig into the guides and documentation."
 type: docs
 aliases:
 

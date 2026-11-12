@@ -1,5 +1,6 @@
 ---
 title: Our Stories
+description: "First-hand accounts from people who used Interlisp in its prime, recalling what made the environment special and why it still matters to them and to computing."
 weight: 40
 type: docs
 ---

@@ -1,5 +1,6 @@
 ---
 title: Organization
+description: "Who runs the project and how it is structured, including the non-profit that holds its charitable mission and supports its scientific and technical goals."
 weight: 1000
 type: docs
 ---

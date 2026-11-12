@@ -1,5 +1,6 @@
 ---
 title: Get Involved
+description: "There is a place for every skill level in the Interlisp revival. Find the route that fits you, whether you code, test, document, or help spread the word."
 weight: 11
 type: docs
 aliases:

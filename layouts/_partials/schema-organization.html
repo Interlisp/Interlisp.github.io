@@ -1,0 +1,35 @@
+{{- /*
+  schema-organization.html
+  Emits Organization JSON-LD for the site. Rendered on the home page only.
+
+  Profile URLs for sameAs are gathered from the footer link lists in
+  config/_default/params.yaml (`links.user` and `links.developer`), keeping only
+  absolute http(s) URLs (mailto: and relative RSS links are skipped).
+*/ -}}
+{{- if .IsHome -}}
+{{- $logo := "Resources/logo_red_no_border_568x385.png" | absURL -}}
+{{- $sameAs := slice -}}
+{{- range site.Params.links.user -}}
+  {{- with .url -}}{{ if hasPrefix . "http" }}{{ $sameAs = $sameAs | append . }}{{ end }}{{- end -}}
+{{- end -}}
+{{- range site.Params.links.developer -}}
+  {{- with .url -}}{{ if hasPrefix . "http" }}{{ $sameAs = $sameAs | append . }}{{ end }}{{- end -}}
+{{- end -}}
+{{- $org := dict
+  "@context" "https://schema.org"
+  "@type"    "Organization"
+  "name"     site.Title
+  "url"      site.Home.Permalink
+  "logo"     $logo
+-}}
+{{- with site.Params.description -}}
+  {{- $org = merge $org (dict "description" .) -}}
+{{- end -}}
+{{- with site.Params.author -}}
+  {{- with .email -}}{{- $org = merge $org (dict "email" .) -}}{{- end -}}
+{{- end -}}
+{{- if gt (len $sameAs) 0 -}}
+  {{- $org = merge $org (dict "sameAs" $sameAs) -}}
+{{- end -}}
+{{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($org | jsonify (dict "indent" "  ")) | safeHTML -}}
+{{- end -}}

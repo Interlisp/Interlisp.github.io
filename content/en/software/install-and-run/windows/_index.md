@@ -1,5 +1,6 @@
 ---
 title: Install and Run on Windows
+description: "Pick the Windows approach that suits you — a native install or one that runs inside Linux — and get Medley up and running either way, with a guide for each."
 linkTitle: Windows
 weight: 40
 type: docs

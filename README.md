@@ -19,6 +19,9 @@ Interlisp and how to access and use the restored Medley system.
 - [Content Authoring](#content-authoring)
   - [Editing Existing Pages](#editing-existing-pages)
   - [Adding New Pages](#adding-new-pages)
+  - [Social Share Images and Metadata](#social-share-images-and-metadata)
+  - [Structured Data (JSON-LD)](#structured-data-json-ld)
+  - [Meta Descriptions](#meta-descriptions)
   - [Adding or Updating the Comments Page](#adding-or-updating-the-comments-page)
   - [Bibliography Data](#bibliography-data)
 - [Local Development](#local-development)
@@ -119,6 +122,63 @@ type: docs
 | `type` | Page type. Currently all pages are of type `docs` |
 
 The content follows the preamble and is written using [Markdown](https://www.markdownguide.org/tools/hugo/).
+
+### Social Share Images and Metadata
+
+When a page is shared on social platforms (Bluesky, Mastodon, Facebook, LinkedIn, Slack, etc.), the preview card is built from the page's Open Graph metadata. Docsy generates these tags automatically, so authors normally don't need to do anything.
+
+- **Default image:** `config/_default/params.yaml` sets `images: [images/og-default.png]`, which is used for every page that does not specify its own. The image lives at `static/images/og-default.png` and is 1200x630 px.
+- **Per-page override:** add an `images` list to the page front matter. Place a 1200x630 px image under `static/` and reference it site-relative:
+
+  ```markdown
+  ---
+  title: Medley Goals
+  weight: 10
+  type: docs
+  images: ["images/medley-goals-share.png"]
+  ---
+  ```
+
+- **Alt text:** the `og:image:alt` and `twitter:image:alt` values are generated from the page title automatically (see `layouts/_partials/hooks/head-end.html`).
+- **Mastodon attribution:** `config/_default/params.yaml` sets `fediverse_creator: "@interlisp@fosstodon.org"`, which is emitted as a `fediverse:creator` meta tag so Mastodon (4.3+) credits the project account on shared links. Override per page with a `fediverse_creator` front matter value if needed.
+
+Bluesky and Mastodon build their previews from Open Graph tags only (they ignore `twitter:*`). Mastodon caches a card per status, so edit or repost to refresh it. Bluesky generates the card when a post is composed, so metadata changes only affect new posts.
+
+### Structured Data (JSON-LD)
+
+The site emits [schema.org](https://schema.org) JSON-LD so search engines can show rich results (article cards, breadcrumbs). The partials live in `layouts/_partials/` and are wired into `layouts/_partials/hooks/head-end.html`; each one guards itself, so authors normally don't need to do anything.
+
+| Schema | Where it appears | Source partial |
+|--------|------------------|----------------|
+| `Organization` | Home page only | `schema-organization.html` |
+| `Article` | Every content page (not bibliography entries or sections) | `schema-article.html` |
+| `BreadcrumbList` | Every page except the home page and 404 | `schema-breadcrumb.html` |
+| Bibliography types | `content/en/history/bibliography/**` | `bibliography-json-ld.html` |
+
+- **Article metadata** is derived automatically: `headline` from the title, `description` from the page description, `datePublished` from `date`, `dateModified` from the file's last git change (`enableGitInfo: true`), and `author`/`publisher` from `site.Params.author`.
+- **Validate locally** with the test suite (`tests/test_site_jsonld.py`) and, before release, with Google's [Rich Results Test](https://search.google.com/test/rich-results).
+
+### Meta Descriptions
+
+The `<meta name="description">` tag is generated for every page by `layouts/_partials/page-description.html`. It is what search engines may show beneath a page title in results, so it should be a clear, compelling summary that includes the page's main topic.
+
+**Authoring rules:**
+
+- Add a `description:` field to a page's front matter. Aim for **150–160 characters** (about one to two sentences).
+- Make it **unique** — avoid reusing the same text across pages.
+- Describe what the reader will find and include the primary keyword naturally. Do not stuff keywords or simply repeat the title.
+
+  ```markdown
+  ---
+  title: History
+  description: "Explore the history of Interlisp, the pioneering Lisp software development environment born at Xerox PARC in the 1970s and 1980s."
+  ---
+  ```
+
+**Fallback behavior** (when a page has no `description:`): the partial uses, in order, the page's `description`, then its auto-generated summary, then a generated description (for bibliography, taxonomy, and term pages), and finally the site-wide default from `config/_default/params.yaml`. Any description longer than 160 characters is truncated at a word boundary. Relying on the fallback is fine for minor pages, but hand-written descriptions are strongly preferred for anything in the navigation.
+
+- **Bibliography entries** are described automatically from the entry's title and abstract (or authors); you do not need to add `description:` to generated entries. Hand-written pages that merely live under the bibliography tree (e.g. `intake/`, `zotero-resources/`, which set `type: docs`) are *not* generated entries and still need their own `description:`; the test identifies generated entries from the rendered `class="bibliography-entry"` marker rather than the URL.
+- **Validate locally** with `tests/test_meta_descriptions.py`.
 
 ### Adding or Updating the Comments Page
 
@@ -459,6 +519,11 @@ gcs_engine_id: 33ef4cbe0703b4f3a
 ```
 
 Search results are rendered using the `search.html` layout template.
+
+The search page is intentionally kept out of search-engine indexes: `robots.txt` disallows
+`/search/`, and `content/en/search.md` sets `robots = "noindex"` (which also excludes it from the
+sitemap). The page is a thin wrapper around the Google Custom Search widget with no content of its
+own.
 
 **Updating Search:**
 

@@ -1,5 +1,6 @@
 ---
 title: Glossary
+description: "Confused by the many names used for Interlisp over the decades? This glossary untangles Medley, Interlisp-D, and related terms with clear definitions."
 aliases:
  - /glossary/
  - /medley/project/vocabulary/

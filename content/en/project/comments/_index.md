@@ -2,7 +2,7 @@
 title: What people are saying
 weight: 20
 type: docs
-description: Comments on Interlisp and this project
+description: "How people talk about Interlisp online: a running collection of blog posts, social media threads, and reflections, with a way to submit new links of your own."
 aliases: 
  - /medley/about/comments/
 ---
