@@ -520,6 +520,11 @@ gcs_engine_id: 33ef4cbe0703b4f3a
 
 Search results are rendered using the `search.html` layout template.
 
+The search page is intentionally kept out of search-engine indexes: `robots.txt` disallows
+`/search/`, and `content/en/search.md` sets `robots = "noindex"` (which also excludes it from the
+sitemap). The page is a thin wrapper around the Google Custom Search widget with no content of its
+own.
+
 **Updating Search:**
 
 Modifying search scope requires updating the Google Custom Search engine settings via the [Programmable Search Engine Dashboard](https://programmablesearchengine.google.com). Access is restricted. To suggest changes, open an issue: [Search Engine Issue](https://github.com/interlisp/medley/issues/new?template=bug_report.md&title=Search_Engine_Issue)
