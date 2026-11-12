@@ -20,6 +20,7 @@ Interlisp and how to access and use the restored Medley system.
   - [Editing Existing Pages](#editing-existing-pages)
   - [Adding New Pages](#adding-new-pages)
   - [Social Share Images and Metadata](#social-share-images-and-metadata)
+  - [Structured Data (JSON-LD)](#structured-data-json-ld)
   - [Adding or Updating the Comments Page](#adding-or-updating-the-comments-page)
   - [Bibliography Data](#bibliography-data)
 - [Local Development](#local-development)
@@ -141,6 +142,37 @@ When a page is shared on social platforms (Bluesky, Mastodon, Facebook, LinkedIn
 - **Mastodon attribution:** `config/_default/params.yaml` sets `fediverse_creator: "@interlisp@fosstodon.org"`, which is emitted as a `fediverse:creator` meta tag so Mastodon (4.3+) credits the project account on shared links. Override per page with a `fediverse_creator` front matter value if needed.
 
 Bluesky and Mastodon build their previews from Open Graph tags only (they ignore `twitter:*`). Mastodon caches a card per status, so edit or repost to refresh it. Bluesky generates the card when a post is composed, so metadata changes only affect new posts.
+
+### Structured Data (JSON-LD)
+
+The site emits [schema.org](https://schema.org) JSON-LD so search engines can show rich results (article cards, breadcrumbs, FAQ accordions). The partials live in `layouts/_partials/` and are wired into `layouts/_partials/hooks/head-end.html`; each one guards itself, so authors normally don't need to do anything.
+
+| Schema | Where it appears | Source partial |
+|--------|------------------|----------------|
+| `Organization` | Home page only | `schema-organization.html` |
+| `Article` | Every content page (not bibliography entries or sections) | `schema-article.html` |
+| `BreadcrumbList` | Every page except the home page and 404 | `schema-breadcrumb.html` |
+| `FAQPage` | Pages opted in with `schema: faq` | `schema-faq.html` |
+| Bibliography types | `content/en/history/bibliography/**` | `bibliography-json-ld.html` |
+
+- **Article metadata** is derived automatically: `headline` from the title, `description` from the page description, `datePublished` from `date`, `dateModified` from the file's last git change (`enableGitInfo: true`), and `author`/`publisher` from `site.Params.author`.
+- **To mark a page as an FAQ**, add `schema: faq` to its front matter. Each `##` (H2) heading becomes a question and the text beneath it becomes the answer:
+
+  ```markdown
+  ---
+  title: FAQs
+  weight: 20
+  type: docs
+  schema: faq
+  ---
+
+  ## Is copy and paste supported?
+
+  Yes. Medley supports copying text between the Interlisp environment and your host system.
+  ```
+
+  Only use this on genuine question-and-answer pages; search engines may penalize incorrect FAQ markup.
+- **Validate locally** with the test suite (`tests/test_site_jsonld.py`) and, before release, with Google's [Rich Results Test](https://search.google.com/test/rich-results).
 
 ### Adding or Updating the Comments Page
 

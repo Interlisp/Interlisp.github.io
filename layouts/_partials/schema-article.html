@@ -1,0 +1,37 @@
+{{- /*
+  schema-article.html
+  Emits Article JSON-LD for regular content pages.
+
+  Skipped for bibliography pages (handled by bibliography-json-ld.html with a
+  type-specific schema) and redirect stubs.
+*/ -}}
+{{- if and .IsPage (ne .Type "bibliography") (ne .Type "redirect") -}}
+{{- $desc := partial "page-description.html" . -}}
+{{- $author := site.Params.author.name | default site.Title -}}
+{{- $logo := "Resources/logo_red_no_border_568x385.png" | absURL -}}
+{{- $socialImage := "" -}}
+{{- with .Params.images }}{{ $socialImage = index . 0 }}{{ else }}{{ with site.Params.images }}{{ $socialImage = index . 0 }}{{ end }}{{ end -}}
+{{- $ld := dict
+  "@context"        "https://schema.org"
+  "@type"           "Article"
+  "headline"        (.Title | strings.TrimRight "\n ")
+  "url"             .Permalink
+  "mainEntityOfPage" (dict "@type" "WebPage" "@id" .Permalink)
+  "inLanguage"      "en-US"
+  "author"          (dict "@type" "Organization" "name" $author)
+  "publisher"       (dict "@type" "Organization" "name" site.Title "logo" (dict "@type" "ImageObject" "url" $logo))
+-}}
+{{- with $desc -}}
+  {{- $ld = merge $ld (dict "description" .) -}}
+{{- end -}}
+{{- if not .Date.IsZero -}}
+  {{- $ld = merge $ld (dict "datePublished" (.Date.Format "2006-01-02T15:04:05Z07:00")) -}}
+{{- end -}}
+{{- if not .Lastmod.IsZero -}}
+  {{- $ld = merge $ld (dict "dateModified" (.Lastmod.Format "2006-01-02T15:04:05Z07:00")) -}}
+{{- end -}}
+{{- with $socialImage -}}
+  {{- $ld = merge $ld (dict "image" (. | absURL)) -}}
+{{- end -}}
+{{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($ld | jsonify (dict "indent" "  ")) | safeHTML -}}
+{{- end -}}

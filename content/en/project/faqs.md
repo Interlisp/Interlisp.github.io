@@ -2,6 +2,7 @@
 title: FAQs
 weight: 20
 type: docs
+schema: faq
 ---
 
 ## Is copy and paste available?

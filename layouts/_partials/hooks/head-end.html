@@ -30,3 +30,9 @@
 <meta name="fediverse:creator" content="{{ . | htmlEscape }}">
 {{- end }}
 {{ partial "bibliography-json-ld.html" . }}
+{{- /* Structured data (JSON-LD) for non-bibliography pages. Each partial
+       self-guards so only the relevant schema is emitted per page. */ -}}
+{{ partial "schema-organization.html" . }}
+{{ partial "schema-article.html" . }}
+{{ partial "schema-faq.html" . }}
+{{ partial "schema-breadcrumb.html" . }}
