@@ -1,5 +1,6 @@
 ---
 title: Organizational Partners
+description: "The organizations and academic groups collaborating with the Medley Interlisp Project, and how these partnerships advance software preservation and research."
 weight: 18
 type: docs
 aliases:

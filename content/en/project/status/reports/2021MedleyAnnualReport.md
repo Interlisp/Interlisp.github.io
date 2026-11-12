@@ -1,5 +1,6 @@
 ---
 title: 2021 Medley Interlisp Annual Report
+description: "The report on the project's founding year: early decisions, initial milestones, and the groundwork laid for restoring Medley and making it usable again."
 weight: 10
 type: docs
 aliases:

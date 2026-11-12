@@ -1,5 +1,6 @@
 ---
 title: Software Preservation Network
+description: "Why we joined a network of libraries, archives, and universities working to keep software usable for the long term, and what that partnership involves."
 weight: 20
 type: docs
 ---

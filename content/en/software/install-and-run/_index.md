@@ -1,5 +1,6 @@
-﻿---
+---
 title: Install and Run
+description: "Choose your platform and follow the guides to get Medley running on your own machine, with notes on supported systems and architectures, from x86_64 to ARM."
 aliases:
  - /medley/using/build/
  - /medley/using/running/

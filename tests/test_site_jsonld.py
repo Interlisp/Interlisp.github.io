@@ -6,8 +6,6 @@ Validates the site-wide JSON-LD structured data added in Phase 1.2 of
 
     Organization  → home page            (layouts/_partials/schema-organization.html)
     Article       → regular content pages (layouts/_partials/schema-article.html)
-    FAQPage       → pages with `schema: faq` front matter
-                                          (layouts/_partials/schema-faq.html)
     BreadcrumbList→ every non-home page   (layouts/_partials/schema-breadcrumb.html)
 
 These complement ``test_bibliography_jsonld.py``, which covers the
@@ -31,7 +29,6 @@ Usage
     PYTEST_FORCE_HUGO_BUILD=1 pytest tests/test_site_jsonld.py -v
 """
 
-import html as html_mod
 import json
 import re
 from html.parser import HTMLParser
@@ -124,7 +121,6 @@ def _base_url() -> str:
 
 
 HOME = TEST_PUBLIC / "index.html"
-FAQS = TEST_PUBLIC / "project" / "faqs" / "index.html"
 PRIVACY = TEST_PUBLIC / "privacy" / "index.html"
 NESTED = (
     TEST_PUBLIC / "software" / "install-and-run" / "linux"
@@ -234,51 +230,6 @@ class TestArticle:
 
 
 # ===========================================================================
-# FAQPage
-# ===========================================================================
-
-
-class TestFaqPage:
-    """Pages opted in with `schema: faq` emit a FAQPage block."""
-
-    @pytest.fixture(autouse=True)
-    def ld(self):
-        self.ld = _find(FAQS, "FAQPage")
-
-    def test_context_and_type(self):
-        assert self.ld["@context"] == "https://schema.org"
-        assert self.ld["@type"] == "FAQPage"
-
-    def test_has_questions(self):
-        assert len(self.ld["mainEntity"]) >= 1
-
-    def test_each_entry_is_question_with_answer(self):
-        for q in self.ld["mainEntity"]:
-            assert q["@type"] == "Question"
-            assert q["name"].strip()
-            ans = q["acceptedAnswer"]
-            assert ans["@type"] == "Answer"
-            assert ans["text"].strip()
-
-    def test_questions_match_h2_headings(self):
-        """Each H2 on the page becomes one question, in document order."""
-        html = FAQS.read_text(encoding="utf-8")
-        headings = [
-            re.sub(r"\s+", " ", html_mod.unescape(re.sub(r"<[^>]+>", "", h))).strip()
-            for h in re.findall(r"<h2[^>]*>(.*?)</h2>", html, re.S)
-        ]
-        names = [q["name"] for q in self.ld["mainEntity"]]
-        assert names == headings
-
-    def test_no_html_entities_in_text(self):
-        """plainify + htmlUnescape must leave no raw entities behind."""
-        blob = json.dumps(self.ld)
-        assert not re.search(r"&[a-zA-Z]+;", blob), (
-            "HTML entity leaked into FAQPage text"
-        )
-
-
-# ===========================================================================
 # BreadcrumbList
 # ===========================================================================
 
@@ -328,31 +279,9 @@ def test_organization_only_on_home() -> None:
             assert not has_org, f"Organization block unexpectedly on {page}"
 
 
-def test_faqpage_only_where_opted_in() -> None:
-    """FAQPage appears only on pages carrying `schema: faq` front matter."""
-    content_root = REPO_ROOT / "content" / "en"
-    opted_in: set[str] = set()
-    for md in content_root.rglob("*.md"):
-        text = md.read_text(encoding="utf-8")
-        front = text.split("---", 2)
-        if len(front) >= 3 and re.search(r"^schema:\s*(faq|\['?faq)", front[1], re.M):
-            rel = md.relative_to(content_root)
-            slug = rel.parent / rel.stem if rel.name == "_index.md" else rel.with_suffix("")
-            opted_in.add(str(slug).replace("\\", "/"))
-
-    for page in _all_pages():
-        has_faq = any(d.get("@type") == "FAQPage" for d in _jsonld_blocks(page))
-        if has_faq:
-            rel = str(page.parent.relative_to(TEST_PUBLIC)).replace("\\", "/")
-            rel = "" if rel == "." else rel
-            assert rel in opted_in, (
-                f"FAQPage emitted on {page} but its source has no `schema: faq`"
-            )
-
-
 def test_no_duplicate_structured_data_blocks() -> None:
     """No page emits more than one of the singleton schema types."""
-    singletons = ("Organization", "FAQPage", "BreadcrumbList")
+    singletons = ("Organization", "BreadcrumbList")
     problems: list[str] = []
     for page in _all_pages():
         blocks = _jsonld_blocks(page)

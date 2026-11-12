@@ -1,5 +1,6 @@
-﻿﻿---
+---
 title: Download MacOS Install File from Github
+description: "Follow the instructions to download the Medley Interlisp macOS install file from GitHub Releases and set up Medley on your Apple silicon or Intel Mac."
 weight: 40
 toc_hide: true
 hide_summary: true

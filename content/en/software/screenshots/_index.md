@@ -1,5 +1,6 @@
 ---
 title: Gallery of Screenshots
+description: "See what Medley looks like in practice through a collection of images showing its interfaces, built-in applications, and the ways users have customized it."
 type: docs
 weight: 90
 --- 

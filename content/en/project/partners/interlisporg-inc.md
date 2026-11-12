@@ -1,5 +1,6 @@
 ---
 title: InterlispOrg
+description: "The non-profit corporation that funds and steers the revival, including its tax-exempt status, how it is governed, and how to support it financially today."
 weight: 25
 type: docs
 aliases:

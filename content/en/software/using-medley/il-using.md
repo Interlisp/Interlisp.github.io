@@ -1,5 +1,6 @@
 ---
 title: Using Medley Interlisp Basics
+description: "A hands-on introduction to working in Medley, from your first commands at the prompt to looking things up in the built-in reference and writing programs."
 weight: 20
 type: docs
 ---

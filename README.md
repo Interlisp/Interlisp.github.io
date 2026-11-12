@@ -21,6 +21,7 @@ Interlisp and how to access and use the restored Medley system.
   - [Adding New Pages](#adding-new-pages)
   - [Social Share Images and Metadata](#social-share-images-and-metadata)
   - [Structured Data (JSON-LD)](#structured-data-json-ld)
+  - [Meta Descriptions](#meta-descriptions)
   - [Adding or Updating the Comments Page](#adding-or-updating-the-comments-page)
   - [Bibliography Data](#bibliography-data)
 - [Local Development](#local-development)
@@ -145,34 +146,39 @@ Bluesky and Mastodon build their previews from Open Graph tags only (they ignore
 
 ### Structured Data (JSON-LD)
 
-The site emits [schema.org](https://schema.org) JSON-LD so search engines can show rich results (article cards, breadcrumbs, FAQ accordions). The partials live in `layouts/_partials/` and are wired into `layouts/_partials/hooks/head-end.html`; each one guards itself, so authors normally don't need to do anything.
+The site emits [schema.org](https://schema.org) JSON-LD so search engines can show rich results (article cards, breadcrumbs). The partials live in `layouts/_partials/` and are wired into `layouts/_partials/hooks/head-end.html`; each one guards itself, so authors normally don't need to do anything.
 
 | Schema | Where it appears | Source partial |
 |--------|------------------|----------------|
 | `Organization` | Home page only | `schema-organization.html` |
 | `Article` | Every content page (not bibliography entries or sections) | `schema-article.html` |
 | `BreadcrumbList` | Every page except the home page and 404 | `schema-breadcrumb.html` |
-| `FAQPage` | Pages opted in with `schema: faq` | `schema-faq.html` |
 | Bibliography types | `content/en/history/bibliography/**` | `bibliography-json-ld.html` |
 
 - **Article metadata** is derived automatically: `headline` from the title, `description` from the page description, `datePublished` from `date`, `dateModified` from the file's last git change (`enableGitInfo: true`), and `author`/`publisher` from `site.Params.author`.
-- **To mark a page as an FAQ**, add `schema: faq` to its front matter. Each `##` (H2) heading becomes a question and the text beneath it becomes the answer:
+- **Validate locally** with the test suite (`tests/test_site_jsonld.py`) and, before release, with Google's [Rich Results Test](https://search.google.com/test/rich-results).
+
+### Meta Descriptions
+
+The `<meta name="description">` tag is generated for every page by `layouts/_partials/page-description.html`. It is what search engines may show beneath a page title in results, so it should be a clear, compelling summary that includes the page's main topic.
+
+**Authoring rules:**
+
+- Add a `description:` field to a page's front matter. Aim for **150–160 characters** (about one to two sentences).
+- Make it **unique** — avoid reusing the same text across pages.
+- Describe what the reader will find and include the primary keyword naturally. Do not stuff keywords or simply repeat the title.
 
   ```markdown
   ---
-  title: FAQs
-  weight: 20
-  type: docs
-  schema: faq
+  title: History
+  description: "Explore the history of Interlisp, the pioneering Lisp software development environment born at Xerox PARC in the 1970s and 1980s."
   ---
-
-  ## Is copy and paste supported?
-
-  Yes. Medley supports copying text between the Interlisp environment and your host system.
   ```
 
-  Only use this on genuine question-and-answer pages; search engines may penalize incorrect FAQ markup.
-- **Validate locally** with the test suite (`tests/test_site_jsonld.py`) and, before release, with Google's [Rich Results Test](https://search.google.com/test/rich-results).
+**Fallback behavior** (when a page has no `description:`): the partial uses, in order, the page's `description`, then its auto-generated summary, then a generated description (for bibliography, taxonomy, and term pages), and finally the site-wide default from `config/_default/params.yaml`. Any description longer than 160 characters is truncated at a word boundary. Relying on the fallback is fine for minor pages, but hand-written descriptions are strongly preferred for anything in the navigation.
+
+- **Bibliography entries** are described automatically from the entry's title and abstract (or authors); you do not need to add `description:` to generated entries. Hand-written pages that merely live under the bibliography tree (e.g. `intake/`, `zotero-resources/`, which set `type: docs`) are *not* generated entries and still need their own `description:`; the test identifies generated entries from the rendered `class="bibliography-entry"` marker rather than the URL.
+- **Validate locally** with `tests/test_meta_descriptions.py`.
 
 ### Adding or Updating the Comments Page
 

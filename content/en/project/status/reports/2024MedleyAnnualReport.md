@@ -1,5 +1,6 @@
 ---
 title: 2024 Medley Interlisp Annual Report
+description: "The 2024 report covers another year of porting, documenting, and improving Medley, along with the project's goals and priorities for the year ahead of us."
 weight: 7
 type: docs
 aliases:
