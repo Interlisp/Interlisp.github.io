@@ -21,7 +21,7 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 <span id="altolisp"></span>AltoLisp
 : An experimental microcoded implementation of Interlisp on an Alto personal computer.
 
-<span id="block-compiling"></span>Block compiling
+<span id="block-compiling" data-tooltip="Block compiling compiles several functions into one block whose internal calls bypass the normal external function call."></span>Block compiling
 : Block compiling compiles a group of functions into a single compiled block instead of separate functions. Calls between functions in the block avoid the normal external function call and can be invisible on the stack, and the block is entered through designated entry functions. It is useful for tightly coupled or recursive functions and for hiding internal names from the rest of the program.
 
   In Interlisp, a block compilation produces one usually large compiled function that can still be broken, advised, or printed. Entry functions dispatch to the corresponding part of the block, variables shared across the block can be declared with `SPECVARS`, and `LOCALFREEVARS` avoids looking up free variables that are bound inside the block. BBN-Lisp tools such as Prettyprint and the compiler itself were block compiled. For the introduction of the Block Compiler, see the [1970 Timeline entry](/history/timeline/#1970).
@@ -32,12 +32,12 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 <span id="briefing-blurb"></span>Briefing Blurb
 : One of the several documents that introduced Xerox PARC newcomers to the computing and network environment of the Computer Science Laboratory. Written in an upbeat style, their titles followed a pattern that included the expression "Briefing Blurb" such as *The Alto-Dolphin-Dorado Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard* and *The Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard*.
 
-<span id="byte-coded-instruction-set"></span>Byte-coded instruction set
+<span id="byte-coded-instruction-set" data-tooltip="A byte-coded instruction set encodes operations as small opcodes that an interpreter or microcode executes instead of the host processor."></span>Byte-coded instruction set
 : A byte-coded instruction set is a compact instruction set whose operations are encoded as small, usually one-byte, opcodes and executed by an interpreter or microcode rather than directly by the host processor. Byte code is more compact than native machine code and easier to generate, but it normally executes more slowly.
 
   In Interlisp, Peter Deutsch developed a byte-coded instruction set for Interlisp on the Xerox D-machines: Dandelion, Dolphin, and Daybreak. It gave those personal machines a compact Lisp implementation; at the time they were still too underpowered for Lisp development, which motivated the client-server window system in which Interlisp ran on a time-shared PDP-10 and an Alto served as the display. For Deutsch's byte-coded instruction set, see the [1976 Timeline entry](/history/timeline/#1976).
 
-<span id="car-cdr-accessors"></span>CAR/CDR accessors
+<span id="car-cdr-accessors" data-tooltip="CAR and CDR are the primitive Lisp accessors: CAR returns the first element of a list or left half of a dotted pair, and CDR returns the rest or right half."></span>CAR/CDR accessors
 : CAR and CDR are the primitive accessors for a Lisp list cell: CAR returns the first element, or the left half of a dotted pair, and CDR returns the rest of the list, or the right half. Compositions such as CADR, CDDR, and CADDR abbreviate nested calls, so CADR returns the first element of the rest of a list.
 
   In Interlisp, all 30 combinations of CAR and CDR up to four levels deep are provided, and the compiler compiles them open. The accessors also behave distinctively on atoms: CAR of a literal atom returns its top-level value, and CDR returns its property list. Chains such as CADADDR made programs hard to read, which motivated the Record package's named field accessors. For the Record package and those accessor chains, see the [1974 Timeline entry](/history/timeline/#1974).
@@ -45,7 +45,7 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 <span id="named-releases"></span>Carol, Fugue, Harmony, Intermezzo, Koto, Lyric, Medley
 : Named releases of Interlisp-D.  All are obsolete except Medley.
 
-<span id="clos"></span>CLOS
+<span id="clos" data-tooltip="CLOS, the Common Lisp Object System, is the object-oriented extension of Common Lisp that provides classes, instances, generic functions, methods, and multiple inheritance."></span>CLOS
 : CLOS, the Common Lisp Object System, is the object-oriented extension to Common Lisp. It provides classes and instances, generic functions and methods, multiple inheritance, and method combination. A generic function dispatches on the classes of its arguments to select applicable methods, so behavior can be specialized per class without changing the caller. CLOS also has an associated metaobject protocol for customizing the object system itself.
 
   In Interlisp, CLOS and its metaobject protocol were included in Medley 2.0, alongside the older LOOPS object-oriented system. Medley's CLOS implementation also supplied a class browser. For Medley 2.0's CLOS and MOP support, see the [1992 Timeline entry](/history/timeline/#1992).
@@ -86,7 +86,7 @@ as a graphics terminal.
 <span id="fugue"></span>Fugue
 : An obsolete named release of Interlisp-D.
 
-<span id="garbage-collector"></span>Garbage collector
+<span id="garbage-collector" data-tooltip="A garbage collector is the part of a Lisp implementation that automatically reclaims storage occupied by objects no longer reachable from the running program."></span>Garbage collector
 : A garbage collector is the part of a Lisp implementation that automatically reclaims storage occupied by objects that are no longer reachable from the running program, making that space available for new objects. It lets programs allocate lists and other structures without explicitly freeing them. Different strategies trade collection time against pause time and memory overhead.
 
   Interlisp used more than one strategy. Interlisp-10 uses mark-and-sweep, chasing pointers from the push-down lists and atom components, reclaiming fixed-length data through free lists, and compacting variable-length data; Interlisp-D uses reference counting, which never reclaims circular structures and does not collect atoms. Bobrow's transaction garbage collector was one of Interlisp's architectural advances. A collection can be started with `RECLAIM`, and `MINFS` or `RECLAIMMIN` controls how much free storage is maintained. For BBN's continued garbage-collector support after Bobrow and Teitelman left, see the [1972 Timeline entry](/history/timeline/#1972).
@@ -137,7 +137,7 @@ as a graphics terminal.
 <span id="interlisp-vax"></span>Interlisp-VAX
 : Implementation of Interlisp for Digital Equipment Corporation VAX systems.
 
-<span id="iterative-statement"></span>Iterative statement
+<span id="iterative-statement" data-tooltip="An iterative statement is an Interlisp looping construct written with operator words such as FOR, WHILE, UNTIL, COLLECT, and SUM and translated into an equivalent Interlisp form."></span>Iterative statement
 : An iterative statement, often abbreviated i.s., is an Interlisp looping construct written with operator words such as FOR, DO, WHILE, UNTIL, COLLECT, SUM, and COUNT. The operators are combined with operands to describe iteration, and the statement is translated into an equivalent Interlisp form using PROG, MAPC, MAPCAR, and related functions. Exactly one operator must specify what happens on each iteration, and the order of the operators does not matter.
 
   Iterative statements are implemented through CLISP, which scans the entire statement before translating it and can correct misspelled operators. They can collect results, join lists, sum or count values, and iterate over lists or numeric ranges; users can define new i.s. operators and types. Larry Masinter developed a much more sophisticated version of the facility by 1974. For that version, see the [1974 Timeline entry](/history/timeline/#1974).
@@ -162,7 +162,7 @@ as a graphics terminal.
       Sun Microsystems SPARC processor workstation, initially developed by
        Fuji Xerox.  Subsequently ported to little-endian processors and other operating systems.
 
-<span id="mop"></span>MOP
+<span id="mop" data-tooltip="MOP, the Metaobject Protocol, is the CLOS protocol that represents classes, generic functions, methods, and instances as programmable metaobjects."></span>MOP
 : MOP, the Metaobject Protocol, is the protocol associated with CLOS that exposes the object system itself as objects. Classes, generic functions, methods, and instances are represented by metaobjects that programs can inspect and customize, so a program can control how classes are represented, how generic functions select and combine methods, and how instances are created. This makes the object system itself programmable.
 
   In Interlisp, the CLOS MOP was included with CLOS in Medley 2.0. Its metaobject facilities built on earlier work at Xerox PARC on object-oriented Lisp: CommonLoops, developed by Bobrow, Kiczales, Masinter, and others, used metaobjects for classes, methods, and discriminators, and that work led to the CLOS metaobject protocol. For Medley 2.0's MOP support, see the [1992 Timeline entry](/history/timeline/#1992).
@@ -176,7 +176,7 @@ as a graphics terminal.
 <span id="prettyprint" data-tooltip="A Lisp utility that formats programs with indentation and line breaks reflecting their list structure, making code easier to read and debug."></span>Prettyprint
 : Prettyprint is a Lisp utility that formats programs for human reading. It uses indentation and line breaks to expose the nesting of list structure, so a definition whose subexpressions would otherwise run together is printed with its parts arranged by depth. The layout is generated from the program's list structure rather than preserved from a text file, because a Lisp program is list data. Barstow describes the prettyprinter used in the DED display editor in [“Overview of a Display-Oriented Editor for Interlisp”](/history/bibliography/w96jccyh/) (1981).
 
-<span id="s-expression"></span>S-expression
+<span id="s-expression" data-tooltip="An S-expression is a Lisp data object built from atoms and lists that can serve as both program and data."></span>S-expression
 : An S-expression, or symbolic expression, is a Lisp data object built from atoms and lists: it can be an atom such as a symbol or number, or a parenthesized list of smaller S-expressions. The same form serves as both program and data, because a Lisp program is itself an S-expression. Its printed representation is what the reader parses and the printer emits.
 
   In Interlisp, function definitions are S-expressions such as `(LAMBDA (X) ...)`, and the structure editor and Prettyprint operate directly on that list structure rather than on text. Definitions can be read from and written to files as S-expressions, and `PUTD` installs a definition from one. Because programs are data, tools can construct code, inspect definitions, and undo edits to S-expression structure. For an example of undoing an entire edit session on S-expressions, see the [1970 Timeline entry](/history/timeline/#1970).
@@ -197,7 +197,7 @@ as a graphics terminal.
 <span id="sysout"></span>Sysout
 : A file containing the saved state of Interlisp virtual memory.
 
-<span id="time-sharing"></span>Time-sharing
+<span id="time-sharing" data-tooltip="Time-sharing is a computing arrangement in which multiple users or tasks share one computer concurrently, each receiving brief slices of processor time."></span>Time-sharing
 : Time-sharing is a computing arrangement in which multiple users or tasks share one computer concurrently, each receiving brief slices of processor time so that each appears to have the machine to itself. It made interactive development practical: users could edit, run, and debug programs from terminals while the machine served other users. It was originally motivated by making more efficient use of an expensive computer, but it also dramatically shortened the edit-run-debug cycle.
 
   Interlisp was designed for time-sharing use. BBN-LISP ran on the DEC PDP-10 under TENEX, a paged time-sharing system, and time-sharing shaped Interlisp's interactive style: users worked online with the editor, debugger, and Programmer's Assistant instead of submitting jobs offline. For BBN's move to a time-sharing SDS 940, see the [1967 Timeline entry](/history/timeline/#1967).
@@ -219,7 +219,7 @@ as a graphics terminal.
 
 The following organizations shaped Interlisp's development, distribution, and continuing legacy.
 
-<span id="arpa"></span>ARPA
+<span id="arpa" data-tooltip="ARPA, the Advanced Research Projects Agency, was the U.S. Department of Defense agency that funded advanced computing and artificial-intelligence research."></span>ARPA
 : ARPA, the Advanced Research Projects Agency, was a U.S. Department of Defense agency that funded research in computing and artificial intelligence, including the development and distribution of Lisp systems. Its contract support made a Lisp implementation available to a community of research sites rather than to a single laboratory.
 
   In Interlisp's history, ARPA funded BBN's work after BBN acquired an SDS 940 and began building a time-sharing system, and the resulting BBN-LISP was distributed to other ARPA sites for artificial-intelligence research. ARPA, later DARPA, also continued to support Interlisp development at PARC and elsewhere. For the ARPA contract that started BBN-LISP, see the [1967 Timeline entry](/history/timeline/#1967).
