@@ -6,6 +6,13 @@
     display: none;
 }
 
+// Glossary definitions can contain multiple paragraphs. Definition-list
+// rendering leaves the first paragraph as bare text, so give subsequent
+// paragraphs the same spacing as normal timeline paragraphs.
+.td-content dl dd > p {
+    margin-top: 1rem;
+}
+
 // Hide site title in navbar on home page only
 .td-home .td-navbar .navbar-brand__name {
     display: none;
