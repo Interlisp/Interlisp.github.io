@@ -42,7 +42,7 @@ Teitelman started at Bolt, Beranek and Newman in Cambridge. At the time, [BBN](/
 
 ### 1967
 
-In 1967, BBN purchased an SDS 940 computer from Scientific Data Systems and began work building a time-sharing system on it. The SDS 940 had a larger address space and the ability to support a paging system. BBN was awarded an [ARPA](/history/glossary/#arpa) contract to provide a LISP system that could be distributed to other ARPA sites for doing A.I. research. (ARPA = Advanced Research Projects Agency of the Department of Defense.)
+In 1967, BBN purchased an SDS 940 computer from Scientific Data Systems and began work building a time-sharing system on it. The SDS 940 had a larger address space and the ability to support a paging system. BBN was awarded an [ARPA](/history/glossary/#arpa) contract to provide a LISP system that could be distributed to other ARPA sites for doing A.I. research.
 
 - [Improvements to the 940 LISP Library](/history/bibliography/6m8iseul/)  
 
