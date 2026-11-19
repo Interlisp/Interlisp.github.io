@@ -21,9 +21,6 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 <span id="altolisp"></span>AltoLisp
 : An experimental microcoded implementation of Interlisp on an Alto personal computer.
 
-<span id="break-package"></span>Break package
-: The Interlisp subsystem that comprises the debugger (also known as break window) and other debugging facilities. Named after the `BREAK` function and breakpoints.
-
 <span id="briefing-blurb"></span>Briefing Blurb
 : One of the several documents that introduced Xerox PARC newcomers to the computing and network environment of the Computer Science Laboratory. Written in an upbeat style, their titles followed a pattern that included the expression "Briefing Blurb" such as *The Alto-Dolphin-Dorado Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard* and *The Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard*.
 
@@ -40,17 +37,6 @@ Lisp language. Strong influences from many Lisp dialects, including Interlisp.
 - CLtL1 – edition 1, 465 pages
 - CLtL2  – second edition, 1029 pages
 
-<span id="common-lisp-dpans"></span>Common Lisp dpANS
-: The ANSI Standard for Common Lisp.
-
-Starting with the Lyric release of Interlisp-D and then the Medley release, the implementation of Medley included implementations of Common Lisp (CLtL 1) as well as the Interlisp dialect in a single development environment; this was made possible by using the (Common Lisp) “package” feature to allow both dialects to be intermixed.
-
-<span id="dfasl"></span>Dfasl
-: A compiled form of Medley Interlisp files with the extension ".dfasl".
-
-<span id="display"></span>Display
-: Denotes a program or system with a Graphical User Interface or a full screen character interface, as opposed to a line oriented interface like a teletype. In expressions like "display oriented editor" or "display editor".
-
 <span id="dlisp"></span>DLISP
 : By Warren Teitelman: a first attempt at building a “Display” (GUI) with Interlisp running on MAXC (a PDP-10 clone) connected by Ethernet to a Xerox Alto acting 
 as a graphics terminal.
@@ -63,19 +49,10 @@ as a graphics terminal.
 
   DWIM operates in cautious or trusting mode. In cautious mode it asks before making corrections that would modify a user's function, while trusting mode proceeds automatically; if the user does not answer within a set interval, DWIM applies a default. It can also repair some structural errors, such as an 8 or 9 typed in place of a left or right parenthesis, where correcting the spelling alone would not restore the expression's structure. When DWIM cannot correct an error, normal error handling resumes with a break or unwind. For DWIM's introduction to BBN-LISP, see the [1970 Timeline entry](/history/timeline/#1970).
 
-<span id="fugue"></span>Fugue
-: An obsolete named release of Interlisp-D.
-
-<span id="harmony"></span>Harmony
-: An obsolete named release of Interlisp-D.
-
 <span id="history-package" data-tooltip="The part of the Programmer's Assistant that records a session as a list of events, each storing the input, value, side effects, messages, and errors for later inspection."></span>History package
 : The History package is the part of the Interlisp Programmer’s Assistant that records a session as a list of events. Each event stores the user's input, its value, side effects, messages, and errors, so the record can be inspected after the fact rather than discarded as soon as a command finishes. The list is a ring buffer: older events are forgotten as new ones arrive, and a NAME/RETRIEVE facility can preserve selected events. The history list and its use in the Programmer’s Assistant are described in Teitelman, [“Automated Programmering: The Programmer’s Assistant”](/history/bibliography/qwkix8dw/) (1972), and [“A Display Oriented Programmer’s Assistant”](/history/bibliography/3h5f6tba/) (1977).
 
   Using the history list, a user can refer to an earlier event by number, relative position, or a description of its input, then replay it, replay it with substitutions, or undo it. The History package is therefore the basis for the Programmer’s Assistant commands `REDO`, `USE`, and `UNDO`; the editor keeps its own history list for edit commands. For the introduction of the History package in BBN-LISP, see the [1970 Timeline entry](/history/timeline/#1970).
-
-<span id="intermezzo"></span>Intermezzo
-: An obsolete named release of Interlisp-D.
 
 <span id="interlisp"></span>Interlisp
 : Both a language and, in some cases, the implementation of that language. Usually used with some other wording or refinement.
@@ -91,12 +68,6 @@ as a graphics terminal.
 - <https://online.interlisp.org> – the address of a service that lets you run Medley
 - <info@interlisp.org>             - the project's general information email address
 
-<span id="interlisp-10"></span>Interlisp-10
-: The first implementation of Interlisp for the Digital Equipment Corporation (DEC) PDP-10 / Tenex.
-
-<span id="interlisp-360"></span>Interlisp-360
-: Implemention of Interlisp for the IBM-360.
-
 <span id="interlisp-d" data-tooltip="What Dorado Lisp became. The D stood for both “Display” and “D-machine”; an implementation of Interlisp, its programming tools, and a Lisp-based operating system for D-machines."></span>Interlisp-D
 : What Dorado Lisp became.  The D stood for both “Display” and “D-machine”.  An implementation of
 
@@ -109,23 +80,8 @@ as a graphics terminal.
   personal workstation. Each D-machine had its own microcode with different
   configurations and micro-instructions.
 
-<span id="interlisp-vax"></span>Interlisp-VAX
-: Implementation of Interlisp for Digital Equipment Corporation VAX systems.
-
-<span id="koto"></span>Koto
-: An obsolete named release of Interlisp-D.
-
-<span id="lcom"></span>Lcom
-: Used as a file ending, xxx.lcom, for compiled Medley files.
-
-<span id="lyric"></span>Lyric
-: An obsolete named release of Interlisp-D.
-
 <span id="medley"></span>Medley
 : The final named release of Interlisp-D.  
-
-<span id="medley-numbered-releases"></span>Medley 1.0, Medley 2.01, Medley 3.5 numbered releases of Interlisp-D
-: At some point the name Interlisp-D was retired and Medley used to name the software.
 
 <span id="maiko"></span>Maiko
 : An implementation of the functions of the D-machine microcode, but written in C for the
@@ -143,9 +99,6 @@ as a graphics terminal.
 
   In Interlisp, Prettyprint is more than a whitespace filter. It can print comments stored in a function definition, and global controls set the right margin, the column where comments begin, and how readily square brackets replace parentheses. It prints the saved original definition of a function that is currently broken, advised, or compiled, and tools such as `PRETTYDEF` use it to write definitions, variable values, and property lists to readable files. For the utility's origin and arrival at BBN-LISP, see the [1965](/history/timeline/#1965) and [1966](/history/timeline/#1966) entries in the Timeline.
 
-<span id="sdl"></span>SDL
-: Structured Design Language.
-
 <span id="spaghetti-stack" data-tooltip="An access and control stack represented as a tree of linked frames that remain addressable after a function returns, so programs can inspect or resume earlier environments."></span>Spaghetti stack
 : The spaghetti stack is Interlisp's access and control stack, represented as a tree of linked frames rather than a contiguous pushdown stack. Each frame extension holds a function's variable bindings, return link, and temporaries, and is connected to other frames by access and control links. Because frames remain addressable after a function returns, a program can keep a stack pointer to an exited frame and later examine or resume the computation in that environment. Bobrow and Wegbreit describe the mechanism in detail in [“A Model and Stack Implementation of Multiple Environments”](/history/bibliography/em6wjf9a/) (1973).
 
@@ -156,9 +109,6 @@ as a graphics terminal.
 
   In Interlisp, the structure editor is used mainly to edit function definitions, but it can also edit variable values, property lists, and arbitrary expressions. Because it works on the live list structure, a function can be edited while it is running; a user can modify the definition, re-evaluate it, and continue execution. The editor also supports searching, marks for saving a location, macros, and undoable changes. For the editor's development and its extension at BBN, see the [1968 Timeline entry](/history/timeline/#1968).
 
-<span id="sysout"></span>Sysout
-: A file containing the saved state of Interlisp virtual memory.
-
 <span id="trace" data-tooltip="A debugging facility that prints selected information when a function is entered and its value when it returns."></span>Trace
 : Trace is a Lisp debugging facility that prints information about selected function calls as a program runs. It modifies a function's definition so that specified expressions are evaluated and printed when the function is entered, and its value is printed when the call returns; by default, the arguments and return value are shown. Several functions can be traced at once, and the user can choose particular forms to print rather than the full argument list. Bobrow et al. describe the system’s tracing and conditional breakpoint facilities in [*The BBN 940 LISP System*](/history/bibliography/lqaa78hi/) (1967).
 
@@ -168,9 +118,6 @@ as a graphics terminal.
 : UNDO is a command in the Interlisp Programmer’s Assistant that reverses the side effects of an operation recorded on the history list. Each undoable operation is responsible for saving the information needed to reverse it, so UNDO can restore edited structure, variable assignments, and other changes without requiring the system to anticipate them in advance. The command can undo an earlier event without undoing later ones, and an UNDO can itself be undone. Selective undo and the undoable-operation mechanism are described in detail in Teitelman, [“Automated Programmering: The Programmer’s Assistant”](/history/bibliography/qwkix8dw/) (1972).
 
   Selective undo is guaranteed for independent operations; undoing dependent operations out of order may not produce the expected result. Users can make their own functions undoable by using the undoable versions of destructive operations, which save the reversal information on the history list. Related history commands such as `REDO` and `USE` rerun recorded events or rerun them with substitutions. For the introduction of UNDO in BBN-LISP, see the [1970 Timeline entry](/history/timeline/#1970).
-
-<span id="x11"></span>X11
-: The X Window System.
 
 ### Organizations
 
