@@ -174,40 +174,42 @@ as a graphics terminal.
 
 ### Organizations
 
+The following organizations shaped Interlisp's development, distribution, and continuing legacy.
+
 <span id="bbn"></span>BBN
 : [Bolt, Beranek, and Newman](https://en.wikipedia.org/wiki/Raytheon_BBN), a Cambridge, Mass. consulting firm which sponsored the
       creation of BBN Lisp, Interlisp's immediate ancestor, as well as the Tenex operating system.
 
-<span id="parc"></span>Xerox PARC or just PARC
-: Palo Alto Research Center, which continued in collaboration with BBN on (renamed) Interlisp. PARC developed the Alto and Dorado.  Now part of SRI International.
-
-<span id="sri-international"></span>SRI International
-: A non-profit scientific R & D institute, headquertered in Menlo Park, California.
-
-<span id="xeos"></span>Xerox Electro-Optical Systems (XEOS)
-: A former Xerox division supporting government customers.
-
-<span id="xais"></span>Xerox Artificial Intelligence Systems (XAIS)
-: The former Xerox division working to commercialize Xerox workstations running Interlisp-D.
-
-<span id="rank-xerox"></span>Rank Xerox
-: Xerox's European subsidiary, a joint venture of Xerox Corp. and the Rank Organization, which sold Interlisp-D workstations in Europe.
+<span id="envos"></span>Envos
+: Company founded in 198x to take on the Lisp business from Xerox. Closed within 10 months and folded back into Xerox.
 
 <span id="fuji-xerox"></span>Fuji Xerox
 : Xerox's Japanese subsidiary, owned jointly by Rank Xerox and Fujifilm Corp., responsible for selling and supporting Interlisp-D systems in Japan.
 
-<span id="envos"></span>Envos
-: Company founded in 198x to take on the Lisp business from Xerox. Closed within 10 months and folded back into Xerox.
-
-<span id="venue"></span>Venue
-: Company founded by John Sybalsky, former Xerox and Envos employee, which obtained a license to create and distribute derivative works of Maiko and Medley.
+<span id="interlisporg"></span>InterlispOrg
+: A [California-registered](https://rct.doj.ca.gov/Verification/Web/Details.aspx?result=c7aa8cb2-16ec-458a-be56-41f963365258) non-profit organization  (DBA Interlisp.org) Established
+        August 2021. 501c3  EIN 87-2528093  California registered charity CT0278267.
+        The Board of Directors consists of Larry Masinter, President; Ron Kaplan, Treasurer; and Herb Jellinek, Secretary.
 
 <span id="medley-interlisp-project"></span>Medley Interlisp Project
 : Began late 2010’s with Nick Briggs getting Maiko to run on macOS.  The group expanded and began holding weekly online meetings in 2020.
 Subsequently ported Maiko (and therefore Medley) to Linux, Windows, and other operating system.  Maintains a mailing list for developers and interested users,
 sponsors the maintenance of an exhaustive bibliography and the very website where you're reading this.
 
-<span id="interlisporg"></span>InterlispOrg
-: A [California-registered](https://rct.doj.ca.gov/Verification/Web/Details.aspx?result=c7aa8cb2-16ec-458a-be56-41f963365258) non-profit organization  (DBA Interlisp.org) Established
-        August 2021. 501c3  EIN 87-2528093  California registered charity CT0278267.
-        The Board of Directors consists of Larry Masinter, President; Ron Kaplan, Treasurer; and Herb Jellinek, Secretary.
+<span id="rank-xerox"></span>Rank Xerox
+: Xerox's European subsidiary, a joint venture of Xerox Corp. and the Rank Organization, which sold Interlisp-D workstations in Europe.
+
+<span id="sri-international"></span>SRI International
+: A non-profit scientific R & D institute, headquertered in Menlo Park, California.
+
+<span id="venue"></span>Venue
+: Company founded by John Sybalsky, former Xerox and Envos employee, which obtained a license to create and distribute derivative works of Maiko and Medley.
+
+<span id="xais"></span>Xerox Artificial Intelligence Systems (XAIS)
+: The former Xerox division working to commercialize Xerox workstations running Interlisp-D.
+
+<span id="xeos"></span>Xerox Electro-Optical Systems (XEOS)
+: A former Xerox division supporting government customers.
+
+<span id="parc"></span>Xerox PARC or just PARC
+: Palo Alto Research Center, which continued in collaboration with BBN on (renamed) Interlisp. PARC developed the Alto and Dorado.  Now part of SRI International.
