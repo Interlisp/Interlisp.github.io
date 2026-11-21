@@ -1,5 +1,6 @@
 ---
 title: Using Medley Online
+description: "Orientation to the browser-based Medley desktop: what you will see when it starts and the controls and conveniences available to people using Medley online."
 weight: 40
 type: docs
 aliases:

@@ -1,5 +1,6 @@
-﻿﻿---
+---
 title: Download WSL (Standard Installation) Install Files from Github
+description: "Follow step-by-step instructions to download the standard Medley Interlisp release files from GitHub and install Medley on your most recent Linux system."
 weight: 40
 toc_hide: true
 hide_summary: true

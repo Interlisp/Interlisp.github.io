@@ -1,5 +1,6 @@
 ---
 title: In Memoriam
+description: "A tribute to the people whose work shaped Interlisp, remembering their contributions to the language, its development tools, and the community around it."
 weight: 100
 type: docs
 ---

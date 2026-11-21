@@ -1,5 +1,6 @@
-﻿﻿---
+---
 title: Download WSL (Standard Installation) Install Files from Github
+description: "Follow the instructions to download the WSL standard Medley release files from GitHub and install Medley on Windows using the Windows Subsystem for Linux."
 weight: 40
 toc_hide: true
 hide_summary: true

@@ -1,0 +1,32 @@
+{{- /*
+  schema-breadcrumb.html
+  Emits BreadcrumbList JSON-LD from the page hierarchy.
+
+  Skipped on the home page (no trail) and on redirect stubs. The Docsy theme
+  already renders visible breadcrumbs; this adds the matching structured data.
+*/ -}}
+{{- if and (not .IsHome) (ne .Type "redirect") (ne .Kind "404") -}}
+{{- $items := slice -}}
+{{- $pos := 1 -}}
+{{- range .Ancestors.Reverse -}}
+  {{- $items = $items | append (dict
+    "@type"    "ListItem"
+    "position" $pos
+    "name"     (.LinkTitle | default .Title)
+    "item"     .Permalink
+  ) -}}
+  {{- $pos = add $pos 1 -}}
+{{- end -}}
+{{- $items = $items | append (dict
+  "@type"    "ListItem"
+  "position" $pos
+  "name"     (.LinkTitle | default .Title)
+  "item"     .Permalink
+) -}}
+{{- $ld := dict
+  "@context"        "https://schema.org"
+  "@type"           "BreadcrumbList"
+  "itemListElement" $items
+-}}
+{{- printf "<script type=\"application/ld+json\">\n%s\n</script>" ($ld | jsonify (dict "indent" "  ")) | safeHTML -}}
+{{- end -}}

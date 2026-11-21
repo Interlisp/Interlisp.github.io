@@ -1,5 +1,6 @@
 ---
 title: Credits
+description: "Acknowledging the many people who built Interlisp over the decades, and the challenge of crediting work that spanned several companies across many years."
 weight: 80
 type: docs
 ---

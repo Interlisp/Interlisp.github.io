@@ -1,5 +1,6 @@
 ---
 title: Software History Futures and Technologies SHFT
+description: "A University of Alberta research group studying software history partners with us to make Interlisp's innovations and context easier to explore and understand."
 weight: 20
 type: docs
 ---

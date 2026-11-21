@@ -1,5 +1,6 @@
-﻿---
+---
 title: Install and Run on Windows with WSL
+description: "Run Medley inside the Windows Subsystem for Linux, with guidance on choosing between WSL1 and WSL2 and notes on what each version supports and requires."
 linkTitle: WSL
 weight: 20
 type: docs

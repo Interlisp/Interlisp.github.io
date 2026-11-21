@@ -1,5 +1,6 @@
 ---
 title: 2022 Medley Interlisp Annual Report
+description: "A year of milestones: what the team accomplished in 2022, the collaborations it formed, and how the preservation work advanced over the course of the year."
 weight: 9
 type: docs
 aliases:

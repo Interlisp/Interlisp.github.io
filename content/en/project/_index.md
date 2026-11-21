@@ -1,5 +1,6 @@
 ---
 Title: The Medley Interlisp Project
+description: "Why we are bringing Medley back to life, what we hope to accomplish, and the state of the work: an introduction to the project and its ambitions for the future."
 weight: 2
 type: docs
 aliases:

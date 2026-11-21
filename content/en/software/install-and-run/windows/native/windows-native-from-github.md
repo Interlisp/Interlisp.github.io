@@ -1,5 +1,6 @@
-﻿﻿---
+---
 title: Download Windows 'native' Installer from Github
+description: "Follow step-by-step instructions to download the Windows 'native' Medley installer from GitHub Releases and set up Medley on Windows without using WSL."
 weight: 40
 toc_hide: true
 hide_summary: true

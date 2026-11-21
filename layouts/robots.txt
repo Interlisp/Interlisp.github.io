@@ -2,3 +2,11 @@
 #
 User-agent: *
 Allow: /
+
+# The internal Google Custom Search results page is a thin, content-free
+# utility page. Keep it out of the index: block the crawl here and (belt and
+# suspenders) mark it noindex via the `robots` front matter in
+# content/en/search.md, which also drops it from the sitemap.
+Disallow: /search/
+
+Sitemap: {{ "sitemap.xml" | absURL }}

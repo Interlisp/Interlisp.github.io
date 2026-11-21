@@ -13,4 +13,25 @@
 {{ if eq .Kind "404" }}
 <meta name="robots" content="noindex, follow">
 {{ end }}
+{{- /* Alt text for the social share image. Docsy/Hugo already emit og:image and
+       twitter:image (from page `images` front matter, falling back to
+       site.Params.images); add the matching alt text for accessibility. */ -}}
+{{- $socialImage := "" -}}
+{{- with .Params.images }}{{ $socialImage = index . 0 }}{{ else }}{{ with site.Params.images }}{{ $socialImage = index . 0 }}{{ end }}{{ end -}}
+{{- with $socialImage }}
+{{- $socialAlt := $.Title | default site.Title }}
+<meta property="og:image:alt" content="{{ $socialAlt | htmlEscape }}">
+<meta name="twitter:image:alt" content="{{ $socialAlt | htmlEscape }}">
+{{- end }}
+{{- /* Mastodon 4.3+ fediverse:creator attribution for shared links.
+       Page front matter overrides the site-wide value in params.yaml. */ -}}
+{{- $fediverseCreator := .Params.fediverse_creator | default site.Params.fediverse_creator -}}
+{{- with $fediverseCreator }}
+<meta name="fediverse:creator" content="{{ . | htmlEscape }}">
+{{- end }}
 {{ partial "bibliography-json-ld.html" . }}
+{{- /* Structured data (JSON-LD) for non-bibliography pages. Each partial
+       self-guards so only the relevant schema is emitted per page. */ -}}
+{{ partial "schema-organization.html" . }}
+{{ partial "schema-article.html" . }}
+{{ partial "schema-breadcrumb.html" . }}

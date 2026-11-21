@@ -1,5 +1,6 @@
 ---
 title: Access Medley Online
+description: "Try Medley instantly without installing anything. Learn what the online environment is suited for and what to keep in mind while you experiment with it."
 weight: 10
 type: docs
 aliases:
