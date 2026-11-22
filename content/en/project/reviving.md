@@ -1,5 +1,6 @@
 ---
 Title: Reviving Medley
+description: "The technical decisions behind the revival: what it takes to bring a decades-old system forward, and the areas of work the project is tackling now and next."
 weight: 80
 type: docs
 ---

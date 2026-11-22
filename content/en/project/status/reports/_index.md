@@ -1,5 +1,6 @@
 ---
 title: Annual Reports
+description: "Browse every annual report in one place and follow the project's progress from its first year through the present day, with a link to each year's report."
 weight: 1
 type: docs
 ---

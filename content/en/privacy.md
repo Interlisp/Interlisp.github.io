@@ -1,5 +1,6 @@
 ---
 title: Interlisp.org Privacy Statement
+description: "What data Interlisp.org collects and why, how cookies and Google Analytics are used, and the choices visitors have about their information and privacy."
 url: /privacy/
 type: docs
 weight: 30

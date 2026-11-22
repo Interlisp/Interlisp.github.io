@@ -1,5 +1,6 @@
 ---
 title: Interlisp Bibliography Intake Guide
+description: "Not sure whether a document belongs in the Interlisp Bibliography? This guide explains the collection's scope, how to submit an item, and what to include."
 weight: 1
 type: docs
 # Explicitly visible in the sidebar: the parent bibliography section's

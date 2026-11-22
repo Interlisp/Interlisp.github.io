@@ -1,17 +1,23 @@
 {{- /* 
   Custom page description for meta tags.
-  For bibliography pages, include the title in the description.
-  Falls back to Docsy's default behavior for other pages.
+  Resolution order:
+    1. Bibliography pages: "<title> - <abstract>" (or "<title> by <authors>").
+    2. Any other page: front matter `description`, then the page `.Summary`,
+       then a generated description for taxonomy/term pages, then the site
+       default description.
+  The final string is normalized (plain text, single-spaced) and capped at
+  ~160 characters so it renders well in search results.
 */ -}}
+{{- $desc := "" -}}
 {{- if eq .Type "bibliography" -}}
-  {{- /* Bibliography page: construct description with title */ -}}
+  {{- /* Bibliography page: construct description from title + abstract/authors */ -}}
   {{- $title := .Title | plainify | htmlUnescape | replaceRE "\\s+" " " | strings.TrimSpace -}}
-  {{- $desc := "" -}}
+  {{- $abstract := "" -}}
   {{- with .Params.abstract -}}
-    {{- $desc = . | plainify | htmlUnescape | replaceRE "\\s+" " " | strings.TrimSpace | truncate 200 -}}
+    {{- $abstract = . | plainify | htmlUnescape | replaceRE "\\s+" " " | strings.TrimSpace -}}
   {{- end -}}
-  {{- if $desc -}}
-    {{- printf "%s - %s" $title $desc -}}
+  {{- if $abstract -}}
+    {{- $desc = printf "%s - %s" $title $abstract -}}
   {{- else -}}
     {{- $authors := "" -}}
     {{- with .Params.authors -}}
@@ -22,14 +28,38 @@
       {{- end -}}
     {{- end -}}
     {{- if $authors -}}
-      {{- printf "%s by %s" $title $authors -}}
+      {{- $desc = printf "%s by %s" $title $authors -}}
     {{- else -}}
-      {{- $title -}}
+      {{- $desc = $title -}}
     {{- end -}}
   {{- end -}}
 {{- else -}}
-  {{- /* Default Docsy behavior for other pages */ -}}
-  {{- with or .Description .Summary site.Params.description | plainify | htmlUnescape -}}
-    {{- trim . "\n\r\t " -}}
+  {{- with .Description -}}
+    {{- $desc = . -}}
+  {{- else -}}
+    {{- with .Summary -}}
+      {{- $desc = . -}}
+    {{- else -}}
+      {{- /* Generated descriptions for auto-created taxonomy pages */ -}}
+      {{- if eq .Kind "term" -}}
+        {{- if eq .Data.Singular "author" -}}
+          {{- $desc = printf "Medley Interlisp bibliography entries authored by %s." .Title -}}
+        {{- else if eq .Data.Singular "item_type" -}}
+          {{- $desc = printf "Medley Interlisp bibliography entries of type \"%s\"." .Title -}}
+        {{- else -}}
+          {{- $desc = printf "Medley Interlisp bibliography entries for %s." .Title -}}
+        {{- end -}}
+      {{- else if eq .Kind "taxonomy" -}}
+        {{- $desc = printf "Browse an index of the %s taxonomy used to organize entries in the Medley Interlisp bibliography, with links to related publications, authors, and resources." (.Title | lower) -}}
+      {{- else -}}
+        {{- $desc = site.Params.description -}}
+      {{- end -}}
+    {{- end -}}
   {{- end -}}
 {{- end -}}
+{{- /* Normalize and cap length for SERP display. */ -}}
+{{- $desc = $desc | plainify | htmlUnescape | replaceRE "\\s+" " " | strings.TrimSpace -}}
+{{- if gt (len $desc) 160 -}}
+  {{- $desc = $desc | truncate 157 -}}
+{{- end -}}
+{{- $desc -}}

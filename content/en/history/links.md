@@ -1,5 +1,6 @@
 ---
 title: Interlisp History Resources
+description: "Where to find Interlisp artifacts online: a curated set of archives, collections, and computing-history resources the Medley team draws on for research."
 weight: 95
 type: docs
 ---

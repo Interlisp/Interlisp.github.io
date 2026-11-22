@@ -1,5 +1,6 @@
 ---
 title: Educopia
+description: "The non-profit behind the Software Preservation Network, and the governance and community-building resources it offers to preservation projects and communities."
 weight: 20
 type: docs
 aliases:

@@ -1,6 +1,6 @@
 ---
 title: "Zotero Type Mapping Reference"
-description: "How Interlisp Zotero bibliography types map to CSL JSON and Schema.org vocabulary"
+description: "For Interlisp Zotero contributors: how each bibliography item type is classified and mapped through the processing pipeline to CSL JSON and Schema.org."
 type: docs
 toc_hide: false
 ---

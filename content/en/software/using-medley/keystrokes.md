@@ -1,5 +1,6 @@
 ---
 title: Keystrokes, Mouse menus and Gestures
+description: "Quick reference for the keyboard and mouse conventions Medley uses, so you can navigate and edit efficiently, with notes for macOS and other platforms."
 url: /software/using-medley/keystrokes/
 weight: 40
 type: docs

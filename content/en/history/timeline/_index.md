@@ -1,5 +1,6 @@
 ---
 title:  Interlisp Timeline
+description: "Follow the milestones of Interlisp's development year by year, from its earliest experiments through the rise of Interlisp-D and the Medley era, and beyond."
 type: docs
 weight: 50
 aliases:

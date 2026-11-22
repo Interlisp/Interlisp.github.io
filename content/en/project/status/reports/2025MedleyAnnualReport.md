@@ -1,5 +1,6 @@
 ---
 title: 2025 Medley Interlisp Annual Report
+description: "Five years in: the 2025 report looks back at how far the revival has come and the work still ahead to keep Medley thriving on modern systems and gaining users."
 weight: 1
 type: docs
 aliases:

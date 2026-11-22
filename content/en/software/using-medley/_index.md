@@ -1,5 +1,6 @@
 ---
 title: Documentation
+description: "Browse the manuals, guides, and reference material for working in Medley, whatever your starting point and level of experience with Interlisp or Lisp."
 weight: 20
 type: docs
 aliases:

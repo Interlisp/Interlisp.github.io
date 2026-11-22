@@ -1,5 +1,6 @@
 ---
 title: Donate
+description: "Help sustain the Interlisp revival. See why your gift matters, what it funds, and the different ways you can contribute to keeping Medley available to everyone."
 weight: 15
 type: docs
 ---

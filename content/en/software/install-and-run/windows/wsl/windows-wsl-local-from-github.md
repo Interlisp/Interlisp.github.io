@@ -1,5 +1,6 @@
-﻿﻿---
+---
 title: Download WSL (Local Installation) Install Files from Github
+description: "Follow the step-by-step instructions to download the WSL local-installation Medley Interlisp release files from GitHub and install Medley on Windows using WSL."
 weight: 40
 toc_hide: true
 hide_summary: true

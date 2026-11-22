@@ -1,5 +1,6 @@
 ---
 title: History
+description: "Trace how Interlisp evolved from an interactive programming tool into Interlisp-D and Medley, and the research fields it helped pioneer, from AI to GUIs."
 weight: 500
 type: docs
 aliases:

@@ -1,5 +1,6 @@
-﻿---
+---
 title: Install and Run on Windows "native"
+description: "Run Medley directly on Windows without setting up a separate Linux environment, keeping everything in a self-contained folder that you completely control."
 linkTitle: native
 weight: 40
 type: docs

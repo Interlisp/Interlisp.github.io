@@ -6,8 +6,16 @@
 # Set Google Analytics to use GA4
 disableGtagForUniversalAnalytics: false
 
-# First one is picked as the Twitter card image if not set on page.
-# images = ["images/project-illustration.png"]
+# Default social share image (Open Graph / Twitter Card).
+# The first entry is used when a page does not set its own `images` front matter.
+# Recommended size: 1200x630 px. Served from static/, so the path is site-relative.
+images:
+  - images/og-default.png
+
+# Mastodon (4.3+) attribution for shared links. Emitted as
+# <meta name="fediverse:creator"> by layouts/_partials/hooks/head-end.html.
+# Override per page with a `fediverse_creator` front matter value.
+fediverse_creator: "@interlisp@fosstodon.org"
 
 # Menu title if your navbar has a versions selector to access old versions of your site.
 # This menu appears only if you have at least one [params.versions] set.

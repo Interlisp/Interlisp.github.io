@@ -1,5 +1,6 @@
 ---
 title: FAQs
+description: "Straightforward answers to the questions people ask most often when getting started with Medley Interlisp or working in it day to day, from editors to printing."
 weight: 20
 type: docs
 ---

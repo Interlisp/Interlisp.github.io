@@ -1,5 +1,6 @@
 ---
 title: News and Status Reports
+description: "The latest news from the project — reports, interviews, and announcements — with an archive of how the revival has progressed year by year since 2020."
 type: docs
 weight: 2
 outputs:

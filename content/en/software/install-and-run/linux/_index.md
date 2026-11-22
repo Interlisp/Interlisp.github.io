@@ -1,5 +1,6 @@
-﻿---
+---
 title: Install and Run on Linux
+description: "Get Medley running on your Linux machine, including what the system requires and how to handle the most common distributions and desktop environments."
 linkTitle: Linux
 weight: 20
 type: docs

@@ -1,5 +1,6 @@
 ---
 title: 2023 Annual Report
+description: "The 2023 report details the year's achievements and the continuing effort to keep Interlisp usable, documented, and available to new audiences around the world."
 weight: 8
 type: docs
 aliases:

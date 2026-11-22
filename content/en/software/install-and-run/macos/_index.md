@@ -1,5 +1,6 @@
-﻿---
+---
 title: Install and Run on MacOS
+description: "Set up Medley on your Mac, including the X11 software you will need first and a pointer to the download steps, for both Apple silicon and Intel systems."
 linkTitle: MacOS
 weight: 30
 type: docs
