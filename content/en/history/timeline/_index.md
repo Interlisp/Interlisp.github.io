@@ -232,4 +232,4 @@ The classes and objects you create are the same blocks LOOPS is built out of. So
 
 ### 2020
 
-[Medley Interlisp project](/history/glossary/#medley-interlisp-project) begins ([interlisp.org](https://interlisp.org/))
+Stewardship of Medley shifted to the [Medley Interlisp Project](/history/glossary/#medley-interlisp-project), an active community effort to maintain and revive the system on modern platforms.  Based at [interlisp.org](https://interlisp.org/), the project's progress is reported in its [Annual Reports](/project/status/reports).  
