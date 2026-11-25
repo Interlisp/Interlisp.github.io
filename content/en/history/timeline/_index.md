@@ -46,7 +46,7 @@ In 1967, BBN purchased an SDS 940 computer from Scientific Data Systems and bega
 
 - [Improvements to the 940 LISP Library](/history/bibliography/6m8iseul/)  
 
-[Advising](/history/glossary/#advising) was a means of allowing the user to treat a particular function as a black box without knowing what was inside the box, wrap “advice” around it that could operate before the function ran, potentially changing its input parameters, after it ran, possibly changing its value, or call PrettyPrint, which printed out a nicely formatted representation of Lisp programs, using indentation to indicate depth of structure. A Trace facility was also available which modified specified functions to print on the terminal their input parameters on entry and their value on exit. You could think of this as a special case of Advising. There was also a Break package which enabled the user to cause program execution to halt at the entry point to specific functions. The user could then examine the value of the function’s input parameters, and even change them, then cause the function to run, and again gain control so as to examine the value that the function returned or side effects of the function’s operation. The user could change input parameters and re-execute the function, or manually specify the desired value and have it be returned to the caller as though it had been the value produced by that function.
+[Advising](/history/glossary/#advising) was a means of allowing the user to treat a particular function as a black box without knowing what was inside the box, wrap “advice” around it that could operate before the function ran, potentially changing its input parameters, after it ran, possibly changing its value, or call PrettyPrint, which printed out a nicely formatted representation of Lisp programs, using indentation to indicate depth of structure. A Trace facility was also available which modified specified functions to print on the terminal their input parameters on entry and their value on exit. You could think of this as a special case of Advising. There was also a **[Break package](/history/glossary/#break-package)** which enabled the user to cause program execution to halt at the entry point to specific functions. The user could then examine the value of the function’s input parameters, and even change them, then cause the function to run, and again gain control so as to examine the value that the function returned or side effects of the function’s operation. The user could change input parameters and re-execute the function, or manually specify the desired value and have it be returned to the caller as though it had been the value produced by that function.
 
 Teitelman memo to [SDS 940 LISP Users](/history/bibliography/6m8iseul/).
 
@@ -114,7 +114,7 @@ Around the ARPAnet, Interlisp continued to use the DEC PDP-10 as its principal p
 
 By 1974 a number of impressive extensions to Interlisp had been developed by Larry Masinter. These included a much more sophisticated version of Interlisp’s **iterative statement**, as well as a **Record** package that enabled a user to label various components of a list structure and refer to them by name, thereby eliminating the CADADRs and CDADDRs that made Lisp programs so difficult to read. The Record package also had the advantage that the user could change a record definition, and the program would automatically adopt the new structure. For example, if PERSON were defined as (RECORD PERSON (FIRSTNAME LASTNAME TITLE)), the expression (X:TITLE) would translate to (CADDR X). If the user later changed the definition of PERSON to (RECORD PERSON (FIRSTNAME INITIAL LASTNAME TITLE)), all expressions involving TITLE would automatically be retranslated to use CADDDR.  
 
-- Interlisp-10 sources from 1974 ([GitHub](https://github.com/Interlisp/history/tree/master/1970s/1974-sources))
+- [Interlisp-10](/hisotry/glossary/#interlisp-10) sources from 1974 ([GitHub](https://github.com/Interlisp/history/tree/master/1970s/1974-sources))
 
 **Masterscope** would analyze a large program and build a database of relationships between the various components that could then be queried using a natural language front end. For example, WHO CALLS FOO AND USES MUMBLE, EDIT WHERE X IS USED FREELY AND Y IS BOUND, etc. As LISP programs became larger and more complex and were being built by teams of programmers, rather than a single programmer, functionality such as that provided by Masterscope was invaluable in understanding, maintaining, and extending programs.
 
@@ -134,7 +134,7 @@ Bob Sproull came up with the idea for what would turn out to be the first client
 
 ### 1979
 
-In 1979, PARC began the design of the Dorado, a high performance personal workstation. The availability of the Dorado also made possible building a Lisp with a native display capability, which led to the [Interlisp-D](/history/glossary/#interlisp-d) project.
+In 1979, PARC began the design of the Dorado, a high performance personal workstation. The availability of the Dorado also made possible building a Lisp with a native [display](/history/glossary/#display) capability, which led to the [Interlisp-D](/history/glossary/#interlisp-d) project.
 
 ## 1980s
 

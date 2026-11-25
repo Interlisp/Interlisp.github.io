@@ -21,6 +21,9 @@ For general computer terminology and lore see [The Hacker's Dictionary](https://
 <span id="altolisp"></span>AltoLisp
 : An experimental microcoded implementation of Interlisp on an Alto personal computer.
 
+<span id="break-package"></span>Break package
+: The Interlisp subsystem that comprises the debugger (also known as break window) and other debugging facilities. Named after the `BREAK` function and breakpoints.`
+
 <span id="briefing-blurb"></span>Briefing Blurb
 : One of the several documents that introduced Xerox PARC newcomers to the computing and network environment of the Computer Science Laboratory. Written in an upbeat style, their titles followed a pattern that included the expression "Briefing Blurb" such as *The Alto-Dolphin-Dorado Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard* and *The Briefing Blurb: Exploring the Ethernet with Mouse and Keyboard*.
 
@@ -36,6 +39,9 @@ Lisp language. Strong influences from many Lisp dialects, including Interlisp.
 
 - CLtL1 – edition 1, 465 pages
 - CLtL2  – second edition, 1029 pages
+
+<span id="display"></span>Display
+: Denotes a program or system with a Graphical User Interface or a full screen character interface, as opposed to a line oriented interface like a teletype. In expressions like "display oriented editor" or "display editor".
 
 <span id="dlisp"></span>DLISP
 : By Warren Teitelman: a first attempt at building a “Display” (GUI) with Interlisp running on MAXC (a PDP-10 clone) connected by Ethernet to a Xerox Alto acting 
@@ -67,6 +73,9 @@ as a graphics terminal.
 - <https://interlisp.org>  – the address of the main web site
 - <https://online.interlisp.org> – the address of a service that lets you run Medley
 - <info@interlisp.org>             - the project's general information email address
+
+<span id="interlisp-10"></span>Interlisp-10
+: The first implementation of Interlisp for the Digital Equipment Corporation (DEC) PDP-10 / Tenex.
 
 <span id="interlisp-d" data-tooltip="What Dorado Lisp became. The D stood for both “Display” and “D-machine”; an implementation of Interlisp, its programming tools, and a Lisp-based operating system for D-machines."></span>Interlisp-D
 : What Dorado Lisp became.  The D stood for both “Display” and “D-machine”.  An implementation of
@@ -107,7 +116,10 @@ as a graphics terminal.
 <span id="structure-editor" data-tooltip="An editor that operates directly on a program's list structure, moving through subexpressions and inserting, deleting, or replacing elements in place."></span>Structure editor
 : A structure editor is an editor that operates directly on a program's list structure instead of its printed text. The expression being edited is a Lisp data object, and the editor's commands move through it by descending into subexpressions, ascending to enclosing expressions, and inserting, deleting, or replacing elements. The edit changes the program itself, not a separate text file. Barstow describes the Interlisp structure editor and its display extension in [“Overview of a Display-Oriented Editor for Interlisp”](/history/bibliography/w96jccyh/) (1981).
 
-  In Interlisp, the structure editor is used mainly to edit function definitions, but it can also edit variable values, property lists, and arbitrary expressions. Because it works on the live list structure, a function can be edited while it is running; a user can modify the definition, re-evaluate it, and continue execution. The editor also supports searching, marks for saving a location, macros, and undoable changes. For the editor's development and its extension at BBN, see the [1968 Timeline entry](/history/timeline/#1968).
+For the editor's development and its extension at BBN, see the [1968 Timeline entry](/history/timeline/#1968).
+
+<span id="sysout"></span>Sysout
+: A file containing the saved state of Interlisp virtual memory.
 
 <span id="trace" data-tooltip="A debugging facility that prints selected information when a function is entered and its value when it returns."></span>Trace
 : Trace is a Lisp debugging facility that prints information about selected function calls as a program runs. It modifies a function's definition so that specified expressions are evaluated and printed when the function is entered, and its value is printed when the call returns; by default, the arguments and return value are shown. Several functions can be traced at once, and the user can choose particular forms to print rather than the full argument list. Bobrow et al. describe the system’s tracing and conditional breakpoint facilities in [*The BBN 940 LISP System*](/history/bibliography/lqaa78hi/) (1967).
